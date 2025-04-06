@@ -1,0 +1,21 @@
+main:
+
+  - identifier: now
+    name: Now
+    url: /now/
+
+  - identifier: writings
+    name: Writings
+    url: /writings/
+
+  - identifier: projects
+    name: Projects
+    url: /projects/
+
+  - identifier: stream
+    name: Stream
+    url: /stream/
+
+  - identifier: about
+    name: About
+    url: /about/

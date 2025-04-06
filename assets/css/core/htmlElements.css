@@ -1,0 +1,250 @@
+:root 
+{
+  /* Global settings and site-level elements */
+  color-scheme: light;
+
+  /* Global property vars */
+  --mainMeasureWidth: 66ch;
+  --ratioPhi: 1.618;
+  --contentTextLineHeight: var(--ratioPhi);
+
+  /* Modular scale vars: positive and negative, scaled by phi */
+  --modScaleFac_x0: 1;
+  --modScaleFac_x0point5pos: calc(var(--ratioPhi) * 0.5);
+  --modScaleFac_x1pos: calc(var(--modScaleFac_x0) * var(--ratioPhi));
+  --modScaleFac_x1point5pos: 1.272;
+  --modScaleFac_x2pos: calc(var(--modScaleFac_x1pos) * var(--ratioPhi));
+  --modScaleFac_x3pos: calc(var(--modScaleFac_x2pos) * var(--ratioPhi));
+  --modScaleFac_x1neg: calc(var(--modScaleFac_x0) / var(--ratioPhi));
+  --modScaleFac_x2neg: calc(var(--modScaleFac_x1neg) / var(--ratioPhi));
+  /* Special value, 1 over the twentieth root of phi, for getting that wee bit reduction while staying as close to 1rem as possible, i.e. 1 rem -> ~0.98 rem */
+  --modScaleFac_xInv20_special: 0.976;
+
+  /* Color-scheme vars (light)*/
+  --BGColor: #F8F0E3;
+  --textColor: #402F2F;
+  --mutedTextColor: #756341;
+  --accentColor: #B46857;
+  --accentHoverColor: #A55A48;
+  --borderColor: #BCAE90;
+  --linkHoverColor: var(--accentHoverColor);
+  --statusIconColor: #2e7d32;
+
+  /* Font-size vars */
+  --smallestSizeREM: calc(var(--modScaleFac_x2neg) * 1rem);
+  --smallerSizeREM: calc(var(--modScaleFac_x1neg) * 1rem);
+  --smallSizeREM: calc(var(--modScaleFac_x0point5pos) * 1rem);
+  --baseSizeREM: calc(var(--modScaleFac_x0) * 1rem);
+  --mediumSizeREM: calc(var(--modScaleFac_x1point5pos) * 1rem);
+  --bigSizeREM: calc(var(--modScaleFac_x1pos) * 1rem);
+  --biggerSizeREM: calc(var(--modScaleFac_x2pos) * 1rem);
+  --biggestSizeREM: calc(var(--modScaleFac_x3pos) * 1rem);
+  --specialSizeREM: calc(var(--modScaleFac_xInv20_special) * 1rem);
+
+  /* Font-family vars */
+  --sansFontStack: "Roboto Mono", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  --serifFontStack: "Arbutus Slab", Georgia, "Times New Roman", Times, serif;
+  --monoFontStack: "Roboto Mono", SFMono-Regular, Consolas, "Liberation Mono", monospace;
+
+  /* Global site-wide font vars */
+  --fontBody: var(--serifFontStack);
+  --fontHeading: var(--sansFontStack);
+  --fontCode: var(--monoFontStack);
+}
+
+html[data-user-theme="themeDark"] 
+{
+  --BGColor: #1A1C1E;
+  --textColor: #EDEAE6;
+  --mutedTextColor: #B8BCC0;
+  --accentColor: #F8F0E3;
+  --accentHoverColor: #D47A36;
+  --borderColor: #4A4D50;
+  --linkHoverColor: var(--accentHoverColor);
+  --statusIconColor: #81c784;
+
+}
+
+html[data-user-theme="themeContrast"] 
+{
+  --BGColor: #000000;
+  --textColor: #FFFFFF;
+  --mutedTextColor: #CCCCCC;
+  --accentColor: #FFFFFF;
+  --accentHoverColor: #CCCCCC;
+  --borderColor: #666666;
+  --linkHoverColor: var(--accentHoverColor);
+  --statusIconColor: #FFFFFF;
+}
+
+/* Minimal reset and box-sizing */
+*,
+*::before,
+*::after 
+{
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+/* Temp debugging outlines for layout */
+/* * 
+{
+  outline: 2.5px dotted lightgrey;
+} */
+
+/* Body base styles */
+body 
+{
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  
+  font-family: var(--fontBody);
+  font-size: var(--baseSizeREM);
+  line-height: var(--contentTextLineHeight);
+  
+  background-color: var(--BGColor);
+  color: var(--textColor);
+
+  outline: 2.5px dashed rgb(137, 188, 216);
+  outline-offset: -2.5px;
+
+  /* To enable text-break for long, unspaced text */
+  overflow-wrap: break-word;
+  word-break: break-word;
+}
+
+header [data-theme-toggle] 
+{
+  all: unset;
+  font-family: var(--fontCode);
+  font-size: var(--specialSizeREM);
+  color: var(--mutedTextColor);
+  font-weight: 400;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+
+  min-width: 10ch;
+
+  line-height: 1;
+}
+
+header [data-theme-toggle]:hover
+{
+  color: var(--accentColor);
+  font-weight: 600;
+}
+
+header nav a 
+{
+  font-family: var(--fontCode);
+  font-size: var(--specialSizeREM);
+  color: var(--mutedTextColor);
+  font-weight: 400;
+  transition: none;
+
+  text-decoration: none;
+}
+
+footer
+{
+  font-size: var(--smallSizeREM);
+  font-family: var(--fontCode);
+  text-align: center;
+  color: var(--mutedTextColor);
+
+  border-top: 1.5px solid var(--borderColor);
+  padding-block: var(--smallestSizeREM);
+}
+
+main
+{
+  flex: 1;
+}
+
+/* Headings */
+h1, h2, h3
+{
+  font-family: var(--fontHeading);
+  font-weight: 700;
+}
+
+h1 
+{
+  font-size: var(--bigSizeREM);
+}
+
+h2 
+{
+  font-size: var(--mediumSizeREM);
+}
+
+/* Paragraphs and links */
+a
+{
+  color: var(--accentColor);
+  text-decoration: underline;
+  text-decoration-thickness: 1.5px;
+  text-underline-offset: 3px; 
+  text-decoration-color: var(--borderColor);
+  font-weight: 400;
+}
+
+a:hover, a:focus 
+{
+  color: var(--linkHoverColor); 
+  text-decoration-color: var(--accentHoverColor);
+}
+
+/* Lists */
+ul 
+{
+  list-style: none;
+  margin-inline-start: var(--marginInlineStartValREM, var(--bigSizeREM));
+}
+
+ul li 
+{
+  display: flex;
+  align-items: center;
+  gap: 0.5em;
+}
+
+ul li:not(:last-child) 
+{
+  margin-bottom: var(--smallSizeREM);
+}
+
+ul li::before 
+{
+  content: "■";
+  font-size: 0.6em;
+  color: var(--accentColor);
+  display: inline-block;
+}
+
+p + ul
+{
+  margin-block-start: var(--smallSizeREM);
+}
+
+ul + p
+{
+  margin-block-start: var(--smallSizeREM);
+}
+
+nav a 
+{
+  font-family: var(--fontCode);
+  font-size: var(--specialSizeREM);
+  color: var(--mutedTextColor);
+}
+
+nav a:hover, nav a:focus 
+{
+  color: var(--accentColor); 
+  font-weight: 600;
+}
+

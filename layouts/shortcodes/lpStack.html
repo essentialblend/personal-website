@@ -1,0 +1,11 @@
+{{/*
+  Shortcode to wrap content in a div with LP_STACK and custom stack classes.
+  Parameters:
+    class (string): Additional CSS classes to add (e.g., "LP_STACK_INTER_BASE"). The base "LP_STACK" class is added automatically.
+*/}}
+
+<div class="LP_STACK {{ .Get "class" | default "" }}">
+  {{/* Render the content passed inside the shortcode tags as Markdown */}}
+  
+  {{ .Inner | $.Page.RenderString (dict "display" "block") }}
+</div>

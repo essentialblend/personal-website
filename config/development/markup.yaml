@@ -1,0 +1,10 @@
+goldmark:
+  renderer:
+    unsafe: true       
+
+highlight:
+  noClasses: false      
+  style: monokai        
+  lineNos: true
+  lineNumbersInTable: true
+  tabWidth: 2

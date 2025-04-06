@@ -1,0 +1,68 @@
+#site-clock.SF_SITECLOCK
+{
+  cursor: default;
+  font-family: var(--fontCode);
+  font-size: var(--specialSizeREM);
+  color: var(--mutedTextColor);
+  min-width: max-content;
+  opacity: 0.66;
+}
+
+.SF_BLOGPOST .LP_CLUSTER {
+  justify-content: space-between;
+}
+
+.SF_BLOGPOST h2 
+{
+  font-size: var(--baseSizeREM);
+  font-weight: 700;
+}
+
+.SF_BLOGPOST h2 a 
+{
+  color: inherit;
+  text-decoration: none;
+  position: relative;
+  display: inline-block;
+  font-weight: inherit;
+}
+
+.SF_BLOGPOST h2 a::after {
+  content: '→';
+  display: inline-block;
+  color: var(--accentColor);
+  font-weight: 700;
+  margin-left: 0.6em;
+  opacity: 0;
+  transform: translateX(-8px);
+}
+
+.SF_BLOGPOST h2 a:hover, .SF_BLOGPOST h2 a:focus 
+{
+  color: var(--accentHoverColor);
+}
+
+.SF_BLOGPOST h2 a:hover::after, .SF_BLOGPOST h2 a:focus::after 
+{
+  opacity: 1;
+  transform: translateX(0);
+}
+
+.SF_BLOGPOST time 
+{
+  font-family: var(--fontCode);
+  font-size: var(--smallSizeREM);
+  color: var(--mutedTextColor);
+}
+
+.SF_BLOGPOST p 
+{
+  font-size: var(--specialSizeREM);
+  font-style: italic;
+  color: var(--mutedTextColor);
+}
+
+.SF_KATEX
+{
+  margin-block: var(--smallSizeREM);
+}

@@ -1,0 +1,198 @@
+/* Layout Primitives */
+
+/* Center primitive: horizontally centers content with max width */
+.LP_CENTER 
+{
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  
+  box-sizing: content-box;
+  max-inline-size: var(--mainMeasureWidth);
+  margin-inline: auto;
+  padding-inline: var(--baseSizeREM);
+}
+
+/* Stack primitive: vertical spacing between children */
+.LP_STACK 
+{
+  display: flex;
+  flex-direction: column;
+}
+
+.LP_STACK > :first-child 
+{
+  margin-block-start: var(--stackEdgeMarginBlockStartREM, 0);
+}
+
+.LP_STACK > :last-child 
+{
+  margin-block-end: var(--stackEdgeMarginBlockEndREM, 0);
+}
+
+.LP_STACK > * + * 
+{
+  margin-block-start: var(--stackInterMarginBlockREM, 0);
+}
+
+/* Cluster primitive: inline-flex wrapper for navs, tags, etc. */
+.LP_CLUSTER 
+{
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--clusterGapREM, 0);
+  align-items: var(--clusterAlignItemsVar, center);
+}
+
+/* Parameterized stack implementations for varying edge margins (combining top and bottom margins) followed by the same for inter-block margins. */
+.LP_STACK_EDGEMARGIN_SMALLEST 
+{
+  --stackEdgeMarginBlockStartREM: var(--smallestSizeREM);
+  --stackEdgeMarginBlockEndREM: var(--smallestSizeREM);
+}
+
+.LP_STACK_EDGEMARGIN_SMALLER 
+{
+  --stackEdgeMarginBlockStartREM: var(--smallerSizeREM);
+  --stackEdgeMarginBlockEndREM: var(--smallerSizeREM);
+}
+
+.LP_STACK_EDGEMARGIN_SMALL 
+{
+  --stackEdgeMarginBlockStartREM: var(--smallSizeREM);
+  --stackEdgeMarginBlockEndREM: var(--smallSizeREM);
+}
+
+.LP_STACK_EDGEMARGIN_BASE 
+{
+  --stackEdgeMarginBlockStartREM: var(--baseSizeREM);
+  --stackEdgeMarginBlockEndREM: var(--baseSizeREM);
+}
+
+.LP_STACK_EDGEMARGIN_MEDIUM 
+{
+  --stackEdgeMarginBlockStartREM: var(--mediumSizeREM);
+  --stackEdgeMarginBlockEndREM: var(--mediumSizeREM);
+}
+
+.LP_STACK_EDGEMARGIN_BIG 
+{
+  --stackEdgeMarginBlockStartREM: var(--bigSizeREM);
+  --stackEdgeMarginBlockEndREM: var(--bigSizeREM);
+}
+
+.LP_STACK_EDGEMARGIN_BIGGER 
+{
+  --stackEdgeMarginBlockStartREM: var(--biggerSizeREM);
+  --stackEdgeMarginBlockEndREM: var(--biggerSizeREM);
+}
+
+.LP_STACK_EDGEMARGIN_BIGGEST 
+{
+  --stackEdgeMarginBlockStartREM: var(--biggestSizeREM);
+  --stackEdgeMarginBlockEndREM: var(--biggestSizeREM);
+}
+
+.LP_STACK_EDGEMARGIN_NOTOPEDGE 
+{
+  --stackEdgeMarginBlockStartREM: 0;
+}
+
+.LP_STACK_EDGEMARGIN_NOBOTTOMEDGE 
+{
+  --stackEdgeMarginBlockEndREM: 0;
+}
+
+.LP_STACK_EDGEMARGIN_NOMARGIN
+{
+  --stackEdgeMarginBlockStartREM: 0;
+  --stackEdgeMarginBlockEndREM: 0;
+}
+
+.LP_STACK_EDGEMARGIN_BOTTOMONLY_BASE
+{
+  --stackEdgeMarginBlockEndREM: var(--baseSizeREM);
+}
+
+.LP_STACK_EDGEMARGIN_BOTTOMONLY_SMALL
+{
+  --stackEdgeMarginBlockEndREM: var(--smallSizeREM);
+}
+
+.LP_STACK_EDGEMARGIN_BOTTOMONLY_SMALLER
+{
+  --stackEdgeMarginBlockEndREM: var(--smallerSizeREM);
+}
+
+.LP_STACK_EDGEMARGIN_BOTTOMONLY_SMALLEST
+{
+  --stackEdgeMarginBlockEndREM: var(--smallestSizeREM);
+}
+
+.LP_STACK_INTER_SMALLEST 
+{
+  --stackInterMarginBlockREM: var(--smallestSizeREM);
+}
+
+.LP_STACK_INTER_SMALLER 
+{
+  --stackInterMarginBlockREM: var(--smallerSizeREM);
+}
+
+.LP_STACK_INTER_SMALL 
+{
+  --stackInterMarginBlockREM: var(--smallSizeREM);
+}
+
+.LP_STACK_INTER_BASE 
+{
+  --stackInterMarginBlockREM: var(--baseSizeREM);
+}
+
+.LP_STACK_INTER_MEDIUM 
+{
+  --stackInterMarginBlockREM: var(--mediumSizeREM);
+}
+
+.LP_STACK_INTER_BIG 
+{
+  --stackInterMarginBlockREM: var(--bigSizeREM);
+}
+
+.LP_STACK_INTER_BIGGER 
+{
+  --stackInterMarginBlockREM: var(--biggerSizeREM);
+}
+
+.LP_STACK_INTER_BIGGEST 
+{
+  --stackInterMarginBlockREM: var(--biggestSizeREM);
+}
+
+.LP_STACK_INTER_NOMARGIN
+{
+  --stackInterMarginBlockREM: 0;
+}
+
+/* Parameterized cluster implementations for gap spacing */
+.LP_CLUSTER_GAP_SMALLEST { --clusterGapREM: var(--smallestSizeREM); }
+.LP_CLUSTER_GAP_SMALLER  { --clusterGapREM: var(--smallerSizeREM); }
+.LP_CLUSTER_GAP_SMALL    { --clusterGapREM: var(--smallSizeREM); }
+.LP_CLUSTER_GAP_BASE     { --clusterGapREM: var(--baseSizeREM); }
+.LP_CLUSTER_GAP_MEDIUM   { --clusterGapREM: var(--mediumSizeREM); }
+.LP_CLUSTER_GAP_BIG      { --clusterGapREM: var(--bigSizeREM); }
+.LP_CLUSTER_GAP_BIGGER   { --clusterGapREM: var(--biggerSizeREM); }
+.LP_CLUSTER_GAP_BIGGEST  { --clusterGapREM: var(--biggestSizeREM); }
+
+.LP_CLUSTER_ALIGN_START    { --clusterAlignItemsVar: flex-start; }
+.LP_CLUSTER_ALIGN_CENTER   { --clusterAlignItemsVar: center; }
+.LP_CLUSTER_ALIGN_END      { --clusterAlignItemsVar: flex-end; }
+.LP_CLUSTER_ALIGN_STRETCH  { --clusterAlignItemsVar: stretch; }
+.LP_CLUSTER_ALIGN_BASELINE { --clusterAlignItemsVar: baseline; }
+
+/* Custom pseudo-primitive for left-separators */
+.LP_LEFT_SEPARATOR
+{
+  border-left: 3px solid var(--accentHoverColor);
+  padding-left: var(--baseSizeREM);
+}

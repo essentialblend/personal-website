@@ -1,0 +1,26 @@
+{{ define "mainContent" }}
+
+  <section class="LP_LEFT_SEPARATOR"> 
+      <h1>{{ .Title }}</h1> 
+      {{ with .Content }}
+        <div class="content"> {{ . }} </div>
+      {{ end }}
+  </section>
+
+  {{ $pagesBySubject := .Pages.GroupByParam "subject" }}
+
+  {{ range $pagesBySubject }}
+    <section class="LP_LEFT_SEPARATOR"> <h2>{{ .Key }}</h2> <div class="LP_STACK LP_STACK_EDGEMARGIN_BIG LP_STACK_EDGEMARGIN_NOBOTTOMEDGE LP_STACK_INTER_BASE">
+        {{ range .Pages.ByTitle }} <article class="SF_BLOGPOST"> <div class="LP_STACK LP_STACK_EDGEMARGIN_NOMARGIN LP_STACK_INTER_NOMARGIN">
+              <div class="LP_CLUSTER LP_CLUSTER_ALIGN_CENTER LP_CLUSTER_GAP_SMALL" style="justify-content: space-between;">
+                <h3><a href="{{ .RelPermalink }}">{{ .Title }}</a></h3>
+                </div>
+              <p>{{ .Params.description | default .Summary }}</p>
+            </div>
+          </article>
+        {{ end }}
+      </div>
+    </section>
+  {{ end }}
+
+{{ end }}

@@ -1,0 +1,24 @@
+{{ define "mainContent" }}
+
+  <section class="LP_LEFT_SEPARATOR">
+    {{ .Content }}
+  </section>
+
+  <section class="LP_LEFT_SEPARATOR">
+    <h1>WRITINGS</h1>
+    <div class="LP_STACK LP_STACK_EDGEMARGIN_BIG LP_STACK_EDGEMARGIN_NOBOTTOMEDGE LP_STACK_INTER_BASE">
+      {{ range first 3 (where site.RegularPages "Section" "writings") }}
+        <article class="SF_BLOGPOST">
+          <div class="LP_STACK LP_STACK_EDGEMARGIN_NOMARGIN LP_STACK_INTER_NOMARGIN">
+            <div class="LP_CLUSTER LP_CLUSTER_ALIGN_CENTER LP_CLUSTER_GAP_SMALL" style="justify-content: space-between;">
+              <h2><a href="{{ .RelPermalink }}">{{ .Title }}</a></h2>
+              <time datetime="{{ .Date }}">{{ .Date.Format "January 2, 2006" }}</time>
+            </div>
+            <p>{{ .Params.description }}</p>
+          </div>
+        </article>
+      {{ end }}
+    </div>
+  </section>
+
+{{ end }}
