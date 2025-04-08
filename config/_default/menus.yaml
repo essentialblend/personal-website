@@ -2,7 +2,7 @@ main:
 
   - identifier: now
     name: Now
-    url: /now/
+    url: /
 
   - identifier: writings
     name: Writings

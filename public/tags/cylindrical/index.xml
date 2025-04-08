@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Cylindrical on Siddharth Nair</title>
+    <link>http://localhost:1313/tags/cylindrical/</link>
+    <description>Recent content in Cylindrical on Siddharth Nair</description>
+    <generator>Hugo</generator>
+    <language>en-us</language>
+    <managingEditor>ambiverb@gmail.com (Siddharth Nair)</managingEditor>
+    <webMaster>ambiverb@gmail.com (Siddharth Nair)</webMaster>
+    <lastBuildDate>Thu, 06 Mar 2025 00:00:00 +0000</lastBuildDate>
+    <atom:link href="http://localhost:1313/tags/cylindrical/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Proof: Conservation of Momentum</title>
+      <link>http://localhost:1313/writings/cons-momentum/</link>
+      <pubDate>Thu, 06 Mar 2025 00:00:00 +0000</pubDate><author>ambiverb@gmail.com (Siddharth Nair)</author>
+      <guid>http://localhost:1313/writings/cons-momentum/</guid>
+      <description>&lt;h2 id=&#34;lemma-mathbff--dotmathbfp&#34;&gt;Lemma: $\mathbf{F} = \dot{\mathbf{p}}$&lt;/h2&gt;&#xA;&lt;p&gt;We need to show that the net force ($\mathbf{F}$) applied on an object is proportional to the rate of change of that object&amp;rsquo;s momentum with respect to time ($\dot{\mathbf{p}}$).&lt;/p&gt;&#xA;&lt;p&gt;We know Newton&amp;rsquo;s second law: $\mathbf{F} = m\mathbf{a}$, and $\mathbf{p} = m \mathbf{v}$.&lt;/p&gt;&#xA;&lt;p&gt;Differentiating $\mathbf{p} = m \mathbf{v}$ with respect to $t$, presuming constant mass ($m$) yields,&lt;/p&gt;&#xA;$$&#xD;&#xA;\begin{aligned}&#xD;&#xA;\frac{d\mathbf{p}}{dt} = \dot{\mathbf{p}} &amp;= \frac{d}{dt}(m\mathbf{v}) \\ \\[0.1pt]&#xD;&#xA;&amp;= m \ \frac{d\mathbf{v}}{dt} \\ \\[0.1pt]&#xD;&#xA;&amp;= m\mathbf{a} \\ \\[0.1pt]&#xD;&#xA;\therefore \quad \mathbf{F} &amp;= \dot{\mathbf{p}} \quad \blacksquare&#xD;&#xA;\end{aligned}&#xD;&#xA;$$&lt;p&gt;With this lemma, we can proceed with the main proof.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Derivation: Newton&#39;s Law in Cylindrical Coordinates</title>
+      <link>http://localhost:1313/writings/newton-cyl/</link>
+      <pubDate>Sat, 01 Apr 2023 00:00:00 +0000</pubDate><author>ambiverb@gmail.com (Siddharth Nair)</author>
+      <guid>http://localhost:1313/writings/newton-cyl/</guid>
+      <description>&lt;p&gt;Deriving Newton&amp;rsquo;s equation for cylindrical coordinates is similar to polar coordinates, with both of them sharing radial and angular coordinate axes, but cylindrical coordinates add the $z$ coordinate axis. We can represent force along these coordinates,&lt;/p&gt;&#xA;$$&#xD;&#xA;\mathbf{F} = F_r \hat{\mathbf{r}} + F_{\phi} \hat{\mathbf{\phi}} + F_{z} \hat{\mathbf{z}} \tag{1.1}&#xD;&#xA;$$&lt;p&gt;Our position vector is,&lt;/p&gt;&#xA;$$&#xD;&#xA;\mathbf{r} = r\hat{\mathbf{r}} + z \hat{\mathbf{z}} \tag{1.2}&#xD;&#xA;$$&lt;p&gt;where we only need the radial and the $z$ coordinate axes to obtain the magnitude of the vector. Differentiating to get the velocity vector,&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

@@ -1,11 +1,11 @@
 function updateClock() 
 {
-  const el = document.getElementById("site-clock");
-  if (!el) return;
+  const siteClockElement = document.getElementById("site-clock");
+  if (!siteClockElement) return;
 
   const now = new Date();
 
-  // Format to Siddharth's local time
+  // Format to user local time
   const options = 
   {
     weekday: undefined,
@@ -16,16 +16,16 @@ function updateClock()
     timeZoneName: "short"
   };
 
-  const siddharthTime = now.toLocaleString("en-GB", 
+  const serverUserTime = now.toLocaleString("en-GB", 
   {
     ...options,
     timeZone: "Europe/London"
   });
 
-  const userTime = now.toLocaleString("en-GB", options);
+  const clientTime = now.toLocaleString("en-GB", options);
 
-  el.textContent = siddharthTime.replace(",", " ·");
-  el.title = `Siddharth's local time.\nYour time: ${userTime.replace(",", " ·")}`;
+  siteClockElement.textContent = serverUserTime.replace(",", " ·");
+  siteClockElement.title = `Siddharth's local time.\nYour time: ${clientTime.replace(",", " ·")}`;
 }
 
 updateClock();

@@ -1,12 +1,12 @@
-{{ define "mainContent" }}
+{{ define "homeContent" }}
 
   <section class="LP_LEFT_SEPARATOR">
     {{ .Content }}
   </section>
 
   <section class="LP_LEFT_SEPARATOR">
-    <h1>WRITINGS</h1>
-    <div class="LP_STACK LP_STACK_EDGEMARGIN_BIG LP_STACK_EDGEMARGIN_NOBOTTOMEDGE LP_STACK_INTER_BASE">
+    <h2>WRITINGS</h2>
+    <div class="LP_STACK LP_STACK_EDGEMARGIN_NOMARGIN LP_STACK_EDGEMARGIN_NOBOTTOMEDGE LP_STACK_INTER_NOMARGIN">
       {{ range first 3 (where site.RegularPages "Section" "writings") }}
         <article class="SF_BLOGPOST">
           <div class="LP_STACK LP_STACK_EDGEMARGIN_NOMARGIN LP_STACK_INTER_NOMARGIN">

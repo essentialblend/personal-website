@@ -1,3 +1,5 @@
-{{ define "mainContent" }}
-  {{ .Content }}
+{{ define "pageContent" }}
+  {{ if eq .Section "writings" }} {{ partial "pages/writingsPage.html" . }}
+  {{ else if eq .Type "colophon" }} {{ partial "pages/colophonPage.html" . }}
+  {{ end }}
 {{ end }}

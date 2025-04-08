@@ -15,7 +15,7 @@
   
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@400;700&family=Arbutus+Slab&display=swap">
-  <link rel="stylesheet" href="./css/baseof.min.58d01c0a24157f7b69357e6543cc6fa99d02844467daa1e7d9d9337b5317d95a.css">
+  <link rel="stylesheet" href="./css/baseof.min.f781abcdfa1bec3340323c09151c5fe492908d163f83bb4671cea83161540364.css">
 
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.21/dist/katex.min.css">
 
@@ -23,7 +23,7 @@
 </head>
 
 <body>
-  <div class="LP_STACK LP_STACK_EDGEMARGIN_BIG LP_STACK_EDGEMARGIN_NOBOTTOMEDGE LP_STACK_INTER_BIG LP_CENTER">
+  <div class="LP_STACK LP_STACK_EDGEMARGIN_BIG LP_STACK_EDGEMARGIN_NOBOTTOMEDGE LP_STACK_INTER_BIGGER LP_CENTER">
 
     <header class="LP_LEFT_SEPARATOR" style="border-bottom: 2px solid var(--borderColor); display: flex; justify-content: space-between; padding-bottom: var(--smallestSizeREM);">
 
@@ -33,62 +33,50 @@
         <nav class="LP_CLUSTER LP_CLUSTER_ALIGN_CENTER LP_CLUSTER_GAP_BIG" aria-label="Main navigation">
           
           
-            <a href="./about/"
-               data-page="about"
-               >
+            <a href="./about/" data-page="about" >
               About
             </a>
-        
           
-            <a href="./now/"
-               data-page="now"
-               >
+          
+            <a href="./" data-page="now" data-active="true">
               Now
             </a>
-        
           
-            <a href="./projects/"
-               data-page="projects"
-               >
+          
+            <a href="./projects/" data-page="projects" >
               Projects
             </a>
-        
           
-            <a href="./stream/"
-               data-page="stream"
-               >
+          
+            <a href="./stream/" data-page="stream" >
               Stream
             </a>
-        
           
-            <a href="./writings/"
-               data-page="writings"
-               >
+          
+            <a href="./writings/" data-page="writings" >
               Writings
             </a>
-        
+          
         </nav>
-        <button data-theme-toggle aria-label="Toggle theme">
-          Light
-        </button>
+        <button data-theme-toggle aria-label="Toggle theme">Light</button>
       </div>
     </header>
     
     <main>
+      <div class="LP_STACK LP_STACK_EDGEMARGIN_NOMARGIN LP_STACK_INTER_BIGGER">
 
-      
-        <div class="LP_STACK LP_STACK_EDGEMARGIN_NOMARGIN LP_STACK_INTER_BIGGER">
+        
           
 
   <section class="LP_LEFT_SEPARATOR">
-    <h1 id="now">NOW</h1>
+    <h2 id="now">NOW</h2>
 
 
-<div class="LP_STACK LP_STACK_INTER_BIG LP_STACK_EDGEMARGIN_BIG LP_STACK_EDGEMARGIN_NOBOTTOMEDGE">
+<div class="LP_STACK LP_STACK_INTER_BASE LP_STACK_EDGEMARGIN_BASE LP_STACK_EDGEMARGIN_NOBOTTOMEDGE">
   
   
   <div>
-<h2 id="focus">FOCUS</h2>
+<h3 id="focus">FOCUS</h3>
 <p>Exploring the foundations of mathematical modeling and computational physics. Current goal: build up the fundamental stack required for physically based rendering and simulation engines.</p>
 <ul>
 <li>
@@ -98,14 +86,10 @@
 <p>Slowly absorbing <strong>Aluffi’s <em>Algebra: Notes from the Underground</em></strong> to develop abstract fluency in algebraic structures.</p>
 </li>
 </ul>
-<p>Current goal: build up the fundamental stack required.</p>
 </div>
 <div>
-<h2 id="recent">RECENT</h2>
+<h3 id="recent">RECENT</h3>
 <p>Most of my time recently has gone into building this site from scratch using <a href="https://gohugo.io/">Hugo</a> and a CSS system inspired by <a href="https://every-layout.dev/">Every Layout</a>.</p>
-<ul>
-<li>I built my own layout primitives instead of relying on a framework.</li>
-</ul>
 </div>
 
 </div>
@@ -113,8 +97,8 @@
   </section>
 
   <section class="LP_LEFT_SEPARATOR">
-    <h1>WRITINGS</h1>
-    <div class="LP_STACK LP_STACK_EDGEMARGIN_BIG LP_STACK_EDGEMARGIN_NOBOTTOMEDGE LP_STACK_INTER_BASE">
+    <h2>WRITINGS</h2>
+    <div class="LP_STACK LP_STACK_EDGEMARGIN_NOMARGIN LP_STACK_EDGEMARGIN_NOBOTTOMEDGE LP_STACK_INTER_NOMARGIN">
       
         <article class="SF_BLOGPOST">
           <div class="LP_STACK LP_STACK_EDGEMARGIN_NOMARGIN LP_STACK_INTER_NOMARGIN">
@@ -126,32 +110,50 @@
           </div>
         </article>
       
+        <article class="SF_BLOGPOST">
+          <div class="LP_STACK LP_STACK_EDGEMARGIN_NOMARGIN LP_STACK_INTER_NOMARGIN">
+            <div class="LP_CLUSTER LP_CLUSTER_ALIGN_CENTER LP_CLUSTER_GAP_SMALL" style="justify-content: space-between;">
+              <h2><a href="./writings/newton-spherical/">Derivation: Newton&#39;s Equation in Spherical Coordinates</a></h2>
+              <time datetime="2025-04-02 00:00:00 &#43;0000 UTC">April 2, 2025</time>
+            </div>
+            <p>A derivation of Newton&#39;s second law in spherical coordinates.</p>
+          </div>
+        </article>
+      
+        <article class="SF_BLOGPOST">
+          <div class="LP_STACK LP_STACK_EDGEMARGIN_NOMARGIN LP_STACK_INTER_NOMARGIN">
+            <div class="LP_CLUSTER LP_CLUSTER_ALIGN_CENTER LP_CLUSTER_GAP_SMALL" style="justify-content: space-between;">
+              <h2><a href="./writings/cons-momentum/">Proof: Conservation of Momentum</a></h2>
+              <time datetime="2025-03-06 00:00:00 &#43;0000 UTC">March 6, 2025</time>
+            </div>
+            <p>A simple proof demonstrating conservation of momentum.</p>
+          </div>
+        </article>
+      
     </div>
   </section>
 
 
-        </div>
-      
-
+        
+      </div>
     </main>
 
     <footer>
       <p>&copy; 2025 Siddharth Nair&nbsp;&middot;&nbsp;<a href="./colophon/">colophon</a></p>
     </footer>    
   </div>
+  
+  
+  
+  
+  
+
+  
+
+  <script src="./js/bundle.5ccf155dfe89f6ee05bc86d24e1f8a813aefedb395e9179d1eb4e54874f696d7.js" integrity="sha256-XM8VXf6J9u4FvIbSTh&#43;KgTrv7bOV6RedHrTlSHT2ltc="></script>
 
   
   
-
-  
-
-  <script src="./js/bundle.157adc886dc915f32d9b114c6d6592d291967b1ced4d1406eb44a6c275b41c9e.js" integrity="sha256-FXrciG3JFfMtmxFMbWWS0pGWexztTRQG60SmwnW0HJ4="></script>
-
-  <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.21/dist/katex.min.js"></script>
-  <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.21/dist/contrib/auto-render.min.js"></script>
-
-  
-  <script defer src="./js/katexClient.min.daefe2f9099e0c2b3fa8d4b2b77e19e6b7b14c0535beb57602d6fc1ac1d17e7a.js" integrity="sha256-2u/i&#43;QmeDCs/qNSyt34Z5rexTAU1vrV2Atb8GsHRfno="></script>
 
   
 </body>

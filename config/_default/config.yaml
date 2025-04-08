@@ -1,0 +1,9 @@
+baseURL: "http://example.org/"
+languageCode: en-us
+title: "Siddharth Nair"
+relativeURLs: true
+buildDrafts: false
+canonifyURLs: false
+
+pagination:
+  pagerSize: 4

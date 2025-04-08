@@ -1,0 +1,48 @@
+{{ $subjects := $.Site.Taxonomies.subjects.Alphabetical }}
+{{ if gt (len $subjects) 0 }}
+<div class="LP_LEFT_SEPARATOR">
+<nav aria-label="Filter by subject" class="SF_TAXONOMYFILTER">
+  <div class="LP_CLUSTER LP_CLUSTER_ALIGN_CENTER LP_CLUSTER_GAP_SMALLER SF_TAXONOMYFILTER_CONTROLS" id="filter-controls">
+     <p class="SF_TAXONOMYFILTER_LABEL">Subjects:</p>
+     <div id="subject-filter-buttons" class="LP_CLUSTER LP_CLUSTER_ALIGN_CENTER LP_CLUSTER_GAP_SMALLER SF_TAXONOMYFILTER_BUTTONS">
+         {{ $initialVisibleCount := 3 }}
+         {{ range $index, $term := $subjects }}
+             <button type="button" class="SF_TAXONOMYFILTER_BUTTON {{ if ge $index $initialVisibleCount }}SF_TAXONOMYFILTER_BUTTON--HIDDEN{{ end }}" data-subject="{{ $term.Name | lower }}">
+                 {{ $term.Name | title }}
+             </button>
+         {{ end }}
+     </div>
+     <div class="LP_CLUSTER LP_CLUSTER_ALIGN_CENTER LP_CLUSTER_GAP_SMALLER">
+        {{ if gt (len $subjects) $initialVisibleCount }}
+           <button type="button" class="SF_TAXONOMYFILTER_MORE" id="show-more-filters">More...</button>
+        {{ end }}
+        <button type="button" class="SF_TAXONOMYFILTER_CLEAR" id="clear-filters" title="Clear selected filters">×</button>
+     </div>
+  </div>
+</nav>
+{{ end }}
+
+<div class="LP_STACK LP_STACK_INTER_NOMARGIN" id="writings-list">
+  {{ $paginator := .Paginator }}
+  {{ range $paginator.Pages.GroupByDate "2006" }}
+  <section aria-labelledby="year-{{ .Key }}">
+    <h3 id="year-{{ .Key }}" class="SF_YEARGROUP_HEADING">{{ .Key }} ({{ len .Pages }} Post{{ if gt (len .Pages) 1 }}s{{ end }})</h3>
+    <div class="LP_STACK">
+        {{ range .Pages }}
+        <article class="SF_BLOGPOST" data-subjects="{{ delimit .Params.subjects "," | lower }}">
+           <div class="LP_CLUSTER LP_CLUSTER_ALIGN_BASELINE LP_CLUSTER_GAP_SMALL" style="justify-content: space-between;">
+             <h2><a href="{{ .RelPermalink }}">{{ .Title }}</a></h2>
+             <time datetime="{{ .Date }}" class="SF_BLOGPOST_DATE">{{ .Date.Format "January 2, 2006" }}</time>
+           </div>
+           <p>{{ .Params.description | default .Summary }}</p>
+        </article>
+        {{ end }}
+    </div>
+    </section>
+    {{ else }}
+    <p>No writings found in this period.</p>
+    {{ end }}
+    </div>
+
+  {{ partial "pagination.html" . }} 
+</div>

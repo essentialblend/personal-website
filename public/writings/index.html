@@ -14,7 +14,7 @@
   
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@400;700&family=Arbutus+Slab&display=swap">
-  <link rel="stylesheet" href="../css/baseof.min.58d01c0a24157f7b69357e6543cc6fa99d02844467daa1e7d9d9337b5317d95a.css">
+  <link rel="stylesheet" href="../css/baseof.min.f781abcdfa1bec3340323c09151c5fe492908d163f83bb4671cea83161540364.css">
 
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.21/dist/katex.min.css">
 
@@ -22,7 +22,7 @@
 </head>
 
 <body>
-  <div class="LP_STACK LP_STACK_EDGEMARGIN_BIG LP_STACK_EDGEMARGIN_NOBOTTOMEDGE LP_STACK_INTER_BIG LP_CENTER">
+  <div class="LP_STACK LP_STACK_EDGEMARGIN_BIG LP_STACK_EDGEMARGIN_NOBOTTOMEDGE LP_STACK_INTER_BIGGER LP_CENTER">
 
     <header class="LP_LEFT_SEPARATOR" style="border-bottom: 2px solid var(--borderColor); display: flex; justify-content: space-between; padding-bottom: var(--smallestSizeREM);">
 
@@ -32,85 +32,181 @@
         <nav class="LP_CLUSTER LP_CLUSTER_ALIGN_CENTER LP_CLUSTER_GAP_BIG" aria-label="Main navigation">
           
           
-            <a href="../about/"
-               data-page="about"
-               >
+            <a href="../about/" data-page="about" >
               About
             </a>
-        
           
-            <a href="../now/"
-               data-page="now"
-               >
+          
+            <a href="../" data-page="now" data-active="true">
               Now
             </a>
-        
           
-            <a href="../projects/"
-               data-page="projects"
-               >
+          
+            <a href="../projects/" data-page="projects" >
               Projects
             </a>
-        
           
-            <a href="../stream/"
-               data-page="stream"
-               >
+          
+            <a href="../stream/" data-page="stream" >
               Stream
             </a>
-        
           
-            <a href="../writings/"
-               data-page="writings"
-               data-active="true">
+          
+            <a href="../writings/" data-page="writings" data-active="true">
               Writings
             </a>
-        
+          
         </nav>
-        <button data-theme-toggle aria-label="Toggle theme">
-          Light
-        </button>
+        <button data-theme-toggle aria-label="Toggle theme">Light</button>
       </div>
     </header>
     
     <main>
+      <div class="LP_STACK LP_STACK_EDGEMARGIN_NOMARGIN LP_STACK_INTER_BIGGER">
 
-      
-        <div class="LP_STACK LP_STACK_EDGEMARGIN_NOMARGIN LP_STACK_INTER_SMALLEST">
+        
           
 
-  <section class="LP_LEFT_SEPARATOR"> 
-      <h1>WRITINGS</h1> 
-      
-  </section>
+<section class="LP_LEFT_SEPARATOR"> 
+  <div class="LP_STACK LP_STACK_INTER_BASE LP_STACK_EDGEMARGIN_BASE LP_STACK_EDGEMARGIN_NOTOPEDGE"> 
+    <h1>WRITINGS</h1>
+    <div class="SF_PAGE_DESCRIPTION">
+      <p>A collection of essays, thoughts, and explorations on topics ranging from mathematical physics to theoretical computer science, music, and the occasional watercolour technique.</p>
+
+    </div> 
+  </div>
+</section>
+
 
   
 
+<div class="LP_LEFT_SEPARATOR">
+<nav aria-label="Filter by subject" class="SF_TAXONOMYFILTER">
+  <div class="LP_CLUSTER LP_CLUSTER_ALIGN_CENTER LP_CLUSTER_GAP_SMALLER SF_TAXONOMYFILTER_CONTROLS" id="filter-controls">
+     <p class="SF_TAXONOMYFILTER_LABEL">Subjects:</p>
+     <div id="subject-filter-buttons" class="LP_CLUSTER LP_CLUSTER_ALIGN_CENTER LP_CLUSTER_GAP_SMALLER SF_TAXONOMYFILTER_BUTTONS">
+         
+         
+             <button type="button" class="SF_TAXONOMYFILTER_BUTTON " data-subject="classical mechanics">
+                 Classical Mechanics
+             </button>
+         
+     </div>
+     <div class="LP_CLUSTER LP_CLUSTER_ALIGN_CENTER LP_CLUSTER_GAP_SMALLER">
+        
+        <button type="button" class="SF_TAXONOMYFILTER_CLEAR" id="clear-filters" title="Clear selected filters">×</button>
+     </div>
+  </div>
+</nav>
+
+
+<div class="LP_STACK LP_STACK_INTER_NOMARGIN" id="writings-list">
   
+  
+  <section aria-labelledby="year-2025">
+    <h3 id="year-2025" class="SF_YEARGROUP_HEADING">2025 (3 Posts)</h3>
+    <div class="LP_STACK">
+        
+        <article class="SF_BLOGPOST" data-subjects="classical mechanics">
+           <div class="LP_CLUSTER LP_CLUSTER_ALIGN_BASELINE LP_CLUSTER_GAP_SMALL" style="justify-content: space-between;">
+             <h2><a href="../writings/newton-polar/">Derivation: Newton&#39;s Equation in Polar Coordinates</a></h2>
+             <time datetime="2025-04-06 00:00:00 &#43;0000 UTC" class="SF_BLOGPOST_DATE">April 6, 2025</time>
+           </div>
+           <p>Deriving Newton&#39;s second law components in 2D polar coordinates using geometric and algebraic methods.</p>
+        </article>
+        
+        <article class="SF_BLOGPOST" data-subjects="classical mechanics">
+           <div class="LP_CLUSTER LP_CLUSTER_ALIGN_BASELINE LP_CLUSTER_GAP_SMALL" style="justify-content: space-between;">
+             <h2><a href="../writings/newton-spherical/">Derivation: Newton&#39;s Equation in Spherical Coordinates</a></h2>
+             <time datetime="2025-04-02 00:00:00 &#43;0000 UTC" class="SF_BLOGPOST_DATE">April 2, 2025</time>
+           </div>
+           <p>A derivation of Newton&#39;s second law in spherical coordinates.</p>
+        </article>
+        
+        <article class="SF_BLOGPOST" data-subjects="classical mechanics">
+           <div class="LP_CLUSTER LP_CLUSTER_ALIGN_BASELINE LP_CLUSTER_GAP_SMALL" style="justify-content: space-between;">
+             <h2><a href="../writings/cons-momentum/">Proof: Conservation of Momentum</a></h2>
+             <time datetime="2025-03-06 00:00:00 &#43;0000 UTC" class="SF_BLOGPOST_DATE">March 6, 2025</time>
+           </div>
+           <p>A simple proof demonstrating conservation of momentum.</p>
+        </article>
+        
+    </div>
+    </section>
+    
+  <section aria-labelledby="year-2024">
+    <h3 id="year-2024" class="SF_YEARGROUP_HEADING">2024 (1 Post)</h3>
+    <div class="LP_STACK">
+        
+        <article class="SF_BLOGPOST" data-subjects="classical mechanics">
+           <div class="LP_CLUSTER LP_CLUSTER_ALIGN_BASELINE LP_CLUSTER_GAP_SMALL" style="justify-content: space-between;">
+             <h2><a href="../writings/newton-cart/">Derivation: Newton&#39;s Equation in Cartesian Coordinates</a></h2>
+             <time datetime="2024-04-04 00:00:00 &#43;0000 UTC" class="SF_BLOGPOST_DATE">April 4, 2024</time>
+           </div>
+           <p>Deriving and generalizing Newton&#39;s second law components in Cartesian coordinates.</p>
+        </article>
+        
+    </div>
+    </section>
+    
+    </div>
 
-
-        </div>
+  
+  <div style="display: flex; justify-content: center;">
+    <nav class="LP_CLUSTER LP_CLUSTER_ALIGN_CENTER LP_CLUSTER_GAP_SMALL" aria-label="Pagination">
+      
       
 
+      
+      
+        
+          <a style="opacity: 0.6;" aria-current="page">1</span>
+        
+      
+        
+          <a href="../writings/page/2/">2</a>
+        
+      
+
+      
+        <a href="../writings/page/2/" aria-label="Next page">»</a>
+        <a href="../writings/page/2/" aria-label="Last page">»»</a>
+      
+
+    </nav>
+  </div>
+
+ 
+</div>
+
+
+
+        
+      </div>
     </main>
 
     <footer>
       <p>&copy; 2025 Siddharth Nair&nbsp;&middot;&nbsp;<a href="../colophon/">colophon</a></p>
     </footer>    
   </div>
+  
+  
+  
+  
+  
+
+  
+
+  <script src="../js/bundle.5ccf155dfe89f6ee05bc86d24e1f8a813aefedb395e9179d1eb4e54874f696d7.js" integrity="sha256-XM8VXf6J9u4FvIbSTh&#43;KgTrv7bOV6RedHrTlSHT2ltc="></script>
 
   
   
-
-  
-
-  <script src="../js/bundle.157adc886dc915f32d9b114c6d6592d291967b1ced4d1406eb44a6c275b41c9e.js" integrity="sha256-FXrciG3JFfMtmxFMbWWS0pGWexztTRQG60SmwnW0HJ4="></script>
-
   <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.21/dist/katex.min.js"></script>
   <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.21/dist/contrib/auto-render.min.js"></script>
 
   
   <script defer src="../js/katexClient.min.daefe2f9099e0c2b3fa8d4b2b77e19e6b7b14c0535beb57602d6fc1ac1d17e7a.js" integrity="sha256-2u/i&#43;QmeDCs/qNSyt34Z5rexTAU1vrV2Atb8GsHRfno="></script>
+  
 
   
 </body>

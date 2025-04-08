@@ -7,10 +7,13 @@ document.addEventListener('DOMContentLoaded', function()
     // Standard delimiters
     delimiters: 
     [
-      {left: '$$', right: '$$', display: true},  // $$ ... $$ display math
-      {left: '$', right: '$', display: false},   // $ ... $ inline math
+      // $$ ... $$ display math
+      {left: '$$', right: '$$', display: true},  
+      
+      // $ ... $ inline math
+      {left: '$', right: '$', display: false},   
       
     ],
-    throwOnError: false // Don't stop rendering on errors
+    throwOnError: false
   });
 });

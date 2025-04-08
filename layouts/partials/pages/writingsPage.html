@@ -1,0 +1,46 @@
+<div class="LP_STACK LP_STACK_INTER_BIGGEST"> 
+  <section class="LP_LEFT_SEPARATOR">
+    <div class="LP_STACK LP_STACK_INTER_BASE"> 
+      <h1>{{ .Title }}</h1>
+      <aside class="SF_POSTMETA LP_STACK LP_STACK_INTER_SMALL">
+        <div class="LP_CLUSTER LP_CLUSTER_GAP_BASE LP_CLUSTER_ALIGN_BASELINE">
+          <p class="SF_POSTMETA_DATE">
+            <span class="SF_POSTMETA_LABEL">Published:</span> 
+            <time datetime="{{ .Date }}">{{ .Date.Format "January 2, 2006" }}</time>
+          </p>
+          <p class="SF_POSTMETA_READTIME">
+            <span class="SF_POSTMETA_LABEL">Reading time:</span>
+            {{ .ReadingTime }} min
+          </p>
+          {{ with .Params.categories }}
+          {{ $categories := . }} 
+          <div class="SF_POSTMETA_CATS">
+            <span class="SF_POSTMETA_LABEL">Filed under:</span> 
+            {{ range $index, $category := $categories }}
+              {{ $href := printf "/categories/%s" ($category | urlize | lower) }}
+              <a href="{{ $href }}" class="SF_POSTMETA_LINK">{{ $category }}</a>{{ if ne $index (sub (len $categories) 1) }}, {{ end }}
+            {{ end }}
+          </div>
+          {{ end }}
+        </div>
+        {{ with .Params.tags }}
+        {{ $tags := . }} 
+        <div class="SF_POSTMETA_TAGS">
+          <span class="SF_POSTMETA_LABEL">Tagged:</span> 
+          {{ range $index, $tag := $tags }}
+            {{ $href := printf "/tags/%s" ($tag | urlize | lower) }}
+            <a href="{{ $href }}" class="SF_POSTMETA_LINK">{{ $tag }}</a>{{ if ne $index (sub (len $tags) 1) }}, {{ end }}
+          {{ end }}
+        </div>
+        {{ end }}
+      </aside>
+    </div> 
+  </section> 
+
+  <section class="LP_LEFT_SEPARATOR">
+    <div class="SF_POSTCONTENT">
+      {{ .Content }}
+    </div>
+  </section> 
+
+</div>

@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en" data-page="proof-conservation-of-momentum" data-user-theme="themeLight">
+<head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Proof: Conservation of Momentum | Siddharth Nair</title>
+
+  <meta name="description" content="A simple proof demonstrating conservation of momentum.">
+  <meta name="author" content="Siddharth Nair">
+
+  
+  
+  
+  
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@400;700&family=Arbutus+Slab&display=swap">
+  <link rel="stylesheet" href="../../css/baseof.min.f781abcdfa1bec3340323c09151c5fe492908d163f83bb4671cea83161540364.css">
+
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.21/dist/katex.min.css">
+
+  
+</head>
+
+<body>
+  <div class="LP_STACK LP_STACK_EDGEMARGIN_BIG LP_STACK_EDGEMARGIN_NOBOTTOMEDGE LP_STACK_INTER_BIGGER LP_CENTER">
+
+    <header class="LP_LEFT_SEPARATOR" style="border-bottom: 2px solid var(--borderColor); display: flex; justify-content: space-between; padding-bottom: var(--smallestSizeREM);">
+
+      <span id="site-clock" class="SF_SITECLOCK" data-feature="siteClock"></span>
+  
+      <div class="LP_CLUSTER LP_CLUSTER_ALIGN_CENTER LP_CLUSTER_GAP_BIG" style="justify-content: flex-end;">
+        <nav class="LP_CLUSTER LP_CLUSTER_ALIGN_CENTER LP_CLUSTER_GAP_BIG" aria-label="Main navigation">
+          
+          
+            <a href="../../about/" data-page="about" >
+              About
+            </a>
+          
+          
+            <a href="../../" data-page="now" data-active="true">
+              Now
+            </a>
+          
+          
+            <a href="../../projects/" data-page="projects" >
+              Projects
+            </a>
+          
+          
+            <a href="../../stream/" data-page="stream" >
+              Stream
+            </a>
+          
+          
+            <a href="../../writings/" data-page="writings" data-active="true">
+              Writings
+            </a>
+          
+        </nav>
+        <button data-theme-toggle aria-label="Toggle theme">Light</button>
+      </div>
+    </header>
+    
+    <main>
+      <div class="LP_STACK LP_STACK_EDGEMARGIN_NOMARGIN LP_STACK_INTER_BIGGER">
+
+        
+          
+   <div class="LP_STACK LP_STACK_INTER_BIGGEST"> 
+  <section class="LP_LEFT_SEPARATOR">
+    <div class="LP_STACK LP_STACK_INTER_BASE"> 
+      <h1>Proof: Conservation of Momentum</h1>
+      <aside class="SF_POSTMETA LP_STACK LP_STACK_INTER_SMALL">
+        <div class="LP_CLUSTER LP_CLUSTER_GAP_BASE LP_CLUSTER_ALIGN_BASELINE">
+          <p class="SF_POSTMETA_DATE">
+            <span class="SF_POSTMETA_LABEL">Published:</span> 
+            <time datetime="2025-03-06 00:00:00 &#43;0000 UTC">March 6, 2025</time>
+          </p>
+          <p class="SF_POSTMETA_READTIME">
+            <span class="SF_POSTMETA_LABEL">Reading time:</span>
+            2 min
+          </p>
+          
+           
+          <div class="SF_POSTMETA_CATS">
+            <span class="SF_POSTMETA_LABEL">Filed under:</span> 
+            
+              
+              <a href="../../categories/derivations" class="SF_POSTMETA_LINK">Derivations</a>
+            
+          </div>
+          
+        </div>
+        
+         
+        <div class="SF_POSTMETA_TAGS">
+          <span class="SF_POSTMETA_LABEL">Tagged:</span> 
+          
+            
+            <a href="../../tags/newtons-third-law" class="SF_POSTMETA_LINK">Newton&#39;s Third Law</a>, 
+          
+            
+            <a href="../../tags/coordinate-systems" class="SF_POSTMETA_LINK">Coordinate Systems</a>, 
+          
+            
+            <a href="../../tags/cylindrical" class="SF_POSTMETA_LINK">Cylindrical</a>, 
+          
+            
+            <a href="../../tags/kinematics" class="SF_POSTMETA_LINK">Kinematics</a>
+          
+        </div>
+        
+      </aside>
+    </div> 
+  </section> 
+
+  <section class="LP_LEFT_SEPARATOR">
+    <div class="SF_POSTCONTENT">
+      <h2 id="lemma-mathbff--dotmathbfp">Lemma: $\mathbf{F} = \dot{\mathbf{p}}$</h2>
+<p>We need to show that the net force ($\mathbf{F}$) applied on an object is proportional to the rate of change of that object&rsquo;s momentum with respect to time ($\dot{\mathbf{p}}$).</p>
+<p>We know Newton&rsquo;s second law: $\mathbf{F} = m\mathbf{a}$, and $\mathbf{p} = m \mathbf{v}$.</p>
+<p>Differentiating $\mathbf{p} = m \mathbf{v}$ with respect to $t$, presuming constant mass ($m$) yields,</p>
+$$
+\begin{aligned}
+\frac{d\mathbf{p}}{dt} = \dot{\mathbf{p}} &= \frac{d}{dt}(m\mathbf{v}) \\ \\[0.1pt]
+&= m \ \frac{d\mathbf{v}}{dt} \\ \\[0.1pt]
+&= m\mathbf{a} \\ \\[0.1pt]
+\therefore \quad \mathbf{F} &= \dot{\mathbf{p}} \quad \blacksquare
+\end{aligned}
+$$<p>With this lemma, we can proceed with the main proof.</p>
+<p>Suppose we have a system with point particles $p_1$ and $p_2$, exerting forces $\mathbf{F}_{21}$ and $\mathbf{F}_{12}$, on each other.</p>
+<p>We also approximate any external forces on these two particles as $\mathbf{F}^{\text{ext}}_1$ and $\mathbf{F}^{\text{ext}}_2$,</p>
+$$
+\begin{aligned}
+\mathbf{F}_{p_1} &= \mathbf{F}_{12} + \mathbf{F}^{\text{ext}}_1 \\ \\[0.1pt]
+\mathbf{F}_{p_2} &= \mathbf{F}_{21} + \mathbf{F}^{\text{ext}}_2
+\end{aligned}
+$$<p>By the lemma $\mathbf{F} = \dot{\mathbf{p}}$,</p>
+$$
+\begin{aligned}
+\mathbf{F}_{p_1} &= \dot{\mathbf{p}}_1 \\\\
+\mathbf{F}_{p_2} &= \dot{\mathbf{p}}_2
+\end{aligned}
+$$<p>The total momentum of our two-particle system is:</p>
+$$
+\mathbf{P}_{\text{total}} = \mathbf{p}_1 + \mathbf{p}_2
+$$<p>Differentiating with respect to time yields,</p>
+$$
+\begin{aligned}
+\dot{\mathbf{P}}_{\text{total}} &= \dot{\mathbf{p}}_1 + \dot{\mathbf{p}}_2 \\ \\[0.1pt]
+&= \mathbf{F}_{12} + \mathbf{F}_{21} + \mathbf{F}^{\text{ext}}_1 + \mathbf{F}^{\text{ext}}_2
+\end{aligned}
+$$<p>Since $\mathbf{F}_{12} = -\mathbf{F}_{21}$, their sum cancels out. Letting the total external force be $\mathbf{F}_{\text{ext}} = \mathbf{F}^{\text{ext}}_1 + \mathbf{F}^{\text{ext}}_2$, we have:</p>
+$$
+\dot{\mathbf{P}}_{\text{total}} = \mathbf{F}_{\text{ext}}
+$$<p>This important result shows that the rate of change of total momentum ($\dot{\mathbf{P}}_{\text{total}}$) in a two-particle system is determined solely by the net external force.</p>
+<p>In the special case where $\mathbf{F}_{\text{ext}} = 0$, we conclude:</p>
+$$
+\dot{\mathbf{P}}_{\text{total}} = 0 \quad \Rightarrow \quad \mathbf{P}_{\text{total}} = \text{constant} \quad \blacksquare
+$$
+    </div>
+  </section> 
+
+</div>
+  
+
+        
+      </div>
+    </main>
+
+    <footer>
+      <p>&copy; 2025 Siddharth Nair&nbsp;&middot;&nbsp;<a href="../../colophon/">colophon</a></p>
+    </footer>    
+  </div>
+  
+  
+  
+  
+  
+
+  
+
+  <script src="../../js/bundle.5ccf155dfe89f6ee05bc86d24e1f8a813aefedb395e9179d1eb4e54874f696d7.js" integrity="sha256-XM8VXf6J9u4FvIbSTh&#43;KgTrv7bOV6RedHrTlSHT2ltc="></script>
+
+  
+  
+  <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.21/dist/katex.min.js"></script>
+  <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.21/dist/contrib/auto-render.min.js"></script>
+
+  
+  <script defer src="../../js/katexClient.min.daefe2f9099e0c2b3fa8d4b2b77e19e6b7b14c0535beb57602d6fc1ac1d17e7a.js" integrity="sha256-2u/i&#43;QmeDCs/qNSyt34Z5rexTAU1vrV2Atb8GsHRfno="></script>
+  
+
+  
+</body>
+
+</html>

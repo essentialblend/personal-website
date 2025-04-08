@@ -1,4 +1,0 @@
-document.addEventListener("DOMContentLoaded",()=>{const t=document.querySelector("[data-theme-toggle]"),n=["themeLight","themeDark","themeContrast"],s={themeLight:"Light",themeDark:"Dark",themeContrast:"Contrast"},o=e=>{const n=s[e]||"Light";document.documentElement.setAttribute("data-user-theme",e),t&&(t.textContent=n)};let e=localStorage.getItem("theme")||"themeLight";s[e]||(e="themeLight",localStorage.setItem("theme",e)),o(e),t&&(t.onclick=()=>{e=n[(n.indexOf(e)+1)%n.length],localStorage.setItem("theme",e),o(e)})})
-;
-function updateClock(){const e=document.getElementById("site-clock");if(!e)return;const t=new Date,n={weekday:void 0,month:"short",day:"numeric",hour:"2-digit",minute:"2-digit",timeZoneName:"short"},s=t.toLocaleString("en-GB",{...n,timeZone:"Europe/London"}),o=t.toLocaleString("en-GB",n);e.textContent=s.replace(","," ·"),e.title=`Siddharth's local time.
-Your time: ${o.replace(","," ·")}`}updateClock(),setInterval(updateClock,3e4)

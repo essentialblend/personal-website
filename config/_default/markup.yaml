@@ -1,6 +1,17 @@
 goldmark:
   renderer:
-    unsafe: true      
+    unsafe: true
+  extensions:
+    passthrough:
+      enable: true  
+      delimiters:
+        block:
+          - ["\\[", "\\]"]
+          - ["$$", "$$"]
+        inline:
+          - ["\\(", "\\)"]
+          - ["$", "$"]
+          
 
 highlight:
   noClasses: false      
