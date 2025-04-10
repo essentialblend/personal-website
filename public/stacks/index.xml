@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Stacks on Siddharth Nair</title>
+    <link>http://localhost:1313/stacks/</link>
+    <description>Recent content in Stacks on Siddharth Nair</description>
+    <generator>Hugo</generator>
+    <language>en-us</language>
+    <managingEditor>ambiverb@gmail.com (Siddharth Nair)</managingEditor>
+    <webMaster>ambiverb@gmail.com (Siddharth Nair)</webMaster>
+    <lastBuildDate>Tue, 01 Apr 2025 00:00:00 +0000</lastBuildDate>
+    <atom:link href="http://localhost:1313/stacks/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Css</title>
+      <link>http://localhost:1313/stacks/css/</link>
+      <pubDate>Tue, 01 Apr 2025 00:00:00 +0000</pubDate><author>ambiverb@gmail.com (Siddharth Nair)</author>
+      <guid>http://localhost:1313/stacks/css/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Go</title>
+      <link>http://localhost:1313/stacks/go/</link>
+      <pubDate>Tue, 01 Apr 2025 00:00:00 +0000</pubDate><author>ambiverb@gmail.com (Siddharth Nair)</author>
+      <guid>http://localhost:1313/stacks/go/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Html</title>
+      <link>http://localhost:1313/stacks/html/</link>
+      <pubDate>Tue, 01 Apr 2025 00:00:00 +0000</pubDate><author>ambiverb@gmail.com (Siddharth Nair)</author>
+      <guid>http://localhost:1313/stacks/html/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Hugo</title>
+      <link>http://localhost:1313/stacks/hugo/</link>
+      <pubDate>Tue, 01 Apr 2025 00:00:00 +0000</pubDate><author>ambiverb@gmail.com (Siddharth Nair)</author>
+      <guid>http://localhost:1313/stacks/hugo/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Javascript</title>
+      <link>http://localhost:1313/stacks/javascript/</link>
+      <pubDate>Tue, 01 Apr 2025 00:00:00 +0000</pubDate><author>ambiverb@gmail.com (Siddharth Nair)</author>
+      <guid>http://localhost:1313/stacks/javascript/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>C&#43;&#43;</title>
+      <link>http://localhost:1313/stacks/c&#43;&#43;/</link>
+      <pubDate>Mon, 01 Apr 2024 00:00:00 +0000</pubDate><author>ambiverb@gmail.com (Siddharth Nair)</author>
+      <guid>http://localhost:1313/stacks/c&#43;&#43;/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>OpenGL</title>
+      <link>http://localhost:1313/stacks/opengl/</link>
+      <pubDate>Thu, 01 Jun 2023 00:00:00 +0000</pubDate><author>ambiverb@gmail.com (Siddharth Nair)</author>
+      <guid>http://localhost:1313/stacks/opengl/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Agda</title>
+      <link>http://localhost:1313/stacks/agda/</link>
+      <pubDate>Sat, 30 Jul 2022 00:00:00 +0000</pubDate><author>ambiverb@gmail.com (Siddharth Nair)</author>
+      <guid>http://localhost:1313/stacks/agda/</guid>
+      <description></description>
+    </item>
+  </channel>
+</rss>

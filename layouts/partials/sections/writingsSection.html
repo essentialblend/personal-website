@@ -22,7 +22,7 @@
 </nav>
 {{ end }}
 
-<div class="LP_STACK LP_STACK_INTER_NOMARGIN" id="writings-list">
+<div class="LP_STACK LP_STACK_INTER_NOMARGIN LP_STACK_EDGEMARGIN_BASE LP_STACK_EDGEMARGIN_NOTOPEDGE" id="writings-list">
   {{ $paginator := .Paginator }}
   {{ range $paginator.Pages.GroupByDate "2006" }}
   <section aria-labelledby="year-{{ .Key }}">

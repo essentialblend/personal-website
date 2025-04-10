@@ -1,0 +1,77 @@
+{{ $page := . }}
+{{ $isProject := eq $page.Section "projects" }}
+{{ $isWriting := eq $page.Section "writings" }}
+
+{{ $showDate := $page.Date | and (not $page.Date.IsZero) }}
+{{ $showReadingTime := ge $page.ReadingTime 1 }}
+{{ $categories := $page.GetTerms "categories" }}
+{{ $tags := $page.GetTerms "tags" }}
+{{ $subjects := $page.GetTerms "subjects" }}
+{{ $showStatus := .Params.status }}
+{{ $stackParams := .Params.stacks }}
+{{ $repoLink := .Params.repo }}
+{{ $liveLink := .Params.live }}
+
+{{ $hasMeta := false }}
+{{ if $isWriting }}{{ $hasMeta = or $showDate $showReadingTime (gt (len $categories) 0) (gt (len $tags) 0) (gt (len $subjects) 0) }}{{ end }}
+{{ if $isProject }}{{ $hasMeta = or $showStatus (gt (len $stackParams) 0) $repoLink $liveLink $showDate }}{{ end }}
+
+{{ if $hasMeta }}
+<aside class="SF_POSTMETA LP_STACK LP_STACK_INTER_SMALL">
+
+  <div class="LP_CLUSTER LP_CLUSTER_GAP_BASE LP_CLUSTER_ALIGN_BASELINE">
+    
+    {{/* If showing a blogpost page... */}}
+    {{ if $isWriting }}
+      
+      {{ if $showDate }}
+        <p class="SF_POSTMETA_DATE"><span class="SF_POSTMETA_LABEL">Published:</span> <time datetime="{{ $page.Date }}">{{ $page.Date.Format "January 2, 2006" }}</time></p>
+      {{ end }}
+      
+      {{ if $showReadingTime }}
+        <p class="SF_POSTMETA_READTIME"><span class="SF_POSTMETA_LABEL">Reading time:</span> {{ $page.ReadingTime }} min</p>
+      {{ end }}
+      
+      {{ with $categories }}
+        <div class="SF_POSTMETA_CATS"><span class="SF_POSTMETA_LABEL">Filed under:</span> {{ range $index, $term := . }}{{ if gt $index 0 }}, {{ end }}<a href="{{ $term.RelPermalink }}" class="SF_POSTMETA_LINK">{{ $term.LinkTitle }}</a>{{ end }}</div>
+      {{ end }}
+
+      {{/* (Else) If showing a project page... */}}
+      {{ else if $isProject }}
+        {{ with $showStatus }}
+          <div class="SF_POSTMETA_STATUS"><span class="SF_POSTMETA_LABEL">Status:</span> <span class="SF_METADATA_TAG SF_METADATA_TAG--status SF_METADATA_TAG--{{ . | urlize }}">{{ . }}</span></div>
+        {{ end }}
+        {{ if $showDate }}
+          <p class="SF_POSTMETA_DATE"><span class="SF_POSTMETA_LABEL">Date:</span> <time datetime="{{ $page.Date }}">{{ $page.Date.Format "January 2, 2006" }}</time></p>
+        {{ end }}
+        {{ if or $repoLink $liveLink }}
+          <div class="SF_POSTMETA_PROJ_LINKS"><span class="SF_POSTMETA_LABEL">Links:</span> {{ with $repoLink }}<a href="{{ . }}" class="SF_POSTMETA_LINK" target="_blank" rel="noopener noreferrer">Repository</a>{{ end }}{{ if and $repoLink $liveLink }} <span class="SF_POSTMETA_SEPARATOR"> ·</span> {{ end }}{{ with $liveLink }}<a href="{{ . }}" class="SF_POSTMETA_LINK" target="_blank" rel="noopener noreferrer">Live Site</a>{{ end }}</div>
+        {{ end }}
+      {{ end }}
+  </div>
+
+  {{ $termsToShow := slice }}
+  {{ if $isWriting }}
+    {{ $termsToShow = $tags | append $subjects }}
+  {{ else if $isProject }}
+    {{ $termsToShow = $stackParams }}
+  {{ end }}
+
+  {{ if gt (len $termsToShow) 0 }}
+  <div class="{{ if $isProject }}SF_PROJECT_STACK LP_CLUSTER LP_CLUSTER_ALIGN_BASELINE LP_CLUSTER_GAP_SMALL{{ else }}SF_POSTMETA_TAGS{{ end }}">
+    <span class="SF_POSTMETA_LABEL">{{ if $isProject }}Stack{{ else }}Tagged{{ end }}:</span>
+    {{ range $index, $termData := $termsToShow }}
+       {{ if $isWriting }}
+         {{ $term := $termData }}
+         <a href="{{ $term.RelPermalink }}" class="SF_POSTMETA_LINK">{{ $term.LinkTitle }}</a>{{ if ne $index (sub (len $termsToShow) 1) }}<span class="SF_POSTMETA_SEPARATOR">, </span>{{ end }}
+       {{ else }}
+          {{ $termName := $termData }}
+          {{ $assumedUrl := printf "/%s/%s/" "stacks" ($termName | urlize) }}
+          <a href="{{ $assumedUrl | relLangURL }}" class="SF_METADATA_TAG SF_METADATA_TAG--stack">{{ $termName }}</a>
+       {{ end }}
+    {{ end }}
+  </div>
+  {{ end }}
+
+</aside>
+{{ end }}

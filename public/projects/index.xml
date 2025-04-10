@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Projects on Siddharth Nair</title>
+    <link>http://localhost:1313/projects/</link>
+    <description>Recent content in Projects on Siddharth Nair</description>
+    <generator>Hugo</generator>
+    <language>en-us</language>
+    <managingEditor>ambiverb@gmail.com (Siddharth Nair)</managingEditor>
+    <webMaster>ambiverb@gmail.com (Siddharth Nair)</webMaster>
+    <lastBuildDate>Tue, 01 Apr 2025 00:00:00 +0000</lastBuildDate>
+    <atom:link href="http://localhost:1313/projects/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Type-theoretical Proofs for Algebraic Properties of Abelian Rings</title>
+      <link>http://localhost:1313/projects/agda-thesis/</link>
+      <pubDate>Sat, 30 Jul 2022 00:00:00 +0000</pubDate><author>ambiverb@gmail.com (Siddharth Nair)</author>
+      <guid>http://localhost:1313/projects/agda-thesis/</guid>
+      <description>&lt;p&gt;This project explored the practical application of [Algorithm/Theory Name] to solve problems in [Domain Area]. The initial motivation stemmed from observing inefficiencies in existing methods, particularly concerning [Specific Problem]. Our goal was to develop a more efficient and scalable alternative.&lt;/p&gt;&#xA;&lt;p&gt;The development process involved several key stages: initial research, algorithm design, implementation, testing, and refinement. We adopted an agile approach, allowing for flexibility as challenges arose. One significant hurdle was optimizing the core computations for large datasets, which required exploring techniques like [Technique 1] and [Technique 2].&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Personal Website</title>
+      <link>http://localhost:1313/projects/hugo-site/</link>
+      <pubDate>Tue, 01 Apr 2025 00:00:00 +0000</pubDate><author>ambiverb@gmail.com (Siddharth Nair)</author>
+      <guid>http://localhost:1313/projects/hugo-site/</guid>
+      <description>&lt;p&gt;This project explored the practical application of [Algorithm/Theory Name] to solve problems in [Domain Area]. The initial motivation stemmed from observing inefficiencies in existing methods, particularly concerning [Specific Problem]. Our goal was to develop a more efficient and scalable alternative.&lt;/p&gt;&#xA;&lt;p&gt;The development process involved several key stages: initial research, algorithm design, implementation, testing, and refinement. We adopted an agile approach, allowing for flexibility as challenges arose. One significant hurdle was optimizing the core computations for large datasets, which required exploring techniques like [Technique 1] and [Technique 2].&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Shirley Tracer</title>
+      <link>http://localhost:1313/projects/shirley-tracer/</link>
+      <pubDate>Mon, 01 Apr 2024 00:00:00 +0000</pubDate><author>ambiverb@gmail.com (Siddharth Nair)</author>
+      <guid>http://localhost:1313/projects/shirley-tracer/</guid>
+      <description>&lt;p&gt;This project explored the practical application of [Algorithm/Theory Name] to solve problems in [Domain Area]. The initial motivation stemmed from observing inefficiencies in existing methods, particularly concerning [Specific Problem]. Our goal was to develop a more efficient and scalable alternative.&lt;/p&gt;&#xA;&lt;p&gt;The development process involved several key stages: initial research, algorithm design, implementation, testing, and refinement. We adopted an agile approach, allowing for flexibility as challenges arose. One significant hurdle was optimizing the core computations for large datasets, which required exploring techniques like [Technique 1] and [Technique 2].&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>C&#43;&#43;23: From Beginning to Pro</title>
+      <link>http://localhost:1313/projects/cpp-hortonweert/</link>
+      <pubDate>Tue, 30 Jan 2024 00:00:00 +0000</pubDate><author>ambiverb@gmail.com (Siddharth Nair)</author>
+      <guid>http://localhost:1313/projects/cpp-hortonweert/</guid>
+      <description>&lt;p&gt;This project explored the practical application of [Algorithm/Theory Name] to solve problems in [Domain Area]. The initial motivation stemmed from observing inefficiencies in existing methods, particularly concerning [Specific Problem]. Our goal was to develop a more efficient and scalable alternative.&lt;/p&gt;&#xA;&lt;p&gt;The development process involved several key stages: initial research, algorithm design, implementation, testing, and refinement. We adopted an agile approach, allowing for flexibility as challenges arose. One significant hurdle was optimizing the core computations for large datasets, which required exploring techniques like [Technique 1] and [Technique 2].&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>OpenGL Graphics Programming Project</title>
+      <link>http://localhost:1313/projects/opengl-project/</link>
+      <pubDate>Thu, 01 Jun 2023 00:00:00 +0000</pubDate><author>ambiverb@gmail.com (Siddharth Nair)</author>
+      <guid>http://localhost:1313/projects/opengl-project/</guid>
+      <description>&lt;p&gt;This project explored the practical application of [Algorithm/Theory Name] to solve problems in [Domain Area]. The initial motivation stemmed from observing inefficiencies in existing methods, particularly concerning [Specific Problem]. Our goal was to develop a more efficient and scalable alternative.&lt;/p&gt;&#xA;&lt;p&gt;The development process involved several key stages: initial research, algorithm design, implementation, testing, and refinement. We adopted an agile approach, allowing for flexibility as challenges arose. One significant hurdle was optimizing the core computations for large datasets, which required exploring techniques like [Technique 1] and [Technique 2].&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

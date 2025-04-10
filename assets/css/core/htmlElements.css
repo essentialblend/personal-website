@@ -259,7 +259,8 @@ nav a:hover, nav a:focus
 }
 
 /* Pagination Base */
-nav[aria-label="Pagination"] {
+nav[aria-label="Pagination"] 
+{
   font-size: 0.875rem;
   font-family: var(--fontMono, monospace);
 }
@@ -273,43 +274,9 @@ nav[aria-label="Pagination"] a
   border-radius: 0.2em;
 }
 
-/* On Hover */
 nav[aria-label="Pagination"] a:hover 
 {
   background-color: var(--borderColor);
   color: var(--textColor);
 }
 
-/* Active Page */
-nav[aria-label="Pagination"] .active 
-{
-  font-weight: bold;
-  border: 1px solid var(--borderColor);
-  background-color: var(--borderColor);
-  color: var(--textColor);
-}
-
-/* Heading for the taxonomy list */
-section:has(h2:contains("Browse by Subject")) h2 {
-  font-size: var(--mediumSizeREM); 
-  margin-bottom: var(--baseSizeREM); 
-}
-
-/* Style individual taxonomy term links */
-.taxonomy-term-link {
-  font-family: var(--fontCode);
-  font-size: var(--smallSizeREM);
-  text-decoration: none;
-  color: var(--mutedTextColor);
-  border: 1px solid var(--borderColor);
-  padding: var(--smallestSizeREM) var(--smallSizeREM); 
-  border-radius: 3px; 
-  white-space: nowrap; 
-}
-
-.taxonomy-term-link:hover, .taxonomy-term-link:focus 
-{
-  color: var(--textColor); 
-  border-color: var(--accentColor); 
-  background-color: var(--BGColor); 
-}

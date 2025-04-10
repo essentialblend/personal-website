@@ -1,0 +1,92 @@
+.SF_TAXONOMYFILTER
+{
+  padding-block: var(--smallestSizeREM);
+}
+
+.SF_TAXONOMYFILTER_LABEL
+{
+  font-family: var(--fontCode);
+  font-size: var(--smallSizeREM);
+  color: var(--mutedTextColor);
+  text-transform: uppercase;
+}
+
+.SF_TAXONOMYFILTER_BUTTON, .SF_TAXONOMYFILTER_MORE
+{
+  font-family: var(--fontCode);
+  font-size: var(--smallSizeREM);
+  color: var(--mutedTextColor);
+  background-color: transparent;
+  border: 1px solid var(--borderColor);
+  padding: calc(var(--smallestSizeREM) - 2px) calc(var(--smallSizeREM) - 2px);
+  border-radius: 3px;
+  cursor: pointer;
+  white-space: nowrap;
+  display: inline-block;
+}
+
+.SF_TAXONOMYFILTER_BUTTON:hover, .SF_TAXONOMYFILTER_MORE:hover
+{
+  border-color: var(--accentColor);
+  color: var(--textColor);
+  background-color: color-mix(in srgb, var(--BGColor) 80%, var(--borderColor));
+}
+
+.SF_TAXONOMYFILTER_BUTTON.active
+{
+  border-color: var(--accentHoverColor);
+  background-color: var(--accentHoverColor);
+  color: var(--BGColor);
+
+}
+
+.SF_TAXONOMYFILTER_MORE
+{
+  border-style: dashed;
+  text-decoration: none;
+}
+
+.SF_TAXONOMYFILTER_MORE:hover
+{
+   border-style: solid;
+}
+
+.SF_TAXONOMYFILTER_CLEAR
+{
+  font-family: var(--fontCode);
+  font-size: var(--mediumSizeREM);
+  color: var(--mutedTextColor);
+  background-color: transparent;
+  border: none;
+  padding: 0;
+  margin-left: var(--smallSizeREM);
+  border-radius: 3px;
+  cursor: pointer;
+  line-height: 1;
+  opacity: 0.35;
+  cursor: default;
+  pointer-events: none;
+}
+
+.SF_TAXONOMYFILTER_CLEAR.enabled
+{
+  opacity: 1;
+  cursor: pointer;
+  pointer-events: auto;
+}
+
+.SF_TAXONOMYFILTER_CLEAR.enabled:hover
+{
+  color: var(--accentColor);
+}
+
+
+.SF_TAXONOMYFILTER_BUTTON--HIDDEN
+{
+  display: none;
+}
+
+.SF_TAXONOMYFILTER_BUTTONS.show-all-filters .SF_TAXONOMYFILTER_BUTTON--HIDDEN
+{
+  display: inline-block;
+}

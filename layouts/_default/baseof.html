@@ -8,16 +8,40 @@
   <meta name="description" content="{{ with .Description }}{{ . }}{{ else }}Personal site of {{ .Site.Params.author.name }}{{ end }}">
   <meta name="author" content="{{ .Site.Params.author.name }}">
 
-  {{ $htmlEl := resources.Get "css/core/htmlElements.css" }}
-  {{ $prims  := resources.Get "css/core/layoutPrimitives.css" }}
-  {{ $features := resources.Get "css/core/siteFeatures.css" }}
-  {{ $merged := slice $htmlEl $prims $features | resources.Concat "css/baseof.css" | resources.Minify | resources.Fingerprint }}
+  <!-- combining css -->
+  {{ $htmlElemCSSChunk := resources.Get "css/core/htmlElements.css" }}
+  {{ $layoutPrimitivesCSSChunk  := resources.Get "css/core/layoutPrimitives.css" }}
+  {{ $siteFeaturesCSSChunk := resources.Get "css/core/siteFeatures.css" }}
+  
+  {{ $postContentCSSChunk := resources.Get "css/site-features/sfMDPostContent.css" }}
+  {{ $projectTitleCSSChunk := resources.Get "css/site-features/sfProjectCard.css" }}
+  {{ $writingsTitleCSSChunk := resources.Get "css/site-features/sfWritingsCard.css" }}
+  {{ $taxonomyFilterCSSChunk := resources.Get "css/site-features/sfTaxonomyFilter.css" }}
+  {{ $metadataCardCSSChunk := resources.Get "css/site-features/sfMetadataCard.css" }}
+  {{ $projectSectionCSSChunk := resources.Get "css/site-features/sfProjectSection.css" }}
+
+  {{ $cssSlice := slice $htmlElemCSSChunk $layoutPrimitivesCSSChunk $siteFeaturesCSSChunk $postContentCSSChunk $projectTitleCSSChunk $taxonomyFilterCSSChunk $writingsTitleCSSChunk $metadataCardCSSChunk $projectSectionCSSChunk }}
+  
+  {{ $merged := $cssSlice | resources.Concat "css/baseof.css" | resources.Minify | resources.Fingerprint }}
+  <link rel="stylesheet" href="{{ $merged.RelPermalink }}">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@400;700&family=Arbutus+Slab&display=swap">
   <link rel="stylesheet" href="{{ $merged.RelPermalink }}">
 
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.21/dist/katex.min.css">
 
+  {{ $syntaxLight := "" }}{{ with resources.Get "css/code-syntax/syntaxGitLight.css" }}{{ $syntaxLight = . | resources.Minify | resources.Fingerprint }}{{ end }}
+  {{ $syntaxDark := "" }}{{ with resources.Get "css/code-syntax/syntaxGitDark.css" }}{{ $syntaxDark = . | resources.Minify | resources.Fingerprint }}{{ end }}
+  {{ $syntaxContrast := "" }}{{ with resources.Get "css/code-syntax/syntaxMonokai.css" }}{{ $syntaxContrast = . | resources.Minify | resources.Fingerprint }}{{ end }}
+
+  {{ if $syntaxLight }}<meta name="syntax-theme-light" content="{{ $syntaxLight.RelPermalink }}">{{ end }}
+  {{ if $syntaxDark }}<meta name="syntax-theme-dark" content="{{ $syntaxDark.RelPermalink }}">{{ end }}
+  {{ if $syntaxContrast }}<meta name="syntax-theme-contrast" content="{{ $syntaxContrast.RelPermalink }}">{{ end }}
+
+  {{ $defaultSyntax := $syntaxLight | default $syntaxDark | default $syntaxContrast }}
+  {{ if $defaultSyntax }}
+    <link id="syntax-stylesheet" rel="stylesheet" href="{{ $defaultSyntax.RelPermalink }}">
+  {{ end }}
   
 </head>
 
@@ -25,7 +49,6 @@
   <div class="LP_STACK LP_STACK_EDGEMARGIN_BIG LP_STACK_EDGEMARGIN_NOBOTTOMEDGE LP_STACK_INTER_BIGGER LP_CENTER">
 
     <header class="LP_LEFT_SEPARATOR" style="border-bottom: 2px solid var(--borderColor); display: flex; justify-content: space-between; padding-bottom: var(--smallestSizeREM);">
-
       <span id="site-clock" class="SF_SITECLOCK" data-feature="siteClock"></span>
   
       <div class="LP_CLUSTER LP_CLUSTER_ALIGN_CENTER LP_CLUSTER_GAP_BIG" style="justify-content: flex-end;">
@@ -43,7 +66,6 @@
     
     <main>
       <div class="LP_STACK LP_STACK_EDGEMARGIN_NOMARGIN LP_STACK_INTER_BIGGER">
-
         {{ if .IsHome }}
           {{ block "homeContent" . }}{{ end }}
         {{ else if .IsSection }}
@@ -62,11 +84,12 @@
   </div>
   
   <!-- Site JS -->
-  {{ $themeJS := resources.Get "js/themeButton.js" | resources.Minify }}
-  {{ $clockJS := resources.Get "js/siteClock.js" | resources.Minify }}
-  {{ $subjectFilterJS := resources.Get "js/subjectFilter.js" | resources.Minify }}
+  {{ $themeJS := resources.Get "js/site-features/themeButton.js" | resources.Minify }}
+  {{ $clockJS := resources.Get "js/site-features/siteClock.js" | resources.Minify }}
+  {{ $subjectFilterJS := resources.Get "js/site-features/subjectFilter.js" | resources.Minify }}
+  {{ $codeCopyButtonJS := resources.Get "js/code-interface/codeCopyButton.js" | resources.Minify }}
 
-  {{ $scripts := slice $themeJS $clockJS $subjectFilterJS | resources.Concat "js/bundle.js" | resources.Fingerprint }}
+  {{ $scripts := slice $themeJS $clockJS $subjectFilterJS $codeCopyButtonJS | resources.Concat "js/bundle.js" | resources.Fingerprint }}
 
   <script src="{{ $scripts.RelPermalink }}" integrity="{{ $scripts.Data.Integrity }}"></script>
 
@@ -75,11 +98,9 @@
   <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.21/dist/katex.min.js"></script>
   <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.21/dist/contrib/auto-render.min.js"></script>
 
-  {{ $katexInit := resources.Get "js/katexClient.js" | resources.Minify | resources.Fingerprint }}
+  {{ $katexInit := resources.Get "js/site-features/katexClient.js" | resources.Minify | resources.Fingerprint }}
   <script defer src="{{ $katexInit.RelPermalink }}" integrity="{{ $katexInit.Data.Integrity }}"></script>
   {{ end }}
-
-  
 </body>
 
 </html>

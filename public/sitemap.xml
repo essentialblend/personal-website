@@ -2,6 +2,21 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
+    <loc>http://localhost:1313/projects/agda-thesis/</loc>
+    <lastmod>2022-07-30T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/projects/hugo-site/</loc>
+    <lastmod>2025-04-01T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/projects/shirley-tracer/</loc>
+    <lastmod>2024-04-01T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/projects/cpp-hortonweert/</loc>
+    <lastmod>2024-01-30T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/projects/opengl-project/</loc>
+    <lastmod>2023-06-01T00:00:00+00:00</lastmod>
+  </url><url>
     <loc>http://localhost:1313/colophon/</loc>
     <lastmod>2025-04-07T00:00:00+00:00</lastmod>
   </url><url>
@@ -47,6 +62,27 @@
     <loc>http://localhost:1313/tags/spherical/</loc>
     <lastmod>2025-04-02T00:00:00+00:00</lastmod>
   </url><url>
+    <loc>http://localhost:1313/stacks/css/</loc>
+    <lastmod>2025-04-01T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/stacks/go/</loc>
+    <lastmod>2025-04-01T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/stacks/html/</loc>
+    <lastmod>2025-04-01T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/stacks/hugo/</loc>
+    <lastmod>2025-04-01T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/stacks/javascript/</loc>
+    <lastmod>2025-04-01T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/projects/</loc>
+    <lastmod>2025-04-01T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/stacks/</loc>
+    <lastmod>2025-04-01T00:00:00+00:00</lastmod>
+  </url><url>
     <loc>http://localhost:1313/tags/cylindrical/</loc>
     <lastmod>2025-03-06T00:00:00+00:00</lastmod>
   </url><url>
@@ -65,8 +101,17 @@
     <loc>http://localhost:1313/writings/newton-cart/</loc>
     <lastmod>2024-04-04T00:00:00+00:00</lastmod>
   </url><url>
+    <loc>http://localhost:1313/stacks/c&#43;&#43;/</loc>
+    <lastmod>2024-04-01T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/stacks/opengl/</loc>
+    <lastmod>2023-06-01T00:00:00+00:00</lastmod>
+  </url><url>
     <loc>http://localhost:1313/writings/newton-cyl/</loc>
     <lastmod>2023-04-01T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/stacks/agda/</loc>
+    <lastmod>2022-07-30T00:00:00+00:00</lastmod>
   </url><url>
     <loc>http://localhost:1313/stream/</loc>
   </url>

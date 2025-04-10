@@ -1,0 +1,176 @@
+a.SF_PROJECT_LINK_WRAPPER::before {
+  content: '';
+  position: absolute;
+  top: 0; right: 0; bottom: 0; left: 0;
+  z-index: 0;
+}
+
+a.SF_PROJECT_LINK_WRAPPER h3 
+{
+  font-family: var(--fontHeading);
+  font-size: var(--mediumSizeREM);
+  font-weight: 700;
+  margin-bottom: 0;
+  color: var(--textColor);
+  display: inline-block;
+  position: relative;
+  z-index: 1;
+}
+
+a.SF_PROJECT_LINK_WRAPPER h3::after 
+{
+  content: '→';
+  display: inline-block;
+  color: var(--accentColor);
+  font-weight: 700;
+  margin-left: 0.6em;
+  opacity: 0;
+  transform: translateX(-8px);
+  transition: opacity 0.15s ease-out, transform 0.15s ease-out, color 0.15s ease-out, text-shadow 0.15s ease-out;
+  position: relative;
+  z-index: 1;
+}
+
+.SF_PROJECT:hover a.SF_PROJECT_LINK_WRAPPER p,
+.SF_PROJECT:focus-within a.SF_PROJECT_LINK_WRAPPER p 
+{
+   color: white;
+   text-shadow: 0 1px 3px rgba(0,0,0,0.8);
+}
+
+.SF_PROJECT:hover a.SF_PROJECT_LINK_WRAPPER h3, .SF_PROJECT:focus-within a.SF_PROJECT_LINK_WRAPPER h3 
+{
+  color: white;
+  text-shadow: 0 1px 3px rgba(0,0,0,0.8);
+}
+
+.SF_PROJECT:hover a.SF_PROJECT_LINK_WRAPPER h3::after, .SF_PROJECT:focus-within a.SF_PROJECT_LINK_WRAPPER h3::after 
+{
+  opacity: 1;
+  transform: translateX(0);
+  color: white;
+  text-shadow: 0 1px 3px rgba(0,0,0,0.8);
+}
+
+a.SF_PROJECT_LINK_WRAPPER p 
+{
+  font-family: var(--fontBody);
+  font-size: var(--baseSizeREM);
+  font-style: italic;
+  color: var(--mutedTextColor);
+  line-height: inherit;
+  margin: 0;
+  margin-bottom: var(--smallerSizeREM);
+  position: relative;
+  z-index: 1;
+  transition: color 0.15s ease-out, text-shadow 0.15s ease-out;
+}
+
+a.SF_PROJECT_LINK_WRAPPER .SF_PROJECT_META 
+{
+   position: relative;
+   z-index: 1;
+   margin-top: 0;
+}
+
+.SF_METADATA_TAG 
+{
+  display: inline-block;
+  font-family: var(--fontCode);
+  font-size: var(--smallSizeREM);
+  color: var(--mutedTextColor);
+  background-color: transparent;
+  border: 1px solid var(--borderColor);
+  padding: 0.15em 0.6em;
+  border-radius: 3px;
+  cursor: default;
+  white-space: nowrap;
+  text-decoration: none;
+  transition: background-color 0.15s ease-out, border-color 0.15s ease-out, color 0.15s ease-out, text-shadow 0.15s ease-out, opacity 0.15s ease-out;
+  position: relative;
+  z-index: 1;
+}
+
+.SF_METADATA_TAG--stack, .SF_METADATA_TAG--link 
+{
+  cursor: pointer;
+}
+
+.SF_PROJECT:hover .SF_METADATA_TAG:not(:hover), .SF_PROJECT:focus-within .SF_METADATA_TAG:not(:focus) 
+{
+    color: rgba(255, 255, 255, 0.9);
+    border-color: rgba(255, 255, 255, 0.6);
+    background-color: transparent;
+    text-shadow: 0 1px 2px rgba(0,0,0,0.7);
+}
+
+.SF_PROJECT:hover .SF_METADATA_TAG:hover, .SF_PROJECT:focus-within .SF_METADATA_TAG:focus 
+{
+    border-color: rgba(255,255,255,0.8);
+    color: black !important;
+    background-color: rgba(255, 255, 255, 0.85);
+    text-shadow: none;
+}
+
+.SF_METADATA_TAG--status 
+{
+  text-transform: uppercase;
+  font-weight: 700;
+  border-color: var(--borderColor);
+  color: var(--mutedTextColor);
+  cursor: default;
+}
+
+.SF_METADATA_TAG--active 
+{ 
+  color: var(--statusIconColor); border-color: var(--statusIconColor); background-color: transparent; 
+}
+
+.SF_METADATA_TAG--archived 
+{ 
+  color: var(--mutedTextColor); opacity: 0.7; border-color: var(--borderColor); 
+}
+
+.SF_METADATA_TAG--ongoing 
+{ 
+  color: var(--accentColor); border-color: var(--accentColor); background-color: transparent;
+}
+
+.SF_PROJECT:hover .SF_METADATA_TAG--status:not(:hover) 
+{ 
+  text-shadow: 0 1px 2px rgba(0,0,0,0.7); border-color: rgba(255, 255, 255, 0.6); 
+}
+
+.SF_PROJECT:hover .SF_METADATA_TAG--active:not(:hover) 
+{ 
+  color: #a5d6a7; border-color: #a5d6a7; 
+}
+
+.SF_PROJECT:hover .SF_METADATA_TAG--ongoing:not(:hover) 
+{
+   color: #ffcc80; border-color: #ffcc80; 
+}
+
+.SF_PROJECT:hover .SF_METADATA_TAG--archived:not(:hover) 
+{ 
+  color: rgba(255, 255, 255, 0.7); opacity: 0.8; border-color: rgba(255, 255, 255, 0.4); 
+}
+
+.SF_METADATA_TAG--link::after 
+{
+  content: ' \2197';
+  opacity: 0.6;
+  transition: opacity 0.15s ease-out, color 0.15s ease-out, text-shadow 0.15s ease-out;
+  margin-left: 0.3em;
+  line-height: 1;
+}
+
+.SF_PROJECT:hover .SF_METADATA_TAG--link:not(:hover)::after 
+{ 
+  color: rgba(255, 255, 255, 0.9); opacity: 0.8; text-shadow: 0 1px 2px rgba(0,0,0,0.7); 
+}
+
+.SF_PROJECT:hover .SF_METADATA_TAG--link:hover::after 
+{ 
+  color: black !important; opacity: 1.0; text-shadow: none;
+}

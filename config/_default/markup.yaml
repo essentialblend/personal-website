@@ -14,8 +14,7 @@ goldmark:
           
 
 highlight:
-  noClasses: false      
-  style: monokai        
+  noClasses: false         
   lineNos: true
-  lineNumbersInTable: true
+  lineNumbersInTable: false
   tabWidth: 2

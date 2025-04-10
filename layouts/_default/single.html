@@ -1,5 +1,15 @@
 {{ define "pageContent" }}
+  <section class="LP_LEFT_SEPARATOR">
+    <div class="LP_STACK LP_STACK_INTER_BASE">
+      <h1>{{ .Title }}</h1>
+
+      {{ if not .IsHome | and (ne .Type "colophon") }}
+          {{ partial "components/metadata.html" . }}
+      {{ end }}
+    </div>
+  </section>
   {{ if eq .Section "writings" }} {{ partial "pages/writingsPage.html" . }}
+  {{ else if eq .Section "projects" }} {{ partial "pages/projectsPage.html" . }}
   {{ else if eq .Type "colophon" }} {{ partial "pages/colophonPage.html" . }}
   {{ end }}
 {{ end }}
