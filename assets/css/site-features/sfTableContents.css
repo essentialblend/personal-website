@@ -1,0 +1,134 @@
+.SF_TOC_CONTAINER 
+{
+  position: sticky; 
+  top: 0;
+  z-index: 50; 
+  border-top: 1px solid var(--borderColor);
+  border-right: 1px solid var(--borderColor);
+  border-bottom: 1px solid var(--borderColor);
+  margin-bottom: var(--biggerSizeREM); 
+  background-color: color-mix(in srgb, var(--BGColor) 85%, var(--borderColor) 15%);
+}
+
+.SF_TOC_STRIP 
+{
+  padding: var(--smallSizeREM) var(--baseSizeREM) var(--smallSizeREM) 0;
+  cursor: pointer;
+  display: flex; 
+  justify-content: space-between; 
+  align-items: center;
+  user-select: none; 
+}
+
+.SF_TOC_CURRENT_SECTION 
+{
+  font-family: var(--fontCode);
+  font-size: var(--smallSizeREM);
+  color: var(--mutedTextColor);
+  transition: color 0.2s ease-in-out; 
+}
+
+.SF_TOC_STRIP:hover .SF_TOC_CURRENT_SECTION, .SF_TOC_STRIP:focus .SF_TOC_CURRENT_SECTION 
+{
+  color: var(--accentColor); 
+  outline: none;
+}
+
+.SF_TOC 
+{
+  display: none; 
+  position: absolute;
+  top: 100%; 
+  left: 0;  
+  right: 0; 
+  background-color: color-mix(in srgb, var(--BGColor) 85%, var(--borderColor) 15%);
+  border: 1px solid var(--borderColor);
+  border-top: none; 
+  padding: var(--baseSizeREM);
+  z-index: 10; 
+  max-height: 60vh; 
+  overflow-y: auto;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); 
+}
+
+.SF_TOC_CONTAINER.is-expanded .SF_TOC 
+{
+  display: block;
+}
+
+.SF_TOC ul 
+{
+  list-style: none;
+  padding-left: 0; 
+  margin-left: 0;
+}
+
+.SF_TOC li 
+{
+  display: block; 
+  padding-left: 0; 
+  margin-bottom: var(--smallestSizeREM); 
+  line-height: 1.4;
+}
+
+.SF_TOC > ul > li::before, .SF_TOC > ul > li > ul > li::before 
+{
+ content: "■"; 
+ font-size: 0.6em;
+ color: var(--accentColor);
+ display: inline-block; 
+ width: 1.2em;          
+ margin-right: 0.3em;   
+ text-align: center; 
+ vertical-align: middle; 
+}
+
+.SF_TOC > ul > li > ul > li > ul li::before 
+{
+ content: none;
+ display: none;
+}
+
+.SF_TOC ul ul 
+{
+  margin-left: 0; 
+  margin-top: var(--smallestSizeREM); 
+  padding-left: var(--smallSizeREM); 
+}
+
+.SF_TOC > ul > li > ul > li > ul li 
+{
+   padding-left: 0.75em; 
+}
+
+.SF_TOC a 
+{
+  font-family: var(--fontCode);
+  font-size: var(--smallSizeREM);
+  color: var(--mutedTextColor); 
+  text-decoration: none;
+  font-weight: 400;
+  display: inline; 
+  vertical-align: middle; 
+}
+
+.SF_TOC > ul > li > a 
+{
+   color: var(--textColor); 
+   font-weight: 600; 
+}
+
+.SF_TOC a:hover, .SF_TOC a:focus 
+{
+  color: var(--accentColor);
+  text-decoration: underline;
+  text-decoration-thickness: 1px;
+  text-underline-offset: 2px; 
+  text-decoration-color: var(--borderColor);
+}
+
+.SF_TOC a.toc-active 
+{ 
+  color: var(--accentColor);
+  font-weight: 700;
+}

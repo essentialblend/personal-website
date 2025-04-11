@@ -17,5 +17,12 @@
       <guid>http://localhost:1313/categories/derivations/</guid>
       <description></description>
     </item>
+    <item>
+      <title>Academic Textbook</title>
+      <link>http://localhost:1313/categories/academic-textbook/</link>
+      <pubDate>Mon, 17 Mar 2025 00:00:00 +0000</pubDate><author>ambiverb@gmail.com (Siddharth Nair)</author>
+      <guid>http://localhost:1313/categories/academic-textbook/</guid>
+      <description></description>
+    </item>
   </channel>
 </rss>

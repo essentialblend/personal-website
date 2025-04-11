@@ -1,0 +1,72 @@
+{{/* layouts/partials/sections/notesSection.html */}}
+
+{{ $subjects := $.Site.Taxonomies.subjects.Alphabetical }}
+{{ if gt (len $subjects) 0 }}
+<div class="LP_LEFT_SEPARATOR LP_STACK_EDGEMARGIN_BOTTOMONLY_BIG" data-target-list="notes-list" data-item-selector=".SF_PROJECT">
+  <nav aria-label="Filter notes by subject" class="SF_TAXONOMYFILTER">
+    <div class="LP_CLUSTER LP_CLUSTER_ALIGN_CENTER LP_CLUSTER_GAP_SMALLER SF_TAXONOMYFILTER_CONTROLS">
+        <p class="SF_TAXONOMYFILTER_LABEL">Subjects:</p>
+        <div class="LP_CLUSTER LP_CLUSTER_ALIGN_CENTER LP_CLUSTER_GAP_SMALLER SF_TAXONOMYFILTER_BUTTONS">
+            {{ $initialVisibleCount := 3 }}
+            {{ range $index, $term := $subjects }}
+              <button type="button" class="SF_TAXONOMYFILTER_BUTTON {{ if ge $index $initialVisibleCount }}SF_TAXONOMYFILTER_BUTTON--HIDDEN{{ end }}" data-subject="{{ $term.Name | lower }}">
+                  {{ $term.Name | title }}
+              </button>
+            {{ end }}
+        </div>
+        <div class="LP_CLUSTER LP_CLUSTER_ALIGN_CENTER LP_CLUSTER_GAP_SMALLER">
+          {{ if gt (len $subjects) $initialVisibleCount }}
+            <button type="button" class="SF_TAXONOMYFILTER_MORE">More...</button>
+          {{ end }}
+          <button type="button" class="SF_TAXONOMYFILTER_CLEAR" title="Clear selected filters">×</button>
+        </div>
+    </div>
+  </nav>
+</div>
+{{ end }}
+
+<div class="LP_LEFT_SEPARATOR">
+  <div class="LP_STACK LP_STACK_INTER_BIG" id="notes-list">
+    {{ range .Pages.ByWeight }}
+    <article class="SF_PROJECT" data-subjects="{{ delimit .Params.subjects "," | lower }}">
+        <a href="{{ .RelPermalink }}" class="SF_PROJECT_LINK_WRAPPER">
+
+          <h3>{{ .Title }}</h3>
+
+          {{ with .Params.description }}
+            <p>{{ . | markdownify }}</p>
+          {{ else }}
+            {{ with .Summary }} <p>{{ . }}</p> {{ end }}
+          {{ end }}
+
+          {{ $hasMeta := or .Params.status .Date }}
+          {{ if $hasMeta }}
+            <div class="SF_PROJECT_META LP_CLUSTER LP_CLUSTER_ALIGN_CENTER LP_CLUSTER_GAP_SMALL">
+
+              {{ with .Params.status }}
+                {{ $statusLower := . | lower }}
+                {{ $statusClass := printf "SF_METADATA_TAG--%s" ($statusLower | urlize) }}
+                {{ if eq $statusLower "studying" }}
+                  {{ $statusClass = "SF_METADATA_TAG--ongoing" }}
+                {{ else if eq $statusLower "completed" }}
+                  {{ $statusClass = "SF_METADATA_TAG--active" }}
+                {{ else if eq $statusLower "onhold" }}
+                   {{ $statusClass = "SF_METADATA_TAG--archived" }}
+                {{ end }}
+                <span class="SF_METADATA_TAG SF_METADATA_TAG--status {{ $statusClass }}">{{ . }}</span>
+              {{ end }}
+
+              {{ with .Date }}
+                <span class="SF_METADATA_TAG">{{ .Format "Jan 2, 2006" }}</span>
+              {{ end }}
+
+            </div>
+          {{ end }}
+
+        </a>
+      </article>
+    {{ else }}
+      <p>No notes listed yet.</p>
+    {{ end }}
+  </div>
+</div>

@@ -15,7 +15,6 @@ document.addEventListener("DOMContentLoaded", () =>
     // Convert common names to desired display, e.g., CPP -> C++
     let displayLanguage = language.toLowerCase();
     if (displayLanguage === 'CPP') displayLanguage = 'C++';
-    // Add more language mappings here if needed
     langSpan.textContent = displayLanguage;
 
 
@@ -28,10 +27,8 @@ document.addEventListener("DOMContentLoaded", () =>
     button.addEventListener("click", () => {
       const lines = Array.from(codeElement.querySelectorAll('.line'));
       const text = lines.map(line => {
-        // Handle lines potentially wrapped by Chroma in spans without .cl directly under .line
         const lineContentSpan = line.querySelector('.cl') || line.querySelector('span:not(.ln)');
         return lineContentSpan ? lineContentSpan.textContent.trimEnd() : line.textContent.trimEnd();
-        // Fallback to line.textContent if specific span not found
       }).join('\n');
 
 
@@ -48,7 +45,6 @@ document.addEventListener("DOMContentLoaded", () =>
           button.blur();
         }, 1500);
       }).catch(err => {
-         // Optional: Add error handling feedback
          button.textContent = "Error";
          setTimeout(() => {
             button.textContent = "COPY";

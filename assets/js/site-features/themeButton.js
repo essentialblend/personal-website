@@ -10,9 +10,9 @@ function updateSyntaxTheme(themeName)
   {
     themeSuffix = 'dark';
   } 
-  else if (themeName === 'themeContrast') 
+  else if (themeName === 'themeHigh') 
   {
-    themeSuffix = 'contrast';
+    themeSuffix = 'high';
   }
   
   const metaTagName = `syntax-theme-${themeSuffix}`;
@@ -35,7 +35,7 @@ function initTheme()
 {
   const html = document.documentElement;
   const themeToggleButton = document.querySelector('[data-theme-toggle]');
-  const themes = ['themeLight', 'themeDark', 'themeContrast'];
+  const themes = ['themeLight', 'themeDark', 'themeHigh'];
   let currentThemeIndex = 0;
 
   function applyTheme(theme) 

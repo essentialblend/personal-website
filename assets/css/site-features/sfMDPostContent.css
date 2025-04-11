@@ -1,40 +1,46 @@
-.SF_POSTCONTENT > * {
+.SF_POSTCONTENT > * 
+{
   margin-block-start: 0;
   margin-block-end: 0;
 }
 
-.SF_POSTCONTENT > * + * {
+.SF_POSTCONTENT > * + * 
+{
   margin-block-start: var(--biggerSizeREM);
 }
 
-/* Apply margin directly to KaTeX display blocks */
-.SF_POSTCONTENT .katex-display {
-  display: block; /* Keep this */
+.SF_POSTCONTENT .katex-display 
+{
+  display: block;
   margin-block-start: var(--biggerSizeREM);
   margin-block-end: var(--baseSizeREM);
 }
 
-/* Reset default paragraph margins if KaTeX is inside one */
-.SF_POSTCONTENT p > .katex-display {
+.SF_POSTCONTENT p > .katex-display 
+{
     margin-block-start: 0;
     margin-block-end: 0;
 }
-.SF_POSTCONTENT p:has(> .katex-display) {
+.SF_POSTCONTENT p:has(> .katex-display) 
+{
     margin-block: 0; 
 }
 
 .SF_POSTCONTENT h1,
 .SF_POSTCONTENT h2,
 .SF_POSTCONTENT h3,
-.SF_POSTCONTENT h4 {
+.SF_POSTCONTENT h4 
+{
   margin-block-start: var(--bigSizeREM);
   margin-block-end: var(--smallSizeREM);
+  scroll-margin-top: var(--biggestSizeREM);
 }
 
 .SF_POSTCONTENT h1 + *,
 .SF_POSTCONTENT h2 + *,
 .SF_POSTCONTENT h3 + *,
-.SF_POSTCONTENT h4 + * {
+.SF_POSTCONTENT h4 + * 
+{
   margin-block-start: var(--smallSizeREM);
 }
 
@@ -57,11 +63,13 @@
 .SF_POSTCONTENT blockquote + h1,
 .SF_POSTCONTENT blockquote + h2,
 .SF_POSTCONTENT blockquote + h3,
-.SF_POSTCONTENT blockquote + h4 {
+.SF_POSTCONTENT blockquote + h4 
+{
   margin-block-start: var(--bigSizeREM);
 }
 
-.SF_POSTCONTENT pre {
+.SF_POSTCONTENT pre 
+{
  margin-block-start: var(--bigSizeREM);
  margin-block-end: var(--baseSizeREM);
 }
@@ -69,19 +77,22 @@
 .SF_POSTCONTENT h1 + pre,
 .SF_POSTCONTENT h2 + pre,
 .SF_POSTCONTENT h3 + pre,
-.SF_POSTCONTENT h4 + pre {
+.SF_POSTCONTENT h4 + pre 
+{
  margin-block-start: var(--baseSizeREM);
 }
 
 .SF_POSTCONTENT ul,
 .SF_POSTCONTENT ol,
-.SF_POSTCONTENT blockquote {
+.SF_POSTCONTENT blockquote 
+{
  margin-block-start: var(--baseSizeREM);
  margin-block-end: var(--baseSizeREM);
 }
 
 .SF_POSTCONTENT p + ul,
 .SF_POSTCONTENT p + ol,
-.SF_POSTCONTENT p + blockquote {
+.SF_POSTCONTENT p + blockquote 
+{
   margin-block-start: var(--baseSizeREM);
 }

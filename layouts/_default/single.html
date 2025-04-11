@@ -4,12 +4,11 @@
       <h1>{{ .Title }}</h1>
 
       {{ if not .IsHome | and (ne .Type "colophon") }}
-          {{ partial "components/metadata.html" . }}
+          {{ partial "partials/components/metadata.html" . }}
       {{ end }}
     </div>
   </section>
-  {{ if eq .Section "writings" }} {{ partial "pages/writingsPage.html" . }}
-  {{ else if eq .Section "projects" }} {{ partial "pages/projectsPage.html" . }}
-  {{ else if eq .Type "colophon" }} {{ partial "pages/colophonPage.html" . }}
+  {{ if in (slice "writings" "notes" "projects") .Section }}
+    {{ partial "partials/pages/genericPageContent.html" . }}
   {{ end }}
 {{ end }}

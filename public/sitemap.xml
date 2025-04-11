@@ -83,6 +83,39 @@
     <loc>http://localhost:1313/stacks/</loc>
     <lastmod>2025-04-01T00:00:00+00:00</lastmod>
   </url><url>
+    <loc>http://localhost:1313/tags/abstract/</loc>
+    <lastmod>2025-03-17T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/tags/abstract-algebra/</loc>
+    <lastmod>2025-03-17T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/categories/academic-textbook/</loc>
+    <lastmod>2025-03-17T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/tags/algebra/</loc>
+    <lastmod>2025-03-17T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/notes/aluffi-algebra-i/</loc>
+    <lastmod>2025-03-17T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/tags/aluffi/</loc>
+    <lastmod>2025-03-17T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/tags/fields/</loc>
+    <lastmod>2025-03-17T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/tags/groups/</loc>
+    <lastmod>2025-03-17T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/subjects/mathematics/</loc>
+    <lastmod>2025-03-17T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/notes/</loc>
+    <lastmod>2025-03-17T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/tags/rings/</loc>
+    <lastmod>2025-03-17T00:00:00+00:00</lastmod>
+  </url><url>
     <loc>http://localhost:1313/tags/cylindrical/</loc>
     <lastmod>2025-03-06T00:00:00+00:00</lastmod>
   </url><url>
@@ -113,6 +146,32 @@
     <loc>http://localhost:1313/stacks/agda/</loc>
     <lastmod>2022-07-30T00:00:00+00:00</lastmod>
   </url><url>
+    <loc>http://localhost:1313/tags/apostol/</loc>
+  </url><url>
+    <loc>http://localhost:1313/tags/calculus/</loc>
+  </url><url>
+    <loc>http://localhost:1313/notes/apostol-calc-i/</loc>
+  </url><url>
+    <loc>http://localhost:1313/tags/derivative/</loc>
+  </url><url>
+    <loc>http://localhost:1313/tags/differentiation/</loc>
+  </url><url>
+    <loc>http://localhost:1313/tags/integral/</loc>
+  </url><url>
+    <loc>http://localhost:1313/tags/integration/</loc>
+  </url><url>
+    <loc>http://localhost:1313/tags/linear/</loc>
+  </url><url>
+    <loc>http://localhost:1313/tags/linear-spaces/</loc>
+  </url><url>
+    <loc>http://localhost:1313/tags/math/</loc>
+  </url><url>
+    <loc>http://localhost:1313/tags/partial/</loc>
+  </url><url>
+    <loc>http://localhost:1313/tags/space/</loc>
+  </url><url>
     <loc>http://localhost:1313/stream/</loc>
+  </url><url>
+    <loc>http://localhost:1313/tags/vector/</loc>
   </url>
 </urlset>

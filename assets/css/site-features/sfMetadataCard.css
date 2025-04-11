@@ -13,26 +13,21 @@ aside.SF_POSTMETA
 .SF_POSTMETA_LABEL
 {
   font-weight: 700;
-  color: var(--mutedTextColor);
   margin-right: 0.5em;
   font-family: var(--fontCode);
-  font-size: inherit;
 }
 
 .SF_POSTMETA_DATE time, .SF_POSTMETA_READTIME
 {
   font-family: var(--fontCode);
-  color: var(--mutedTextColor);
 }
 
 .SF_POSTMETA .SF_POSTMETA_LINK
 {
   color: var(--textColor);
-  font-weight: 400;
   text-decoration: none;
   transition: color 0.15s ease-out, text-decoration-color 0.15s ease-out;
   font-family: var(--fontCode);
-  font-size: inherit;
 }
 
 .SF_POSTMETA .SF_POSTMETA_LINK:hover
@@ -54,12 +49,15 @@ aside.SF_POSTMETA
   -moz-user-select: none;
 }
 
-.SF_POSTMETA_SEPARATOR {
-   color: var(--mutedTextColor);
-   user-select: none;
-   margin: 0 0.1em;
+.SF_POSTMETA_SEPARATOR 
+{
+    color: var(--mutedTextColor);
+    user-select: none;
+    margin: 0 0.1em;
 }
-.SF_POSTMETA .SF_PROJECT_STACK.LP_CLUSTER > *::before {
+
+.SF_POSTMETA .SF_PROJECT_STACK.LP_CLUSTER > *::before 
+{
   content: none !important;
   display: none !important;
 }

@@ -174,3 +174,35 @@ a.SF_PROJECT_LINK_WRAPPER .SF_PROJECT_META
 { 
   color: black !important; opacity: 1.0; text-shadow: none;
 }
+
+:root { --BGColorRGB: 248, 240, 227; }
+html[data-user-theme="themeDark"] { --BGColorRGB: 26, 28, 30; }
+html[data-user-theme="themeContrast"] { --BGColorRGB: 0, 0, 0; }
+
+
+.SF_PROJECT 
+{
+  padding: var(--smallestSizeREM) var(--baseSizeREM);
+  margin-left: calc(-1 * var(--baseSizeREM));
+
+
+  background-image: none;
+  background-size: cover;
+  background-position: center;
+}
+
+.SF_PROJECT:hover, .SF_PROJECT:focus-within 
+{
+  background-color: color-mix(in srgb, var(--BGColor) 80%, var(--borderColor));
+  background-image: var(--bg-image, none);
+  outline: none;
+}
+
+a.SF_PROJECT_LINK_WRAPPER 
+{
+  display: block;
+  text-decoration: none !important;
+  color: inherit;
+  position: relative;
+  z-index: 1;
+}

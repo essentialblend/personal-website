@@ -67,6 +67,13 @@
       <description>&lt;p&gt;Spherical coordinates enable us to locate a point on a sphere with three coordinates axes: radial ($\hat{\mathbf{r}}$), polar ($\hat{\mathbf{\theta}}$), and azimuthal ($\hat{\mathbf{\phi}}$). We can describe net force as a sum of component forces about these axes,&lt;/p&gt;&#xA;$$&#xD;&#xA;\mathbf{F} = F_r \hat{\mathbf{r}} + F_{\theta} \hat{\mathbf{\theta}} + F_{\phi} \hat{\mathbf{\phi}}&#xD;&#xA;$$&lt;p&gt;where the position vector is represented as,&lt;/p&gt;&#xA;$$&#xD;&#xA;\mathbf{r} = r \hat{\mathbf{r}} \tag{1.1}&#xD;&#xA;$$&lt;p&gt;We begin by differentiating $(1.1)$,&lt;/p&gt;&#xA;$$&#xD;&#xA;\begin{align*}&#xD;&#xA;\dfrac{d\mathbf{r}}{dt} &amp;= \dfrac{d}{dt}(r \hat{\mathbf{r}}) \\ \\[0.1pt]&#xD;&#xA;&amp;= \dot{r} \hat{\mathbf{r}} + r \dot{\hat{\mathbf{r}}} \tag{1.2}&#xD;&#xA;\end{align*}&#xD;&#xA;$$&lt;p&gt;We need $ \dot{\hat{\mathbf{r}}} $. This means, we need to differentiate the unit vector $ \hat{\mathbf{r}} $. We can derive the correct expression for this time-derivative both geometrically and algebraically. We&amp;rsquo;ll proceed with the latter. The unit vectors for spherical coordinates are,&lt;/p&gt;</description>
     </item>
     <item>
+      <title>Algebra: Notes from the Underground</title>
+      <link>http://localhost:1313/notes/aluffi-algebra-i/</link>
+      <pubDate>Mon, 17 Mar 2025 00:00:00 +0000</pubDate><author>ambiverb@gmail.com (Siddharth Nair)</author>
+      <guid>http://localhost:1313/notes/aluffi-algebra-i/</guid>
+      <description>&lt;h2 id=&#34;part-i-rings&#34;&gt;Part I: Rings&lt;/h2&gt;&#xA;&lt;h3 id=&#34;the-integers&#34;&gt;The Integers&lt;/h3&gt;&#xA;&lt;h4 id=&#34;the-well-ordering-principle-and-induction&#34;&gt;The Well Ordering Principle and Induction&lt;/h4&gt;&#xA;&lt;p&gt;Our general goal is the generalization of common algebraic structures; we will try to capture their essence by determining axioms which are responsible for their properties. We start with the set of integers $\mathbb{Z}$, considered along with the two operations of addition $(+)$ and multiplication $(\cdot)$. We will spend some time trying to understand how $\mathbb{Z}$ is put together with respect to these two operations, and we will identify several key properties. We will then take a selection of those properties, the so-called &lt;strong&gt;ring axioms&lt;/strong&gt;, and eventually aim at studying all structures that are defined by requiring a set $A$ along with two operations (which will be called $+$ and $\cdot$ even if they may have nothing to do with the conventional $+$ and $\cdot$) to satisfy the ring axioms. These structures will be called &lt;strong&gt;rings&lt;/strong&gt;: from this perspective, $\mathbb{Z}$ is a particular example of a ring. Other examples being $\mathbb{Q}$ (&lt;em&gt;rational&lt;/em&gt; numbers), $\mathbb{R}$ (&lt;em&gt;real&lt;/em&gt; numbers), $\mathbb{C}$ (&lt;em&gt;complex&lt;/em&gt; numbers); but many more exist, and most of them have &lt;strong&gt;nothing to do with numbers&lt;/strong&gt;.&lt;/p&gt;</description>
+    </item>
+    <item>
       <title>Proof: Conservation of Momentum</title>
       <link>http://localhost:1313/writings/cons-momentum/</link>
       <pubDate>Thu, 06 Mar 2025 00:00:00 +0000</pubDate><author>ambiverb@gmail.com (Siddharth Nair)</author>
@@ -86,6 +93,13 @@
       <pubDate>Sat, 01 Apr 2023 00:00:00 +0000</pubDate><author>ambiverb@gmail.com (Siddharth Nair)</author>
       <guid>http://localhost:1313/writings/newton-cyl/</guid>
       <description>&lt;p&gt;Deriving Newton&amp;rsquo;s equation for cylindrical coordinates is similar to polar coordinates, with both of them sharing radial and angular coordinate axes, but cylindrical coordinates add the $z$ coordinate axis. We can represent force along these coordinates,&lt;/p&gt;&#xA;$$&#xD;&#xA;\mathbf{F} = F_r \hat{\mathbf{r}} + F_{\phi} \hat{\mathbf{\phi}} + F_{z} \hat{\mathbf{z}} \tag{1.1}&#xD;&#xA;$$&lt;p&gt;Our position vector is,&lt;/p&gt;&#xA;$$&#xD;&#xA;\mathbf{r} = r\hat{\mathbf{r}} + z \hat{\mathbf{z}} \tag{1.2}&#xD;&#xA;$$&lt;p&gt;where we only need the radial and the $z$ coordinate axes to obtain the magnitude of the vector. Differentiating to get the velocity vector,&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Calculus: I</title>
+      <link>http://localhost:1313/notes/apostol-calc-i/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><author>ambiverb@gmail.com (Siddharth Nair)</author>
+      <guid>http://localhost:1313/notes/apostol-calc-i/</guid>
+      <description></description>
     </item>
     <item>
       <title>Stream Page</title>

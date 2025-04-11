@@ -19,14 +19,15 @@
   
   
   
+  
 
   
   
   
-  <link rel="stylesheet" href="../css/baseof.min.8e0f557224d820480c88d7e94dab6bf3775bad21fadec56fdb4a45554a6b49e8.css">
+  <link rel="stylesheet" href="../css/baseof.min.978cc90c11564e7dfb7d56c677197199502620f6ca317310dcd1848c5770fb76.css">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@400;700&family=Arbutus+Slab&display=swap">
-  <link rel="stylesheet" href="../css/baseof.min.8e0f557224d820480c88d7e94dab6bf3775bad21fadec56fdb4a45554a6b49e8.css">
+  <link rel="stylesheet" href="../css/baseof.min.978cc90c11564e7dfb7d56c677197199502620f6ca317310dcd1848c5770fb76.css">
 
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.21/dist/katex.min.css">
 
@@ -51,12 +52,17 @@
     <header class="LP_LEFT_SEPARATOR" style="border-bottom: 2px solid var(--borderColor); display: flex; justify-content: space-between; padding-bottom: var(--smallestSizeREM);">
       <span id="site-clock" class="SF_SITECLOCK" data-feature="siteClock"></span>
   
-      <div class="LP_CLUSTER LP_CLUSTER_ALIGN_CENTER LP_CLUSTER_GAP_BIG" style="justify-content: flex-end;">
+      <div class="LP_CLUSTER LP_CLUSTER_ALIGN_CENTER LP_CLUSTER_GAP_BIG" style="justify-content: flex-end; ">
         <nav class="LP_CLUSTER LP_CLUSTER_ALIGN_CENTER LP_CLUSTER_GAP_BIG" aria-label="Main navigation">
           
           
             <a href="../about/" data-page="about" >
               About
+            </a>
+          
+          
+            <a href="../notes/" data-page="notes" >
+              Notes
             </a>
           
           
@@ -95,249 +101,6 @@
       
     </div>
   </section>
-   <div class="LP_STACK LP_STACK_INTER_BIGGER"> 
-
-  <section class="LP_LEFT_SEPARATOR">
-    <div class="LP_STACK LP_STACK_INTER_BASE"> 
-      <h2>COLOPHON</h2>
-      <div class="SF_PAGE_DESCRIPTION"><p>A brief overview of the design choices, tools, and technologies used to build this website.</p>
-</div>
-    </div>
-  </section>
-
-  <section class="LP_LEFT_SEPARATOR">
-    <div class="LP_STACK LP_STACK_INTER_BASE"> 
-        <h2>BUILT WITH</h2>
-        <div class="LP_CLUSTER LP_CLUSTER_GAP_BIG LP_CLUSTER_ALIGN_CENTER built-with-logos">
-           <a href="https://gohugo.io/" aria-label="Hugo Static Site Generator" title="Hugo">
-               <img src="https://gohugo.io/images/hugo-logo-wide.svg" alt="Hugo Logo" class="logo-hugo">
-           </a>
-           <a href="https://katex.org/" aria-label="KaTeX Math Typesetting" title="KaTeX">
-               <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/58/KaTeX_logo.svg/512px-KaTeX_logo.svg.png" alt="KaTeX Logo" class="logo-katex">
-           </a>
-        </div>
-    </div>
-  </section>
-
-  <section class="LP_LEFT_SEPARATOR">
-    <div class="LP_STACK LP_STACK_INTER_BIG"> 
-      <h2>TECHNOLOGY & BUILD</h2>
-
-      <div class="LP_STACK LP_STACK_INTER_BASE">
-        <h3>Core Platform: Hugo</h3>
-        <p>Generated statically using <a href="https://gohugo.io/">Hugo</a> for build speed and deployment flexibility. Content is managed efficiently via Markdown, with Hugo Pipes handling CSS/JS asset bundling.</p>
-      </div>
-
-      <div class="LP_STACK LP_STACK_INTER_BASE">
-         <h3>Mathematics Rendering: KaTeX</h3>
-         <p>Mathematical notation uses the <a href="https://katex.org/">KaTeX</a> library for fast, high-quality client-side typesetting from LaTeX syntax.</p>
-      </div>
-
-      <div class="LP_STACK LP_STACK_INTER_BASE">
-         <h3>Styling & Layout System</h3>
-         <p>A custom CSS approach prioritizes maintainability. CSS Custom Properties manage global theming and a modular scale governs sizing. Reusable layout utilities facilitate an intrinsic, adaptable structure.</p>
-      </div>
-
-      <div class="LP_STACK LP_STACK_INTER_BASE">
-         <h3>Interactivity</h3>
-         <p>Minimal vanilla JavaScript adds necessary enhancements like theme switching, clock display, and content filtering.</p>
-      </div>
-
-       <div class="LP_STACK LP_STACK_INTER_BASE">
-         <h3>Infrastructure</h3>
-         <ul class="LP_STACK LP_STACK_INTER_SMALLER">
-           <li>Version Control: Git (hosted on GitHub)</li>
-           <li>Deployment & Hosting: Automated via Netlify</li>
-         </ul>
-       </div>
-    </div>
-  </section>
-
-  <section class="LP_LEFT_SEPARATOR">
-    <div class="LP_STACK LP_STACK_INTER_BIG"> 
-      <h2>VISUAL DESIGN ELEMENTS</h2>
-      <div class="LP_STACK LP_STACK_INTER_BASE"> <h3>Typography</h3>
-        <p>Arbutus Slab (serif) ensures body text readability. Roboto Mono (monospace) provides clarity for headings and technical details.</p>
-        
-        <div class="font-showcase-grid"> 
-          
-          <div class="font-card font-card-serif"> 
-            <h4 class="font-card-name">Arbutus Slab</h4>
-            <p class="font-card-usage">Body Text (Serif)</p>
-            <div class="font-card-samples">
-              <div class="sample-block">
-                <span class="sample-label">Uppercase</span>
-                <p class="sample-text sample-body">ABCDEFGHIJKLMNOPQRSTUVWXYZ</p>
-              </div>
-              <div class="sample-block">
-                <span class="sample-label">Lowercase</span>
-                <p class="sample-text sample-body">abcdefghijklmnopqrstuvwxyz</p>
-              </div>
-              <div class="sample-block">
-                <span class="sample-label">Numerals</span>
-                <p class="sample-text sample-body">0123456789</p>
-              </div>
-              <div class="sample-block sample-block-pangram">
-                <span class="sample-label">Example</span>
-                <p class="sample-text sample-body">The quick brown fox jumps over the lazy dog.</p>
-              </div>
-            </div>
-          </div>
-  
-          <div class="font-card font-card-mono"> 
-            <h4 class="font-card-name">Roboto Mono</h4>
-            <p class="font-card-usage">Headings & Code (Monospace)</p>
-            <div class="font-card-samples">
-              <div class="sample-block">
-                <span class="sample-label">Uppercase</span>
-                <p class="sample-text sample-mono">ABCDEFGHIJKLMNOPQRSTUVWXYZ</p>
-              </div>
-              <div class="sample-block">
-                <span class="sample-label">Lowercase</span>
-                <p class="sample-text sample-mono">abcdefghijklmnopqrstuvwxyz</p>
-              </div>
-               <div class="sample-block">
-                <span class="sample-label">Numerals</span>
-                <p class="sample-text sample-mono">0123456789</p>
-              </div>
-              <div class="sample-block sample-block-pangram">
-                <span class="sample-label">Example</span>
-                <p class="sample-text sample-mono">The quick brown fox jumps over the lazy dog.</p>
-              </div>
-            </div>
-          </div>
-  
-        </div> 
-        <p><small>Typefaces served via <a href="https://fonts.google.com/">Google Fonts</a>.</small></p>
-      </div>
-
-      <div class="LP_STACK LP_STACK_INTER_BASE"> <h3>Colour Palette</h3>
-  
-        <div class="color-palette-grid"> 
-      
-          <div class="color-card color-card-light">
-            <h4 class="color-card-name">Light Theme</h4>
-            <div class="color-card-swatches">
-              <div class="swatch-group">
-                <div class="swatch-color" style="background-color: #F8F0E3;" title="Background: #F8F0E3"></div>
-                <span class="swatch-label">#F8F0E3</span>
-                <span class="swatch-role">BG</span> </div>
-              <div class="swatch-group">
-                <div class="swatch-color" style="background-color: #402F2F;" title="Text: #402F2F"></div>
-                <span class="swatch-label">#402F2F</span>
-                <span class="swatch-role">Text</span>
-              </div>
-              <div class="swatch-group">
-                <div class="swatch-color" style="background-color: #B46857;" title="Accent: #B46857"></div>
-                 <span class="swatch-label">#B46857</span>
-                 <span class="swatch-role">Accent</span>
-              </div>
-              <div class="swatch-group">
-                <div class="swatch-color" style="background-color: #756341;" title="Muted Text: #756341"></div>
-                <span class="swatch-label">#756341</span>
-                <span class="swatch-role">Muted</span>
-              </div>
-               <div class="swatch-group">
-                <div class="swatch-color" style="background-color: #BCAE90;" title="Border: #BCAE90"></div>
-                <span class="swatch-label">#BCAE90</span>
-                <span class="swatch-role">Border</span>
-              </div>
-              <div class="swatch-group">
-                <div class="swatch-color" style="background-color: #A55A48;" title="Accent Hover: #A55A48"></div>
-                <span class="swatch-label">#A55A48</span>
-                <span class="swatch-role">Accent Hvr</span> 
-              </div>
-            </div>
-          </div>
-      
-          <div class="color-card color-card-dark">
-            <h4 class="color-card-name">Dark Theme</h4>
-            <div class="color-card-swatches">
-              <div class="swatch-group">
-                <div class="swatch-color" style="background-color: #1A1C1E;" title="Background: #1A1C1E"></div>
-                 <span class="swatch-label">#1A1C1E</span>
-                 <span class="swatch-role">BG</span>
-              </div>
-              <div class="swatch-group">
-                <div class="swatch-color" style="background-color: #EDEAE6;" title="Text: #EDEAE6"></div>
-                 <span class="swatch-label">#EDEAE6</span>
-                 <span class="swatch-role">Text</span>
-              </div>
-              <div class="swatch-group">
-                <div class="swatch-color" style="background-color: #F8F0E3;" title="Accent: #F8F0E3"></div>
-                 <span class="swatch-label">#F8F0E3</span>
-                 <span class="swatch-role">Accent</span>
-              </div>
-              <div class="swatch-group">
-                <div class="swatch-color" style="background-color: #B8BCC0;" title="Muted Text: #B8BCC0"></div>
-                 <span class="swatch-label">#B8BCC0</span>
-                 <span class="swatch-role">Muted</span>
-              </div>
-               <div class="swatch-group">
-                <div class="swatch-color" style="background-color: #4A4D50;" title="Border: #4A4D50"></div>
-                 <span class="swatch-label">#4A4D50</span>
-                 <span class="swatch-role">Border</span>
-              </div>
-              <div class="swatch-group">
-                <div class="swatch-color" style="background-color: #D47A36;" title="Accent Hover: #D47A36"></div>
-                <span class="swatch-label">#D47A36</span>
-                <span class="swatch-role">Accent Hvr</span> 
-              </div>
-            </div>
-          </div>
-      
-           <div class="color-card color-card-contrast">
-            <h4 class="color-card-name">Contrast Theme</h4>
-            <div class="color-card-swatches">
-              <div class="swatch-group">
-                <div class="swatch-color" style="background-color: #000000;" title="Background: #000000"></div>
-                 <span class="swatch-label">#000000</span>
-                 <span class="swatch-role">BG</span>
-              </div>
-              <div class="swatch-group">
-                <div class="swatch-color" style="background-color: #FFFFFF;" title="Text: #FFFFFF"></div>
-                 <span class="swatch-label">#FFFFFF</span>
-                 <span class="swatch-role">Text</span>
-              </div>
-              <div class="swatch-group">
-                 <div class="swatch-color" style="background-color: #FFFFFF;" title="Accent: #FFFFFF"></div>
-                 <span class="swatch-label">#FFFFFF</span>
-                 <span class="swatch-role">Accent</span>
-              </div>
-              <div class="swatch-group">
-                <div class="swatch-color" style="background-color: #CCCCCC;" title="Muted Text: #CCCCCC"></div>
-                 <span class="swatch-label">#CCCCCC</span>
-                 <span class="swatch-role">Muted</span>
-              </div>
-               <div class="swatch-group">
-                <div class="swatch-color" style="background-color: #666666;" title="Border: #666666"></div>
-                 <span class="swatch-label">#666666</span>
-                 <span class="swatch-role">Border</span>
-              </div>
-              <div class="swatch-group">
-                <div class="swatch-color" style="background-color: #CCCCCC;" title="Accent Hover: #CCCCCC"></div>
-                <span class="swatch-label">#CCCCCC</span>
-                <span class="swatch-role">Accent Hvr</span> 
-              </div>
-            </div>
-          </div>
-      
-        </div> 
-        </div>
-    </div>
-  </section>
-
-  <section class="LP_LEFT_SEPARATOR">
-     <div class="LP_STACK LP_STACK_INTER_BASE"> 
-       <h2>RESOURCES</h2>
-        <ul class="resource-list LP_STACK LP_STACK_INTER_SMALLER">
-           <li><a href="https://every-layout.dev/">Every Layout</a> <span class="resource-author">(H. Pickering & A. Bell)</span></li>
-           <li><a href="https://www.manning.com/books/hugo-in-action">Hugo in Action</a> <span class="resource-author">(A. Jain)</span></li>
-        </ul>
-     </div>
-  </section>
-
-</div> 
   
 
         
@@ -354,13 +117,22 @@
   
   
   
+  
+  
+  
 
   
 
-  <script src="../js/bundle.c939544dde7227ccdee6b76987f15bb4a2858a7e7e5b713fc524cd457e446789.js" integrity="sha256-yTlUTd5yJ8ze5rdph/FbtKKFin5&#43;W3E/xSTNRX5EZ4k="></script>
+  <script src="../js/bundle.37a9c2125b03e0ea862783ec285d5cf4553cc463d854c760b22497f35eac0f9e.js" integrity="sha256-N6nCElsD4OqGJ4PsKF1c9FU8xGPYVMdgsiSX816sD54="></script>
 
   
   
+
+  <button class="SF_SCROLLTOP_BTN" title="Go to top" aria-label="Scroll to top">
+    <svg xmlns="http://www.w3.org/2000/svg" height="24" viewBox="0 -960 960 960" width="24" fill="currentColor">
+      <path d="M440-160v-487L216-423l-56-57 320-320 320 320-56 57-224-224v487h-80Z"/>
+    </svg>
+  </button>
 </body>
 
 </html>

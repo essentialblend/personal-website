@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Mathematics on Siddharth Nair</title>
+    <link>http://localhost:1313/subjects/mathematics/</link>
+    <description>Recent content in Mathematics on Siddharth Nair</description>
+    <generator>Hugo</generator>
+    <language>en-us</language>
+    <managingEditor>ambiverb@gmail.com (Siddharth Nair)</managingEditor>
+    <webMaster>ambiverb@gmail.com (Siddharth Nair)</webMaster>
+    <lastBuildDate>Mon, 17 Mar 2025 00:00:00 +0000</lastBuildDate>
+    <atom:link href="http://localhost:1313/subjects/mathematics/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Algebra: Notes from the Underground</title>
+      <link>http://localhost:1313/notes/aluffi-algebra-i/</link>
+      <pubDate>Mon, 17 Mar 2025 00:00:00 +0000</pubDate><author>ambiverb@gmail.com (Siddharth Nair)</author>
+      <guid>http://localhost:1313/notes/aluffi-algebra-i/</guid>
+      <description>&lt;h2 id=&#34;part-i-rings&#34;&gt;Part I: Rings&lt;/h2&gt;&#xA;&lt;h3 id=&#34;the-integers&#34;&gt;The Integers&lt;/h3&gt;&#xA;&lt;h4 id=&#34;the-well-ordering-principle-and-induction&#34;&gt;The Well Ordering Principle and Induction&lt;/h4&gt;&#xA;&lt;p&gt;Our general goal is the generalization of common algebraic structures; we will try to capture their essence by determining axioms which are responsible for their properties. We start with the set of integers $\mathbb{Z}$, considered along with the two operations of addition $(+)$ and multiplication $(\cdot)$. We will spend some time trying to understand how $\mathbb{Z}$ is put together with respect to these two operations, and we will identify several key properties. We will then take a selection of those properties, the so-called &lt;strong&gt;ring axioms&lt;/strong&gt;, and eventually aim at studying all structures that are defined by requiring a set $A$ along with two operations (which will be called $+$ and $\cdot$ even if they may have nothing to do with the conventional $+$ and $\cdot$) to satisfy the ring axioms. These structures will be called &lt;strong&gt;rings&lt;/strong&gt;: from this perspective, $\mathbb{Z}$ is a particular example of a ring. Other examples being $\mathbb{Q}$ (&lt;em&gt;rational&lt;/em&gt; numbers), $\mathbb{R}$ (&lt;em&gt;real&lt;/em&gt; numbers), $\mathbb{C}$ (&lt;em&gt;complex&lt;/em&gt; numbers); but many more exist, and most of them have &lt;strong&gt;nothing to do with numbers&lt;/strong&gt;.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Calculus: I</title>
+      <link>http://localhost:1313/notes/apostol-calc-i/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><author>ambiverb@gmail.com (Siddharth Nair)</author>
+      <guid>http://localhost:1313/notes/apostol-calc-i/</guid>
+      <description></description>
+    </item>
+  </channel>
+</rss>

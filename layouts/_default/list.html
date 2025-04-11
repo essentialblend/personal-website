@@ -13,6 +13,8 @@
   {{ partial "sections/writingsSection.html" . }}
 {{ else if eq .Section "projects" }}
   {{ partial "sections/projectsSection.html" . }}
+{{ else if eq .Section "notes" }}
+  {{ partial "sections/notesSection.html" . }}
 {{ end }}
 
 {{ end }}

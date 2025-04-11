@@ -65,7 +65,7 @@ html[data-user-theme="themeDark"]
 
 }
 
-html[data-user-theme="themeContrast"] 
+html[data-user-theme="themeHigh"] 
 {
   --BGColor: #000000;
   --textColor: #FFFFFF;
@@ -115,20 +115,26 @@ body
   word-break: break-word;
 }
 
+header > div:has(nav[aria-label="Main navigation"]) {
+  padding-right: var(--smallSizeREM); 
+}
+
 header [data-theme-toggle] 
 {
   all: unset;
   font-family: var(--fontCode);
-  font-size: var(--specialSizeREM);
+  font-size: var(--smallSizeREM);
   color: var(--mutedTextColor);
-  font-weight: 400;
+  box-sizing: border-box;
   cursor: pointer;
   display: inline-flex;
   align-items: center;
+  justify-content: center;
+  min-width: 6ch;
 
-  min-width: 10ch;
-
-  line-height: 1;
+  /* Hack to align, not happy, requires fix. */
+  position: relative;
+  top: 1.285px; 
 }
 
 header [data-theme-toggle]:hover
@@ -140,7 +146,7 @@ header [data-theme-toggle]:hover
 header nav a 
 {
   font-family: var(--fontCode);
-  font-size: var(--specialSizeREM);
+  font-size: var(--smallSizeREM);
   color: var(--mutedTextColor);
   font-weight: 400;
   transition: none;

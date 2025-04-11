@@ -14,13 +14,14 @@
   {{ $siteFeaturesCSSChunk := resources.Get "css/core/siteFeatures.css" }}
   
   {{ $postContentCSSChunk := resources.Get "css/site-features/sfMDPostContent.css" }}
-  {{ $projectTitleCSSChunk := resources.Get "css/site-features/sfProjectCard.css" }}
   {{ $writingsTitleCSSChunk := resources.Get "css/site-features/sfWritingsCard.css" }}
   {{ $taxonomyFilterCSSChunk := resources.Get "css/site-features/sfTaxonomyFilter.css" }}
   {{ $metadataCardCSSChunk := resources.Get "css/site-features/sfMetadataCard.css" }}
   {{ $projectSectionCSSChunk := resources.Get "css/site-features/sfProjectSection.css" }}
+  {{ $tableContentsCSSChunk := resources.Get "css/site-features/sfTableContents.css" }}
+  {{ $scrollToTopCSSChunk := resources.Get "css/site-features/sfScrollToTop.css" }}
 
-  {{ $cssSlice := slice $htmlElemCSSChunk $layoutPrimitivesCSSChunk $siteFeaturesCSSChunk $postContentCSSChunk $projectTitleCSSChunk $taxonomyFilterCSSChunk $writingsTitleCSSChunk $metadataCardCSSChunk $projectSectionCSSChunk }}
+  {{ $cssSlice := slice $htmlElemCSSChunk $layoutPrimitivesCSSChunk $siteFeaturesCSSChunk $postContentCSSChunk $taxonomyFilterCSSChunk $writingsTitleCSSChunk $metadataCardCSSChunk $projectSectionCSSChunk $tableContentsCSSChunk $scrollToTopCSSChunk }}
   
   {{ $merged := $cssSlice | resources.Concat "css/baseof.css" | resources.Minify | resources.Fingerprint }}
   <link rel="stylesheet" href="{{ $merged.RelPermalink }}">
@@ -51,7 +52,7 @@
     <header class="LP_LEFT_SEPARATOR" style="border-bottom: 2px solid var(--borderColor); display: flex; justify-content: space-between; padding-bottom: var(--smallestSizeREM);">
       <span id="site-clock" class="SF_SITECLOCK" data-feature="siteClock"></span>
   
-      <div class="LP_CLUSTER LP_CLUSTER_ALIGN_CENTER LP_CLUSTER_GAP_BIG" style="justify-content: flex-end;">
+      <div class="LP_CLUSTER LP_CLUSTER_ALIGN_CENTER LP_CLUSTER_GAP_BIG" style="justify-content: flex-end; ">
         <nav class="LP_CLUSTER LP_CLUSTER_ALIGN_CENTER LP_CLUSTER_GAP_BIG" aria-label="Main navigation">
           {{ range site.Menus.main }}
           {{ $isActive := or (eq .URL $.RelPermalink) (hasPrefix $.RelPermalink .URL) }}
@@ -88,8 +89,11 @@
   {{ $clockJS := resources.Get "js/site-features/siteClock.js" | resources.Minify }}
   {{ $subjectFilterJS := resources.Get "js/site-features/subjectFilter.js" | resources.Minify }}
   {{ $codeCopyButtonJS := resources.Get "js/code-interface/codeCopyButton.js" | resources.Minify }}
+  {{ $tableContentsJS := resources.Get "js/site-features/tableContents.js" | resources.Minify }}
+  {{ $scrollToTopButtonJS := resources.Get "js/site-features/scrollToTop.js" | resources.Minify }}
+  
 
-  {{ $scripts := slice $themeJS $clockJS $subjectFilterJS $codeCopyButtonJS | resources.Concat "js/bundle.js" | resources.Fingerprint }}
+  {{ $scripts := slice $themeJS $clockJS $subjectFilterJS $codeCopyButtonJS $tableContentsJS $scrollToTopButtonJS | resources.Concat "js/bundle.js" | resources.Fingerprint }}
 
   <script src="{{ $scripts.RelPermalink }}" integrity="{{ $scripts.Data.Integrity }}"></script>
 
@@ -101,6 +105,12 @@
   {{ $katexInit := resources.Get "js/site-features/katexClient.js" | resources.Minify | resources.Fingerprint }}
   <script defer src="{{ $katexInit.RelPermalink }}" integrity="{{ $katexInit.Data.Integrity }}"></script>
   {{ end }}
+
+  <button class="SF_SCROLLTOP_BTN" title="Go to top" aria-label="Scroll to top">
+    <svg xmlns="http://www.w3.org/2000/svg" height="24" viewBox="0 -960 960 960" width="24" fill="currentColor">
+      <path d="M440-160v-487L216-423l-56-57 320-320 320 320-56 57-224-224v487h-80Z"/>
+    </svg>
+  </button>
 </body>
 
 </html>
