@@ -146,6 +146,8 @@
     <loc>http://localhost:1313/stacks/agda/</loc>
     <lastmod>2022-07-30T00:00:00+00:00</lastmod>
   </url><url>
+    <loc>http://localhost:1313/stream/</loc>
+  </url><url>
     <loc>http://localhost:1313/tags/apostol/</loc>
   </url><url>
     <loc>http://localhost:1313/tags/calculus/</loc>
@@ -169,8 +171,6 @@
     <loc>http://localhost:1313/tags/partial/</loc>
   </url><url>
     <loc>http://localhost:1313/tags/space/</loc>
-  </url><url>
-    <loc>http://localhost:1313/stream/</loc>
   </url><url>
     <loc>http://localhost:1313/tags/vector/</loc>
   </url>

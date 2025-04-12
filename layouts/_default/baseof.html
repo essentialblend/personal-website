@@ -20,8 +20,9 @@
   {{ $projectSectionCSSChunk := resources.Get "css/site-features/sfProjectSection.css" }}
   {{ $tableContentsCSSChunk := resources.Get "css/site-features/sfTableContents.css" }}
   {{ $scrollToTopCSSChunk := resources.Get "css/site-features/sfScrollToTop.css" }}
+  {{ $colophonCSSChunk := resources.Get "css/site-features/sfColophonPage.css" }}
 
-  {{ $cssSlice := slice $htmlElemCSSChunk $layoutPrimitivesCSSChunk $siteFeaturesCSSChunk $postContentCSSChunk $taxonomyFilterCSSChunk $writingsTitleCSSChunk $metadataCardCSSChunk $projectSectionCSSChunk $tableContentsCSSChunk $scrollToTopCSSChunk }}
+  {{ $cssSlice := slice $htmlElemCSSChunk $layoutPrimitivesCSSChunk $siteFeaturesCSSChunk $postContentCSSChunk $taxonomyFilterCSSChunk $writingsTitleCSSChunk $metadataCardCSSChunk $projectSectionCSSChunk $tableContentsCSSChunk $scrollToTopCSSChunk $colophonCSSChunk }}
   
   {{ $merged := $cssSlice | resources.Concat "css/baseof.css" | resources.Minify | resources.Fingerprint }}
   <link rel="stylesheet" href="{{ $merged.RelPermalink }}">
