@@ -1,0 +1,619 @@
+.SF_STREAM_ITEM {
+  margin-bottom: 0;
+  box-shadow: 0 3px 8px rgba(0, 0, 0, 0.06);
+  border-radius: 4px;
+  overflow: hidden;
+  background-color: var(--BGColor);
+  border: 1px solid var(--borderColor);
+  position: relative;
+  border-left: 3px solid var(--accentHoverColor);
+  padding-left: 0;
+}
+
+.SF_STREAM_ITEM summary {
+  display: block;
+  cursor: pointer;
+  position: relative;
+  padding: 0;
+  outline: none;
+  list-style: none;
+  transition: background-color 0.2s ease-out;
+}
+.SF_STREAM_ITEM summary::-webkit-details-marker,
+.SF_STREAM_ITEM summary::marker { display: none; }
+
+.SF_STREAM_ITEM summary:focus-visible {
+  outline: none;
+  box-shadow: inset 0 0 0 2px var(--accentHoverColor);
+  border-radius: 3px;
+}
+
+.SF_STREAM_ITEM summary::after {
+  content: '';
+  display: block;
+  position: absolute;
+  bottom: 0; left: 0; right: 0;
+  height: 1px;
+  background: linear-gradient(to right, var(--borderColor), transparent);
+  opacity: 0.7;
+  transition: opacity 0.2s ease-out;
+}
+
+.SF_STREAM_ITEM[open] > summary::after {
+  opacity: 0;
+}
+
+.SF_STREAM_SUMMARY_CONTENT_WRAP {
+  padding: var(--baseSizeREM) calc(var(--baseSizeREM) * 3) 0 var(--baseSizeREM);
+  position: relative;
+  z-index: 2;
+  transition: color 0.3s ease-out, text-shadow 0.3s ease-out, padding-bottom 0.2s ease-out, background-color 0.3s ease-out;
+  background-color: transparent;
+  border-radius: 3px;
+}
+
+.SF_STREAM_INDICATOR {
+  content: '';
+  position: absolute;
+  right: var(--baseSizeREM);
+  top: var(--baseSizeREM);
+  width: 0.6em; height: 0.6em;
+  margin-top: 0.4em;
+  border: solid var(--mutedTextColor);
+  border-width: 0 2px 2px 0;
+  transform: rotate(45deg);
+  transition: transform 0.25s ease-in-out, opacity 0.2s ease-out, border-color 0.3s ease-out, filter 0.3s ease-out, top 0.2s ease-out;
+  opacity: 0.8; pointer-events: none;
+  z-index: 5;
+}
+.SF_STREAM_ITEM[open] > summary .SF_STREAM_INDICATOR {
+  transform: rotate(-135deg);
+}
+
+.SF_STREAM_ITEM > .SF_STREAM_EXPANDED_CONTENT_WRAPPER {
+  padding-left: var(--baseSizeREM);
+  padding-right: var(--baseSizeREM);
+  background-color: var(--BGColor);
+}
+
+.SF_STREAM_THEOREM_BLOCK {
+  background-image: linear-gradient(rgba(0,0,0,0.015), rgba(0,0,0,0.015)), linear-gradient(90deg, rgba(0,0,0,0.01), rgba(0,0,0,0.01));
+  background-size: 2px 1px, 1px 2px;
+}
+html[data-user-theme="themeDark"] .SF_STREAM_THEOREM_BLOCK {
+  background-image: linear-gradient(rgba(255,255,255,0.015), rgba(255,255,255,0.015)), linear-gradient(90deg, rgba(255,255,255,0.01), rgba(255,255,255,0.01));
+}
+
+.SF_STREAM_THEOREM_TITLE {
+  font-family: var(--fontHeading); font-size: var(--mediumSizeREM); font-weight: 700;
+  color: var(--textColor); margin: 0 0 var(--smallSizeREM) 0; padding: 0; display: block;
+  transition: margin-bottom 0.2s ease-out;
+}
+
+.SF_STREAM_THEOREM_HOOK {
+  font-family: var(--fontBody); font-size: var(--smallSizeREM); line-height: 1.4; font-weight: 400;
+  color: var(--mutedTextColor); margin: 0; padding: 0;
+  padding-bottom: var(--baseSizeREM);
+  transition: opacity 0.15s ease-out, max-height 0.2s ease-out, visibility 0s linear 0.15s;
+  max-height: 6em; overflow: hidden; opacity: 1; visibility: visible;
+}
+.SF_STREAM_THEOREM_HOOK > *:first-child { margin-top: 0; }
+.SF_STREAM_THEOREM_HOOK > *:last-child { margin-bottom: 0; }
+
+.SF_STREAM_THEOREM_CONTENT {
+  font-family: var(--fontBody); font-size: var(--smallSizeREM);
+  line-height: var(--contentTextLineHeight); color: var(--textColor);
+  padding: var(--baseSizeREM) 0 var(--baseSizeREM) 0;
+  border-top: 1px solid color-mix(in srgb, var(--borderColor) 40%, transparent);
+}
+.SF_STREAM_THEOREM_CONTENT > *:first-child { margin-top: 0; }
+.SF_STREAM_THEOREM_CONTENT > *:last-child { margin-bottom: 0; }
+
+.SF_STREAM_SPACEIMAGE_BLOCK {
+  background-image: linear-gradient(rgba(0,0,0,0.015), rgba(0,0,0,0.015)), linear-gradient(90deg, rgba(0,0,0,0.01), rgba(0,0,0,0.01));
+  background-size: 2px 1px, 1px 2px;
+}
+html[data-user-theme="themeDark"] .SF_STREAM_SPACEIMAGE_BLOCK {
+  background-image: linear-gradient(rgba(255,255,255,0.015), rgba(255,255,255,0.015)), linear-gradient(90deg, rgba(255,255,255,0.01), rgba(255,255,255,0.01));
+}
+
+.SF_STREAM_SPACEIMAGE_SUMMARY {
+  overflow: hidden;
+}
+.SF_STREAM_SPACEIMAGE_SUMMARY::before {
+  content: ''; position: absolute; top: 0; left: 0; right: 0; bottom: 0;
+  background-image: var(--summary-bg-image);
+  background-size: cover; background-position: center center;
+  transition: opacity 0.3s ease-out, visibility 0s linear 0.3s;
+  z-index: 0; opacity: 0; visibility: hidden;
+}
+.SF_STREAM_SPACEIMAGE_SUMMARY::after {
+  content: ''; position: absolute; top: 0; left: 0; right: 0; bottom: 0;
+  background: linear-gradient(to bottom, rgba(0,0,0,0.70) 0%, rgba(0,0,0,0.1) 40%, rgba(0,0,0,0.20) 70%, rgba(0,0,0,0.80) 100%);
+  opacity: 0; transition: opacity 0.3s ease-out; z-index: 1; pointer-events: none; visibility: hidden;
+  height: auto;
+}
+
+html[data-user-theme="themeDark"] .SF_STREAM_SPACEIMAGE_SUMMARY::after {
+  background: linear-gradient(to bottom, rgba(0,0,0,0.80) 0%, rgba(0,0,0,0.15) 40%, rgba(0,0,0,0.25) 70%, rgba(0,0,0,0.85) 100%);
+}
+
+.SF_STREAM_SPACEIMAGE_SUMMARY:hover {
+  background-color: transparent;
+}
+.SF_STREAM_SPACEIMAGE_SUMMARY:hover::before {
+  opacity: 1; visibility: visible; transition-delay: 0s;
+}
+.SF_STREAM_SPACEIMAGE_SUMMARY:hover::after {
+  opacity: 0.9; visibility: visible; transition-delay: 0s;
+}
+
+.SF_STREAM_SPACEIMAGE_TITLE {
+  font-family: var(--fontHeading); font-size: var(--mediumSizeREM); font-weight: 700;
+  color: var(--textColor); margin: 0 0 var(--smallSizeREM) 0; padding: 0; display: block;
+  transition: margin-bottom 0.2s ease-out, color 0.3s ease-out, text-shadow 0.3s ease-out;
+}
+
+.SF_STREAM_SPACEIMAGE_HOOK {
+  font-family: var(--fontBody); font-size: var(--smallSizeREM); line-height: 1.4; font-weight: 400;
+  color: var(--mutedTextColor); margin: 0; padding: 0;
+  padding-bottom: var(--baseSizeREM);
+  transition: opacity 0.15s ease-out, max-height 0.2s ease-out, visibility 0s linear 0.15s, color 0.3s ease-out, text-shadow 0.3s ease-out;
+  max-height: 6em; overflow: hidden; opacity: 1; visibility: visible;
+  text-shadow: none;
+}
+.SF_STREAM_SPACEIMAGE_HOOK > *:first-child { margin-top: 0; }
+.SF_STREAM_SPACEIMAGE_HOOK > *:last-child { margin-bottom: 0; }
+
+.SF_STREAM_IMAGE_MEDIA {
+  padding: var(--baseSizeREM);
+  background-color: color-mix(in srgb, var(--BGColor) 92%, var(--borderColor) 8%);
+  border: 2px solid var(--borderColor);
+  border-radius: 4px;
+  margin: var(--baseSizeREM) 0 var(--mediumSizeREM) 0;
+}
+.SF_STREAM_IMAGE_IMG { display: block; width: 100%; height: auto; border-radius: 0; }
+.SF_STREAM_IMAGE_CREDIT {
+  display: block; text-align: right; font-family: var(--fontMono); font-size: var(--smallestSizeREM);
+  color: var(--mutedTextColor); padding: var(--smallSizeREM) 0 0 0;
+}
+
+.SF_STREAM_SPACEIMAGE_CONTENT {
+  font-family: var(--fontBody); font-size: var(--smallSizeREM);
+  line-height: var(--contentTextLineHeight); color: var(--textColor);
+  padding: 0 0 var(--baseSizeREM) 0;
+  border-top: none;
+}
+.SF_STREAM_SPACEIMAGE_CONTENT > *:last-child {
+  margin-bottom: 0;
+}
+
+.SF_STREAM_ARTISTGALLERY_BLOCK {
+  background-image: linear-gradient(rgba(0,0,0,0.015), rgba(0,0,0,0.015)), linear-gradient(90deg, rgba(0,0,0,0.01), rgba(0,0,0,0.01));
+  background-size: 2px 1px, 1px 2px;
+}
+html[data-user-theme="themeDark"] .SF_STREAM_ARTISTGALLERY_BLOCK {
+  background-image: linear-gradient(rgba(255,255,255,0.015), rgba(255,255,255,0.015)), linear-gradient(90deg, rgba(255,255,255,0.01), rgba(255,255,255,0.01));
+}
+
+.SF_STREAM_ARTISTGALLERY_SUMMARY {
+  overflow: hidden;
+}
+.SF_STREAM_ARTISTGALLERY_SUMMARY::before {
+  content: ''; position: absolute; top: 0; left: 0; right: 0; bottom: 0;
+  background-image: var(--summary-bg-image);
+  background-size: cover; background-position: center center;
+  transition: opacity 0.3s ease-out, visibility 0s linear 0.3s;
+  z-index: 0; opacity: 0; visibility: hidden;
+}
+.SF_STREAM_ARTISTGALLERY_SUMMARY::after {
+  content: ''; position: absolute; top: 0; left: 0; right: 0; bottom: 0;
+  background: linear-gradient(to bottom, rgba(0,0,0,0.70) 0%, rgba(0,0,0,0.1) 40%, rgba(0,0,0,0.20) 70%, rgba(0,0,0,0.80) 100%);
+  opacity: 0; transition: opacity 0.3s ease-out; z-index: 1; pointer-events: none; visibility: hidden;
+  height: auto;
+}
+
+html[data-user-theme="themeDark"] .SF_STREAM_ARTISTGALLERY_SUMMARY::after {
+  background: linear-gradient(to bottom, rgba(0,0,0,0.80) 0%, rgba(0,0,0,0.15) 40%, rgba(0,0,0,0.25) 70%, rgba(0,0,0,0.85) 100%);
+}
+
+.SF_STREAM_ARTISTGALLERY_SUMMARY:hover {
+  background-color: transparent;
+}
+.SF_STREAM_ARTISTGALLERY_SUMMARY:hover::before {
+  opacity: 1; visibility: visible; transition-delay: 0s;
+}
+.SF_STREAM_ARTISTGALLERY_SUMMARY:hover::after {
+  opacity: 0.9; visibility: visible; transition-delay: 0s;
+}
+
+.SF_STREAM_SPACEIMAGE_SUMMARY:hover .SF_STREAM_SUMMARY_CONTENT_WRAP,
+.SF_STREAM_ARTISTGALLERY_SUMMARY:hover .SF_STREAM_SUMMARY_CONTENT_WRAP {
+  text-shadow: 0 1px 2px rgba(0,0,0,0.8);
+  background-color: transparent;
+  padding-top: var(--baseSizeREM);
+  padding-bottom: 0;
+}
+
+html:not([data-user-theme="themeDark"]):not([data-user-theme="themeHigh"]) .SF_STREAM_SPACEIMAGE_SUMMARY:hover .SF_STREAM_SUMMARY_CONTENT_WRAP,
+html:not([data-user-theme="themeDark"]):not([data-user-theme="themeHigh"]) .SF_STREAM_ARTISTGALLERY_SUMMARY:hover .SF_STREAM_SUMMARY_CONTENT_WRAP,
+html:not([data-user-theme="themeDark"]):not([data-user-theme="themeHigh"]) .SF_STREAM_SPACEIMAGE_SUMMARY:hover .SF_STREAM_SPACEIMAGE_TITLE,
+html:not([data-user-theme="themeDark"]):not([data-user-theme="themeHigh"]) .SF_STREAM_SPACEIMAGE_SUMMARY:hover .SF_STREAM_SPACEIMAGE_HOOK,
+html:not([data-user-theme="themeDark"]):not([data-user-theme="themeHigh"]) .SF_STREAM_ARTISTGALLERY_SUMMARY:hover .SF_STREAM_ARTISTGALLERY_TITLE,
+html:not([data-user-theme="themeDark"]):not([data-user-theme="themeHigh"]) .SF_STREAM_ARTISTGALLERY_SUMMARY:hover .SF_STREAM_ARTISTGALLERY_HOOK {
+  color: #D47A36;
+}
+
+html[data-user-theme="themeDark"] .SF_STREAM_SPACEIMAGE_SUMMARY:hover .SF_STREAM_SUMMARY_CONTENT_WRAP,
+html[data-user-theme="themeDark"] .SF_STREAM_ARTISTGALLERY_SUMMARY:hover .SF_STREAM_SUMMARY_CONTENT_WRAP,
+html[data-user-theme="themeHigh"] .SF_STREAM_SPACEIMAGE_SUMMARY:hover .SF_STREAM_SUMMARY_CONTENT_WRAP,
+html[data-user-theme="themeHigh"] .SF_STREAM_ARTISTGALLERY_SUMMARY:hover .SF_STREAM_SUMMARY_CONTENT_WRAP,
+html[data-user-theme="themeDark"] .SF_STREAM_SPACEIMAGE_SUMMARY:hover .SF_STREAM_SPACEIMAGE_TITLE,
+html[data-user-theme="themeDark"] .SF_STREAM_SPACEIMAGE_SUMMARY:hover .SF_STREAM_SPACEIMAGE_HOOK,
+html[data-user-theme="themeDark"] .SF_STREAM_ARTISTGALLERY_SUMMARY:hover .SF_STREAM_ARTISTGALLERY_TITLE,
+html[data-user-theme="themeDark"] .SF_STREAM_ARTISTGALLERY_SUMMARY:hover .SF_STREAM_ARTISTGALLERY_HOOK,
+html[data-user-theme="themeHigh"] .SF_STREAM_SPACEIMAGE_SUMMARY:hover .SF_STREAM_SPACEIMAGE_TITLE,
+html[data-user-theme="themeHigh"] .SF_STREAM_SPACEIMAGE_SUMMARY:hover .SF_STREAM_SPACEIMAGE_HOOK,
+html[data-user-theme="themeHigh"] .SF_STREAM_ARTISTGALLERY_SUMMARY:hover .SF_STREAM_ARTISTGALLERY_TITLE,
+html[data-user-theme="themeHigh"] .SF_STREAM_ARTISTGALLERY_SUMMARY:hover .SF_STREAM_ARTISTGALLERY_HOOK {
+  color: #fff;
+}
+
+.SF_STREAM_SPACEIMAGE_SUMMARY:hover .SF_STREAM_INDICATOR,
+.SF_STREAM_ARTISTGALLERY_SUMMARY:hover .SF_STREAM_INDICATOR {
+  opacity: 1;
+  filter: drop-shadow(0 1px 1px rgba(0,0,0,0.7));
+}
+
+html:not([data-user-theme="themeDark"]):not([data-user-theme="themeHigh"]) .SF_STREAM_SPACEIMAGE_SUMMARY:hover .SF_STREAM_INDICATOR,
+html:not([data-user-theme="themeDark"]):not([data-user-theme="themeHigh"]) .SF_STREAM_ARTISTGALLERY_SUMMARY:hover .SF_STREAM_INDICATOR {
+   border-color: #D47A36;
+}
+
+html[data-user-theme="themeDark"] .SF_STREAM_SPACEIMAGE_SUMMARY:hover .SF_STREAM_INDICATOR,
+html[data-user-theme="themeDark"] .SF_STREAM_ARTISTGALLERY_SUMMARY:hover .SF_STREAM_INDICATOR,
+html[data-user-theme="themeHigh"] .SF_STREAM_SPACEIMAGE_SUMMARY:hover .SF_STREAM_INDICATOR,
+html[data-user-theme="themeHigh"] .SF_STREAM_ARTISTGALLERY_SUMMARY:hover .SF_STREAM_INDICATOR {
+    border-color: #fff;
+}
+
+.SF_STREAM_SPACEIMAGE_BLOCK[open] > .SF_STREAM_SPACEIMAGE_SUMMARY:hover::before,
+.SF_STREAM_SPACEIMAGE_BLOCK[open] > .SF_STREAM_SPACEIMAGE_SUMMARY:hover::after,
+.SF_STREAM_ARTISTGALLERY_BLOCK[open] > .SF_STREAM_ARTISTGALLERY_SUMMARY:hover::before,
+.SF_STREAM_ARTISTGALLERY_BLOCK[open] > .SF_STREAM_ARTISTGALLERY_SUMMARY:hover::after {
+  opacity: 0; visibility: hidden;
+}
+.SF_STREAM_SPACEIMAGE_BLOCK[open] > .SF_STREAM_SPACEIMAGE_SUMMARY:hover .SF_STREAM_SUMMARY_CONTENT_WRAP,
+.SF_STREAM_ARTISTGALLERY_BLOCK[open] > .SF_STREAM_ARTISTGALLERY_SUMMARY:hover .SF_STREAM_SUMMARY_CONTENT_WRAP {
+  color: var(--textColor);
+  text-shadow: none;
+}
+.SF_STREAM_SPACEIMAGE_BLOCK[open] > .SF_STREAM_SPACEIMAGE_SUMMARY:hover .SF_STREAM_INDICATOR,
+.SF_STREAM_ARTISTGALLERY_BLOCK[open] > .SF_STREAM_ARTISTGALLERY_SUMMARY:hover .SF_STREAM_INDICATOR {
+  border-color: var(--mutedTextColor);
+  filter: none;
+}
+
+.SF_STREAM_ARTISTGALLERY_TITLE,
+.SF_STREAM_SPACEIMAGE_TITLE {
+  font-family: var(--fontHeading); font-size: var(--mediumSizeREM); font-weight: 700;
+  color: var(--textColor); margin: 0 0 var(--smallSizeREM) 0; padding: 0; display: block;
+  transition: margin-bottom 0.2s ease-out, color 0.3s ease-out, text-shadow 0.3s ease-out;
+}
+
+.SF_STREAM_ARTISTGALLERY_HOOK,
+.SF_STREAM_SPACEIMAGE_HOOK {
+  font-family: var(--fontBody); font-size: var(--smallSizeREM); line-height: 1.4; font-weight: 400;
+  color: var(--mutedTextColor); margin: 0; padding: 0;
+  padding-bottom: var(--baseSizeREM);
+  transition: opacity 0.15s ease-out, max-height 0.2s ease-out, visibility 0s linear 0.15s, color 0.3s ease-out, text-shadow 0.3s ease-out;
+  max-height: 6em; overflow: hidden; opacity: 1; visibility: visible;
+  text-shadow: none;
+}
+.SF_STREAM_ARTISTGALLERY_HOOK > *:first-child,
+.SF_STREAM_SPACEIMAGE_HOOK > *:first-child { margin-top: 0; }
+.SF_STREAM_ARTISTGALLERY_HOOK > *:last-child,
+.SF_STREAM_SPACEIMAGE_HOOK > *:last-child { margin-bottom: 0; }
+
+.SF_STREAM_ARTISTGALLERY_CONTENT {
+  padding-top: var(--smallSizeREM);
+  padding-bottom: var(--baseSizeREM);
+}
+
+.SF_ARTISTGALLERY_SLIDESHOW_CONTAINER {
+  position: relative;
+  margin-block: var(--baseSizeREM);
+  border: 3px solid var(--borderColor);
+  padding: var(--smallSizeREM);
+  background-color: color-mix(in srgb, var(--BGColor) 90%, var(--borderColor));
+  box-shadow: inset 0 0 8px rgba(0,0,0,0.1);
+}
+
+.SF_ARTISTGALLERY_SLIDES_WRAPPER {
+  overflow: hidden;
+  position: relative;
+  width: 100%;
+  aspect-ratio: 4 / 3;
+  background-color: #333;
+}
+
+.SF_ARTISTGALLERY_SLIDE {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: none;
+  opacity: 0;
+  transition: opacity 0.6s ease-in-out;
+  pointer-events: none;
+  z-index: 1;
+}
+
+.SF_ARTISTGALLERY_SLIDE.active-slide {
+  opacity: 1;
+  pointer-events: auto;
+  z-index: 2;
+}
+/* .SF_ARTISTGALLERY_SLIDE:first-child {
+    display: block;
+    opacity: 1;
+}
+.SF_ARTISTGALLERY_SLIDE.active-slide {
+    display: block;
+    opacity: 1;
+    z-index: 2;
+} */
+
+.SF_ARTISTGALLERY_BG_BLUR {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-size: cover;
+  background-position: center;
+  filter: blur(15px) brightness(0.7);
+  transform: scale(1.1);
+  z-index: 0;
+}
+
+.SF_ARTISTGALLERY_IMG {
+  position: relative;
+  z-index: 1;
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  object-position: center top;
+}
+
+.SF_ARTISTGALLERY_CAPTION {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: linear-gradient(to top, rgba(0,0,0,0.80) 0%, rgba(0,0,0,0.6) 30%, transparent 100%);
+  padding: var(--baseSizeREM);
+  z-index: 2;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.SF_ARTIST_INFO_IN_CAPTION {
+  z-index: 3;
+  margin-bottom: var(--smallSizeREM);
+  display: block;
+}
+
+.SF_ARTIST_PORTRAIT_IN_CAPTION {
+  display: block;
+  width: 60px;
+  height: 60px;
+  border-radius: 4px;
+  object-fit: cover;
+  border: 2px solid rgba(255,255,255,0.7);
+  background-color: rgba(0,0,0,0.4);
+  box-shadow: 0 2px 4px rgba(0,0,0,0.6);
+}
+
+.SF_ARTISTGALLERY_CAPTION_TEXT {
+  color: #fff;
+  font-size: var(--smallSizeREM);
+  line-height: 1.4;
+  text-shadow: 0 1px 3px rgba(0,0,0,0.9);
+  width: 100%;
+}
+
+.SF_ARTISTGALLERY_CAPTION_TEXT strong {
+  color: #fff;
+  font-weight: 700;
+  display: inline-block;
+  margin-bottom: 0.2em;
+  font-size: 1.1em;
+}
+
+.SF_ARTISTGALLERY_PREV,
+.SF_ARTISTGALLERY_NEXT {
+  display: none;
+}
+
+
+.SF_STREAM_SHELF_BLOCK {
+  background-image: linear-gradient(rgba(0,0,0,0.015), rgba(0,0,0,0.015)), linear-gradient(90deg, rgba(0,0,0,0.01), rgba(0,0,0,0.01));
+  background-size: 2px 1px, 1px 2px;
+}
+html[data-user-theme="themeDark"] .SF_STREAM_SHELF_BLOCK {
+  background-image: linear-gradient(rgba(255,255,255,0.015), rgba(255,255,255,0.015)), linear-gradient(90deg, rgba(255,255,255,0.01), rgba(255,255,255,0.01));
+}
+
+.SF_STREAM_SHELF_SUMMARY {
+  position: relative;
+}
+
+.SF_STREAM_SHELF_TITLE {
+  font-family: var(--fontHeading); font-size: var(--mediumSizeREM); font-weight: 700;
+  color: var(--textColor); margin: 0 0 var(--smallSizeREM) 0; padding: 0; display: block;
+  transition: margin-bottom 0.2s ease-out;
+}
+
+.SF_STREAM_SHELF_HOOK {
+  font-family: var(--fontBody); font-size: var(--smallSizeREM); line-height: 1.4; font-weight: 400;
+  color: var(--mutedTextColor); margin: 0; padding: 0;
+  padding-bottom: var(--baseSizeREM);
+  transition: opacity 0.15s ease-out, max-height 0.2s ease-out, visibility 0s linear 0.15s;
+  max-height: 6em; overflow: hidden; opacity: 1; visibility: visible;
+}
+.SF_STREAM_SHELF_HOOK > *:first-child { margin-top: 0; }
+.SF_STREAM_SHELF_HOOK > *:last-child { margin-bottom: 0; }
+
+.SF_STREAM_SHELF_CONTENT {
+  padding-top: var(--smallSizeREM);
+  padding-bottom: 0;
+}
+
+.SF_STREAM_SHELF_ROW_LIST {
+  display: flex;
+  flex-direction: column;
+}
+
+.SF_STREAM_SHELF_GRID_ROW {
+  display: grid;
+  grid-template-columns: 1fr auto auto;
+  column-gap: 1.5em;
+  align-items: baseline;
+  padding: calc(var(--smallestSizeREM) * 0.75) 0;
+  border-bottom: 1px solid color-mix(in srgb, var(--borderColor) 25%, transparent);
+  transition: background-color 0.15s ease-out;
+  margin-left: 0;
+}
+
+.SF_STREAM_SHELF_ROW_LIST > .SF_STREAM_SHELF_GRID_ROW:last-child {
+  border-bottom: 1px solid color-mix(in srgb, var(--borderColor) 25%, transparent);
+  padding-bottom: calc(var(--smallestSizeREM) * 0.75);
+}
+
+.SF_STREAM_SHELF_GRID_ROW:hover {
+  background-color: color-mix(in srgb, var(--BGColor) 95%, var(--borderColor) 5%);
+}
+
+.SF_STREAM_SHELF_GRID_TITLE {
+  grid-column: 1;
+  font-family: var(--fontBody);
+  font-size: var(--smallSizeREM);
+  font-weight: 400;
+  line-height: 1.3;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  padding-left: 0;
+  margin-left: 0;
+}
+.SF_STREAM_SHELF_GRID_TITLE a {
+  color: var(--textColor);
+  text-decoration: none;
+  border-bottom: none;
+  transition: color 0.2s ease-out;
+}
+.SF_STREAM_SHELF_GRID_TITLE a:hover,
+.SF_STREAM_SHELF_GRID_TITLE a:focus {
+  color: var(--accentColor);
+}
+
+.SF_STREAM_SHELF_GRID_AUTHOR {
+  grid-column: 2;
+  font-family: var(--fontBody);
+  font-size: calc(var(--smallSizeREM) * 0.9);
+  color: var(--mutedTextColor);
+  line-height: 1.3;
+  font-variant: small-caps;
+  letter-spacing: 0.05em;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  transition: color 0.15s ease-out, text-shadow 0.15s ease-out;
+}
+
+.SF_STREAM_SHELF_GRID_ROW:hover .SF_STREAM_SHELF_GRID_AUTHOR {
+  color: var(--accentColor);
+  text-shadow: 0 0 4px var(--accentColor);
+}
+
+details.SF_STREAM_SHELF_BLOCK div.SF_STREAM_SHELF_ROW_LIST div.SF_STREAM_SHELF_GRID_ROW > span.SF_STREAM_SHELF_GRID_STATUS {
+  grid-column: 3;
+  font-family: var(--fontCode);
+  font-size: var(--smallSizeREM);
+  line-height: 1.3;
+  font-weight: 600;
+  white-space: nowrap;
+  text-align: right;
+  padding: 0.1em 0.5em;
+  border-radius: 3px;
+  margin-left: 0;
+  background-color: transparent;
+}
+
+details.SF_STREAM_SHELF_BLOCK div.SF_STREAM_SHELF_ROW_LIST div.SF_STREAM_SHELF_GRID_ROW[data-status="reading"] > span.SF_STREAM_SHELF_GRID_STATUS {
+  color: var(--statusIconColor);
+  background-color: hsla(from var(--statusIconColor) h s l / 0.25);
+}
+details.SF_STREAM_SHELF_BLOCK div.SF_STREAM_SHELF_ROW_LIST div.SF_STREAM_SHELF_GRID_ROW[data-status="finished"] > span.SF_STREAM_SHELF_GRID_STATUS {
+  color: var(--accentHoverColor);
+  background-color: hsla(from var(--accentHoverColor) h s l / 0.15);
+}
+
+.SF_STREAM_SHELF_GRID_STATUS::before {
+  display: none;
+  content: '';
+}
+
+.SF_STREAM_SHELF_FOOTER {
+  display: block;
+  text-align: right;
+  padding: 0;
+  border-top: none;
+  margin-top: var(--mediumSizeREM);
+  padding-top: 0;
+  padding-bottom: var(--smallSizeREM);
+  padding-right: 0;
+}
+
+.SF_STREAM_SHELF_VIEWALL {
+  font-family: var(--fontCode);
+  font-size: var(--smallSizeREM);
+  color: var(--accentColor);
+  text-decoration: none;
+  font-weight: 600;
+}
+.SF_STREAM_SHELF_VIEWALL:hover,
+.SF_STREAM_SHELF_VIEWALL:focus {
+  color: var(--linkHoverColor);
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+.SF_STREAM_ITEM[open] > summary .SF_STREAM_HOOK,
+.SF_STREAM_ITEM[open] > summary .SF_STREAM_THEOREM_HOOK,
+.SF_STREAM_ITEM[open] > summary .SF_STREAM_SPACEIMAGE_HOOK,
+.SF_STREAM_ITEM[open] > summary .SF_STREAM_SHELF_HOOK,
+.SF_STREAM_ITEM[open] > summary .SF_STREAM_ARTISTGALLERY_HOOK {
+  opacity: 0; max-height: 0; padding-bottom: 0; margin-bottom: 0; overflow: hidden; visibility: hidden;
+  transition: opacity 0.1s ease-out, visibility 0s linear 0.1s, max-height 0.2s ease-out, padding 0.1s ease-out, margin 0.1s ease-out;
+}
+
+.SF_STREAM_ITEM[open] > summary .SF_STREAM_SUMMARY_CONTENT_WRAP {
+  padding-bottom: var(--baseSizeREM);
+}
+
+.SF_STREAM_ITEM[open] > summary .SF_STREAM_TITLE,
+.SF_STREAM_ITEM[open] > summary .SF_STREAM_THEOREM_TITLE,
+.SF_STREAM_ITEM[open] > summary .SF_STREAM_SPACEIMAGE_TITLE,
+.SF_STREAM_ITEM[open] > summary .SF_STREAM_SHELF_TITLE,
+.SF_STREAM_ITEM[open] > summary .SF_STREAM_ARTISTGALLERY_TITLE {
+  margin-bottom: 0;
+}
+
+.SF_POSTCONTENT .katex-display { margin: var(--baseSizeREM) 0; font-size: 1.15em; }
+.SF_POSTCONTENT .katex { font-size: 1.1em; }

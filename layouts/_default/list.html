@@ -17,6 +17,9 @@
   {{ partial "sections/notesSection.html" . }}
 {{ else if eq .Section "colophon" }}
   {{ partial "sections/colophonSection.html" . }}
+{{ else if eq .Section "stream" }}
+  {{ partial "sections/streamSection.html" . }}
+  
 {{ end }}
 
 {{ end }}

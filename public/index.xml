@@ -8,7 +8,7 @@
     <language>en-us</language>
     <managingEditor>ambiverb@gmail.com (Siddharth Nair)</managingEditor>
     <webMaster>ambiverb@gmail.com (Siddharth Nair)</webMaster>
-    <lastBuildDate>Sun, 06 Apr 2025 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Sun, 13 Apr 2025 00:00:00 +0000</lastBuildDate>
     <atom:link href="http://localhost:1313/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Type-theoretical Proofs for Algebraic Properties of Abelian Rings</title>
@@ -44,6 +44,27 @@
       <pubDate>Thu, 01 Jun 2023 00:00:00 +0000</pubDate><author>ambiverb@gmail.com (Siddharth Nair)</author>
       <guid>http://localhost:1313/projects/opengl-project/</guid>
       <description>&lt;p&gt;This project explored the practical application of [Algorithm/Theory Name] to solve problems in [Domain Area]. The initial motivation stemmed from observing inefficiencies in existing methods, particularly concerning [Specific Problem]. Our goal was to develop a more efficient and scalable alternative.&lt;/p&gt;&#xA;&lt;p&gt;The development process involved several key stages: initial research, algorithm design, implementation, testing, and refinement. We adopted an agile approach, allowing for flexibility as challenges arose. One significant hurdle was optimizing the core computations for large datasets, which required exploring techniques like [Technique 1] and [Technique 2].&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Artist Showcase: Charles Reid</title>
+      <link>http://localhost:1313/stream/artists/charlesreid/</link>
+      <pubDate>Sun, 13 Apr 2025 00:00:00 +0000</pubDate><author>ambiverb@gmail.com (Siddharth Nair)</author>
+      <guid>http://localhost:1313/stream/artists/charlesreid/</guid>
+      <description>Charles Clark Reid (August 12, 1937 – June 1, 2019) was an American painter, illustrator, and teacher, notable for his watercolor style.</description>
+    </item>
+    <item>
+      <title>First Image of a Black Hole (M87)</title>
+      <link>http://localhost:1313/stream/m87bh/</link>
+      <pubDate>Sat, 12 Apr 2025 00:00:00 +0000</pubDate><author>ambiverb@gmail.com (Siddharth Nair)</author>
+      <guid>http://localhost:1313/stream/m87bh/</guid>
+      <description>The first direct visual evidence of a supermassive black hole and its shadow, captured by the Event Horizon Telescope.</description>
+    </item>
+    <item>
+      <title>Theorem of the Month: Euler&#39;s Formula</title>
+      <link>http://localhost:1313/stream/theorems/eulersformula/</link>
+      <pubDate>Sat, 12 Apr 2025 00:00:00 +0000</pubDate><author>ambiverb@gmail.com (Siddharth Nair)</author>
+      <guid>http://localhost:1313/stream/theorems/eulersformula/</guid>
+      <description>Perhaps one of the most beautiful equations in mathematics, $e^{i\pi} + 1 = 0$, connecting five fundamental constants using Euler&amp;rsquo;s identity.</description>
     </item>
     <item>
       <title>Derivation: Newton&#39;s Equation in Polar Coordinates</title>

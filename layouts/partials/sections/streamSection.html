@@ -1,0 +1,33 @@
+<div class="LP_STACK LP_STACK_INTER_BIGGER">
+
+  {{ partial "stream-components/streamShelf.html" . }}
+
+  {{ $streamItems := where site.RegularPages "Section" "stream" | default slice }}
+
+  {{ $preparedItems := slice }}
+  {{ range $streamItems }}
+    {{ if isset .Params "date" }} 
+        {{ $parsedDate := time .Params.date }}
+        {{ $preparedItems = $preparedItems | append (dict "Page" . "ParsedDate" $parsedDate) }}
+    {{ else }}
+    {{ end }}
+  {{ end }}
+
+  {{ $sortedItems := sort $preparedItems "ParsedDate" "desc" }}
+
+  {{ if $sortedItems }}
+    {{ range $sortedItems }}
+      {{ $page := .Page }} {{/* Get the original Page object */}}
+      {{ $parentDir := path.Base $page.File.Dir }}
+
+      {{ if eq $parentDir "theorems" }}
+        {{ partial "stream-components/streamTheorem.html" $page }} 
+      {{ else if eq $parentDir "artists" }}
+        {{ partial "stream-components/streamArtistShowcase.html" $page }} 
+      {{ else if eq $page.File.LogicalName "m87BH.md" }}
+         {{ partial "stream-components/streamSpaceShowcase.html" $page }} 
+      {{ end }}
+    {{ end }}
+  {{ end }}
+
+</div>

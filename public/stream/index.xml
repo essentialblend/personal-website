@@ -1,13 +1,35 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Siddharth Nair</title>
+    <title>Stream on Siddharth Nair</title>
     <link>http://localhost:1313/stream/</link>
-    <description>Recent content on Siddharth Nair</description>
+    <description>Recent content in Stream on Siddharth Nair</description>
     <generator>Hugo</generator>
     <language>en-us</language>
     <managingEditor>ambiverb@gmail.com (Siddharth Nair)</managingEditor>
     <webMaster>ambiverb@gmail.com (Siddharth Nair)</webMaster>
+    <lastBuildDate>Sun, 13 Apr 2025 00:00:00 +0000</lastBuildDate>
     <atom:link href="http://localhost:1313/stream/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Artist Showcase: Charles Reid</title>
+      <link>http://localhost:1313/stream/artists/charlesreid/</link>
+      <pubDate>Sun, 13 Apr 2025 00:00:00 +0000</pubDate><author>ambiverb@gmail.com (Siddharth Nair)</author>
+      <guid>http://localhost:1313/stream/artists/charlesreid/</guid>
+      <description>Charles Clark Reid (August 12, 1937 – June 1, 2019) was an American painter, illustrator, and teacher, notable for his watercolor style.</description>
+    </item>
+    <item>
+      <title>First Image of a Black Hole (M87)</title>
+      <link>http://localhost:1313/stream/m87bh/</link>
+      <pubDate>Sat, 12 Apr 2025 00:00:00 +0000</pubDate><author>ambiverb@gmail.com (Siddharth Nair)</author>
+      <guid>http://localhost:1313/stream/m87bh/</guid>
+      <description>The first direct visual evidence of a supermassive black hole and its shadow, captured by the Event Horizon Telescope.</description>
+    </item>
+    <item>
+      <title>Theorem of the Month: Euler&#39;s Formula</title>
+      <link>http://localhost:1313/stream/theorems/eulersformula/</link>
+      <pubDate>Sat, 12 Apr 2025 00:00:00 +0000</pubDate><author>ambiverb@gmail.com (Siddharth Nair)</author>
+      <guid>http://localhost:1313/stream/theorems/eulersformula/</guid>
+      <description>Perhaps one of the most beautiful equations in mathematics, $e^{i\pi} + 1 = 0$, connecting five fundamental constants using Euler&amp;rsquo;s identity.</description>
+    </item>
   </channel>
 </rss>

@@ -1,0 +1,36 @@
+{{ $bgImageUrl := .Params.imageUrl | default "" }}
+{{ $altText := .Params.imageAlt | default .Title }}
+{{ $itemClass := "SF_STREAM_SPACEIMAGE_BLOCK" }}
+{{ $summaryClass := "SF_STREAM_SPACEIMAGE_SUMMARY" }}
+{{ $titleClass := "SF_STREAM_SPACEIMAGE_TITLE" }}
+{{ $hookClass := "SF_STREAM_SPACEIMAGE_HOOK" }}
+{{ $contentClass := "SF_STREAM_SPACEIMAGE_CONTENT" }}
+
+<details class="SF_STREAM_ITEM {{ $itemClass }} LP_LEFT_SEPARATOR" {{ with $bgImageUrl }}style="--summary-bg-image: url('{{ . | absURL }}');"{{ end }}>
+  <summary class="{{ $summaryClass }}">
+    <div class="SF_STREAM_SUMMARY_CONTENT_WRAP">
+      <h3 class="{{ $titleClass }}">{{ .Title }}</h3>
+      {{ with .Params.summary }}
+      <div class="{{ $hookClass }}">
+        {{ . | markdownify }}
+      </div>
+      {{ end }}
+    </div>
+    <div class="SF_STREAM_INDICATOR"></div>
+  </summary>
+  <div class="SF_STREAM_EXPANDED_CONTENT_WRAPPER">
+    {{ with $bgImageUrl }}
+    <div class="SF_STREAM_IMAGE_MEDIA">
+      <img src="{{ . | absURL }}" alt="{{ $altText }}" loading="lazy" class="SF_STREAM_IMAGE_IMG">
+      {{ with $.Params.imageCredit }}
+      <div class="SF_STREAM_IMAGE_CREDIT">{{ . | markdownify }}</div>
+      {{ end }}
+    </div>
+    {{ end }}
+    {{ with .Content }}
+    <div class="{{ $contentClass }} SF_POSTCONTENT">
+      {{ . }}
+    </div>
+    {{ end }}
+  </div>
+</details>
