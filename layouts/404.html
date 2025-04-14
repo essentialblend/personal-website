@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en" data-page="404" data-user-theme="themeLight">
+{{ partial "components/siteHead404.html" . }}
+<body>
+  <div class="LP_STACK LP_STACK_EDGEMARGIN_BIG LP_STACK_EDGEMARGIN_NOBOTTOMEDGE LP_STACK_INTER_BIGGER LP_CENTER">
+
+    {{ partial "components/header.html" . }}
+
+    <main style="margin-top: 10vh; text-align: center;">
+      <h1 style="font-size: 5rem; font-weight: bold; color: var(--accentColor, #ff5252); margin-bottom: 1rem;">
+        404 – Page Not Found
+      </h1>
+    
+      <p style="font-size: 1.25rem; max-width: 60ch; margin: 0 auto 2rem;">
+        You've wandered into uncharted territory. The page you're looking for might have moved, been deleted, or perhaps it never existed at all.
+        <br><br>
+        If you typed the address manually, double-check the spelling. If you followed a broken link, feel free to let me know. Or, just head home and start fresh.
+      </p>
+    
+      <p style="margin-top: 2rem;">
+        <a href="/" style="text-decoration: underline; font-weight: bold;">← Home</a>
+      </p>
+    </main>
+    
+  
+    {{ partial "components/footer.html" . }}
+  </div>
+
+  {{ partial "components/siteJSCombineLean.html" . }}
+
+</body>
+</html>

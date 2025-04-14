@@ -1,0 +1,30 @@
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>{{ if .Title }}{{ .Title }} | {{ end }}{{ .Site.Title }}</title>
+
+  <meta name="description" content="{{ with .Description }}{{ . }}{{ else }}Personal site of {{ .Site.Params.author.name }}{{ end }}">
+  <meta name="author" content="{{ .Site.Params.author.name }}">
+
+  <!-- combining css -->
+  {{ partial "components/siteCSSCombine.html" . }}
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@400;700&family=Arbutus+Slab&display=swap">
+
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.21/dist/katex.min.css">
+
+  {{ $syntaxLight := "" }}{{ with resources.Get "css/code-syntax/syntaxGitLight.css" }}{{ $syntaxLight = . | resources.Minify | resources.Fingerprint }}{{ end }}
+  {{ $syntaxDark := "" }}{{ with resources.Get "css/code-syntax/syntaxGitDark.css" }}{{ $syntaxDark = . | resources.Minify | resources.Fingerprint }}{{ end }}
+  {{ $syntaxContrast := "" }}{{ with resources.Get "css/code-syntax/syntaxMonokai.css" }}{{ $syntaxContrast = . | resources.Minify | resources.Fingerprint }}{{ end }}
+
+  {{ if $syntaxLight }}<meta name="syntax-theme-light" content="{{ $syntaxLight.RelPermalink }}">{{ end }}
+  {{ if $syntaxDark }}<meta name="syntax-theme-dark" content="{{ $syntaxDark.RelPermalink }}">{{ end }}
+  {{ if $syntaxContrast }}<meta name="syntax-theme-contrast" content="{{ $syntaxContrast.RelPermalink }}">{{ end }}
+
+  {{ $defaultSyntax := $syntaxLight | default $syntaxDark | default $syntaxContrast }}
+  {{ if $defaultSyntax }}
+    <link id="syntax-stylesheet" rel="stylesheet" href="{{ $defaultSyntax.RelPermalink }}">
+  {{ end }}
+  
+</head>

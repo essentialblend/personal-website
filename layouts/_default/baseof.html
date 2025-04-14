@@ -1,77 +1,18 @@
 <!DOCTYPE html>
 <html lang="en" data-page="{{ .Title | urlize }}" data-user-theme="themeLight">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>{{ if .Title }}{{ .Title }} | {{ end }}{{ .Site.Title }}</title>
 
-  <meta name="description" content="{{ with .Description }}{{ . }}{{ else }}Personal site of {{ .Site.Params.author.name }}{{ end }}">
-  <meta name="author" content="{{ .Site.Params.author.name }}">
-
-  <!-- combining css -->
-  {{ $htmlElemCSSChunk := resources.Get "css/core/htmlElements.css" }}
-  {{ $layoutPrimitivesCSSChunk  := resources.Get "css/core/layoutPrimitives.css" }}
-  {{ $siteFeaturesCSSChunk := resources.Get "css/core/siteFeatures.css" }}
-  
-  {{ $postContentCSSChunk := resources.Get "css/site-features/sfMDPostContent.css" }}
-  {{ $writingsTitleCSSChunk := resources.Get "css/site-features/sfWritingsCard.css" }}
-  {{ $taxonomyFilterCSSChunk := resources.Get "css/site-features/sfTaxonomyFilter.css" }}
-  {{ $metadataCardCSSChunk := resources.Get "css/site-features/sfMetadataCard.css" }}
-  {{ $projectSectionCSSChunk := resources.Get "css/site-features/sfProjectSection.css" }}
-  {{ $tableContentsCSSChunk := resources.Get "css/site-features/sfTableContents.css" }}
-  {{ $scrollToTopCSSChunk := resources.Get "css/site-features/sfScrollToTop.css" }}
-  {{ $colophonCSSChunk := resources.Get "css/site-features/sfColophonPage.css" }}
-  {{ $streamCSSChunk := resources.Get "css/site-features/sfStreamPage.css" }}
-
-  {{ $cssSlice := slice $htmlElemCSSChunk $layoutPrimitivesCSSChunk $siteFeaturesCSSChunk $postContentCSSChunk $taxonomyFilterCSSChunk $writingsTitleCSSChunk $metadataCardCSSChunk $projectSectionCSSChunk $tableContentsCSSChunk $scrollToTopCSSChunk $colophonCSSChunk $streamCSSChunk }}
-  
-  {{ $merged := $cssSlice | resources.Concat "css/baseof.css" | resources.Minify | resources.Fingerprint }}
-  <link rel="stylesheet" href="{{ $merged.RelPermalink }}">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@400;700&family=Arbutus+Slab&display=swap">
-  <link rel="stylesheet" href="{{ $merged.RelPermalink }}">
-
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.21/dist/katex.min.css">
-
-  {{ $syntaxLight := "" }}{{ with resources.Get "css/code-syntax/syntaxGitLight.css" }}{{ $syntaxLight = . | resources.Minify | resources.Fingerprint }}{{ end }}
-  {{ $syntaxDark := "" }}{{ with resources.Get "css/code-syntax/syntaxGitDark.css" }}{{ $syntaxDark = . | resources.Minify | resources.Fingerprint }}{{ end }}
-  {{ $syntaxContrast := "" }}{{ with resources.Get "css/code-syntax/syntaxMonokai.css" }}{{ $syntaxContrast = . | resources.Minify | resources.Fingerprint }}{{ end }}
-
-  {{ if $syntaxLight }}<meta name="syntax-theme-light" content="{{ $syntaxLight.RelPermalink }}">{{ end }}
-  {{ if $syntaxDark }}<meta name="syntax-theme-dark" content="{{ $syntaxDark.RelPermalink }}">{{ end }}
-  {{ if $syntaxContrast }}<meta name="syntax-theme-contrast" content="{{ $syntaxContrast.RelPermalink }}">{{ end }}
-
-  {{ $defaultSyntax := $syntaxLight | default $syntaxDark | default $syntaxContrast }}
-  {{ if $defaultSyntax }}
-    <link id="syntax-stylesheet" rel="stylesheet" href="{{ $defaultSyntax.RelPermalink }}">
-  {{ end }}
-  
-</head>
+{{ partial "components/siteHead.html" . }}
 
 <body>
   <div class="LP_STACK LP_STACK_EDGEMARGIN_BIG LP_STACK_EDGEMARGIN_NOBOTTOMEDGE LP_STACK_INTER_BIGGER LP_CENTER">
 
-    <header class="LP_LEFT_SEPARATOR" style="border-bottom: 2px solid var(--borderColor); display: flex; justify-content: space-between; padding-bottom: var(--smallestSizeREM);">
-      <span id="site-clock" class="SF_SITECLOCK" data-feature="siteClock"></span>
-  
-      <div class="LP_CLUSTER LP_CLUSTER_ALIGN_CENTER LP_CLUSTER_GAP_BIG" style="justify-content: flex-end; ">
-        <nav class="LP_CLUSTER LP_CLUSTER_ALIGN_CENTER LP_CLUSTER_GAP_BIG" aria-label="Main navigation">
-          {{ range site.Menus.main }}
-          {{ $isActive := or (eq .URL $.RelPermalink) (hasPrefix $.RelPermalink .URL) }}
-            <a href="{{ .URL }}" data-page="{{ .Identifier | urlize }}" {{ if $isActive }}data-active="true"{{ end }}>
-              {{ .Name }}
-            </a>
-          {{ end }}
-        </nav>
-        <button data-theme-toggle aria-label="Toggle theme">Light</button>
-      </div>
-    </header>
+    {{ partial "components/header.html" . }}
     
     <main>
       <div class="LP_STACK LP_STACK_EDGEMARGIN_NOMARGIN LP_STACK_INTER_BIGGER">
         {{ if .IsHome }}
           {{ block "homeContent" . }}{{ end }}
-        {{ else if .IsSection }}
+        {{ else if .IsNode }}
           {{ block "sectionContent" . }}{{ end }}
         {{ else if .IsPage }}
           {{ block "pageContent" . }}{{ end }}
@@ -80,33 +21,20 @@
         {{ end }}
       </div>
     </main>
-
-    <footer>
-      <p>&copy; 2025 Siddharth Nair&nbsp;&middot;&nbsp;<a href="/colophon/">colophon</a></p>
-    </footer>    
+    
+    {{ partial "components/footer.html" . }}
   </div>
   
   <!-- Site JS -->
-  {{ $themeJS := resources.Get "js/site-features/themeButton.js" | resources.Minify }}
-  {{ $clockJS := resources.Get "js/site-features/siteClock.js" | resources.Minify }}
-  {{ $subjectFilterJS := resources.Get "js/site-features/subjectFilter.js" | resources.Minify }}
-  {{ $codeCopyButtonJS := resources.Get "js/code-interface/codeCopyButton.js" | resources.Minify }}
-  {{ $tableContentsJS := resources.Get "js/site-features/tableContents.js" | resources.Minify }}
-  {{ $scrollToTopButtonJS := resources.Get "js/site-features/scrollToTop.js" | resources.Minify }}
-  {{ $slideshowJS := resources.Get "js/site-features/slideshowGallery.js" | resources.Minify }}
-  
-
-  {{ $scripts := slice $themeJS $clockJS $subjectFilterJS $codeCopyButtonJS $tableContentsJS $scrollToTopButtonJS $slideshowJS | resources.Concat "js/bundle.js" | resources.Fingerprint }}
-
-  <script src="{{ $scripts.RelPermalink }}" integrity="{{ $scripts.Data.Integrity }}"></script>
+   {{ partial "components/siteJSCombine.html" . }}
 
   <!--Katex-->
-  {{ if (or (eq .Section "writings") (eq .Section "notes") (eq .Section "stream")) }}
-  <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.21/dist/katex.min.js"></script>
-  <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.21/dist/contrib/auto-render.min.js"></script>
+  {{ if (or (eq .Section "writings") (eq .Section "notes") (eq .Section "stream") (eq .Kind "term")) }}
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.21/dist/katex.min.js"></script>
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.21/dist/contrib/auto-render.min.js"></script>
 
-  {{ $katexInit := resources.Get "js/site-features/katexClient.js" | resources.Minify | resources.Fingerprint }}
-  <script defer src="{{ $katexInit.RelPermalink }}" integrity="{{ $katexInit.Data.Integrity }}"></script>
+    {{ $katexInit := resources.Get "js/site-features/katexClient.js" | resources.Minify | resources.Fingerprint }}
+    <script defer src="{{ $katexInit.RelPermalink }}" integrity="{{ $katexInit.Data.Integrity }}"></script>
   {{ end }}
 
   <button class="SF_SCROLLTOP_BTN" title="Go to top" aria-label="Scroll to top">

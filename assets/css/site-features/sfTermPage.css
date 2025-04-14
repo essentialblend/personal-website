@@ -1,0 +1,46 @@
+.SF_TERM_ENTRY {
+  margin-bottom: 1.5rem;
+}
+
+.SF_TERM_ENTRY h2 {
+  font-size: 1.4rem;
+  margin-bottom: 0.25rem;
+  font-weight: 600;
+}
+
+.SF_TERM_ENTRY h2 a {
+  text-decoration: none;
+  color: inherit;
+}
+
+.SF_TERM_ENTRY h2 a:hover {
+  text-decoration: underline;
+}
+
+p.SF_METADATA_TERM_PAGE {
+  font-size: var(--smallSizeREM);
+  color: var(--mutedTextColor);
+  font-family: var(--fontCode);
+  margin-bottom: 1rem;
+}
+
+.SF_TERM_ENTRY > p:not(.SF_METADATA_TERM_PAGE) {
+  line-height: 1.6;
+  margin-bottom: 1rem;
+}
+
+.SF_SUMMARY_CLAMP {
+  display: -webkit-box;
+  line-clamp: 2;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  line-height: 1.6;
+  margin-bottom: 1rem;
+}
+
+.SF_TERM_ENTRY .katex-display {
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+}

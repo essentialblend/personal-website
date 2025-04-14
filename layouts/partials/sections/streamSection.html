@@ -17,7 +17,7 @@
 
   {{ if $sortedItems }}
     {{ range $sortedItems }}
-      {{ $page := .Page }} {{/* Get the original Page object */}}
+      {{ $page := .Page }} 
       {{ $parentDir := path.Base $page.File.Dir }}
 
       {{ if eq $parentDir "theorems" }}

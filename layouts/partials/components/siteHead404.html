@@ -1,0 +1,16 @@
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>404 – Page Not Found | {{ .Site.Title }}</title>
+
+  <meta name="description" content="Page not found on {{ .Site.Title }}">
+  <meta name="author" content="{{ .Site.Params.author.name }}">
+
+  <!-- Only load minimal CSS -->
+  {{ partial "components/siteCSSCombineLean.html" . }}
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@400;700&family=Arbutus+Slab&display=swap">
+
+</head>

@@ -1,0 +1,12 @@
+{{ $themeJS := resources.Get "js/site-features/themeButton.js" | resources.Minify }}
+  {{ $clockJS := resources.Get "js/site-features/siteClock.js" | resources.Minify }}
+  {{ $subjectFilterJS := resources.Get "js/site-features/subjectFilter.js" | resources.Minify }}
+  {{ $codeCopyButtonJS := resources.Get "js/code-interface/codeCopyButton.js" | resources.Minify }}
+  {{ $tableContentsJS := resources.Get "js/site-features/tableContents.js" | resources.Minify }}
+  {{ $scrollToTopButtonJS := resources.Get "js/site-features/scrollToTop.js" | resources.Minify }}
+  {{ $slideshowJS := resources.Get "js/site-features/slideshowGallery.js" | resources.Minify }}
+  
+
+  {{ $scripts := slice $themeJS $clockJS $subjectFilterJS $codeCopyButtonJS $tableContentsJS $scrollToTopButtonJS $slideshowJS | resources.Concat "js/bundle.js" | resources.Fingerprint }}
+
+  <script src="{{ $scripts.RelPermalink }}" integrity="{{ $scripts.Data.Integrity }}"></script>
