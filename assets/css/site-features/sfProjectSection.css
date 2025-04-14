@@ -55,7 +55,7 @@ a.SF_PROJECT_LINK_WRAPPER h3::after
 a.SF_PROJECT_LINK_WRAPPER p 
 {
   font-family: var(--fontBody);
-  font-size: var(--baseSizeREM);
+  font-size: var(--specialSizeREM);
   font-style: italic;
   color: var(--mutedTextColor);
   line-height: inherit;

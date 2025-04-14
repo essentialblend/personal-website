@@ -94,7 +94,9 @@ _Proof:_
 We can assume that $b > 0$. Indeed, if $b < 0$, we can apply the statement to $-b > 0$ and then flip the sign of $q$ after the fact. Switching the sign of $b$ does not change $|b|$, so the condition on $r$ is unchanged.
 
 Assume then that $b > 0$, and consider all integer linear combinations of $a$ and $b$ of the form $a - bx$ with $x \in \mathbb{Z}$, such that $a - bx \geq 0$. Note that there are nonnegative integers of this type: if $a$ is itself nonnegative, then $a - b \cdot 0 = a$ is nonnegative; and if $a$ is negative, then $a - ba = a(1 - b)$ is nonnegative because $1 - b \leq 0$. Therefore, the set,
+
 $$S = \{a - bx \mid x \in \mathbb{Z}, a - bx \geq 0\}$$  
+
 is a nonempty set of nonnegative integers. By the well-ordering principle, it contains a least element $r$: that is, there is some $x = q$ such that $r = a - bq$ is smaller than any other nonnegative number of the form $a - bx$. I claim that these $q$ and $r$ are the unique numbers whose existence is claimed in the statement. 
 
 Indeed: by construction we have that $a = bq + r$ and that $r \geq 0$. We now have to verify that,

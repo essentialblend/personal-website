@@ -61,9 +61,9 @@
 
 .SF_BLOGPOST p
 {
-  font-size: inherit;
   font-style: italic;
   color: var(--mutedTextColor);
+  font-size: var(--specialSizeREM);
 }
 
 .SF_YEARGROUP_HEADING

@@ -4,82 +4,118 @@
   margin-block-end: 0;
 }
 
-.SF_POSTCONTENT > * + * 
-{
-  margin-block-start: var(--biggerSizeREM);
-}
-
-.SF_POSTCONTENT .katex-display 
+.SF_POSTCONTENT .katex-display
 {
   display: block;
+  margin-block-start: 0;
+  margin-block-end: 0;
+}
+
+/* Inline math inside paragraph text */
+.SF_POSTCONTENT p .katex, .SF_POSTCONTENT li .katex 
+{
+  font-size: var(--specialSizeREM);
+}
+
+/* Block math rendered directly inside the post content */
+.SF_POSTCONTENT * .katex-display {
+  font-size: var(--specialSizeREM) !important;
+}
+
+.SF_POSTCONTENT p + p
+{
+  margin-block-start: var(--baseSizeREM);
+}
+
+.SF_POSTCONTENT p + span > .katex-display {
+  margin-block-start: var(--baseSizeREM);
+}
+
+.SF_POSTCONTENT span:has(> .katex-display) + p {
+  margin-block-start: var(--baseSizeREM);
+}
+
+.SF_POSTCONTENT h1 {
+  margin-block-start: var(--biggestSizeREM);
+}
+
+.SF_POSTCONTENT h2 {
   margin-block-start: var(--biggerSizeREM);
-  margin-block-end: var(--baseSizeREM);
 }
 
-.SF_POSTCONTENT p > .katex-display 
-{
-    margin-block-start: 0;
-    margin-block-end: 0;
-}
-.SF_POSTCONTENT p:has(> .katex-display) 
-{
-    margin-block: 0; 
-}
-
-.SF_POSTCONTENT h1,
-.SF_POSTCONTENT h2,
 .SF_POSTCONTENT h3,
-.SF_POSTCONTENT h4 
-{
+.SF_POSTCONTENT h4 {
   margin-block-start: var(--bigSizeREM);
-  margin-block-end: var(--smallSizeREM);
-  scroll-margin-top: var(--biggestSizeREM);
 }
 
-.SF_POSTCONTENT h1 + *,
-.SF_POSTCONTENT h2 + *,
-.SF_POSTCONTENT h3 + *,
-.SF_POSTCONTENT h4 + * 
-{
+.SF_POSTCONTENT h5,
+.SF_POSTCONTENT h6 {
+  margin-block-start: var(--baseSizeREM);
+}
+
+.SF_POSTCONTENT :is(h1, h2, h3, h4, h5, h6) + p {
   margin-block-start: var(--smallSizeREM);
 }
 
-.SF_POSTCONTENT p + h1,
-.SF_POSTCONTENT p + h2,
-.SF_POSTCONTENT p + h3,
-.SF_POSTCONTENT p + h4,
-.SF_POSTCONTENT ul + h1,
-.SF_POSTCONTENT ul + h2,
-.SF_POSTCONTENT ul + h3,
-.SF_POSTCONTENT ul + h4,
-.SF_POSTCONTENT ol + h1,
-.SF_POSTCONTENT ol + h2,
-.SF_POSTCONTENT ol + h3,
-.SF_POSTCONTENT ol + h4,
-.SF_POSTCONTENT pre + h1,
-.SF_POSTCONTENT pre + h2,
-.SF_POSTCONTENT pre + h3,
-.SF_POSTCONTENT pre + h4,
-.SF_POSTCONTENT blockquote + h1,
-.SF_POSTCONTENT blockquote + h2,
-.SF_POSTCONTENT blockquote + h3,
-.SF_POSTCONTENT blockquote + h4 
+.SF_POSTCONTENT p {
+  font-size: var(--specialSizeREM);
+}
+
+.SF_POSTCONTENT h6 {
+  font-size: var(--specialSizeREM);
+}
+
+.SF_POSTCONTENT h5 {
+  font-size: var(--baseSizeREM);
+}
+
+.SF_POSTCONTENT h4 
 {
-  margin-block-start: var(--bigSizeREM);
+  font-size: var(--mediumSizeREM);
+}
+
+.SF_POSTCONTENT h3 {
+  font-size: var(--bigSizeREM);
+}
+
+.SF_POSTCONTENT h2 {
+  font-size: var(--biggerSizeREM);
+}
+
+.SF_POSTCONTENT :is(h1, h2, h3, h4, h5, h6):first-child {
+  margin-block-start: 0;
 }
 
 .SF_POSTCONTENT pre 
 {
- margin-block-start: var(--bigSizeREM);
- margin-block-end: var(--baseSizeREM);
+  margin-block: var(--baseSizeREM); 
 }
 
-.SF_POSTCONTENT h1 + pre,
-.SF_POSTCONTENT h2 + pre,
-.SF_POSTCONTENT h3 + pre,
-.SF_POSTCONTENT h4 + pre 
-{
- margin-block-start: var(--baseSizeREM);
+.SF_POSTCONTENT pre + h2 { margin-block-start: var(--biggerSizeREM); }
+.SF_POSTCONTENT pre + :is(h3, h4) { margin-block-start: var(--bigSizeREM); }
+
+.SF_POSTCONTENT :is(h1, h2, h3, h4, h5, h6) + :is(ul, ol) {
+  margin-block-start: var(--smallSizeREM);
+}
+
+.SF_POSTCONTENT :is(ul, ol) + h1 {
+  margin-block-start: var(--biggestSizeREM);
+}
+
+.SF_POSTCONTENT :is(ul, ol) + h2 {
+  margin-block-start: var(--biggerSizeREM);
+}
+
+.SF_POSTCONTENT :is(ul, ol) + :is(h3, h4) {
+  margin-block-start: var(--bigSizeREM);
+}
+
+.SF_POSTCONTENT :is(ul, ol) + :is(h5, h6) {
+  margin-block-start: var(--baseSizeREM);
+}
+
+.SF_POSTCONTENT li + li {
+  margin-block-start: var(--smallSizeREM);
 }
 
 .SF_POSTCONTENT ul,

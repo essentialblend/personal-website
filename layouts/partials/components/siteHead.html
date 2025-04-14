@@ -9,10 +9,9 @@
   <!-- combining css -->
   {{ partial "components/siteCSSCombine.html" . }}
 
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@400;700&family=Arbutus+Slab&display=swap">
-
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.21/dist/katex.min.css">
+  {{ if (or (eq .Section "writings") (eq .Section "notes") (eq .Section "projects") (eq .Section "stream") (eq .Kind "term")) }}
+    <link rel="stylesheet" href="/katex/katex.min.css">
+  {{ end }}
 
   {{ $syntaxLight := "" }}{{ with resources.Get "css/code-syntax/syntaxGitLight.css" }}{{ $syntaxLight = . | resources.Minify | resources.Fingerprint }}{{ end }}
   {{ $syntaxDark := "" }}{{ with resources.Get "css/code-syntax/syntaxGitDark.css" }}{{ $syntaxDark = . | resources.Minify | resources.Fingerprint }}{{ end }}

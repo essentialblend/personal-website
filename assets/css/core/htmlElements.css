@@ -1,12 +1,32 @@
+@font-face {
+  font-family: 'Arbutus Slab';
+  src: url('/fonts/ArbutusSlab-Regular.woff2') format('woff2');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Roboto Mono';
+  src: url('/fonts/RobotoMono-VariableFont_wght.ttf') format('truetype');
+  font-weight: 100 900;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Roboto Mono';
+  src: url('/fonts/RobotoMono-Italic-VariableFont_wght.ttf') format('truetype');
+  font-weight: 100 900;
+  font-style: italic;
+  font-display: swap;
+}
+
+
 :root 
 {
   /* Global settings and site-level elements */
   color-scheme: light;
-
-  /* Global property vars */
-  --mainMeasureWidth: 66ch;
-  --ratioPhi: 1.618;
-  --contentTextLineHeight: var(--ratioPhi);
 
   /* Modular scale vars: positive and negative, scaled by phi */
   --modScaleFac_x0: 1;
@@ -19,6 +39,11 @@
   --modScaleFac_x2neg: calc(var(--modScaleFac_x1neg) / var(--ratioPhi));
   /* Special value, 1 over the twentieth root of phi, for getting that wee bit reduction while staying as close to 1rem as possible, i.e. 1 rem -> ~0.98 rem */
   --modScaleFac_xInv20_special: 0.976;
+
+  /* Global property vars */
+  --mainMeasureWidth: 66ch;
+  --ratioPhi: 1.618;
+  --contentTextLineHeight: var(--ratioPhi);
 
   /* Color-scheme vars (light)*/
   --BGColor: #F8F0E3;
@@ -101,7 +126,7 @@ body
   min-height: 100vh;
   
   font-family: var(--fontBody);
-  font-size: var(--baseSizeREM);
+  font-size: var(--specialSizeREM);
   line-height: var(--contentTextLineHeight);
   
   background-color: var(--BGColor);
