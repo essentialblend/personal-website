@@ -311,3 +311,9 @@ nav[aria-label="Pagination"] a:hover
   color: var(--textColor);
 }
 
+header nav a[data-active="true"] 
+{
+  color: var(--accentColor);
+  font-weight: 600;
+  text-shadow: 0 0 6px var(--accentColor);
+}

@@ -102,6 +102,13 @@
       <description>&lt;p&gt;Deriving Newton&amp;rsquo;s equation for cylindrical coordinates is similar to polar coordinates, with both of them sharing radial and angular coordinate axes, but cylindrical coordinates add the $z$ coordinate axis. We can represent force along these coordinates,&lt;/p&gt;&#xA;$$&#xD;&#xA;\mathbf{F} = F_r \hat{\mathbf{r}} + F_{\phi} \hat{\mathbf{\phi}} + F_{z} \hat{\mathbf{z}} \tag{1.1}&#xD;&#xA;$$&lt;p&gt;Our position vector is,&lt;/p&gt;&#xA;$$&#xD;&#xA;\mathbf{r} = r\hat{\mathbf{r}} + z \hat{\mathbf{z}} \tag{1.2}&#xD;&#xA;$$&lt;p&gt;where we only need the radial and the $z$ coordinate axes to obtain the magnitude of the vector. Differentiating to get the velocity vector,&lt;/p&gt;</description>
     </item>
     <item>
+      <title>About</title>
+      <link>http://localhost:1313/about/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><author>ambiverb@gmail.com (Siddharth Nair)</author>
+      <guid>http://localhost:1313/about/</guid>
+      <description>&lt;p&gt;Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus lacinia odio vitae vestibulum vestibulum. Cras venenatis euismod malesuada.&lt;/p&gt;&#xA;&lt;p&gt;Praesent euismod, justo non commodo aliquet, metus urna fermentum odio, ac placerat metus nisl at nulla. Sed sit amet odio ac orci tristique dictum.&lt;/p&gt;&#xA;&lt;p&gt;Integer quis ligula sit amet libero varius egestas. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas.&lt;/p&gt;&#xA;&lt;p&gt;Donec mollis, sapien ac porta scelerisque, justo nunc aliquet urna, sit amet convallis tortor sapien vitae urna. Fusce euismod, nisl at convallis tincidunt, purus metus pretium orci, nec ullamcorper ligula nibh nec turpis.&lt;/p&gt;</description>
+    </item>
+    <item>
       <title>Calculus: I</title>
       <link>http://localhost:1313/notes/apostol-calc-i/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><author>ambiverb@gmail.com (Siddharth Nair)</author>

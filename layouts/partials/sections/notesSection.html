@@ -26,7 +26,7 @@
 {{ end }}
 
 <div class="LP_LEFT_SEPARATOR">
-  <div class="LP_STACK LP_STACK_INTER_BIG" id="notes-list">
+  <div class="LP_STACK LP_STACK_INTER_BASE" id="notes-list">
     {{ range .Pages.ByWeight }}
     <article class="SF_PROJECT" data-subjects="{{ delimit .Params.subjects "," | lower }}">
         <a href="{{ .RelPermalink }}" class="SF_PROJECT_LINK_WRAPPER">

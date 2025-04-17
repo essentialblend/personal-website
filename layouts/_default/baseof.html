@@ -28,8 +28,6 @@
   <!-- Site JS -->
   {{ partial "components/siteJSCombine.html" . }}
   
-
-
   <!--Katex-->
   {{ if (or (eq .Section "writings") (eq .Section "notes") (eq .Section "stream") (eq .Kind "term")) }}
     <script defer src="/katex/katex.min.js"></script>

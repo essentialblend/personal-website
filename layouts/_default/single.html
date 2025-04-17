@@ -17,8 +17,18 @@
       <div class="LP_STACK LP_STACK_INTER_BASE LP_STACK_EDGEMARGIN_BASE LP_STACK_EDGEMARGIN_NOTOPEDGE"> 
         <h1>{{ .Title | upper }}</h1>
         <div class="SF_PAGE_DESCRIPTION">
-          {{ with .Content }}{{ . }}{{ end }}
-        </div> 
+          {{- if isset .Params "subtitle" -}}
+            {{ .Params.subtitle | markdownify }}
+          {{- else -}}
+            {{ .Content }}
+          {{- end -}}
+        </div>
+      </div>
+    </section>
+    
+    <section class="LP_LEFT_SEPARATOR">
+      <div class="SF_POSTCONTENT">
+        {{ .Content | markdownify }}
       </div>
     </section>
   {{ end }}

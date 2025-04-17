@@ -1,7 +1,7 @@
 {{/* layouts/partials/sections/projectsSection.html */}}
 
 <div class="LP_LEFT_SEPARATOR">
-  <div class="LP_STACK LP_STACK_INTER_BIG">
+  <div class="LP_STACK LP_STACK_INTER_BASE">
     {{ range .Pages.ByWeight }}
     <article class="SF_PROJECT" {{ with .Params.thumbnail }} style="--bg-image: url('{{ . | absURL }}');" {{ end }}>
         <a href="{{ .RelPermalink }}" class="SF_PROJECT_LINK_WRAPPER">
