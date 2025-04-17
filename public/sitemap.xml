@@ -26,9 +26,6 @@
     <loc>http://localhost:1313/stream/</loc>
     <lastmod>2025-04-13T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/stream/m87bh/</loc>
-    <lastmod>2025-04-12T00:00:00+00:00</lastmod>
-  </url><url>
     <loc>http://localhost:1313/stream/theorems/eulersformula/</loc>
     <lastmod>2025-04-12T00:00:00+00:00</lastmod>
   </url><url>
@@ -160,6 +157,8 @@
   </url><url>
     <loc>http://localhost:1313/tags/apostol/</loc>
   </url><url>
+    <loc>http://localhost:1313/stream/bookshelf/</loc>
+  </url><url>
     <loc>http://localhost:1313/tags/calculus/</loc>
   </url><url>
     <loc>http://localhost:1313/notes/apostol-calc-i/</loc>
@@ -167,6 +166,12 @@
     <loc>http://localhost:1313/tags/derivative/</loc>
   </url><url>
     <loc>http://localhost:1313/tags/differentiation/</loc>
+  </url><url>
+    <loc>http://localhost:1313/stream/bookshelf/dreams-of-a-final-theory/</loc>
+  </url><url>
+    <loc>http://localhost:1313/stream/bookshelf/euclids-elements/</loc>
+  </url><url>
+    <loc>http://localhost:1313/stream/bookshelf/hist-ancient-world/</loc>
   </url><url>
     <loc>http://localhost:1313/tags/integral/</loc>
   </url><url>
@@ -178,7 +183,13 @@
   </url><url>
     <loc>http://localhost:1313/tags/math/</loc>
   </url><url>
+    <loc>http://localhost:1313/stream/bookshelf/nine-billion-names-of-god/</loc>
+  </url><url>
     <loc>http://localhost:1313/tags/partial/</loc>
+  </url><url>
+    <loc>http://localhost:1313/stream/bookshelf/planetary/</loc>
+  </url><url>
+    <loc>http://localhost:1313/stream/bookshelf/relativity-einstein/</loc>
   </url><url>
     <loc>http://localhost:1313/tags/space/</loc>
   </url><url>

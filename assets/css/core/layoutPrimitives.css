@@ -193,6 +193,6 @@
 /* Custom pseudo-primitive for left-separators */
 .LP_LEFT_SEPARATOR
 {
-  border-left: 3px solid var(--accentHoverColor);
+  border-left: 3px solid var(--accentHoverColor) !important;
   padding-left: var(--baseSizeREM);
 }

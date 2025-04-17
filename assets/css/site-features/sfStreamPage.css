@@ -120,6 +120,7 @@ html[data-user-theme="themeDark"] .SF_STREAM_SPACEIMAGE_BLOCK {
 .SF_STREAM_SPACEIMAGE_SUMMARY {
   overflow: hidden;
 }
+
 .SF_STREAM_SPACEIMAGE_SUMMARY::before {
   content: ''; position: absolute; top: 0; left: 0; right: 0; bottom: 0;
   background-image: var(--summary-bg-image);
@@ -173,15 +174,20 @@ html[data-user-theme="themeDark"] .SF_STREAM_SPACEIMAGE_SUMMARY::after {
   margin: var(--baseSizeREM) 0 var(--mediumSizeREM) 0;
 }
 .SF_STREAM_IMAGE_IMG { display: block; width: 100%; height: auto; border-radius: 0; }
-.SF_STREAM_IMAGE_CREDIT {
-  display: block; text-align: right; font-family: var(--fontMono); font-size: var(--smallestSizeREM);
-  color: var(--mutedTextColor); padding: var(--smallSizeREM) 0 0 0;
+.SF_STREAM_IMAGE_CREDIT 
+{
+  display: block; 
+  text-align: right; 
+  font-family: var(--fontCode); 
+  font-size: var(--smallerSizeREM);
+  color: var(--mutedTextColor); 
+  padding: var(--smallSizeREM) 0 0 0;
 }
 
 .SF_STREAM_SPACEIMAGE_CONTENT {
   font-family: var(--fontBody); font-size: var(--smallSizeREM);
   line-height: var(--contentTextLineHeight); color: var(--textColor);
-  padding: 0 0 var(--baseSizeREM) 0;
+  padding: var(--smallSizeREM) 0 var(--baseSizeREM) 0;
   border-top: none;
 }
 .SF_STREAM_SPACEIMAGE_CONTENT > *:last-child {
@@ -355,15 +361,6 @@ html[data-user-theme="themeHigh"] .SF_STREAM_ARTISTGALLERY_SUMMARY:hover .SF_STR
   pointer-events: auto;
   z-index: 2;
 }
-/* .SF_ARTISTGALLERY_SLIDE:first-child {
-    display: block;
-    opacity: 1;
-}
-.SF_ARTISTGALLERY_SLIDE.active-slide {
-    display: block;
-    opacity: 1;
-    z-index: 2;
-} */
 
 .SF_ARTISTGALLERY_BG_BLUR {
   position: absolute;
@@ -606,6 +603,10 @@ details.SF_STREAM_SHELF_BLOCK div.SF_STREAM_SHELF_ROW_LIST div.SF_STREAM_SHELF_G
 .SF_STREAM_ITEM[open] > summary .SF_STREAM_SUMMARY_CONTENT_WRAP {
   padding-bottom: var(--baseSizeREM);
 }
+
+/* .SF_STREAM_SPACEIMAGE_BLOCK[open] > .SF_STREAM_SPACEIMAGE_SUMMARY .SF_STREAM_SUMMARY_CONTENT_WRAP {
+  padding-bottom: 0 !important;
+} */
 
 .SF_STREAM_ITEM[open] > summary .SF_STREAM_TITLE,
 .SF_STREAM_ITEM[open] > summary .SF_STREAM_THEOREM_TITLE,

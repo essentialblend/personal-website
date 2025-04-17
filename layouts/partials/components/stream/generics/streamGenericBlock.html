@@ -1,0 +1,62 @@
+{{- $type := .Params.type | default "text" -}}
+
+{{- /* APOD override for space showcases */ -}}
+{{- $resolvedTitle   := .Title -}}
+{{- $resolvedSummary := .Params.summary -}}
+{{- if and (eq $type "showcase") (not (isset .Params "paintings")) -}}
+  {{- $apiUrl := printf "https://api.nasa.gov/planetary/apod?api_key=%s" site.Params.nasaAPIKey -}}
+  {{- with resources.GetRemote $apiUrl -}}
+    {{- $apod := . | transform.Unmarshal -}}
+    {{- $resolvedTitle   = printf "Space Showcase: %s" $apod.title -}}
+    {{- $plain           := $apod.explanation | plainify -}}
+    {{- $resolvedSummary = printf "%s." (index (split $plain ".") 0) -}}
+  {{- end -}}
+{{- end -}}
+
+<div class="SF_STREAM_ITEM SF_STREAM_GENERIC_BLOCK LP_LEFT_SEPARATOR">
+
+  <!-- HEADER -->
+  <div class="SF_STREAM_SUMMARY_CONTENT_WRAP">
+    <h3 class="SF_STREAM_GENERIC_TITLE">{{ $resolvedTitle }}</h3>
+    {{- with $resolvedSummary }}
+      <div class="SF_STREAM_GENERIC_HOOK">
+        {{ . | markdownify }}
+      </div>
+    {{- end }}
+  </div>
+
+  <!-- CONTENT -->
+  <div class="SF_STREAM_GENERIC_CONTENT SF_POSTCONTENT">
+    {{- if eq $type "showcase" -}}
+
+      {{- if isset .Params "paintings" -}}
+        {{ partial "components/stream/specifics/streamArtistContent.html" . }}
+
+      {{- else -}}
+        {{- /* Space / APOD path: fetch once and delegate */ -}}
+        {{- $apiUrl := printf "https://api.nasa.gov/planetary/apod?api_key=%s" site.Params.nasaAPIKey -}}
+        {{- with resources.GetRemote $apiUrl -}}
+          {{- $apod := . | transform.Unmarshal -}}
+          {{- $caption := printf "**Courtesy:** %s · *%s*" (or $apod.copyright "NASA") $apod.date -}}
+          {{- $data := dict
+               "paintings" nil
+               "image"     $apod.url
+               "caption"   $caption
+               "content"   $apod.explanation
+             -}}
+          {{- partial "components/stream/specifics/streamSpaceContent.html" $data -}}
+        {{- end -}}
+      {{- end -}}
+
+    {{- else if eq $type "theorem" -}}
+      {{ partial "components/stream/generics/streamGenericTextContent.html" . }}
+
+    {{- else if eq $type "bookshelf" -}}
+      {{ partial "components/stream/generics/streamGenericBookshelfContent.html" . }}
+
+    {{- else -}}
+      {{ errorf "Unsupported block type: %s" $type }}
+    {{- end }}
+  </div>
+
+</div>

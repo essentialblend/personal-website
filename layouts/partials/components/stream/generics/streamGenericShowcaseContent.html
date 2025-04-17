@@ -1,0 +1,42 @@
+{{/* layouts/partials/components/stream/generics/streamGenericShowcaseContent.html */}}
+
+{{ $paintings := .paintings }}
+
+{{ if $paintings }}
+  <div class="SF_SHOWCASE_SLIDES">
+    {{ range $i, $p := $paintings }}
+      <div class="SF_SHOWCASE_SLIDE{{ if eq $i 0 }} active{{ end }}">
+        <div class="SF_SHOWCASE_FRAME">
+          <div class="SF_SHOWCASE_BG_BLUR"
+               style="background-image: url('{{ $p.imageUrl }}');"></div>
+          <img src="{{ $p.imageUrl }}"
+               alt="{{ $p.title }}"
+               class="SF_SHOWCASE_IMG"
+               loading="lazy" />
+        </div>
+        <div class="SF_SHOWCASE_CAPTION">
+          {{ printf "**%s** — %s" $p.title $p.description | markdownify }}
+        </div>
+      </div>
+    {{ end }}
+  </div>
+  <div class="SF_SHOWCASE_TEXT">
+    {{ .content | markdownify }}
+  </div>
+
+{{ else }}
+  <!-- single‑image fallback -->
+  <div class="SF_SHOWCASE_FRAME">
+    {{- if .isAPOD -}}
+      <div class="SF_SHOWCASE_ICON">
+        <img src="{{ .iconUrl }}" alt="APOD logo"/>
+      </div>
+    {{- end -}}
+    <div class="SF_SHOWCASE_BG_BLUR" style="background-image: url('{{ .image }}');"></div>
+    <img src="{{ .image }}" class="SF_SHOWCASE_IMG" loading="lazy"/>
+  </div>
+  {{ with .caption }}
+    <div class="SF_SHOWCASE_CAPTION">{{ . | markdownify }}</div>
+  {{ end }}
+  <div class="SF_SHOWCASE_TEXT">{{ .content | markdownify }}</div>
+{{ end }}

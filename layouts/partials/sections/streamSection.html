@@ -1,33 +1,22 @@
 <div class="LP_STACK LP_STACK_INTER_BIGGER">
 
-  {{ partial "stream-components/streamShelf.html" . }}
+  {{ $streamItems := where site.Pages "Section" "stream" }}
 
-  {{ $streamItems := where site.RegularPages "Section" "stream" | default slice }}
-
-  {{ $preparedItems := slice }}
   {{ range $streamItems }}
-    {{ if isset .Params "date" }} 
-        {{ $parsedDate := time .Params.date }}
-        {{ $preparedItems = $preparedItems | append (dict "Page" . "ParsedDate" $parsedDate) }}
-    {{ else }}
+    {{ $page := . }}
+    {{ $parentDir := path.Base $page.File.Dir }}
+    {{ if in (slice "theorems" "artists" "bookshelf") $parentDir }}
+      {{ partial "components/stream/generics/streamGenericBlock.html" $page }}
     {{ end }}
   {{ end }}
 
-  {{ $sortedItems := sort $preparedItems "ParsedDate" "desc" }}
-
-  {{ if $sortedItems }}
-    {{ range $sortedItems }}
-      {{ $page := .Page }} 
-      {{ $parentDir := path.Base $page.File.Dir }}
-
-      {{ if eq $parentDir "theorems" }}
-        {{ partial "stream-components/streamTheorem.html" $page }} 
-      {{ else if eq $parentDir "artists" }}
-        {{ partial "stream-components/streamArtistShowcase.html" $page }} 
-      {{ else if eq $page.File.LogicalName "m87BH.md" }}
-         {{ partial "stream-components/streamSpaceShowcase.html" $page }} 
-      {{ end }}
-    {{ end }}
-  {{ end }}
+  {{ partial "components/stream/generics/streamGenericBlock.html" (dict
+    "Title" "Space Showcase: NASA APOD"
+    "Params" (dict
+      "type" "showcase"
+      "summary" "Astronomy Picture of the Day"
+    )
+    "Content" ""
+  ) }}
 
 </div>

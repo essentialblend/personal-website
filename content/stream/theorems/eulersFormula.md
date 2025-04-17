@@ -3,6 +3,7 @@ title: "Theorem of the Month: Euler's Formula"
 date: 2025-04-12
 summary: "Perhaps one of the most beautiful equations in mathematics, $e^{i\\pi} + 1 = 0$, connecting five fundamental constants using Euler's identity."
 outputs: []
+type: theorem
 ---
 
 Euler's identity states that for any real number $x$:

@@ -293,7 +293,7 @@ nav a:hover, nav a:focus
 nav[aria-label="Pagination"] 
 {
   font-size: 0.875rem;
-  font-family: var(--fontMono, monospace);
+  font-family: var(--fontCode, monospace);
 }
 
 /* Pagination Links */
