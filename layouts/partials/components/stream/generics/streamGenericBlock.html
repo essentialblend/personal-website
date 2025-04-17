@@ -15,15 +15,16 @@
 
 <div class="SF_STREAM_ITEM SF_STREAM_GENERIC_BLOCK LP_LEFT_SEPARATOR">
 
-  <!-- HEADER -->
+  {{- /* HEADER */ -}}
   <div class="SF_STREAM_SUMMARY_CONTENT_WRAP">
     <h3 class="SF_STREAM_GENERIC_TITLE">{{ $resolvedTitle }}</h3>
-    {{- with $resolvedSummary }}
+    {{- if isset .Params "summary" }}
       <div class="SF_STREAM_GENERIC_HOOK">
-        {{ . | markdownify }}
+        {{ .Params.summary | markdownify }}
       </div>
     {{- end }}
   </div>
+  
 
   <!-- CONTENT -->
   <div class="SF_STREAM_GENERIC_CONTENT SF_POSTCONTENT">
@@ -38,11 +39,13 @@
         {{- with resources.GetRemote $apiUrl -}}
           {{- $apod := . | transform.Unmarshal -}}
           {{- $caption := printf "**Courtesy:** %s · *%s*" (or $apod.copyright "NASA") $apod.date -}}
+          {{- $icon := resources.Get "icons/nasa-icon.svg" | resources.Fingerprint -}}
           {{- $data := dict
                "paintings" nil
                "image"     $apod.url
                "caption"   $caption
                "content"   $apod.explanation
+               "iconUrl"   $icon.RelPermalink
              -}}
           {{- partial "components/stream/specifics/streamSpaceContent.html" $data -}}
         {{- end -}}

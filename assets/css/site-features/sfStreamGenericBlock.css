@@ -235,3 +235,8 @@
   position: relative;
   opacity: 1;
 }
+
+.SF_SHOWCASE_TEXT p 
+{
+  font-style: italic;
+}
