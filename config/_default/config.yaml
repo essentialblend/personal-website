@@ -10,4 +10,3 @@ pagination:
 
 staticDir:
   - static
-  - .  # include project root (so _headers is picked up)

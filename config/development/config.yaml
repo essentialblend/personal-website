@@ -3,3 +3,6 @@ buildDrafts: true
 
 pagination:
   pagerSize: 4
+
+staticDir:
+  - static
