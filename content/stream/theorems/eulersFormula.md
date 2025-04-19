@@ -12,9 +12,13 @@ $$ e^{ix} = \cos x + i \sin x $$
 
 This remarkable connection between the exponential function and trigonometry can be visualized by considering the power series expansions of $e^z$, $\cos x$, and $\sin x$:
 
-$$ e^z = 1 + z + \frac{z^2}{2!} + \frac{z^3}{3!} + \frac{z^4}{4!} + \dots $$
-$$ \cos x = 1 - \frac{x^2}{2!} + \frac{x^4}{4!} - \frac{x^6}{6!} + \dots $$
-$$ \sin x = x - \frac{x^3}{3!} + \frac{x^5}{5!} - \frac{x^7}{7!} + \dots $$
+$$
+\begin{align*}
+  e^z &= 1 + z + \frac{z^2}{2!} + \frac{z^3}{3!} + \frac{z^4}{4!} + \dots \\ \\[0.1em]
+  \cos x &= 1 - \frac{x^2}{2!} + \frac{x^4}{4!} - \frac{x^6}{6!} + \dots \\ \\[0.1pt]
+  \sin x &= x - \frac{x^3}{3!} + \frac{x^5}{5!} - \frac{x^7}{7!} + \dots
+\end{align*}
+$$
 
 Now, let $z = ix$. Substituting into the series for $e^z$ and grouping real and imaginary terms (remembering $i^2 = -1$, $i^3 = -i$, $i^4 = 1$, etc.):
 

@@ -1,16 +1,16 @@
 ---
-title: "Shirley Tracer"
+title: "ShirleyTracer"
 date: 2024-04-01
 weight: 2
 status: archived
-description: "My implementation of the Monte Carlo path tracer created following Peter Shirley's three part series Ray Tracing in One Weekend."
+description: "My implementation of the Monte Carlo pathtracer created following Peter Shirley's three part series Ray Tracing in One Weekend."
 stacks: ["C++"]
 repo: https://github.com/essentialblend/weekend-raytracing
 ---
 
 ### Project Details 
 
-A brute force path-traced renderer programmed referencing the [Ray Tracing in One Weekend](https://raytracing.github.io/books/RayTracingInOneWeekend.html) series by Peter Shirley, Trevor David Black, and Steve Hollasch.
+A brute force pathtraced renderer programmed referencing the [Ray Tracing in One Weekend](https://raytracing.github.io/books/RayTracingInOneWeekend.html) series by Peter Shirley, Trevor David Black, and Steve Hollasch.
 
 {{< figure src="shirley-ii.png" alt="Final render from Book 3" caption="Final render from Book 3 of Ray Tracing in One Weekend." >}}
 
@@ -22,7 +22,7 @@ The first book, and the first half of the second book were intuitive, but the di
 
 ### Features
 
-- Monte Carlo Path Tracing.
+- Monte Carlo Pathtracing.
 - Developed from scratch with C++.
 - Per pixel multi-sampled anti-aliasing.
 - Gamma correction.
