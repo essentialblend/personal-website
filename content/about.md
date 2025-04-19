@@ -1,16 +1,16 @@
 ---
 title: About
-subtitle: Who I am, what I'm upto, and how to reach me. 
+subtitle: Who I am, what I'm up to, and how to reach me. 
 url: /about/
 ---
 
-Hi, I'm Siddharth. I'm a highly motivated Indian computer scientist currently based in the UK, specializing in the intersection of theoretical computer science and pure mathematics. My research at the university for my MS focused on developing machine-verified proofs within a framework called Intuitionistic Type Theory. 
+Hi, I'm Siddharth — an Indian computer scientist currently based in the UK. In March 2024, I completed my MSc in Computer Science at the University of Nottingham, where my research focused on developing machine-verified proofs within Intuitionistic Type Theory.
 
-Before that, I was an audio engineer at GTPL Hathway. I then transitioned to game development for my undergraduate studies, which ultimately led me to computer science.
+Earlier, I worked as an audio engineer with various organizations before pivoting to game development during my undergraduate studies — a path which ultimately led me to computer graphics and broader computer science.
 
-Academically, my recent focus has centered around catching up on various fundamental sciences, mainly mathematics and physics which I catalog [here](/notes/) and revisiting primary interests like computer graphics, especially offline rendering. I'm extremely passionate about learning and devote significant amounts of time obsessing over every new thing I come across. Okay, _most_ new things.
+Academically, I’m catching up on fundamental sciences — primarily mathematics and physics which I catalog [here](/notes/). I also revisit core interests like computer graphics (especially offline rendering). I'm extremely passionate about learning and often obsess over any and every new thing I encounter. Okay, _most_ new things.
 
-In my free time, I either paint in watercolours, make music, program otherwordly soundscapes on my synthesizers, or if weather permits, whip out my telescope and look at the stars. Weather here _rarely_ permits, though.
+Outside of academics, I paint with watercolours, make music, program soundscapes on my synthesizers. Weather permitting, I'll even whip out my telescope and go stargazing. Sadly, the British skies rarely oblige.
 
-I'm available at ambiverb@gmail.com.
+Feel free to reach out via [email](mailto:ambiverb@gmail.com)
 

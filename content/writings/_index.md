@@ -2,4 +2,4 @@
 title: Writings
 ---
 
-A collection of essays, thoughts, and explorations on topics ranging from mathematical physics to theoretical computer science, music, and the occasional watercolour technique. 
+A collection of essays and explorations on topics from mathematical physics and theoretical computer science to music and watercolour painting.

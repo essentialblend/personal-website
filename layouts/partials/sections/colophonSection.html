@@ -24,6 +24,27 @@
 
   <section class="LP_LEFT_SEPARATOR">
     <div class="LP_STACK LP_STACK_INTER_BIG">
+      <h2>STACK</h2>
+  
+      <table class="SF_COLOPHON_STACK_TABLE">
+        <thead class="SF_COLOPHON_STACK_HEADER">
+          <tr><th>Tool</th><th>Version</th></tr>
+        </thead>
+  
+        <tbody>
+          {{ with site.Data.stack }}
+            {{ range $tool, $ver := . }}
+              <tr><td>{{ $tool }}</td><td>{{ $ver }}</td></tr>
+            {{ end }}
+          {{ end }}
+        </tbody>
+      </table>
+  
+    </div>
+  </section>
+
+  <section class="LP_LEFT_SEPARATOR">
+    <div class="LP_STACK LP_STACK_INTER_BIG">
       <h2>TECHNOLOGY & BUILD</h2>
       <div class="LP_STACK LP_STACK_INTER_BASE">
         <h3>Core Platform: Hugo</h3>

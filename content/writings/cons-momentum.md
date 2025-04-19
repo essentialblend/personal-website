@@ -7,6 +7,8 @@ tags: ["Newton's Third Law", "Coordinate Systems", "Cylindrical", "Kinematics"]
 description: "A simple proof demonstrating conservation of momentum."
 ---
 
+I love this simple profound proof, and it's worth understanding it. For those unfamiliar with calculus, the notation $\dot{\bf{p}}$ or $\frac{d \bf{p}}{dt}$ denotes the rate of change of $\bf{p}$ with respect to time ($t$).
+
 We need to show that the net force ($\mathbf{F}$) applied on an object is proportional to the rate of change of that object's momentum with respect to time ($\dot{\mathbf{p}}$).
 
 We know Newton's second law: $\mathbf{F} = m\mathbf{a}$, and $\mathbf{p} = m \mathbf{v}$.

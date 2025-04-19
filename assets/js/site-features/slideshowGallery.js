@@ -14,7 +14,7 @@ document.addEventListener("DOMContentLoaded", () => {
     const start = () => {
       timer = setInterval(() => {
         show((current + 1) % slides.length);
-      }, 4000);
+      }, 10000);
     };
 
     const stop = () => clearInterval(timer);

@@ -4,17 +4,18 @@ date: 2025-04-13
 summary: Charles Clark Reid (August 12, 1937 – June 1, 2019) was an American painter, illustrator, and teacher, notable for his watercolor style.
 artistPortraitUrl: https://upload.wikimedia.org/wikipedia/commons/2/2b/Fullsizeoutput_159d1.jpg 
 paintings: 
-  - imageUrl: https://www.charlesreidart.com/art/galArt/w065.jpg 
-    title: "Coot with Flowers"
-    description: "Watercolor, 20\" x 16\""
-  - imageUrl: https://www.charlesreidart.com/art/galArt/w070.jpg 
+  - image: lady-in-santa-fe.jpg
     title: "Lady in Santa Fe"
     description: "Watercolor, 24\" x 20\""
-  - imageUrl: https://www.charlesreidart.com/art/galArt/w036.jpg 
-    title: "Ray"
-    description: "Watercolor, 31\" x 38\""
+  - image: reclining-nude.jpg 
+    title: "Reclining Nude"
+    description: "Watercolor, 18.5\" x 29\""
+  - image: santa-mug.jpg 
+    title: "Santa Mug"
+    description: "Watercolor, 21\" x 18\""
 outputs: []
 type: showcase
+slug: charlesreid
 ---
 
 Charles Reid has long been considered a master of the medium of watercolor. His paintings are fresh and spontaneous, displaying his profound understanding of light and color and expert drawing ability. The viewer is immediately drawn into his rich compositions. His figures are beautifully rendered, in a simple, direct and natural, gestural manner that reveals his interest in painting the light as much as the person.

@@ -6,16 +6,13 @@
 {{- $apod := dict -}}
 {{- $rest := "" -}}
 {{- if and (eq $type "showcase") (not (isset .Params "paintings")) -}}
-  {{- $apiUrl := printf "https://api.nasa.gov/planetary/apod?api_key=%s" site.Params.nasaAPIKey -}}
-  {{- with resources.GetRemote $apiUrl -}}
-    {{- $apod = . | transform.Unmarshal -}}
-    {{- $plain := $apod.explanation | plainify -}}
-    {{- $parts := split $plain ". " -}}
-    {{- $resolvedTitle = printf "Space Showcase: %s" $apod.title -}}
-    {{- $resolvedSummary = printf "%s." (index $parts 0) -}}
-    {{- $rest = delimit (after 1 $parts) ". " -}}
-    {{- $rest = printf "%s." $rest -}}
-  {{- end -}}
+  {{- $apod = site.Data.apod -}}
+  {{- $plain := $apod.explanation | plainify -}}
+  {{- $parts := split $plain ". " -}}
+  {{- $resolvedTitle = printf "Space Showcase: NASA APOD - %s" $apod.title -}}
+  {{- $resolvedSummary = printf "%s." (index $parts 0) -}}
+  {{- $rest = delimit (after 1 $parts) ". " -}}
+  {{- $rest = printf "%s." $rest -}}
 {{- end -}}
 
 <div class="SF_STREAM_ITEM SF_STREAM_GENERIC_BLOCK LP_LEFT_SEPARATOR">
@@ -37,16 +34,26 @@
       {{- if isset .Params "paintings" -}}
         {{ partial "components/stream/specifics/streamArtistContent.html" . }}
       {{- else -}}
-        {{- $icon := resources.Get "icons/nasa-icon.svg" | resources.Fingerprint -}}
-        {{- $caption := printf "**Courtesy:** %s · *%s*" (or $apod.copyright "NASA") $apod.date -}}
-        {{- $data := dict
-             "paintings" nil
-             "image"     $apod.url
-             "caption"   $caption
-             "content"   $rest
-             "iconUrl"   $icon.RelPermalink
-             "isAPOD"    true
-           -}}
+      {{- $icon := resources.Get "icons/nasa-icon.svg" | resources.Fingerprint -}}
+      {{- $caption := printf "**Courtesy:** %s · *%s*" (or $apod.copyright "NASA") $apod.date -}}
+      
+      {{- $imgPath := printf "images/apod/%s" (path.Base $apod.url) -}}
+      {{- $original := resources.Get $imgPath -}}
+      {{- $resized := $original.Resize "1200x" -}}
+      {{- $webp := $resized.Process "webp;quality=95" -}}
+      
+      {{- $data := dict
+           "paintings"  nil
+           "image"      $resized.RelPermalink
+           "imageWebp"  $webp.RelPermalink
+           "width"      $resized.Width
+           "height"     $resized.Height
+           "caption"    $caption
+           "content"    $rest
+           "iconUrl"    $icon.RelPermalink
+           "isAPOD"     true
+         -}}
+      
         {{ partial "components/stream/specifics/streamSpaceContent.html" $data }}
       {{- end -}}
 

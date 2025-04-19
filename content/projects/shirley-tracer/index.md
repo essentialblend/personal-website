@@ -3,7 +3,7 @@ title: "Shirley Tracer"
 date: 2024-04-01
 weight: 2
 status: archived
-description: "My implementation of the monte carlo path tracer created following Peter Shirley's three part series Ray Tracing in One Weekend."
+description: "My implementation of the Monte Carlo path tracer created following Peter Shirley's three part series Ray Tracing in One Weekend."
 stacks: ["C++"]
 repo: https://github.com/essentialblend/weekend-raytracing
 ---

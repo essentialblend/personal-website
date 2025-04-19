@@ -229,3 +229,38 @@ html[data-user-theme="themeHigh"] .SF_COLOPHON_LOGOS .logo-katex
 {
    filter: invert(1);
 }
+
+.SF_COLOPHON_STACK_TABLE {
+  display: table !important;
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: var(--smallSizeREM);
+  border: 1px solid var(--borderColor);
+  border-radius: 4px;
+  overflow: hidden;
+}
+
+.SF_COLOPHON_STACK_TABLE thead th,
+.SF_COLOPHON_STACK_TABLE tbody td {
+  display: table-cell !important;
+  padding: var(--smallSizeREM) var(--baseSizeREM);
+  border-bottom: 1px solid var(--borderColor);
+  text-align: left;
+}
+
+.SF_COLOPHON_STACK_TABLE thead th {
+  background-color: color-mix(in srgb, var(--BGColor) 80%, var(--borderColor) 20%);
+  font-family: var(--fontCode);
+  font-weight: 600;
+}
+
+.SF_COLOPHON_STACK_TABLE tbody tr:last-child td {
+  border-bottom: none;
+}
+
+.SF_COLOPHON_STACK_TABLE tbody td:first-child {
+  font-family: var(--fontCode);
+  font-weight: 600;
+  color: var(--textColor);
+  border-right: 1px solid var(--borderColor);
+}

@@ -1,5 +1,5 @@
 ---
-title: "Type-theoretical Proofs for Commutative Ring Axioms of the Integers"
+title: "Type-Theoretical Proofs for Commutative Ring Axioms of the Integers"
 date: 2022-07-30
 weight: 1
 status: ongoing
