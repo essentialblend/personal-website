@@ -5,7 +5,17 @@
 [build.environment]
   HUGO_VERSION = "0.136.5"
 
-[[headers]]
-  for = "/*"
-  [headers.values]
-    Basic-Auth = "rajitha:1793"
+[context.production]
+  environment = { HUGO_VERSION = "0.123.0" }
+
+[[redirects]]
+  from = "http://*"
+  to = "https://siddharths.space/:splat"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "https://www.siddharths.space/*"
+  to = "https://siddharths.space/:splat"
+  status = 301
+  force = true
