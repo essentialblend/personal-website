@@ -1,0 +1,18 @@
+# Hugo build output
+/public/
+/resources/_gen/
+/hugo_stats.json
+
+# Hugo cache (optional)
+.cache/
+
+# OS + Editor stuff
+.DS_Store
+Thumbs.db
+*.log
+*.swp
+*.tmp
+
+# Netlify/Vercel
+.netlify/
+.vercel/

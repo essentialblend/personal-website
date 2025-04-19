@@ -1,254 +1,0 @@
-<!DOCTYPE html>
-<html lang="en" data-page="coordinate-systems" data-user-theme="themeLight">
-
-<head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Coordinate Systems | Siddharth Nair</title>
-
-  <meta name="description" content="Personal site of Siddharth Nair">
-  <meta name="author" content="Siddharth Nair">
-
-  
-  
-
-
-
-
-
-
-
-
-
-
-
-
-
- 
-
-
-
-
-<link rel="stylesheet" href="../../css/baseof.min.eb6013c1c4747af34f03c530bc30b2cded8e1a634fac3fd4c26507ca947a6059.css">
-
-
-  
-    <link rel="stylesheet" href="../../katex/katex.min.css">
-  
-
-  
-  
-  
-
-  <meta name="syntax-theme-light" content="/css/code-syntax/syntaxGitLight.min.79205360df8c8d46e864fe830060757004c0dcbcbacee795e43f29f502b6df92.css">
-  <meta name="syntax-theme-dark" content="/css/code-syntax/syntaxGitDark.min.cd68e5e384ddf989eca2ea0bae432fbb203fc03e45f00dc144efe3436f49cc85.css">
-  <meta name="syntax-theme-contrast" content="/css/code-syntax/syntaxMonokai.min.107078f212bd57b57098e1205594d74513541d36e7ea49f855c5f2a5f6d89d1e.css">
-
-  
-  
-    <link id="syntax-stylesheet" rel="stylesheet" href="../../css/code-syntax/syntaxGitLight.min.79205360df8c8d46e864fe830060757004c0dcbcbacee795e43f29f502b6df92.css">
-  
-  
-</head>
-
-<body>
-  <div class="LP_STACK LP_STACK_EDGEMARGIN_BIG LP_STACK_EDGEMARGIN_NOBOTTOMEDGE LP_STACK_INTER_BIGGER LP_CENTER">
-
-    <header class="LP_LEFT_SEPARATOR" style="border-bottom: 2px solid var(--borderColor); display: flex; justify-content: space-between; padding-bottom: var(--smallestSizeREM);">
-  <span id="site-clock" class="SF_SITECLOCK" data-feature="siteClock"></span>
-
-  <div class="LP_CLUSTER LP_CLUSTER_ALIGN_CENTER LP_CLUSTER_GAP_BIG" style="justify-content: flex-end;">
-    <nav class="LP_CLUSTER LP_CLUSTER_ALIGN_CENTER LP_CLUSTER_GAP_BIG" aria-label="Main navigation">
-      
-        
-        
-      <a href="../../about/" data-page="about" >
-        About
-      </a>
-    
-        
-        
-      <a href="../../notes/" data-page="notes" >
-        Notes
-      </a>
-    
-        
-        
-      <a href="../../" data-page="now" >
-        Now
-      </a>
-    
-        
-        
-      <a href="../../projects/" data-page="projects" >
-        Projects
-      </a>
-    
-        
-        
-      <a href="../../stream/" data-page="stream" >
-        Stream
-      </a>
-    
-        
-        
-      <a href="../../writings/" data-page="writings" >
-        Writings
-      </a>
-    
-
-    </nav>
-    <button data-theme-toggle aria-label="Toggle theme">Light</button>
-  </div>
-</header>
-
-    
-    <main>
-      <div class="LP_STACK LP_STACK_EDGEMARGIN_NOMARGIN LP_STACK_INTER_BIGGER">
-        
-          
-
-<section class="LP_LEFT_SEPARATOR">
-  <div class="LP_STACK LP_STACK_INTER_BIG LP_STACK_EDGEMARGIN_BASE LP_STACK_EDGEMARGIN_NOTOPEDGE">
-    <h1>Tag: Coordinate Systems</h1>
-    
-  </div>
-</section>
-
-<div class="LP_STACK LP_STACK_INTER_BIGGER LP_STACK_EDGEMARGIN_TOPONLY_BIG">
-  
-  
-    
-      <article class="LP_STACK LP_STACK_INTER_SMALL LP_LEFT_SEPARATOR SF_TERM_ENTRY">
-        <h2><a href="../../writings/newton-polar/">Derivation: Newton&#39;s Equation in Polar Coordinates</a></h2>
-        <p class="SF_METADATA_TERM_PAGE">
-          <span>April 6, 2025</span> |
-          <span>Section: Writings</span>
-        </p>
-        
-          <p class="SF_SUMMARY_CLAMP">With polar coordinates, a position vector can be described in terms of its radial length $r$ and the argument angle $\phi$, counterclockwise to the x-axis. Before proceeding with the derivation, we describe how to convert coordinates between Cartesian and polar coordinates.
-$$\begin{rcases} \begin{align*}	x &= r\cos\phi \\y &= r\sin\phi \end{align*}\end{rcases}\quad \longleftrightarrow \quad\begin{cases}\begin{align*}	r &= \sqrt{x^2 + y^2} \\\phi &= \arctan{y/x} \end{align*}\end{cases}\tag{1.1}$$We can also express the position vector as a complex number using Euler&rsquo;s equations,
-</p>
-        
-      </article>
-    
-      <article class="LP_STACK LP_STACK_INTER_SMALL LP_LEFT_SEPARATOR SF_TERM_ENTRY">
-        <h2><a href="../../writings/newton-spherical/">Derivation: Newton&#39;s Equation in Spherical Coordinates</a></h2>
-        <p class="SF_METADATA_TERM_PAGE">
-          <span>April 2, 2025</span> |
-          <span>Section: Writings</span>
-        </p>
-        
-          <p class="SF_SUMMARY_CLAMP">Spherical coordinates enable us to locate a point on a sphere with three coordinates axes: radial ($\hat{\mathbf{r}}$), polar ($\hat{\mathbf{\theta}}$), and azimuthal ($\hat{\mathbf{\phi}}$). We can describe net force as a sum of component forces about these axes,
-$$\mathbf{F} = F_r \hat{\mathbf{r}} + F_{\theta} \hat{\mathbf{\theta}} + F_{\phi} \hat{\mathbf{\phi}}$$where the position vector is represented as,
-$$\mathbf{r} = r \hat{\mathbf{r}} \tag{1.1}$$We begin by differentiating $(1.1)$,
-$$\begin{align*}\dfrac{d\mathbf{r}}{dt} &= \dfrac{d}{dt}(r \hat{\mathbf{r}}) \\ \\[0.1pt]&= \dot{r} \hat{\mathbf{r}} + r \dot{\hat{\mathbf{r}}} \tag{1.2}\end{align*}$$We need $ \dot{\hat{\mathbf{r}}} $. This means, we need to differentiate the unit vector $ \hat{\mathbf{r}} $. We can derive the correct expression for this time-derivative both geometrically and algebraically. We&rsquo;ll proceed with the latter. The unit vectors for spherical coordinates are,
-</p>
-        
-      </article>
-    
-      <article class="LP_STACK LP_STACK_INTER_SMALL LP_LEFT_SEPARATOR SF_TERM_ENTRY">
-        <h2><a href="../../writings/cons-momentum/">Proof: Conservation of Momentum</a></h2>
-        <p class="SF_METADATA_TERM_PAGE">
-          <span>March 6, 2025</span> |
-          <span>Section: Writings</span>
-        </p>
-        
-          <p class="SF_SUMMARY_CLAMP">We need to show that the net force ($\mathbf{F}$) applied on an object is proportional to the rate of change of that object&rsquo;s momentum with respect to time ($\dot{\mathbf{p}}$).
-We know Newton&rsquo;s second law: $\mathbf{F} = m\mathbf{a}$, and $\mathbf{p} = m \mathbf{v}$.
-Differentiating $\mathbf{p} = m \mathbf{v}$ with respect to $t$, presuming constant mass ($m$) yields,
-$$\begin{aligned}\frac{d\mathbf{p}}{dt} = \dot{\mathbf{p}} &= \frac{d}{dt}(m\mathbf{v}) \\ \\[0.1pt]&= m \ \frac{d\mathbf{v}}{dt} \\ \\[0.1pt]&= m\mathbf{a} \\ \\[0.1pt]\therefore \quad \mathbf{F} &= \dot{\mathbf{p}} \quad \blacksquare\end{aligned}$$With this lemma, we can proceed with the main proof.
-</p>
-        
-      </article>
-    
-      <article class="LP_STACK LP_STACK_INTER_SMALL LP_LEFT_SEPARATOR SF_TERM_ENTRY">
-        <h2><a href="../../writings/newton-cart/">Derivation: Newton&#39;s Equation in Cartesian Coordinates</a></h2>
-        <p class="SF_METADATA_TERM_PAGE">
-          <span>April 4, 2024</span> |
-          <span>Section: Writings</span>
-        </p>
-        
-          <p class="SF_SUMMARY_CLAMP">We represent a position in n-dimensional Cartesian space using vectors,
-$$\tag{1.1} \mathbf{r} = \sum_{k = 0}^{n - 1} l_k \hat{\mathbf{i}}_k $$where the coefficients $l_k$ vary over time. We can represent the net force in terms of the unit axes,
-$$\mathbf{F} = \sum_{k = 0}^{n - 1}F_k \hat{\mathbf{i}}_k = m \sum_{k = 0}^{n - 1}\ddot{l}_k \hat{\mathbf{i}}_k = m\ddot{\mathbf{r}}$$Since acceleration is the second derivative of the position with respect to time, we differentiate $(1.1)$ first to get the velocity,
-</p>
-        
-      </article>
-    
-  
-</div>
-
-
-<nav aria-label="Pagination" class="LP_CLUSTER LP_CLUSTER_GAP_BASE" style="justify-content: center; margin-top: var(--biggerSizeREM);">
-  
-  <div style="display: flex; justify-content: center;">
-    <nav class="LP_CLUSTER LP_CLUSTER_ALIGN_CENTER LP_CLUSTER_GAP_SMALL" aria-label="Pagination">
-      
-      
-
-      
-      
-        
-          <a style="opacity: 0.6;" aria-current="page">1</span>
-        
-      
-        
-          <a href="../../tags/coordinate-systems/page/2/">2</a>
-        
-      
-
-      
-        <a href="../../tags/coordinate-systems/page/2/" aria-label="Next page">»</a>
-        <a href="../../tags/coordinate-systems/page/2/" aria-label="Last page">»»</a>
-      
-
-    </nav>
-  </div>
-
-
-</nav>
-
-
-
-        
-      </div>
-    </main>
-    
-    <footer>
-  <p>&copy; 2025 Siddharth Nair&nbsp;&middot;&nbsp;<a href="../../colophon/">colophon</a></p>
-</footer>
-
-  </div>
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-
-  
-
-  <script src="../../js/bundle.24d13eb7284449e06c480d4f5553e03fcd824c5dac8e644c39bc580cd5e106b8.js" integrity="sha256-JNE&#43;tyhESeBsSA1PVVPgP82CTF2sjmRMObxYDNXhBrg="></script>
-  
-  
-  
-    <script defer src="../../katex/katex.min.js"></script>
-    <script defer src="../../katex/auto-render.min.js"></script>
-
-    
-    <script defer src="../../js/site-features/katexClient.min.daefe2f9099e0c2b3fa8d4b2b77e19e6b7b14c0535beb57602d6fc1ac1d17e7a.js" integrity="sha256-2u/i&#43;QmeDCs/qNSyt34Z5rexTAU1vrV2Atb8GsHRfno="></script>
-  
-
-  <button class="SF_SCROLLTOP_BTN" title="Go to top" aria-label="Scroll to top">
-    <svg xmlns="http://www.w3.org/2000/svg" height="24" viewBox="0 -960 960 960" width="24" fill="currentColor">
-      <path d="M440-160v-487L216-423l-56-57 320-320 320 320-56 57-224-224v487h-80Z"/>
-    </svg>
-  </button>
-</body>
-
-</html>
