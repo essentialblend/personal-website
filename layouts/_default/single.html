@@ -9,18 +9,16 @@
         {{ end }}
       </div>
     </section>
-    {{ if in (slice "writings" "notes" "projects") .Section }}
-      {{ partial "partials/pages/genericPageContent.html" . }}
-    {{ end }}
+    {{ partial "partials/pages/genericPageContent.html" . }}
   {{ else }}
-    <section class="LP_LEFT_SEPARATOR"> 
-      <div class="LP_STACK LP_STACK_INTER_BASE LP_STACK_EDGEMARGIN_BASE LP_STACK_EDGEMARGIN_NOTOPEDGE"> 
+    <section class="LP_LEFT_SEPARATOR">
+      <div class="LP_STACK LP_STACK_INTER_BIG">
         <h1>{{ .Title | upper }}</h1>
         <div class="SF_PAGE_DESCRIPTION">
           {{- if isset .Params "subtitle" -}}
             {{ .Params.subtitle | markdownify }}
           {{- else -}}
-            {{ .Content }}
+            {{ .Params.summary | markdownify }}
           {{- end -}}
         </div>
       </div>

@@ -9,22 +9,33 @@ url: /now/
 
 <div>
 
-### FOCUS
+### STATUS
 
-Exploring the foundations of mathematical modeling and computational physics. Current goal: build up the fundamental stack required for physically based rendering and simulation engines.
+- I graduated with a degree in computer science from the University of Nottingham in March '24, and on the lookout for graduate roles in graphics, research, or any relevant opportunities. I'm presently based in the UK. Here's a [link to my CV]().
+- My research was at the intersection of theoretical computer science and pure mathematics where I developed computer-aided mathematical proofs within a constructive framework.
+- I'm currently working on developing a pathtracer following [PBRT](https://pbrt.org/), but it's presently on hold.
+- As of late, I read, paint or make music in my off time. 
+- Find me on: [github](https://github.com/essentialblend), [twitter](https://x.com/essentialblend), [lichess](https://lichess.org/essentialblend).
+- _Updated April 2025._
+</div>
 
-- Currently working through **[Apostol: Calculus Vol. 1](https://example.com)** to tighten my grip on rigorous integration techniques.
+<div>
 
-- Slowly absorbing **Aluffi’s _Algebra: Notes from the Underground_** to develop abstract fluency in algebraic structures.
+### ACADEMICS
+
+I've mainly been concentrating on catching up to modern mathematical physics.
+- Taylor's Classical Mechanics supplemented with Kulp-Pagonis' Computational CM.
+- Aluffi's Algebra: Notes from the Underground.
 
 </div>
 
 <div>
 
-### RECENT
+### GET IN TOUCH
 
-Most of my time recently has gone into building this site from scratch using [Hugo](https://gohugo.io/) and a CSS system inspired by [Every Layout](https://every-layout.dev/).
+If you'd like information about content on my site or anything I could help with, please contact me at ambiverb@gmail.com. If you're exploring, you may visit the [projects](/projects) or the [notes](/notes) section or head on over to the [stream](/stream).
 
 </div>
+
 
 {{< /lpStack >}}

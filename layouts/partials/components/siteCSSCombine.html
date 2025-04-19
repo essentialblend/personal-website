@@ -2,7 +2,6 @@
 {{ $layoutPrimitivesCSSChunk  := resources.Get "css/core/layoutPrimitives.css" }}
 {{ $siteFeaturesCSSChunk := resources.Get "css/core/siteFeatures.css" }}
 
-{{ $postContentCSSChunk := resources.Get "css/site-features/sfMDPostContent.css" }}
 {{ $writingsTitleCSSChunk := resources.Get "css/site-features/sfWritingsCard.css" }}
 {{ $taxonomyFilterCSSChunk := resources.Get "css/site-features/sfTaxonomyFilter.css" }}
 {{ $metadataCardCSSChunk := resources.Get "css/site-features/sfMetadataCard.css" }}
@@ -13,8 +12,11 @@
 {{ $streamCSSChunk := resources.Get "css/site-features/sfStreamPage.css" }}
 {{ $termCSSChunk := resources.Get "css/site-features/sfTermPage.css" }}
 {{ $genericBlockCSSChunk := resources.Get "css/site-features/sfStreamGenericBlock.css" }} 
+{{ $postContentCSSChunk := resources.Get "css/site-features/sfMDPostContent.css" }}
 
 {{ $cssSlice := slice $htmlElemCSSChunk $layoutPrimitivesCSSChunk $siteFeaturesCSSChunk $postContentCSSChunk $taxonomyFilterCSSChunk $writingsTitleCSSChunk $metadataCardCSSChunk $projectSectionCSSChunk $tableContentsCSSChunk $scrollToTopCSSChunk $colophonCSSChunk $streamCSSChunk $termCSSChunk $genericBlockCSSChunk }}
 
 {{ $merged := $cssSlice | resources.Concat "css/baseof.css" | resources.Minify | resources.Fingerprint }}
+
 <link rel="stylesheet" href="{{ $merged.RelPermalink }}">
+

@@ -53,6 +53,22 @@
   font-size: var(--smallSizeREM);
 }
 
+/* Wrap every display math in its own horizontal scroll container */
+.SF_STREAM_GENERIC_CONTENT .katex-display {
+  display: block;        /* make it a block within the content flow */
+  max-width: 100%;       /* never wider than its parent */
+  overflow-x: auto;      /* enable horizontal scroll when needed */
+  -webkit-overflow-scrolling: touch;
+  padding: 0.5rem 0;     /* give it some breathing room */
+  background: var(--BGColor); /* match your background */
+}
+
+/* Prevent the inner math from wrapping so the scroll kicks in */
+.SF_STREAM_GENERIC_CONTENT .katex-display .katex {
+  display: inline-block;
+  white-space: nowrap;
+}
+
 /* Showcase image block (used by artist + space) */
 .SF_SHOWCASE_FRAME {
   margin: var(--baseSizeREM) 0 var(--baseSizeREM);

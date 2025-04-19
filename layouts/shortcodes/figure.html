@@ -1,0 +1,47 @@
+{{ $src     := .Get "src" }}
+{{ $alt     := .Get "alt" | default "" }}
+{{ $class   := .Get "class" | default "" }}
+{{ $caption := .Get "caption" }}
+
+{{ $orig := .Page.Resources.GetMatch $src }}
+{{ if not $orig }}
+  {{ errorf "figure shortcode: resource '%s' not found in page bundle" $src }}
+{{ end }}
+
+{{ $quality := 95 }}
+{{ $widths  := slice 400 800 1200 }}
+{{ $jpgSet  := slice }}
+{{ $webpSet := slice }}
+
+{{ range $w := $widths }}
+  {{ $spec := printf "%dx" $w }}
+  {{ $jpgTmp := $orig.Resize $spec }}
+  {{ $jpg := $jpgTmp.Process (printf "jpeg;quality=%d" $quality) }}
+  {{ $jpgSet = $jpgSet | append (printf "%s %dw" $jpg.RelPermalink $jpg.Width) }}
+  {{ $webp := $jpgTmp.Process (printf "webp;quality=%d" $quality) }}
+  {{ $webpSet = $webpSet | append (printf "%s %dw" $webp.RelPermalink $webp.Width) }}
+{{ end }}
+
+{{ $defaultTmp := $orig.Resize "800x" }}
+{{ $default := $defaultTmp.Process (printf "jpeg;quality=%d" $quality) }}
+
+<figure class="{{ $class }}">
+  <picture>
+    <source
+      type="image/webp"
+      srcset="{{ delimit $webpSet ", " }}"
+      sizes="(max-width: 800px) 100vw, 800px">
+    <img
+      src="{{ $default.RelPermalink }}"
+      srcset="{{ delimit $jpgSet ", " }}"
+      sizes="(max-width: 800px) 100vw, 800px"
+      alt="{{ $alt }}"
+      loading="lazy"
+      decoding="async"
+      width="{{ $default.Width }}"
+      height="{{ $default.Height }}">
+  </picture>
+  {{ with $caption }}
+    <figcaption><p>{{ . | markdownify }}</p></figcaption>
+  {{ end }}
+</figure>

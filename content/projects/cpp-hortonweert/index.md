@@ -5,64 +5,35 @@ weight: 4
 status: archived
 description: "Exercises from the Horton-Weert C++23 book."
 stacks: ["C++"]
-thumbnail: "https://science.nasa.gov/wp-content/uploads/2023/06/webb-flickr-52259221868-30e1c78f0c-4k-jpg.webp"
+repo: https://github.com/essentialblend/beginning-cpp23
 ---
 
-This project explored the practical application of [Algorithm/Theory Name] to solve problems in [Domain Area]. The initial motivation stemmed from observing inefficiencies in existing methods, particularly concerning [Specific Problem]. Our goal was to develop a more efficient and scalable alternative.
+### Goal 
 
-The development process involved several key stages: initial research, algorithm design, implementation, testing, and refinement. We adopted an agile approach, allowing for flexibility as challenges arose. One significant hurdle was optimizing the core computations for large datasets, which required exploring techniques like [Technique 1] and [Technique 2].
+This repository contains exercises from my study of this fantastic book. The main aim was to learn and gain a more complete understanding of modern C++, after a generally fragmented journey with programming.
 
-### Key Features Implemented
+{{< figure src="hortonweertcpp23.jpg" alt="Beginning C++23" caption="Book cover for Beginning C++ 23." >}}
 
-* **Core Engine:** Developed using C++ for optimal performance, handling the main computational load.
+### Chapters 
 
-* **Data Interface:** A Python wrapper using Pybind11 to allow easier interaction and integration with other tools.
-
-* **Configuration System:** Allows users to tweak parameters via a simple YAML file.
-
-* **Result Visualization:** Basic plotting capabilities using Matplotlib (via the Python interface).
-
-### Code Example
-
-Here's a simplified C++ snippet demonstrating a core data processing step:
-
-```cpp
-#include <vector>
-#include <numeric>
-#include <cmath>
-#include <iostream>
-
-namespace ProjectCore {
-
-// Example function: process a vector of data
-double processDataChunk(const std::vector<double>& dataChunk) {
-    if (dataChunk.empty()) {
-        return 0.0;
-    }
-
-    double sum_sq_diff = 0.0;
-    double mean = std::accumulate(dataChunk.begin(), dataChunk.end(), 0.0) / dataChunk.size();
-
-    for (double val : dataChunk) {
-        double diff = val - mean;
-        sum_sq_diff += diff * diff;
-    }
-
-    double std_dev = std::sqrt(sum_sq_diff / dataChunk.size());
-    std::cout << "Processed chunk: Mean=" << mean << ", StdDev=" << std_dev << std::endl;
-
-    // Return some aggregate result
-    return mean + std_dev;
-}
-
-} // namespace ProjectCore
-
-/*
-int main() {
-    // Example usage (normally called via wrapper)
-    std::vector<double> sampleData = {10.2, 11.1, 9.8, 10.5, 10.9};
-    double result = ProjectCore::processDataChunk(sampleData);
-    std::cout << "Aggregate result: " << result << std::endl;
-    return 0;
-}
-*/
+- Ch 1: Basic Ideas
+- Ch 2: Introducing Fundamental Types of Data
+- Ch 3: Working with Fundamental Data Types
+- Ch 4: Making Decisions
+- Ch 5: Arrays and Loops
+- Ch 6: Pointers and References
+- Ch 7: Working with Strings
+- Ch 8: Defining Functions
+- Ch 9: Vocabulary Types
+- Ch 10: Function Templates
+- Ch 11: Modules and Namespaces
+- Ch 12: Defining Your Own Data Types
+- Ch 13: Operator Overloading
+- Ch 14: Inheritance
+- Ch 15: Polymorphism
+- Ch 16: Runtime Errors and Exceptions
+- Ch 17: Class Templates
+- Ch 18: Move Semantics
+- Ch 19: First-Class Functions
+- Ch 20: Containers and Algorithms
+- Ch 21: Constrained Templates and Concepts.

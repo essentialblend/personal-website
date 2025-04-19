@@ -4,10 +4,13 @@ subtitle: Who I am, what I'm upto, and how to reach me.
 url: /about/
 ---
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus lacinia odio vitae vestibulum vestibulum. Cras venenatis euismod malesuada.
+Hi, I'm Siddharth. I'm a highly motivated Indian computer scientist currently based in the UK, specializing in the intersection of theoretical computer science and pure mathematics. My research at the university for my MS focused on developing machine-verified proofs within a framework called Intuitionistic Type Theory. 
 
-Praesent euismod, justo non commodo aliquet, metus urna fermentum odio, ac placerat metus nisl at nulla. Sed sit amet odio ac orci tristique dictum.
+Before that, I was an audio engineer at GTPL Hathway. I then transitioned to game development for my undergraduate studies, which ultimately led me to computer science.
 
-Integer quis ligula sit amet libero varius egestas. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas.
+Academically, my recent focus has centered around catching up on various fundamental sciences, mainly mathematics and physics which I catalog [here](/notes/) and revisiting primary interests like computer graphics, especially offline rendering. I'm extremely passionate about learning and devote significant amounts of time obsessing over every new thing I come across. Okay, _most_ new things.
 
-Donec mollis, sapien ac porta scelerisque, justo nunc aliquet urna, sit amet convallis tortor sapien vitae urna. Fusce euismod, nisl at convallis tincidunt, purus metus pretium orci, nec ullamcorper ligula nibh nec turpis.
+In my free time, I either paint in watercolours, make music, program otherwordly soundscapes on my synthesizers, or if weather permits, whip out my telescope and look at the stars. Weather here _rarely_ permits, though.
+
+I'm available at ambiverb@gmail.com.
+

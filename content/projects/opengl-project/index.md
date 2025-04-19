@@ -5,64 +5,34 @@ weight: 4
 status: archived
 description: "My final coursework that demonstrates various graphics programming techniques with OpenGL and C++."
 stacks: ["OpenGL", "C++"]
-thumbnail: "https://science.nasa.gov/wp-content/uploads/2023/09/stsci-01ga76rm0c11w977jrhgj5j26x-2.png?w=1024"
+repo: https://github.com/essentialblend/openGLgfxDemo
 ---
 
-This project explored the practical application of [Algorithm/Theory Name] to solve problems in [Domain Area]. The initial motivation stemmed from observing inefficiencies in existing methods, particularly concerning [Specific Problem]. Our goal was to develop a more efficient and scalable alternative.
+### Introduction
 
-The development process involved several key stages: initial research, algorithm design, implementation, testing, and refinement. We adopted an agile approach, allowing for flexibility as challenges arose. One significant hurdle was optimizing the core computations for large datasets, which required exploring techniques like [Technique 1] and [Technique 2].
+This graphics programming demo was part of the final coursework for the COMP3011 Computer Graphics module at the University of Nottingham in 2023. The requirements by means of core features were fairly fundamental, so I took the opportunity of going beyond, learned and implemented many new features I found gratifying.
 
-### Key Features Implemented
+<figure>
+    <video controls style="max-width: 100%; height: auto;">
+      <source src="opengl-demo.mp4" type="video/mp4">
+      Your browser does not support the video tag.
+    </video>
+    <figcaption><p>A short video showcasing many of the features implemented in this demo.</p></figcaption>
+</figure>
 
-* **Core Engine:** Developed using C++ for optimal performance, handling the main computational load.
+Even though I think I did achieve most of the features as I intended, the code quality is beyond subpar given everything I learned since then, so it's archived.
 
-* **Data Interface:** A Python wrapper using Pybind11 to allow easier interaction and integration with other tools.
+{{< figure src="ogl-ii.png" alt="Showcase Image" caption="A simple implementation of post-process crepuscular rays." >}}
 
-* **Configuration System:** Allows users to tweak parameters via a simple YAML file.
+### Features
 
-* **Result Visualization:** Basic plotting capabilities using Matplotlib (via the Python interface).
+{{< figure src="ogl-i.png" alt="Showcase Image" caption="Day night cycles, shadows, sky cubemaps." >}}
 
-### Code Example
+- OpenGL fundamentals (buffer/array objects, shaders, instanced rendering, textures) following best practices as provided by Khronos, wherever possible.
+- Simple .obj parser and working with models.
+- Blinn-Phong lighting, and shadow mapping for point, spot, and directional sources.
+- Maps (normals, emissive) etc.
+- Sky cubemaps with day-night cycles, and accompanying light properties to achieve an atmosphere without resorting to advanced techniques.
+- Screen-space post process effects i.e., god-rays, fog.
 
-Here's a simplified C++ snippet demonstrating a core data processing step:
-
-```cpp
-#include <vector>
-#include <numeric>
-#include <cmath>
-#include <iostream>
-
-namespace ProjectCore {
-
-// Example function: process a vector of data
-double processDataChunk(const std::vector<double>& dataChunk) {
-    if (dataChunk.empty()) {
-        return 0.0;
-    }
-
-    double sum_sq_diff = 0.0;
-    double mean = std::accumulate(dataChunk.begin(), dataChunk.end(), 0.0) / dataChunk.size();
-
-    for (double val : dataChunk) {
-        double diff = val - mean;
-        sum_sq_diff += diff * diff;
-    }
-
-    double std_dev = std::sqrt(sum_sq_diff / dataChunk.size());
-    std::cout << "Processed chunk: Mean=" << mean << ", StdDev=" << std_dev << std::endl;
-
-    // Return some aggregate result
-    return mean + std_dev;
-}
-
-} // namespace ProjectCore
-
-/*
-int main() {
-    // Example usage (normally called via wrapper)
-    std::vector<double> sampleData = {10.2, 11.1, 9.8, 10.5, 10.9};
-    double result = ProjectCore::processDataChunk(sampleData);
-    std::cout << "Aggregate result: " << result << std::endl;
-    return 0;
-}
-*/
+{{< figure src="ogl-iii.png" alt="Showcase Image" caption="Generated terrains with various maps." >}}

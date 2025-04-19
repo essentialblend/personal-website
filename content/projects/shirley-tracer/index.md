@@ -5,64 +5,40 @@ weight: 2
 status: archived
 description: "My implementation of the monte carlo path tracer created following Peter Shirley's three part series Ray Tracing in One Weekend."
 stacks: ["C++"]
-thumbnail: "https://spaceplace.nasa.gov/gallery-space/en/NGC2336-galaxy.en.jpg"
+repo: https://github.com/essentialblend/weekend-raytracing
 ---
 
-This project explored the practical application of [Algorithm/Theory Name] to solve problems in [Domain Area]. The initial motivation stemmed from observing inefficiencies in existing methods, particularly concerning [Specific Problem]. Our goal was to develop a more efficient and scalable alternative.
+### Project Details 
 
-The development process involved several key stages: initial research, algorithm design, implementation, testing, and refinement. We adopted an agile approach, allowing for flexibility as challenges arose. One significant hurdle was optimizing the core computations for large datasets, which required exploring techniques like [Technique 1] and [Technique 2].
+A brute force path-traced renderer programmed referencing the [Ray Tracing in One Weekend](https://raytracing.github.io/books/RayTracingInOneWeekend.html) series by Peter Shirley, Trevor David Black, and Steve Hollasch.
 
-### Key Features Implemented
+{{< figure src="shirley-ii.png" alt="Final render from Book 3" caption="Final render from Book 3 of Ray Tracing in One Weekend." >}}
 
-* **Core Engine:** Developed using C++ for optimal performance, handling the main computational load.
+This was my first go at anything related to offline rendering after spending most of my time learning and implementing rasterization related techniques in OpenGL. I inadvertently ended up preemptively improving certain features, which was pleasant. 
 
-* **Data Interface:** A Python wrapper using Pybind11 to allow easier interaction and integration with other tools.
+{{< figure src="shirley-i.png" alt="Final render from Book 1" caption="Final render from Book 1 of Ray Tracing in One Weekend." >}}
 
-* **Configuration System:** Allows users to tweak parameters via a simple YAML file.
+The first book, and the first half of the second book were intuitive, but the difficulty scaled ridiculously as I began the third due to my utter lack of related prerequisites. This itself took me nearly two months to complete.
 
-* **Result Visualization:** Basic plotting capabilities using Matplotlib (via the Python interface).
+### Features
 
-### Code Example
+- Monte Carlo Path Tracing.
+- Developed from scratch with C++.
+- Per pixel multi-sampled anti-aliasing.
+- Gamma correction.
+- Positionable camera with defocus blur.
+- Lambertian, metallic, and dielectric materials.
+- Motion blur.
+- Axis-aligned Bounding Boxes (AABB) BVH.
+- Solid color, image, and noise textures.
+- Perlin noise with trilinear interpolation and Hermitian smoothing. 
+- Emissive lights.
+- Primitives: quads, spheres.
+- Volumes.
+- Importance Sampling
+- Mixed PDFs.
 
-Here's a simplified C++ snippet demonstrating a core data processing step:
+### Third Party Libraries
 
-```cpp
-#include <vector>
-#include <numeric>
-#include <cmath>
-#include <iostream>
-
-namespace ProjectCore {
-
-// Example function: process a vector of data
-double processDataChunk(const std::vector<double>& dataChunk) {
-    if (dataChunk.empty()) {
-        return 0.0;
-    }
-
-    double sum_sq_diff = 0.0;
-    double mean = std::accumulate(dataChunk.begin(), dataChunk.end(), 0.0) / dataChunk.size();
-
-    for (double val : dataChunk) {
-        double diff = val - mean;
-        sum_sq_diff += diff * diff;
-    }
-
-    double std_dev = std::sqrt(sum_sq_diff / dataChunk.size());
-    std::cout << "Processed chunk: Mean=" << mean << ", StdDev=" << std_dev << std::endl;
-
-    // Return some aggregate result
-    return mean + std_dev;
-}
-
-} // namespace ProjectCore
-
-/*
-int main() {
-    // Example usage (normally called via wrapper)
-    std::vector<double> sampleData = {10.2, 11.1, 9.8, 10.5, 10.9};
-    double result = ProjectCore::processDataChunk(sampleData);
-    std::cout << "Aggregate result: " << result << std::endl;
-    return 0;
-}
-*/
+- [stb_image](https://github.com/nothings/stb/blob/master/stb_image.h)
+- [ImageMagick](https://github.com/imagemagick/imagemagick)

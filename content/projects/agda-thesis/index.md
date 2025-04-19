@@ -1,73 +1,65 @@
 ---
-title: "Type-theoretical Proofs for Algebraic Properties of Abelian Rings"
+title: "Type-theoretical Proofs for Commutative Ring Axioms of the Integers"
 date: 2022-07-30
 weight: 1
-status: archived
-description: "A research project consisting of type-theoretic proofs for various algebraic properties of abstract algebraic mathematical structures."
+status: ongoing
+description: "A research project consisting of type-theoretic proofs for various properties of abstract algebraic mathematical structures."
 stacks: ["Agda"]
-thumbnail: "https://spaceplace.nasa.gov/gallery-space/en/NGC2336-galaxy.en.jpg"
+repo: https://github.com/essentialblend/integers-comm-ring
 ---
 
-This project explored the practical application of [Algorithm/Theory Name] to solve problems in [Domain Area]. The initial motivation stemmed from observing inefficiencies in existing methods, particularly concerning [Specific Problem]. Our goal was to develop a more efficient and scalable alternative.
+### Introduction
 
-The development process involved several key stages: initial research, algorithm design, implementation, testing, and refinement. We adopted an agile approach, allowing for flexibility as challenges arose. One significant hurdle was optimizing the core computations for large datasets, which required exploring techniques like [Technique 1] and [Technique 2].
+This project was submitted as part of requirements for my MS. The objective was to constructively demonstrate the existence of the commutative Ring of Integers alongside proofs all its accompanying algebraic properties in a computer aided proof assistant called Agda.
 
-### Key Features Implemented
+This research project was supervised by [Professor Thorsten Altenkirch](https://people.cs.nott.ac.uk/psztxa/) and I'm forever grateful for his time, expertise, and empathy towards my journey into this fantastic subject.
 
-* **Core Engine:** Developed using C++ for optimal performance, handling the main computational load.
+I'm revising aspects of the thesis based on the feedback I received during the presentation.
 
-* **Data Interface:** A Python wrapper using Pybind11 to allow easier interaction and integration with other tools.
+### Problem Statement
 
-* **Configuration System:** Allows users to tweak parameters via a simple YAML file.
+The main goal of this project was to highlight the efficacy of formal verification for ensuring the correctness of fundamental mathematical constructions. Some motivations being,
 
-* **Result Visualization:** Basic plotting capabilities using Matplotlib (via the Python interface).
+- Exploration of formal mathematical reasoning and verification from an constructivist perspective.
 
-### Code Example
+- Demonstrating the effectiveness of Agda and intuitionistic type theory for rigorously expressing and verifying complex mathematical structures and properties.
 
-Here's a simplified C++ snippet demonstrating a core data processing step:
+- Contributing a modular formalization of the commutative ring axioms. 
 
-```cpp
-#include <vector>
-#include <numeric>
-#include <cmath>
-#include <iostream>
+### Basic Strategy
 
-namespace ProjectCore {
+- Set up logical reasoning facilities. 
 
-// Example function: process a vector of data
-double processDataChunk(const std::vector<double>& dataChunk) {
-    if (dataChunk.empty()) {
-        return 0.0;
-    }
+- Definition and construction of proofs for operations and properties over the natural numbers.
 
-    double sum_sq_diff = 0.0;
-    double mean = std::accumulate(dataChunk.begin(), dataChunk.end(), 0.0) / dataChunk.size();
+- Definition and construction of proofs for operations and properties over the integers. 
 
-    for (double val : dataChunk) {
-        double diff = val - mean;
-        sum_sq_diff += diff * diff;
-    }
+- These proofs aid in the construction of the final mathematical object representing the Ring of Integers.
 
-    double std_dev = std::sqrt(sum_sq_diff / dataChunk.size());
-    std::cout << "Processed chunk: Mean=" << mean << ", StdDev=" << std_dev << std::endl;
+### A Sample Proof
 
-    // Return some aggregate result
-    return mean + std_dev;
-}
+```agda
+-- A proof for associtivity of addition over ℕ
 
-} // namespace ProjectCore
+module natural_numbers.properties.addition.associativity where
 
-/*
-int main() {
-    // Example usage (normally called via wrapper)
-    std::vector<double> sampleData = {10.2, 11.1, 9.8, 10.5, 10.9};
-    double result = ProjectCore::processDataChunk(sampleData);
-    std::cout << "Aggregate result: " << result << std::endl;
-    return 0;
-}
-*/
+-- Import some basic operations, properties and logical operations
+open import natural_numbers.definition
+open import natural_numbers.operations
+
+open import predicate_logic.definitions
+open import predicate_logic.properties
+
+-- Proof
+associativityℕ+ : {l m n : ℕ} → ((l + m) + n) ≡ (l + (m + n))
+associativityℕ+ {zero} {m} {n} = refl
+associativityℕ+ {suc l} {m} {n} = congruence suc (associativityℕ+ {l} {m} {n})
 ```
 
-### Test Heading
+### Results
 
-Let's see what happens.
+- Successfully formalized the commutative Ring of integers constructively with Agda using intuitionistic type theory.
+
+- Furnished machine-verified proofs for all standard commutative ring axioms.
+
+- Developed a self-contained modular library with the capacity to extend to other structures.
