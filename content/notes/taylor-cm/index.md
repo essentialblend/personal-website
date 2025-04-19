@@ -507,3 +507,663 @@ $$
 }
 \end{align*}
 $$
+
+### Selected Exercises
+
+#### Ex-$28$: Prove Conservation of Momentum for a multi-particle system with $N = 3$.
+
+Lets consider a system of $N$ particles, where we label the typical particle with a Greek index $\alpha$ or $\beta$. The mass of particle $\alpha$ is $m_{\alpha}$ and its momentum is $\bf{p_{\alpha}}$. 
+
+For e.g., particle $\alpha$ experiences forces exerted by $\beta$ and $\gamma$ ($\bf{F_{\alpha\beta}}$, $\bf{F_{\alpha\gamma}}$) alongside some net external force $\bf{F^{ext}_{\alpha}}$. Thus the net force on $\alpha$ is,
+
+$$
+\bf{F_{\alpha}} = \sum_{\beta \neq \alpha} \bf{F_{\alpha \beta}} + \bf{F^{ext}_{\alpha}}
+$$
+We also know that $\bf{F} = \dot{\bf{p}} = m\bf{a}$,
+
+$$
+\dot{\bf{p_{\alpha}}} = \sum_{\phi \neq \alpha} \bf{F_{\alpha \phi}} + \bf{F^{ext}_{\alpha}}
+$$
+This expression is valid for all $N$ particles. Now, we consider the total momentum of the system,
+
+$$
+\bf{P} = \sum_{\alpha = 1}^{N} \bf{p_{\alpha}}
+$$
+Differentiating with respect to time and substituting $\dot{\bf{p_{\alpha}}}$
+
+$$
+\begin{aligned}
+\dot{\bf{P}} &= \sum_{\alpha = 1}^{N} \dot{\bf{p_{\alpha}}} \\
+\dot{\bf{P}} &= \sum_{\alpha = 1}^{N} \left(\sum_{\phi \neq \alpha} \bf{F_{\alpha \phi}} + \bf{F^{ext}_{\alpha}}\right) \\
+&= \sum_{\alpha = 1}^{N} \sum_{\phi \neq \alpha} \bf{F_{\alpha \phi}} + \sum_{\alpha = 1}^{N} \bf{F^{ext}_{\alpha}} \\
+&= \sum_{\alpha} \sum_{\phi \neq \alpha}(\bf{F_{\alpha \phi}} + \bf{F_{\phi \alpha}}) + \sum_{\alpha = 1}^{N} \bf{F^{ext}_{\alpha}} \\\\
+\therefore \quad \dot{\bf{P}} = \sum_{\alpha = 1}^{N} \bf{F^{ext}_{\alpha}} \equiv \bf{F^{ext}}
+\end{aligned}
+$$
+
+This clearly demonstrates that the internal forces of all the particles don't affect the evolution of the total momentum ($\bf{P}$). The rate of change of $\bf{P}$ is determined _only_ by the net _external_ force on the system. In the case where this net external force is zero, $\dot{\bf{P}} = constant$! $\blacksquare$
+
+#### Ex-$31$: Show the converse of the Conservation of Momentum for a 2-particle system. That is, show that $\bf{F_{12}} = \bf{F_{21}}$.
+
+We start with two particles $\alpha$ and $\beta$, the forces acting on them are $\bf{F_{\alpha \beta}}$ and $\bf{F_{\beta \alpha}}$. Excluding any external forces, we have, 
+
+$$
+\bf{F} = \bf{F_{\alpha \beta}} + \bf{F_{\beta \alpha}}
+$$
+We know that $\bf{F} = \dot{\bf{p}}$, we have $\dot{\bf{p_1}} = \bf{F_{\alpha \beta}}$ and $\dot{\bf{p_2}} = \bf{F_{\beta \alpha}}$. The total momentum of this system is then,
+
+$$
+\bf{P} = \bf{p_1} + \bf{p_2}
+$$
+We know that $\bf{\dot{P}} = 0 = constant$, differentiating both sides with respect to $t$,
+
+$$
+\begin{aligned}
+\frac{d}{dt}(\bf{p_1} + \bf{p_2}) &= 0 \\\\[1pt]
+\dot{\bf{p_1}} + \dot{\bf{p_2}} \equiv \bf{F_{\alpha\beta}} + \bf{F_{\beta\alpha}} &= 0 \\\\[1pt]
+\therefore \quad \bf{F_{\alpha\beta}} = \bf{- F_{\beta\alpha}} \quad \blacksquare
+\end{aligned}
+$$
+
+#### Ex-$35$: A golf ball is hit from ground level with speed $v_0$ in a direction that is due east and at an angle $\theta$ above the horizontal. Neglecting air resistance, use Newton’s second law to find the position as a function of time, using coordinates with $x$ measured east, $y$ north, and $z$ vertically up. Find the time for the golf ball to return to the ground and how far it travels in that time.
+
+We need to find $\bf{r_{puck}}(t) = \{\bf{r_x}(t), \ 0, \ \bf{r_z(t)} \}$. We can start with the x-component.
+
+We know that the motion is along the $x$ and $z$ axis. Newton’s second law is $\bf{F_x} = m\bf{a_x}$. As there’s no acceleration along the x-axis,
+$$\bf{a_x} = 0 \implies {\bf{F_x} = 0 \quad \& \quad \frac{d\bf{v}}{dt} = constant}$$
+Since the initial velocity along the $x$ axis is $v_0$, we have an angle $\theta$ from the horizontal plane, and we know that $\dot{\bf{v}} = constant$, we begin constructing our velocity function for the $x$ component. $$\bf{v_x(t)} = v_0 \cos(\theta)$$
+Integrating again to get $\bf{r_x(t)}$,
+
+$$
+\begin{aligned}
+\int{\bf{v_x(t)} \ dt} &= \int{v_0 \cos(\theta)} \ dt \\
+r_x(t) &= v_0 \cos(\theta) \ t + C
+\end{aligned}
+$$
+Presuming origin at $(0, 0)$, $\bf{r_x}(0) = 0$, we get $C = x_0 = 0$, we have our desired function $r_x(t)$,
+
+$$
+r_x(t) = v_0 \cos(\theta) \ t
+$$
+Now, getting to the z-component,
+
+Similar to the x-component, we know that initial velocity, accounting for $\theta$ is $v_0 \sin(\theta)$. We also have the gravitational force accelerating the ball along the $-z$ axis, that makes $\bf{F_z} = -mg$. We can now solve our differential equation.
+
+$$
+\begin{aligned}
+F_z &= m a_z \\
+-mg &= m \dot{v_z} \\
+\dot{v_z} &= -g \\
+\end{aligned}
+$$
+
+Integrating both sides with respect to time,
+
+$$
+\begin{aligned}
+\int{\dot{v_z}} \ dt &= \int{-g} \ dt \\
+v_z(t) &= -gt + C \\ 
+\end{aligned}
+$$
+
+If at $t = 0$, $v_z(0) = v_0 \sin(\theta)$, then $C = v_0 \sin(\theta)$. We now have our final equation for velocity along the z-component,
+
+$$
+v_z(t) = -gt + v_0 \sin(\theta) \\
+$$
+Integrating again with respect to time gives us our desired function $r_z(t)$,
+
+$$
+\begin{aligned}
+\int{\bf{v_z(t)}} \ dt &= \int{(-gt + v_0 \sin(\theta))} \ dt \\
+r_z(t) &= \int{-gt} \ dt + \int{v_0 \sin(\theta)} \ dt \\
+r_z(t) &= -\frac{1}{2} g t^2 + C_1 + v_0 \sin(\theta)\ t + C_2 \\
+\end{aligned}
+$$
+
+If at $t = 0$, $r_z(t) = 0$, and $C = C_1 + C_2$ then, $C = 0$, and our final equation is,
+
+$$
+r_z(t) = -\frac{1}{2} g t^2 + v_0 \sin(\theta)\ t \\ \\
+\therefore \quad r_{puck}(t) = \{v_0 \cos(\theta) \ t, \ -\frac{1}{2} g t^2 + v_0 \sin(\theta)\ t \} \quad \blacksquare
+$$
+
+Now, we need to find $t$ at which the ball hits the ground. We can start with $r_z(t)$, and substitute it with $0$,
+
+$$
+\begin{aligned}
+r_z(t) &= -\frac{1}{2} g t^2 + v_0 \sin(\theta)\ t \\
+0 &= t(-\frac{1}{2} g t + v_0 \sin(\theta)) \\\\
+\therefore \quad t = 0 \text{\quad or \quad} t = \frac{2 v_0 \sin(\theta)}{g} \quad \blacksquare
+\end{aligned}
+$$
+Let the $t > 0$ solution be $t_{post}$, to find the distance traversed as it hits the ground after being hit, we plug $t_{post}$ to our equation for the x-component.
+
+$$
+\begin{aligned}
+r_x(t_{\text{post}}) &= v_0 \cos(\theta) \, t_{\text{post}} \\
+&= v_0 \cos(\theta) \left(\frac{2 v_0 \sin(\theta)}{g}\right) \\
+&= \frac{2 v_0^2 \sin(\theta) \cos(\theta)}{g} \\\\
+\therefore \quad r_x(t_{\text{post}}) = \frac{v_0^2 \sin(2\theta)}{g} \quad \blacksquare
+\end{aligned}
+$$
+
+#### Ex-$36$: A plane, which is flying horizontally at a constant speed $v_0$ and at a height $h$ above the sea, must drop a bundle of supplies to a castaway on a small raft. 
+
+##### (a) Write down Newton's second law for the bundle as it falls from the plane, assuming you can neglect air resistance. Solve your equations to give the bundle's position in flight as a function of time $t$. 
+
+Sticking to traditional 2D Cartesian coordinates, we represent the bundle's position as a function of time $(\bm{r_{y}(t)})$. 
+
+The bundle falls down from height $h$, so $\bm{F_y} = -mg$...
+
+$$
+\begin{aligned}
+-mg &= m\bm{a_y} \\
+\bm{a_y} &= -g \\
+\end{aligned}
+$$
+Integrating both sides with respect to $t$,
+
+$$
+\begin{aligned}
+\int{\bm{a_y}} \ dt = \int{-g} \ dt \\
+\bm{v_y(t)} = -gt + C \\
+\end{aligned}
+$$
+Since $v_y(0) = 0$, $C = 0$, and we have $\bm{v_y(t)} = -gt$. We integrate again to find $r_{y}(t)$,
+
+$$
+\begin{aligned}
+\int{\bm{v_y(t)}} \ dt &= \int{-gt} \ dt \\
+\bm{r_y(t)} &= -\frac{1}{2}gt^2 + C\\
+\end{aligned}
+$$
+In the special case $t = 0$, $\bm{r_y(t)} = h \ \implies \ C = h$, giving us our final equation for $\bm{r_y(t)}$,
+
+$$\therefore \quad \bm{r_y(t)} = -\frac{1}{2}gt^2 + h \quad \blacksquare$$
+
+##### (b) How far before the raft (measured horizontally) must the pilot drop the bundle if it is to hit the raft? What is this distance if $\bm{v_0} = 50 \  \mathrm{m/s}$, $h = 100 \ \mathrm{m}$, and $g \approx 10 \ \mathrm{m/s^2}$? 
+
+To determine how soon we need to drop the bundle so that it reaches the raft, it serves to first calculate how much time it will actually take to hit the ground in general. We can do this by using our equation for $\bm{r_y(t)}$ and solving for $t$.
+
+$$
+\begin{aligned}
+\frac{1}{2}gt^2 &= h \\
+t &= \sqrt{\frac{2h}{g}} \\
+\end{aligned}
+$$
+Substituting given values,
+
+$$
+\begin{aligned}
+t &= \sqrt{\frac{200 \ \mathrm{m}}{10 \ \mathrm{m/s^2}}} \\\\
+\therefore \quad t = 4.47 \ \mathrm{s}
+\end{aligned}
+$$
+We know that the plane travels at an initial (and constant) velocity of $\bm{v_0} = 50 \ \mathrm{m / s}$, we integrate with respect to time to get the position function,
+
+$$
+\begin{aligned}
+\int{\bm{v_x(t)}} \ dt &= \int{v_0} \ dt \\
+\bm{r_x(t)} &= \bm{v_0} t + C
+\end{aligned}
+$$
+In the case $t = 0$, we can presume $\bm{r_x(0)} = 0 \ \implies \ C = 0$, 
+
+$$\therefore \quad \bm{r_x(t)} = \bm{v_0}t$$
+Plugging in $t = 4.47 \ \mathrm{s}$, we get,
+
+$$
+\begin{aligned}
+\bm{r_x(4.47)} = 50 \ \mathrm{m / s} \cdot 4.47 \ \mathrm{s} \\ \\
+\therefore \quad \bm{r_x(4.47)} = 223.5 \ \mathrm{m} \quad \blacksquare
+\end{aligned}
+$$
+The plane needs to drop the bundle $223.5 \ \mathrm{m}$ before the raft's actual position along the x-axis.
+
+##### (c) Within what interval of time $(\pm \ \Delta t)$ must the pilot drop the bundle if it is to land within $\pm \ 10 \ m$ of the raft?
+
+With $\bm{r_x(4.47)} = 223.5 \ \mathrm{m}$, we want to find the time delta for which the bundle lands between $213.5 \ \mathrm{m}$ and $233.5 \ \mathrm{m}$, using our equation for $\bm{r_x(t)}$,
+
+$$
+\begin{aligned}
+\bm{v_0} t &= 213.5 \ \mathrm{m} \\ \\[2pt]
+t &= \frac{213.5 \mathrm{m}}{50 \ \mathrm{m / s}} \\ \\[2pt]
+t &= 4.27 \ \mathrm{s}
+\end{aligned}
+$$
+$$
+\begin{aligned}
+\bm{v_0} t &= 233.5 \ \mathrm{m} \\ \\[2pt]
+t &= \frac{233.5 \mathrm{m}}{50 \ \mathrm{m / s}} \\ \\[2pt]
+t &= 4.67 \ \mathrm{s}
+\end{aligned}
+$$
+Therefore, the plane must drop it between $\pm \ 0.2 \ \mathrm{s}$ to ensure a $\pm \ 10 \ \mathrm{m}$ coverage. $\blacksquare$
+
+#### Ex-$37$: A student kicks a frictionless puck with initial speed $\bm{v_0}$, so that it slides straight up a plane that is inclined at an angle $\theta$ above the horizontal. 
+
+##### (a) Write down Newton's second law for the puck and solve to give its position as a function of time.
+
+We take x-axis along the incline of the slope, y-axis orthogonal to x (along the slope normal pointing outwards), and z-axis orthogonal to x and y, forming our orthonormal basis.
+
+The total force acting on the puck is $\bm{F_{net}} = N + mg$, where $\bm{N} = (0, \ N, \ 0)$ and $\bm{g} = (-g \sin(\theta), \ -g\cos(\theta))$, we have our component forces.
+
+$$
+\begin{aligned}
+\bf{F} = m\ddot{r} \implies \begin{cases}
+	m\ddot{x} &= -mg\sin\theta \\
+	m\ddot{y} &= N - mg\cos\theta \\
+	m\ddot{z} &= 0
+\end{cases}
+\end{aligned}
+$$
+Since $\ddot{z} = \dot{z} = 0$, $z = 0$ for all $t$. The normal force adjusts against gravity, so $\ddot{y} = \dot{y} = y = 0$, and we only need to evaluate the position function for the x-component. We can integrate twice to get $r_x(t)$.
+
+$$
+\begin{aligned}
+\int{\int{m\ddot{r}}} \ dt \ dt &= \int{\int{-mg\sin\theta}} \ dt \ dt \\ \\[1pt]
+\int{\int{\ddot{r}}} \ dt \ dt &= \int{\int{-g\sin\theta}} \ dt \ dt \\ \\[1pt]
+\int{\dot{r}} \ dt &= \int{(-g\sin\theta t + C_1)} \ dt \\ \\[1pt]
+\bm{r_x(t)} &= -\frac{1}{2}gt^2\sin\theta + C_1t + C_2 \\ 
+\end{aligned}
+$$
+At $t = 0$, $x(0) = 0$, giving us $C_2 = r_0$. Now we differentiate with respect to time, to get $C_1$.
+
+$$
+\begin{aligned}
+\frac{dr_x(t)}{dt} &= \frac{d}{dt}\left(-\frac{1}{2}gt^2\sin\theta + C_1t + r_0 \right) \\ \\[1pt]
+v_x(t) &= -gt\sin\theta + C_1 \\
+\end{aligned}
+$$
+At $t = 0$, $v_x(0) = v_0$, giving us $C_1 = v_0$, giving us our final equation,
+
+$$\therefore \quad r_x(t) = -\frac{1}{2}gt^2\sin\theta + v_0t + r_0 \quad \blacksquare$$
+
+##### (b) How long will the puck take to return to its starting point?
+
+Simplifying $r_x(t)$, ignoring the t = 0 case
+
+$$
+\begin{aligned}
+r_x(t) &= \left(v_0 - \frac{1}{2} g \sin(\theta) t\right) \\\\
+\therefore \quad t &= \frac{2 v_0}{g \sin(\theta)} \quad \blacksquare
+\end{aligned}
+$$
+
+#### Ex-$39$: A ball is thrown with initial speed $\bm{v_0}$ up an inclined plane. The plane is inclined at an angle $\phi$ above the horizontal, and the ball's initial velocity is at an angle $\theta$ above the plane. Choose axes with $x$ measured up the slope, $y$ normal to the slope, and $z$ across it. 
+
+##### Write down Newton's second law using these axes and find the ball's position as a function of time.
+
+Since we are concerned with a kind of projectile motion, not sliding motion in contact with the slope, $N$ is redundant. The motion is also only along the $x$ and $y$ axis, so $\dot{z} = z = 0$ for all $t$. Once the ball is thrown, only its own weight acts on it, so $\bm{g} = (-g\sin\phi, \ -g\cos\phi)$, giving us our equations for the two components,
+
+$$
+\begin{aligned}
+F_x &= m \ddot{r}_x \\
+-mg\sin\phi &= m\ddot{r}_x \\
+\ddot{r}_x &= -g\sin\phi 
+\end{aligned}
+$$
+And similarly, $F_y = m\ddot{r}_y$, and $\ddot{r}_y = -g\cos\phi$. We integrate twice to get the position functions $r_x(t)$ and $r_y(t)$. Starting with $r_x(t)$,
+
+$$
+\begin{aligned}
+\int{\int{\ddot{r}_x \ dt} \ dt} &= \int{\int{(-g\sin\phi) \ dt} \ dt} \\
+\int{\dot{r}_x} \ dt &= \int{(-g\sin\phi t + C_1) \ dt} \\
+r_x(t) &= -\frac{1}{2}gt^2\sin\phi + C_1t + C_2 \\
+\end{aligned}
+$$
+At $t = 0$, $r_x(0) = 0$, giving us $C_2 = 0$. We need to solve for $C_1$ by differentiating $r_x(t)$ to get $v_x(t)$ and then substituting with initial conditions,
+
+$$
+\begin{aligned}
+\dot{r} &= \frac{d}{dt}\left(-\frac{1}{2}gt^2\sin\phi + C_1t \right) \\
+v_x(t) &= -\frac{1}{2} gt\sin\phi + C_1 \\
+\end{aligned}
+$$
+At $t = 0$, $v_x(0) = v_0 \cos\theta \ \implies \ C_1 = v_0 \cos\theta$, giving us our final equation for $r_x(t)$,
+
+$$r_x(t) = -\frac{1}{2}gt^2\sin\phi + v_0t\cos\theta$$
+Repeating the previous steps exactly for the y-component, we can evaluate $r_y(t) = -\frac{1}{2}gt^2\cos\phi + v_0t\sin\theta$. We now have our ball's position as a function of time,
+
+$$\therefore \quad \bm{r_{ball}}(t) = (-\frac{1}{2}gt^2\sin\phi + v_0t\cos\theta, \ -\frac{1}{2}gt^2\cos\phi + v_0t\sin\theta) \quad \blacksquare$$
+
+##### Show that the ball lands a distance $R = 2v_0^2 \sin(\theta) \cos(\theta + \phi) / (g \cos^2(\phi)$ from its launch point.
+
+The ball lands at a certain distance when $r_y(t) = 0$, so we substitute and solve for $t$,
+
+$$
+\begin{aligned}
+-\frac{1}{2}gt^2\cos\phi + v_0t\sin\theta &= 0 \\
+\frac{1}{2}gt\cos\phi &= v_0\sin\theta \\
+t &= \frac{2v_0\sin\theta}{g\cos\phi} \\
+\end{aligned}
+$$
+Now, we substitute this into $r_x(t)$, to get $R$,
+
+$$
+\begin{aligned}
+r_x(\frac{2v_0\sin\theta}{g\cos\phi}) &= \left(-\frac{1}{2}gt\sin\phi + v_0\cos\theta\right) t \\ \\[1pt]
+&= \left(-\frac{v_0g\sin\theta\sin\phi}{g\cos\phi} + v_0\cos\theta\right) \frac{2v_0\sin\theta}{g\cos\phi} \\ \\[1pt]
+&= (- v_0\sin\theta\tan\phi + v_0\cos\theta) \frac{2v_0\sin\theta}{g\cos\phi} \\ \\[1pt]
+&= \frac{2v_0^2\sin\theta(\cos\theta - \sin\theta\tan\phi)}{g\cos\phi} \\ \\[1pt]
+&= \left(\frac{v_0 \sin \theta \sin \phi}{g \cos \phi} + v_0 \cos \theta \right) \frac{2v_0 \sin \theta}{g \cos \phi} \\ \\[1pt]
+&= \frac{2v_0^2 \sin \theta (\cos \theta - \sin \theta \tan \phi)}{g \cos \phi} \\ \\[1pt]
+&= \frac{2v_0^2 \sin \theta \cos(\theta + \phi)}{g \cos^2 \phi} \\ \\[1pt]
+&= R \quad \blacksquare 
+\end{aligned}
+$$
+
+##### Show that for given $v_0$ and $\phi$, the maximum possible range up the inclined plane is $R_{max} = v_0^2 / [g(1 + \sin(\phi))]$.
+
+We need to differentiate $R$ with respect to $\theta$, and set it to $0$ to find the maximum range.
+
+$$
+\begin{aligned}
+\frac{d}{d\theta}(\frac{2v_0^2 \sin \theta \cos(\theta + \phi)}{g \cos^2 \phi}) &= \dot{R}  \\ \\[1pt]
+\frac{d}{d\theta}(\frac{2v_0^2 \sin \theta \cos(\theta + \phi)}{g \cos^2 \phi}) &= 0 \\ \\[1pt]
+\frac{2v_0^2}{g\cos^2\phi} \frac{d}{d\theta} \ (\sin\theta\cos(\theta + \phi)) &= 0 \\ \\[1pt]
+\frac{2v\_0^2}{g \cos^2(\phi)} \left( \cos(\theta) \cos(\theta + \phi) - \sin(\theta) \sin(\theta + \phi) \right) &= 0 \\ \\[1pt]
+\frac{2v\_0^2}{g \cos^2(\phi)} \cos(2\theta + \phi) &= 0
+\end{aligned}
+$$
+Simplifying,
+
+$$
+\begin{aligned}
+    \cos(2\theta + \phi) &= 0 \\ \\[1pt]
+    2\theta + \phi &= \frac{\pi}{2} + n\pi \quad (\text{for } n \in \mathbb{Z}) \\ \\[1pt]
+    2\theta &= \frac{\pi}{2} - \phi + n\pi \\ \\[1pt]
+    \theta &= \frac{\pi}{4} - \frac{\phi}{2} + \frac{n\pi}{2}
+\end{aligned}
+$$
+Taking $n =  0$ to get the first solution, we get $\theta = \frac{\pi}{4} - \frac{\phi}{2}$. Substituting this to $R$,
+
+$$
+\begin{aligned}
+R &= \frac{2v_0^2 \sin\left(\frac{\pi}{4} - \frac{\phi}{2}\right) \cos\left(\left(\frac{\pi}{4} - \frac{\phi}{2}\right) + \phi\right)}{g \cos^2(\phi)} \\ \\[1pt]
+&= \frac{2v_0^2 \left(\sin\left(\frac{\pi}{4}\right) \cos\left(\frac{\phi}{2}\right) - \cos\left(\frac{\pi}{4}\right) \sin\left(\frac{\phi}{2}\right)\right) \left(\cos\left(\frac{\pi}{4}\right) \cos\left(\frac{\phi}{2}\right) + \sin\left(\frac{\pi}{4}\right) \sin\left(\frac{\phi}{2}\right)\right)}{g \cos^2(\phi)} \\ \\[1pt]
+&= \frac{2v_0^2 \left(\frac{\sqrt{2}}{2} \cos\left(\frac{\phi}{2}\right) - \frac{\sqrt{2}}{2} \sin\left(\frac{\phi}{2}\right)\right) \left(\frac{\sqrt{2}}{2} \cos\left(\frac{\phi}{2}\right) + \frac{\sqrt{2}}{2} \sin\left(\frac{\phi}{2}\right)\right)}{g \cos^2(\phi)} \\ \\[1pt]
+&= \frac{2v_0^2 \left(\frac{\sqrt{2}}{2} \left(\cos\left(\frac{\phi}{2}\right) - \sin\left(\frac{\phi}{2}\right)\right)\right) \left(\frac{\sqrt{2}}{2} \left(\cos\left(\frac{\phi}{2}\right) + \sin\left(\frac{\phi}{2}\right)\right)\right)}{g \cos^2(\phi)} \\ \\[1pt]
+&= \frac{2v_0^2 \frac{\sqrt{2}}{2} \left(\cos\left(\frac{\phi}{2}\right) - \sin\left(\frac{\phi}{2}\right)\right) \frac{\sqrt{2}}{2} \left(\cos\left(\frac{\phi}{2}\right) + \sin\left(\frac{\phi}{2}\right)\right)}{g \cos^2(\phi)} \\ \\[1pt]
+&= \frac{2v_0^2 \frac{1}{2} \left(\cos^2\left(\frac{\phi}{2}\right) - \sin^2\left(\frac{\phi}{2}\right)\right)}{g \cos^2(\phi)} \\ \\[1pt]
+&= \frac{2v_0^2 \frac{1}{2} \left(\cos^2\left(\frac{\phi}{2}\right) - \sin^2\left(\frac{\phi}{2}\right)\right)}{g \cos^2(\phi)} \\ \\[1pt]
+&= \frac{v_0^2 \left(\cos^2\left(\frac{\phi}{2}\right) - \sin^2\left(\frac{\phi}{2}\right)\right)}{g \cos^2(\phi)} \\ \\[1pt]
+&= \frac{v_0^2 (1 - \sin(\phi))}{g \cos^2(\phi)} \\ \\[1pt]
+&= \frac{v_0^2}{[g(1 + \sin\phi)]} \\ \\[1pt]
+&= R_{max} \quad \blacksquare
+\end{aligned}
+$$
+
+#### Ex-$40$: A cannon shoots a ball at an angle $\theta$ above the horizontal ground. 
+
+##### (a) Neglecting air resistance, use Newton's second law to find the ball's position as a function of time. (Use axes with $x$ measured horizontally and $y$ vertically.) 
+
+The cannon is only affected by its weight, and gravity only affects the y-component, we have $g_y = -g \implies F_y = -mg$. We only need to integrate twice to get $r_y(t)$,
+
+$$
+\begin{aligned}
+F_y &= -mg \\
+m\ddot{r_y} &= -mg \\
+\ddot{r_y} &= -g \\
+\dot{r_y} &= -gt + C_1 \\
+r_y(t) &= -\frac{1}{2}gt^2 + C_1t + C_2 \\ 
+\end{aligned}
+$$
+At $t = 0$, presuming $r_y(0) = 0$, we need to find $C_1$. The cannon is shot initially at an angle $\theta$ with some velocity $v_0$,
+
+$$
+\begin{aligned}
+v_y(t) &= -gt + C_1 \\
+C_1 &= v_0\sin\theta\\\\
+\therefore \quad r_y(t) = -\frac{1}{2}gt^2 + v_0\sin\theta \ t \\
+\end{aligned}
+$$
+Since there's no force acting on the x-component, we only have the velocity to deal with, so $r_x(t) = v_0\cos\theta \ t$ (derived exactly like $r_y(t)$), giving us our cannonball's position function,
+$$\therefore \quad \bm{r_{cball}}(t) = (v_0\cos\theta \ t, \ -\frac{1}{2}gt^2 + v_0\sin\theta \ t) \quad \blacksquare$$
+
+##### (b) Let $r(t)$ denote the ball's distance from the cannon. What is the largest possible value of $\theta$ if $r(t)$ is to increase throughout the ball's flight? [Hint: Using your solution to (a) you can write down $r^2$ as $x^2 + y^2$ , and then find the condition that $r^2$ is always increasing.]
+
+Starting with $\bm{r_{cball}}^2(t)$, we differentiate 
+
+$$
+\begin{aligned}
+\bm{r^2_{cball}}(t) &= (v_0\cos\theta \ t)^2 + \left(-\frac{1}{2}gt^2 + v_0\sin\theta \ t\right)^2 \\ \\[1pt]
+\bm{\dot{r^2}_{cball}}(t) &= \frac{d}{dt}\left((v_0^2\cos^2\theta \ t^2) + (\frac{1}{4} g^2 t^4 - v_0 g \sin(\theta) t^3 + v_0^2 \sin^2(\theta) t^2)\right) \\ \\[1pt]
+&= \frac{d}{dt} \left(v_0^2 \cos^2(\theta) t^2 + \frac{1}{4} g^2 t^4 - v_0 g \sin(\theta) t^3 + v_0^2 \sin^2(\theta) t^2\right) \\ \\[1pt]
+&= \frac{d}{dt}\left(\frac{1}{4} g^2 t^4 - v_0 g \sin(\theta) t^3 + v_0^2 (\cos^2(\theta) + \sin^2(\theta)) t^2\right) \\ \\[1pt]
+&= \frac{d}{dt}\left(\frac{1}{4} g^2 t^4 - v_0 g \sin(\theta) t^3 + v_0^2 t^2\right) \\ \\[1pt]
+&= g^2 t^3 - 3 v_0 g \sin(\theta) t^2 + 2 v_0^2 t
+\end{aligned}
+$$
+To find the condition for $\bm{\dot{r}^2_{cball}}$ to be always increasing, we need the derivative to be positive for all $t > 0$, meaning, there can be no real roots. The condition for no real roots necessitates the discriminant being less than $0$($b^2 - 4ac \lt 0$). 
+
+We have $b^2 = (3v_0g\sin\theta)^2$, $a = g^2$, and $c = 2v_0^2$, solving for $\theta$,
+
+$$
+\begin{aligned}
+(3v_0g\sin\theta)^2 - 4g^2(2v_0^2) &< 0 \\ \\[0.5pt]
+9v_0^2g^2\sin^2\theta - 8g^2v_0^2 &< 0 \\ \\[0.5pt]
+v_0^2g^2(9\sin^2\theta - 8) &< 0 \\ \\[0.5pt]
+\end{aligned}
+$$
+Dividing both sides by $v_0^2g^2$, and simplifying, we get our final value for $\theta$,
+
+$$
+\begin{aligned}
+9\sin^2\theta - 8 &< 0 \\ \\[0.5pt]
+\sin^2\theta &< \frac{8}{9} \\ \\[0.5pt]
+\sin\theta &< \sqrt{\dfrac{8}{9}} \\ \\[0.5pt]
+\theta &< \arcsin{\sqrt{\dfrac{8}{9}}} \\ \\ \\[0.5pt]
+\therefore \quad \theta <\approx 70.5^\circ \quad \blacksquare
+\end{aligned}
+$$
+
+#### Ex-$41$: An astronaut in gravity-free space is twirling a mass m on the end of a string of length $R$ in a circle, with constant angular velocity $\omega$. Write down Newton's second law in polar coordinates and find the tension in the string.
+
+We know that $\omega = \dot{\phi}$. To find the tension in the string we use $\vec{F}_r = m(\ddot{r} - r\omega^2)$.
+
+Since $R$ is constant, $\ddot{r} = 0$, and since $\omega$ is constant, we apply the equation and substitute, 
+
+$$
+\begin{aligned}
+F_r &= m(\ddot{r} - r\omega^2) \\
+&= m(0 - R\omega^2) \\
+&= -mR\omega^2 \\ \\
+\therefore \quad T = mR\omega^2 \quad \blacksquare 
+\end{aligned}
+$$
+
+#### Ex-$42$: Prove that the transformations from rectangular to polar coordinates and vice versa are given by the four equations. Explain why the equation for $\theta$ is not quite complete and give a complete version.
+
+a) $x = r \cos\theta$ and $y = r \sin\theta$
+
+Lets take a unit circle (where $r = 1$). Then, by definition, $\cos\theta = \dfrac{x}{r}$ and $\sin\theta = \dfrac{y}{r} \quad \blacksquare$
+
+b) $r = \sqrt{x^2 + y^2}$ and $\theta = \tan^{-1}(\dfrac{y}{x})$ 
+
+Substituting definitions from a,
+
+$$
+\begin{aligned}
+r &= \sqrt{x^2 + y^2} \\
+&= \sqrt{(r\cos\theta)^2 + (r\sin\theta)^2} \\
+&= \sqrt{r^2(\cos^2\theta + \sin^2\theta)} \\
+&= \sqrt{r^2 \cdot 1} \\
+&= r \quad \blacksquare
+\end{aligned}
+$$
+Since $\arctan$ doesn't distinguish between quadrants, we need to apply some conditions,
+
+If $x > 0$, $\theta = arctan(y/x)$.
+If $x < 0$, $\theta = \arctan(y/x) + \pi$.
+If $x = 0$ and $y > 0$, $\theta = \pi / 2$.
+If $x = 0$ and $y < 0$, $\theta$ = $-\pi/2 \quad \blacksquare$
+
+#### Ex-$43$:
+
+##### (a) Prove that the unit vector r of two-dimensional polar coordinates is equal to $$\hat{\bm{r}} = \hat{\bm{x}}cos\phi + \hat{\bm{y}} sin\phi$$and find a corresponding expression for $\hat{\bm{\phi}}$.
+
+We know that a point $(r, \ \phi)$ in polar-coordinates is related to Cartesian coordinates $(x, \ y)$ by: 
+
+$$
+x = r \cos \phi \\
+y = r \sin \phi
+$$
+In general if some position vector $\vec{r}$ is represented by $$\bm{r} = \bm{r}_x \bm{\hat{x}} + \bm{r}_y\bm{\hat{y}}$$
+Then we can represent its unit vector as 
+
+$$
+\begin{aligned}
+\hat{\bm{r}} &= \dfrac{\bm{r}}{|\bm{r}|} \\ \\[0.5pt]
+&= \dfrac{\bm{r}_x\bm{\hat{x}} + \bm{r}_y\bm{\hat{y}}}{\sqrt{\bm{r}_x^2 + \bm{r}_y^2}} \\ \\[0.5pt]
+\end{aligned}
+$$
+Substituting relations,
+
+$$
+\begin{aligned}
+&= \dfrac{\bm{r}_x \cos\phi \bm{\hat{x}} + \bm{r}_y \cos\phi \bm{\hat{y}}}{r \sqrt{\cos^2\phi + \sin^2\phi}} \\ \\ \\[0.5pt]
+\therefore \quad \cos\phi\bm{\hat{x}} + \sin\phi\bm{\hat{y}} \quad \blacksquare
+\end{aligned}
+$$
+Rotating $\hat{\bm{r}}$ $90^\circ$ counter-clockwise, we get
+
+$$\hat{\bm{\phi}} = -\sin\phi\hat{\bm{x}} + \cos\phi\bm{\hat{y}} \quad \blacksquare$$
+
+##### (b) Assuming that $\phi$ depends on the time $t$, differentiate your answers in 1-43a to give an alternative proof of the results (1.42) and (1.46) for the time derivatives of $\hat{\bm{r}}$ and $\hat{\bm{\phi}}$.
+
+We need to find $\bm{\dot{\hat{r}}}$ and $\bm{\dot{\hat{\phi}}}$. Starting with the former and treating $\phi$ as $\phi(t)$,
+
+$$
+\begin{aligned}
+\frac{d\hat{\bm{r}}}{dt} &= \frac{d}{dt}(\cos\phi\bm{\hat{x}} + \sin\phi\bm{\hat{y}}) \\ \\[0.5pt]
+&= (-\sin\phi \dot{\phi})\bm{\hat{x}} + (\cos\phi \dot{\phi})\bm{\hat{y}} \\ \\[0.5pt]
+&= \dot{\phi}(-\sin\phi\bm{\hat{x}} + \cos\phi\bm{\hat{y}}) \\ \\
+\therefore \quad \dot{\hat{r}} = \dot{\phi}\bm{\hat{\phi}} \quad \blacksquare
+\end{aligned}
+$$
+Now, we proceed to $\bm{\dot{\hat{\phi}}}$,
+
+$$
+\begin{aligned}
+\frac{d\hat{\bm{\phi}}}{dt} &= \frac{d}{dt}(-\sin\phi\bm{\hat{x}} + \cos\phi\bm{\hat{y}}) \\ \\[0.5pt]
+&= (-\cos\phi \dot{\phi})\bm{\hat{x}} + (-\sin\phi \dot{\phi})\bm{\hat{y}} \\ \\[0.5pt]
+&= -\dot{\phi}(\cos\phi\bm{\hat{x}} + \sin\phi\bm{\hat{y}}) \\ \\
+\therefore \quad \dot{\hat{\phi}} = -\dot{\phi}\hat{r} \quad \blacksquare
+\end{aligned}
+$$
+
+#### Ex-$45$: Prove that if $\bm{v}(t)$ is any vector that depends on time (for example the velocity of a moving particle) but which has constant magnitude, then $\bm{\dot{v}}(t)$ is orthogonal to $\bm{v}(t)$. Prove the converse that if $\bm{\dot{v}}(t)$ is orthogonal to $\bm{v}(t)$, then $|\bm{v}(t)|$ is constant. [Hint: Consider the derivative of $\bm{v}^2$.] This is a very handy result. It explains why, in two-dimensional polars, $\bm{\dot{\hat{r}}}$ has to be in the direction of $\bm{\hat{\phi}}$ and vice versa. It also shows that the speed of a charged particle in a magnetic field is constant, since the acceleration is perpendicular to the velocity.
+
+If $|\bm{v}(t)|$ is constant, $|\bm{v^2}(t)|$ is constant as well alongside all its derivatives. We start with its derivative,
+
+$$
+\begin{aligned}
+\dfrac{d}{dt}\bm{v^2}(t) &= \dfrac{d}{dt}(\bm{v}(t) \cdot \bm{v}(t)) \\ \\[0.5pt]
+&= \dfrac{d\bm{v}(t)}{dt} \cdot \bm{v}(t) + \bm{v}(t) \cdot \dfrac{d\bm{v}(t)}{dt} \\ \\[0.5pt]
+&= \bm{\dot{v}}(t) \cdot \bm{v}(t) + \bm{v}(t) \cdot \bm{\dot{v}}(t) \\ \\[0.5pt]
+&= 2(\bm{\dot{v}}(t) \cdot \bm{v}(t)) 
+\end{aligned} 
+$$
+
+Since $\dot{v^2}(t) = 0$,
+
+$$
+\begin{aligned}
+2(\bm{\dot{v}}(t) \cdot \bm{v}(t)) &= 0 \\ \\[0.5pt]
+\bm{\dot{v}}(t) \cdot \bm{v}(t) &= 0 \\ \\
+\end{aligned}
+$$
+
+Hence, since $\bm{\dot{v}}(t) \cdot \bm{v}(t) = 0$, $\bm{\dot{v}}(t)$ is orthogonal to $\bm{v}(t)$. $\blacksquare$
+
+Taking a look at our result for $\dot{v^2}(t)$, we can substitute, and that gives us $\dot{v^2}(t) = 0 \ \implies \dot{v}(t) = 0 \ \implies |\bm{v}(t)| = constant \quad \blacksquare$
+
+#### Ex-$47$: Let the position of a point $P$ in three dimensions be given by the vector $\bm{r} = (x, \ y, \ z)$ in Cartesian coordinates. The same position can be specified by cylindrical polar coordinates, $(\rho, \ \phi,\ z)$ which are defined as follows: Let $P'$ denote the projection of $P$ onto the xy plane; that is, $P'$ has Cartesian coordinates $(x, y, 0)$. Then $\rho$ and $\phi$ are defined as the two-dimensional polar coordinates of $P'$ in the $xy$ plane, while $z$ is the third Cartesian coordinate, unchanged. 
+
+##### (a) Make a sketch to illustrate the three cylindrical coordinates. Give expressions for $\rho$, $\phi$, $z$ in terms of the Cartesian coordinates $x$, $y$, $z$. Explain in words what $\rho$ is ("$\rho$ is the distance of $P$ from $?$"). There are many variants in notation. For instance, some people use $r$ instead of $\rho$. Explain why this use of $\bm{r}$ is unfortunate. 
+
+Using traditional right-handed coordinates, we can express $\rho$ ($z$ remains untouched) 
+
+$$\rho = \sqrt{x^2 + y^2} \quad \blacksquare$$
+
+For $\phi$, we need to consider the quadrant as well,
+
+$$\phi = \arctan(y / x) \quad \blacksquare$$
+
+##### (b) Describe the three unit vectors $\hat{\bm{\rho}}, \ \hat{\bm{\phi}}, \ \hat{\bm{z}}$ and write the expansion of the position vector $\bm{r}$ in terms of these unit vectors. 
+
+$\hat{\bm{\rho}}$ points from the $z$ axis to our point $P$, parallel to our $xy$-slice. $\hat{\bm{\phi}}$ represents the unit vector tangential to the circular $xy$-slice along the direction of motion. $\hat{\bm{z}}$ remains untouched. Then,
+
+$$\bm{r} = \rho \hat{\bm{\rho}} + z \hat{\bm{z}} \quad \blacksquare$$
+
+##### (c) Differentiate your last answer twice to find the cylindrical components of the acceleration $\bm{a} = \ddot{\bm{r}}$ of the particle. To do this, you will need to know the time derivatives of $\hat{\bm{\rho}}$ and $\hat{\bm{\phi}}$.
+
+We need to differentiate $\bm{r}$ twice,
+
+$$
+\begin{aligned}
+\dfrac{d^2\bm{r}}{dt^2} = \ddot{\bm{r}} &= \dfrac{d^2}{dt^2}(\rho \hat{\bm{\rho}} + z \hat{\bm{z}}) \\ \\[0.5pt]
+\end{aligned}
+$$
+
+We start with $\bm{r}$,
+
+$$
+\begin{aligned}
+\dot{\bm{r}} &= \dfrac{d}{dt}(\rho \hat{\bm{\rho}} + z \hat{\bm{z}}) \\ \\[0.5pt]
+&= (\dot{\rho}\hat{\bm{\rho}} + \rho \dot{\hat{\bm{\rho}}} + \dot{z}\hat{\bm{z}} + z \dot{\hat{\bm{z}}}) \\ \\[0.5pt]
+\end{aligned}
+$$
+
+We need $\dot{\hat{\bm{\rho}}}$ and $\dot{\hat{\bm{\phi}}}$, starting with $\dot{\hat{\bm{\rho}}}$...
+
+$$
+\begin{aligned}
+\dot{\hat{\bm{\rho}}} &= \frac{d}{dt} (\cos \phi \, \hat{\bm{x}} + \sin \phi \, \hat{\bm{y}}) \\ \\[0.5pt]
+&= \frac{d (\cos \phi)}{dt} \, \hat{\bm{x}} + \frac{d (\sin \phi)}{dt} \, \hat{\bm{y}} \\ \\[0.5pt]
+&= -\sin \phi \, \dot{\phi} \, \hat{\bm{x}} + \cos \phi \, \dot{\phi} \, \hat{\bm{y}} \\ \\[0.5pt]
+&= \dot{\phi} \, (-\sin \phi \, \hat{\bm{x}} + \cos \phi \, \hat{\bm{y}}) \\ \\[0.5pt]
+&= \dot{\phi} \, \hat{\bm{\phi}}
+\end{aligned}
+$$
+
+Since 
+
+$$\sin\phi \bm{\hat{x}} + \cos \phi \bm{\hat{y}} = \hat{\bm{\phi}} \quad \implies \quad \dot{\hat{\bm{\rho}}} = \dot{\phi} \bm{\hat{\phi}}$$
+
+now we get to $\dot{\hat{\bm{\phi}}}$,
+
+$$
+\begin{aligned}
+\dot{\hat{\bm{\phi}}} &= \frac{d}{dt} (-\sin \phi \, \hat{\bm{x}} + \cos \phi \, \hat{\bm{y}}) \\ \\[0.5pt]
+&= \frac{d (-\sin \phi)}{dt} \, \hat{\bm{x}} + \frac{d (\cos \phi)}{dt} \, \hat{\bm{y}} \\ \\[0.5pt]
+&= -\cos \phi \, \dot{\phi} \, \hat{\bm{x}} - \sin \phi \, \dot{\phi} \, \hat{\bm{y}} \\ \\[0.5pt]
+&= \dot{\phi} \, (-\cos \phi \, \hat{\bm{x}} - \sin \phi \, \hat{\bm{y}}) \\ \\[0.5pt]
+&= \dot{\phi} \, (-\cos \phi \, \hat{\bm{x}} - \sin \phi \, \hat{\bm{y}}) \\ \\[0.5pt]
+&= -\dot{\phi} \, (\cos \phi \, \hat{\bm{x}} + \sin \phi \, \hat{\bm{y}}) \\ \\[0.5pt]
+&= -\dot{\phi} \, \hat{\bm{\rho}}
+\end{aligned}
+$$
+Now, getting back to differentiation and substituting,
+
+$$
+\begin{aligned}
+\ddot{\bm{r}} &= \frac{d}{dt} (\dot{\rho} \hat{\rho} + \rho \dot{\phi} \hat{\phi} + \dot{z} \hat{z}) \\ \\[0.5pt]
+&= \frac{d}{dt} (\dot{\rho} \hat{\rho}) + \frac{d}{dt} (\rho \dot{\phi} \hat{\phi}) + \frac{d}{dt} (\dot{z} \hat{z}) \\ \\[0.5pt]
+&= (\ddot{\rho} \hat{\rho} + \dot{\rho} \dot{\phi} \hat{\phi}) + (\dot{\rho} \dot{\phi} \hat{\phi} + \rho \ddot{\phi} \hat{\phi} - \rho \dot{\phi}^2 \hat{\rho}) + \ddot{z} \hat{z} \\ \\
+\therefore \quad \ddot{\bm{r}} = (\ddot{\rho} - \rho \dot{\phi}^2) \hat{\bm{\rho}} + (2 \dot{\rho} \dot{\phi} + \rho \ddot{\phi}) \hat{\bm{\phi}} + \ddot{z} \hat{\bm{z}} \quad \blacksquare
+\end{aligned}
+$$
+
+#### Ex-$49$: Imagine two concentric cylinders, centered on the vertical $z$ axis, with radii $R ± \epsilon$, where $\epsilon$ is very small. A small frictionless puck of thickness $2\epsilon$ is inserted between the two cylinders, so that it can be considered a point mass that can move freely at a fixed distance from the vertical axis. If we use cylindrical polar coordinates $(\rho, \ \phi, \ z)$ for its position (1.47), then $\rho$ is fixed at $\rho = R$. while $\phi$ and $z$ can vary at will. Write down and solve Newton's second law for the general motion of the puck, including the effects of gravity. Describe the puck's motion.
+
+Given conditions: $\rho$ = $R$ (constant), $\dot{\rho}$ = $\ddot{\rho}$ = $0$.
+
+The only external force is gravity: $F = -mg\hat{\bm{z}}$
+
+Using the cylindrical coordinate acceleration from our previous derivation:
+$$\ddot{\mathbf{r}} = (\ddot{\rho} - \rho \dot{\phi}^2) \hat{\boldsymbol{\rho}} + (2 \dot{\rho} \dot{\phi} + \rho \ddot{\phi}) \hat{\boldsymbol{\phi}} + \ddot{z} \hat{\mathbf{z}}$$
+Simplifying with our given conditions:
+$$\ddot{\bm{r}} = -R \dot{\phi}^2 \hat{\bm{\rho}} + R \ddot{\phi} \hat{\bm{\phi}} + \ddot{z} \hat{\bm{z}}$$

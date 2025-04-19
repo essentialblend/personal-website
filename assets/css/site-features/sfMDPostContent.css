@@ -4,6 +4,26 @@
   padding-right: var(--baseSizeREM);
 }
 
+html[data-user-theme="themeDark"] .SF_POSTCONTENT pre.chroma span.kr {
+  color: var(--accentColor) !important;
+}
+
+html[data-user-theme="themeHigh"] .SF_POSTCONTENT pre.chroma span.kr {
+  color: #fcd34d !important;
+}
+
+html[data-user-theme="themeDark"] .SF_POSTCONTENT .chroma .ow,
+html[data-user-theme="themeDark"] .SF_POSTCONTENT .chroma .o,
+html[data-user-theme="themeDark"] .SF_POSTCONTENT .chroma .w {
+  color: #f6ba59 !important;
+}
+
+html[data-user-theme="themeHigh"] .SF_POSTCONTENT .chroma .ow,
+html[data-user-theme="themeHigh"] .SF_POSTCONTENT .chroma .o,
+html[data-user-theme="themeHigh"] .SF_POSTCONTENT .chroma .w {
+  color: #f7e377 !important;
+}
+
 .SF_POSTCONTENT > * 
 {
   margin-block-start: 0;
