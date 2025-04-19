@@ -132,8 +132,8 @@ body
   background-color: var(--BGColor);
   color: var(--textColor);
 
-  outline: 2.5px dashed rgb(137, 188, 216);
-  outline-offset: -2.5px;
+  /* outline: 2.5px dashed rgb(137, 188, 216);
+  outline-offset: -2.5px; */
 }
 
 header > div:has(nav[aria-label="Main navigation"]) {
