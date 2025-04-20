@@ -1,23 +1,26 @@
 {{- $type := .Params.type | default "text" -}}
 
-{{- /* APOD override: fetch once and split into summary + rest */ -}}
 {{- $resolvedTitle := .Title -}}
 {{- $resolvedSummary := .Params.summary -}}
 {{- $apod := dict -}}
 {{- $rest := "" -}}
+
 {{- if and (eq $type "showcase") (not (isset .Params "paintings")) -}}
   {{- $apod = site.Data.apod -}}
-  {{- $plain := $apod.explanation | plainify -}}
-  {{- $parts := split $plain ". " -}}
-  {{- $resolvedTitle = printf "Space Showcase: NASA APOD - %s" $apod.title -}}
-  {{- $resolvedSummary = printf "%s." (index $parts 0) -}}
-  {{- $rest = delimit (after 1 $parts) ". " -}}
-  {{- $rest = printf "%s." $rest -}}
-{{- end -}}
+  {{- with $apod.explanation }}
+    {{- $plain := . | plainify -}}
+    {{- $parts := split $plain ". " -}}
+    {{- if ge (len $parts) 2 }}
+      {{- $resolvedTitle = printf "Space Showcase: NASA APOD - %s" $apod.title -}}
+      {{- $resolvedSummary = printf "%s." (index $parts 0) -}}
+      {{- $rest = delimit (after 1 $parts) ". " | printf "%s." -}}
+    {{- else }}
+      {{- $resolvedSummary = . }}
+    {{- end }}
+  {{- end }}
+{{- end }}
 
 <div class="SF_STREAM_ITEM SF_STREAM_GENERIC_BLOCK LP_LEFT_SEPARATOR">
-
-  <!-- HEADER -->
   <div class="SF_STREAM_SUMMARY_CONTENT_WRAP">
     <h3 class="SF_STREAM_GENERIC_TITLE">{{ $resolvedTitle }}</h3>
     {{- with $resolvedSummary }}
@@ -27,42 +30,35 @@
     {{- end }}
   </div>
 
-  <!-- CONTENT -->
   <div class="SF_STREAM_GENERIC_CONTENT SF_POSTCONTENT">
     {{- if eq $type "showcase" -}}
 
-      {{- if isset .Params "paintings" -}}
-        {{ partial "components/stream/specifics/streamArtistContent.html" . }}
-      {{- else -}}
+    {{- if isset .Params "paintings" -}}
+      {{ partial "components/stream/specifics/streamArtistContent.html" . }}
+    {{- else -}}
       {{- $icon := resources.Get "icons/nasa-icon.svg" | resources.Fingerprint -}}
       {{- $caption := printf "**Courtesy:** %s · *%s*" (or $apod.copyright "NASA") $apod.date -}}
-      
-      {{- $imgPath := printf "images/apod/%s" (path.Base $apod.url) -}}
-      {{- $original := resources.Get $imgPath -}}
-      {{- $resized := $original.Resize "1200x" -}}
-      {{- $webp := $resized.Process "webp;quality=95" -}}
-      
+      {{- $imgFilename := path.Base $apod.url -}}
+      {{- $imgPath := printf "/images/apod/%s" $imgFilename -}}
+    
       {{- $data := dict
-           "paintings"  nil
-           "image"      $resized.RelPermalink
-           "imageWebp"  $webp.RelPermalink
-           "width"      $resized.Width
-           "height"     $resized.Height
-           "caption"    $caption
-           "content"    $rest
-           "iconUrl"    $icon.RelPermalink
-           "isAPOD"     true
-         -}}
-      
-        {{ partial "components/stream/specifics/streamSpaceContent.html" $data }}
-      {{- end -}}
-
+          "paintings"  nil
+          "image"      $imgPath
+          "imageWebp"  ""         
+          "width"      0
+          "height"     0
+          "caption"    $caption
+          "content"    $rest
+          "iconUrl"    $icon.RelPermalink
+          "isAPOD"     true
+      -}}
+      {{ partial "components/stream/specifics/streamSpaceContent.html" $data }}
+    {{- end }}
+  
     {{- else if eq $type "theorem" -}}
       {{ partial "components/stream/generics/streamGenericTextContent.html" . }}
-
     {{- else if eq $type "bookshelf" -}}
       {{ partial "components/stream/generics/streamGenericBookshelfContent.html" . }}
-
     {{- else -}}
       {{ errorf "Unsupported block type: %s" $type }}
     {{- end }}
