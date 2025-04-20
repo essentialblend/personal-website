@@ -311,3 +311,7 @@ header nav a[data-active="true"]
   font-weight: 600;
   text-shadow: 0 0 6px var(--accentColor);
 }
+
+header nav a:focus:not([data-active="true"]) {
+  text-shadow: none; 
+}

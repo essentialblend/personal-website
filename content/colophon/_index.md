@@ -38,4 +38,4 @@ params:
         - { theme: "Contrast", hex: "#CCCCCC" }
 ---
 
-A brief overview of the design choices, tools, and technologies used to build this website.
+A brief overview of the design choices, tools, and technologies used to build this website. This page is currently being fleshed out.

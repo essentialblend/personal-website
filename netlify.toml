@@ -19,3 +19,10 @@
   to = "https://siddharths.space/:splat"
   status = 301
   force = true
+
+[functions]
+  directory = "netlify/functions"
+  node_bundler = "esbuild"
+
+[functions.fetch-apod]
+  schedule = "@daily"
