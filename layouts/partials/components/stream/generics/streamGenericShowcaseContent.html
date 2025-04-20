@@ -11,7 +11,7 @@
 
           {{ $imgPath := printf "images/artists/%s/%s" $slug $p.image }}
           {{ with resources.Get $imgPath }}
-            {{ $resized := .Resize "1200x" }}
+            {{ $resized := .Resize "1200x q95" }}
             {{ $webp := $resized.Process "webp;quality=95" }}
 
             <div class="SF_SHOWCASE_BG_BLUR"
