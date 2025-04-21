@@ -20,6 +20,36 @@
   status = 301
   force = true
 
+[[redirects]]
+  from = "https://notes.siddharths.space/*"
+  to = "/notes/:splat"
+  status = 200
+
+[[redirects]]
+  from = "https://stream.siddharths.space/*"
+  to = "/stream/:splat"
+  status = 200
+
+[[redirects]]
+  from = "https://now.siddharths.space/*"
+  to = "/now/:splat"
+  status = 200
+
+[[redirects]]
+  from = "https://writings.siddharths.space/*"
+  to = "/writings/:splat"
+  status = 200
+
+[[redirects]]
+  from = "https://about.siddharths.space/*"
+  to = "/about/:splat"
+  status = 200
+
+[[redirects]]
+  from = "https://projects.siddharths.space/*"
+  to = "/projects/:splat"
+  status = 200
+
 [functions]
   directory = "netlify/functions"
   node_bundler = "esbuild"
