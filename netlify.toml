@@ -3,62 +3,72 @@
   command = "hugo --gc --minify"
 
 [build.environment]
-  HUGO_VERSION = "0.136.5"
-
-[context.production]
-  environment = { HUGO_VERSION = "0.123.0" }
+  HUGO_VERSION = "0.123.0"
 
 [[redirects]]
   from = "http://*"
-  to = "https://siddharths.space/:splat"
+  to   = "https://siddharths.space/:splat"
   status = 301
-  force = true
+  force  = true
 
 [[redirects]]
   from = "https://www.siddharths.space/*"
-  to = "https://siddharths.space/:splat"
+  to   = "https://siddharths.space/:splat"
   status = 301
-  force = true
+  force  = true
+
+# Subdomain-based redirects using host condition
+[[redirects]]
+  from = "/*"
+  to   = "/notes/:splat"
+  status = 200
+  [redirects.conditions]
+    Host = "notes.siddharths.space"
 
 [[redirects]]
-  from = "https://notes.siddharths.space/*"
-  to = "/notes/:splat"
+  from = "/*"
+  to   = "/stream/:splat"
   status = 200
+  [redirects.conditions]
+    Host = "stream.siddharths.space"
 
 [[redirects]]
-  from = "https://stream.siddharths.space/*"
-  to = "/stream/:splat"
+  from = "/*"
+  to   = "/now/:splat"
   status = 200
+  [redirects.conditions]
+    Host = "now.siddharths.space"
 
 [[redirects]]
-  from = "https://now.siddharths.space/*"
-  to = "/now/:splat"
+  from = "/*"
+  to   = "/writings/:splat"
   status = 200
+  [redirects.conditions]
+    Host = "writings.siddharths.space"
 
 [[redirects]]
-  from = "https://writings.siddharths.space/*"
-  to = "/writings/:splat"
+  from = "/*"
+  to   = "/about/:splat"
   status = 200
+  [redirects.conditions]
+    Host = "about.siddharths.space"
 
 [[redirects]]
-  from = "https://about.siddharths.space/*"
-  to = "/about/:splat"
+  from = "/*"
+  to   = "/projects/:splat"
   status = 200
+  [redirects.conditions]
+    Host = "projects.siddharths.space"
 
-[[redirects]]
-  from = "https://projects.siddharths.space/*"
-  to = "/projects/:splat"
-  status = 200
+[[headers]]
+  for = "/fonts/*"
+  [headers.values]
+    Access-Control-Allow-Origin = "*"
+    Cache-Control = "public, max-age=31536000, immutable"
 
 [functions]
-  directory = "netlify/functions"
+  directory    = "netlify/functions"
   node_bundler = "esbuild"
 
 [functions.fetch-apod]
   schedule = "@daily"
-
-[[headers]]
-for = "/fonts/*"
-[headers.values]
-  Access-Control-Allow-Origin = "*"
-  Cache-Control = "public, max-age=31536000, immutable"

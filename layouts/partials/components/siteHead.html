@@ -8,7 +8,7 @@
 
   <!-- combining css -->
   {{ if (or (eq .Section "writings") (eq .Section "notes") (eq .Section "projects") (eq .Section "stream") (eq .Kind "term")) }}
-  <link rel="stylesheet" href="/katex/katex.min.css">
+  <link rel="stylesheet" href="{{ "katex/katex.min.css" | relURL }}">
   {{ end }}
   
   
