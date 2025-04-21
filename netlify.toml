@@ -22,6 +22,12 @@
   force  = true
 
 [[redirects]]
+from = "https://about.siddharths.space/*"
+to = "/about"
+status = 200
+force = true
+
+[[redirects]]
   from = "https://projects.siddharths.space/*"
   to = "/projects/:splat"
   status = 200
