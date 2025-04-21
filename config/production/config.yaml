@@ -5,6 +5,3 @@ pagination:
   pagerSize: 4
 
 minify: true
-
-relativeURLs: false
-canonifyURLs: true
