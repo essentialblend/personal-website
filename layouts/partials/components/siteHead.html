@@ -1,0 +1,30 @@
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>{{ if .Title }}{{ .Title }} | {{ end }}{{ .Site.Title }}</title>
+
+  <meta name="description" content="{{ with .Description }}{{ . }}{{ else }}Personal site of {{ .Site.Params.author.name }}{{ end }}">
+  <meta name="author" content="{{ .Site.Params.author.name }}">
+
+  <!-- combining css -->
+  {{ if (or (eq .Section "writings") (eq .Section "notes") (eq .Section "projects") (eq .Section "stream") (eq .Kind "term")) }}
+  <link rel="stylesheet" href="{{ "katex/katex.min.css" | relURL }}">
+  {{ end }}
+  
+  
+  {{ $syntaxLight := "" }}{{ with resources.Get "css/code-syntax/syntaxGitLight.css" }}{{ $syntaxLight = . | resources.Minify | resources.Fingerprint }}{{ end }}
+  {{ $syntaxDark := "" }}{{ with resources.Get "css/code-syntax/syntaxGitDark.css" }}{{ $syntaxDark = . | resources.Minify | resources.Fingerprint }}{{ end }}
+  {{ $syntaxContrast := "" }}{{ with resources.Get "css/code-syntax/syntaxMonokai.css" }}{{ $syntaxContrast = . | resources.Minify | resources.Fingerprint }}{{ end }}
+  
+  {{ if $syntaxLight }}<meta name="syntax-theme-light" content="{{ $syntaxLight.RelPermalink }}">{{ end }}
+  {{ if $syntaxDark }}<meta name="syntax-theme-dark" content="{{ $syntaxDark.RelPermalink }}">{{ end }}
+  {{ if $syntaxContrast }}<meta name="syntax-theme-contrast" content="{{ $syntaxContrast.RelPermalink }}">{{ end }}
+  
+  {{ $defaultSyntax := $syntaxLight | default $syntaxDark | default $syntaxContrast }}
+  {{ if $defaultSyntax }}
+  <link id="syntax-stylesheet" rel="stylesheet" href="{{ $defaultSyntax.RelPermalink }}">
+  {{ end }}
+  
+  {{ partial "components/siteCSSCombine.html" . }}
+  
+</head>

@@ -1,0 +1,22 @@
+<div class="LP_STACK LP_STACK_INTER_BIGGER">
+
+  {{ $streamItems := where site.Pages "Section" "stream" }}
+
+  {{ range $streamItems }}
+    {{ $page := . }}
+    {{ $parentDir := path.Base $page.File.Dir }}
+    {{ if in (slice "theorems" "artists" "bookshelf") $parentDir }}
+      {{ partial "components/stream/generics/streamGenericBlock.html" $page }}
+    {{ end }}
+  {{ end }}
+
+  {{ partial "components/stream/generics/streamGenericBlock.html" (dict
+    "Title" "Space Showcase: NASA APOD"
+    "Params" (dict
+      "type" "showcase"
+      "summary" "Astronomy Picture of the Day"
+    )
+    "Content" ""
+  ) }}
+
+</div>

@@ -1,0 +1,32 @@
+{{/* streamGenericBookshelfContent.html */}}
+
+{{/* 1. Gather & sort your six books */}}
+{{ $books     := (site.GetPage "section" "stream/bookshelf").Pages }}
+{{ $ongoing   := where $books "Params.status" "Ongoing" }}
+{{ $finished  := where $books "Params.status" "in" (slice "Finished" "Complete") }}
+{{ $combined  := slice }}
+{{ range $ongoing   }}{{ $combined = $combined | append . }}{{ end }}
+{{ range $finished  }}{{ $combined = $combined | append . }}{{ end }}
+{{ $selected  := first 6 $combined }}
+
+<div class="SF_SHELF_BLOCK">
+  <div class="SF_SHELF_LIST">
+    {{ range $selected }}
+      {{ $statusClass := lower .Params.status }}
+      <div class="SF_SHELF_ENTRY {{ $statusClass }}">
+        {{ if .Params.reviewed }}
+          <a class="SF_SHELF_TITLE" href="{{ .RelPermalink }}">{{ .Title }}</a>
+        {{ else }}
+          <span class="SF_SHELF_TITLE">{{ .Title }}</span>
+        {{ end }}
+        <span class="SF_SHELF_META">
+          {{ .Params.author }} &mdash; <em>{{ .Params.status }}</em>
+        </span>
+      </div>
+    {{ end }}
+  </div>
+
+  <!-- <div class="SF_SHELF_FOOTER">
+    <a class="SF_SHELF_VIEWALL" href="/stream/bookshelf">View full shelf →</a>
+  </div> -->
+</div>

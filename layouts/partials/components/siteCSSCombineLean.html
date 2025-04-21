@@ -1,0 +1,6 @@
+{{ $html := resources.Get "css/core/htmlElements.css" }}
+{{ $layout := resources.Get "css/core/layoutPrimitives.css" }}
+{{ $features := resources.Get "css/core/siteFeatures.css" }}
+
+{{ $css := slice $html $layout $features | resources.Concat "css/baseofLean.css" | resources.Minify | resources.Fingerprint }}
+<link rel="stylesheet" href="{{ $css.RelPermalink }}">

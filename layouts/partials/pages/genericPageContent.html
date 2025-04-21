@@ -1,0 +1,22 @@
+{{ if eq .Section "notes" }}
+  <div class="LP_LEFT_SEPARATOR SF_TOC_CONTAINER is-collapsed"> 
+    <div class="SF_TOC_STRIP" tabindex="0" role="button" aria-expanded="false" aria-controls="TableOfContents">
+      <span class="SF_TOC_CURRENT_SECTION"></span> 
+    </div>
+    <nav id="TableOfContents" class="SF_TOC" aria-label="Table of Contents"></nav>
+  </div>
+
+  <div class="LP_LEFT_SEPARATOR SF_POSTCONTENT">
+    {{ .Content }}
+  </div>
+
+{{ else }}
+   {{/* Fallback layout */}}
+   <div class="LP_STACK LP_STACK_INTER_BIGGER">
+     <section class="LP_LEFT_SEPARATOR">
+       <div class="SF_POSTCONTENT">
+         {{ .Content }}
+       </div>
+     </section>
+   </div>
+{{ end }}

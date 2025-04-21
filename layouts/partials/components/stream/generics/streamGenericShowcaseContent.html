@@ -1,0 +1,81 @@
+{{/* layouts/partials/components/stream/generics/streamGenericShowcaseContent.html */}}
+
+{{ $paintings := .paintings }}
+{{ $slug := .slug }}
+
+{{ if $paintings }}
+  <div class="SF_SHOWCASE_SLIDES">
+    {{ range $i, $p := $paintings }}
+      <div class="SF_SHOWCASE_SLIDE{{ if eq $i 0 }} active{{ end }}">
+        <div class="SF_SHOWCASE_FRAME">
+
+          {{ $imgPath := printf "images/artists/%s/%s" $slug $p.image }}
+          {{ with resources.Get $imgPath }}
+            {{ $resized := .Resize "1200x q95" }}
+            {{ $webp := $resized.Process "webp;quality=95" }}
+
+            <div class="SF_SHOWCASE_BG_BLUR"
+                 style="background-image: url('{{ $resized.RelPermalink }}');"></div>
+            <picture>
+              <source
+                type="image/webp"
+                srcset="{{ $webp.RelPermalink }}"
+                sizes="(max-width: 800px) 100vw, 800px">
+              <img
+                src="{{ $resized.RelPermalink }}"
+                alt="{{ $p.title }}"
+                class="SF_SHOWCASE_IMG"
+                loading="lazy"
+                width="{{ $resized.Width }}"
+                height="{{ $resized.Height }}">
+            </picture>
+          {{ end }}
+        </div>
+
+        <div class="SF_SHOWCASE_CAPTION">
+          {{ printf "**%s** — %s" $p.title $p.description | markdownify }}
+        </div>
+      </div>
+    {{ end }}
+  </div>
+
+  <div class="SF_SHOWCASE_TEXT">
+    {{ .content | markdownify }}
+  </div>
+
+{{ else }}
+  <div class="SF_SHOWCASE_FRAME">
+    {{- if .isAPOD -}}
+      <div class="SF_SHOWCASE_ICON">
+        <img src="{{ .iconUrl }}" alt="APOD logo"/>
+      </div>
+    {{- end -}}
+    <div class="SF_SHOWCASE_BG_BLUR" style="background-image: url('{{ .image }}');"></div>
+
+    {{ if .isAPOD }}
+      <picture>
+        <source
+          type="image/webp"
+          srcset="{{ .imageWebp }}"
+          sizes="(max-width: 800px) 100vw, 800px">
+        <img
+          src="{{ .image }}"
+          class="SF_SHOWCASE_IMG"
+          loading="lazy"
+          decoding="async"
+          width="{{ .width }}"
+          height="{{ .height }}">
+      </picture>
+    {{ else }}
+      <img
+        src="{{ .image }}"
+        class="SF_SHOWCASE_IMG"
+        loading="lazy" />
+    {{ end }}
+  </div>
+
+  {{ with .caption }}
+    <div class="SF_SHOWCASE_CAPTION">{{ . | markdownify }}</div>
+  {{ end }}
+  <div class="SF_SHOWCASE_TEXT"><p>{{ .content }}</p></div>
+{{ end }}
