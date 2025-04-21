@@ -19,6 +19,7 @@
   from   = "https://notes.siddharths.space/*"
   to     = "/notes/:splat"
   status = 200
+  force  = true
 
 # Redirect main domain HTTP → HTTPS
 [[redirects]]
