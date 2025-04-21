@@ -56,3 +56,9 @@
 
 [functions.fetch-apod]
   schedule = "@daily"
+
+[[headers]]
+for = "/fonts/*"
+[headers.values]
+  Access-Control-Allow-Origin = "*"
+  Cache-Control = "public, max-age=31536000, immutable"
