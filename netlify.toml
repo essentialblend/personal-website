@@ -1,70 +1,38 @@
+# netlify.toml
+
 [build]
   publish = "public"
   command = "hugo --gc --minify"
 
 [build.environment]
-  HUGO_VERSION = "0.123.0"
+  HUGO_VERSION = "0.136.5"
 
-[[redirects]]
-  from = "http://*"
-  to   = "https://siddharths.space/:splat"
-  status = 301
-  force  = true
-
-[[redirects]]
-  from = "https://www.siddharths.space/*"
-  to   = "https://siddharths.space/:splat"
-  status = 301
-  force  = true
-
-# Subdomain-based redirects using host condition
-[[redirects]]
-  from = "/*"
-  to   = "/notes/:splat"
-  status = 200
-  [redirects.conditions]
-    Host = "notes.siddharths.space"
-
-[[redirects]]
-  from = "/*"
-  to   = "/stream/:splat"
-  status = 200
-  [redirects.conditions]
-    Host = "stream.siddharths.space"
-
-[[redirects]]
-  from = "/*"
-  to   = "/now/:splat"
-  status = 200
-  [redirects.conditions]
-    Host = "now.siddharths.space"
-
-[[redirects]]
-  from = "/*"
-  to   = "/writings/:splat"
-  status = 200
-  [redirects.conditions]
-    Host = "writings.siddharths.space"
-
-[[redirects]]
-  from = "/*"
-  to   = "/about/:splat"
-  status = 200
-  [redirects.conditions]
-    Host = "about.siddharths.space"
-
-[[redirects]]
-  from = "/*"
-  to   = "/projects/:splat"
-  status = 200
-  [redirects.conditions]
-    Host = "projects.siddharths.space"
-
+# CORS for fonts only
 [[headers]]
   for = "/fonts/*"
   [headers.values]
     Access-Control-Allow-Origin = "*"
     Cache-Control = "public, max-age=31536000, immutable"
+
+# Notes subdomain → /notes/ section
+[[redirects]]
+  from   = "https://notes.siddharths.space/*"
+  to     = "/notes/:splat"
+  status = 200
+
+# Redirect main domain HTTP → HTTPS
+[[redirects]]
+  from   = "http://*"
+  to     = "https://siddharths.space/:splat"
+  status = 301
+  force  = true
+
+# Redirect www → apex
+[[redirects]]
+  from   = "https://www.siddharths.space/*"
+  to     = "https://siddharths.space/:splat"
+  status = 301
+  force  = true
 
 [functions]
   directory    = "netlify/functions"

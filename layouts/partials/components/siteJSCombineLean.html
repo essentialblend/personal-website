@@ -1,7 +1,0 @@
-{{ $themeJS := resources.Get "js/site-features/themeButton.js" | resources.Minify }}
-{{ $clockJS := resources.Get "js/site-features/siteClock.js" | resources.Minify }}
-  
-{{ $scripts := slice $themeJS $clockJS | resources.Concat "js/bundleLean.js" | resources.Fingerprint }}
-
-  <!-- integrity removed to allow subdomain JS loading -->
-  <script src="{{ $scripts.RelPermalink }}"></script>
