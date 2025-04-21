@@ -9,4 +9,5 @@
 
   {{ $scripts := slice $themeJS $clockJS $subjectFilterJS $codeCopyButtonJS $tableContentsJS $scrollToTopButtonJS $slideshowJS | resources.Concat "js/bundle.js" | resources.Fingerprint }}
 
-  <script src="{{ $scripts.RelPermalink }}" integrity="{{ $scripts.Data.Integrity }}"></script>
+  <!-- integrity removed to allow subdomain JS loading -->
+  <script src="{{ $scripts.RelPermalink }}"></script>
