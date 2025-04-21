@@ -14,12 +14,36 @@
     Access-Control-Allow-Origin = "*"
     Cache-Control = "public, max-age=31536000, immutable"
 
-# Notes subdomain → /notes/ section
+# Main subdomains
 [[redirects]]
   from   = "https://notes.siddharths.space/*"
   to     = "/notes/:splat"
   status = 200
   force  = true
+
+[[redirects]]
+  from = "https://projects.siddharths.space/*"
+  to = "/projects/:splat"
+  status = 200
+  force = true
+
+[[redirects]]
+  from = "https://writings.siddharths.space/*"
+  to = "/writings/:splat"
+  status = 200
+  force = true
+
+[[redirects]]
+  from = "https://stream.siddharths.space/*"
+  to = "/stream/:splat"
+  status = 200
+  force = true
+
+[[redirects]]
+  from = "https://colophon.siddharths.space/*"
+  to = "/colophon/:splat"
+  status = 200
+  force = true
 
 # Redirect main domain HTTP → HTTPS
 [[redirects]]
