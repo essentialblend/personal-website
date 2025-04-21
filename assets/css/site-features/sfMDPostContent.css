@@ -4,6 +4,20 @@
   padding-right: var(--baseSizeREM);
 }
 
+.SF_POSTCONTENT .SF_KATEX_TABLE {
+  border-collapse: collapse;
+  border: 1px solid var(--borderColor);
+  margin: 1rem auto;
+}
+
+.SF_POSTCONTENT .SF_KATEX_TABLE td {
+  border: 1px solid var(--borderColor);
+  padding: 4px;
+  text-align: center;
+}
+
+
+
 html[data-user-theme="themeDark"] .SF_POSTCONTENT pre.chroma span.kr {
   color: var(--accentColor) !important;
 }
