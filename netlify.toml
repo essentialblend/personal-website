@@ -5,17 +5,11 @@
 [build.environment]
   HUGO_VERSION = "0.136.5"
 
-[[redirects]]
-  from   = "https://notes.siddharths.space"
-  to     = "/notes/"
-  status = 200
-  force  = true
-
-[[redirects]]
-  from   = "https://notes.siddharths.space/*"
-  to     = "/notes/:splat"
-  status = 200
-  force  = true
+[[headers]]
+  for = "/fonts/*"
+  [headers.values]
+    Access-Control-Allow-Origin = "*"
+    Cache-Control = "public, max-age=31536000, immutable"
 
 [[redirects]]
   from   = "http://*"
