@@ -6,11 +6,13 @@
   "version": "1.0.0",
   "description": "This is the source code for my site: https://siddharths.space. I was only late by about a decade with a personal website, and tried to implement a clean layout. I'm by no means a web-developer and this is my first attempt at programming a website with a framework like Hugo.",
   "main": "index.js",
-  "devDependencies": {},
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [],
   "author": "",
-  "license": "ISC"
+  "license": "ISC",
+  "devDependencies": {
+    "dotenv": "^16.5.0"
+  }
 }

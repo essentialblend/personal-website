@@ -1,10 +1,10 @@
 {
-  "copyright": "\nInfrared: NASA, \nSpitzer Space Telescope;\nVisible: \nOliver Czernetz, \nSiding Spring Obs.\n",
-  "date": "2025-04-20",
-  "explanation": "The Great Nebula in Orion is a colorful place.  Visible to the unaided eye, it appears as a small fuzzy patch in the constellation of Orion.  Long exposure, multi-wavelength images like this, however, show the Orion Nebula to be a busy neighborhood of young stars, hot gas, and dark dust.  This digital composite features not only three colors of visible light but four colors of infrared light taken by NASA's orbiting Spitzer Space Telescope as well.  The power behind much of the Orion Nebula (M42) is the Trapezium - four of the brightest stars in the nebula.  Many of the filamentary structures visible are actually shock waves - fronts where fast moving material encounters slow moving gas.  The Orion Nebula spans about 40 light years and is located about 1500 light years away in the same spiral arm of our Galaxy as the Sun.",
-  "hdurl": "https://apod.nasa.gov/apod/image/2504/M42_SpitzerCzernetz_2000.jpg",
+  "copyright": "\nRich Addis\n",
+  "date": "2025-04-22",
+  "explanation": "What's different about this Moon? It's the terminators. In the featured image, you can't directly see any terminator -- the line that divides the light of day from the dark of night. That's because the featured image is a digital composite of many near-terminator lunar strips over a full Moon.  Terminator regions show the longest and most prominent shadows -- shadows which, by their contrast and length, allow a flat photograph to appear three-dimensional. The overlay images were taken over two weeks in early April.  Many of the Moon's craters stand out because of the shadows they all cast to the right. The image shows in graphic detail that the darker regions known as maria are not just darker than the rest of the Moon -- they are also flatter.    Dial-A-Moon: Find the Moon phase on your birthday this year",
+  "hdurl": "https://apod.nasa.gov/apod/image/2504/TerminatorMoon_Addis_3558.jpg",
   "media_type": "image",
   "service_version": "v1",
-  "title": "The Orion Nebula in Visible and Infrared",
-  "url": "https://apod.nasa.gov/apod/image/2504/M42_SpitzerCzernetz_1080.jpg"
+  "title": "Terminator Moon: A Moonscape of Shadows",
+  "url": "https://apod.nasa.gov/apod/image/2504/TerminatorMoon_Addis_960.jpg"
 }
