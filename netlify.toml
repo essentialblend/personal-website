@@ -11,6 +11,7 @@
     Access-Control-Allow-Origin = "*"
     Cache-Control = "public, max-age=31536000, immutable"
 
+# asset whitelists for notes subdomain
 [[redirects]]
   from   = "https://notes.siddharths.space/css/*"
   to     = "/css/:splat"
@@ -35,18 +36,20 @@
   status = 200
   force  = true
 
+# catch both /notes/slug and /slug
+[[redirects]]
+  from   = "https://notes.siddharths.space/notes/*"
+  to     = "/notes/:splat"
+  status = 200
+  force  = true
+
 [[redirects]]
   from   = "https://notes.siddharths.space/*"
   to     = "/notes/:splat"
   status = 200
   force  = true
 
-[[redirects]]
-  from   = "https://about.siddharths.space/*"
-  to     = "/about"
-  status = 200
-  force  = true
-
+# other subdomains
 [[redirects]]
   from   = "https://projects.siddharths.space/*"
   to     = "/projects/:splat"
@@ -68,6 +71,18 @@
 [[redirects]]
   from   = "https://colophon.siddharths.space/*"
   to     = "/colophon/:splat"
+  status = 200
+  force  = true
+
+[[redirects]]
+  from   = "https://about.siddharths.space/*"
+  to     = "/about"
+  status = 200
+  force  = true
+
+[[redirects]]
+  from   = "https://now.siddharths.space/*"
+  to     = "/:splat"
   status = 200
   force  = true
 
