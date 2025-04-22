@@ -5,84 +5,15 @@
 [build.environment]
   HUGO_VERSION = "0.136.5"
 
-[[headers]]
-  for = "/fonts/*"
-  [headers.values]
-    Access-Control-Allow-Origin = "*"
-    Cache-Control = "public, max-age=31536000, immutable"
-
-# asset whitelists for notes subdomain
 [[redirects]]
-  from   = "https://notes.siddharths.space/css/*"
-  to     = "/css/:splat"
-  status = 200
-  force  = true
-
-[[redirects]]
-  from   = "https://notes.siddharths.space/js/*"
-  to     = "/js/:splat"
-  status = 200
-  force  = true
-
-[[redirects]]
-  from   = "https://notes.siddharths.space/images/*"
-  to     = "/images/:splat"
-  status = 200
-  force  = true
-
-[[redirects]]
-  from   = "https://notes.siddharths.space/fonts/*"
-  to     = "/fonts/:splat"
-  status = 200
-  force  = true
-
-# catch both /notes/slug and /slug
-[[redirects]]
-  from   = "https://notes.siddharths.space/notes/*"
-  to     = "/notes/:splat"
+  from   = "https://notes.siddharths.space"
+  to     = "/notes/"
   status = 200
   force  = true
 
 [[redirects]]
   from   = "https://notes.siddharths.space/*"
   to     = "/notes/:splat"
-  status = 200
-  force  = true
-
-# other subdomains
-[[redirects]]
-  from   = "https://projects.siddharths.space/*"
-  to     = "/projects/:splat"
-  status = 200
-  force  = true
-
-[[redirects]]
-  from   = "https://writings.siddharths.space/*"
-  to     = "/writings/:splat"
-  status = 200
-  force  = true
-
-[[redirects]]
-  from   = "https://stream.siddharths.space/*"
-  to     = "/stream/:splat"
-  status = 200
-  force  = true
-
-[[redirects]]
-  from   = "https://colophon.siddharths.space/*"
-  to     = "/colophon/:splat"
-  status = 200
-  force  = true
-
-[[redirects]]
-  from   = "https://about.siddharths.space/*"
-  to     = "/about"
-  status = 200
-  force  = true
-
-[[redirects]]
-  from   = "https://now.siddharths.space/*"
-  to     = "/:splat"
   status = 200
   force  = true
 

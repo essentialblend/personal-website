@@ -8,7 +8,7 @@
         {{ if and (not $isActive) (ne .URL "/") (hasPrefix $.RelPermalink .URL) }}
         {{ $isActive = true }}
       {{ end }}
-      <a href="{{ .URL | relURL }}" data-page="{{ .Identifier | urlize }}" {{ if $isActive }}data-active="true"{{ end }}>
+      <a href="{{ .URL }}" data-page="{{ .Identifier | urlize }}" {{ if $isActive }}data-active="true"{{ end }}>
         {{ .Name }}
       </a>
     {{ end }}
