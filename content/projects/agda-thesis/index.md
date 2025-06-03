@@ -1,5 +1,5 @@
 ---
-title: "Type-Theoretical Proofs for Commutative Ring Axioms of the Integers"
+title: "Type-Theoretic Proofs for the Commutative Ring Axioms of the Integers"
 date: 2022-07-30
 weight: 1
 status: ongoing
@@ -10,31 +10,25 @@ repo: https://github.com/essentialblend/integers-comm-ring
 
 ### Introduction
 
-This project was submitted as part of requirements for my MS. The objective was to constructively demonstrate the existence of the commutative Ring of Integers alongside proofs all its accompanying algebraic properties in a computer aided proof assistant called Agda.
+This project fulfills MSc requirements by constructing a complete, machine-checked formalization of the commutative ring of integers in Agda. Under the supervision of Prof. Thorsten Altenkirch, I:
 
-This research project was supervised by [Professor Thorsten Altenkirch](https://people.cs.nott.ac.uk/psztxa/) and I'm forever grateful for his time, expertise, and empathy towards my journey into this fantastic subject.
+- Defined natural numbers ($\N$) and integers ($\Z$) using intuitionistic type-theory from the ground up, independent of the standard library
 
-I'm revising aspects of the thesis based on the feedback I received during the presentation.
+- Streamlined operation definitions for the datatypes with iterators which aid in proof-writing efficiency
 
-### Problem Statement
+- Rigorously developed and verified all algebraic properties: associativity, commutativity, identity, distributivity, and inverses for both datatypes
 
-The main goal of this project was to highlight the efficacy of formal verification for ensuring the correctness of fundamental mathematical constructions. Some motivations being,
+- Created a modular library comprising of $\sim$1 k LOC representing $\sim$100 proofs extensible to other algebraic structures (groups, rings, and fields)
 
-- Exploration of formal mathematical reasoning and verification from an constructivist perspective.
-
-- Demonstrating the effectiveness of Agda and intuitionistic type theory for rigorously expressing and verifying complex mathematical structures and properties.
-
-- Contributing a modular formalization of the commutative ring axioms. 
+- Documented the library thoroughly, including exhaustive in-thesis explanations and build instructions
 
 ### Basic Strategy
 
-- Set up logical reasoning facilities. 
+- Defined Agda's logical and propositional infrastructure from scratch, without Agda STL
 
-- Definition and construction of proofs for operations and properties over the natural numbers.
+- Constructed proofs for operations and properties over $\N$ and $\Z$
 
-- Definition and construction of proofs for operations and properties over the integers. 
-
-- These proofs aid in the construction of the final mathematical object representing the Ring of Integers.
+- Utilized proofs constructively to assemble the extensible Ring object to verify all commutative ring axioms for $\Z$ 
 
 ### A Sample Proof
 
@@ -58,8 +52,20 @@ associativityℕ+ {suc l} {m} {n} = congruence suc (associativityℕ+ {l} {m} {n
 
 ### Results
 
-- Successfully formalized the commutative Ring of integers constructively with Agda using intuitionistic type theory.
+- **Awarded a Distinction**
+  Recognized by the board for the quality and completeness of a fully standalone Agda formalization of $\Z$ independent of the standard library
 
-- Furnished machine-verified proofs for all standard commutative ring axioms.
+- **Complete Formalization of $\N$ and $\Z$**
+  Machine-verified proofs for the commutative ring axioms over the two datatypes, i.e., associativity, commutativity, identity, distributivity, inverses, structural datatypes, etc.
 
-- Developed a self-contained modular library with the capacity to extend to other structures.
+- **Modular Codebase**
+  Nearly 100 proofs comprised of $\sim$1 k LOC with generic interfaces ripe for extension.
+
+- **Foundations for the Future** 
+  - A blueprint for extending constructive formalizations to advanced algebraic structures and number-theoretic concepts.
+  - Pedagogical flexibility towards exploring constructive mathematics  
+
+- **Documentation**
+  - Step by step build instructions along with near-instant verification 
+  - In-thesis commentary demonstrating proof strategies, design decisions and considerations
+
