@@ -2,7 +2,7 @@
   # Tell Netlify to serve the public/ output folder.
   publish = "public"
   # Run hugo with gc and minified assets.
-  command = "node scripts/fetch-apod.js && hugo --gc --minify"
+  command = "python3 scripts/redact-all.py && node scripts/fetch-apod.js && hugo --gc --minify"
 
 [build.environment]
   HUGO_VERSION = "0.136.5"
