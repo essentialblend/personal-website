@@ -5,7 +5,7 @@
   {{ range $streamItems }}
     {{ $page := . }}
     {{ $parentDir := path.Base $page.File.Dir }}
-    {{ if in (slice "theorems" "artists" "bookshelf") $parentDir }}
+    {{ if in (slice "artists" "bookshelf") $parentDir }}
       {{ partial "components/stream/generics/streamGenericBlock.html" $page }}
     {{ end }}
   {{ end }}
