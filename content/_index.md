@@ -22,16 +22,6 @@ url: /now/
 
 <div>
 
-### ACADEMICS
-
-- R. Taylor's _Classical Mechanics_, supplemented with Kulp-Pagonis' _Classical Mechanics: A Computational Approach_
-- Paolo Aluffi's _Algebra: Notes from the Underground_
-- Tom Apostol's _Calculus I_
-
-</div>
-
-<div>
-
 ### GET IN TOUCH
 
 If you’d like to learn more or need help, please email me at hi@siddharths.space. I'll happily oblige. Otherwise, if you're merely exploring, feel free to visit the [projects](/projects) or the [notes](/notes) section. Even better, head on over to the [stream](/stream).
