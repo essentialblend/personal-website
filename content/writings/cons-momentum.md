@@ -1,77 +1,27 @@
 ---
-title: "Proof: Conservation of Momentum"
+title: "From First Principles: Momentum Conservation"
 date: 2025-03-06
-subjects: ["Classical Mechanics"] 
+subjects: ["Physics"] 
 categories: ["Derivations"] 
-tags: ["Newton's Third Law", "Coordinate Systems", "Cylindrical", "Kinematics"]
+tags: ["newton", "kinematics", "mechanics", "momentum", "velocity", "time"]
 description: "A simple proof demonstrating conservation of momentum."
+draft: true
 ---
 
-I love this simple profound proof, and it's worth understanding. For those unfamiliar with calculus, the notation $\dot{\bf{p}}$ or $\frac{d \bf{p}}{dt}$ denotes the rate of change of $\bf{p}$ with respect to time ($t$).
+## 
+We all intuitively sense momentum. Consider two spheres of equal volume but different masses. These spheres slide along a horizontal frictionless surface and approach a malleable wall. Upon collision, each sphere's impact yields an impression in the wall.
 
-We need to show that the net force ($\mathbf{F}$) applied on an object is proportional to the rate of change of that object's momentum with respect to time ($\dot{\mathbf{p}}$).
+Assume both spheres have the same instantaneous velocity upon collision. The heavier sphere yields a deeper dent in the wall. Neither mass nor velocity independently predicts that dent; their product, a _vector quantity_ called _momentum_ $\left(\mathbf{p}\right)$, does.
 
-We know Newton's second law: $\mathbf{F} = m\mathbf{a}$, and $\mathbf{p} = m \mathbf{v}$.
+Some physical quantities in nature are _invariant_: they never change as a system evolves and constituent parts interact. We say that such invariant quantities are _conserved_. Momentum is a conserved quantity in an isolated system. For example, in a car crash investigation, one need not worry about every microscopic fragment in this collision's detritus to infer the pre-impact details. Conservation laws abstract away these complex interactions to reveal crucial big-picture patterns. There are many intuitive applications of momentum conservation; prototypical examples include launching a rocket from the ground, or inferring antecedents in automobile accident analysis. We'll thoroughly explore this in the later sections.
 
-Differentiating $\mathbf{p} = m \mathbf{v}$ with respect to $t$, presuming constant mass ($m$) yields,
+Since this exposition presumes no mathematics or physics prerequisites, we'll first build a set of tools that enable any motivated reader to appreciate the deeper ideas behind momentum and its conservation. 
 
-$$
-\begin{aligned}
-\frac{d\mathbf{p}}{dt} = \dot{\mathbf{p}} &= \frac{d}{dt}(m\mathbf{v}) \\ \\[0.1pt]
-&= m \ \frac{d\mathbf{v}}{dt} \\ \\[0.1pt]
-&= m\mathbf{a} \\ \\[0.1pt]
-\therefore \quad \mathbf{F} &= \dot{\mathbf{p}} \quad \blacksquare
-\end{aligned}
-$$
+We begin with an informal discussion on fundamental intrinsic properties like mass, time, and distance. Then, we use them to derive composite quantities such as speed, velocity, and acceleration---also serving as a light conceptual introduction to differential calculus ideas. Then, we discuss Newton's three laws of motion. Finally, we'll apply these tools in a simple derivation that shows why momentum is a conserved quantity and briefly examine its consequences.
 
-With this lemma, we can proceed with the main proof.
 
-Suppose we have a system with point particles $p_1$ and $p_2$, exerting forces $\mathbf{F}_{21}$ and $\mathbf{F}_{12}$, on each other.
 
-We also approximate any external forces on these two particles as $\mathbf{F}^{\text{ext}}_1$ and $\mathbf{F}^{\text{ext}}_2$,
 
-$$
-\begin{aligned}
-\mathbf{F}_{p_1} &= \mathbf{F}_{12} + \mathbf{F}^{\text{ext}}_1 \\ \\[0.1pt]
-\mathbf{F}_{p_2} &= \mathbf{F}_{21} + \mathbf{F}^{\text{ext}}_2
-\end{aligned}
-$$
 
-By the lemma $\mathbf{F} = \dot{\mathbf{p}}$,
 
-$$
-\begin{aligned}
-\mathbf{F}_{p_1} &= \dot{\mathbf{p}}_1 \\\\
-\mathbf{F}_{p_2} &= \dot{\mathbf{p}}_2
-\end{aligned}
-$$
-
-The total momentum of our two-particle system is:
-
-$$
-\mathbf{P}_{\text{total}} = \mathbf{p}_1 + \mathbf{p}_2
-$$
-
-Differentiating with respect to time yields,
-
-$$
-\begin{aligned}
-\dot{\mathbf{P}}_{\text{total}} &= \dot{\mathbf{p}}_1 + \dot{\mathbf{p}}_2 \\ \\[0.1pt]
-&= \mathbf{F}_{12} + \mathbf{F}_{21} + \mathbf{F}^{\text{ext}}_1 + \mathbf{F}^{\text{ext}}_2
-\end{aligned}
-$$
-
-Since $\mathbf{F}_{12} = -\mathbf{F}_{21}$, their sum cancels out. Letting the total external force be $\mathbf{F}_{\text{ext}} = \mathbf{F}^{\text{ext}}_1 + \mathbf{F}^{\text{ext}}_2$, we have:
-
-$$
-\dot{\mathbf{P}}_{\text{total}} = \mathbf{F}_{\text{ext}}
-$$
-
-This important result shows that the rate of change of total momentum ($\dot{\mathbf{P}}_{\text{total}}$) in a two-particle system is determined solely by the net external force.
-
-In the special case where $\mathbf{F}_{\text{ext}} = 0$, we conclude:
-
-$$
-\dot{\mathbf{P}}_{\text{total}} = 0 \quad \Rightarrow \quad \mathbf{P}_{\text{total}} = \text{constant} \quad \blacksquare
-$$
 
