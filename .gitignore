@@ -22,3 +22,5 @@ Thumbs.db
 node_modules/
 netlify/functions/node_modules/
 notes-raw/
+
+.vscode/
