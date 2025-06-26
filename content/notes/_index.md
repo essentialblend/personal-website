@@ -2,4 +2,6 @@
 title: Notes
 ---
 
-Everything I spend serious time learning is transcribed and cataloged here. These typically include notes from textbooks, research papers I find cool, and what not. I update them periodically.
+A catalogue of all my academic ventures. This typically includes notes and transcripts from textbooks, research papers, etc. 
+
+I may redact the academic content for copyright purposes.

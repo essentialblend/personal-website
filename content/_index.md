@@ -24,7 +24,7 @@ url: /now/
 
 ### GET IN TOUCH
 
-If you’d like to learn more or need help, please email me at hi@siddharths.space. I'll happily oblige. Otherwise, if you're merely exploring, feel free to visit the [projects](/projects) or the [notes](/notes) section. Even better, head on over to the [stream](/stream).
+If you’d like to learn more or need help, please email me at hi@siddharths.space. I'll gladly oblige. Otherwise, if you're merely exploring, feel free to visit the [projects](/projects) or the [notes](/notes) section. Even better, head on over to the [stream](/stream).
 
 </div>
 
