@@ -11,21 +11,21 @@ bookAuthor: "Thorsten Altenkirch"
 
 ## Simple Types
 
-░░░░ exploring dependent ░░░░ with all ░░░░ beautiful complexities we'll take a look at ░░░░ simpler, appropriately ░░░░ _simple types_░░░░ starting with ░░░░ most fundamental ░░░░ of all, the ░░░░ ░░░░ $\_\to\_$░░░░ One ░░░░ ░░░░ simple ░░░░ is ░░░░ ░░░░ ░░░░ ░░░░ clear what ░░░░ ░░░░ with. We'll ░░░░ ░░░░ with ░░░░ which ░░░░ for any type, called $\textsf{Set}$ ░░░░ Agda. That is, ░░░░ will ░░░░ _polymorphic_ constructions without introducing a formal ░░░░ ░░░░ ░░░░ ░░░░ ░░░░ will ░░░░ ░░░░ ░░░░ we ░░░░ dependent ░░░░ in our arsenal. ░░░░ of ░░░░ constructions ░░░░ identity $\textsf{id}$ ░░░░ composition $\_ \circ \_$ ░░░░ ░░░░ ░░░░ a first taste of ░░░░ theory.
+Before ░░░░ dependent types with ░░░░ ░░░░ ░░░░ ░░░░ we'll take ░░░░ ░░░░ ░░░░ something ░░░░ ░░░░ ░░░░ _simple types_░░░░ starting ░░░░ ░░░░ ░░░░ ░░░░ type of all, the functon type $\_\to\_$. ░░░░ ░░░░ ░░░░ ░░░░ types is that ░░░░ ░░░░ not ░░░░ what to ░░░░ ░░░░ We'll ░░░░ this with ░░░░ which work ░░░░ any ░░░░ called $\textsf{Set}$ in Agda. That is, ░░░░ will ░░░░ _polymorphic_ ░░░░ without introducing a ░░░░ ░░░░ ░░░░ ░░░░ which ░░░░ ░░░░ do later once we have dependent ░░░░ in our arsenal. ░░░░ of polymorphic constructions ░░░░ ░░░░ $\textsf{id}$ and composition $\_ \circ \_$ ░░░░ ░░░░ ░░░░ a first ░░░░ of ░░░░ ░░░░
 
-We will have ░░░░ ░░░░ look ░░░░ $\lambda$-calculus, by which ░░░░ specifically ░░░░ _typed_ $\lambda$-calculus and ░░░░ explore combinatory logic with two ░░░░ ($\textsf{S}$ ░░░░ $\textsf{K}$), ░░░░ the price to pay ░░░░ ░░░░ ░░░░ unreadable ░░░░ ░░░░ ░░░░ worthwhile to ░░░░ about them and we ░░░░ ░░░░ ░░░░ later ░░░░ ░░░░
+░░░░ will ░░░░ ░░░░ ░░░░ ░░░░ at $\lambda$-calculus, ░░░░ ░░░░ we specifically mean _typed_ $\lambda$░░░░ and ░░░░ explore combinatory logic ░░░░ two ░░░░ ($\textsf{S}$ ░░░░ $\textsf{K}$░░░░ but the price to ░░░░ is ░░░░ completely ░░░░ ░░░░ ░░░░ It's worthwhile ░░░░ ░░░░ ░░░░ them and we ░░░░ explore ░░░░ later in depth.
 
-Functions are ░░░░ all ░░░░ ░░░░ ░░░░ ░░░░ types ░░░░ hence ░░░░ will ░░░░ look ░░░░ ░░░░ ($\_ \uplus  \_$░░░░ ░░░░ ░░░░ ░░░░$\_ \times \_$). ░░░░ ░░░░ will meet some ░░░░ ░░░░ from high school in ░░░░ type-theoretical ░░░░
+░░░░ ░░░░ ░░░░ ░░░░ there is to simple ░░░░ ░░░░ ░░░░ we ░░░░ also ░░░░ at ░░░░ ░░░░$\_ \uplus  \_$░░░░ ░░░░ ░░░░ ░░░░$\_ \times \_$). ░░░░ ░░░░ will meet some old acquaintances ░░░░ high school ░░░░ a ░░░░ context.
 
 ### Functions
 
-░░░░ Type ░░░░ ░░░░ ░░░░ a fundamental concept. ░░░░ is ░░░░ from set theory ░░░░ functions are viewed as ░░░░ ░░░░ kind of ░░░░ namely relations ░░░░ assign ░░░░ each element of the domain, exactly one element of the codomain ░░░░ output). ░░░░ ░░░░ Theory, ░░░░ is the ░░░░ way ░░░░ ░░░░ start with ░░░░ ░░░░ actually we need ░░░░ to ░░░░ ░░░░ relations ░░░░ ░░░░ relation between $A$ and $B$ ░░░░ a ░░░░ ░░░░ $A$ ░░░░ $B$ ░░░░ the type of ░░░░ 
+░░░░ ░░░░ ░░░░ functions are ░░░░ ░░░░ concept. This is different ░░░░ ░░░░ ░░░░ where ░░░░ are ░░░░ as a special ░░░░ ░░░░ ░░░░ namely ░░░░ that assign to each element ░░░░ the domain, exactly one element of ░░░░ codomain (the ░░░░ In ░░░░ Theory, ░░░░ ░░░░ ░░░░ ░░░░ ░░░░ around: ░░░░ start with ░░░░ ░░░░ ░░░░ ░░░░ ░░░░ functions to ░░░░ what relations ░░░░ A ░░░░ ░░░░ $A$ ░░░░ $B$ ░░░░ ░░░░ function ░░░░ $A$ and $B$ to the ░░░░ ░░░░ propositions. 
 
-Intuitively a function between types $\textsf{A}$ ░░░░ $\textsf{B}$ is ░░░░ black box ░░░░ ░░░░ can input ░░░░ of $\textsf{a} : \textsf{A}$ and out ░░░░ elements of $\textsf{f} \ \textsf{a} : \textsf{B}$. ░░░░ that we don't write $f(a)$ ░░░░ ░░░░ in ░░░░ ░░░░ ░░░░ ░░░░ programming languages but ░░░░ save ░░░░ ░░░░ just ░░░░ $\textsf{f} \ \textsf{a}$░░░░ as in ░░░░ programming ░░░░ like Haskell. ░░░░ write $\textsf{f} : \textsf{A} \to \textsf{B}$ ░░░░ ░░░░ ░░░░ $\textsf{f}$ ░░░░ such ░░░░ function.
+Intuitively ░░░░ ░░░░ ░░░░ ░░░░ $\textsf{A}$ ░░░░ $\textsf{B}$ ░░░░ a ░░░░ box ░░░░ we ░░░░ ░░░░ elements ░░░░ $\textsf{a} : \textsf{A}$ ░░░░ out come elements of $\textsf{f} \ \textsf{a} : \textsf{B}$░░░░ Notice ░░░░ ░░░░ ░░░░ ░░░░ $f(a)$ ░░░░ ░░░░ in mathematics and in many programming languages but instead save brackets and just write $\textsf{f} \ \textsf{a}$░░░░ as ░░░░ functional programming ░░░░ ░░░░ ░░░░ We write $\textsf{f} : \textsf{A} \to \textsf{B}$ ░░░░ express that $\textsf{f}$ is ░░░░ ░░░░ function.
 
-When we say a _black box_░░░░ ░░░░ mean ░░░░ ░░░░ ░░░░ is, ░░░░ ░░░░ peak into this ░░░░ If ░░░░ ░░░░ us a ░░░░ ░░░░ we can ░░░░ ░░░░ feed ░░░░ input ░░░░ ░░░░ ░░░░ output. ░░░░ ░░░░ ░░░░ way to explore ░░░░ mechanism (sort of a ░░░░ ░░░░ functions). 
+When we ░░░░ ░░░░ _black box_░░░░ we mean ░░░░ metaphorically, that ░░░░ ░░░░ ░░░░ peak into this ░░░░ If ░░░░ gives ░░░░ a function, all ░░░░ can do is feed it ░░░░ and ░░░░ ░░░░ ░░░░ ░░░░ is ░░░░ ░░░░ to ░░░░ ░░░░ mechanism (sort ░░░░ a DRM for functions). 
 
-░░░░ ░░░░ ░░░░ ░░░░ examples! For the ░░░░ of ░░░░ ░░░░ will use ░░░░ ░░░░ ░░░░ ░░░░ natural ░░░░ $\N = {0, 1, 2, 3, \dots}$ and ░░░░ ░░░░ $\textsf{Bool} = \{\textsf{true}, \textsf{false}\}$ even ░░░░ ░░░░ ░░░░ only ░░░░ ░░░░ later. ░░░░ ░░░░ ░░░░ function which adds $2$ to ░░░░ ░░░░ 
+░░░░ look ░░░░ ░░░░ ░░░░ For ░░░░ ░░░░ ░░░░ ░░░░ ░░░░ will ░░░░ ░░░░ types like ░░░░ ░░░░ numbers $\N = {0, 1, 2, 3, \dots}$ ░░░░ ░░░░ ░░░░ $\textsf{Bool} = \{\textsf{true}, \textsf{false}\}$ ░░░░ ░░░░ we ░░░░ only ░░░░ ░░░░ later. Let's ░░░░ ░░░░ ░░░░ ░░░░ adds $2$ to its input. 
 
 $$
 \begin{aligned}
@@ -34,9 +34,9 @@ $$
 \end{aligned}
 $$
 
-To ░░░░ $\textsf{add2}$ we introduce ░░░░ parameter $\textsf{x}$░░░░ Now ░░░░ ░░░░ apply $\textsf{add2}$ ░░░░ a ░░░░ ░░░░ ░░░░ $\textsf{3}$ ░░░░ observe $\textsf{add2 3}$ which is $\textsf{5}$. In ░░░░ first ░░░░ we ░░░░ the parameter $\textsf{x}$ ░░░░ the ░░░░ ░░░░ $\textsf{2}$ ░░░░ then ░░░░ ░░░░ ░░░░ ░░░░ about ░░░░ ░░░░ conclude. ░░░░ ░░░░ step, replacing the ░░░░ ░░░░ the argument, is called $\beta$-reduction.
+To ░░░░ $\textsf{add2}$ we ░░░░ ░░░░ ░░░░ $\textsf{x}$. Now we ░░░░ ░░░░ $\textsf{add2}$ to ░░░░ number ░░░░ ░░░░ $\textsf{3}$ and ░░░░ $\textsf{add2 3}$ ░░░░ is $\textsf{5}$. ░░░░ the first ░░░░ we ░░░░ the ░░░░ $\textsf{x}$ with the actual argument $\textsf{2}$ ░░░░ ░░░░ ░░░░ use our ░░░░ ░░░░ addition ░░░░ ░░░░ ░░░░ ░░░░ step, replacing the parameter with ░░░░ argument, ░░░░ called $\beta$-reduction.
 
-The ░░░░ above combines ░░░░ ░░░░ ░░░░ ░░░░ function. ░░░░ we ░░░░ want ░░░░ ░░░░ a function ░░░░ ░░░░ it a ░░░░ we ░░░░ ░░░░ $\lambda$-abstraction. That ░░░░ ░░░░ could ░░░░ defined the same function as follows,
+The definition above combines naming ░░░░ defining ░░░░ ░░░░ ░░░░ we ust ░░░░ ░░░░ write ░░░░ ░░░░ ░░░░ ░░░░ it ░░░░ ░░░░ we can ░░░░ $\lambda$-abstraction. ░░░░ ░░░░ we ░░░░ have ░░░░ the ░░░░ function ░░░░ ░░░░
 
 $$
 \begin{aligned}
@@ -45,7 +45,7 @@ $$
 \end{aligned}
 $$
 
-We ░░░░ view ░░░░ ░░░░ ░░░░ ░░░░ ░░░░ abbreviation ░░░░ the ░░░░ We ░░░░ now ░░░░ ░░░░ more detailed derivation ░░░░ ░░░░ differentiate ░░░░ unfolding of ░░░░ ░░░░ ░░░░ $\beta$-reduction.
+░░░░ can view ░░░░ first ░░░░ ░░░░ ░░░░ abbreviation ░░░░ ░░░░ ░░░░ We can ░░░░ ░░░░ ░░░░ more detailed derivation where we differentiate the unfolding of a definition and $\beta$-reduction.
 
 $$
 \begin{aligned}
@@ -54,7 +54,7 @@ $$
                 &= 5 \quad &&\textrm{Calculating the sum.}
 \end{aligned}
 $$
-░░░░ $\lambda$░░░░ we ░░░░ only ░░░░ ░░░░ ░░░░ ░░░░ ░░░░ To ░░░░ ░░░░ ░░░░ with several ░░░░ ░░░░ use _currying_, ░░░░ ░░░░ ░░░░ ░░░░ that returns a ░░░░
+░░░░ $\lambda$, ░░░░ ░░░░ ░░░░ define ░░░░ with ░░░░ ░░░░ ░░░░ ░░░░ the function with several ░░░░ ░░░░ ░░░░ _currying_, that ░░░░ a ░░░░ that ░░░░ a ░░░░
 
 $$
 \begin{aligned}
@@ -63,9 +63,9 @@ $$
 \end{aligned}
 $$
 
-░░░░ $\textsf{add 3} : \N \to \N$ is the ░░░░ $\lambda \ \textsf{y} \to 3 + \textsf{y}$ that ░░░░ ░░░░ ░░░░ ░░░░ adds $\textsf{3}$░░░░ and $(\textsf{add 3}) \ 5$ ░░░░ to $5 + 3$ and ░░░░ $8$░░░░
+░░░░ $\textsf{add 3} : \N \to \N$ ░░░░ ░░░░ ░░░░ $\lambda \ \textsf{y} \to 3 + \textsf{y}$ ░░░░ ░░░░ ░░░░ function that adds $\textsf{3}$, ░░░░ $(\textsf{add 3}) \ 5$ reduces ░░░░ $5 + 3$ ░░░░ hence $8$.
 
-There ░░░░ ░░░░ syntactic ░░░░ to simplify ░░░░ use of currying: $\to$ is _right-associative_░░░░ hence we can write $\N \to \N \to \N$ for $\N \to (\N \to \N)$ ░░░░ application is _left-associative_ hence ░░░░ can ░░░░ $\textsf{g 3 5}$ ░░░░ $(\textsf{g 3}) \ \textsf{5}$. ░░░░ ░░░░ can combine several $\lambda$░░░░ ░░░░ write $\lambda \ \textsf{x} \ \textsf{y} \to \textsf{x} + \textsf{y}$ for $\lambda \ \textsf{x} \to (\lambda \ \textsf{y} \to \textsf{x} + \textsf{y})$░░░░ ░░░░ the same ░░░░ applies ░░░░ the ░░░░ ░░░░ ░░░░ 
+░░░░ ░░░░ many ░░░░ conventions ░░░░ ░░░░ the ░░░░ ░░░░ currying: $\to$ is _right-associative_, ░░░░ ░░░░ ░░░░ write $\N \to \N \to \N$ for $\N \to (\N \to \N)$ ░░░░ ░░░░ is _left-associative_ hence ░░░░ ░░░░ ░░░░ $\textsf{g 3 5}$ for $(\textsf{g 3}) \ \textsf{5}$░░░░ ░░░░ ░░░░ can combine several $\lambda$░░░░ ░░░░ write $\lambda \ \textsf{x} \ \textsf{y} \to \textsf{x} + \textsf{y}$ for $\lambda \ \textsf{x} \to (\lambda \ \textsf{y} \to \textsf{x} + \textsf{y})$░░░░ Consequently, the same ░░░░ applies for the explicit ░░░░ definition: 
 
 $$
 \begin{aligned}
@@ -73,7 +73,7 @@ $$
 &\textsf{add} \ \textsf{x} \ \textsf{y} = \textsf{x + y}    
 \end{aligned}
 $$
-Instead ░░░░ returning a ░░░░ we can also have functions that ░░░░ in ░░░░ ░░░░ as ░░░░ called _higher order functions_░░░░ ░░░░ example is,
+░░░░ ░░░░ ░░░░ a function we can ░░░░ have ░░░░ ░░░░ ░░░░ in other ░░░░ as ░░░░ called _higher order functions_. ░░░░ example ░░░░
 
 $$
 \begin{aligned}
@@ -81,7 +81,7 @@ $$
 &\textsf{k h} = \textsf{h 2} + \textsf{h 3} 
 \end{aligned}
 $$
-░░░░ that ░░░░ ░░░░ ░░░░ the brackets in the ░░░░ type. $\textsf{k}$ is a function ░░░░ gets a ░░░░ ░░░░ the natural numbers ░░░░ ░░░░ and returns a ░░░░ What ░░░░ $\textsf{k add2}$░░░░ We can reason ░░░░ ░░░░
+Note ░░░░ we cannot ░░░░ the ░░░░ in the ░░░░ type. $\textsf{k}$ ░░░░ a function that gets a ░░░░ ░░░░ ░░░░ ░░░░ numbers as input ░░░░ ░░░░ a number. ░░░░ ░░░░ $\textsf{k add2}$? We ░░░░ reason as ░░░░
 
 $$
 \begin{aligned}
@@ -93,7 +93,7 @@ $$
 
 ### Identity and Composition
 
-Some ░░░░ work ░░░░ ░░░░ type, we ░░░░ ░░░░ _polymorphic_░░░░ ░░░░ example is the ░░░░ function $\textsf{id} : \textsf{A} \to \textsf{A}$ ░░░░ works for every type $\textsf{A} : \textsf{Set}$░░░░ ░░░░ Agda, we can write,
+Some functions ░░░░ for any ░░░░ ░░░░ call ░░░░ _polymorphic_░░░░ ░░░░ ░░░░ ░░░░ the identity ░░░░ $\textsf{id} : \textsf{A} \to \textsf{A}$ ░░░░ ░░░░ for ░░░░ type $\textsf{A} : \textsf{Set}$. ░░░░ Agda, we can ░░░░
 
 $$
 \begin{aligned}
@@ -101,16 +101,16 @@ $$
 &\textsf{id x} = \textsf{x}
 \end{aligned}
 $$
-Writing $\{\textsf{A} : \textsf{Set} \to \dots \}$ indicates ░░░░ ░░░░ ░░░░ ░░░░ for ░░░░ $\textsf{Set}$░░░░ ░░░░ will automatically ░░░░ $\textsf{A}$ ░░░░ is we can just write $\textsf{id 3} : \N$ ░░░░ Agda infers ░░░░ $\textsf{A} = \N$ in ░░░░ ░░░░ ░░░░ ░░░░ ░░░░ it may be necessary ░░░░ instantiate ░░░░ ░░░░ variable ░░░░ in ░░░░ ░░░░ ░░░░ ░░░░ write $\textsf{id} \ \{\N\}$ or in case there are ░░░░ parameters but ░░░░ ░░░░ ░░░░ to ░░░░ ░░░░ ░░░░ ░░░░ we ░░░░ $\textsf{id} \ \{\textsf{A} = \N\}$.
+Writing $\{\textsf{A} : \textsf{Set} \to \dots \}$ ░░░░ ░░░░ the function ░░░░ for every $\textsf{Set}$░░░░ Agda ░░░░ ░░░░ ░░░░ $\textsf{A}$ ░░░░ ░░░░ we ░░░░ just ░░░░ $\textsf{id 3} : \N$ ░░░░ Agda ░░░░ ░░░░ $\textsf{A} = \N$ in this case. ░░░░ ░░░░ ░░░░ it ░░░░ be necessary ░░░░ ░░░░ ░░░░ ░░░░ ░░░░ explicitly, ░░░░ ░░░░ ░░░░ ░░░░ ░░░░ ░░░░ $\textsf{id} \ \{\N\}$ ░░░░ in case ░░░░ are ░░░░ parameters ░░░░ we only ░░░░ to instantiate a ░░░░ one ░░░░ ░░░░ $\textsf{id} \ \{\textsf{A} = \N\}$░░░░
 
-We ░░░░ later ░░░░ ░░░░ like $\{\textsf{A} : \textsf{Set} \to \dots\}$ ░░░░ ░░░░ ░░░░ ░░░░ of ░░░░ ░░░░ ░░░░ ░░░░ ░░░░ we view polymorphism as a ░░░░ ░░░░ ░░░░ we will ░░░░ $\textsf{A} \ \textsf{B} \ \textsf{C} : \textsf{Set}$ ░░░░ indicate ░░░░ types. ░░░░ Agda this ░░░░ ░░░░ ░░░░ by declaring the ░░░░ $\textsf{A}$░░░░ $\textsf{B}$, $\textsf{C}$ of the type $\textsf{Set}$░░░░
+░░░░ ░░░░ ░░░░ explain types ░░░░ $\{\textsf{A} : \textsf{Set} \to \dots\}$ ░░░░ ░░░░ actually ░░░░ ░░░░ dependent ░░░░ ░░░░ ░░░░ ░░░░ we ░░░░ ░░░░ ░░░░ ░░░░ ░░░░ notion, ░░░░ we ░░░░ use $\textsf{A} \ \textsf{B} \ \textsf{C} : \textsf{Set}$ to indicate variable ░░░░ In ░░░░ ░░░░ can ░░░░ ░░░░ by ░░░░ ░░░░ ░░░░ $\textsf{A}$░░░░ $\textsf{B}$, $\textsf{C}$ of ░░░░ type $\textsf{Set}$░░░░
 
 $$
 \begin{aligned}
 \textsf{A} \ \textsf{B} \ \textsf{C} : \textsf{Set}
 \end{aligned}
 $$
-now, we can ░░░░
+now, ░░░░ ░░░░ write,
 
 $$
 \begin{aligned}
@@ -118,11 +118,11 @@ $$
 &\textsf{id} = \textsf{x}
 \end{aligned}
 $$
-░░░░ Agda ░░░░ automatically translate ░░░░ ░░░░ ░░░░ $\{\textsf{A} : \textsf{Set} \} \to \textsf{A} \to \textsf{A}$. We ░░░░ draw ░░░░ picture for ░░░░ ░░░░ function which ░░░░ consists ░░░░ a ░░░░ ░░░░ ░░░░ ░░░░ to the output.
+and Agda will automatically ░░░░ ░░░░ type into $\{\textsf{A} : \textsf{Set} \} \to \textsf{A} \to \textsf{A}$. We ░░░░ ░░░░ a ░░░░ for the ░░░░ ░░░░ ░░░░ simply ░░░░ of ░░░░ ░░░░ from the input ░░░░ the ░░░░
 
-Another ░░░░ ░░░░ ░░░░ ░░░░ given $\textsf{g} : \textsf{A} \to \textsf{B}$ ░░░░ $\textsf{f} : \textsf{B} \to \textsf{C}$░░░░ ░░░░ can construct ░░░░ new function $\textsf{f} \circ \textsf{g} : \textsf{A} \to \textsf{C}$ which ░░░░ the ░░░░ of $\textsf{g}$ into ░░░░ ░░░░ of $\textsf{f}$. 
+Another example ░░░░ ░░░░ composition: given $\textsf{g} : \textsf{A} \to \textsf{B}$ and $\textsf{f} : \textsf{B} \to \textsf{C}$░░░░ we can construct ░░░░ ░░░░ ░░░░ $\textsf{f} \circ \textsf{g} : \textsf{A} \to \textsf{C}$ ░░░░ ░░░░ the output of $\textsf{g}$ ░░░░ the input of $\textsf{f}$░░░░ 
 
-Composition can also be ░░░░ ░░░░ ░░░░ polymorphic function:
+Composition ░░░░ ░░░░ be ░░░░ as ░░░░ polymorphic ░░░░
 
 $$
 \begin{aligned}
@@ -130,9 +130,9 @@ $$
 &(\textsf{f} \circ \textsf{g}) \ \textsf{x} = \textsf{f} \ (\textsf{g} \ \textsf{x})
 \end{aligned}
 $$
-░░░░ Agda, we ░░░░ ░░░░ ░░░░ ░░░░ ░░░░ ░░░░ more ░░░░ ░░░░ schemes) by using $\_$ ░░░░ indicate where ░░░░ ░░░░ go. The price ░░░░ ░░░░ for ░░░░ flexibility ░░░░ ░░░░ we ░░░░ to separate any syntactical component with ░░░░ e.e. Agda would ░░░░ $\textsf{f} \circ \textsf{g}$ as one ░░░░
+In ░░░░ we can define ░░░░ ░░░░ ░░░░ indeed ░░░░ complicated syntactic schemes) ░░░░ ░░░░ $\_$ ░░░░ ░░░░ ░░░░ ░░░░ ░░░░ ░░░░ The ░░░░ ░░░░ ░░░░ ░░░░ this ░░░░ is ░░░░ ░░░░ have ░░░░ separate any syntactical ░░░░ with spaces, e.e. ░░░░ would read $\textsf{f} \circ \textsf{g}$ as one identifier.
 
-░░░░ ░░░░ an ░░░░ Earlier ░░░░ define the function $\textsf{add2} : \N \to \N$, in ░░░░ ░░░░ ░░░░ as a squaring function,
+░░░░ do an ░░░░ ░░░░ ░░░░ define ░░░░ function $\textsf{add2} : \N \to \N$░░░░ ░░░░ the ░░░░ vein ░░░░ a squaring ░░░░
 
 $$
 \begin{aligned}
@@ -140,7 +140,7 @@ $$
 &\textsf{square} \ \textsf{x} = \textsf{x} * \textsf{x}
 \end{aligned}
 $$
-Now we can ░░░░ $\textsf{square} \circ \textsf{add2} : \N \to \N$░░░░ What is $(\textsf{square} \circ \textsf{add2}) \ \textsf{3}$?
+Now we can ░░░░ $\textsf{square} \circ \textsf{add2} : \N \to \N$. What is $(\textsf{square} \circ \textsf{add2}) \ \textsf{3}$?
 
 $$
 \begin{aligned}
@@ -151,7 +151,7 @@ $$
                                           &= \textsf{25}
 \end{aligned}
 $$
-░░░░ corollary evident ░░░░ this example ░░░░ that ░░░░ ░░░░ ░░░░ not ░░░░ what ░░░░ $(\textsf{add2} \circ \textsf{square}) \ \textsf{3}$░░░░
+A corollary ░░░░ from ░░░░ ░░░░ is that function ░░░░ ░░░░ not commutative, ░░░░ ░░░░ $(\textsf{add2} \circ \textsf{square}) \ \textsf{3}$░░░░
 
 $$
 \begin{aligned}
@@ -162,13 +162,13 @@ $$
                                           &= \textsf{11}
 \end{aligned}
 $$
-░░░░ ░░░░ ░░░░ ░░░░ ░░░░ $\textsf{square} \circ \textsf{add2}$ ░░░░ $\textsf{add2} \circ \textsf{square}$ are different functions. ░░░░ any ░░░░ it ░░░░ always ░░░░ ░░░░ turn around ░░░░ ░░░░ ░░░░ ░░░░ ░░░░ function $\textsf{IsEven} : \N \to \textsf{Bool}$ ░░░░ ░░░░ $\textsf{true}$ ░░░░ ░░░░ ░░░░ is ░░░░ and $\textsf{false}$ ░░░░ Now ░░░░ ░░░░ form $\textsf{isEven} \circ \textsf{square} : \N \to \textsf{Bool}$ but it doesn't make sense to form $\textsf{square} \circ \textsf{isEven}$ ░░░░ ░░░░ ░░░░ of $\textsf{isEven}$ ░░░░ $\textsf{Bool}$ and ░░░░ doesn't match the ░░░░ of $\textsf{square}$ as ░░░░ $\N$░░░░ 
+░░░░ we can see that $\textsf{square} \circ \textsf{add2}$ and $\textsf{add2} \circ \textsf{square}$ are ░░░░ functions. ░░░░ any case it isn't ░░░░ ░░░░ ░░░░ ░░░░ around ░░░░ Assume as given ░░░░ ░░░░ $\textsf{IsEven} : \N \to \textsf{Bool}$ that ░░░░ $\textsf{true}$ if the ░░░░ is even, ░░░░ $\textsf{false}$ ░░░░ ░░░░ ░░░░ ░░░░ ░░░░ $\textsf{isEven} \circ \textsf{square} : \N \to \textsf{Bool}$ but ░░░░ ░░░░ make ░░░░ ░░░░ ░░░░ $\textsf{square} \circ \textsf{isEven}$ ░░░░ ░░░░ output of $\textsf{isEven}$ is $\textsf{Bool}$ and ░░░░ doesn't match ░░░░ ░░░░ ░░░░ $\textsf{square}$ ░░░░ its $\N$░░░░ 
 
-░░░░ ░░░░ ░░░░ ░░░░ ░░░░ ░░░░ is ░░░░ ░░░░ twist ░░░░ the order ░░░░ ░░░░ ░░░░ $\_ \circ \_$ which ░░░░ visible in ░░░░ ░░░░ $(\textsf{B} \to \textsf{C}) \to (\textsf{A} \to \textsf{B}) \to (\textsf{A} \to \textsf{C})$. Why is it not $(\textsf{A} \to \textsf{B}) \to (\textsf{B} \to \textsf{C}) \to (\textsf{A} \to \textsf{C})$? And indeed if we evaluate $\textsf{f} \circ \textsf{g}$ ░░░░ first ░░░░ $\textsf{g}$, then $\textsf{f}$░░░░ ░░░░ ░░░░ reason is ░░░░ function application ░░░░ ░░░░ ░░░░ ░░░░ _wrong way_ around, that ░░░░ ░░░░ we evaluate $\textsf{square} \ (\textsf{add2 3})$ we first ░░░░ $\textsf{add2 3}$ and then $\textsf{square 5}$░░░░ ░░░░ ░░░░ actually counterintuitive for ░░░░ who ░░░░ left ░░░░ ░░░░ 
+░░░░ may also notice that ░░░░ ░░░░ a strange twist ░░░░ ░░░░ order ░░░░ ░░░░ to $\_ \circ \_$ which is ░░░░ ░░░░ its ░░░░ $(\textsf{B} \to \textsf{C}) \to (\textsf{A} \to \textsf{B}) \to (\textsf{A} \to \textsf{C})$. Why is ░░░░ ░░░░ $(\textsf{A} \to \textsf{B}) \to (\textsf{B} \to \textsf{C}) \to (\textsf{A} \to \textsf{C})$░░░░ ░░░░ ░░░░ if we evaluate $\textsf{f} \circ \textsf{g}$ ░░░░ ░░░░ ░░░░ $\textsf{g}$, ░░░░ $\textsf{f}$. ░░░░ ░░░░ ░░░░ ░░░░ ░░░░ ░░░░ ░░░░ is ░░░░ written the _wrong way_ ░░░░ that ░░░░ ░░░░ ░░░░ ░░░░ $\textsf{square} \ (\textsf{add2 3})$ we first evaluate $\textsf{add2 3}$ ░░░░ ░░░░ $\textsf{square 5}$, ░░░░ is actually counterintuitive ░░░░ those who ░░░░ left ░░░░ ░░░░ 
 
 ### $\lambda$-calculus
 
-As ░░░░ discussed, ░░░░ ░░░░ ░░░░ the explicit ░░░░ of a ░░░░ ░░░░
+As we discussed, ░░░░ ░░░░ view ░░░░ explicit ░░░░ ░░░░ a function like,
 
 $$
 \begin{aligned}
@@ -176,7 +176,7 @@ $$
 &(\textsf{f} \circ \textsf{g}) \ \textsf{x} = \textsf{f} \ (\textsf{g x}) \\
 \end{aligned}
 $$
-is ░░░░ ░░░░ for an ░░░░ ░░░░ using $\lambda$░░░░
+░░░░ ░░░░ ░░░░ for an explicit definition using $\lambda$-terms,
 
 $$
 \begin{aligned}
@@ -184,42 +184,42 @@ $$
 &\_ \circ \_  = \lambda \ \textsf{f} \to \lambda \ \textsf{g} \to \lambda \ \textsf{x} \to \textsf{f} \ \textsf{(g x)}
 \end{aligned}
 $$
-░░░░ since unfolding ░░░░ ░░░░ ░░░░ ░░░░ ░░░░ mathematics ░░░░ ░░░░ we concentrate on what happens to $\lambda$-terms.
+And ░░░░ unfolding definitions is standard practice ░░░░ mathematics ░░░░ else-where, we ░░░░ ░░░░ ░░░░ ░░░░ ░░░░ $\lambda$░░░░
 
-░░░░ we form ░░░░ $\lambda$-term we ░░░░ using variables. Hence beginners often ░░░░ _What is the type of a variable?_ The answer ░░░░ that ░░░░ assume that ░░░░ ░░░░ given a ░░░░ of any ░░░░ this is often ░░░░ the (_typing_░░░░ context. ░░░░ other cases are _application_ and $\lambda$-abstraction,
+░░░░ ░░░░ form ░░░░ $\lambda$-term ░░░░ ░░░░ ░░░░ variables. ░░░░ beginners often ░░░░ _What is the type of a variable?_ ░░░░ answer ░░░░ ░░░░ ░░░░ assume ░░░░ we ░░░░ ░░░░ ░░░░ type ░░░░ ░░░░ ░░░░ this is ░░░░ called ░░░░ ░░░░_typing_) ░░░░ The other cases ░░░░ _application_ ░░░░ $\lambda$-abstraction,
 
-- **variable**: A ░░░░ $\textsf{x}$ has the ░░░░ ░░░░ ░░░░ assumed ░░░░ it in-context.
-- **application**░░░░ ░░░░ ░░░░ term $\textsf{M} : \textsf{A} \to \textsf{B}$ and a term $\textsf{N} : \textsf{A}$, ░░░░ ░░░░ ░░░░ ░░░░ ░░░░ $\textsf{M N : B}$░░░░
-░░░░ **abstraction**░░░░ Given ░░░░ ░░░░ $\textsf{x}$ ░░░░ from assuming $\textsf{x} : \textsf{A}$ ░░░░ ░░░░ ░░░░ that $\textsf{M : B}$░░░░ ░░░░ we we ░░░░ form $\lambda \ \textsf{x} \to \textsf{M} : \textsf{A} \to \textsf{B}$░░░░
+░░░░ **variable**░░░░ A variable $\textsf{x}$ has ░░░░ ░░░░ we ░░░░ assumed for ░░░░ in-context.
+- **application**░░░░ Given a ░░░░ $\textsf{M} : \textsf{A} \to \textsf{B}$ ░░░░ ░░░░ term $\textsf{N} : \textsf{A}$, we ░░░░ form ░░░░ ░░░░ $\textsf{M N : B}$.
+░░░░ **abstraction**: ░░░░ a ░░░░ $\textsf{x}$ if ░░░░ ░░░░ $\textsf{x} : \textsf{A}$ ░░░░ can ░░░░ that $\textsf{M : B}$░░░░ then ░░░░ we ░░░░ ░░░░ $\lambda \ \textsf{x} \to \textsf{M} : \textsf{A} \to \textsf{B}$.
 
-░░░░ covers ░░░░ _pure_ $\lambda$░░░░ which ░░░░ ░░░░ constructions ░░░░ are specific to datatypes ░░░░ $\N$ and $\textsf{Bool}$ or standard in-context function types.
+This ░░░░ the _pure_ $\lambda$-terms which don't use ░░░░ which ░░░░ specific to datatypes like $\N$ ░░░░ $\textsf{Bool}$ or standard ░░░░ ░░░░ types.
 
-$\beta$-equality ░░░░ ░░░░ ░░░░ can reduce ░░░░ ░░░░ of a $\lambda$-abstraction ░░░░ ░░░░ ░░░░ by substituting the ░░░░ with ░░░░ argument, ░░░░ ░░░░
+$\beta$-equality means that ░░░░ ░░░░ reduce ░░░░ ░░░░ of ░░░░ $\lambda$-abstraction to an argument ░░░░ ░░░░ the variable with the ░░░░ ░░░░ is,
 
 $$(\lambda \ \textsf{x} \to \textsf{M}) \ \textsf{N} = \textsf{M}[\textsf{x} \coloneqq \textsf{N}]$$
 
-░░░░ $\textsf{M}[\textsf{x} \coloneqq \textsf{N}]$ ░░░░ $\textsf{M}$ ░░░░ all ░░░░ ░░░░ $\textsf{x}$ replaced by $\textsf{N}$.
+░░░░ $\textsf{M}[\textsf{x} \coloneqq \textsf{N}]$ is $\textsf{M}$ ░░░░ ░░░░ ░░░░ ░░░░ $\textsf{x}$ replaced ░░░░ $\textsf{N}$.
 
-Actually, ░░░░ is ░░░░ bit more complicated. We ░░░░ ░░░░ not ░░░░ to replace ░░░░ variables, ░░░░ ░░░░ $(\lambda \ \textsf{x} \to (\lambda \ \textsf{x} \to \textsf{x})) \ 3$ should just be $\lambda \ \textsf{x} \to \textsf{x}$ ░░░░ not $\lambda \ \textsf{x} \to \textsf{3}$░░░░ We ░░░░ ░░░░ by saying that $\textsf{M}[\textsf{x} \coloneqq \textsf{N}]$ is $\textsf{M}$ ░░░░ all _free_ ░░░░ of $\textsf{x}$ replaced ░░░░ $\textsf{N}$░░░░ An occurence ░░░░ free ░░░░ ░░░░
+░░░░ ░░░░ ░░░░ ░░░░ bit ░░░░ ░░░░ We certainly do ░░░░ ░░░░ ░░░░ ░░░░ bound ░░░░ ░░░░ is $(\lambda \ \textsf{x} \to (\lambda \ \textsf{x} \to \textsf{x})) \ 3$ ░░░░ ░░░░ ░░░░ $\lambda \ \textsf{x} \to \textsf{x}$ and ░░░░ $\lambda \ \textsf{x} \to \textsf{3}$. We ░░░░ ░░░░ by ░░░░ that $\textsf{M}[\textsf{x} \coloneqq \textsf{N}]$ ░░░░ $\textsf{M}$ with ░░░░ _free_ ░░░░ of $\textsf{x}$ ░░░░ by $\textsf{N}$. ░░░░ occurence ░░░░ free ░░░░ unbound.
 
-░░░░ are not done! ░░░░ $\lambda \ \textsf{x} \to (\lambda \ \textsf{y} \to \textsf{x + y})$ and let's say ░░░░ have ░░░░ ░░░░ $\textsf{y}$ lying ░░░░ ░░░░ is $(\lambda \ \textsf{x} \to (\lambda \ \textsf{y} \to \textsf{x + y}) ) \ \textsf{y}$░░░░ If ░░░░ ░░░░ replace $\textsf{x}$ ░░░░ $\textsf{y}$░░░░ ░░░░ ░░░░ $\lambda \ \textsf{y} \to \textsf{y + y}$. This ░░░░ ░░░░ ░░░░ ░░░░ $\textsf{y}$ represents the ░░░░ variable $\textsf{y}$ and not ░░░░ ░░░░ $\textsf{y}$░░░░ ░░░░ is called _variable capture_ ░░░░ ░░░░ ░░░░ avoided.
+░░░░ ░░░░ not ░░░░ ░░░░ $\lambda \ \textsf{x} \to (\lambda \ \textsf{y} \to \textsf{x + y})$ and ░░░░ say we have ░░░░ ░░░░ $\textsf{y}$ lying ░░░░ What ░░░░ $(\lambda \ \textsf{x} \to (\lambda \ \textsf{y} \to \textsf{x + y}) ) \ \textsf{y}$? ░░░░ we ░░░░ ░░░░ $\textsf{x}$ ░░░░ $\textsf{y}$, ░░░░ ░░░░ $\lambda \ \textsf{y} \to \textsf{y + y}$░░░░ ░░░░ is ░░░░ because ░░░░ $\textsf{y}$ ░░░░ the ░░░░ ░░░░ $\textsf{y}$ ░░░░ ░░░░ ░░░░ ░░░░ $\textsf{y}$. ░░░░ is called _variable capture_ ░░░░ ░░░░ be avoided.
 
-But ░░░░ ░░░░ is  $(\lambda \ \textsf{x} \to (\lambda \ \textsf{y} \to \textsf{x} + \textsf{y}))\ \textsf{y}$?  
+But then ░░░░ ░░░░  $(\lambda \ \textsf{x} \to (\lambda \ \textsf{y} \to \textsf{x} + \textsf{y}))\ \textsf{y}$░░░░  
 
-Here ░░░░ introduce ░░░░ equality, $\alpha$-equivalence, ░░░░ ░░░░ that ░░░░ variables can be consistently ░░░░ ░░░░ $\lambda \ \textsf{y} \to \textsf{x} + \textsf{y} = \lambda \ \textsf{z} \to \textsf{x} + \textsf{z}$░░░░  
+░░░░ we ░░░░ ░░░░ equality, $\alpha$-equivalence, ░░░░ ░░░░ that ░░░░ variables ░░░░ ░░░░ consistently ░░░░ i.e. $\lambda \ \textsf{y} \to \textsf{x} + \textsf{y} = \lambda \ \textsf{z} \to \textsf{x} + \textsf{z}$.  
 
-Using this, ░░░░ can avoid capture by replacing the ░░░░ variable $\textsf{y}$ — ░░░░ ░░░░ That ░░░░$(\lambda \ \textsf{x} \to (\lambda \ \textsf{y} \to \textsf{x} + \textsf{y})) = \lambda \ \textsf{x} \to \textsf{x} + \textsf{z}$. Note that any ░░░░ but $\textsf{y}$ would work ░░░░
+Using ░░░░ ░░░░ ░░░░ avoid ░░░░ ░░░░ replacing the bound variable $\textsf{y}$ — avoiding capture. That ░░░░$(\lambda \ \textsf{x} \to (\lambda \ \textsf{y} \to \textsf{x} + \textsf{y})) = \lambda \ \textsf{x} \to \textsf{x} + \textsf{z}$. Note that ░░░░ variable ░░░░ $\textsf{y}$ ░░░░ ░░░░ here.
 
-There is yet ░░░░ ░░░░ $\eta$░░░░ ░░░░ ░░░░ motivated ░░░░ ░░░░ idea ░░░░ extensionality — ░░░░ ░░░░ functions which ░░░░ equal when ░░░░ to ░░░░ same argument should be ░░░░ equal.
+░░░░ ░░░░ yet another ░░░░ $\eta$░░░░ ░░░░ is motivated ░░░░ ░░░░ ░░░░ ░░░░ extensionality ░░░░ that ░░░░ ░░░░ which ░░░░ ░░░░ when ░░░░ ░░░░ ░░░░ ░░░░ ░░░░ should be considered equal.
 
-░░░░ pure $\lambda$░░░░ this is ░░░░ by ░░░░ ░░░░ following ░░░░  
+In pure $\lambda$░░░░ ░░░░ ░░░░ ░░░░ ░░░░ ░░░░ the following equation:  
 
-Assume $\textsf{M} : \textsf{A} \to \textsf{B}$░░░░ and given a variable $\textsf{x} : \textsf{A}$ which ░░░░ not ░░░░ ░░░░ ░░░░ $\textsf{M}$, then,
+░░░░ $\textsf{M} : \textsf{A} \to \textsf{B}$, ░░░░ ░░░░ a variable $\textsf{x} : \textsf{A}$ which ░░░░ ░░░░ appear ░░░░ in $\textsf{M}$, ░░░░
 
 $$
 \lambda \ \textsf{x} \to \textsf{M}\ \textsf{x} = \textsf{M}
 $$
-Reading it ░░░░ right ░░░░ ░░░░ ░░░░ ░░░░ that ░░░░ you want to ░░░░ that two ░░░░ $\textsf{M}$ ░░░░ $\textsf{N}$ ░░░░ equal, it is ░░░░ ░░░░ show ░░░░ $\textsf{M}\ \textsf{x} = \textsf{N}\ \textsf{x}$ ░░░░ $\textsf{x}$ is a variable ░░░░ ░░░░ not ░░░░ in $\textsf{M}$ or $\textsf{N}$ because,
+░░░░ ░░░░ from right ░░░░ left, ░░░░ means that if ░░░░ want ░░░░ show that two ░░░░ $\textsf{M}$ and $\textsf{N}$ are ░░░░ ░░░░ ░░░░ ░░░░ to show ░░░░ $\textsf{M}\ \textsf{x} = \textsf{N}\ \textsf{x}$ ░░░░ $\textsf{x}$ ░░░░ ░░░░ ░░░░ ░░░░ ░░░░ not appear ░░░░ $\textsf{M}$ ░░░░ $\textsf{N}$ because,
 
 $$
 \begin{aligned}
@@ -229,7 +229,7 @@ $$
 \end{aligned}
 $$
 
-░░░░ an example, we use $\eta$░░░░ to show ░░░░ $\textsf{f} \circ \textsf{id} = \textsf{f}$,
+As ░░░░ ░░░░ ░░░░ ░░░░ $\eta$░░░░ to show that $\textsf{f} \circ \textsf{id} = \textsf{f}$,
 
 $$
 \begin{aligned}
@@ -240,11 +240,11 @@ $$
 $$
 ### Combinatory Logic
 
-░░░░ polymorphic ░░░░ from section 2.2, $\textsf{id}$ ░░░░ $\_ \circ \_$, ░░░░ ░░░░ called combinators. We are going to introduce ░░░░ ░░░░ in this ░░░░ called $\textsf{S}$ ░░░░ $\textsf{K}$░░░░ which are _functionally complete_. ░░░░ ░░░░ ░░░░ every ░░░░ ░░░░ we can write ░░░░ ░░░░ $\lambda$-calculus can ░░░░ ░░░░ just using these two combinators.  
+The polymorphic ░░░░ ░░░░ ░░░░ ░░░░ $\textsf{id}$ and $\_ \circ \_$, are ░░░░ ░░░░ combinators. ░░░░ ░░░░ ░░░░ to introduce two ░░░░ ░░░░ this section, ░░░░ $\textsf{S}$ ░░░░ $\textsf{K}$░░░░ which ░░░░ _functionally complete_. This means that every ░░░░ ░░░░ we can ░░░░ ░░░░ (pure) $\lambda$-calculus can ░░░░ ░░░░ just using these ░░░░ ░░░░  
 
-░░░░ ░░░░ ░░░░ to ░░░░ ░░░░ ░░░░ do ░░░░ refer to other datatypes (like $\mathbb{N}$ ░░░░ $\textsf{Bool}$░░░░ which ░░░░ require ░░░░ ░░░░ We ░░░░ ░░░░ ░░░░ ░░░░ ░░░░ ░░░░ providing a ░░░░ from $\lambda$-terms into ░░░░ ░░░░ using combinators, ░░░░ means that we can eliminate all ░░░░ ░░░░ a way, ░░░░ are ░░░░ form of ░░░░ ░░░░ code ░░░░ they ░░░░ ░░░░ been used ░░░░ ░░░░
+This ░░░░ ░░░░ to ░░░░ functions ░░░░ ░░░░ not refer ░░░░ other datatypes ░░░░ $\mathbb{N}$ or $\textsf{Bool}$░░░░ ░░░░ ░░░░ ░░░░ ░░░░ combinators. We are going ░░░░ ░░░░ this ░░░░ providing a translation from $\lambda$-terms into terms only using combinators, ░░░░ ░░░░ ░░░░ ░░░░ ░░░░ ░░░░ ░░░░ variables. ░░░░ a ░░░░ combinators ░░░░ ░░░░ ░░░░ ░░░░ ░░░░ ░░░░ code and ░░░░ have indeed been used ░░░░ compilation.
 
-░░░░ ░░░░ with $\textsf{K}$░░░░ which ░░░░ constant functions,
+We start ░░░░ $\textsf{K}$, which introduces constant functions,
 
 $$
 \begin{aligned}
@@ -253,9 +253,9 @@ $$
 \end{aligned}
 $$
 
-░░░░ for ░░░░ $\textsf{K} \ 2 : \textsf{B} \to \mathbb{N}$ is ░░░░ function ░░░░ ░░░░ ░░░░ return $2$. Note that this function ░░░░ still polymorphic, ░░░░ ░░░░ ░░░░ any ░░░░ $\textsf{B}$░░░░
+░░░░ for example $\textsf{K} \ 2 : \textsf{B} \to \mathbb{N}$ is ░░░░ ░░░░ that will ░░░░ ░░░░ $2$░░░░ Note that this function is ░░░░ ░░░░ ░░░░ ░░░░ for any ░░░░ $\textsf{B}$.
 
-░░░░ ░░░░ combinator ░░░░ $\textsf{S}$, ░░░░ ░░░░ ░░░░ ░░░░ ░░░░ $\textsf{A}$░░░░ $\textsf{B}$, $\textsf{C}$░░░░
+░░░░ other combinator ░░░░ $\textsf{S}$░░░░ ░░░░ generalizes composition, ░░░░ ░░░░ $\textsf{A}$░░░░ $\textsf{B}$░░░░ $\textsf{C}$░░░░
 
 $$
 \begin{aligned}
@@ -264,9 +264,9 @@ $$
 \end{aligned}
 $$
 
-$\textsf{S}$ ░░░░ similar to $\_ \circ \_$░░░░ ░░░░ ░░░░ first ░░░░ gets ░░░░ see ░░░░ only ░░░░ result of ░░░░ second but also ░░░░ ░░░░ input. So for ░░░░ $\textsf{S} \ (\lambda \ \textsf{x} \to \textsf{x} + \textsf{y}) \ (\lambda \ \textsf{x} \to 2 * \textsf{x})$ is the same as $\lambda \ \textsf{x} \to \textsf{x} + 2 * \textsf{x}$░░░░
+$\textsf{S}$ is similar ░░░░ $\_ \circ \_$, ░░░░ ░░░░ first ░░░░ ░░░░ to see not only ░░░░ ░░░░ of ░░░░ second ░░░░ ░░░░ ░░░░ original ░░░░ So for example $\textsf{S} \ (\lambda \ \textsf{x} \to \textsf{x} + \textsf{y}) \ (\lambda \ \textsf{x} \to 2 * \textsf{x})$ is the same as $\lambda \ \textsf{x} \to \textsf{x} + 2 * \textsf{x}$░░░░
 
-░░░░ can ░░░░ $\textsf{id}$ ░░░░ is ░░░░ ░░░░ $\textsf{I}$ ░░░░ ░░░░ logic) ░░░░ $\textsf{S}$ and $\textsf{K}$. ░░░░ idea ░░░░ ░░░░ we can ░░░░ it from $\textsf{S}$ by replacing ░░░░ first ░░░░ $\textsf{f}$ with $\textsf{K}$, with this ░░░░ $\textsf{S} \ \textsf{K} = \lambda \ \textsf{g} \to \textsf{K} \ (\textsf{g} \ \textsf{x}) = \lambda \ \textsf{g} \to \textsf{x}$. To get the ░░░░ ░░░░ ░░░░ ░░░░ $\textsf{g}$ ░░░░ any ░░░░ The ░░░░ ░░░░ is $\textsf{K}$░░░░ ░░░░ ░░░░ can form $\textsf{S} \ \textsf{K} \ \textsf{K} = \textsf{I}$. ░░░░ might seem like ░░░░ bit of a technical ░░░░ given a ░░░░ $\textsf{A}$ ░░░░ would ░░░░ to ░░░░
+░░░░ ░░░░ derive $\textsf{id}$ (which is usually ░░░░ $\textsf{I}$ in combinatory logic) ░░░░ $\textsf{S}$ ░░░░ $\textsf{K}$░░░░ The idea ░░░░ that ░░░░ ░░░░ ░░░░ ░░░░ from $\textsf{S}$ by ░░░░ ░░░░ ░░░░ ░░░░ $\textsf{f}$ with $\textsf{K}$░░░░ with this obtaining $\textsf{S} \ \textsf{K} = \lambda \ \textsf{g} \to \textsf{K} \ (\textsf{g} \ \textsf{x}) = \lambda \ \textsf{g} \to \textsf{x}$. ░░░░ ░░░░ the identity ░░░░ can substitute $\textsf{g}$ ░░░░ any function. The simplest ░░░░ ░░░░ $\textsf{K}$, i.e. ░░░░ can ░░░░ $\textsf{S} \ \textsf{K} \ \textsf{K} = \textsf{I}$. This might seem like a ░░░░ of ░░░░ technical problem, ░░░░ a ░░░░ $\textsf{A}$ we would ░░░░ to ░░░░
 
 $$
 \begin{aligned}
@@ -274,7 +274,7 @@ $$
 &\textsf{id} = \textsf{S K K}
 \end{aligned}
 $$
-Actually Agda ░░░░ going to ░░░░ ░░░░ it cannot ░░░░ the ░░░░ $\textsf{B}$ ░░░░ ░░░░ 2nd $\textsf{K}$ ░░░░ indeed we can use any ░░░░ ░░░░ The simplest ░░░░ is $\textsf{A}$ and ░░░░ ░░░░ ░░░░ tell Agda ░░░░ explicitly,
+░░░░ ░░░░ is ░░░░ ░░░░ complain because it ░░░░ ░░░░ ░░░░ argument $\textsf{B}$ for the ░░░░ $\textsf{K}$ ░░░░ indeed we can use any ░░░░ ░░░░ ░░░░ ░░░░ choice ░░░░ $\textsf{A}$ and we need to ░░░░ Agda ░░░░ ░░░░
 
 $$
 \begin{aligned}
@@ -282,29 +282,29 @@ $$
 &\textsf{id} \ \{\textsf{A}\} = \textsf{S K} \ (\textsf{K} \ \{ \textsf{B} = \textsf{A} \})
 \end{aligned}
 $$
-░░░░ will now show ░░░░ every pure lambda ░░░░ ░░░░ be ░░░░ into combinatory logic.  
-░░░░ will do this informally — we will ░░░░ use ░░░░ ░░░░ to give ░░░░ formal ░░░░ ░░░░ ░░░░ ░░░░
+We will ░░░░ ░░░░ that ░░░░ ░░░░ ░░░░ ░░░░ ░░░░ be ░░░░ ░░░░ ░░░░ logic.  
+I ░░░░ ░░░░ this ░░░░ ░░░░ we ░░░░ later ░░░░ ░░░░ itself ░░░░ ░░░░ ░░░░ formal ░░░░ of ░░░░ ░░░░
 
-░░░░ ░░░░ do composition ░░░░ an ░░░░ ░░░░ ░░░░ write $\_ \circ \_$ as ░░░░ pure $\lambda$░░░░
+░░░░ let’s ░░░░ ░░░░ as an example. ░░░░ ░░░░ ░░░░ $\_ \circ \_$ ░░░░ a pure $\lambda$░░░░
 
 $$
 \_ \circ \_ = \lambda \ \textsf{f} \ \textsf{g} \ \textsf{x} \to \textsf{f} \ (\textsf{g x})
 $$
-Actually for our purposes it is ░░░░ to expand ░░░░ ░░░░ ░░░░ ░░░░ $\lambda$░░░░
+Actually for our ░░░░ it ░░░░ ░░░░ to expand the ░░░░ ░░░░ ░░░░ $\lambda$-abstraction,
 
 $$
 \_ \circ \_ = \lambda \ \textsf{f} \to \lambda \ \textsf{g} \to \lambda \ \textsf{x} \to \textsf{f} \ (\textsf{g x})
 $$
-Our strategy is ░░░░ ░░░░ ░░░░ $\lambda$░░░░ ░░░░ inside out, ░░░░ is ░░░░ we ░░░░ $\lambda \ \textsf{x} \to \textsf{f} \ (\textsf{g x})$ into ░░░░ This term ░░░░ still contain the variables $\textsf{f}$ ░░░░ $\textsf{g}$. However, next we abstract $\textsf{g}$ ░░░░ then $\textsf{f}$ ░░░░ obtain a term using only ░░░░ ░░░░ contains no ░░░░
+░░░░ strategy is to eliminate ░░░░ $\lambda$s ░░░░ inside ░░░░ ░░░░ ░░░░ first we ░░░░ $\lambda \ \textsf{x} \to \textsf{f} \ (\textsf{g x})$ into ░░░░ This term will still ░░░░ the ░░░░ $\textsf{f}$ ░░░░ $\textsf{g}$░░░░ However, next ░░░░ ░░░░ $\textsf{g}$ and then $\textsf{f}$ ░░░░ ░░░░ ░░░░ ░░░░ using only ░░░░ ░░░░ contains ░░░░ ░░░░
 
-The terms ░░░░ ░░░░ ░░░░ the ░░░░ ░░░░ ░░░░ which ░░░░ no $\lambda$-abstractions ░░░░ may contain variables, applications, ░░░░ the ░░░░ $\textsf{S}$ ░░░░ $\textsf{K}$. ░░░░ ░░░░ ░░░░ ░░░░ construct $\lambda \ \textsf{x} \to \textsf{M}$ by looking ░░░░ ░░░░ of ░░░░ ░░░░ cases,
+The terms which appear during ░░░░ translation ░░░░ ░░░░ ░░░░ ░░░░ ░░░░ $\lambda$-abstractions but may ░░░░ ░░░░ applications, and ░░░░ ░░░░ $\textsf{S}$ ░░░░ $\textsf{K}$. ░░░░ ░░░░ going to ░░░░ $\lambda \ \textsf{x} \to \textsf{M}$ by ░░░░ ░░░░ each ░░░░ ░░░░ possible cases,
 
-* **M = x**: ░░░░ this case ░░░░ $\lambda \ \textsf{x} \to \textsf{x} = \textsf{id}$, which ░░░░ ░░░░ ░░░░ obtained as $\textsf{S K K}$.
+* **M = x**: In this ░░░░ ░░░░ $\lambda \ \textsf{x} \to \textsf{x} = \textsf{id}$░░░░ which we ░░░░ ░░░░ obtained as $\textsf{S K K}$.
 
-* **M = y**: If the ░░░░ ░░░░ ░░░░ from $\textsf{x}$ we ░░░░ ░░░░ ░░░░ $\lambda \ \textsf{x} \to \textsf{y}$ ░░░░ ░░░░ ░░░░ constant function, that is $\textsf{K y}$░░░░
+* **M = y**: ░░░░ the variable is different from $\textsf{x}$ we have a function $\lambda \ \textsf{x} \to \textsf{y}$ ░░░░ ░░░░ ░░░░ ░░░░ ░░░░ ░░░░ is $\textsf{K y}$.
 
-* **M = M₁ M₂**: In ░░░░ ░░░░ we use the assumption ░░░░ ░░░░ know ░░░░ how ░░░░ translate  
-  $\lambda \ \textsf{x} \to \textsf{M}_1$ and $\lambda \ \textsf{x} \to \textsf{M}_2$. Now ░░░░ have,
+* **M = M₁ M₂**: In ░░░░ case we use ░░░░ ░░░░ ░░░░ we know ░░░░ how to ░░░░  
+  $\lambda \ \textsf{x} \to \textsf{M}_1$ and $\lambda \ \textsf{x} \to \textsf{M}_2$. ░░░░ ░░░░ ░░░░
 
 $$
   \begin{aligned}
@@ -314,11 +314,11 @@ $$
   $$
   ░░░░ ░░░░ the need ░░░░ $\textsf{S}$░░░░
 
-* **M = K**: ░░░░ $\lambda \ \textsf{x} \to \textsf{K}$ ░░░░ ░░░░ ░░░░ constant ░░░░ ░░░░ $\textsf{K}$, ░░░░ $\textsf{K K}$.
+* **M = K**: Clearly $\lambda \ \textsf{x} \to \textsf{K}$ ░░░░ ░░░░ a constant function returning $\textsf{K}$░░░░ ░░░░ $\textsf{K K}$.
 
-* **M = S**: As ░░░░ $\lambda \ \textsf{x} \to \textsf{S}$ ░░░░ just $\textsf{K S}$░░░░
+* **M = S**: As above, $\lambda \ \textsf{x} \to \textsf{S}$ ░░░░ ░░░░ $\textsf{K S}$.
 
-Ok, let’s apply the translation ░░░░ ░░░░ ░░░░ $\lambda \ \textsf{f} \to \lambda \ \textsf{g} \to \lambda \ \textsf{x} \to \textsf{f (g x)}$. We start with,
+Ok, ░░░░ ░░░░ ░░░░ translation ░░░░ ░░░░ ░░░░ $\lambda \ \textsf{f} \to \lambda \ \textsf{g} \to \lambda \ \textsf{x} \to \textsf{f (g x)}$. We ░░░░ ░░░░
 
 $$
 \begin{aligned}
@@ -328,9 +328,9 @@ $$
   &= \textsf{S} \ (\textsf{K f}) \ (\textsf{S} \ (\textsf{K g}) \ \textsf{id})
 \end{aligned}
 $$
-Before ░░░░ let’s introduce some optimisations to ░░░░ ░░░░ ░░░░ terms. ░░░░ ░░░░ example, we can see ░░░░ $\lambda \ \textsf{x} \to \textsf{g x}$ ░░░░ just $\textsf{g}$ ░░░░ $\eta$. ░░░░ ░░░░ ░░░░ that if the variable $\textsf{x}$ ░░░░ ░░░░ ░░░░ ░░░░ $\textsf{M}$░░░░ then $\lambda \ \textsf{x} \to \textsf{M}$ is just $\textsf{K M}$ and there ░░░░ no need ░░░░ go through $\textsf{M}$░░░░  
+Before proceeding, ░░░░ ░░░░ ░░░░ ░░░░ to ░░░░ truly gigantic ░░░░ ░░░░ for ░░░░ ░░░░ can ░░░░ ░░░░ $\lambda \ \textsf{x} \to \textsf{g x}$ ░░░░ just $\textsf{g}$ ░░░░ $\eta$░░░░ Another ░░░░ is that ░░░░ the variable $\textsf{x}$ ░░░░ not ░░░░ ░░░░ $\textsf{M}$░░░░ then $\lambda \ \textsf{x} \to \textsf{M}$ is ░░░░ $\textsf{K M}$ ░░░░ there is ░░░░ ░░░░ ░░░░ ░░░░ ░░░░ $\textsf{M}$░░░░  
 
-░░░░ these optimisations, we ░░░░ $\_ \circ \_$ in one go,
+░░░░ these optimisations, we translate $\_ \circ \_$ in one go,
 
 $$
 \begin{aligned}
@@ -342,21 +342,21 @@ $$
   &= \textsf{S (K S) K}
 \end{aligned}
 $$
-While ░░░░ term is ░░░░ ░░░░ ░░░░ is ░░░░ ░░░░ to understand. The ░░░░ of ░░░░ is ░░░░ ░░░░ show ░░░░ ░░░░ can avoid ░░░░ ░░░░ complications involving variables ░░░░ ░░░░ get away ░░░░ $\textsf{S}$ ░░░░ $\textsf{K}$ ░░░░
+░░░░ ░░░░ term is ░░░░ small, ░░░░ ░░░░ ░░░░ hard to understand. The point of ░░░░ is rather ░░░░ show that ░░░░ can avoid all the complications ░░░░ ░░░░ and just ░░░░ away ░░░░ $\textsf{S}$ and $\textsf{K}$ instead.
 
 ### Products and Sums
 
-░░░░ far we ░░░░ only encountered ░░░░ function ░░░░ In ░░░░ ░░░░ we ░░░░ get ░░░░ ░░░░ some more ░░░░ type formers,
+So ░░░░ ░░░░ have only ░░░░ ░░░░ function type. In ░░░░ ░░░░ we will get ░░░░ ░░░░ ░░░░ more basic ░░░░ formers,
 
-░░░░ **products**░░░░ Written $A \times B$, and ░░░░ ░░░░ ░░░░ product. In basic ░░░░ ░░░░ ░░░░ ░░░░ to represent ░░░░ systems, like $(1, 1) : \mathbb{R} \times \mathbb{R}$░░░░
+░░░░ **products**: ░░░░ $A \times B$, and ░░░░ ░░░░ ░░░░ ░░░░ ░░░░ basic mathematics we ░░░░ ░░░░ to represent ░░░░ systems, like $(1, 1) : \mathbb{R} \times \mathbb{R}$░░░░
 
-░░░░ **sums**░░░░ ░░░░ Agda ░░░░ ░░░░ $A \uplus B$, we might ░░░░ $A + B$ but this clashes ░░░░ $+$ ░░░░ numbers. ░░░░ are ░░░░ ░░░░ disjoint ░░░░ and coproducts.
+░░░░ **sums**░░░░ ░░░░ Agda we ░░░░ $A \uplus B$, we might ░░░░ $A + B$ ░░░░ ░░░░ ░░░░ ░░░░ $+$ ░░░░ ░░░░ ░░░░ are ░░░░ called ░░░░ ░░░░ and ░░░░
 
-░░░░ let’s start ░░░░ ░░░░ ░░░░ are ░░░░ ░░░░ ░░░░ ░░░░ ░░░░ but ░░░░ ░░░░ ░░░░ ░░░░ ░░░░ and functional programming.
+░░░░ let’s ░░░░ ░░░░ ░░░░ ░░░░ are less common ░░░░ conventional mathematics ░░░░ ░░░░ common in ░░░░ Theory ░░░░ functional programming.
 
 #### Sums
 
-Sums ░░░░ necessary to represent alternatives. ░░░░ ░░░░ one ░░░░ ░░░░ another. ░░░░ ░░░░ ░░░░ ░░░░ ░░░░ ░░░░ $\textsf{\textbf{data}}$ ░░░░
+░░░░ ░░░░ necessary ░░░░ ░░░░ alternatives. We ░░░░ ░░░░ ░░░░ ░░░░ another. To define sums ░░░░ ░░░░ ░░░░ $\textsf{\textbf{data}}$ ░░░░
 
 $$
 \begin{aligned}
@@ -366,14 +366,14 @@ $$
 \end{aligned}
 $$
 
-░░░░ says that ░░░░ element of $A \uplus B$ ░░░░ either $\textsf{inj}_1\ \textsf{a}$ where $\textsf{a} : A$ or it is $\textsf{inj}_2\ \textsf{b}$ where $\textsf{b} : B$.
+This says that ░░░░ element of $A \uplus B$ ░░░░ ░░░░ $\textsf{inj}_1\ \textsf{a}$ where $\textsf{a} : A$ or it is $\textsf{inj}_2\ \textsf{b}$ ░░░░ $\textsf{b} : B$░░░░
 
-A ░░░░ ░░░░ ░░░░ that ░░░░ ░░░░ ░░░░ form ░░░░ can either ░░░░ ░░░░ your order ░░░░ ░░░░`OrdNum`░░░░ ░░░░ your ░░░░ ░░░░ ░░░░`CustRef`░░░░ ░░░░ ░░░░ ░░░░ this ░░░░ $\textsf{OrdNum} \uplus \textsf{CustRef}$░░░░ Note ░░░░ ░░░░ if we use ░░░░ same ░░░░ ░░░░ ░░░░ ░░░░ we can ░░░░ be sure which ░░░░ ░░░░ ░░░░ ░░░░ $\textsf{inj}_1\ 1704$ (if it’s an order number) or $\textsf{inj}_2\ 1704$ ░░░░ ░░░░ ░░░░ customer reference).
+░░░░ ░░░░ ░░░░ ░░░░ that ░░░░ in ░░░░ form you can ░░░░ ░░░░ in ░░░░ ░░░░ ░░░░ ░░░░`OrdNum`░░░░ or ░░░░ customer ░░░░ ░░░░`CustRef`) ░░░░ can ░░░░ ░░░░ ░░░░ $\textsf{OrdNum} \uplus \textsf{CustRef}$░░░░ ░░░░ ░░░░ ░░░░ ░░░░ ░░░░ use the ░░░░ ░░░░ value—say 1704—for both, we can ░░░░ be ░░░░ ░░░░ ░░░░ meant by ░░░░ $\textsf{inj}_1\ 1704$ (if it’s an order number) or $\textsf{inj}_2\ 1704$ (if ░░░░ a customer reference).
 
-░░░░ ░░░░ ░░░░ ░░░░ ░░░░ ░░░░ is a bit strange: ░░░░ ░░░░ the ░░░░ union $\cup$ and the plus ░░░░ $+$░░░░ giving $\uplus$. ░░░░ prefer ░░░░ just write $+$ but ░░░░ ░░░░ with numeric ░░░░
+The ░░░░ ░░░░ ░░░░ ░░░░ ░░░░ ░░░░ a ░░░░ strange: it ░░░░ the ░░░░ ░░░░ $\cup$ and ░░░░ ░░░░ ░░░░ $+$, ░░░░ $\uplus$░░░░ We'd prefer ░░░░ just ░░░░ $+$ but ░░░░ ░░░░ with ░░░░ addition.
 
-░░░░ ░░░░ $\cup$ ░░░░ $\uplus$ related? Indeed, there ░░░░ no operation $\cup$ ░░░░ ░░░░$\cup$ ░░░░ an **intensional** ░░░░ ░░░░ ░░░░ depends ░░░░ ░░░░ ░░░░ ░░░░ ░░░░ ░░░░ ░░░░ ░░░░  
-$A = \{a,b\}$ and $B = \{0,1,2\}$░░░░ Then,
+░░░░ ░░░░ $\cup$ and $\uplus$ related? ░░░░ ░░░░ is no ░░░░ $\cup$ ░░░░ ░░░░$\cup$ is an **intensional** ░░░░ whose ░░░░ ░░░░ on ░░░░ choice of ░░░░ ░░░░ ░░░░ let  
+$A = \{a,b\}$ ░░░░ $B = \{0,1,2\}$░░░░ ░░░░
 
 $$
 \begin{aligned}
@@ -388,10 +388,10 @@ A' \uplus B&= \{\textsf{inj}_1\,0,\ \textsf{inj}_1\,1,\ \textsf{inj}_2\,0,\ \tex
 \end{aligned}
 $$
 
-$A' \cup B$ has only 3 elements, while $A' \uplus B$ has ░░░░ $\uplus$ is **representation‑insensitive**░░░░ ░░░░ property that ░░░░ operations definable ░░░░ ░░░░ Theory (and ░░░░ ░░░░ Agda) ░░░░
+$A' \cup B$ has only ░░░░ ░░░░ while $A' \uplus B$ has 5—so $\uplus$ ░░░░ **representation‑insensitive**, a property that all ░░░░ definable in ░░░░ Theory (and ░░░░ ░░░░ Agda) ░░░░
 
-What ░░░░ ░░░░ do with $\uplus$? ░░░░ ░░░░ general combinator ░░░░ $\textsf{case}$ ░░░░ performs ░░░░ analysis.  
-░░░░ can ░░░░ ░░░░ using _pattern matching_,
+░░░░ can we ░░░░ ░░░░ $\uplus$? A ░░░░ general combinator ░░░░ $\textsf{case}$ ░░░░ ░░░░ ░░░░ ░░░░  
+We can define ░░░░ ░░░░ _pattern matching_░░░░
 
 $$
 \begin{aligned}
@@ -400,18 +400,18 @@ $$
 &\textsf{case}\ \textsf{f}\ \textsf{g}\ (\textsf{inj}_2\ \textsf{b}) = \textsf{g b}
 \end{aligned}
 $$
-$\textsf{case}$ ░░░░ ░░░░ two ░░░░ $\textsf{f}$ knows ░░░░ ░░░░ ░░░░ $\textsf{A}$░░░░ and $\textsf{g}$ ░░░░ how ░░░░ ░░░░ $\textsf{B}$.
+$\textsf{case}$ ░░░░ ░░░░ two ░░░░ $\textsf{f}$ ░░░░ ░░░░ to handle $\textsf{A}$, and $\textsf{g}$ knows ░░░░ to handle $\textsf{B}$.
 
-░░░░ back ░░░░ ░░░░ ░░░░ with ░░░░ ░░░░ form $(\textsf{OrdNum} \uplus \textsf{CustRef})$:  
-░░░░ ░░░░ ░░░░ ░░░░ function to ░░░░ ░░░░ an ░░░░ using the order number  $\textsf{lookupOrdNum} : \textsf{OrdNum} \to \textsf{Order}$ and ░░░░ ░░░░ $\textsf{lookupCustRef} : \textsf{CustRef} \to \textsf{Order}$  
-we ░░░░ ░░░░ $\textsf{case}$ to combine them,
+░░░░ ░░░░ ░░░░ ░░░░ ░░░░ ░░░░ ░░░░ order form $(\textsf{OrdNum} \uplus \textsf{CustRef})$:  
+If ░░░░ have ░░░░ ░░░░ to look ░░░░ ░░░░ order using ░░░░ ░░░░ number  $\textsf{lookupOrdNum} : \textsf{OrdNum} \to \textsf{Order}$ and ░░░░ ░░░░ $\textsf{lookupCustRef} : \textsf{CustRef} \to \textsf{Order}$  
+we ░░░░ ░░░░ $\textsf{case}$ ░░░░ ░░░░ ░░░░
 
 $$
 \textsf{case}\ \textsf{lookupOrdNum}\ \textsf{lookupCustRef} : \textsf{OrdNum} \uplus \textsf{CustRef} \to \textsf{Order}
 $$
 #### Products
 
-░░░░ ░░░░ ░░░░ as ░░░░ ░░░░ ░░░░ ░░░░ a _record type_░░░░
+We define ░░░░ ░░░░ ░░░░ ░░░░ case of ░░░░ _record type_░░░░
 
 $$
 \begin{aligned}
@@ -422,7 +422,7 @@ $$
 \end{aligned}
 $$
 
-░░░░ is, ░░░░ ░░░░ ░░░░ projections, ░░░░ are ░░░░ with the ░░░░
+that is, ░░░░ specify the projections, ░░░░ ░░░░ functions ░░░░ ░░░░ types,
 
 $$
 \begin{aligned}
@@ -431,8 +431,8 @@ $$
 \end{aligned}
 $$
 
-░░░░ ░░░░ ░░░░ elements of $\textsf{A} \textsf{×} \textsf{B}$ by ░░░░ what the result ░░░░ when ░░░░ ░░░░  
-░░░░ ░░░░ ░░░░ _copattern matching_░░░░ ░░░░ example, we can use ░░░░ to define ░░░░ pairing ░░░░ ░░░░ ░░░░ ░░░░ is ░░░░ the $\_ \ , \_$, that ░░░░ ░░░░ doesn’t ░░░░ to ░░░░ ░░░░ ░░░░ the ░░░░
+We ░░░░ ░░░░ elements ░░░░ $\textsf{A} \textsf{×} \textsf{B}$ ░░░░ specifying ░░░░ the result is ░░░░ applying ░░░░  
+This ░░░░ ░░░░ _copattern matching_░░░░ ░░░░ example, ░░░░ can use this to ░░░░ the ░░░░ ░░░░ which ░░░░ Agda ░░░░ just the $\_ \ , \_$░░░░ ░░░░ is, ░░░░ ░░░░ ░░░░ to ░░░░ ░░░░ around the ░░░░
 
 $$
 \begin{aligned}
@@ -442,7 +442,7 @@ $$
 \end{aligned}
 $$
 
-░░░░ can ░░░░ ░░░░ constructor automatically ░░░░ adding the constructor ░░░░ to ░░░░ ░░░░ ░░░░
+We can derive ░░░░ constructor automatically ░░░░ adding ░░░░ constructor ░░░░ to the record definition,
 
 $$
 \begin{aligned}
@@ -454,7 +454,7 @@ $$
 \end{aligned}
 $$
 
-What ░░░░ we do with ░░░░ We ░░░░ ░░░░ ░░░░ $\textsf{curry}$ that ░░░░ a function ░░░░ ░░░░ ░░░░ a curried ░░░░
+░░░░ ░░░░ ░░░░ do ░░░░ products? ░░░░ ░░░░ a ░░░░ $\textsf{curry}$ that ░░░░ a function ░░░░ ░░░░ ░░░░ ░░░░ curried ░░░░
 
 $$
 \begin{aligned}
@@ -463,7 +463,7 @@ $$
 \end{aligned}
 $$
 
-░░░░ can also do the reverse and translate ░░░░ curried ░░░░ ░░░░ into one on ░░░░
+░░░░ can also do the reverse ░░░░ ░░░░ ░░░░ ░░░░ function back into ░░░░ on products,
 
 $$
 \begin{aligned}
@@ -471,7 +471,7 @@ $$
 &\textsf{uncurry}\ \textsf{g}\ =\ \lambda \ \textsf{x} \to \textsf{g}\ (\textsf{proj}_1\ \textsf{x})\ (\textsf{proj}_2\ \textsf{x})
 \end{aligned}
 $$
-Indeed, the two ░░░░ ░░░░ inverse to ░░░░ other ░░░░ that ░░░░ $\textsf{curry}\ (\textsf{uncurry}\ \textsf{g})\ =\ \textsf{g}$ and   $\textsf{uncurry}\ (\textsf{curry}\ \textsf{f})\ =\ \textsf{f}$. ░░░░ ░░░░ ░░░░ ░░░░ ░░░░ what ░░░░ ░░░░ ░░░░
+░░░░ ░░░░ two functions ░░░░ ░░░░ ░░░░ ░░░░ other ░░░░ that ░░░░ $\textsf{curry}\ (\textsf{uncurry}\ \textsf{g})\ =\ \textsf{g}$ ░░░░   $\textsf{uncurry}\ (\textsf{curry}\ \textsf{f})\ =\ \textsf{f}$. ░░░░ first ░░░░ follows ░░░░ ░░░░ we already ░░░░
 
 $$
 \begin{aligned}
@@ -482,7 +482,7 @@ $$
 &= \textsf{g} \quad &&\textrm{Use $\eta$ twice}
 \end{aligned}
 $$
-For ░░░░ 2nd equation ░░░░ ░░░░ ░░░░ $\eta$-equality ░░░░ ░░░░ which says that $(\textsf{proj}_1\ \textsf{x},\ \textsf{proj}_2\ \textsf{x}) = \textsf{x}$. ░░░░ is also ░░░░ _surjective pairing_░░░░
+For ░░░░ ░░░░ ░░░░ ░░░░ ░░░░ an $\eta$░░░░ for ░░░░ which ░░░░ ░░░░ $(\textsf{proj}_1\ \textsf{x},\ \textsf{proj}_2\ \textsf{x}) = \textsf{x}$░░░░ ░░░░ is ░░░░ called _surjective pairing_,
 
 $$
 \begin{aligned}
@@ -493,12 +493,12 @@ $$
 &= \textsf{f} \quad &&\textrm{$\eta$ for functions} 
 \end{aligned}
 $$
-This ░░░░ that ░░░░ type ░░░░ functions over ░░░░ ░░░░ ░░░░ ░░░░ are ░░░░  
-░░░░ functional programmers ░░░░ ░░░░ ░░░░ ░░░░ ░░░░ ░░░░
+This ░░░░ that ░░░░ type of ░░░░ ░░░░ products and ░░░░ functions are ░░░░  
+Most ░░░░ ░░░░ ░░░░ ░░░░ work ░░░░ curried functions.
 
 #### Strong Sums (?)
 
-░░░░ can ░░░░ to play ░░░░ similar game for coproducts. First of all, using ░░░░ ░░░░ we ░░░░ ░░░░ ░░░░
+We can try to play ░░░░ ░░░░ ░░░░ for ░░░░ ░░░░ ░░░░ ░░░░ using ░░░░ ░░░░ ░░░░ can ░░░░ ░░░░
 
 $$
 \begin{aligned}
@@ -506,7 +506,7 @@ $$
 &\textsf{case-c} = \textsf{uncurry}\ \textsf{case}
 \end{aligned}
 $$
-and hence ░░░░ ░░░░ of ░░░░ ░░░░
+and hence the inverse of ░░░░ is,
 
 $$
 \begin{aligned}
@@ -514,12 +514,12 @@ $$
 &\textsf{uncase}\ \textsf{h} = (\lambda \ \textsf{a} \to \textsf{h} \ (\textsf{inj}_1\ \textsf{a}) ,\ \lambda \ \textsf{b} \to \textsf{h} \ (\textsf{inj}_2\ \textsf{b}))
 \end{aligned}
 $$
-░░░░ would hope that the functions ░░░░ ░░░░ to ░░░░ ░░░░ that is,
+We would ░░░░ that the functions ░░░░ inverse to each ░░░░ that is,
 
 $$
 \textsf{case-c} \circ \textsf{uncase} = \textsf{id} \quad \text{and} \quad \textsf{uncase} \circ \textsf{case-c} = \textsf{id}
 $$
-░░░░ first one we ░░░░ show,
+The first ░░░░ ░░░░ ░░░░ show,
 
 $$
 \begin{aligned}
@@ -530,18 +530,18 @@ $$
 &= \textsf{f} \quad &&\textrm{Surjective pairing}
 \end{aligned}
 $$
-However, the 2nd equality doesn’t ░░░░ ░░░░ ░░░░ ░░░░ ░░░░ can prove ░░░░ ░░░░ propositional ░░░░ $\_ \equiv \_$, ░░░░ ░░░░ ░░░░ ░░░░ ░░░░ introduce later. ░░░░ equality $\_ = \_$ we have been ░░░░ here when ░░░░ _about_ $\lambda$-terms ░░░░ ░░░░ **definitional equality**.
+░░░░ ░░░░ 2nd equality ░░░░ hold ░░░░ Agda. ░░░░ ░░░░ ░░░░ ░░░░ ░░░░ using ░░░░ equality $\_ \equiv \_$░░░░ ░░░░ ░░░░ are ░░░░ ░░░░ introduce later. The ░░░░ $\_ = \_$ ░░░░ have been ░░░░ here when talking _about_ $\lambda$-terms ░░░░ ░░░░ **definitional equality**░░░░
 
-Indeed, the $\eta$-laws for ░░░░ ░░░░ ░░░░ pairing is ░░░░ ░░░░ ░░░░ notion ░░░░ _definitional equality_ — they ░░░░ ░░░░ introduced ░░░░ convenience. The corresponding laws ░░░░ ░░░░ ░░░░ ░░░░ ░░░░ numbers) ░░░░ ░░░░ ░░░░ ░░░░ ░░░░ not ░░░░ ░░░░ for a language like ░░░░
+Indeed, ░░░░ $\eta$-laws ░░░░ ░░░░ and surjective pairing ░░░░ ░░░░ ░░░░ ░░░░ ░░░░ ░░░░ _definitional equality_ ░░░░ ░░░░ are mainly introduced ░░░░ ░░░░ The corresponding ░░░░ ░░░░ other types (e.g. natural numbers) ░░░░ ░░░░ decidability ░░░░ ░░░░ ░░░░ ░░░░ ░░░░ for a language like ░░░░
 
-It ░░░░ ░░░░ (though ░░░░ ░░░░ straightforward) to add $\eta$░░░░ ░░░░ $\_ + \_$░░░░ ░░░░ this is usually ░░░░ ░░░░ because it ░░░░ quickly lead ░░░░ an exponential ░░░░ in ░░░░ trees ░░░░ become computationally too ░░░░
+It ░░░░ ░░░░ (though not ░░░░ ░░░░ ░░░░ add $\eta$░░░░ for $\_ + \_$░░░░ ░░░░ this ░░░░ usually ░░░░ ░░░░ ░░░░ it would quickly ░░░░ ░░░░ ░░░░ exponential blow-up in case trees ░░░░ ░░░░ computationally too ░░░░
 
 #### Finite Types
 
-The ░░░░ $\_ \textsf{×} \_$ we ░░░░ ░░░░ handles ░░░░ binary case ░░░░ products. We can ░░░░ ░░░░ ░░░░ ░░░░ to handle ░░░░ components, ░░░░ in $\textsf{A} \ × \ \textsf{B} \ × \ \textsf{C}$. ░░░░ ░░░░ ░░░░ ░░░░ ░░░░ ░░░░ use records ░░░░ ░░░░ more ░░░░ field ░░░░ ░░░░ $\textsf{proj}_1$░░░░ etc.
+The ░░░░ $\_ \textsf{×} \_$ ░░░░ have introduced handles the ░░░░ ░░░░ of ░░░░ ░░░░ ░░░░ use ░░░░ several times to ░░░░ more components, ░░░░ ░░░░ $\textsf{A} \ × \ \textsf{B} \ × \ \textsf{C}$░░░░ In ░░░░ it ░░░░ better ░░░░ use ░░░░ ░░░░ ░░░░ more meaningful field names ░░░░ $\textsf{proj}_1$, ░░░░
 
-However, ░░░░ interesting case ░░░░ ░░░░ ░░░░ ░░░░ ░░░░ is ░░░░ nullary ░░░░ or ░░░░ ░░░░  
-░░░░ ░░░░ ░░░░ is denoted ░░░░ $\top$ ░░░░ can ░░░░ ░░░░ ░░░░ ░░░░ ░░░░ ░░░░ no ░░░░
+However, ░░░░ interesting case ░░░░ ░░░░ by binary ░░░░ ░░░░ the nullary ░░░░ ░░░░ ░░░░ type.  
+In ░░░░ this ░░░░ ░░░░ ░░░░ $\top$ and can be ░░░░ as a record with no ░░░░
 
 $$
 \begin{aligned}
@@ -549,9 +549,9 @@ $$
 &\quad \textsf{\textbf{constructor}}\ \textsf{tt}
 \end{aligned}
 $$
-It has one element $\textsf{tt} : \top$░░░░
+It ░░░░ ░░░░ element $\textsf{tt} : \top$░░░░
 
-We ░░░░ ░░░░ ░░░░ ░░░░ ░░░░ with ░░░░ ░░░░ derive ░░░░ empty sum, ░░░░ is a ░░░░ ░░░░ no injections,
+We can ░░░░ ░░░░ same game with ░░░░ ░░░░ ░░░░ the ░░░░ sum, ░░░░ is a ░░░░ with ░░░░ injections,
 
 $$
 \begin{aligned}
@@ -559,7 +559,7 @@ $$
 \end{aligned}
 $$
 
-░░░░ ░░░░ ░░░░ is the ░░░░ ░░░░ ░░░░ ░░░░ a ░░░░ ░░░░ no ░░░░ A version of ░░░░ ░░░░ the empty ░░░░ ░░░░ ░░░░ ░░░░
+The empty ░░░░ is ░░░░ ░░░░ type; ░░░░ ░░░░ ░░░░ ░░░░ ░░░░ no elements. ░░░░ version ░░░░ case for the empty type ░░░░ ░░░░ useful,
 
 $$
 \begin{aligned}
@@ -568,9 +568,9 @@ $$
 \end{aligned}
 $$
 
-We ░░░░ ░░░░ any ░░░░ for $\bot$ — Agda ░░░░ ░░░░ ░░░░ $()$ which means this ░░░░ analysis ░░░░ ░░░░ intentionally ░░░░ empty. ░░░░ ░░░░ fine — we ░░░░ never ░░░░ this function because ░░░░ ░░░░ an ░░░░ ░░░░ ░░░░ empty ░░░░
+We ░░░░ ░░░░ ░░░░ ░░░░ ░░░░ $\bot$ ░░░░ Agda marks ░░░░ ░░░░ $()$ which means this ░░░░ analysis has ░░░░ ░░░░ left ░░░░ ░░░░ is fine — we ░░░░ never ░░░░ ░░░░ ░░░░ because ░░░░ isn’t an ░░░░ in the empty ░░░░
 
-We ░░░░ use ░░░░ unit ░░░░ $\top$ and ░░░░ $\uplus$ to construct some finite ░░░░ ░░░░ ░░░░ $\textsf{Two} : \textsf{Set}$ is ░░░░ type ░░░░ 2 ░░░░
+We ░░░░ ░░░░ ░░░░ unit ░░░░ $\top$ and sums $\uplus$ ░░░░ ░░░░ some finite ░░░░ ░░░░ example, $\textsf{Two} : \textsf{Set}$ is a ░░░░ with ░░░░ elements,
 
 $$
 \begin{aligned}
@@ -578,7 +578,7 @@ $$
 &\textsf{Two} = \top \uplus \top
 \end{aligned}
 $$
-Here are the ░░░░
+░░░░ are the elements,
 
 $$
 \begin{aligned}
@@ -589,7 +589,7 @@ $$
 \end{aligned}
 $$
 
-We ░░░░ add one more ░░░░ to ░░░░ ░░░░ ░░░░ Three, ░░░░ type ░░░░ ░░░░ elements,
+░░░░ can ░░░░ ░░░░ ░░░░ element ░░░░ ░░░░ ░░░░ construct ░░░░ a type ░░░░ 3 elements,
 
 $$
 \begin{aligned}
@@ -604,7 +604,7 @@ $$
 \end{aligned}
 $$
 
-However, as already ░░░░ ░░░░ ░░░░ of ░░░░ ░░░░ practice it is usually preferable to use $\textsf{\textbf{data}}$ to ░░░░ ░░░░ ░░░░
+░░░░ ░░░░ already in ░░░░ ░░░░ of products, ░░░░ ░░░░ it ░░░░ ░░░░ ░░░░ to ░░░░ $\textsf{\textbf{data}}$ to define ░░░░ ░░░░
 
 $$
 \begin{aligned}
@@ -620,13 +620,13 @@ $$
 \end{aligned}
 $$
 
-░░░░ many elements are ░░░░ $\textsf{Two} \uplus \textsf{Three}$░░░░ An example ░░░░ $\textsf{inj}_2\ \textsf{one}_2$. ░░░░ is ░░░░ choice ░░░░ $\textsf{inj}_1$ and $\textsf{inj}_2$ — if we ░░░░ $\textsf{inj}_1$ we get 2 options, and if we choose $\textsf{inj}_2$ ░░░░ get ░░░░ ░░░░ ░░░░ we ░░░░ $2 + 3 = 5$ ░░░░ elements,
+How many ░░░░ ░░░░ ░░░░ $\textsf{Two} \uplus \textsf{Three}$? An ░░░░ is $\textsf{inj}_2\ \textsf{one}_2$░░░░ ░░░░ ░░░░ the ░░░░ between $\textsf{inj}_1$ and $\textsf{inj}_2$ ░░░░ ░░░░ we choose $\textsf{inj}_1$ we get 2 options, and if we choose $\textsf{inj}_2$ ░░░░ get ░░░░ ░░░░ So we ░░░░ $2 + 3 = 5$ ░░░░ elements,
 
 $$\textsf{inj}_1\ \textsf{zero}_2, \ \textsf{inj}_1\ \textsf{one}_2, \ \textsf{inj}_2\ \textsf{zero}_3, \ \textsf{inj}_2\ \textsf{one}_3, \ \textsf{inj}_2\, \ \textsf{two}_3$$     
 
-In ░░░░ ░░░░ ░░░░ ░░░░ $n$ ░░░░ ░░░░ B ░░░░ $m$ ░░░░ ░░░░ $A \uplus B$ has $n + m$ ░░░░
+░░░░ ░░░░ ░░░░ ░░░░ has $n$ ░░░░ and ░░░░ ░░░░ $m$ elements, then $A \uplus B$ has $n + m$ elements.
 
-░░░░ many elements ░░░░ in $\textsf{Two} \textsf{×} \textsf{Three}$? ░░░░ typical ░░░░ is $\textsf{one}_2 , \textsf{two}_3$░░░░ ░░░░ ░░░░ construct ░░░░ ░░░░ ░░░░ ░░░░ ░░░░ ░░░░ ░░░░ ░░░░ for ░░░░ ░░░░ ░░░░ and ░░░░ ░░░░ the ░░░░ so $2 \times 3 = 6$ elements,
+How many elements ░░░░ in $\textsf{Two} \textsf{×} \textsf{Three}$? ░░░░ ░░░░ ░░░░ ░░░░ $\textsf{one}_2 , \textsf{two}_3$░░░░ ░░░░ ░░░░ ░░░░ ░░░░ ░░░░ ░░░░ we ░░░░ 2 independent ░░░░ ░░░░ ░░░░ ░░░░ ░░░░ and ░░░░ ░░░░ ░░░░ ░░░░ ░░░░ $2 \times 3 = 6$ ░░░░
 
 {{< rawHtml >}}
 <table class="SF_KATEX_TABLE">
@@ -645,9 +645,9 @@ In ░░░░ ░░░░ ░░░░ ░░░░ $n$ ░░░░ ░░�
 
 
 
-In ░░░░ ░░░░ A has $n$ ░░░░ ░░░░ ░░░░ ░░░░ $m$ elements, then $\textsf{A} \times \textsf{B}$ ░░░░ $\textsf{m} \times \textsf{n}$ ░░░░
+In general, if A has $n$ ░░░░ and B has $m$ elements, ░░░░ $\textsf{A} \times \textsf{B}$ ░░░░ $\textsf{m} \times \textsf{n}$ ░░░░
 
-What about the ░░░░ ░░░░ ░░░░ ░░░░ elements ░░░░ in $\textsf{Two} \to \textsf{Three}$? ░░░░ is ░░░░ typical example,
+░░░░ ░░░░ the function type? How many elements are ░░░░ $\textsf{Two} \to \textsf{Three}$? Here ░░░░ ░░░░ typical example,
 
 $$
 \begin{aligned}
@@ -657,9 +657,9 @@ $$
 \end{aligned}
 $$
 
-We can define ░░░░ ░░░░ function ░░░░ pattern matching: we ░░░░ ░░░░ choices ░░░░ each case, ░░░░ $3 \times 3 = 3^2 = 9$ ░░░░ ░░░░ unlike products ░░░░ ░░░░ ░░░░ ░░░░ ░░░░ ░░░░ symmetric.
+░░░░ can ░░░░ any such function ░░░░ ░░░░ ░░░░ ░░░░ ░░░░ 3 ░░░░ ░░░░ ░░░░ case, ░░░░ $3 \times 3 = 3^2 = 9$ ░░░░ Now unlike products ░░░░ sums, function types are ░░░░ ░░░░
 
-░░░░ ░░░░ ░░░░ are in $\textsf{Three} \to \textsf{Two}$░░░░ ░░░░ ░░░░ is a typical ░░░░
+How many elements are in $\textsf{Three} \to \textsf{Two}$░░░░ Here again is a ░░░░ ░░░░
 
 $$
 \begin{aligned}
@@ -670,17 +670,17 @@ $$
 \end{aligned}
 $$
 
-░░░░ ░░░░ ░░░░ cases because there are ░░░░ ░░░░ ░░░░ $\textsf{Three}$, and in each case ░░░░ have a choice of 2, ░░░░ ░░░░ ░░░░ $2 \times 2 \times 2 = 2^3 = 8$ ░░░░
+There are 3 cases because ░░░░ are 3 elements ░░░░ $\textsf{Three}$░░░░ ░░░░ ░░░░ each ░░░░ we have a choice ░░░░ 2, hence we have $2 \times 2 \times 2 = 2^3 = 8$ ░░░░
 
-░░░░ these ░░░░ we can ░░░░ that ░░░░ ░░░░ if A has $n$ elements ░░░░ B ░░░░ $m$ ░░░░ then $A \to B$ ░░░░ $m^n$ ░░░░ ░░░░ ░░░░ ░░░░ ░░░░ ░░░░ type ░░░░ often written ░░░░ an ░░░░ that ░░░░ $A \to B$ ░░░░ ░░░░ ░░░░ $B^A$░░░░
+░░░░ these ░░░░ ░░░░ ░░░░ see ░░░░ in general ░░░░ A has $n$ ░░░░ ░░░░ B ░░░░ $m$ ░░░░ ░░░░ $A \to B$ has $m^n$ ░░░░ ░░░░ in mathematics the function ░░░░ ░░░░ ░░░░ written as an exponential, ░░░░ is $A \to B$ is ░░░░ as $B^A$.
 
-Previously, ░░░░ have shown that types $A \times B \to C$ ░░░░ $A \to B \to C$ ░░░░ equivalent ░░░░ curry and uncurry). ░░░░ ░░░░ in ░░░░ ░░░░ ░░░░ ░░░░ an ░░░░ friend ░░░░ high school,
+░░░░ ░░░░ have shown ░░░░ types $A \times B \to C$ ░░░░ $A \to B \to C$ ░░░░ equivalent ░░░░ ░░░░ and ░░░░ Writing ░░░░ ░░░░ exponential ░░░░ we find ░░░░ ░░░░ ░░░░ ░░░░ high ░░░░
 
 $$
 C^{A \times B} = (C^B)^A
 $$
 
-Similarly, ░░░░ strong ░░░░ we ░░░░ ░░░░ ░░░░ $(A \to C) \times (B \to C)$ ░░░░ $A \uplus B \to C$ ░░░░ equivalent (via $\textsf{case-c}$ and $\textsf{uncase}$). ░░░░ ░░░░ ░░░░ $+$ ░░░░ $\uplus$░░░░ ░░░░ arrive ░░░░ another well-known equation:
+Similarly, with strong coproducts we ░░░░ ░░░░ that $(A \to C) \times (B \to C)$ ░░░░ $A \uplus B \to C$ are equivalent (via $\textsf{case-c}$ and $\textsf{uncase}$). ░░░░ ░░░░ write $+$ ░░░░ $\uplus$, ░░░░ ░░░░ ░░░░ ░░░░ well-known ░░░░
 
 $$
 C^A \times C^B = C^{A + B}
@@ -688,20 +688,20 @@ $$
 
 ### History
 
-$\lambda$-calculus ░░░░ ░░░░ by ░░░░ ░░░░ ░░░░ ░░░░ it ░░░░ papers ░░░░ formal ░░░░ in ░░░░ 1930s. The ░░░░ ░░░░ ░░░░ ░░░░ ░░░░ of $\lambda$ ░░░░ ░░░░ accident: ░░░░ used a ░░░░ notation where ░░░░ ░░░░ ░░░░ ░░░░ and the usage ░░░░ a variable. But ░░░░ typesetter ░░░░ was ░░░░ only ░░░░ LaTeX but ░░░░ ░░░░ went back ░░░░ ░░░░ _Sorry Professor, I can’t do that. But this looks a bit like a $\lambda$. Is it ok if I use just this?_
+$\lambda$-calculus was invented by ░░░░ ░░░░ ░░░░ used ░░░░ in papers ░░░░ formal logic ░░░░ ░░░░ 1930s. The ░░░░ ░░░░ ░░░░ ░░░░ ░░░░ ░░░░ $\lambda$ ░░░░ by ░░░░ Church ░░░░ ░░░░ graphical notation where ░░░░ connected the ░░░░ ░░░░ ░░░░ ░░░░ ░░░░ ░░░░ variable. But the typesetter ░░░░ was not only ░░░░ ░░░░ but ░░░░ ░░░░ went ░░░░ and ░░░░ _Sorry Professor, I can’t do that. But this looks a bit like a $\lambda$. Is it ok if I use just this?_
 
-░░░░ realised ░░░░ ░░░░ ░░░░ the ░░░░ ░░░░ ░░░░ ░░░░ was that he ░░░░ define ░░░░ many weird functions, ░░░░ the ░░░░ called _fix point combinator_ which allows ░░░░ compute the fixpoint ░░░░ ░░░░ function by general ░░░░ But ░░░░ is the ░░░░ point ░░░░ negation? To ░░░░ ░░░░ sort ░░░░ problems ░░░░ also invented ░░░░ typed $\lambda$░░░░
+Church realised that ░░░░ ░░░░ the ░░░░ ░░░░ his ░░░░ was ░░░░ he could define ░░░░ ░░░░ ░░░░ functions, ░░░░ ░░░░ ░░░░ ░░░░ _fix point combinator_ ░░░░ allows to ░░░░ the ░░░░ of ░░░░ ░░░░ ░░░░ general ░░░░ ░░░░ ░░░░ ░░░░ the ░░░░ point ░░░░ negation? To avoid ░░░░ ░░░░ of problems Church ░░░░ ░░░░ ░░░░ typed $\lambda$░░░░
 
-Church had ░░░░ primitive types, $\iota$ (the greek letter _iota_) ░░░░ for ░░░░ and ░░░░ (the ░░░░ letter $\omicron$ but it ░░░░ the ░░░░ ░░░░ an ░░░░ standing ░░░░ propositions, motivated by his intended ░░░░ to formal logic. ░░░░ will ░░░░ consider ░░░░ fixed ░░░░ ░░░░ base ░░░░ ░░░░ a ░░░░ ░░░░ as type ░░░░
+Church had two ░░░░ types, $\iota$ ░░░░ ░░░░ ░░░░ _iota_) ░░░░ ░░░░ ░░░░ ░░░░ ░░░░ ░░░░ greek letter $\omicron$ ░░░░ it ░░░░ ░░░░ ░░░░ ░░░░ ░░░░ o) ░░░░ ░░░░ ░░░░ motivated ░░░░ his intended application ░░░░ ░░░░ ░░░░ We will ░░░░ consider ░░░░ fixed ░░░░ ░░░░ ░░░░ types but a ░░░░ ░░░░ ░░░░ type ░░░░
 
-The ░░░░ $\lambda$-calculus ░░░░ still useful as a ░░░░ programming language ░░░░ ░░░░ an ░░░░ to ░░░░ ░░░░ ░░░░ when ░░░░ ░░░░ ░░░░ Church ░░░░ ░░░░ ░░░░ Turing machines ░░░░ $\lambda$░░░░ compute ░░░░ ░░░░ ░░░░ ░░░░ ░░░░ ░░░░ ░░░░ ░░░░ of this ░░░░ to ░░░░ computational mechanism ░░░░ known as ░░░░ ░░░░ thesis.
+The ░░░░ $\lambda$░░░░ is ░░░░ useful as ░░░░ ░░░░ ░░░░ language ░░░░ is an alternative ░░░░ ░░░░ machines. Indeed ░░░░ ░░░░ Turing ░░░░ Church ░░░░ realised that ░░░░ ░░░░ and $\lambda$░░░░ ░░░░ ░░░░ same set of computable ░░░░ ░░░░ ░░░░ of ░░░░ ░░░░ to all ░░░░ mechanism is ░░░░ as the ░░░░ ░░░░
 
-In ░░░░ ░░░░ ░░░░ ░░░░ $\lambda$-calculus ░░░░ ░░░░ ░░░░ ░░░░ ░░░░ $\lambda$-calculus ░░░░ ░░░░ ░░░░ a type system on top, as a ░░░░ of ░░░░ ░░░░ to untyped terms. ░░░░ do not follow this ░░░░ which is perhaps too syntactic and ░░░░ ░░░░ ░░░░ as ░░░░ ░░░░ call this _intrinsic typing_░░░░ Yes, it ░░░░ ░░░░ ░░░░ ░░░░ ░░░░ to ░░░░ $\lambda$-terms ░░░░ ░░░░ ░░░░ ░░░░ point think about untyped ░░░░ but ░░░░ also need to ░░░░ ░░░░ ░░░░ characters ░░░░ ░░░░ ░░░░ will ░░░░ talk about these implementation ░░░░
+░░░░ many papers about typed $\lambda$-calculus one ░░░░ ░░░░ the ░░░░ $\lambda$░░░░ and then ░░░░ a ░░░░ system ░░░░ ░░░░ as ░░░░ way of assigning types to untyped terms. ░░░░ do ░░░░ ░░░░ ░░░░ view ░░░░ ░░░░ perhaps too syntactic ░░░░ ░░░░ typed ░░░░ as ░░░░ We ░░░░ this _intrinsic typing_. ░░░░ ░░░░ ░░░░ true if ░░░░ ░░░░ ░░░░ ░░░░ $\lambda$-terms we ░░░░ ░░░░ some point think ░░░░ ░░░░ ░░░░ ░░░░ ░░░░ also ░░░░ ░░░░ ░░░░ about strings, ░░░░ ░░░░ ░░░░ ░░░░ will ░░░░ ░░░░ ░░░░ these ░░░░ ░░░░
 
-Combinatory ░░░░ ░░░░ ░░░░ invented ░░░░ $\lambda$-calculus ░░░░ ░░░░ Schönfinkel in the ░░░░ ░░░░ his interest was in formal logic and he realised ░░░░ combinators ░░░░ a ░░░░ way to ░░░░ the complexities ░░░░ variables. This ░░░░ also the ░░░░ ░░░░ ░░░░ Curry who reinvented combinatory logic ░░░░ ░░░░ ░░░░ in the ░░░░ ░░░░ know ░░░░ ░░░░ Some people ░░░░ ░░░░ ░░░░ ░░░░ ░░░░ _currying_ a ░░░░ with several ░░░░ which ░░░░ ░░░░ after ░░░░ ░░░░ ░░░░ ░░░░ ░░░░ _schönfinkeln_ ░░░░ this ░░░░ caught on.
+Combinatory logic ░░░░ ░░░░ ░░░░ ░░░░ $\lambda$░░░░ ░░░░ Moses Schönfinkel ░░░░ ░░░░ 1920s. Again his ░░░░ ░░░░ ░░░░ ░░░░ logic and ░░░░ ░░░░ ░░░░ combinators ░░░░ a nice ░░░░ ░░░░ avoid the complexities ░░░░ ░░░░ ░░░░ ░░░░ also the ░░░░ of Haskell Curry ░░░░ ░░░░ ░░░░ logic ░░░░ or ░░░░ ░░░░ the ░░░░ ░░░░ ░░░░ ░░░░ now. Some ░░░░ say ░░░░ the ░░░░ ░░░░ _currying_ ░░░░ ░░░░ with several ░░░░ which is named ░░░░ ░░░░ should have been ░░░░ _schönfinkeln_ but ░░░░ ░░░░ caught ░░░░
 
-To understand our ░░░░ ░░░░ products ░░░░ sums ░░░░ (also called ░░░░ one needs to ░░░░ ░░░░ ░░░░ theory. Category theory ░░░░ basically an abstract form ░░░░ ░░░░ which was ░░░░ ░░░░ Saunders ░░░░ ░░░░ others. Their ░░░░ came ░░░░ ░░░░ ░░░░ ░░░░ algebraic ░░░░ However, later ░░░░ was ░░░░ ░░░░ ░░░░ theory ░░░░ also extremely ░░░░ for ░░░░ ░░░░ ░░░░ One ░░░░ ░░░░ was Joachim ░░░░ observation ░░░░ a fundamental ░░░░ ░░░░ ░░░░ ░░░░ _cartesian closed categories_░░░░ corresponds exactly ░░░░ typed $\lambda$-calculus. In ░░░░ categorical account products are ░░░░ built-in ░░░░ ░░░░ ░░░░ ░░░░ characterised ░░░░ the ░░░░ One ░░░░ the beautiful ░░░░ of ░░░░ theory is the presence of a ░░░░ ░░░░_duality_) and ░░░░ ░░░░ ░░░░ ░░░░ ░░░░ ░░░░ ░░░░ ░░░░ ░░░░ ░░░░ products are ░░░░ ░░░░ ░░░░ as we ░░░░ introduced which are ░░░░ ░░░░ ░░░░
+To understand our presentation ░░░░ ░░░░ ░░░░ sums better (also called coproducts) ░░░░ needs to ░░░░ ░░░░ category ░░░░ Category ░░░░ ░░░░ basically an ░░░░ ░░░░ ░░░░ algebra ░░░░ was introduced by ░░░░ MacLane ░░░░ ░░░░ ░░░░ ░░░░ ░░░░ mainly from pure mathematics, algebraic ░░░░ ░░░░ later it was realised that category theory ░░░░ also ░░░░ ░░░░ for ░░░░ computer ░░░░ One important ░░░░ ░░░░ ░░░░ ░░░░ ░░░░ that a ░░░░ ░░░░ ░░░░ ░░░░ ░░░░ _cartesian closed categories_░░░░ corresponds ░░░░ to ░░░░ $\lambda$-calculus. ░░░░ the categorical ░░░░ ░░░░ ░░░░ ░░░░ ░░░░ ░░░░ function ░░░░ are characterised ░░░░ the ░░░░ ░░░░ ░░░░ the ░░░░ features of ░░░░ theory is ░░░░ ░░░░ of ░░░░ ░░░░ ░░░░_duality_░░░░ ░░░░ it turns out that the ░░░░ ░░░░ ░░░░ dual) ░░░░ products are sums or ░░░░ ░░░░ we have introduced ░░░░ ░░░░ ░░░░ ░░░░ useful.
 
-░░░░ this ░░░░ one ░░░░ ░░░░ ░░░░ the mirror ░░░░ of functions is? ░░░░ is ░░░░ longer ░░░░ but ░░░░ ░░░░ answer is that there isn’t one. ░░░░ ░░░░ assume that ░░░░ ░░░░ one, ░░░░ ░░░░ collapses: all $\lambda$░░░░ are ░░░░
+At ░░░░ ░░░░ ░░░░ ░░░░ ░░░░ ░░░░ ░░░░ ░░░░ image of functions is? This is ░░░░ ░░░░ story but ░░░░ short ░░░░ is that ░░░░ isn’t ░░░░ ░░░░ we assume that ░░░░ ░░░░ one, ░░░░ ░░░░ collapses: all $\lambda$░░░░ are ░░░░
 
-$\lambda$░░░░ ░░░░ important for ░░░░ ░░░░ be precise ░░░░ _functional programming_. Indeed the 2nd ░░░░ ░░░░ language, ░░░░ (The ░░░░ is FORTRAN) ░░░░ ░░░░ by ░░░░ McCarthy in ░░░░ ░░░░ 1950s and was ░░░░ ░░░░ ░░░░ (untyped) $\lambda$-calculus. ░░░░ ░░░░ were ░░░░ a component of ░░░░ Edinburgh ░░░░ project (_Logic for computable functions_). ░░░░ ░░░░ ░░░░ Haskell (named after Haskell curry) ░░░░ ░░░░ ░░░░ modern instances of ░░░░ functional ░░░░ ░░░░ Agda’s ░░░░ ░░░░ semantics ░░░░ been influenced ░░░░ ░░░░
+$\lambda$░░░░ ░░░░ ░░░░ for programming, ░░░░ ░░░░ precise in _functional programming_. Indeed the ░░░░ ░░░░ programming language, ░░░░ (The oldest is ░░░░ was developed ░░░░ ░░░░ ░░░░ in ░░░░ ░░░░ ░░░░ ░░░░ ░░░░ ░░░░ ░░░░ ░░░░ ░░░░ $\lambda$-calculus. ░░░░ types ░░░░ introduced, ░░░░ component of the ░░░░ LCF ░░░░ ░░░░_Logic for computable functions_░░░░ ░░░░ languages like ░░░░ ░░░░ ░░░░ Haskell ░░░░ ░░░░ ░░░░ ░░░░ modern instances of ░░░░ functional languages ░░░░ Agda’s syntax ░░░░ ░░░░ has ░░░░ influenced by ░░░░
