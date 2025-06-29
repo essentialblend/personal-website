@@ -15,93 +15,93 @@ bookAuthor: "R Taylor"
 
 #### Space and Time
 
-░░░░ three laws of ░░░░ ░░░░ formulated ░░░░ terms of ░░░░ crucial underlying ░░░░ the ░░░░ ░░░░ _space_, _time_░░░░ _mass_, and _force_. ░░░░ begin ░░░░ reviewing ░░░░ and time.
+░░░░ three ░░░░ of motion are ░░░░ in ░░░░ ░░░░ four ░░░░ underlying ░░░░ ░░░░ ░░░░ ░░░░ _space_░░░░ _time_░░░░ _mass_░░░░ ░░░░ _force_░░░░ ░░░░ ░░░░ by ░░░░ ░░░░ ░░░░ ░░░░
 
 ##### Space 
 
-░░░░ ░░░░ $P$ of the ░░░░ ░░░░ we live ░░░░ ░░░░ ░░░░ labeled ░░░░ a position ░░░░ $\bf{r}$ which ░░░░ ░░░░ ░░░░ and ░░░░ of $P$ ░░░░ ░░░░ chosen origin $O$. ░░░░ most ░░░░ ░░░░ ░░░░ identify a ░░░░ ░░░░ ░░░░ ░░░░ of ░░░░ ░░░░ ░░░░ are in ░░░░ ░░░░ ░░░░ ░░░░ ░░░░ ░░░░ basis. We ░░░░ do this ░░░░ ░░░░ unit ░░░░ ░░░░ ░░░░ of these coordinate ░░░░
+░░░░ ░░░░ $P$ of the three-dimensional ░░░░ we live ░░░░ can ░░░░ labeled ░░░░ ░░░░ position ░░░░ $\bf{r}$ ░░░░ ░░░░ the distance ░░░░ direction ░░░░ $P$ ░░░░ ░░░░ ░░░░ ░░░░ $O$. ░░░░ most ░░░░ way to ░░░░ a ░░░░ ░░░░ in ░░░░ ░░░░ its ░░░░ ░░░░ ░░░░ ░░░░ the directions ░░░░ by ░░░░ orthonormal basis. ░░░░ ░░░░ ░░░░ ░░░░ ░░░░ introducing unit vectors for each of ░░░░ coordinate ░░░░
 $$\bf{r} = x\bf{\hat{x}} + y\bf{\hat{y}} + z\bf{\hat{z}} \tag{1.1}$$
-░░░░ ░░░░ ░░░░ ░░░░ Cartesian ░░░░ ░░░░ ░░░░ $\bf{a} = (1, \ 1, \ 0)$ can be represented as
+For ░░░░ in traditional Cartesian coordinates, ░░░░ ░░░░ $\bf{a} = (1, \ 1, \ 0)$ can ░░░░ ░░░░ as
 
 $$(1 \cdot (1, 0, 0)) + (1 \cdot (0, 1, 0)) + (0 \cdot (0, 0, 1)) = (1, 1, 0) = a$$
 
 ##### Differentiation of Vectors
 
-Since ░░░░ ░░░░ ░░░░ physics ░░░░ ░░░░ ░░░░ ░░░░ imply _derivatives_ ░░░░ ░░░░ vectors. ░░░░ simple case being ░░░░ time derivative of ░░░░ vector ░░░░ depends ░░░░ time, ░░░░ e.g. ░░░░ ░░░░ $\bf{v}(t)$ ░░░░ a ░░░░ is the time ░░░░ of the particle's position $\bf{r}(t)$; that is, $\bf{v} = d\bf{r} / dt = \dot{r}$░░░░ Similarly, ░░░░ would then be ░░░░ time ░░░░ ░░░░ ░░░░ ░░░░ $\bf{a} = d\bf{v}/dt = \ddot{r}$░░░░
+Since most laws of physics ░░░░ ░░░░ ░░░░ also imply _derivatives_ of ░░░░ vectors. A simple ░░░░ ░░░░ ░░░░ time ░░░░ of a vector ░░░░ depends on ░░░░ for ░░░░ the velocity $\bf{v}(t)$ ░░░░ ░░░░ particle ░░░░ the time ░░░░ of the particle's ░░░░ $\bf{r}(t)$░░░░ that is, $\bf{v} = d\bf{r} / dt = \dot{r}$. Similarly, acceleration would then ░░░░ the ░░░░ ░░░░ ░░░░ ░░░░ velocity, $\bf{a} = d\bf{v}/dt = \ddot{r}$░░░░
 
-A ░░░░ ░░░░ is closely analogous ░░░░ that of ░░░░ scalar. Recall ░░░░ if $x(t)$ is a ░░░░ ░░░░ of $t$, then ░░░░ derivative is ░░░░ ░░░░
+░░░░ vector ░░░░ ░░░░ ░░░░ ░░░░ ░░░░ that of ░░░░ ░░░░ Recall that ░░░░ $x(t)$ is ░░░░ scalar ░░░░ ░░░░ $t$, ░░░░ ░░░░ derivative is ░░░░ ░░░░
 $$\dfrac{dx}{dt} = \dot{x} = \lim_{\Delta t \rightarrow 0} \dfrac{\Delta x}{\Delta t} \tag{1.2}$$
-where $\Delta x = x(t + \Delta t) - x(t)$ ░░░░ ░░░░ change in $x$ ░░░░ the time ░░░░ ░░░░ $t$ ░░░░ $t + \Delta t$. ░░░░ in the ░░░░ way, if $\bf{r}(t)$ ░░░░ any ░░░░ that depends on $t$░░░░ we define ░░░░ ░░░░ as $$\dfrac{d\bf{r}}{dt} = \dot{\bf{r}} = \lim_{\Delta t \rightarrow 0} \dfrac{\Delta \bf{r}}{\Delta t} \tag{1.3}$$
+░░░░ $\Delta x = x(t + \Delta t) - x(t)$ ░░░░ ░░░░ ░░░░ ░░░░ $x$ ░░░░ the ░░░░ ░░░░ from $t$ to $t + \Delta t$. ░░░░ in the same ░░░░ if $\bf{r}(t)$ ░░░░ any ░░░░ ░░░░ ░░░░ ░░░░ $t$, ░░░░ ░░░░ ░░░░ derivative ░░░░ $$\dfrac{d\bf{r}}{dt} = \dot{\bf{r}} = \lim_{\Delta t \rightarrow 0} \dfrac{\Delta \bf{r}}{\Delta t} \tag{1.3}$$
 where $$\Delta\bf{r} = \bf{r}(t + \Delta t) - \bf{r}(t) \tag{1.4}$$
-░░░░ the ░░░░ change ░░░░ $\bf{r}(t)$░░░░ ░░░░ ░░░░ ░░░░ concerned about the ░░░░ of ░░░░ ░░░░ ░░░░ the moment, ░░░░ ░░░░ presume ░░░░ all vectors ░░░░ ░░░░ ░░░░ differentiable, and ░░░░ ░░░░ ░░░░ ░░░░ ░░░░ ░░░░ for ░░░░ along ░░░░ ░░░░ the standard properties of ░░░░ (i.e. differentiation ░░░░ and properties).
+░░░░ the corresponding ░░░░ in $\bf{r}(t)$. ░░░░ are ░░░░ concerned about ░░░░ ░░░░ ░░░░ ░░░░ limit for ░░░░ ░░░░ ░░░░ can presume ░░░░ all ░░░░ ░░░░ encounter are ░░░░ ░░░░ we can take this ░░░░ existence ░░░░ granted along with ░░░░ the ░░░░ ░░░░ of ░░░░ (i.e. ░░░░ rules ░░░░ ░░░░
 
-░░░░ ░░░░ if $\bf{r}(t)$ and $\bf{s}(t)$ are two ░░░░ ░░░░ functions that depend on $t$, ░░░░ ░░░░ ░░░░ ░░░░ their sum is,
+░░░░ example, if $\bf{r}(t)$ ░░░░ $\bf{s}(t)$ are two ░░░░ valued ░░░░ ░░░░ depend on $t$, then the ░░░░ ░░░░ ░░░░ sum is,
 
 $$
 \dfrac{d}{dt}(\bf{r} + \bf{s}) = \dot{\bf{r}} + \dot{\bf{s}} \tag{1.5}
 $$
-░░░░ ░░░░ $\bf{r}(t)$ is a ░░░░ valued ░░░░ ░░░░ $f(t)$ ░░░░ a ░░░░ ░░░░ ░░░░ ░░░░ the ░░░░ ░░░░ ░░░░ ░░░░ $f(t)\bf{r}(t)$ is given ░░░░ ░░░░ ░░░░ ░░░░ ░░░░ ░░░░ product ░░░░
+Similarly, if $\bf{r}(t)$ ░░░░ ░░░░ ░░░░ ░░░░ function, ░░░░ $f(t)$ is ░░░░ scalar valued function, ░░░░ ░░░░ derivative of ░░░░ product $f(t)\bf{r}(t)$ is given by the ░░░░ ░░░░ of ░░░░ product rule,
 
 $$
 \dfrac{d}{dt}(f\bf{r}) = f\dot{\bf{r}} + \dot{f}\bf{r} \tag{1.6}
 $$
-░░░░ ░░░░ result worth ░░░░ concerns the ░░░░ of ░░░░ derivative ░░░░ the vector. ░░░░ $\bf{r}$░░░░ with components $x$, $y$░░░░ $z$ ░░░░ the position ░░░░ a ░░░░ ░░░░ and ░░░░ want ░░░░ ░░░░ its ░░░░ $\bf{v} = \dot{\bf{r}}$░░░░ When ░░░░ ░░░░ ░░░░ sum,
-$$\bf{r} = x\bf{\hat{x}} + y\bf{\hat{y}} + z\bf{\hat{z}} \tag{1.7}$$░░░░ ░░░░ ░░░░ gives us the sum of the ░░░░ separate derivatives, and ░░░░ the ░░░░ ░░░░ ░░░░ ░░░░ of these contain ░░░░ ░░░░ ░░░░ $6$ terms ░░░░ ░░░░ However the ░░░░ vectors $\hat{\bf{x}}$░░░░ $\hat{\bf{y}}$, $\hat{\bf{z}}$ do ░░░░ depend on ░░░░ change with) ░░░░ ░░░░ their ░░░░ are ░░░░ ░░░░ we're left with only ░░░░ ░░░░
+One more ░░░░ ░░░░ mentioning concerns the components ░░░░ the ░░░░ of the vector. Suppose $\bf{r}$, ░░░░ ░░░░ $x$░░░░ $y$, $z$ is ░░░░ position ░░░░ a moving particle, and ░░░░ ░░░░ ░░░░ ░░░░ ░░░░ ░░░░ $\bf{v} = \dot{\bf{r}}$. ░░░░ we differentiate the sum,
+$$\bf{r} = x\bf{\hat{x}} + y\bf{\hat{y}} + z\bf{\hat{z}} \tag{1.7}$$░░░░ ░░░░ (1.5) ░░░░ us the sum ░░░░ ░░░░ ░░░░ ░░░░ derivatives, and by ░░░░ product ░░░░ ░░░░ each ░░░░ these ░░░░ ░░░░ terms, with $6$ ░░░░ in total. ░░░░ ░░░░ ░░░░ ░░░░ $\hat{\bf{x}}$░░░░ $\hat{\bf{y}}$, $\hat{\bf{z}}$ ░░░░ not ░░░░ on (or change with) time, so ░░░░ derivatives are ░░░░ ░░░░ ░░░░ left ░░░░ ░░░░ three terms.
 
 $$
 \dot{\bf{r}} = \dot{x}\hat{\bf{x}} + \dot{y}\hat{\bf{y}} + \dot{z}\hat{\bf{z}} \tag{1.8}
 $$
-░░░░ this with ░░░░ standard expansion,
+░░░░ ░░░░ ░░░░ the ░░░░ ░░░░
 
 $$
 \bf{v} = v_x\hat{\bf{x}} + v_y\hat{\bf{y}} + v_z\hat{\bf{z}} \tag{1.9}
 $$
-░░░░ ░░░░ ░░░░
+░░░░ ░░░░ that,
 
 $$
 v_x = \dot{x}, \quad v_y = \dot{y}, \quad v_z = \dot{z} \tag{1.10}
 $$
-In words, the Cartesian ░░░░ ░░░░ $\bf{v}$ are ░░░░ ░░░░ ░░░░ of the ░░░░ ░░░░ ░░░░ $\bf{r}$. In many other ░░░░ systems, the ░░░░ unit ░░░░ are ░░░░ ░░░░ and the ░░░░ ░░░░ to 1.10 ░░░░ ░░░░ less transparent.
+In ░░░░ the ░░░░ components ░░░░ $\bf{v}$ are just ░░░░ derivatives of the corresponding ░░░░ ░░░░ $\bf{r}$. In ░░░░ other ░░░░ ░░░░ the ░░░░ ░░░░ vectors ░░░░ not constant, and the result ░░░░ ░░░░ 1.10 ░░░░ ░░░░ ░░░░ ░░░░
 
 ##### Time 
 
-░░░░ classical view is ░░░░ time is ░░░░ single universal ░░░░ $t$ on ░░░░ all ░░░░ agree. That ░░░░ if ░░░░ ░░░░ ░░░░ ░░░░ with accurate ░░░░ ░░░░ properly synchronized, ░░░░ they will ░░░░ ░░░░ to ░░░░ ░░░░ ░░░░ which any given ░░░░ occurred. ░░░░ know ░░░░ ░░░░ is not ░░░░ ░░░░ to the ░░░░ ░░░░ ░░░░ two observers in relative ░░░░ ░░░░ ░░░░ ░░░░ on ░░░░ times. ░░░░ in ░░░░ domain of classical ░░░░ with all ░░░░ much ░░░░ than $c$, ░░░░ can adopt ░░░░ classical ░░░░ of a ░░░░ ░░░░ time.
+░░░░ ░░░░ view ░░░░ that time ░░░░ ░░░░ single ░░░░ ░░░░ $t$ on ░░░░ all ░░░░ ░░░░ That ░░░░ ░░░░ ░░░░ observers ░░░░ equipped ░░░░ ░░░░ ░░░░ all properly ░░░░ ░░░░ ░░░░ ░░░░ agree ░░░░ ░░░░ the time ░░░░ ░░░░ ░░░░ given event ░░░░ ░░░░ ░░░░ that this ░░░░ ░░░░ correct: ░░░░ to ░░░░ ░░░░ ░░░░ relativity, ░░░░ ░░░░ ░░░░ relative motion ░░░░ ░░░░ agree ░░░░ all ░░░░ Nevertheless, ░░░░ ░░░░ ░░░░ ░░░░ ░░░░ ░░░░ ░░░░ ░░░░ ░░░░ much less ░░░░ $c$░░░░ ░░░░ ░░░░ ░░░░ the classical ░░░░ of ░░░░ ░░░░ ░░░░ ░░░░
 
 ##### Reference Frames
 
-Almost every ░░░░ ░░░░ classical ░░░░ ░░░░ a ░░░░ (explicit ░░░░ implicit) ░░░░ ░░░░ ░░░░ frame, ░░░░ ░░░░ ░░░░ ░░░░ of ░░░░ origin ░░░░ axes to label ░░░░ ░░░░ ░░░░ ░░░░ ░░░░ ░░░░ origin ░░░░ ░░░░ ░░░░ ░░░░ difference between two frames may be ░░░░ minor. For ░░░░ ░░░░ may differ ░░░░ ░░░░ their choice of ░░░░ ░░░░ ░░░░ time — what one ░░░░ ░░░░ $t = 0$ the ░░░░ ░░░░ ░░░░ $t' = t_0 \neq 0$.
+Almost every ░░░░ ░░░░ classical mechanics ░░░░ a choice ░░░░ or implicit) of ░░░░ reference frame, that ░░░░ a choice of spatial origin and ░░░░ to ░░░░ positions, and ░░░░ ░░░░ of ░░░░ ░░░░ to ░░░░ ░░░░ The difference ░░░░ two ░░░░ ░░░░ ░░░░ quite ░░░░ ░░░░ instance, they ░░░░ ░░░░ only in ░░░░ choice of ░░░░ ░░░░ of ░░░░ — ░░░░ ░░░░ frame ░░░░ $t = 0$ the other ░░░░ label $t' = t_0 \neq 0$░░░░
 
-Or ░░░░ ░░░░ ░░░░ ░░░░ ░░░░ ░░░░ ░░░░ origins ░░░░ ░░░░ ░░░░ ░░░░ but ░░░░ different ░░░░ ░░░░ the ░░░░ spatial axes. ░░░░ carefully choosing ░░░░ ░░░░ ░░░░ ░░░░ advantage of these different possibilities, you can ░░░░ simplify your ░░░░ ░░░░ example, ░░░░ ░░░░ involving blocks sliding ░░░░ inclines, it often ░░░░ to ░░░░ one axis ░░░░ ░░░░ the ░░░░ ░░░░ more important difference ░░░░ ░░░░ ░░░░ frames are in ░░░░ ░░░░ that is, ░░░░ one origin is moving relative to ░░░░ ░░░░ We ░░░░ ░░░░ that not all such frames are physically ░░░░ In ░░░░ special frames, called ░░░░ frames, ░░░░ ░░░░ ░░░░ ░░░░ ░░░░ in their ░░░░ simple ░░░░ ░░░░ is because one ░░░░ ░░░░ ░░░░ laws is Newton's first law, the law ░░░░ ░░░░ that these frames ░░░░ called inertial.) ░░░░ a second frame is ░░░░ or ░░░░ relative to an ░░░░ ░░░░ ░░░░ ░░░░ ░░░░ frame ░░░░ non-inertial, ░░░░ the ░░░░ ░░░░ ░░░░ ░░░░ particular, ░░░░ laws — do ░░░░ hold ░░░░ ░░░░ standard ░░░░ ░░░░ this ░░░░ frame. ░░░░ ░░░░ ░░░░ that ░░░░ ░░░░ ░░░░ ░░░░ and ░░░░ frames is central to ░░░░ discussion ░░░░ ░░░░ mechanics. It plays an even more ░░░░ role ░░░░ ░░░░ ░░░░ of ░░░░
+░░░░ the ░░░░ frames ░░░░ ░░░░ the same origins ░░░░ ░░░░ ░░░░ time, ░░░░ have different orientations ░░░░ the three spatial axes. By carefully ░░░░ ░░░░ reference frame, ░░░░ ░░░░ ░░░░ these ░░░░ possibilities, ░░░░ ░░░░ sometimes ░░░░ your work. ░░░░ ░░░░ ░░░░ problems involving ░░░░ ░░░░ down ░░░░ ░░░░ often helps to ░░░░ ░░░░ ░░░░ ░░░░ ░░░░ ░░░░ slope. A ░░░░ important difference ░░░░ ░░░░ ░░░░ ░░░░ ░░░░ ░░░░ relative motion; ░░░░ ░░░░ when one ░░░░ ░░░░ moving relative to the other. ░░░░ ░░░░ ░░░░ ░░░░ not ░░░░ ░░░░ ░░░░ are physically equivalent? ░░░░ certain special ░░░░ called inertial ░░░░ ░░░░ basic laws hold true in ░░░░ standard, ░░░░ form. ░░░░ ░░░░ ░░░░ one of these basic ░░░░ ░░░░ ░░░░ ░░░░ law, ░░░░ ░░░░ of ░░░░ that ░░░░ ░░░░ are called ░░░░ If a ░░░░ ░░░░ is accelerating or rotating relative ░░░░ an ░░░░ ░░░░ then this second ░░░░ is ░░░░ ░░░░ ░░░░ basic ░░░░ — in particular, ░░░░ laws — do not ░░░░ in their ░░░░ ░░░░ in ░░░░ ░░░░ frame. ░░░░ ░░░░ ░░░░ ░░░░ ░░░░ distinction between inertial ░░░░ ░░░░ frames ░░░░ ░░░░ ░░░░ ░░░░ ░░░░ ░░░░ classical ░░░░ It ░░░░ ░░░░ ░░░░ ░░░░ explicit ░░░░ in the ░░░░ ░░░░ ░░░░
 
 #### Mass and Force
 
 ##### Mass
 
-The mass of an object characterizes the object's ░░░░ resistance to being ░░░░ ░░░░ big boulder is hard to accelerate, ░░░░ its mass is ░░░░ ░░░░ ░░░░ ░░░░ ░░░░ easy to accelerate, and ░░░░ ░░░░ is ░░░░ ░░░░ make these ░░░░ ░░░░ quantitative we have to ░░░░ ░░░░ ░░░░ ░░░░ mass ░░░░ ░░░░ give ░░░░ prescription ░░░░ ░░░░ the mass ░░░░ ░░░░ ░░░░ ░░░░ ░░░░ ░░░░ ░░░░ chosen ░░░░ The ░░░░ ░░░░ unit of ░░░░ is
-░░░░ kilogram ░░░░ is defined arbitrarily ░░░░ be ░░░░ mass of a chunk of ░░░░ stored ░░░░ the ░░░░ Bureau of Weights and Measures ░░░░ ░░░░ ░░░░ measure the mass of ░░░░ ░░░░ object, we ░░░░ a means ░░░░ ░░░░ ░░░░ ░░░░ principle, ░░░░ can ░░░░ ░░░░ with an ░░░░ balance. ░░░░ ░░░░ objects ░░░░ ░░░░ compared are fastened ░░░░ ░░░░ opposite ░░░░ ░░░░ ░░░░ light, rigid ░░░░ ░░░░ ░░░░ ░░░░ given ░░░░ ░░░░ ░░░░ ░░░░ ░░░░ ░░░░ ░░░░ the ░░░░ ░░░░ equal, ░░░░ will accelerate equally and ░░░░ ░░░░ ░░░░ ░░░░ off without ░░░░ ░░░░ ░░░░ masses are ░░░░ the ░░░░ ░░░░ one ░░░░ ░░░░ less, ░░░░ ░░░░ ░░░░ ░░░░ rotate ░░░░ ░░░░ moves ░░░░ The beauty ░░░░ the ░░░░ ░░░░ is ░░░░ it gives us ░░░░ ░░░░ of ░░░░ comparison ░░░░ is ░░░░ directly on the notion of mass ░░░░ ░░░░ to ░░░░ ░░░░ In ░░░░ ░░░░ ░░░░ ░░░░ ░░░░ be ░░░░ ░░░░ to ░░░░ ░░░░ it ░░░░ fortunate that there ░░░░ much easier ░░░░ to compare ░░░░ ░░░░ which ░░░░ ░░░░ ░░░░ to ░░░░ ░░░░ objects. Since ░░░░ ░░░░ ░░░░ the ░░░░ ░░░░ if ░░░░ only ░░░░ ░░░░ have the same weight (when ░░░░ at the ░░░░ ░░░░ ░░░░ ░░░░ simple, ░░░░ way to check whether ░░░░ masses are ░░░░ ░░░░ ░░░░ to ░░░░ them ░░░░ ░░░░ if ░░░░ ░░░░ ░░░░ equal.
+The ░░░░ of ░░░░ ░░░░ ░░░░ ░░░░ object's inertia—its resistance ░░░░ ░░░░ accelerated: A ░░░░ ░░░░ is ░░░░ to ░░░░ and its mass ░░░░ ░░░░ ░░░░ little ░░░░ ░░░░ easy ░░░░ accelerate, and ░░░░ mass ░░░░ small. To make ░░░░ natural ideas quantitative we ░░░░ to define ░░░░ unit of ░░░░ ░░░░ ░░░░ ░░░░ ░░░░ ░░░░ for ░░░░ the mass ░░░░ ░░░░ ░░░░ in ░░░░ of ░░░░ ░░░░ ░░░░ ░░░░ ░░░░ agreed unit ░░░░ mass ░░░░
+the kilogram and is defined arbitrarily to ░░░░ the mass ░░░░ a ░░░░ of platinum—iridium ░░░░ ░░░░ the ░░░░ Bureau ░░░░ Weights and Measures outside ░░░░ To ░░░░ the mass ░░░░ any ░░░░ ░░░░ we ░░░░ a ░░░░ of comparing ░░░░ ░░░░ ░░░░ ░░░░ ░░░░ be ░░░░ ░░░░ an ░░░░ balance. The two ░░░░ ░░░░ ░░░░ compared ░░░░ fastened ░░░░ ░░░░ ░░░░ ░░░░ of a ░░░░ ░░░░ rod, ░░░░ ░░░░ ░░░░ ░░░░ ░░░░ ░░░░ pull at ░░░░ ░░░░ If the masses ░░░░ ░░░░ ░░░░ will ░░░░ equally ░░░░ ░░░░ rod ░░░░ ░░░░ ░░░░ without rotating; ░░░░ the ░░░░ are unequal, ░░░░ more massive one ░░░░ ░░░░ less, ░░░░ ░░░░ rod will rotate ░░░░ ░░░░ ░░░░ off. ░░░░ beauty of ░░░░ ░░░░ balance ░░░░ ░░░░ it ░░░░ ░░░░ ░░░░ ░░░░ of mass ░░░░ ░░░░ ░░░░ based directly on the notion of ░░░░ ░░░░ ░░░░ to being ░░░░ In ░░░░ an ░░░░ balance ░░░░ be ░░░░ ░░░░ to ░░░░ and it is fortunate that there ░░░░ much ░░░░ ways ░░░░ compare ░░░░ of which the ░░░░ ░░░░ ░░░░ weigh ░░░░ ░░░░ ░░░░ two objects have ░░░░ same ░░░░ if and ░░░░ if ░░░░ ░░░░ the ░░░░ weight (when ░░░░ ░░░░ ░░░░ ░░░░ place), ░░░░ a simple, ░░░░ way to check whether two ░░░░ ░░░░ ░░░░ ░░░░ ░░░░ ░░░░ weigh them ░░░░ see if ░░░░ weights ░░░░ ░░░░
 
-Armed with methods ░░░░ comparing masses, we can easily set ░░░░ ░░░░ scheme ░░░░ measure ░░░░ masses. First, ░░░░ ░░░░ ░░░░ ░░░░ ░░░░ ░░░░ of standard kilograms, each ░░░░ ░░░░ ░░░░ ░░░░ original $1 \ \mathrm{kg}$ ░░░░ using ░░░░ ░░░░ inertial ░░░░ gravitational balance. ░░░░ we ░░░░ ░░░░ multiples ░░░░ fractions ░░░░ the kilogram, again ░░░░ ░░░░ with our ░░░░ (We ░░░░ a $2 \ \mathrm{kg}$ mass ░░░░ one ░░░░ ░░░░ ░░░░ balance ░░░░ ░░░░ $1 \ \mathrm{kg}$ masses placed together on ░░░░ other ░░░░ ░░░░ ░░░░ two half-kg masses by verifying that their ░░░░ are equal and ░░░░ ░░░░ they balance a $1 \ \mathrm{kg}$ ░░░░ and so ░░░░ ░░░░ ░░░░ ░░░░ measure ░░░░ unknown mass by ░░░░ it on one ░░░░ of ░░░░ balance and ░░░░ known ░░░░ ░░░░ ░░░░ other end until ░░░░ ░░░░ ░░░░ any ░░░░ precision.
+░░░░ ░░░░ methods for comparing ░░░░ we ░░░░ ░░░░ set up a scheme to measure ░░░░ ░░░░ ░░░░ we can ░░░░ ░░░░ ░░░░ ░░░░ of standard ░░░░ each ░░░░ checked ░░░░ ░░░░ ░░░░ $1 \ \mathrm{kg}$ mass ░░░░ ░░░░ ░░░░ inertial ░░░░ gravitational balance. ░░░░ ░░░░ can ░░░░ multiples ░░░░ ░░░░ ░░░░ the kilogram, again ░░░░ ░░░░ with our balance. ░░░░ check ░░░░ $2 \ \mathrm{kg}$ ░░░░ ░░░░ ░░░░ ░░░░ of the ░░░░ ░░░░ ░░░░ $1 \ \mathrm{kg}$ masses placed ░░░░ on the ░░░░ ░░░░ ░░░░ check two half-kg masses by ░░░░ that ░░░░ masses ░░░░ ░░░░ and that together ░░░░ balance ░░░░ $1 \ \mathrm{kg}$ mass; ░░░░ so on.) Finally, we can ░░░░ ░░░░ unknown ░░░░ by putting ░░░░ ░░░░ ░░░░ end ░░░░ the ░░░░ ░░░░ loading ░░░░ masses ░░░░ the ░░░░ ░░░░ until ░░░░ ░░░░ to ░░░░ ░░░░ ░░░░
 
 ##### Force
 
-The ░░░░ ░░░░ ░░░░ ░░░░ ░░░░ ░░░░ push ░░░░ ░░░░ is a ░░░░ ░░░░ starting ░░░░ The two main tasks are to ░░░░ ░░░░ ░░░░ ░░░░ forces and ░░░░ ░░░░ ░░░░ ░░░░ can adopt the Newton (abbreviated $\bf{N}$) ░░░░ as the ░░░░ of any single force ░░░░ ░░░░ ░░░░ ░░░░ ░░░░ ░░░░ ░░░░ an acceleration ░░░░ $1 \ \mathrm{m / s^2}$░░░░ 
+░░░░ informal notion ░░░░ force as ░░░░ ░░░░ ░░░░ pull is a surprisingly ░░░░ starting point. ░░░░ two ░░░░ tasks are ░░░░ then, ░░░░ all ░░░░ forces and ░░░░ ░░░░ ░░░░ ░░░░ ░░░░ adopt ░░░░ ░░░░ (abbreviated $\bf{N}$) defined ░░░░ the ░░░░ ░░░░ any ░░░░ ░░░░ ░░░░ ░░░░ a ░░░░ kilogram mass ░░░░ an acceleration of $1 \ \mathrm{m / s^2}$░░░░ 
 
-░░░░ ░░░░ ░░░░ ░░░░ ░░░░ ░░░░ as ░░░░ that ░░░░ the ░░░░ acceleration, ░░░░ is, the direction ░░░░ which the ░░░░ sets off ░░░░ ░░░░ ░░░░ ░░░░ upon it.
+We ░░░░ ░░░░ describe ░░░░ direction as one ░░░░ of ░░░░ resultant ░░░░ ░░░░ is, ░░░░ direction in which ░░░░ ░░░░ ░░░░ ░░░░ ░░░░ force is ░░░░ ░░░░ ░░░░
 
-Now we ░░░░ ░░░░ Newton's ░░░░ ░░░░ of ░░░░
+░░░░ ░░░░ ░░░░ study Newton's three ░░░░ of ░░░░
 
 #### Newton's First and Second Laws; Inertial Frames
 
-░░░░ ░░░░ ░░░░ ░░░░ discuss Newton's laws as they apply to point ░░░░ A point ░░░░ ░░░░ ░░░░ ░░░░ ░░░░ ░░░░ fiction, ░░░░ ░░░░ ░░░░ ░░░░ but ░░░░ ░░░░ that ░░░░ ░░░░ ░░░░ space ░░░░ ░░░░ no ░░░░ ░░░░ of ░░░░ ░░░░ can have ░░░░ kinetic energy but ░░░░ energy ░░░░ rotation ░░░░ of ░░░░ vibrations ░░░░ deformations. ░░░░ the ░░░░ of ░░░░ are ░░░░ ░░░░ ░░░░ ░░░░ ░░░░ for ░░░░ ░░░░ ░░░░ is the reason why ░░░░ start with ░░░░ ░░░░ 
+In this chapter, we ░░░░ Newton's ░░░░ ░░░░ they apply to ░░░░ ░░░░ ░░░░ point ░░░░ ░░░░ particle, is ░░░░ ░░░░ ░░░░ ░░░░ ░░░░ with mass, ░░░░ ░░░░ size, that can move ░░░░ space ░░░░ has ░░░░ ░░░░ ░░░░ ░░░░ ░░░░ It can have translational ░░░░ ░░░░ ░░░░ ░░░░ ░░░░ of ░░░░ ░░░░ of internal vibrations of ░░░░ Naturally, the laws ░░░░ motion ░░░░ ░░░░ ░░░░ point ░░░░ ░░░░ for ░░░░ ░░░░ and ░░░░ ░░░░ reason ░░░░ we start with point masses. 
 
-_Newton's First Law_: **In the absence of forces, a particle moves with constant velocity $\bf{v}$.**
+_Newton's First Law_░░░░ **In the absence of forces, a particle moves with constant velocity $\bf{v}$.**
 
 _Newton's Second Law_░░░░ **For any particle of mass $m$, the net force $\bf{F}$ on the particle is always equal to the mass $m$ times the particle's acceleration.**
 $$\bf{F} = m\bf{a} \tag{1.11}$$
-░░░░ ░░░░ is the second ░░░░ ░░░░ ░░░░ ░░░░ ░░░░ we can ░░░░ this as a second ░░░░ differential ░░░░
+░░░░ ░░░░ ░░░░ the second ░░░░ of position over ░░░░ ░░░░ ░░░░ state this as ░░░░ second ░░░░ ░░░░ ░░░░
 $$\bf{F} = m\bf{a} = m\ddot{\bf{r}} \tag{1.12}$$
-The ░░░░ ░░░░ can be ░░░░ in terms of ░░░░ particle's _momentum_, ░░░░ ░░░░ $$\bf{p} = m\bf{v} \tag{1.13}$$
-Since ░░░░ ░░░░ mechanics, ░░░░ take ░░░░ ░░░░ ░░░░ the mass $m$ ░░░░ ░░░░ so ░░░░
+░░░░ ░░░░ ░░░░ can be ░░░░ ░░░░ terms ░░░░ ░░░░ ░░░░ _momentum_░░░░ ░░░░ as, $$\bf{p} = m\bf{v} \tag{1.13}$$
+░░░░ in ░░░░ mechanics, we ░░░░ for ░░░░ that the ░░░░ $m$ remains constant, so that,
 
 $$
 \dot{\bf{p}} = m\bf{\dot{v}} = m\bf{a}
@@ -110,10 +110,10 @@ $$\therefore \quad \bf{F} = \bf{\dot{p}} \tag{1.14}$$
 
 ##### Differential Equations
 
-░░░░ ░░░░ in ░░░░ ░░░░ $m\bf{\ddot{r}} = \bf{F}$░░░░ Newton's ░░░░ law ░░░░ a ░░░░ ░░░░ for ░░░░ particle's position $\bf{r}(t)$░░░░ That is, it is ░░░░ ░░░░ for the ░░░░ ░░░░ $\bf{r}(t)$ that involves ░░░░ ░░░░ ░░░░ ░░░░ function. ░░░░ all the laws of ░░░░ are, or ░░░░ be cast ░░░░ ░░░░ ░░░░ ░░░░ ░░░░ huge proportion of a ░░░░ ░░░░ ░░░░ spent ░░░░ these ░░░░ In particular, ░░░░ ░░░░ the problems ░░░░ this book involve differential ░░░░ — ░░░░ Newton's second ░░░░ or ░░░░ counterparts ░░░░ ░░░░ ░░░░ ░░░░ ░░░░ ░░░░ ░░░░ mechanics. ░░░░ ░░░░ ░░░░ in their ░░░░ Some ░░░░ ░░░░ ░░░░ ░░░░ solve ░░░░ one scarcely ░░░░ them. ░░░░ ░░░░ ░░░░ ░░░░ second ░░░░ ░░░░ a ░░░░ confined ░░░░ ░░░░ ░░░░ ░░░░ $x$ axis and ░░░░ to a ░░░░ force $\bf{F}_0$,
+░░░░ ░░░░ ░░░░ ░░░░ form $m\bf{\ddot{r}} = \bf{F}$, Newton's second law is ░░░░ ░░░░ ░░░░ for the ░░░░ position $\bf{r}(t)$░░░░ That is, it ░░░░ an equation ░░░░ the ░░░░ ░░░░ $\bf{r}(t)$ that involves ░░░░ of ░░░░ ░░░░ ░░░░ ░░░░ ░░░░ ░░░░ ░░░░ of ░░░░ ░░░░ ░░░░ can be ░░░░ as, ░░░░ ░░░░ ░░░░ a ░░░░ ░░░░ ░░░░ a physicist's ░░░░ is spent solving ░░░░ equations. In ░░░░ most of ░░░░ problems in ░░░░ ░░░░ involve differential ░░░░ ░░░░ ░░░░ Newton's ░░░░ law ░░░░ its ░░░░ in the ░░░░ and Hamiltonian forms of mechanics. ░░░░ ░░░░ widely ░░░░ ░░░░ difficulty. Some ░░░░ so easy to ░░░░ that ░░░░ scarcely ░░░░ them. For example, consider ░░░░ second law ░░░░ ░░░░ particle ░░░░ to move along the $x$ ░░░░ and ░░░░ to ░░░░ constant force $\bf{F}_0$░░░░
 
 $$\ddot{x}(t) = \dfrac{\bf{F}_0}{m}$$
-░░░░ is a ░░░░ ░░░░ differential equation for $x(t)$ as a function of $t$░░░░ ░░░░ solve it, we ░░░░ ░░░░ to integrate ░░░░
+░░░░ is a second order ░░░░ ░░░░ ░░░░ $x(t)$ ░░░░ ░░░░ function of $t$░░░░ To solve it, ░░░░ ░░░░ need to ░░░░ ░░░░
 
 $$
 \begin{aligned}
@@ -121,37 +121,37 @@ $$
 \int{\dot{x}(t)} \ dt &= \int{\left(v_0 + \dfrac{\bf{F}_0}{m}t\right)} \ dt \\
 \end{aligned}
 $$
-░░░░ first ░░░░ ░░░░ ░░░░ the velocity ░░░░ the constant ░░░░ ░░░░ is the ░░░░ initial ░░░░ and ░░░░ second integration gives the ░░░░
+The ░░░░ ░░░░ ░░░░ ░░░░ ░░░░ velocity ░░░░ ░░░░ ░░░░ ░░░░ ░░░░ ░░░░ the ░░░░ ░░░░ velocity, and ░░░░ ░░░░ ░░░░ ░░░░ the position
 
 $$x(t) = x_0 + v_0t + \dfrac{\bf{F}_0}{2m}t^2$$
 
-where ░░░░ ░░░░ constant of integration ░░░░ the particle's ░░░░ position.
+░░░░ ░░░░ ░░░░ ░░░░ of integration ░░░░ the ░░░░ ░░░░ position.
 
 ##### Inertial Frames
 
-On the ░░░░ of ░░░░ ░░░░ second law ░░░░ ░░░░ ░░░░ If there ░░░░ no forces on an object, ░░░░ $\bf{F} = 0$ and ░░░░ ░░░░ ░░░░ (1.12) implies that $\bf{a} = 0$░░░░ ░░░░ ░░░░ the first ░░░░ There is, ░░░░ an important ░░░░ ░░░░ the ░░░░ ░░░░ ░░░░ ░░░░ important role to ░░░░ Newton's ░░░░ cannot ░░░░ true in ░░░░ conceivable ░░░░ ░░░░ To see ░░░░ ░░░░ ░░░░ the first ░░░░ ░░░░ ░░░░ a ░░░░ ░░░░ — ░░░░ call it $\mathscr{S}$ ░░░░ in ░░░░ the first law ░░░░ true. For ░░░░ if ░░░░ ░░░░ $\mathscr{S}$ has its origin ░░░░ ░░░░ fixed relative to the earth's surface, ░░░░ to ░░░░ excellent approximation, ░░░░ first law ░░░░ law ░░░░ ░░░░ ░░░░ ░░░░ respect to the ░░░░ $\mathscr{S}$: A friction-less puck placed ░░░░ ░░░░ ░░░░ ░░░░ surface is subject ░░░░ zero ░░░░ ░░░░ in accordance ░░░░ ░░░░ first law, ░░░░ ░░░░ with constant ░░░░ Because the ░░░░ of ░░░░ holds, ░░░░ call $\mathscr{S}$ an ░░░░ ░░░░ If ░░░░ consider ░░░░ ░░░░ ░░░░ $\mathscr{S'}$ which ░░░░ ░░░░ ░░░░ to $\mathscr{S}$ ░░░░ constant ░░░░ ░░░░ is not ░░░░ ░░░░ ░░░░ ░░░░ ░░░░ will ░░░░ be ░░░░ ░░░░ move with ░░░░ velocity relative to $\mathscr{S'}$░░░░ ░░░░ is, the ░░░░ $\mathscr{S'}$ ░░░░ ░░░░ inertial.
+░░░░ the face of ░░░░ Newton's second law includes ░░░░ first: If there ░░░░ ░░░░ forces ░░░░ an ░░░░ ░░░░ $\bf{F} = 0$ and ░░░░ ░░░░ ░░░░ ░░░░ ░░░░ ░░░░ $\bf{a} = 0$, which ░░░░ ░░░░ first law. ░░░░ is, however, ░░░░ important ░░░░ ░░░░ the first law has ░░░░ ░░░░ role to ░░░░ ░░░░ laws ░░░░ ░░░░ ░░░░ ░░░░ ░░░░ conceivable reference frames. To ░░░░ ░░░░ ░░░░ ░░░░ ░░░░ first law and imagine ░░░░ reference ░░░░ — we'll call ░░░░ $\mathscr{S}$ ░░░░ in ░░░░ the ░░░░ law is ░░░░ ░░░░ ░░░░ ░░░░ ░░░░ ░░░░ $\mathscr{S}$ has its ░░░░ ░░░░ ░░░░ fixed relative ░░░░ ░░░░ earth's ░░░░ then, to ░░░░ excellent approximation, ░░░░ first ░░░░ ░░░░ ░░░░ ░░░░ ░░░░ ░░░░ with respect to ░░░░ frame $\mathscr{S}$: ░░░░ ░░░░ ░░░░ ░░░░ on ░░░░ smooth ░░░░ surface is subject to zero force ░░░░ in accordance ░░░░ the ░░░░ law, ░░░░ moves ░░░░ ░░░░ ░░░░ ░░░░ ░░░░ law of ░░░░ holds, ░░░░ call $\mathscr{S}$ an inertial ░░░░ ░░░░ we consider ░░░░ second ░░░░ $\mathscr{S'}$ ░░░░ ░░░░ moving relative ░░░░ $\mathscr{S}$ ░░░░ ░░░░ ░░░░ and ░░░░ not rotating, ░░░░ the ░░░░ puck ░░░░ also be ░░░░ ░░░░ move with ░░░░ velocity relative to $\mathscr{S'}$. ░░░░ is, the ░░░░ $\mathscr{S'}$ is ░░░░ ░░░░
 
-░░░░ however, ░░░░ ░░░░ ░░░░ third frame $\mathscr{S"}$ that ░░░░ accelerating relative ░░░░ $\mathscr{S}$░░░░ ░░░░ as viewed ░░░░ $\mathscr{S"}$, ░░░░ puck ░░░░ ░░░░ ░░░░ ░░░░ ░░░░ ░░░░ (in the ░░░░ direction). ░░░░ ░░░░ the accelerating ░░░░ $\mathscr{S"}$ ░░░░ law ░░░░ inertia ░░░░ not ░░░░ and ░░░░ ░░░░ ░░░░ $\mathscr{S"}$ ░░░░ non-inertial. I should emphasize that there is ░░░░ ░░░░ about ░░░░ ░░░░ Indeed ░░░░ is ░░░░ ░░░░ ░░░░ experience. ░░░░ frame $\mathscr{S'}$ could ░░░░ ░░░░ frame attached to a ░░░░ ░░░░ traveling ░░░░ ░░░░ ░░░░ ░░░░ ░░░░ ░░░░ straight ░░░░ ░░░░ the friction-less puck, an ░░░░ cube placed on the ░░░░ ░░░░ the ░░░░ ░░░░ ░░░░ ░░░░ ░░░░ ░░░░ seen ░░░░ ░░░░ ░░░░ ░░░░ $\mathscr{S'}$), the ░░░░ cube is at ░░░░ ░░░░ ░░░░ ░░░░ rest, in ░░░░ with the ░░░░ ░░░░ As seen ░░░░ ░░░░ ground ░░░░ $\mathscr{S}$), the ice ░░░░ ░░░░ moving with the ░░░░ velocity ░░░░ the ░░░░ and ░░░░ ░░░░ ░░░░ so, again in obedience ░░░░ ░░░░ ░░░░ law.
+If, however, we ░░░░ a third frame $\mathscr{S"}$ ░░░░ is ░░░░ relative to $\mathscr{S}$, then, ░░░░ viewed from $\mathscr{S"}$░░░░ the puck ░░░░ be seen to ░░░░ ░░░░ (in ░░░░ ░░░░ direction). ░░░░ ░░░░ the accelerating ░░░░ $\mathscr{S"}$ the law ░░░░ inertia ░░░░ not ░░░░ ░░░░ we ░░░░ ░░░░ $\mathscr{S"}$ is non-inertial. I ░░░░ ░░░░ that there is nothing mysterious ░░░░ ░░░░ ░░░░ Indeed ░░░░ ░░░░ a matter ░░░░ experience. The ░░░░ $\mathscr{S'}$ ░░░░ ░░░░ a frame ░░░░ to a high-speed train traveling smoothly at constant speed along ░░░░ straight track, and ░░░░ friction-less puck, an ░░░░ ░░░░ placed on the floor of ░░░░ ░░░░ as in Figure ░░░░ As seen ░░░░ ░░░░ train ░░░░ $\mathscr{S'}$), the ░░░░ ░░░░ ░░░░ ░░░░ ░░░░ and remains at rest, ░░░░ ░░░░ with the first law. ░░░░ ░░░░ from the ░░░░ ░░░░ $\mathscr{S}$░░░░ ░░░░ ░░░░ ░░░░ is moving with ░░░░ ░░░░ velocity as ░░░░ ░░░░ ░░░░ ░░░░ to do ░░░░ ░░░░ in obedience ░░░░ the ░░░░ ░░░░
 
-But ░░░░ consider ░░░░ the same ░░░░ ░░░░ a second ░░░░ ░░░░ $\mathscr{S"}$░░░░ ░░░░ ░░░░ accelerating ░░░░ As ░░░░ train ░░░░ ░░░░ ░░░░ ░░░░ cube ░░░░ left behind, and, ░░░░ to $\mathscr{S"}$, ░░░░ ice ░░░░ ░░░░ ░░░░ ░░░░ ░░░░ subject ░░░░ ░░░░ net ░░░░ Clearly ░░░░ frame $\mathscr{S"}$ is ░░░░ and neither of ░░░░ ░░░░ two laws can ░░░░ ░░░░ $\mathscr{S"}$. A ░░░░ conclusion ░░░░ hold if ░░░░ frame $\mathscr{S"}$ ░░░░ been attached ░░░░ a rotating merry-go-round. ░░░░ friction-less ░░░░ subject to zero ░░░░ force, ░░░░ ░░░░ ░░░░ in a ░░░░ ░░░░ ░░░░ seen in $\mathscr{S"}$░░░░ and Newton's ░░░░ ░░░░ not ░░░░
+But now ░░░░ ░░░░ ░░░░ ░░░░ ░░░░ on ░░░░ ░░░░ train ░░░░ $\mathscr{S"}$) ░░░░ is accelerating ░░░░ ░░░░ this ░░░░ accelerates ░░░░ ░░░░ ice cube ░░░░ ░░░░ behind, and, ░░░░ to $\mathscr{S"}$, ░░░░ ice ░░░░ accelerates backward, even though ░░░░ ░░░░ no ░░░░ force. Clearly the frame $\mathscr{S"}$ is ░░░░ ░░░░ ░░░░ of ░░░░ ░░░░ two laws can hold in $\mathscr{S"}$. A similar ░░░░ ░░░░ hold ░░░░ the frame $\mathscr{S"}$ ░░░░ been ░░░░ to a ░░░░ ░░░░ ░░░░ ░░░░ ░░░░ subject ░░░░ ░░░░ net ░░░░ would ░░░░ ░░░░ ░░░░ ░░░░ straight ░░░░ as ░░░░ in $\mathscr{S"}$░░░░ ░░░░ ░░░░ laws ░░░░ ░░░░ hold.
 
-░░░░ ░░░░ ░░░░ laws hold only in the ░░░░ ░░░░ (non-accelerating ░░░░ ░░░░ ░░░░ frames. Most philosophers ░░░░ science take the ░░░░ that the ░░░░ ░░░░ ░░░░ be used ░░░░ identify these inertial frames ░░░░ ░░░░ reference frame $\mathscr{S}$ is inertial ░░░░ objects ░░░░ are ░░░░ ░░░░ to ░░░░ forces are seen ░░░░ move with constant velocity relative ░░░░ $\mathscr{S}$░░░░ ░░░░ identified the inertial ░░░░ by means ░░░░ ░░░░ first law, ░░░░ ░░░░ then ░░░░ ░░░░ ░░░░ ░░░░ ░░░░ that the ░░░░ law holds in these same ░░░░ frames.
+░░░░ Newton's ░░░░ laws ░░░░ only in the ░░░░ inertial (non-accelerating and ░░░░ reference frames. ░░░░ ░░░░ of science ░░░░ the ░░░░ that the first ░░░░ should ░░░░ ░░░░ to ░░░░ these ░░░░ frames — ░░░░ ░░░░ frame $\mathscr{S}$ is ░░░░ if ░░░░ that ░░░░ ░░░░ subject to ░░░░ ░░░░ are ░░░░ ░░░░ move with ░░░░ ░░░░ ░░░░ to $\mathscr{S}$. ░░░░ ░░░░ the ░░░░ frames ░░░░ ░░░░ of ░░░░ ░░░░ ░░░░ ░░░░ can ░░░░ ░░░░ as ░░░░ ░░░░ ░░░░ that the second law holds ░░░░ these same ░░░░ ░░░░
 
 ### The Third Law and Conservation of Momentum
 
-░░░░ first two ░░░░ concern the response ░░░░ a ░░░░ object ░░░░ ░░░░ ░░░░ The ░░░░ ░░░░ addresses a ░░░░ different ░░░░ ░░░░ force ░░░░ an ░░░░ ░░░░ involves a second ░░░░ — the ░░░░ ░░░░ ░░░░ ░░░░ force. ░░░░ nail is hit ░░░░ the hammer, the cart is pulled by the ░░░░ and ░░░░ on. ░░░░ ░░░░ much is no ░░░░ ░░░░ matter ░░░░ common ░░░░ ░░░░ ░░░░ law goes considerably ░░░░ our ░░░░ experience. Newton realized ░░░░ if an ░░░░ $1$ ░░░░ a force ░░░░ another ░░░░ $2$, ░░░░ ░░░░ $2$ ░░░░ ░░░░ ░░░░ force (the "reaction" force) back on object $1$░░░░ This seems quite natural: If ░░░░ ░░░░ ░░░░ against ░░░░ wall, it ░░░░ ░░░░ ░░░░ to ░░░░ ░░░░ that the wall is ░░░░ a ░░░░ ░░░░ on you, ░░░░ which ░░░░ ░░░░ undoubtedly fall ░░░░ ░░░░ aspect ░░░░ the ░░░░ law ░░░░ ░░░░ ░░░░ beyond our normal perceptions ░░░░ ░░░░
+Newton's first two laws concern the ░░░░ ░░░░ ░░░░ single ░░░░ to applied forces. The ░░░░ ░░░░ ░░░░ ░░░░ ░░░░ different issue: Every force on ░░░░ ░░░░ ░░░░ involves a ░░░░ ░░░░ — the object ░░░░ ░░░░ ░░░░ ░░░░ The ░░░░ is hit ░░░░ the ░░░░ the cart is ░░░░ by the horse, and ░░░░ ░░░░ ░░░░ ░░░░ much is ░░░░ ░░░░ ░░░░ ░░░░ ░░░░ common sense, ░░░░ third ░░░░ ░░░░ ░░░░ beyond ░░░░ ░░░░ experience. Newton ░░░░ ░░░░ if an ░░░░ $1$ exerts a ░░░░ on ░░░░ object $2$░░░░ then ░░░░ $2$ ░░░░ ░░░░ a ░░░░ (the "reaction" force) ░░░░ ░░░░ object $1$. This ░░░░ ░░░░ natural: ░░░░ ░░░░ push ░░░░ against ░░░░ wall, ░░░░ ░░░░ ░░░░ ░░░░ to convince yourself that ░░░░ wall ░░░░ ░░░░ a ░░░░ back on you, ░░░░ which you would undoubtedly fall over. The aspect ░░░░ ░░░░ ░░░░ ░░░░ which ░░░░ goes beyond our normal perceptions is this:
 
-░░░░ ░░░░ the third law, ░░░░ ░░░░ force of ░░░░ $2$ ░░░░ object $1$ ░░░░ always ░░░░ and ░░░░ ░░░░ ░░░░ ░░░░ ░░░░ of $1$ on $2$░░░░ ░░░░ ░░░░ introduce ░░░░ ░░░░ $\bf{F}_{21}$ ░░░░ denote ░░░░ force ░░░░ ░░░░ ░░░░ $2$ ░░░░ ░░░░ $1$░░░░ Newton's third ░░░░ can ░░░░ ░░░░ ░░░░ compactly:
+According ░░░░ ░░░░ ░░░░ ░░░░ the reaction force ░░░░ ░░░░ $2$ ░░░░ object $1$ is ░░░░ equal and ░░░░ ░░░░ the original ░░░░ ░░░░ $1$ on $2$░░░░ If we introduce ░░░░ ░░░░ $\bf{F}_{21}$ to denote the force ░░░░ on object $2$ by ░░░░ $1$, ░░░░ third law can be ░░░░ ░░░░ compactly:
 
-_Newton's Third Law_░░░░ **If object $1$ exerts a force $\bf{F}_{21}$ on object $2$, then object $2$ always exerts a reaction force $\bf{F}_{12}$ on object $1$:** $$\bf{F}_{12} = - \bf{F}_{21} \tag{1.15}$$
+_Newton's Third Law_: **If object $1$ exerts a force $\bf{F}_{21}$ on object $2$, then object $2$ always exerts a reaction force $\bf{F}_{12}$ on object $1$:** $$\bf{F}_{12} = - \bf{F}_{21} \tag{1.15}$$
 
 ### Proof for the Conservation of Momentum
 
-░░░░ need ░░░░ show ░░░░ ░░░░ ░░░░ ░░░░ ($\bf{F}$░░░░ ░░░░ ░░░░ ░░░░ object ░░░░ proportional to the ░░░░ ░░░░ ░░░░ ░░░░ ░░░░ object's momentum ░░░░ respect ░░░░ time ░░░░$\bf{\dot{p}}$░░░░
+░░░░ need ░░░░ ░░░░ that ░░░░ ░░░░ force ($\bf{F}$░░░░ ░░░░ ░░░░ an object ░░░░ ░░░░ ░░░░ the ░░░░ ░░░░ ░░░░ of ░░░░ object's ░░░░ with ░░░░ ░░░░ ░░░░ ($\bf{\dot{p}}$░░░░
 
-░░░░ ░░░░ ░░░░ $\bf{F} = m\bf{a}$, ░░░░ $\bf{p} = m \bf{v}$.
+Newton's second law: $\bf{F} = m\bf{a}$, ░░░░ $\bf{p} = m \bf{v}$.
 
-Differentiating both ░░░░ of $\bf{p} = m \bf{v}$ ░░░░ respect ░░░░ $t$░░░░ presuming constant mass($m$░░░░
+░░░░ both sides ░░░░ $\bf{p} = m \bf{v}$ ░░░░ ░░░░ ░░░░ $t$, ░░░░ constant ░░░░$m$):
 
 $$
 \begin{aligned}
@@ -161,11 +161,11 @@ $$
 \therefore \quad \bf{F} = \dot{\bf{p}}
 \end{aligned}
 $$
-With this lemma, we ░░░░ ░░░░ ░░░░ the main ░░░░
+░░░░ ░░░░ ░░░░ ░░░░ can ░░░░ with ░░░░ ░░░░ proof.
 
-We ░░░░ two point ░░░░ $p_1$ and $p_2$░░░░ exerting ░░░░ force on each ░░░░ $\bf{F_{21}}$ and $\bf{F_{12}}$ ░░░░ 
+░░░░ ░░░░ ░░░░ ░░░░ ░░░░ $p_1$ and $p_2$, exerting ░░░░ ░░░░ ░░░░ ░░░░ other $\bf{F_{21}}$ and $\bf{F_{12}}$ respectively. 
 
-We approximate ░░░░ and ░░░░ external forces on ░░░░ ░░░░ particles as $\bf{F^{ext}_{1}}$ and $\bf{F^{ext}_{2}}$. We have,
+░░░░ approximate any and ░░░░ ░░░░ ░░░░ on ░░░░ two ░░░░ ░░░░ $\bf{F^{ext}_{1}}$ and $\bf{F^{ext}_{2}}$. ░░░░ ░░░░
 
 $$
 \begin{aligned}
@@ -174,7 +174,7 @@ $$
 \end{aligned}
 $$
 
-By $\bf{F} = \dot{\bf{p}}$,
+░░░░ $\bf{F} = \dot{\bf{p}}$,
 
 $$
 \begin{aligned}
@@ -182,13 +182,13 @@ $$
 \bf{F}_{p_2} = \bf{\dot{p}}_2
 \end{aligned}
 $$
-The ░░░░ ░░░░ ░░░░ our ░░░░ system is,
+The ░░░░ momentum ░░░░ our 2-particle ░░░░ ░░░░
 
 $$
 \bf{P}_{t} = \bf{p}_1 + \bf{p}_2 \\
 $$
 
-░░░░ both ░░░░ ░░░░ ░░░░ to ░░░░
+░░░░ both ░░░░ ░░░░ respect to time,
 
 $$
 \begin{aligned}
@@ -196,41 +196,41 @@ $$
 \dot{\bf{P}_{t}} &= \bf{F_{12}} + \bf{F_{21}} + F^{ext}_1 + F^{ext}_2 \\
 \end{aligned}
 $$
-Since $\bf{F_{12}} = - \bf{F_{21}}$░░░░ ░░░░ combining external forces with $\bf{F_{ext}}$,
+░░░░ $\bf{F_{12}} = - \bf{F_{21}}$░░░░ and combining external forces with $\bf{F_{ext}}$,
 
 $$
 \dot{\bf{P}_{t}} = \bf{F}_{ext}
 $$
-░░░░ important ░░░░ demonstrates ░░░░ ░░░░ rate of change of momentum ░░░░$\dot{\bf{P}}_{t}$░░░░ ░░░░ our ░░░░ system, ░░░░ proportional ░░░░ to ░░░░ external ░░░░ ░░░░ acted upon ░░░░ ░░░░ 
+This ░░░░ result ░░░░ ░░░░ the ░░░░ ░░░░ ░░░░ ░░░░ ░░░░ ░░░░$\dot{\bf{P}}_{t}$░░░░ of ░░░░ two-particle ░░░░ is ░░░░ only to the ░░░░ ░░░░ being acted upon ░░░░ particles. 
 
-░░░░ the special case $\bf{F}_{ext} = 0$,
+In the special ░░░░ $\bf{F}_{ext} = 0$░░░░
 
 $$\dot{\bf{P}}_{t} = constant \quad \blacksquare$$
 
-Newton's ░░░░ law ░░░░ intimately ░░░░ ░░░░ the ░░░░ ░░░░ conservation of momentum. 
-In ░░░░ ░░░░ ░░░░ external ░░░░ ░░░░ total momentum of ░░░░ two-particle system ░░░░ ░░░░ - a ░░░░ ░░░░ ░░░░ principle ░░░░ ░░░░ ░░░░ ░░░░
+░░░░ ░░░░ law ░░░░ intimately ░░░░ ░░░░ ░░░░ ░░░░ ░░░░ conservation of momentum. 
+░░░░ the ░░░░ ░░░░ external ░░░░ the ░░░░ ░░░░ of our ░░░░ ░░░░ ░░░░ constant - a result ░░░░ ░░░░ ░░░░ of ░░░░ ░░░░ ░░░░
 
 ##### Validity of Newton's Third Law
 
-░░░░ ░░░░ covering electromagnetism.
+T.B.D ░░░░ covering ░░░░
 
 ### Newton's Second Law in Cartesian Coordinates
 
-Of Newton's three laws, ░░░░ one ░░░░ we ░░░░ use ░░░░ ░░░░ ░░░░ the second, which is ░░░░ described as ░░░░ equation ░░░░ ░░░░ ░░░░ ░░░░ have ░░░░ ░░░░ ░░░░ is ░░░░ ░░░░ to define ░░░░ we ░░░░ ░░░░ ░░░░ ░░░░ but ░░░░ ░░░░ of ░░░░ ░░░░ ░░░░ beyond ░░░░ The ░░░░ ░░░░ ░░░░ crucially important in sorting ░░░░ ░░░░ ░░░░ ░░░░ ░░░░ ░░░░ ░░░░ system, ░░░░ ░░░░ ░░░░ know ░░░░ ░░░░ ░░░░ the second law is what ░░░░ actually use to calculate ░░░░ motion of the ░░░░ ░░░░ ░░░░ of interest. ░░░░ particular, ░░░░ ░░░░ ░░░░ ░░░░ ░░░░ ░░░░ are known ░░░░ easily found, ░░░░ in ░░░░ ░░░░ the second ░░░░ ░░░░ all ░░░░ ░░░░ for ░░░░ the problem. We already know ░░░░ $$\bf{F} = m\ddot{\bf{r}}$$
-░░░░ ░░░░ ░░░░ ░░░░ vector differential ░░░░ for the ░░░░ ░░░░ $\bf{r}$ as ░░░░ ░░░░ of ░░░░ $t$. ░░░░ ░░░░ ░░░░ problem, ░░░░ ░░░░ ░░░░ ░░░░ $\bf{F}$ are ░░░░ and ░░░░ ░░░░ ░░░░ to ░░░░ this ░░░░ ░░░░ for $\bf{r}(t)$░░░░ and we ░░░░ to ░░░░ it ░░░░ ░░░░ some of the ░░░░ ░░░░ simplest way ░░░░ ░░░░ such ░░░░ is almost ░░░░ to resolve the ░░░░ into their components relative to our desired ░░░░ system. 
+Of Newton's three ░░░░ the ░░░░ ░░░░ ░░░░ ░░░░ use ░░░░ ░░░░ is ░░░░ ░░░░ which is ░░░░ ░░░░ ░░░░ the equation ░░░░ ░░░░ As ░░░░ ░░░░ seen, the first ░░░░ theoretically ░░░░ ░░░░ define what we mean ░░░░ ░░░░ frames but is usually of ░░░░ practical use beyond this. ░░░░ ░░░░ ░░░░ is crucially ░░░░ ░░░░ sorting out the internal ░░░░ ░░░░ a ░░░░ ░░░░ but, once ░░░░ ░░░░ ░░░░ ░░░░ ░░░░ the second ░░░░ is what we actually use to ░░░░ the ░░░░ ░░░░ the object ░░░░ ░░░░ ░░░░ ░░░░ ░░░░ particular, ░░░░ many simple ░░░░ the forces are known ░░░░ ░░░░ found, and, ░░░░ ░░░░ ░░░░ ░░░░ second law ░░░░ ░░░░ we ░░░░ for solving the ░░░░ We ░░░░ know that, $$\bf{F} = m\ddot{\bf{r}}$$
+░░░░ a second order ░░░░ differential equation for ░░░░ position ░░░░ $\bf{r}$ ░░░░ ░░░░ function of ░░░░ $t$. In ░░░░ ░░░░ problem, ░░░░ forces ░░░░ comprise $\bf{F}$ ░░░░ ░░░░ ░░░░ our job is ░░░░ ░░░░ ░░░░ ░░░░ ░░░░ for $\bf{r}(t)$, ░░░░ we have to ░░░░ it to ░░░░ some of the forces. The ░░░░ ░░░░ to ░░░░ such equations ░░░░ ░░░░ always ░░░░ resolve ░░░░ vectors ░░░░ their ░░░░ ░░░░ ░░░░ our ░░░░ coordinate ░░░░ 
 
-░░░░ see this in ░░░░ by ░░░░ ░░░░ second ░░░░ in ░░░░ coordinates, ░░░░ ░░░░ conceptually simple ░░░░ ░░░░ net force ░░░░ ░░░░ written as,
+░░░░ ░░░░ this in action by ░░░░ Newton's ░░░░ law in ░░░░ ░░░░ for ░░░░ conceptually ░░░░ case. The ░░░░ force ░░░░ be ░░░░ ░░░░
 
 $$\bf{F} = F_x\hat{\bf{x}} + F_y\hat{\bf{y}} + F_z\hat{\bf{z}} \tag{1.19}$$
-and ░░░░ position vector $\bf{r}$ as 
+and the ░░░░ ░░░░ $\bf{r}$ ░░░░ 
 
 $$\bf{r} = x\hat{\bf{x}} + y\hat{\bf{y}} + z\hat{\bf{z}} \tag{1.20}$$
-░░░░ noted in ░░░░ ░░░░ this ░░░░ of $\bf{r}$ ░░░░ ░░░░ of its ░░░░ ░░░░ is especially ░░░░ ░░░░ differentiate because ░░░░ ░░░░ ░░░░ $\bf{\hat{x}}$, $\bf{\hat{y}}$, ░░░░ $\bf{\hat{z}}$ are ░░░░ ░░░░ ░░░░ can differentiate (1.20) twice ░░░░ get the simple result,
+As noted in [Section 1.1](#space-and-time), this expansion ░░░░ $\bf{r}$ in ░░░░ of its ░░░░ components ░░░░ ░░░░ ░░░░ to differentiate because ░░░░ unit vectors $\bf{\hat{x}}$░░░░ $\bf{\hat{y}}$, ░░░░ $\bf{\hat{z}}$ are constant. Thus we can differentiate (1.20) twice ░░░░ ░░░░ the simple result,
 
 $$\bf{\ddot{r}} = \ddot{x} \bf{\hat{x}} + \ddot{y} \bf{\hat{y}} + \ddot{z} \bf{\hat{z}} \tag{1.21}$$
-░░░░ ░░░░ the three ░░░░ components ░░░░ $\bf{\ddot{r}}$ are ░░░░ ░░░░ ░░░░ ░░░░ of the three ░░░░ $x$░░░░ $y$░░░░ $z$ of $\bf{r}$ ░░░░ the ░░░░ ░░░░ ░░░░ becomes,
+░░░░ is, ░░░░ ░░░░ Cartesian ░░░░ of $\bf{\ddot{r}}$ ░░░░ just ░░░░ ░░░░ derivatives ░░░░ ░░░░ ░░░░ coordinates $x$░░░░ $y$░░░░ $z$ of $\bf{r}$ ░░░░ the second ░░░░ then becomes,
 
-$$F_x\bf{\hat{x}} + F_y\bf{\hat{y}} + F_z\bf{\hat{z}} = m\ddot{x}\bf{\hat{x}} + m\ddot{y}\bf{\hat{y}} + m\ddot{z}\bf{\hat{z}} \tag{1.22}$$ Resolving this equation into its three separate components, we see that $F_x$ has ░░░░ ░░░░ $m\ddot{x}$ ░░░░ similarly for the $y$ ░░░░ $z$ components. ░░░░ is in Cartesian coordinates, ░░░░ ░░░░ ░░░░ ░░░░ ░░░░ is equivalent to the ░░░░ separate ░░░░
+$$F_x\bf{\hat{x}} + F_y\bf{\hat{y}} + F_z\bf{\hat{z}} = m\ddot{x}\bf{\hat{x}} + m\ddot{y}\bf{\hat{y}} + m\ddot{z}\bf{\hat{z}} \tag{1.22}$$ Resolving this equation into its three separate components, we see that $F_x$ has to equal $m\ddot{x}$ and similarly for ░░░░ $y$ ░░░░ $z$ components. That ░░░░ in Cartesian coordinates, ░░░░ ░░░░ ░░░░ ░░░░ ░░░░ is ░░░░ ░░░░ ░░░░ ░░░░ separate equations:
 
 $$
 \bf{F} = m\bf{\ddot{r}} \iff \begin{cases}
@@ -239,18 +239,18 @@ F_y = m\ddot{y}\\
 F_z = m\ddot{z}\\
 \end{cases} \tag{1.23}
 $$
-This elegant ░░░░ in ░░░░ ░░░░ for ░░░░ ░░░░ ░░░░ ░░░░ three ░░░░ is equivalent to ░░░░ ░░░░ ░░░░ of ░░░░ ░░░░ law. We ░░░░ ░░░░ this ░░░░ for ░░░░ systems.
+This ░░░░ ░░░░ in ░░░░ coordinates for Newton's ░░░░ ░░░░ ░░░░ three ░░░░ is ░░░░ to three ░░░░ ░░░░ of ░░░░ ░░░░ ░░░░ We ░░░░ generalize this derivation for ░░░░ ░░░░
 
-░░░░ ░░░░ a position ░░░░ ░░░░ ░░░░ ░░░░ ░░░░ vectors,
+░░░░ represent ░░░░ ░░░░ ░░░░ n-dimensional Cartesian ░░░░ ░░░░ ░░░░
 
 $$
 \tag{1.1} \bf{r} = \sum_{k = 0}^{n - 1} l_k  \bf{\hat{i}_k}  
 $$
 
-where the ░░░░ $l_k$ vary over ░░░░ ░░░░ can ░░░░ ░░░░ net ░░░░ in terms ░░░░ the unit ░░░░
+░░░░ ░░░░ ░░░░ $l_k$ ░░░░ over ░░░░ We can represent the ░░░░ ░░░░ in ░░░░ ░░░░ ░░░░ unit ░░░░
 
 $$\bf{F} = \sum_{k = 0}^{n - 1}F_k \bf{\hat{i}_k} = m \sum_{k = 0}^{n - 1}\ddot{l}_k \bf{\hat{i}_k} = m\bf{\ddot{r}}$$
-Since acceleration is ░░░░ ░░░░ derivative of the ░░░░ ░░░░ respect ░░░░ time, we ░░░░ $1.1$ first ░░░░ ░░░░ the ░░░░
+Since acceleration ░░░░ the second derivative of ░░░░ ░░░░ ░░░░ ░░░░ to ░░░░ we ░░░░ $1.1$ first to get ░░░░ velocity,
 
 $$
 \begin{aligned}
@@ -258,7 +258,7 @@ $$
 &= \sum_{k = 0}^{n - 1}\dfrac{d}{dt}(l_k \bf{\hat{i}_k}) \\
 \end{aligned}
 $$
-░░░░ ░░░░ product ░░░░ ░░░░$\frac{d}{dt}(fg) = \dot{f}g + f\dot{g}$) and ░░░░ ░░░░ the ░░░░ ░░░░ do not ░░░░ with ░░░░ ░░░░ ░░░░ ░░░░ $0$, with $n - 1$ terms ░░░░ ░░░░
+Applying the ░░░░ ░░░░ ($\frac{d}{dt}(fg) = \dot{f}g + f\dot{g}$░░░░ and simplifying. ░░░░ the coordinate vectors do not vary with time, their ░░░░ are $0$░░░░ ░░░░ $n - 1$ terms to ░░░░
 
 $$
 \begin{aligned}
@@ -267,7 +267,7 @@ $$
 $$
 $$\tag{1.2} \therefore \quad \bf{v}(t) = \sum_{k = 0}^{n - 1}(\dot{l}_k \bf{\hat{i}_k})$$
 
-░░░░ $\dot{l}_k$ is the time derivative of $l_k$ $(dl_k/dt)$. Similarly, ░░░░ differentiate $\bf{v}(t)$ ░░░░ ░░░░ $\bf{a}(t)$,
+░░░░ $\dot{l}_k$ is the time derivative of $l_k$ $(dl_k/dt)$. ░░░░ ░░░░ differentiate $\bf{v}(t)$ ░░░░ get $\bf{a}(t)$,
 
 $$
 \begin{aligned}
@@ -275,13 +275,13 @@ $$
 \end{aligned}
 $$
 $$\therefore \quad \bf{a}(t) = \sum_{k = 0}^{n - 1}(\ddot{l}_k \bf{\hat{i}_k}) \tag{1.3}$$
-░░░░ ░░░░ ░░░░$$\boxed{\bf{F} = m\bf{\ddot{r}} \quad \iff \quad \sum_{k = 0}^{n - 1}F_k \bf{\hat{i}_k} \quad \iff \quad m\sum_{k = 0}^{n - 1}\ddot{r}_k\bf{\hat{i}_k} \quad \blacksquare}$$
+░░░░ we have$$\boxed{\bf{F} = m\bf{\ddot{r}} \quad \iff \quad \sum_{k = 0}^{n - 1}F_k \bf{\hat{i}_k} \quad \iff \quad m\sum_{k = 0}^{n - 1}\ddot{r}_k\bf{\hat{i}_k} \quad \blacksquare}$$
 
 ### Two-Dimensional Polar Coordinates
 
-░░░░ Cartesian ░░░░ ░░░░ the merit of ░░░░ ░░░░ ░░░░ ░░░░ ░░░░ find ░░░░ ░░░░ ░░░░ almost impossible to solve ░░░░ ░░░░ ░░░░ ░░░░ ░░░░ ░░░░ ░░░░ non-Cartesian coordinate ░░░░ To ░░░░ the complexities of ░░░░ ░░░░ ░░░░ ░░░░ ░░░░ the ░░░░ of ░░░░ second ░░░░ ░░░░ ░░░░ two-dimensional ░░░░ ░░░░ polar ░░░░ Instead ░░░░ using the two rectangular ░░░░ $x$, $y$, ░░░░ ░░░░ the position of a ░░░░ with ░░░░ distance $r$ from ░░░░ origin ░░░░ ░░░░ ░░░░ $\phi$ ░░░░ counter-clockwise about ░░░░ $x$░░░░
+░░░░ ░░░░ coordinates have ░░░░ merit of simplicity, we ░░░░ going ░░░░ ░░░░ that it is almost impossible ░░░░ ░░░░ ░░░░ problems ░░░░ the use ░░░░ various non-Cartesian ░░░░ systems. To illustrate ░░░░ complexities ░░░░ non-Cartesian coordinates, ░░░░ ░░░░ ░░░░ ░░░░ form of ░░░░ second ░░░░ in ░░░░ ░░░░ ░░░░ ░░░░ polar coordinates. ░░░░ ░░░░ using ░░░░ two rectangular coordinates $x$░░░░ $y$░░░░ we label the ░░░░ ░░░░ a particle ░░░░ its distance $r$ ░░░░ the origin and the angle $\phi$ measured counter-clockwise ░░░░ ░░░░ $x$░░░░
 
-With ░░░░ coordinates, ░░░░ ░░░░ ░░░░ ░░░░ be described ░░░░ terms ░░░░ ░░░░ ░░░░ length $r$ ░░░░ the ░░░░ angle $\phi$░░░░ ░░░░ to ░░░░ x-axis. ░░░░ ░░░░ ░░░░ the ░░░░ we describe ░░░░ to convert ░░░░ ░░░░ ░░░░ and polar ░░░░
+░░░░ ░░░░ coordinates, a position ░░░░ ░░░░ be described in terms of ░░░░ radial ░░░░ $r$ ░░░░ ░░░░ argument ░░░░ $\phi$, ░░░░ ░░░░ ░░░░ x-axis. Before proceeding with ░░░░ ░░░░ we ░░░░ ░░░░ to convert ░░░░ between ░░░░ and polar coordinates.
 
 $$
 \begin{rcases} 
@@ -299,7 +299,7 @@ $$
 \end{cases}\tag{1.1}
 $$
 
-We can ░░░░ express ░░░░ position ░░░░ as a complex ░░░░ using Euler's ░░░░$$z = x + iy = r(\cos\phi + i\sin\phi) = re^{-i\phi} \tag{1.2}$$░░░░ ░░░░ ░░░░ conjugate of ░░░░ ░░░░ ░░░░ ░░░░$$\bar{z} = r(\cos\phi - i\sin\phi) = re^{-i\phi} \tag{1.3}$$░░░░ ░░░░ ░░░░ and ░░░░ $1.2$ and $1.3$ resp. ░░░░ get some important ░░░░
+░░░░ ░░░░ ░░░░ ░░░░ the ░░░░ vector as ░░░░ ░░░░ ░░░░ ░░░░ ░░░░ ░░░░$$z = x + iy = r(\cos\phi + i\sin\phi) = re^{-i\phi} \tag{1.2}$$and ░░░░ ░░░░ ░░░░ ░░░░ ░░░░ complex ░░░░ is,$$\bar{z} = r(\cos\phi - i\sin\phi) = re^{-i\phi} \tag{1.3}$$░░░░ ░░░░ add and subtract $1.2$ and $1.3$ ░░░░ ░░░░ get ░░░░ ░░░░ ░░░░
 
 $$
 \begin{aligned}
@@ -308,7 +308,7 @@ z + \bar{z} &= re^{i\phi} + re^{-i\phi} \\ \\[0.1pt]
 \end{aligned}
 $$
 
-░░░░ $z + \bar{z} = x + iy + x - iy = 2x$ is purely ░░░░ and $x = r\cos\phi$ ░░░░ $1.1$░░░░
+Since $z + \bar{z} = x + iy + x - iy = 2x$ ░░░░ purely real, ░░░░ $x = r\cos\phi$ ░░░░ $1.1$░░░░
 
 $$
 \begin{align*}
@@ -317,7 +317,7 @@ $$
 \end{align*}
 $$
 
-Similarly, subtracting,
+░░░░ ░░░░
 
 $$
 \begin{aligned}
@@ -325,7 +325,7 @@ z - \bar{z} = r(e^{i\phi} - e^{-i\phi})
 \end{aligned}
 $$
 
-░░░░ $z - \bar{z} = 2iy$ ░░░░ ░░░░ ░░░░ ░░░░ $y = r\sin\phi$ by $1.1$░░░░
+Since $z - \bar{z} = 2iy$ ░░░░ purely imaginary, and $y = r\sin\phi$ by $1.1$,
 
 $$
 \begin{align*}
@@ -334,7 +334,7 @@ $$
 \end{align*}
 $$
 
-░░░░ ░░░░ Euler's important ░░░░ ░░░░ ░░░░ ░░░░ ░░░░ ░░░░ ░░░░ ░░░░ ░░░░ ░░░░ ░░░░ ways, easiest of them being ░░░░ Taylor ░░░░ ░░░░ of $e^x$░░░░ For ░░░░ ░░░░ first ░░░░ $e^{i\phi}$░░░░ ░░░░ can use ░░░░ Maclaurin ░░░░ ░░░░ around $x = 0$),
+Along ░░░░ ░░░░ ░░░░ ░░░░ bridging ░░░░ ░░░░ trigonometry ░░░░ ░░░░ be derived ░░░░ many ways, ░░░░ of ░░░░ being a Taylor series expansion ░░░░ $e^x$. ░░░░ ░░░░ ░░░░ first ░░░░ $e^{i\phi}$. We ░░░░ ░░░░ the Maclaurin ░░░░ ░░░░ around $x = 0$░░░░
 
 $$
 \begin{aligned}
@@ -342,7 +342,7 @@ e^x &= \sum_{n = 0}^{\infty}\dfrac{x^n}{n!} \\ \\[0.1pt]
 \end{aligned}
 $$
 
-Substituting $x = i\theta$,
+░░░░ $x = i\theta$░░░░
 
 $$
 \begin{aligned}
@@ -350,7 +350,7 @@ $$
 \end{aligned}
 $$
 
-░░░░ ░░░░ ░░░░ we ░░░░ ░░░░ with ░░░░ ░░░░ and even) ░░░░ where ░░░░ $i^2 = 1$ ░░░░ out. We ░░░░ $n = 2k$,
+When we ░░░░ ░░░░ ░░░░ up with alternating (odd ░░░░ ░░░░ terms where ░░░░ $i^2 = 1$ ░░░░ out. ░░░░ ░░░░ $n = 2k$░░░░
 
 $$
 \begin{aligned}
@@ -360,7 +360,7 @@ $$
 \end{aligned}
 $$
 
-░░░░ two ░░░░ ░░░░ ░░░░ ░░░░ ░░░░ for $\cos\theta$ ░░░░ $\sin\theta$ respectively, 
+░░░░ two terms ░░░░ ░░░░ series expansions ░░░░ $\cos\theta$ and $\sin\theta$ ░░░░ 
 
 $$
 \begin{align*}
@@ -369,7 +369,7 @@ $$
 \end{align*}
 $$
 
-░░░░ ░░░░ ░░░░ ░░░░ conclude ░░░░ ░░░░ ░░░░
+░░░░ ░░░░ derivation, we ░░░░ ░░░░ the ░░░░
 
 $$
 \begin{align*}
@@ -378,10 +378,10 @@ $$
 \end{align*}
 $$
 
-Akin ░░░░ ░░░░ ░░░░ ░░░░ ░░░░ ░░░░ the position ░░░░ ░░░░ ░░░░ ░░░░ and ░░░░ (as $\bf{F} = m \bf{a}$░░░░ ░░░░ position ░░░░ can ░░░░ ░░░░ as,$$\bf{r} = r \bf{\hat{r}} \tag{1.9}$$
-░░░░ $r$ is ░░░░ radial distance, and $\bf{\hat{r}}$ ░░░░ the unit vector in ░░░░ direction ░░░░ $r$. ░░░░ we differentiate, ░░░░ ░░░░ ░░░░ up terms involving ░░░░ for $\bf{\hat{r}}$ ░░░░ $\bf{\hat{\phi}}$░░░░ So ░░░░ ░░░░ ░░░░ ░░░░ attention towards ░░░░ ░░░░ We ░░░░ ░░░░ these geometrically, and ░░░░ discuss ░░░░ alternate algebraic derivation.
+░░░░ to ░░░░ Cartesian derivation, we ░░░░ the ░░░░ ░░░░ ░░░░ ░░░░ velocity and ░░░░ (as $\bf{F} = m \bf{a}$░░░░ ░░░░ position vector can be represented ░░░░$$\bf{r} = r \bf{\hat{r}} \tag{1.9}$$
+where $r$ ░░░░ ░░░░ ░░░░ distance, ░░░░ $\bf{\hat{r}}$ is the unit vector in ░░░░ ░░░░ ░░░░ $r$. When we differentiate, ░░░░ ░░░░ pick ░░░░ terms ░░░░ derivatives for $\bf{\hat{r}}$ and $\bf{\hat{\phi}}$. ░░░░ ░░░░ ░░░░ turn ░░░░ attention ░░░░ finding ░░░░ We first ░░░░ ░░░░ ░░░░ ░░░░ ░░░░ discuss an alternate algebraic ░░░░
 
-Lets ░░░░ $\Delta \bf{\hat{r}}$ from fig. ░░░░ ░░░░ ░░░░ the ░░░░ $r$ as ░░░░ goes from $t_1$ to $t_2$░░░░ The unit vector $\bf{\hat{r}}$ points in different ░░░░ ░░░░ the length ░░░░ this ░░░░ ░░░░ does not ░░░░ we ░░░░ an arc along the direction of $\bf{\hat{\phi}}$, ░░░░ ░░░░ reduces ░░░░ the ░░░░ $\Delta \bf{\hat{r}}$ ░░░░ $\Delta t \rightarrow 0$░░░░ ░░░░ begin ░░░░ ░░░░ ░░░░ ░░░░ $\Delta\bf{\hat{r}}$ ░░░░ ░░░░ ░░░░ $\Delta\phi$ along $\bf{\hat{\phi}}$,
+░░░░ ░░░░ $\Delta \bf{\hat{r}}$ from fig. ░░░░ ░░░░ ░░░░ the ░░░░ $r$ ░░░░ it ░░░░ ░░░░ $t_1$ to $t_2$. ░░░░ unit ░░░░ $\bf{\hat{r}}$ points in different directions. Since ░░░░ ░░░░ of ░░░░ ░░░░ vector ░░░░ ░░░░ change, we sweep ░░░░ ░░░░ along ░░░░ direction ░░░░ $\bf{\hat{\phi}}$░░░░ which ░░░░ ░░░░ to ░░░░ ░░░░ $\Delta \bf{\hat{r}}$ as $\Delta t \rightarrow 0$░░░░ We ░░░░ ░░░░ ░░░░ ░░░░ that $\Delta\bf{\hat{r}}$ is ░░░░ ░░░░ $\Delta\phi$ along $\bf{\hat{\phi}}$,
 
 $$
 \begin{align*}
@@ -389,7 +389,7 @@ $$
 \end{align*}
 $$
 
-We ░░░░ to relate this angular ░░░░ $\Delta \phi$ with ░░░░ in ░░░░ case ░░░░ infinitesimal $\Delta t$░░░░ ░░░░ have
+We need to ░░░░ this angular ░░░░ $\Delta \phi$ ░░░░ time, ░░░░ the case ░░░░ ░░░░ $\Delta t$░░░░ ░░░░ ░░░░
 
 $$
 \begin{align*}
@@ -398,7 +398,7 @@ $$
 \end{align*}
 $$
 
-░░░░ $1.11$ ░░░░ ░░░░ $1.10$░░░░
+░░░░ $1.11$ back ░░░░ $1.10$░░░░
 
 $$
 \begin{align*}
@@ -406,7 +406,7 @@ $$
 \end{align*}
 $$
 
-In ░░░░ limit $\Delta t \rightarrow 0$ $\iff$ $\Delta \bf{\hat{r}}/\Delta t \rightarrow d\bf{\hat{r}}/dt$░░░░ ░░░░ ░░░░ sides by $\Delta t$ ░░░░ ░░░░ the ░░░░ ░░░░ $\bf{\hat{r}}$ ░░░░ ░░░░ need,
+░░░░ the ░░░░ $\Delta t \rightarrow 0$ $\iff$ $\Delta \bf{\hat{r}}/\Delta t \rightarrow d\bf{\hat{r}}/dt$░░░░ ░░░░ ░░░░ sides ░░░░ $\Delta t$ ░░░░ ░░░░ the ░░░░ of $\bf{\hat{r}}$ that we ░░░░
 
 $$
 \begin{align*}
@@ -415,7 +415,7 @@ $$
 \end{align*}
 $$
 
-░░░░ can ░░░░ the ░░░░ ░░░░ ░░░░ to ░░░░ $\bf{\dot{\hat{\phi}}}$, ░░░░ ░░░░ $\bf{\hat{\phi}}$ ░░░░ ░░░░ ░░░░ $\bf{\hat{r}}$ as it rotates ░░░░ towards $-\bf{\hat{r}}$, we ░░░░
+░░░░ can use the ░░░░ ░░░░ argument ░░░░ ░░░░ $\bf{\dot{\hat{\phi}}}$, ░░░░ ░░░░ $\bf{\hat{\phi}}$ ░░░░ ░░░░ to $\bf{\hat{r}}$ ░░░░ it rotates counterclockwise ░░░░ $-\bf{\hat{r}}$, we ░░░░
 
 $$
 \begin{align*}
@@ -423,7 +423,7 @@ $$
 \end{align*}
 $$
 
-░░░░ we ░░░░ to an alternate algebraic derivation for the ░░░░ ░░░░ $\bf{\dot{\hat{r}}}$░░░░ We ░░░░ ░░░░ $\bf{\hat{r}}$ and $\bf{\hat{\phi}}$ ░░░░ terms ░░░░ ░░░░ Cartesian counterparts $\bf{\hat{i}}$ ░░░░ $\bf{\hat{j}}$, ░░░░ evident from the ░░░░
+░░░░ we turn ░░░░ an ░░░░ ░░░░ ░░░░ for ░░░░ ░░░░ derivative $\bf{\dot{\hat{r}}}$░░░░ ░░░░ ░░░░ ░░░░ $\bf{\hat{r}}$ and $\bf{\hat{\phi}}$ in ░░░░ of ░░░░ Cartesian counterparts $\bf{\hat{i}}$ ░░░░ $\bf{\hat{j}}$, ░░░░ evident from the geometry,
 
 $$
 \begin{align*}
@@ -432,7 +432,7 @@ $$
 \end{align*}
 $$
 
-░░░░ $1.14$,
+Differentiating $1.14$,
 
 $$
 \begin{align*}
@@ -444,7 +444,7 @@ $$
 \end{align*}
 $$
 
-░░░░ $1.14$ ░░░░ we ░░░░ $\bf{\dot{\hat{r}}}$░░░░ Following ░░░░ same process ░░░░ $\bf{\dot{\hat{\phi}}}$░░░░ ░░░░ ░░░░ ░░░░ equivalent ░░░░ from $1.12$ ░░░░ $1.13$░░░░
+░░░░ $1.14$ back ░░░░ ░░░░ $\bf{\dot{\hat{r}}}$. ░░░░ the ░░░░ ░░░░ ░░░░ $\bf{\dot{\hat{\phi}}}$, we get ░░░░ ░░░░ equations from $1.12$ ░░░░ $1.13$░░░░
 
 $$
 \begin{align*}
@@ -453,7 +453,7 @@ $$
 \end{align*}
 $$
 
-Now, ░░░░ ░░░░ ░░░░ derivatives both ░░░░ and ░░░░ ░░░░ can ░░░░ to our ░░░░ ░░░░ differentiating $1.9$ ░░░░ ░░░░ ░░░░ second ░░░░ in polar coordinates.
+Now, having ░░░░ ░░░░ ░░░░ both algebraically and ░░░░ ░░░░ can ░░░░ to ░░░░ main ░░░░ ░░░░ $1.9$ ░░░░ ░░░░ Newton's ░░░░ ░░░░ in polar coordinates.
 
 $$
 \begin{align*}
@@ -463,7 +463,7 @@ $$
 \end{align*}
 $$
 
-Substituting our equation for $\dot{\bf{\hat{r}}}$ ░░░░ $1.12$░░░░
+░░░░ ░░░░ equation for $\dot{\bf{\hat{r}}}$ from $1.12$░░░░
 
 $$
 \begin{align*}
@@ -471,7 +471,7 @@ $$
 \end{align*}
 $$
 
-We ░░░░ evaluate the velocity ░░░░ ░░░░ polar components, $\bf{v}_r = \bf{\dot{r}}$ and $\bf{v}_\phi = r\dot{\phi}$. Now ░░░░ differentiate $1.16$ ░░░░ get $\bf{\ddot{r}}$, 
+░░░░ ░░░░ evaluate the velocity over ░░░░ ░░░░ ░░░░ $\bf{v}_r = \bf{\dot{r}}$ and $\bf{v}_\phi = r\dot{\phi}$░░░░ Now we ░░░░ $1.16$ to ░░░░ $\bf{\ddot{r}}$, 
 
 $$
 \begin{align*}
@@ -482,7 +482,7 @@ $$
 \end{align*}
 $$
 
-░░░░ ░░░░ ░░░░ ░░░░ $1.12$ ░░░░ $1.13$,
+Substituting ░░░░ derivatives ░░░░ $1.12$ and $1.13$,
 
 $$
 \begin{align*}
@@ -493,7 +493,7 @@ $$
 \end{align*}
 $$
 
-giving us our acceleration along the two polar coordinates. Since we can ░░░░ ░░░░ ░░░░ force $\bf{F}$ ░░░░ a sum of ░░░░ forces ░░░░ ░░░░ orthonormal basis,
+░░░░ ░░░░ ░░░░ acceleration ░░░░ the ░░░░ ░░░░ coordinates. Since we can represent ░░░░ net force $\bf{F}$ as a sum of component forces along our orthonormal ░░░░
 
 $$
 \begin{align*}
@@ -512,24 +512,24 @@ $$
 
 #### Ex-$28$: Prove Conservation of Momentum for a multi-particle system with $N = 3$.
 
-Lets ░░░░ ░░░░ ░░░░ ░░░░ $N$ particles, where ░░░░ label ░░░░ ░░░░ ░░░░ with a Greek index $\alpha$ or $\beta$░░░░ The mass of ░░░░ $\alpha$ is $m_{\alpha}$ and its momentum is $\bf{p_{\alpha}}$░░░░ 
+Lets consider ░░░░ ░░░░ of $N$ particles, ░░░░ ░░░░ ░░░░ ░░░░ ░░░░ ░░░░ ░░░░ ░░░░ ░░░░ index $\alpha$ or $\beta$░░░░ ░░░░ ░░░░ ░░░░ ░░░░ $\alpha$ ░░░░ $m_{\alpha}$ and its momentum is $\bf{p_{\alpha}}$. 
 
-░░░░ e.g., particle $\alpha$ ░░░░ ░░░░ exerted by $\beta$ and $\gamma$ ($\bf{F_{\alpha\beta}}$, $\bf{F_{\alpha\gamma}}$░░░░ ░░░░ some net external ░░░░ $\bf{F^{ext}_{\alpha}}$. ░░░░ the net force ░░░░ $\alpha$ ░░░░
+For ░░░░ particle $\alpha$ ░░░░ forces exerted ░░░░ $\beta$ ░░░░ $\gamma$ ($\bf{F_{\alpha\beta}}$, $\bf{F_{\alpha\gamma}}$░░░░ alongside ░░░░ ░░░░ ░░░░ ░░░░ $\bf{F^{ext}_{\alpha}}$. Thus ░░░░ net force on $\alpha$ ░░░░
 
 $$
 \bf{F_{\alpha}} = \sum_{\beta \neq \alpha} \bf{F_{\alpha \beta}} + \bf{F^{ext}_{\alpha}}
 $$
-We also know that $\bf{F} = \dot{\bf{p}} = m\bf{a}$,
+░░░░ ░░░░ ░░░░ ░░░░ $\bf{F} = \dot{\bf{p}} = m\bf{a}$,
 
 $$
 \dot{\bf{p_{\alpha}}} = \sum_{\phi \neq \alpha} \bf{F_{\alpha \phi}} + \bf{F^{ext}_{\alpha}}
 $$
-This ░░░░ ░░░░ valid for all $N$ ░░░░ ░░░░ ░░░░ consider ░░░░ ░░░░ momentum ░░░░ ░░░░ ░░░░
+░░░░ expression ░░░░ ░░░░ for all $N$ ░░░░ ░░░░ ░░░░ consider ░░░░ total momentum of the ░░░░
 
 $$
 \bf{P} = \sum_{\alpha = 1}^{N} \bf{p_{\alpha}}
 $$
-Differentiating ░░░░ ░░░░ to ░░░░ and ░░░░ $\dot{\bf{p_{\alpha}}}$
+░░░░ ░░░░ ░░░░ ░░░░ ░░░░ ░░░░ substituting $\dot{\bf{p_{\alpha}}}$
 
 $$
 \begin{aligned}
@@ -541,21 +541,21 @@ $$
 \end{aligned}
 $$
 
-This ░░░░ demonstrates ░░░░ the internal forces of ░░░░ the ░░░░ don't affect the ░░░░ ░░░░ the ░░░░ momentum ░░░░$\bf{P}$░░░░ ░░░░ ░░░░ of change ░░░░ $\bf{P}$ is determined _only_ by the ░░░░ _external_ ░░░░ on ░░░░ ░░░░ In the case ░░░░ this net external force is ░░░░ $\dot{\bf{P}} = constant$! $\blacksquare$
+This ░░░░ ░░░░ that the internal forces of ░░░░ the ░░░░ don't ░░░░ the evolution ░░░░ the ░░░░ ░░░░ ░░░░$\bf{P}$). The ░░░░ of change of $\bf{P}$ ░░░░ determined _only_ by ░░░░ ░░░░ _external_ force on ░░░░ system. ░░░░ the ░░░░ ░░░░ ░░░░ net external ░░░░ ░░░░ ░░░░ $\dot{\bf{P}} = constant$! $\blacksquare$
 
 #### Ex-$31$: Show the converse of the Conservation of Momentum for a 2-particle system. That is, show that $\bf{F_{12}} = \bf{F_{21}}$.
 
-We ░░░░ with two particles $\alpha$ and $\beta$░░░░ the forces acting ░░░░ them ░░░░ $\bf{F_{\alpha \beta}}$ and $\bf{F_{\beta \alpha}}$. Excluding ░░░░ ░░░░ forces, we ░░░░ 
+░░░░ ░░░░ ░░░░ two particles $\alpha$ ░░░░ $\beta$, the ░░░░ ░░░░ ░░░░ them ░░░░ $\bf{F_{\alpha \beta}}$ and $\bf{F_{\beta \alpha}}$. Excluding any external forces, ░░░░ ░░░░ 
 
 $$
 \bf{F} = \bf{F_{\alpha \beta}} + \bf{F_{\beta \alpha}}
 $$
-░░░░ know that $\bf{F} = \dot{\bf{p}}$░░░░ we ░░░░ $\dot{\bf{p_1}} = \bf{F_{\alpha \beta}}$ ░░░░ $\dot{\bf{p_2}} = \bf{F_{\beta \alpha}}$. The ░░░░ ░░░░ of this system is then,
+We ░░░░ ░░░░ $\bf{F} = \dot{\bf{p}}$░░░░ ░░░░ have $\dot{\bf{p_1}} = \bf{F_{\alpha \beta}}$ and $\dot{\bf{p_2}} = \bf{F_{\beta \alpha}}$░░░░ The ░░░░ ░░░░ of this system is then,
 
 $$
 \bf{P} = \bf{p_1} + \bf{p_2}
 $$
-░░░░ ░░░░ ░░░░ $\bf{\dot{P}} = 0 = constant$░░░░ differentiating ░░░░ ░░░░ ░░░░ respect to $t$░░░░
+We ░░░░ ░░░░ $\bf{\dot{P}} = 0 = constant$, differentiating ░░░░ sides with respect to $t$,
 
 $$
 \begin{aligned}
@@ -567,12 +567,12 @@ $$
 
 #### Ex-$35$: A golf ball is hit from ground level with speed $v_0$ in a direction that is due east and at an angle $\theta$ above the horizontal. Neglecting air resistance, use Newton’s second law to find the position as a function of time, using coordinates with $x$ measured east, $y$ north, and $z$ vertically up. Find the time for the golf ball to return to the ground and how far it travels in that time.
 
-░░░░ need to find $\bf{r_{puck}}(t) = \{\bf{r_x}(t), \ 0, \ \bf{r_z(t)} \}$. ░░░░ can ░░░░ ░░░░ ░░░░ x-component.
+We ░░░░ to find $\bf{r_{puck}}(t) = \{\bf{r_x}(t), \ 0, \ \bf{r_z(t)} \}$░░░░ ░░░░ can start with ░░░░ ░░░░
 
-We ░░░░ ░░░░ ░░░░ ░░░░ is ░░░░ ░░░░ $x$ ░░░░ $z$ axis. ░░░░ ░░░░ ░░░░ ░░░░ $\bf{F_x} = m\bf{a_x}$. ░░░░ ░░░░ ░░░░ acceleration ░░░░ the ░░░░
+░░░░ know that ░░░░ ░░░░ is along ░░░░ $x$ and $z$ ░░░░ Newton’s second law ░░░░ $\bf{F_x} = m\bf{a_x}$. As ░░░░ ░░░░ ░░░░ along ░░░░ ░░░░
 $$\bf{a_x} = 0 \implies {\bf{F_x} = 0 \quad \& \quad \frac{d\bf{v}}{dt} = constant}$$
-Since the initial ░░░░ ░░░░ ░░░░ $x$ axis ░░░░ $v_0$, we have an angle $\theta$ from the horizontal plane, and we know that $\dot{\bf{v}} = constant$, we begin constructing our velocity function for the $x$ component. $$\bf{v_x(t)} = v_0 \cos(\theta)$$
-Integrating again ░░░░ get $\bf{r_x(t)}$,
+░░░░ the ░░░░ ░░░░ ░░░░ the $x$ ░░░░ ░░░░ $v_0$, we have an angle $\theta$ from the horizontal plane, and we know that $\dot{\bf{v}} = constant$, we begin constructing our velocity function for the $x$ component. $$\bf{v_x(t)} = v_0 \cos(\theta)$$
+░░░░ ░░░░ ░░░░ get $\bf{r_x(t)}$,
 
 $$
 \begin{aligned}
@@ -580,14 +580,14 @@ $$
 r_x(t) &= v_0 \cos(\theta) \ t + C
 \end{aligned}
 $$
-Presuming origin ░░░░ $(0, 0)$░░░░ $\bf{r_x}(0) = 0$, we get $C = x_0 = 0$░░░░ we ░░░░ our desired function $r_x(t)$,
+░░░░ origin at $(0, 0)$, $\bf{r_x}(0) = 0$, we get $C = x_0 = 0$░░░░ ░░░░ ░░░░ our desired function $r_x(t)$░░░░
 
 $$
 r_x(t) = v_0 \cos(\theta) \ t
 $$
-░░░░ ░░░░ ░░░░ the z-component,
+░░░░ ░░░░ to ░░░░ z-component,
 
-░░░░ ░░░░ ░░░░ ░░░░ we ░░░░ ░░░░ ░░░░ velocity, accounting ░░░░ $\theta$ is $v_0 \sin(\theta)$. We also have the gravitational force accelerating the ball along the $-z$ axis, that makes $\bf{F_z} = -mg$░░░░ ░░░░ can now solve our differential ░░░░
+░░░░ ░░░░ ░░░░ ░░░░ ░░░░ know ░░░░ ░░░░ velocity, accounting ░░░░ $\theta$ ░░░░ $v_0 \sin(\theta)$. We also have the gravitational force accelerating the ball along the $-z$ axis, that makes $\bf{F_z} = -mg$░░░░ ░░░░ ░░░░ now solve our ░░░░ ░░░░
 
 $$
 \begin{aligned}
@@ -597,7 +597,7 @@ F_z &= m a_z \\
 \end{aligned}
 $$
 
-Integrating both sides ░░░░ ░░░░ ░░░░ ░░░░
+Integrating ░░░░ ░░░░ ░░░░ respect to time,
 
 $$
 \begin{aligned}
@@ -606,12 +606,12 @@ v_z(t) &= -gt + C \\
 \end{aligned}
 $$
 
-░░░░ at $t = 0$░░░░ $v_z(0) = v_0 \sin(\theta)$░░░░ then $C = v_0 \sin(\theta)$. ░░░░ ░░░░ have ░░░░ ░░░░ equation for velocity along the ░░░░
+░░░░ at $t = 0$, $v_z(0) = v_0 \sin(\theta)$░░░░ ░░░░ $C = v_0 \sin(\theta)$. We now ░░░░ ░░░░ ░░░░ ░░░░ ░░░░ ░░░░ along ░░░░ z-component,
 
 $$
 v_z(t) = -gt + v_0 \sin(\theta) \\
 $$
-░░░░ again with ░░░░ ░░░░ time gives ░░░░ our desired ░░░░ $r_z(t)$░░░░
+Integrating again with respect to time gives ░░░░ our desired function $r_z(t)$░░░░
 
 $$
 \begin{aligned}
@@ -621,14 +621,14 @@ r_z(t) &= -\frac{1}{2} g t^2 + C_1 + v_0 \sin(\theta)\ t + C_2 \\
 \end{aligned}
 $$
 
-If ░░░░ $t = 0$░░░░ $r_z(t) = 0$, and $C = C_1 + C_2$ ░░░░ $C = 0$░░░░ ░░░░ ░░░░ ░░░░ equation is,
+If at $t = 0$, $r_z(t) = 0$, and $C = C_1 + C_2$ then, $C = 0$░░░░ ░░░░ ░░░░ ░░░░ ░░░░ ░░░░
 
 $$
 r_z(t) = -\frac{1}{2} g t^2 + v_0 \sin(\theta)\ t \\ \\
 \therefore \quad r_{puck}(t) = \{v_0 \cos(\theta) \ t, \ -\frac{1}{2} g t^2 + v_0 \sin(\theta)\ t \} \quad \blacksquare
 $$
 
-░░░░ we need to ░░░░ $t$ ░░░░ which the ░░░░ ░░░░ ░░░░ ground. ░░░░ can ░░░░ with $r_z(t)$░░░░ ░░░░ substitute it ░░░░ $0$░░░░
+Now, ░░░░ ░░░░ ░░░░ ░░░░ $t$ at which the ball hits the ground. We can ░░░░ with $r_z(t)$, and substitute ░░░░ with $0$,
 
 $$
 \begin{aligned}
@@ -637,7 +637,7 @@ r_z(t) &= -\frac{1}{2} g t^2 + v_0 \sin(\theta)\ t \\
 \therefore \quad t = 0 \text{\quad or \quad} t = \frac{2 v_0 \sin(\theta)}{g} \quad \blacksquare
 \end{aligned}
 $$
-░░░░ ░░░░ $t > 0$ ░░░░ be $t_{post}$, to find the distance traversed as it hits the ground after being hit, we plug $t_{post}$ to our ░░░░ ░░░░ the x-component.
+░░░░ the $t > 0$ solution be $t_{post}$, to find the distance traversed as it hits the ground after being hit, we plug $t_{post}$ to ░░░░ equation ░░░░ ░░░░ x-component.
 
 $$
 \begin{aligned}
@@ -652,9 +652,9 @@ $$
 
 ##### (a) Write down Newton's second law for the bundle as it falls from the plane, assuming you can neglect air resistance. Solve your equations to give the bundle's position in flight as a function of time $t$. 
 
-░░░░ ░░░░ traditional ░░░░ ░░░░ coordinates, ░░░░ represent the ░░░░ ░░░░ ░░░░ a ░░░░ ░░░░ time $(\bm{r_{y}(t)})$░░░░ 
+░░░░ ░░░░ ░░░░ 2D ░░░░ coordinates, ░░░░ represent the bundle's position as a function of ░░░░ $(\bm{r_{y}(t)})$░░░░ 
 
-░░░░ bundle ░░░░ down ░░░░ height $h$░░░░ so $\bm{F_y} = -mg$...
+░░░░ bundle ░░░░ down from height $h$░░░░ ░░░░ $\bm{F_y} = -mg$░░░░
 
 $$
 \begin{aligned}
@@ -662,7 +662,7 @@ $$
 \bm{a_y} &= -g \\
 \end{aligned}
 $$
-Integrating both sides with ░░░░ to $t$,
+Integrating both sides with respect to $t$,
 
 $$
 \begin{aligned}
@@ -670,7 +670,7 @@ $$
 \bm{v_y(t)} = -gt + C \\
 \end{aligned}
 $$
-Since $v_y(0) = 0$, $C = 0$, and we have $\bm{v_y(t)} = -gt$. ░░░░ ░░░░ again ░░░░ find $r_{y}(t)$░░░░
+Since $v_y(0) = 0$, $C = 0$, and we have $\bm{v_y(t)} = -gt$░░░░ ░░░░ ░░░░ ░░░░ to find $r_{y}(t)$,
 
 $$
 \begin{aligned}
@@ -678,13 +678,13 @@ $$
 \bm{r_y(t)} &= -\frac{1}{2}gt^2 + C\\
 \end{aligned}
 $$
-In ░░░░ ░░░░ case $t = 0$, $\bm{r_y(t)} = h \ \implies \ C = h$, giving us our final equation for $\bm{r_y(t)}$,
+░░░░ the ░░░░ case $t = 0$, $\bm{r_y(t)} = h \ \implies \ C = h$, giving us our final equation for $\bm{r_y(t)}$,
 
 $$\therefore \quad \bm{r_y(t)} = -\frac{1}{2}gt^2 + h \quad \blacksquare$$
 
 ##### (b) How far before the raft (measured horizontally) must the pilot drop the bundle if it is to hit the raft? What is this distance if $\bm{v_0} = 50 \  \mathrm{m/s}$, $h = 100 \ \mathrm{m}$, and $g \approx 10 \ \mathrm{m/s^2}$? 
 
-░░░░ determine ░░░░ ░░░░ we ░░░░ to ░░░░ the bundle ░░░░ ░░░░ it ░░░░ the ░░░░ ░░░░ ░░░░ ░░░░ ░░░░ calculate how much time ░░░░ ░░░░ actually take to hit the ░░░░ ░░░░ general. We ░░░░ ░░░░ ░░░░ by ░░░░ our equation ░░░░ $\bm{r_y(t)}$ ░░░░ ░░░░ ░░░░ $t$░░░░
+To determine how ░░░░ ░░░░ ░░░░ ░░░░ drop the ░░░░ so ░░░░ ░░░░ reaches the raft, it ░░░░ to first calculate ░░░░ much time it ░░░░ actually take to hit ░░░░ ground ░░░░ general. ░░░░ can do this ░░░░ ░░░░ ░░░░ equation for $\bm{r_y(t)}$ and ░░░░ for $t$░░░░
 
 $$
 \begin{aligned}
@@ -692,7 +692,7 @@ $$
 t &= \sqrt{\frac{2h}{g}} \\
 \end{aligned}
 $$
-Substituting given ░░░░
+Substituting ░░░░ ░░░░
 
 $$
 \begin{aligned}
@@ -700,7 +700,7 @@ t &= \sqrt{\frac{200 \ \mathrm{m}}{10 \ \mathrm{m/s^2}}} \\\\
 \therefore \quad t = 4.47 \ \mathrm{s}
 \end{aligned}
 $$
-We ░░░░ that ░░░░ plane ░░░░ ░░░░ an ░░░░ ░░░░ constant) velocity of $\bm{v_0} = 50 \ \mathrm{m / s}$░░░░ we integrate ░░░░ ░░░░ ░░░░ time ░░░░ get the position function,
+░░░░ ░░░░ that the plane ░░░░ ░░░░ an ░░░░ ░░░░ constant) velocity of $\bm{v_0} = 50 \ \mathrm{m / s}$, ░░░░ integrate ░░░░ ░░░░ to ░░░░ to ░░░░ the position ░░░░
 
 $$
 \begin{aligned}
@@ -708,10 +708,10 @@ $$
 \bm{r_x(t)} &= \bm{v_0} t + C
 \end{aligned}
 $$
-In ░░░░ case $t = 0$, we can ░░░░ $\bm{r_x(0)} = 0 \ \implies \ C = 0$, 
+░░░░ the case $t = 0$, we ░░░░ presume $\bm{r_x(0)} = 0 \ \implies \ C = 0$░░░░ 
 
 $$\therefore \quad \bm{r_x(t)} = \bm{v_0}t$$
-Plugging ░░░░ $t = 4.47 \ \mathrm{s}$░░░░ ░░░░ get,
+Plugging in $t = 4.47 \ \mathrm{s}$, we ░░░░
 
 $$
 \begin{aligned}
@@ -719,11 +719,11 @@ $$
 \therefore \quad \bm{r_x(4.47)} = 223.5 \ \mathrm{m} \quad \blacksquare
 \end{aligned}
 $$
-The plane ░░░░ to drop ░░░░ bundle $223.5 \ \mathrm{m}$ ░░░░ ░░░░ ░░░░ actual ░░░░ ░░░░ the x-axis.
+The plane ░░░░ ░░░░ ░░░░ the ░░░░ $223.5 \ \mathrm{m}$ before the raft's ░░░░ position along the x-axis.
 
 ##### (c) Within what interval of time $(\pm \ \Delta t)$ must the pilot drop the bundle if it is to land within $\pm \ 10 \ m$ of the raft?
 
-░░░░ $\bm{r_x(4.47)} = 223.5 \ \mathrm{m}$, we want to find the time delta for which the bundle lands between $213.5 \ \mathrm{m}$ and $233.5 \ \mathrm{m}$, using our equation for $\bm{r_x(t)}$,
+░░░░ $\bm{r_x(4.47)} = 223.5 \ \mathrm{m}$, we want to find the time delta for which the bundle lands between $213.5 \ \mathrm{m}$ and $233.5 \ \mathrm{m}$, using our equation for $\bm{r_x(t)}$░░░░
 
 $$
 \begin{aligned}
@@ -739,15 +739,15 @@ t &= \frac{233.5 \mathrm{m}}{50 \ \mathrm{m / s}} \\ \\[2pt]
 t &= 4.67 \ \mathrm{s}
 \end{aligned}
 $$
-Therefore, ░░░░ plane ░░░░ ░░░░ ░░░░ between $\pm \ 0.2 \ \mathrm{s}$ to ░░░░ ░░░░ $\pm \ 10 \ \mathrm{m}$ ░░░░ $\blacksquare$
+Therefore, ░░░░ ░░░░ must ░░░░ ░░░░ between $\pm \ 0.2 \ \mathrm{s}$ to ░░░░ a $\pm \ 10 \ \mathrm{m}$ ░░░░ $\blacksquare$
 
 #### Ex-$37$: A student kicks a frictionless puck with initial speed $\bm{v_0}$, so that it slides straight up a plane that is inclined at an angle $\theta$ above the horizontal. 
 
 ##### (a) Write down Newton's second law for the puck and solve to give its position as a function of time.
 
-We take x-axis ░░░░ the ░░░░ ░░░░ the ░░░░ y-axis orthogonal ░░░░ ░░░░ (along ░░░░ slope ░░░░ pointing outwards), and z-axis ░░░░ ░░░░ ░░░░ ░░░░ y, forming ░░░░ ░░░░ ░░░░
+We ░░░░ ░░░░ ░░░░ ░░░░ incline of the slope, ░░░░ orthogonal ░░░░ ░░░░ ░░░░ ░░░░ ░░░░ normal ░░░░ ░░░░ ░░░░ z-axis orthogonal to x and ░░░░ ░░░░ ░░░░ ░░░░ ░░░░
 
-The ░░░░ force acting ░░░░ the puck is $\bm{F_{net}} = N + mg$, ░░░░ $\bm{N} = (0, \ N, \ 0)$ and $\bm{g} = (-g \sin(\theta), \ -g\cos(\theta))$, ░░░░ have ░░░░ component forces.
+The ░░░░ ░░░░ ░░░░ on the puck ░░░░ $\bm{F_{net}} = N + mg$░░░░ ░░░░ $\bm{N} = (0, \ N, \ 0)$ ░░░░ $\bm{g} = (-g \sin(\theta), \ -g\cos(\theta))$░░░░ we ░░░░ ░░░░ ░░░░ ░░░░
 
 $$
 \begin{aligned}
@@ -758,7 +758,7 @@ $$
 \end{cases}
 \end{aligned}
 $$
-░░░░ $\ddot{z} = \dot{z} = 0$░░░░ $z = 0$ ░░░░ all $t$. The ░░░░ force adjusts ░░░░ gravity, so $\ddot{y} = \dot{y} = y = 0$, and ░░░░ only need to evaluate the ░░░░ function ░░░░ ░░░░ ░░░░ We ░░░░ ░░░░ ░░░░ to ░░░░ $r_x(t)$░░░░
+Since $\ddot{z} = \dot{z} = 0$, $z = 0$ for ░░░░ $t$░░░░ ░░░░ ░░░░ force ░░░░ against gravity, ░░░░ $\ddot{y} = \dot{y} = y = 0$, ░░░░ we only need to evaluate the ░░░░ function for ░░░░ x-component. We can integrate ░░░░ ░░░░ ░░░░ $r_x(t)$.
 
 $$
 \begin{aligned}
@@ -768,7 +768,7 @@ $$
 \bm{r_x(t)} &= -\frac{1}{2}gt^2\sin\theta + C_1t + C_2 \\ 
 \end{aligned}
 $$
-░░░░ $t = 0$, $x(0) = 0$░░░░ ░░░░ us $C_2 = r_0$░░░░ ░░░░ ░░░░ ░░░░ with ░░░░ to ░░░░ ░░░░ ░░░░ $C_1$░░░░
+At $t = 0$, $x(0) = 0$, giving us $C_2 = r_0$. Now we ░░░░ with ░░░░ to ░░░░ ░░░░ ░░░░ $C_1$░░░░
 
 $$
 \begin{aligned}
@@ -776,13 +776,13 @@ $$
 v_x(t) &= -gt\sin\theta + C_1 \\
 \end{aligned}
 $$
-░░░░ $t = 0$░░░░ $v_x(0) = v_0$░░░░ ░░░░ ░░░░ $C_1 = v_0$, ░░░░ us ░░░░ final equation,
+░░░░ $t = 0$░░░░ $v_x(0) = v_0$, ░░░░ us $C_1 = v_0$, ░░░░ us our final ░░░░
 
 $$\therefore \quad r_x(t) = -\frac{1}{2}gt^2\sin\theta + v_0t + r_0 \quad \blacksquare$$
 
 ##### (b) How long will the puck take to return to its starting point?
 
-░░░░ $r_x(t)$, ░░░░ the t ░░░░ ░░░░ ░░░░
+Simplifying $r_x(t)$, ░░░░ ░░░░ ░░░░ = 0 ░░░░
 
 $$
 \begin{aligned}
@@ -795,7 +795,7 @@ $$
 
 ##### Write down Newton's second law using these axes and find the ball's position as a function of time.
 
-░░░░ ░░░░ ░░░░ concerned ░░░░ a kind ░░░░ projectile motion, ░░░░ sliding motion ░░░░ ░░░░ with ░░░░ ░░░░ $N$ is ░░░░ The ░░░░ ░░░░ ░░░░ only along ░░░░ $x$ ░░░░ $y$ ░░░░ so $\dot{z} = z = 0$ for ░░░░ $t$. Once the ball ░░░░ thrown, ░░░░ ░░░░ own weight acts on ░░░░ so $\bm{g} = (-g\sin\phi, \ -g\cos\phi)$░░░░ giving ░░░░ our ░░░░ ░░░░ ░░░░ two ░░░░
+░░░░ ░░░░ are concerned ░░░░ ░░░░ ░░░░ ░░░░ ░░░░ ░░░░ not sliding ░░░░ ░░░░ ░░░░ ░░░░ ░░░░ ░░░░ $N$ is redundant. ░░░░ motion is also ░░░░ along the $x$ and $y$ ░░░░ ░░░░ $\dot{z} = z = 0$ for ░░░░ $t$. Once ░░░░ ball is ░░░░ ░░░░ its ░░░░ weight acts ░░░░ ░░░░ ░░░░ $\bm{g} = (-g\sin\phi, \ -g\cos\phi)$░░░░ giving us our ░░░░ for ░░░░ ░░░░ ░░░░
 
 $$
 \begin{aligned}
@@ -804,7 +804,7 @@ F_x &= m \ddot{r}_x \\
 \ddot{r}_x &= -g\sin\phi 
 \end{aligned}
 $$
-░░░░ ░░░░ $F_y = m\ddot{r}_y$░░░░ and $\ddot{r}_y = -g\cos\phi$. We integrate twice to get the position functions $r_x(t)$ ░░░░ $r_y(t)$. Starting with $r_x(t)$░░░░
+And ░░░░ $F_y = m\ddot{r}_y$, and $\ddot{r}_y = -g\cos\phi$. We integrate twice to get the position functions $r_x(t)$ ░░░░ $r_y(t)$. Starting with $r_x(t)$░░░░
 
 $$
 \begin{aligned}
@@ -813,7 +813,7 @@ $$
 r_x(t) &= -\frac{1}{2}gt^2\sin\phi + C_1t + C_2 \\
 \end{aligned}
 $$
-░░░░ $t = 0$, $r_x(0) = 0$, giving us $C_2 = 0$. We ░░░░ ░░░░ ░░░░ for $C_1$ by differentiating $r_x(t)$ ░░░░ get $v_x(t)$ and ░░░░ substituting ░░░░ ░░░░ ░░░░
+░░░░ $t = 0$░░░░ $r_x(0) = 0$, giving us $C_2 = 0$. We need ░░░░ solve for $C_1$ by differentiating $r_x(t)$ ░░░░ ░░░░ $v_x(t)$ ░░░░ ░░░░ ░░░░ ░░░░ ░░░░ ░░░░
 
 $$
 \begin{aligned}
@@ -821,16 +821,16 @@ $$
 v_x(t) &= -\frac{1}{2} gt\sin\phi + C_1 \\
 \end{aligned}
 $$
-At $t = 0$░░░░ $v_x(0) = v_0 \cos\theta \ \implies \ C_1 = v_0 \cos\theta$, ░░░░ us ░░░░ final equation for $r_x(t)$░░░░
+At $t = 0$░░░░ $v_x(0) = v_0 \cos\theta \ \implies \ C_1 = v_0 \cos\theta$░░░░ ░░░░ us ░░░░ final equation ░░░░ $r_x(t)$,
 
 $$r_x(t) = -\frac{1}{2}gt^2\sin\phi + v_0t\cos\theta$$
-Repeating ░░░░ ░░░░ steps exactly ░░░░ the y-component, we ░░░░ ░░░░ $r_y(t) = -\frac{1}{2}gt^2\cos\phi + v_0t\sin\theta$░░░░ We ░░░░ ░░░░ our ball's ░░░░ ░░░░ ░░░░ ░░░░ ░░░░ time,
+░░░░ ░░░░ ░░░░ steps exactly for ░░░░ y-component, ░░░░ ░░░░ evaluate $r_y(t) = -\frac{1}{2}gt^2\cos\phi + v_0t\sin\theta$░░░░ We ░░░░ ░░░░ our ball's ░░░░ as a function ░░░░ ░░░░
 
 $$\therefore \quad \bm{r_{ball}}(t) = (-\frac{1}{2}gt^2\sin\phi + v_0t\cos\theta, \ -\frac{1}{2}gt^2\cos\phi + v_0t\sin\theta) \quad \blacksquare$$
 
 ##### Show that the ball lands a distance $R = 2v_0^2 \sin(\theta) \cos(\theta + \phi) / (g \cos^2(\phi)$ from its launch point.
 
-The ░░░░ ░░░░ at a certain distance ░░░░ $r_y(t) = 0$, so ░░░░ ░░░░ and solve ░░░░ $t$░░░░
+░░░░ ball ░░░░ ░░░░ ░░░░ certain distance when $r_y(t) = 0$░░░░ ░░░░ we ░░░░ ░░░░ ░░░░ ░░░░ $t$░░░░
 
 $$
 \begin{aligned}
@@ -839,7 +839,7 @@ $$
 t &= \frac{2v_0\sin\theta}{g\cos\phi} \\
 \end{aligned}
 $$
-░░░░ ░░░░ substitute this into $r_x(t)$░░░░ ░░░░ get $R$,
+Now, we ░░░░ this into $r_x(t)$, ░░░░ ░░░░ $R$,
 
 $$
 \begin{aligned}
@@ -856,7 +856,7 @@ $$
 
 ##### Show that for given $v_0$ and $\phi$, the maximum possible range up the inclined plane is $R_{max} = v_0^2 / [g(1 + \sin(\phi))]$.
 
-░░░░ ░░░░ to differentiate $R$ ░░░░ respect to $\theta$, and ░░░░ it to $0$ ░░░░ find ░░░░ ░░░░ range.
+We ░░░░ to differentiate $R$ ░░░░ respect ░░░░ $\theta$, ░░░░ set it ░░░░ $0$ ░░░░ find the maximum ░░░░
 
 $$
 \begin{aligned}
@@ -877,7 +877,7 @@ $$
     \theta &= \frac{\pi}{4} - \frac{\phi}{2} + \frac{n\pi}{2}
 \end{aligned}
 $$
-Taking $n =  0$ ░░░░ get ░░░░ ░░░░ ░░░░ we get $\theta = \frac{\pi}{4} - \frac{\phi}{2}$. Substituting ░░░░ to $R$,
+░░░░ $n =  0$ to get the ░░░░ ░░░░ we ░░░░ $\theta = \frac{\pi}{4} - \frac{\phi}{2}$. ░░░░ ░░░░ ░░░░ $R$,
 
 $$
 \begin{aligned}
@@ -899,7 +899,7 @@ $$
 
 ##### (a) Neglecting air resistance, use Newton's second law to find the ball's position as a function of time. (Use axes with $x$ measured horizontally and $y$ vertically.) 
 
-The ░░░░ is ░░░░ ░░░░ ░░░░ ░░░░ ░░░░ ░░░░ ░░░░ only ░░░░ the y-component, we have $g_y = -g \implies F_y = -mg$. ░░░░ only need to integrate twice to get $r_y(t)$░░░░
+The ░░░░ ░░░░ only affected ░░░░ its weight, ░░░░ ░░░░ only ░░░░ ░░░░ y-component, ░░░░ ░░░░ $g_y = -g \implies F_y = -mg$. ░░░░ ░░░░ need to integrate twice ░░░░ ░░░░ $r_y(t)$,
 
 $$
 \begin{aligned}
@@ -910,7 +910,7 @@ m\ddot{r_y} &= -mg \\
 r_y(t) &= -\frac{1}{2}gt^2 + C_1t + C_2 \\ 
 \end{aligned}
 $$
-░░░░ $t = 0$░░░░ ░░░░ $r_y(0) = 0$, we need to find $C_1$. The cannon ░░░░ shot ░░░░ ░░░░ an angle $\theta$ with ░░░░ ░░░░ $v_0$,
+At $t = 0$, ░░░░ $r_y(0) = 0$, we need to find $C_1$░░░░ ░░░░ cannon ░░░░ ░░░░ initially ░░░░ an ░░░░ $\theta$ with ░░░░ velocity $v_0$░░░░
 
 $$
 \begin{aligned}
@@ -919,12 +919,12 @@ C_1 &= v_0\sin\theta\\\\
 \therefore \quad r_y(t) = -\frac{1}{2}gt^2 + v_0\sin\theta \ t \\
 \end{aligned}
 $$
-Since there's no ░░░░ acting on the x-component, we ░░░░ have the ░░░░ to deal ░░░░ so $r_x(t) = v_0\cos\theta \ t$ ░░░░ ░░░░ ░░░░ $r_y(t)$░░░░ giving us ░░░░ ░░░░ ░░░░ function,
+░░░░ ░░░░ ░░░░ force acting on ░░░░ ░░░░ ░░░░ only ░░░░ the ░░░░ to ░░░░ ░░░░ so $r_x(t) = v_0\cos\theta \ t$ (derived exactly like $r_y(t)$░░░░ giving ░░░░ our ░░░░ position ░░░░
 $$\therefore \quad \bm{r_{cball}}(t) = (v_0\cos\theta \ t, \ -\frac{1}{2}gt^2 + v_0\sin\theta \ t) \quad \blacksquare$$
 
 ##### (b) Let $r(t)$ denote the ball's distance from the cannon. What is the largest possible value of $\theta$ if $r(t)$ is to increase throughout the ball's flight? [Hint: Using your solution to (a) you can write down $r^2$ as $x^2 + y^2$ , and then find the condition that $r^2$ is always increasing.]
 
-░░░░ with $\bm{r_{cball}}^2(t)$░░░░ ░░░░ differentiate 
+░░░░ ░░░░ $\bm{r_{cball}}^2(t)$, we ░░░░ 
 
 $$
 \begin{aligned}
@@ -936,9 +936,9 @@ $$
 &= g^2 t^3 - 3 v_0 g \sin(\theta) t^2 + 2 v_0^2 t
 \end{aligned}
 $$
-To ░░░░ the ░░░░ for $\bm{\dot{r}^2_{cball}}$ ░░░░ be ░░░░ increasing, ░░░░ need the derivative to be ░░░░ for all $t > 0$, ░░░░ ░░░░ can be ░░░░ ░░░░ roots. ░░░░ condition ░░░░ no ░░░░ ░░░░ ░░░░ the discriminant being less ░░░░ $0$░░░░$b^2 - 4ac \lt 0$). 
+To find ░░░░ ░░░░ for $\bm{\dot{r}^2_{cball}}$ ░░░░ ░░░░ always increasing, ░░░░ ░░░░ ░░░░ ░░░░ to ░░░░ positive for ░░░░ $t > 0$░░░░ meaning, ░░░░ can ░░░░ ░░░░ real roots. The ░░░░ for ░░░░ real roots ░░░░ the discriminant ░░░░ ░░░░ than $0$($b^2 - 4ac \lt 0$). 
 
-░░░░ ░░░░ $b^2 = (3v_0g\sin\theta)^2$, $a = g^2$, and $c = 2v_0^2$░░░░ solving ░░░░ $\theta$░░░░
+░░░░ have $b^2 = (3v_0g\sin\theta)^2$, $a = g^2$, and $c = 2v_0^2$, ░░░░ ░░░░ $\theta$░░░░
 
 $$
 \begin{aligned}
@@ -947,7 +947,7 @@ $$
 v_0^2g^2(9\sin^2\theta - 8) &< 0 \\ \\[0.5pt]
 \end{aligned}
 $$
-░░░░ both ░░░░ ░░░░ $v_0^2g^2$, and simplifying, ░░░░ ░░░░ ░░░░ final value ░░░░ $\theta$░░░░
+░░░░ ░░░░ ░░░░ by $v_0^2g^2$░░░░ and simplifying, we get ░░░░ ░░░░ value ░░░░ $\theta$,
 
 $$
 \begin{aligned}
@@ -961,9 +961,9 @@ $$
 
 #### Ex-$41$: An astronaut in gravity-free space is twirling a mass m on the end of a string of length $R$ in a circle, with constant angular velocity $\omega$. Write down Newton's second law in polar coordinates and find the tension in the string.
 
-░░░░ know ░░░░ $\omega = \dot{\phi}$░░░░ ░░░░ ░░░░ ░░░░ ░░░░ ░░░░ ░░░░ string ░░░░ use $\vec{F}_r = m(\ddot{r} - r\omega^2)$░░░░
+░░░░ know that $\omega = \dot{\phi}$░░░░ ░░░░ find ░░░░ ░░░░ ░░░░ the string we ░░░░ $\vec{F}_r = m(\ddot{r} - r\omega^2)$░░░░
 
-░░░░ $R$ ░░░░ constant, $\ddot{r} = 0$░░░░ ░░░░ ░░░░ $\omega$ ░░░░ constant, ░░░░ ░░░░ ░░░░ ░░░░ and substitute, 
+░░░░ $R$ ░░░░ ░░░░ $\ddot{r} = 0$░░░░ and ░░░░ $\omega$ is ░░░░ ░░░░ ░░░░ ░░░░ equation ░░░░ ░░░░ 
 
 $$
 \begin{aligned}
@@ -976,13 +976,13 @@ $$
 
 #### Ex-$42$: Prove that the transformations from rectangular to polar coordinates and vice versa are given by the four equations. Explain why the equation for $\theta$ is not quite complete and give a complete version.
 
-a) $x = r \cos\theta$ ░░░░ $y = r \sin\theta$
+░░░░ $x = r \cos\theta$ and $y = r \sin\theta$
 
-░░░░ ░░░░ ░░░░ unit circle (where $r = 1$). ░░░░ by ░░░░ $\cos\theta = \dfrac{x}{r}$ and $\sin\theta = \dfrac{y}{r} \quad \blacksquare$
+Lets ░░░░ ░░░░ unit ░░░░ ░░░░ $r = 1$). Then, ░░░░ ░░░░ $\cos\theta = \dfrac{x}{r}$ and $\sin\theta = \dfrac{y}{r} \quad \blacksquare$
 
 ░░░░ $r = \sqrt{x^2 + y^2}$ ░░░░ $\theta = \tan^{-1}(\dfrac{y}{x})$ 
 
-░░░░ definitions ░░░░ ░░░░
+Substituting ░░░░ from a,
 
 $$
 \begin{aligned}
@@ -993,25 +993,25 @@ r &= \sqrt{x^2 + y^2} \\
 &= r \quad \blacksquare
 \end{aligned}
 $$
-Since $\arctan$ doesn't distinguish between ░░░░ ░░░░ need ░░░░ ░░░░ ░░░░ conditions,
+Since $\arctan$ ░░░░ distinguish ░░░░ quadrants, ░░░░ ░░░░ to apply ░░░░ ░░░░
 
-If $x > 0$░░░░ $\theta = arctan(y/x)$░░░░
-If $x < 0$, $\theta = \arctan(y/x) + \pi$.
-░░░░ $x = 0$ ░░░░ $y > 0$░░░░ $\theta = \pi / 2$.
-░░░░ $x = 0$ and $y < 0$, $\theta$ = $-\pi/2 \quad \blacksquare$
+░░░░ $x > 0$, $\theta = arctan(y/x)$.
+If $x < 0$░░░░ $\theta = \arctan(y/x) + \pi$.
+If $x = 0$ and $y > 0$, $\theta = \pi / 2$░░░░
+If $x = 0$ ░░░░ $y < 0$, $\theta$ ░░░░ $-\pi/2 \quad \blacksquare$
 
 #### Ex-$43$:
 
 ##### (a) Prove that the unit vector r of two-dimensional polar coordinates is equal to $$\hat{\bm{r}} = \hat{\bm{x}}cos\phi + \hat{\bm{y}} sin\phi$$and find a corresponding expression for $\hat{\bm{\phi}}$.
 
-We know ░░░░ ░░░░ point $(r, \ \phi)$ in ░░░░ is related ░░░░ ░░░░ coordinates $(x, \ y)$ ░░░░ 
+░░░░ ░░░░ that a ░░░░ $(r, \ \phi)$ in polar-coordinates is ░░░░ to ░░░░ ░░░░ $(x, \ y)$ ░░░░ 
 
 $$
 x = r \cos \phi \\
 y = r \sin \phi
 $$
-In ░░░░ if ░░░░ ░░░░ vector $\vec{r}$ is ░░░░ ░░░░ $$\bm{r} = \bm{r}_x \bm{\hat{x}} + \bm{r}_y\bm{\hat{y}}$$
-Then we can represent ░░░░ unit vector as 
+In ░░░░ if some position vector $\vec{r}$ is represented by $$\bm{r} = \bm{r}_x \bm{\hat{x}} + \bm{r}_y\bm{\hat{y}}$$
+Then we can ░░░░ ░░░░ unit ░░░░ as 
 
 $$
 \begin{aligned}
@@ -1019,7 +1019,7 @@ $$
 &= \dfrac{\bm{r}_x\bm{\hat{x}} + \bm{r}_y\bm{\hat{y}}}{\sqrt{\bm{r}_x^2 + \bm{r}_y^2}} \\ \\[0.5pt]
 \end{aligned}
 $$
-Substituting relations,
+░░░░ relations,
 
 $$
 \begin{aligned}
@@ -1027,13 +1027,13 @@ $$
 \therefore \quad \cos\phi\bm{\hat{x}} + \sin\phi\bm{\hat{y}} \quad \blacksquare
 \end{aligned}
 $$
-Rotating $\hat{\bm{r}}$ $90^\circ$ ░░░░ we ░░░░
+░░░░ $\hat{\bm{r}}$ $90^\circ$ counter-clockwise, ░░░░ get
 
 $$\hat{\bm{\phi}} = -\sin\phi\hat{\bm{x}} + \cos\phi\bm{\hat{y}} \quad \blacksquare$$
 
 ##### (b) Assuming that $\phi$ depends on the time $t$, differentiate your answers in 1-43a to give an alternative proof of the results (1.42) and (1.46) for the time derivatives of $\hat{\bm{r}}$ and $\hat{\bm{\phi}}$.
 
-░░░░ ░░░░ to find $\bm{\dot{\hat{r}}}$ and $\bm{\dot{\hat{\phi}}}$. ░░░░ with ░░░░ former ░░░░ ░░░░ $\phi$ ░░░░ $\phi(t)$░░░░
+We ░░░░ to ░░░░ $\bm{\dot{\hat{r}}}$ ░░░░ $\bm{\dot{\hat{\phi}}}$░░░░ ░░░░ ░░░░ ░░░░ ░░░░ and treating $\phi$ as $\phi(t)$,
 
 $$
 \begin{aligned}
@@ -1043,7 +1043,7 @@ $$
 \therefore \quad \dot{\hat{r}} = \dot{\phi}\bm{\hat{\phi}} \quad \blacksquare
 \end{aligned}
 $$
-░░░░ we ░░░░ ░░░░ $\bm{\dot{\hat{\phi}}}$░░░░
+Now, we ░░░░ ░░░░ $\bm{\dot{\hat{\phi}}}$,
 
 $$
 \begin{aligned}
@@ -1056,7 +1056,7 @@ $$
 
 #### Ex-$45$: Prove that if $\bm{v}(t)$ is any vector that depends on time (for example the velocity of a moving particle) but which has constant magnitude, then $\bm{\dot{v}}(t)$ is orthogonal to $\bm{v}(t)$. Prove the converse that if $\bm{\dot{v}}(t)$ is orthogonal to $\bm{v}(t)$, then $|\bm{v}(t)|$ is constant. [Hint: Consider the derivative of $\bm{v}^2$.] This is a very handy result. It explains why, in two-dimensional polars, $\bm{\dot{\hat{r}}}$ has to be in the direction of $\bm{\hat{\phi}}$ and vice versa. It also shows that the speed of a charged particle in a magnetic field is constant, since the acceleration is perpendicular to the velocity.
 
-░░░░ $|\bm{v}(t)|$ ░░░░ ░░░░ $|\bm{v^2}(t)|$ is ░░░░ as ░░░░ alongside all ░░░░ derivatives. ░░░░ start ░░░░ ░░░░ derivative,
+If $|\bm{v}(t)|$ is constant, $|\bm{v^2}(t)|$ is ░░░░ as ░░░░ alongside all ░░░░ derivatives. We ░░░░ with its ░░░░
 
 $$
 \begin{aligned}
@@ -1076,31 +1076,31 @@ $$
 \end{aligned}
 $$
 
-Hence, ░░░░ $\bm{\dot{v}}(t) \cdot \bm{v}(t) = 0$, $\bm{\dot{v}}(t)$ ░░░░ ░░░░ ░░░░ $\bm{v}(t)$. $\blacksquare$
+░░░░ ░░░░ $\bm{\dot{v}}(t) \cdot \bm{v}(t) = 0$, $\bm{\dot{v}}(t)$ is orthogonal to $\bm{v}(t)$░░░░ $\blacksquare$
 
-Taking ░░░░ ░░░░ at our ░░░░ ░░░░ $\dot{v^2}(t)$░░░░ ░░░░ can ░░░░ ░░░░ ░░░░ ░░░░ ░░░░ $\dot{v^2}(t) = 0 \ \implies \dot{v}(t) = 0 \ \implies |\bm{v}(t)| = constant \quad \blacksquare$
+Taking ░░░░ look ░░░░ our ░░░░ ░░░░ $\dot{v^2}(t)$, we can ░░░░ ░░░░ ░░░░ gives ░░░░ $\dot{v^2}(t) = 0 \ \implies \dot{v}(t) = 0 \ \implies |\bm{v}(t)| = constant \quad \blacksquare$
 
 #### Ex-$47$: Let the position of a point $P$ in three dimensions be given by the vector $\bm{r} = (x, \ y, \ z)$ in Cartesian coordinates. The same position can be specified by cylindrical polar coordinates, $(\rho, \ \phi,\ z)$ which are defined as follows: Let $P'$ denote the projection of $P$ onto the xy plane; that is, $P'$ has Cartesian coordinates $(x, y, 0)$. Then $\rho$ and $\phi$ are defined as the two-dimensional polar coordinates of $P'$ in the $xy$ plane, while $z$ is the third Cartesian coordinate, unchanged. 
 
 ##### (a) Make a sketch to illustrate the three cylindrical coordinates. Give expressions for $\rho$, $\phi$, $z$ in terms of the Cartesian coordinates $x$, $y$, $z$. Explain in words what $\rho$ is ("$\rho$ is the distance of $P$ from $?$"). There are many variants in notation. For instance, some people use $r$ instead of $\rho$. Explain why this use of $\bm{r}$ is unfortunate. 
 
-░░░░ ░░░░ ░░░░ ░░░░ ░░░░ ░░░░ express $\rho$ ($z$ ░░░░ untouched) 
+░░░░ traditional right-handed coordinates, we ░░░░ ░░░░ $\rho$ ░░░░$z$ remains untouched) 
 
 $$\rho = \sqrt{x^2 + y^2} \quad \blacksquare$$
 
-For $\phi$, we ░░░░ to consider ░░░░ ░░░░ as ░░░░
+░░░░ $\phi$░░░░ we need to consider ░░░░ ░░░░ as well,
 
 $$\phi = \arctan(y / x) \quad \blacksquare$$
 
 ##### (b) Describe the three unit vectors $\hat{\bm{\rho}}, \ \hat{\bm{\phi}}, \ \hat{\bm{z}}$ and write the expansion of the position vector $\bm{r}$ in terms of these unit vectors. 
 
-$\hat{\bm{\rho}}$ ░░░░ ░░░░ ░░░░ $z$ ░░░░ to ░░░░ ░░░░ $P$░░░░ ░░░░ to ░░░░ $xy$-slice. $\hat{\bm{\phi}}$ ░░░░ the ░░░░ vector tangential ░░░░ the ░░░░ $xy$░░░░ along the ░░░░ of motion. $\hat{\bm{z}}$ remains untouched. Then,
+$\hat{\bm{\rho}}$ points ░░░░ ░░░░ $z$ ░░░░ ░░░░ ░░░░ ░░░░ $P$░░░░ ░░░░ ░░░░ ░░░░ $xy$░░░░ $\hat{\bm{\phi}}$ ░░░░ ░░░░ unit vector tangential to the ░░░░ $xy$-slice along the ░░░░ of motion. $\hat{\bm{z}}$ ░░░░ ░░░░ Then,
 
 $$\bm{r} = \rho \hat{\bm{\rho}} + z \hat{\bm{z}} \quad \blacksquare$$
 
 ##### (c) Differentiate your last answer twice to find the cylindrical components of the acceleration $\bm{a} = \ddot{\bm{r}}$ of the particle. To do this, you will need to know the time derivatives of $\hat{\bm{\rho}}$ and $\hat{\bm{\phi}}$.
 
-░░░░ ░░░░ to differentiate $\bm{r}$ twice,
+We ░░░░ to differentiate $\bm{r}$ ░░░░
 
 $$
 \begin{aligned}
@@ -1108,7 +1108,7 @@ $$
 \end{aligned}
 $$
 
-We ░░░░ with $\bm{r}$░░░░
+░░░░ start with $\bm{r}$,
 
 $$
 \begin{aligned}
@@ -1117,7 +1117,7 @@ $$
 \end{aligned}
 $$
 
-We ░░░░ $\dot{\hat{\bm{\rho}}}$ ░░░░ $\dot{\hat{\bm{\phi}}}$, starting with $\dot{\hat{\bm{\rho}}}$░░░░
+We need $\dot{\hat{\bm{\rho}}}$ and $\dot{\hat{\bm{\phi}}}$, ░░░░ ░░░░ $\dot{\hat{\bm{\rho}}}$░░░░
 
 $$
 \begin{aligned}
@@ -1129,11 +1129,11 @@ $$
 \end{aligned}
 $$
 
-Since 
+░░░░ 
 
 $$\sin\phi \bm{\hat{x}} + \cos \phi \bm{\hat{y}} = \hat{\bm{\phi}} \quad \implies \quad \dot{\hat{\bm{\rho}}} = \dot{\phi} \bm{\hat{\phi}}$$
 
-░░░░ ░░░░ get ░░░░ $\dot{\hat{\bm{\phi}}}$░░░░
+now ░░░░ ░░░░ ░░░░ $\dot{\hat{\bm{\phi}}}$░░░░
 
 $$
 \begin{aligned}
@@ -1146,7 +1146,7 @@ $$
 &= -\dot{\phi} \, \hat{\bm{\rho}}
 \end{aligned}
 $$
-░░░░ getting ░░░░ ░░░░ ░░░░ ░░░░ ░░░░
+░░░░ getting ░░░░ to ░░░░ and ░░░░
 
 $$
 \begin{aligned}
@@ -1159,11 +1159,11 @@ $$
 
 #### Ex-$49$: Imagine two concentric cylinders, centered on the vertical $z$ axis, with radii $R ± \epsilon$, where $\epsilon$ is very small. A small frictionless puck of thickness $2\epsilon$ is inserted between the two cylinders, so that it can be considered a point mass that can move freely at a fixed distance from the vertical axis. If we use cylindrical polar coordinates $(\rho, \ \phi, \ z)$ for its position (1.47), then $\rho$ is fixed at $\rho = R$. while $\phi$ and $z$ can vary at will. Write down and solve Newton's second law for the general motion of the puck, including the effects of gravity. Describe the puck's motion.
 
-Given conditions: $\rho$ = $R$ (constant), $\dot{\rho}$ ░░░░ $\ddot{\rho}$ ░░░░ $0$.
+░░░░ conditions: $\rho$ ░░░░ $R$ ░░░░ $\dot{\rho}$ = $\ddot{\rho}$ = $0$░░░░
 
-░░░░ only ░░░░ ░░░░ ░░░░ gravity: $F = -mg\hat{\bm{z}}$
+The ░░░░ ░░░░ force is ░░░░ $F = -mg\hat{\bm{z}}$
 
-░░░░ ░░░░ ░░░░ ░░░░ ░░░░ ░░░░ ░░░░ previous ░░░░
+Using ░░░░ cylindrical coordinate acceleration from ░░░░ ░░░░ ░░░░
 $$\ddot{\mathbf{r}} = (\ddot{\rho} - \rho \dot{\phi}^2) \hat{\boldsymbol{\rho}} + (2 \dot{\rho} \dot{\phi} + \rho \ddot{\phi}) \hat{\boldsymbol{\phi}} + \ddot{z} \hat{\mathbf{z}}$$
-░░░░ with our ░░░░ conditions:
+░░░░ ░░░░ our ░░░░ conditions:
 $$\ddot{\bm{r}} = -R \dot{\phi}^2 \hat{\bm{\rho}} + R \ddot{\phi} \hat{\bm{\phi}} + \ddot{z} \hat{\bm{z}}$$
