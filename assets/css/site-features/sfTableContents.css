@@ -1,134 +1,133 @@
-.SF_TOC_CONTAINER 
-{
-  position: sticky; 
+/* Outer Container (Strip Header) */
+.SF_TOC_CONTAINER {
+  position: sticky;
   top: 0;
-  z-index: 50; 
-  border-top: 1px solid var(--borderColor);
-  border-right: 1px solid var(--borderColor);
-  border-bottom: 1px solid var(--borderColor);
-  margin-bottom: 0; 
-  background-color: color-mix(in srgb, var(--BGColor) 85%, var(--borderColor) 15%);
+  z-index: 50;
+
+  border: none;
+
+  background-color: color-mix(in srgb, var(--BGColor) 95%, var(--borderColor) 5%);
+  margin-top: var(--bigSizeREM) !important;
+  margin-bottom: var(--bigSizeREM);
 }
 
-.SF_TOC_STRIP 
-{
-  padding: var(--smallSizeREM) var(--baseSizeREM) var(--smallSizeREM) 0;
+/* TOC Toggle Strip (Header Text Area) */
+.SF_TOC_STRIP {
+  padding: var(--smallestSizeREM) var(--baseSizeREM);
   cursor: pointer;
-  display: flex; 
-  justify-content: space-between; 
+  display: flex;
+  justify-content: space-between;
   align-items: center;
-  user-select: none; 
+  user-select: none;
+  border: none;
+  transition: background-color 0.15s ease-out;
 }
 
-.SF_TOC_CURRENT_SECTION 
-{
-  font-family: var(--fontCode);
+.SF_TOC_STRIP:hover {
+  background-color: color-mix(in srgb, var(--BGColor) 80%, var(--borderColor) 20%);
+}
+
+.SF_TOC_CURRENT_SECTION {
+  font-family: var(--fontUI);
   font-size: var(--smallSizeREM);
-  color: var(--mutedTextColor);
-  transition: color 0.2s ease-in-out; 
+  color: var(--accentColor);
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  transition: color 0.2s ease-in-out;
 }
 
-.SF_TOC_STRIP:hover .SF_TOC_CURRENT_SECTION, .SF_TOC_STRIP:focus .SF_TOC_CURRENT_SECTION 
-{
-  color: var(--accentColor); 
-  outline: none;
-}
-
-.SF_TOC 
-{
-  display: none; 
+.SF_TOC {
+  display: none;
   position: absolute;
-  top: 100%; 
-  left: 0;  
-  right: 0; 
-  background-color: color-mix(in srgb, var(--BGColor) 85%, var(--borderColor) 15%);
+  top: 100%;
+  left: 0;
+  right: 0;
+  background-color: var(--BGColor);
   border: 1px solid var(--borderColor);
-  border-top: none; 
-  padding: var(--baseSizeREM);
-  z-index: 10; 
-  max-height: 60vh; 
+  border-top: none;
+  padding: var(--baseSizeREM) var(--baseSizeREM) var(--baseSizeREM) var(--baseSizeREM);
+  z-index: 10;
+  max-height: 60vh;
   overflow-y: auto;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); 
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
-.SF_TOC_CONTAINER.is-expanded .SF_TOC 
-{
+.SF_TOC_CONTAINER.is-expanded .SF_TOC {
   display: block;
 }
 
-.SF_TOC ul 
-{
+.SF_TOC ul {
   list-style: none;
-  padding-left: 0; 
+  padding-left: 0;
   margin-left: 0;
+  display: block !important;
+  flex-direction: column !important;
 }
 
-.SF_TOC li 
-{
-  display: block; 
-  padding-left: 0; 
-  margin-bottom: var(--smallestSizeREM); 
+.SF_TOC li {
+  display: block;
+  padding-left: 0;
+  margin-bottom: 0;
   line-height: 1.4;
 }
 
-.SF_TOC > ul > li::before, .SF_TOC > ul > li > ul > li::before 
-{
- content: "■"; 
- font-size: 0.6em;
- color: var(--accentColor);
- display: inline-block; 
- width: 1.2em;          
- margin-right: 0.3em;   
- text-align: center; 
- vertical-align: middle; 
+.SF_TOC > ul > li::before {
+  content: "■";
+  font-size: 0.6em;
+  color: var(--accentColor);
+  display: inline-block;
+  width: var(--smallSizeREM);
+  margin-right: var(--space-2xs);
+  text-align: center;
+  vertical-align: top;
 }
 
-.SF_TOC > ul > li > ul > li > ul li::before 
-{
- content: none;
- display: none;
+.SF_TOC > ul > li > ul > li::before,
+.SF_TOC > ul > li > ul > li > ul li::before {
+  content: none;
+  display: none;
 }
 
-.SF_TOC ul ul 
-{
-  margin-left: 0; 
-  margin-top: var(--smallestSizeREM); 
-  padding-left: var(--smallSizeREM); 
+.SF_TOC ul ul {
+  margin-left: 0;
+  margin-top: var(--smallSizeREM);
+
+  padding-left: var(--baseSizeREM);
 }
 
-.SF_TOC > ul > li > ul > li > ul li 
-{
-   padding-left: 0.75em; 
+.SF_TOC > ul > li > ul > li > ul li {
+  padding-left: var(--smallSizeREM);
 }
 
-.SF_TOC a 
-{
-  font-family: var(--fontCode);
-  font-size: var(--smallSizeREM);
-  color: var(--mutedTextColor); 
+.SF_TOC a {
+  font-family: var(--fontUI);
+  font-size: var(--textSmall);
+  color: var(--mutedTextColor);
   text-decoration: none;
   font-weight: 400;
-  display: inline; 
-  vertical-align: middle; 
+  display: block;
+ 
+  padding-top: var(--smallSizeREM);
+  padding-bottom: var(--smallSizeREM);
+  padding-left: 0;
+  padding-right: 0;
 }
 
-.SF_TOC > ul > li > a 
-{
-   color: var(--textColor); 
-   font-weight: 600; 
+.SF_TOC > ul > li > a {
+  color: var(--textColor);
+  font-weight: 600;
 }
 
-.SF_TOC a:hover, .SF_TOC a:focus 
-{
+.SF_TOC a:hover, .SF_TOC a:focus {
   color: var(--accentColor);
   text-decoration: underline;
   text-decoration-thickness: 1px;
-  text-underline-offset: 2px; 
+  text-underline-offset: 2px;
   text-decoration-color: var(--borderColor);
 }
 
-.SF_TOC a.toc-active 
-{ 
+.SF_TOC a.toc-active {
   color: var(--accentColor);
   font-weight: 700;
 }

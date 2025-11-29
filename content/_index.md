@@ -1,32 +1,23 @@
 ---
 title: "Homepage"
+displayTitle: "The Foundational Detour"
+metaInfo: "Updated **April 2025** in Nottingham, UK."
+date: 2025-04-01
 url: /now/
 ---
 
-## NOW
+<p class="intro-lead">
+  I am currently seeking graduate roles in graphics and research. My focus lies at the intersection of Theoretical Computer Science, Constructive Logic, and the Observational Arts.
+</p>
 
-{{< lpStack class="LP_STACK_INTER_BASE LP_STACK_EDGEMARGIN_BASE LP_STACK_EDGEMARGIN_NOBOTTOMEDGE" >}}
+{{< figure src="https://upload.wikimedia.org/wikipedia/commons/3/30/The_Fighting_Temeraire%2C_JMW_Turner%2C_National_Gallery.jpg" alt="The Fighting Temeraire" caption="Figure 1: Atmospheric perspective & the sublime." >}}
 
-<div>
+In March 2024, I completed my MSc in Computer Science at the University of Nottingham with Merit. My journey has been non-linear—a 7-year haze through audio engineering and medical uncertainty—landing firmly in the precise world of formal systems.
 
-### STATUS
+Currently, my days are split between two distinct modes of thought:
 
-- _Updated April 2025._
-- In March 2024, I completed my MSc in Computer Science at the University of Nottingham and am seeking graduate roles in graphics, research, or related fields. I’m based in the UK.
-- My research focused on the intersection of theoretical computer science and pure mathematics, developing computer‑aided proofs within a constructive reasoning framework. 
-- I’m passionate about computer graphics and working on a state of the art pathtracer (currently on hold).
-- Recently, I’ve been reading, painting, and making music in my free time.
-- Find me on [github](https://github.com/essentialblend), [twitter](https://x.com/essentialblend).
+- **Formalization:** Building a proper foundation in Type Theory. I recently moved from "naive" proofs in Agda to self-studying Mileti's *Modern Mathematical Logic*.
+- **Graphics:** Working on a state-of-the-art path tracer to better understand light transport.
+- **The Arts:** Painting in watercolour, reading philosophy, and making music.
 
-</div>
-
-<div>
-
-### GET IN TOUCH
-
-If you’d like to learn more or need help, please email me at hi@siddharths.space. I'll gladly oblige. Otherwise, if you're merely exploring, feel free to visit the [projects](/projects) or the [notes](/notes) section. Even better, head on over to the [stream](/stream).
-
-</div>
-
-
-{{< /lpStack >}}
+This space serves as a digital garden for these pursuits. It is imperfect, recursive, and always under construction.

@@ -1,49 +1,42 @@
 <!DOCTYPE html>
-<html lang="en" data-page="{{ .Title | urlize }}" data-user-theme="themeLight">
-
-{{ partial "components/siteHead.html" . }}
-
+<html lang="en" data-user-theme="themeLight">
+  {{ partial "components/siteHead.html" . }}
+  
 <body>
-  <div class="LP_STACK LP_STACK_EDGEMARGIN_BIG LP_STACK_EDGEMARGIN_NOBOTTOMEDGE LP_STACK_INTER_BIGGER LP_CENTER">
+  <div class="container">
 
     {{ partial "components/header.html" . }}
-    
-    <main>
-      <div class="LP_STACK LP_STACK_EDGEMARGIN_NOMARGIN LP_STACK_INTER_BIGGER">
-        {{ if .IsHome }}
-          {{ block "homeContent" . }}{{ end }}
-        {{ else if .IsNode }}
-          {{ block "sectionContent" . }}{{ end }}
-        {{ else if .IsPage }}
-          {{ block "pageContent" . }}{{ end }}
-        {{ else }}
-          {{ block "defaultContent" . }}{{ end }}
-        {{ end }}
-      </div>
+
+    <main> 
+      {{ if .IsHome }}
+      {{ block "homeContent" . }}{{ end }}
+      {{ else if .IsNode }}
+      {{ block "sectionContent" . }}{{ end }}
+      {{ else if .IsPage }}
+      {{ block "pageContent" . }}{{ end }}
+      {{ else }}
+      {{ block "defaultContent" . }}{{ end }}
+      {{ end }}
     </main>
-    
+
     {{ partial "components/footer.html" . }}
+
   </div>
-  
-  <!-- Site JS -->
+
   {{ partial "components/siteJSCombine.html" . }}
 
-  <!--Katex-->
   {{ if (or (eq .Section "writings") (eq .Section "notes") (eq .Section "stream") (eq .Section "projects") (eq .Kind "term")) }}
-      <script defer src="{{ "katex/katex.min.js" | relURL }}"></script>
-      <script defer src="{{ "katex/auto-render.min.js" | relURL }}"></script>
-  
-
-    {{ $katexInit := resources.Get "js/site-features/katexClient.js" | resources.Minify | resources.Fingerprint }}
-    <script defer src="{{ $katexInit.RelPermalink }}"></script>
+  <script defer src="{{ "katex/katex.min.js" | relURL }}"></script>
+  <script defer src="{{ "katex/auto-render.min.js" | relURL }}"></script>
+  {{ $katexInit := resources.Get "js/site-features/katexClient.js" | resources.Minify | resources.Fingerprint }}
+  <script defer src="{{ $katexInit.RelPermalink }}"></script>
   {{ end }}
 
   <button class="SF_SCROLLTOP_BTN" title="Go to top" aria-label="Scroll to top">
     <svg xmlns="http://www.w3.org/2000/svg" height="24" viewBox="0 -960 960 960" width="24" fill="currentColor">
-      <path d="M440-160v-487L216-423l-56-57 320-320 320 320-56 57-224-224v487h-80Z"/>
+      <path d="M440-160v-487L216-423l-56-57 320-320 320 320-56 57-224-224v487h-80Z" />
     </svg>
   </button>
-  
 </body>
 
 </html>

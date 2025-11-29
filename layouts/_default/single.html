@@ -1,34 +1,38 @@
 {{ define "pageContent" }}
-  {{ if in (slice "writings" "notes" "projects") .Section }}
-    <section class="LP_LEFT_SEPARATOR">
-      <div class="LP_STACK LP_STACK_INTER_BASE">
-        <h1>{{ .Title }}</h1>
-      
-        {{ if not .IsHome }}
-          {{ partial "partials/components/metadata.html" . }}
-        {{ end }}
-      </div>
-    </section>
-    {{ partial "partials/pages/genericPageContent.html" . }}
-  {{ else }}
-    <section class="LP_LEFT_SEPARATOR">
-      <div class="LP_STACK LP_STACK_INTER_BIG">
-        <h1>{{ .Title | upper }}</h1>
-        <div class="SF_PAGE_DESCRIPTION">
-          {{- if isset .Params "subtitle" -}}
-            {{ .Params.subtitle | markdownify }}
-          {{- else -}}
-            {{ .Params.summary | markdownify }}
-          {{- end -}}
-        </div>
-      </div>
-    </section>
-    
-    <section class="LP_LEFT_SEPARATOR">
-      <div class="SF_POSTCONTENT">
-        {{ .Content | markdownify }}
-      </div>
-    </section>
-  {{ end }}
+{{ if in (slice "writings" "notes" "projects") .Section }}
+<!-- Removed LP_LEFT_SEPARATOR from here to remove the left border -->
+<section>
+  <!-- Use NOMARGIN to allow the metadata wrapper to control its specific spacing -->
+  <div class="LP_STACK LP_STACK_INTER_NOMARGIN">
+    <h1>{{ .Title }}</h1>
+
+    {{ if not .IsHome }}
+    {{ partial "partials/components/metadata.html" . }}
+    {{ end }}
+  </div>
+</section>
+
+<!-- This next partial handles TOC + Content -->
+{{ partial "partials/pages/genericPageContent.html" . }}
+{{ else }}
+<section class="LP_LEFT_SEPARATOR">
+  <div class="LP_STACK LP_STACK_INTER_BIG">
+    <h1>{{ .Title | upper }}</h1>
+    <div class="SF_PAGE_DESCRIPTION">
+      {{- if isset .Params "subtitle" -}}
+      {{ .Params.subtitle | markdownify }}
+      {{- else -}}
+      {{ .Params.summary | markdownify }}
+      {{- end -}}
+    </div>
+  </div>
+</section>
+
+<section class="LP_LEFT_SEPARATOR">
+  <div class="SF_POSTCONTENT">
+    {{ .Content | markdownify }}
+  </div>
+</section>
+{{ end }}
 
 {{ end }}

@@ -2,7 +2,7 @@
 title: "Algebra: Notes from the Underground"
 description: "My notes on Aluffi's book on abstract algebra."
 date: 2025-03-17
-status: studying
+status: ongoing
 subjects: ["Mathematics"] 
 categories: ["Academic Textbook"]
 tags: ["Algebra", "Abstract Algebra", "Aluffi", "Rings", "Groups", "Fields", "Abstract"]

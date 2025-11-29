@@ -1,8 +1,7 @@
-/* General site-wide features */
+﻿/* General site-wide features */
 
 /* Clock */
-#site-clock.SF_SITECLOCK
-{
+#site-clock.SF_SITECLOCK {
   cursor: default;
   font-family: var(--fontCode);
   font-size: var(--specialSizeREM);
@@ -12,8 +11,7 @@
 }
 
 /* Page description for sections (branch bundles) */
-.SF_PAGE_DESCRIPTION
-{
+.SF_PAGE_DESCRIPTION {
   font-size: var(--specialSizeREM);
   font-style: italic;
   color: var(--mutedTextColor);
@@ -21,8 +19,7 @@
 
 /* Styling for markdown content */
 
-.SF_POSTCONTENT pre 
-{
+.SF_POSTCONTENT pre {
   position: relative;
   margin-block: var(--bigSizeREM) var(--baseSizeREM);
   background-color: color-mix(in srgb, var(--BGColor) 92%, var(--borderColor));
@@ -31,8 +28,7 @@
   padding: 0;
 }
 
-.SF_CODE_HEADER 
-{
+.SF_CODE_HEADER {
   position: sticky;
   top: 0;
   z-index: 10;
@@ -46,16 +42,14 @@
   border-top-right-radius: 3px;
 }
 
-.SF_CODE_LANG 
-{
+.SF_CODE_LANG {
   font-family: var(--fontCode);
   font-size: var(--specialSizeREM);
   color: var(--mutedTextColor);
   margin-right: var(--baseSizeREM);
 }
 
-.SF_CODE_COPY_BUTTON 
-{
+.SF_CODE_COPY_BUTTON {
   background: none;
   border: none;
   padding: 0;
@@ -71,34 +65,83 @@
   padding: 0 var(--smallestSizeREM);
 }
 
-.SF_CODE_COPY_BUTTON:hover, .SF_CODE_COPY_BUTTON:focus 
-{
-  color: var(--accentColor);
-  outline: none;
+  .SF_CODE_COPY_BUTTON:hover, .SF_CODE_COPY_BUTTON:focus {
+    color: var(--accentColor);
+    outline: none;
+  }
+
+  .SF_CODE_COPY_BUTTON.copied {
+    color: var(--statusIconColor);
+    font-weight: 700;
+  }
+
+.SF_POSTCONTENT pre > code {
+  display: block;
+  padding: var(--smallSizeREM);
+  white-space: pre-wrap;
+  word-break: break-all;
+  font-family: var(--fontCode);
+  font-size: var(--smallSizeREM);
 }
 
-.SF_CODE_COPY_BUTTON.copied 
-{
- color: var(--statusIconColor);
- font-weight: 700;
+  .SF_POSTCONTENT pre > code .line:nth-of-type(even) {
+    display: flex;
+    width: 100%;
+    background-color: color-mix(in srgb, var(--borderColor) 25%, transparent);
+  }
+
+/* NOTE SPECIFIC HORIZONTAL LAYOUT */
+.SF_NOTE_METADATA_WRAPPER {
+  border-top: 1px solid var(--borderColor);
+  border-bottom: 1px solid var(--borderColor);
+  padding: var(--smallerSizeREM) 0;
+  margin-top: var(--smallSizeREM);
+  margin-bottom: 0;
 }
 
-.SF_POSTCONTENT pre > code 
-{
-    display: block;
-    padding: var(--smallSizeREM);
-    white-space: pre-wrap;
-    word-break: break-all;
-    font-family: var(--fontCode);
-    font-size: var(--smallSizeREM);
-}
-
-.SF_POSTCONTENT pre > code .line:nth-of-type(even) 
-{
+.SF_NOTE_METADATA_ROW {
   display: flex;
-  width: 100%;
-  background-color: color-mix(in srgb, var(--borderColor) 25%, transparent);
+  flex-wrap: wrap;
+  align-items: baseline;
+  gap: var(--space-base);
+  font-family: var(--fontUI);
+  font-size: var(--textSmall);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: var(--mutedTextColor);
+  line-height: 1;
 }
 
+.SF_NOTE_META_ITEM {
+  display: flex;
+  align-items: baseline;
+  gap: var(--space-2xs);
+}
 
+.SF_NOTE_META_LABEL {
+  font-weight: 700;
+  color: var(--textColor);
+}
 
+.SF_NOTE_META_VALUE {
+  color: var(--mutedTextColor);
+  font-weight: 400;
+}
+
+.SF_NOTE_META_LINK {
+  color: inherit;
+  text-decoration: none;
+  transition: color 0.15s ease;
+}
+
+  .SF_NOTE_META_LINK:hover {
+    color: var(--accentColor);
+    text-decoration: underline;
+  }
+
+.SF_NOTE_PIPE {
+  color: var(--borderColor);
+  font-weight: 300;
+  user-select: none;
+  opacity: 0.6;
+}

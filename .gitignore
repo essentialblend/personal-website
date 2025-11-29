@@ -24,3 +24,6 @@ netlify/functions/node_modules/
 notes-raw/
 
 .vscode/
+.vs/
+*.user
+*.suo

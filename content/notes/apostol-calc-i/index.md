@@ -2,7 +2,7 @@
 title: "Calculus: I"
 description: "My notes on Tom Apostol's calculus book."
 date: 2023-08-01
-status: studying
+status: ongoing
 subjects: ["Mathematics"] 
 categories: ["Academic Textbook"]
 tags: ["Calculus", "Apostol", "Math", "Integration", "Differentiation", "Linear Spaces", "Derivative", "Integral", "Partial", "Vector", "Linear", "Space"]

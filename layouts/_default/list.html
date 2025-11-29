@@ -1,26 +1,29 @@
 {{ define "sectionContent" }}
 
-<section class="LP_LEFT_SEPARATOR"> 
-  <div class="LP_STACK LP_STACK_INTER_BASE LP_STACK_EDGEMARGIN_BASE LP_STACK_EDGEMARGIN_NOTOPEDGE"> 
-    <h1>{{ .Title | upper }}</h1>
-    <div class="SF_PAGE_DESCRIPTION">
-      {{ with .Content }}{{ . }}{{ end }}
-    </div> 
+<div class="LP_STACK LP_STACK_INTER_SMALL" style="margin-bottom: 50px;">
+  <h1 class="page-title">{{ .Title }}</h1>
+
+  {{ with .Content }}
+  <div class="section-intro-container">
+    <div class="section-intro">
+      {{ . }}
+    </div>
   </div>
-</section>
+  {{ end }}
+</div>
+
+{{/* --- SECTION SPECIFIC PARTIALS --- */}}
 
 {{ if eq .Section "writings"}}
-  {{ partial "sections/writingsSection.html" . }}
+{{ partial "sections/writingsSection.html" . }}
 {{ else if eq .Section "projects" }}
-  {{ partial "sections/projectsSection.html" . }}
+{{ partial "sections/projectsSection.html" . }}
 {{ else if eq .Section "notes" }}
-  {{ partial "sections/notesSection.html" . }}
+{{ partial "sections/notesSection.html" . }}
 {{ else if eq .Section "colophon" }}
-  {{ partial "sections/colophonSection.html" . }}
+{{ partial "sections/colophonSection.html" . }}
 {{ else if eq .Section "stream" }}
-  {{ partial "sections/streamSection.html" . }}
-  
+{{ partial "sections/streamSection.html" . }}
 {{ end }}
 
 {{ end }}
-

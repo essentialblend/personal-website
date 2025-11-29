@@ -2,7 +2,7 @@
 title: "Modern Mathematical Logic"
 description: "Notes on J Mileti's textbook on mathematical logic."
 date: 2025-06-29
-status: studying
+status: ongoing
 subjects: ["Mathematics", "Logic"] 
 categories: ["Academic Textbook"]
 tags: ["mathematical-logic", "first-order-logic", "model-theory", "set-theory", "computability-theory", "incompleteness-theorems", "foundations-of-mathematics"]

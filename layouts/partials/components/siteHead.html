@@ -11,7 +11,6 @@
   <link rel="stylesheet" href="{{ "katex/katex.min.css" | relURL }}">
   {{ end }}
   
-  
   {{ $syntaxLight := "" }}{{ with resources.Get "css/code-syntax/syntaxGitLight.css" }}{{ $syntaxLight = . | resources.Minify | resources.Fingerprint }}{{ end }}
   {{ $syntaxDark := "" }}{{ with resources.Get "css/code-syntax/syntaxGitDark.css" }}{{ $syntaxDark = . | resources.Minify | resources.Fingerprint }}{{ end }}
   {{ $syntaxContrast := "" }}{{ with resources.Get "css/code-syntax/syntaxMonokai.css" }}{{ $syntaxContrast = . | resources.Minify | resources.Fingerprint }}{{ end }}
@@ -21,6 +20,7 @@
   {{ if $syntaxContrast }}<meta name="syntax-theme-contrast" content="{{ $syntaxContrast.RelPermalink }}">{{ end }}
   
   {{ $defaultSyntax := $syntaxLight | default $syntaxDark | default $syntaxContrast }}
+  
   {{ if $defaultSyntax }}
   <link id="syntax-stylesheet" rel="stylesheet" href="{{ $defaultSyntax.RelPermalink }}">
   {{ end }}

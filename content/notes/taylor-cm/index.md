@@ -2,7 +2,7 @@
 title: "Classical Mechanics"
 description: "My notes on R Taylor's classical mechanics textbook."
 date: 2024-08-01
-status: studying
+status: ongoing
 subjects: ["Mathematics", "Physics"] 
 categories: ["Academic Textbook"]
 tags: ["Calculus", "Classical", "Integration", "Differentiation", "Linear Spaces", "Derivative", "Integral", "Partial", "Vector", "Linear", "Space", "Mechanics", "Newton", "Newtonian", "Lagrangian", "Lagrange", "Hamilton", "Energy", "Work", "Force", "Galileo", "Kinematics", "Dynamics", "Momentum"]

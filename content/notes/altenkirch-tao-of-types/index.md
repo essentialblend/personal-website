@@ -2,7 +2,7 @@
 title: "The Tao of Types"
 description: "My notes on Thorsten's book on type theory."
 date: 2025-04-17
-status: studying
+status: ongoing
 subjects: ["Mathematics", "Computer Science"] 
 categories: ["Academic Textbook"]
 tags: ["Algebra", "Abstract Algebra", "Type", "Rings", "Groups", "Fields", "Theory", "Thorsten", "Altenkirch", "Curry", "Howard", "Equivalence", "Intuitionistic", "Logic", "Constructive", "Axiomatic"]

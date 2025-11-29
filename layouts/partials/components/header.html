@@ -1,19 +1,29 @@
-<header class="LP_LEFT_SEPARATOR" style="border-bottom: 2px solid var(--borderColor); display: flex; justify-content: space-between; padding-bottom: var(--smallestSizeREM);">
-  <span id="site-clock" class="SF_SITECLOCK" data-feature="siteClock"></span>
-
-  <div class="LP_CLUSTER LP_CLUSTER_ALIGN_CENTER LP_CLUSTER_GAP_BIG" style="justify-content: flex-end;">
-    <nav class="LP_CLUSTER LP_CLUSTER_ALIGN_CENTER LP_CLUSTER_GAP_BIG" aria-label="Main navigation">
+<header>
+  <nav aria-label="Main navigation">
+    <ul>
+      {{/* 1. Dynamic Menu Loop (from config.yaml) */}}
       {{ range site.Menus.main }}
-        {{ $isActive := eq .URL $.RelPermalink }}
-        {{ if and (not $isActive) (ne .URL "/") (hasPrefix $.RelPermalink .URL) }}
-        {{ $isActive = true }}
+      {{ $isActive := eq .URL $.RelPermalink }}
+      {{/* Robust Active Check: matches /projects/agda to /projects */}}
+      {{ if and (not $isActive) (ne .URL "/") (hasPrefix $.RelPermalink .URL) }}
+      {{ $isActive = true }}
       {{ end }}
-      <a href="{{ .URL }}" data-page="{{ .Identifier | urlize }}" {{ if $isActive }}data-active="true"{{ end }}>
-        {{ .Name }}
-      </a>
-    {{ end }}
 
-    </nav>
-    <button data-theme-toggle aria-label="Toggle theme">Light</button>
-  </div>
+      <li>
+        <a href="{{ .URL }}"
+           class="nav-link {{ if $isActive }}active{{ end }}"
+           data-page="{{ .Identifier | urlize }}">
+          {{ .Name }}
+        </a>
+      </li>
+      {{ end }}
+
+      {{/* 2. Theme Toggle (Text-based to match redesign) */}}
+      <li class="theme-lock">
+        <button class="theme-btn" data-theme-toggle aria-label="Toggle theme" title="Switch Theme">
+          LIGHT
+        </button>
+      </li>
+    </ul>
+  </nav>
 </header>

@@ -1,24 +1,35 @@
 {{ define "homeContent" }}
 
-  <section class="LP_LEFT_SEPARATOR">
-    {{ .Content }}
-  </section>
+<div class="LP_STACK LP_STACK_INTER_BIG">
 
-  <section class="LP_LEFT_SEPARATOR">
-    <h2>WRITINGS</h2>
-    <div class="LP_STACK LP_STACK_EDGEMARGIN_NOMARGIN LP_STACK_EDGEMARGIN_NOBOTTOMEDGE LP_STACK_INTER_NOMARGIN">
+  {{ with .Params.metaInfo }}
+  <span class="meta-header">{{ . | markdownify }}</span>
+  {{ end }}
+
+  <h1 class="page-title">
+    {{ default .Title .Params.displayTitle }}
+  </h1>
+
+  <div class="LP_STACK LP_STACK_INTER_BASE">
+    {{ .Content }}
+  </div>
+
+  <section class="archives-section">
+    <span class="section-label">Recent Writings</span>
+
+    <div class="archive-list LP_STACK LP_STACK_INTER_SMALL">
       {{ range first 5 (where site.RegularPages "Section" "writings") }}
-        <article class="SF_BLOGPOST">
-          <div class="LP_STACK LP_STACK_EDGEMARGIN_NOMARGIN LP_STACK_INTER_NOMARGIN">
-            <div class="LP_CLUSTER LP_CLUSTER_ALIGN_CENTER LP_CLUSTER_GAP_SMALL" style="justify-content: space-between;">
-              <h2><a href="{{ .RelPermalink }}">{{ .Title }}</a></h2>
-              <time datetime="{{ .Date }}">{{ .Date.Format "January 2, 2006" }}</time>
-            </div>
-            <p>{{ .Params.description }}</p>
-          </div>
-        </article>
+      <a href="{{ .RelPermalink }}" class="archive-row">
+        <span class="row-date">{{ .Date.Format "Jan 2006" }}</span>
+        <span class="row-title">{{ .Title }}</span>
+        <span class="row-cat">
+          {{ with .Params.categories }}{{ index . 0 }}{{ else }}Note{{ end }}
+        </span>
+      </a>
       {{ end }}
     </div>
   </section>
+
+</div>
 
 {{ end }}
