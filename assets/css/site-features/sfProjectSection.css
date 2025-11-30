@@ -133,7 +133,6 @@ a.SF_PROJECT_LINK_WRAPPER .SF_PROJECT_META {
   background-color: transparent;
 }
 
-/* ✅ FIX: Remove block hover effect from tag arrows */
 .SF_METADATA_TAG--link::after {
   content: ' \2197';
   opacity: 0.6;
@@ -147,6 +146,60 @@ a.SF_PROJECT_LINK_WRAPPER .SF_PROJECT_META {
   color: black !important;
   opacity: 1.0;
   text-shadow: none;
+}
+
+.projects-list .SF_PROJECT_STACK {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  gap: var(--space-2xs);
+  margin-top: 0.35rem;
+  font-family: var(--fontUI);
+  font-size: 0.6rem;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+}
+
+.projects-list .SF_PROJECT_STACK .SF_METADATA_TAG {
+  font-size: inherit;
+  text-decoration: none;
+  color: var(--accentColor);
+  background: none;
+  border: none;
+  padding: 0;
+  border-radius: 0;
+  font-weight: 600;
+  cursor: pointer;
+  transition: color 0.15s ease, opacity 0.15s ease, transform 0.15s ease, letter-spacing 0.15s ease;
+}
+
+.projects-list .SF_PROJECT_STACK .SF_METADATA_TAG--link {
+  color: var(--mutedTextColor);
+  font-weight: 700;
+  font-style: italic;
+  text-decoration: none;
+}
+
+.projects-list .SF_PROJECT_STACK .SF_METADATA_TAG:hover,
+.projects-list .SF_PROJECT_STACK .SF_METADATA_TAG:focus-visible {
+  color: var(--accentHoverColor);
+  opacity: 1;
+  transform: translateY(-1px) scale(1.02);
+  letter-spacing: 0.08em;
+}
+
+.projects-list .SF_PROJECT_STACK .SF_METADATA_TAG--link:hover,
+.projects-list .SF_PROJECT_STACK .SF_METADATA_TAG--link:focus-visible {
+  color: var(--accentColor);
+}
+
+.projects-list .SF_PROJECT_STACK .SF_METADATA_TAG--link::after {
+  opacity: 0.7;
+}
+
+.projects-list .SF_PROJECT_STACK .SF_METADATA_TAG:focus-visible {
+  outline: 2px solid var(--accentColor);
+  outline-offset: 2px;
 }
 
 .SF_PROJECT {

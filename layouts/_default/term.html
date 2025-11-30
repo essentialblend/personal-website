@@ -1,7 +1,7 @@
 {{ define "sectionContent" }}
 
-<section class="LP_LEFT_SEPARATOR">
-  <div class="LP_STACK LP_STACK_INTER_BIG LP_STACK_EDGEMARGIN_BASE LP_STACK_EDGEMARGIN_NOTOPEDGE">
+<section class="SF_SINGLE_HEADER">
+  <div class="LP_STACK LP_STACK_INTER_BIG">
     <h1>{{ .Data.Singular | title }}: {{ .Title }}</h1>
     {{ with .Content }}
       <div class="SF_PAGE_DESCRIPTION">
@@ -11,25 +11,29 @@
   </div>
 </section>
 
-<div class="LP_STACK LP_STACK_INTER_BIGGER LP_STACK_EDGEMARGIN_TOPONLY_BIG">
-  {{ $paginator := .Paginate (.Pages.ByDate.Reverse) }}
-  {{ if $paginator.Pages }}
-    {{ range $paginator.Pages }}
-      <article class="LP_STACK LP_STACK_INTER_SMALL LP_LEFT_SEPARATOR SF_TERM_ENTRY">
-        <h2><a href="{{ .RelPermalink }}">{{ .Title }}</a></h2>
-        <p class="SF_METADATA_TERM_PAGE">
-          <span>{{ .Date.Format "January 2, 2006" }}</span> |
-          <span>Section: {{ .Section | title }}</span>
-        </p>
-        {{ with .Summary }}
-          <p class="SF_SUMMARY_CLAMP">{{ . | plainify }}</p>
-        {{ end }}
-      </article>
+<section>
+  <div class="LP_STACK LP_STACK_INTER_SMALL SF_TERM_LIST">
+    {{ $paginator := .Paginate (.Pages.ByDate.Reverse) }}
+    {{ if $paginator.Pages }}
+      {{ range $paginator.Pages }}
+      <a href="{{ .RelPermalink }}" class="note-row note-row--term SF_TERM_ENTRY">
+        <div class="note-main LP_STACK LP_STACK_INTER_SMALL">
+          <span class="note-title">{{ .Title }}</span>
+          {{ with .Summary }}
+          <span class="note-desc SF_TERM_SUMMARY">{{ . | plainify }}</span>
+          {{ end }}
+        </div>
+        <div class="note-meta LP_STACK LP_STACK_INTER_SMALL">
+          <span class="note-date">{{ .Date.Format "Jan 2006" }}</span>
+          <span class="SF_METADATA_TAG">{{ .Section | title }}</span>
+        </div>
+      </a>
+      {{ end }}
+    {{ else }}
+      <p>No content found for this {{ .Data.Singular }}.</p>
     {{ end }}
-  {{ else }}
-    <p>No content found for this {{ .Data.Singular }}.</p>
-  {{ end }}
-</div>
+  </div>
+</section>
 
 {{ if gt $paginator.TotalPages 1 }}
 <nav aria-label="Pagination" class="LP_CLUSTER LP_CLUSTER_GAP_BASE" style="justify-content: center; margin-top: var(--biggerSizeREM);">

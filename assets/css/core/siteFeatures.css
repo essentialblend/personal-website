@@ -1,6 +1,5 @@
-﻿/* General site-wide features */
+﻿
 
-/* Clock */
 #site-clock.SF_SITECLOCK {
   cursor: default;
   font-family: var(--fontCode);
@@ -10,14 +9,11 @@
   opacity: 0.66;
 }
 
-/* Page description for sections (branch bundles) */
 .SF_PAGE_DESCRIPTION {
   font-size: var(--specialSizeREM);
   font-style: italic;
   color: var(--mutedTextColor);
 }
-
-/* Styling for markdown content */
 
 .SF_POSTCONTENT pre {
   position: relative;
@@ -90,13 +86,42 @@
     background-color: color-mix(in srgb, var(--borderColor) 25%, transparent);
   }
 
-/* NOTE SPECIFIC HORIZONTAL LAYOUT */
 .SF_NOTE_METADATA_WRAPPER {
   border-top: 1px solid var(--borderColor);
   border-bottom: 1px solid var(--borderColor);
   padding: var(--smallerSizeREM) 0;
-  margin-top: var(--smallSizeREM);
-  margin-bottom: 0;
+  margin-top: var(--mediumSizeREM);
+  margin-bottom: var(--baseSizeREM);
+}
+
+.SF_NOTE_METADATA_WRAPPER--project {
+  margin-top: var(--biggerSizeREM);
+  margin-bottom: var(--mediumSizeREM);
+  padding-block: var(--baseSizeREM);
+}
+
+.SF_SINGLE_HEADER {
+  margin-top: calc(var(--text3XL) + var(--bigSizeREM));
+  margin-bottom: var(--text3XL);
+}
+
+.SF_SECTION_HEADER {
+  margin-top: calc(var(--text3XL) + var(--bigSizeREM));
+  margin-bottom: var(--text3XL);
+}
+
+@media (max-width: 700px) {
+  .SF_SECTION_HEADER {
+    margin-top: calc(var(--textXXL) + var(--bigSizeREM));
+    margin-bottom: var(--textXXL);
+  }
+}
+
+@media (max-width: 700px) {
+  .SF_SINGLE_HEADER {
+    margin-top: calc(var(--textXXL) + var(--bigSizeREM));
+    margin-bottom: var(--textXXL);
+  }
 }
 
 .SF_NOTE_METADATA_ROW {
@@ -144,4 +169,55 @@
   font-weight: 300;
   user-select: none;
   opacity: 0.6;
+}
+
+.SF_404_CONTENT {
+  max-width: 42rem;
+}
+
+.SF_404_FIGURE {
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: var(--smallSizeREM);
+  align-items: center;
+  padding-top: var(--mediumSizeREM);
+}
+
+.SF_404_FIGURE img.SF_404_MARMOSET,
+.SF_404_FIGURE img {
+  width: min(320px, 100%);
+  border: none;
+  border-radius: 8px;
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.12);
+  background: color-mix(in srgb, var(--BGColor) 90%, var(--borderColor) 10%);
+}
+
+.SF_404_FIGURE figcaption {
+  font-family: var(--fontUI);
+  font-size: var(--textSmall);
+  color: var(--mutedTextColor);
+  text-align: center;
+}
+
+.SF_404_ACTION {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: var(--smallSizeREM) var(--mediumSizeREM);
+  border: 1px solid var(--textColor);
+  font-family: var(--fontUI);
+  font-size: var(--textNav);
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--textColor);
+  background: transparent;
+  transition: color 0.15s ease, border-color 0.15s ease, background-color 0.15s ease;
+  align-self: center;
+}
+
+.SF_404_ACTION:hover {
+  color: var(--accentColor);
+  border-color: var(--accentColor);
+  background: color-mix(in srgb, var(--BGColor) 90%, var(--accentColor) 10%);
 }

@@ -1,26 +1,26 @@
-{{ if gt .Paginator.TotalPages 1 }}
-  <div style="display: flex; justify-content: center;">
-    <nav class="LP_CLUSTER LP_CLUSTER_ALIGN_CENTER LP_CLUSTER_GAP_SMALL" aria-label="Pagination">
-      
-      {{ if .Paginator.HasPrev }}
-        <a href="{{ .Paginator.First.URL }}" aria-label="First page">««</a>
-        <a href="{{ .Paginator.Prev.URL }}" aria-label="Previous page">«</a>
-      {{ end }}
+{{ $p := .Paginator }}
+{{ if and $p (gt $p.TotalPages 1) }}
+<nav class="SF_PAGINATION" aria-label="Pagination">
+  {{ if $p.HasPrev }}
+  <a class="SF_PAGE_LINK SF_PAGE_LINK--nav" href="{{ $p.Prev.URL }}" aria-label="Previous page">Prev</a>
+  {{ else }}
+  <span class="SF_PAGE_LINK SF_PAGE_LINK--nav SF_PAGE_LINK--disabled">Prev</span>
+  {{ end }}
 
-      {{ $current := .Paginator }}
-      {{ range $pager := .Paginator.Pagers }}
-        {{ if eq $pager $current }}
-          <a style="opacity: 0.6;" aria-current="page">{{ $pager.PageNumber }}</span>
-        {{ else }}
-          <a href="{{ $pager.URL }}">{{ $pager.PageNumber }}</a>
-        {{ end }}
+  <div class="SF_PAGE_NUMBERS">
+    {{ range $pager := $p.Pagers }}
+      {{ if eq $pager $p }}
+        <span class="SF_PAGE_NUM SF_PAGE_NUM--current" aria-current="page">{{ $pager.PageNumber }}</span>
+      {{ else }}
+        <a class="SF_PAGE_NUM" href="{{ $pager.URL }}">{{ $pager.PageNumber }}</a>
       {{ end }}
-
-      {{ if .Paginator.HasNext }}
-        <a href="{{ .Paginator.Next.URL }}" aria-label="Next page">»</a>
-        <a href="{{ .Paginator.Last.URL }}" aria-label="Last page">»»</a>
-      {{ end }}
-
-    </nav>
+    {{ end }}
   </div>
+
+  {{ if $p.HasNext }}
+  <a class="SF_PAGE_LINK SF_PAGE_LINK--nav" href="{{ $p.Next.URL }}" aria-label="Next page">Next</a>
+  {{ else }}
+  <span class="SF_PAGE_LINK SF_PAGE_LINK--nav SF_PAGE_LINK--disabled">Next</span>
+  {{ end }}
+</nav>
 {{ end }}

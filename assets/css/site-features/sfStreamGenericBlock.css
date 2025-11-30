@@ -1,4 +1,3 @@
-/* Core container for any stream item */
 .SF_STREAM_GENERIC_BLOCK {
   background-color: var(--BGColor);
   border: 1px solid var(--borderColor);
@@ -8,7 +7,6 @@
   padding-left: 0;
 }
 
-/* Header: Title + Summary */
 .SF_STREAM_SUMMARY_CONTENT_WRAP {
   padding: var(--baseSizeREM) calc(var(--baseSizeREM) * 3) var(--smallSizeREM) var(--baseSizeREM);
   background-image: linear-gradient(to right, rgba(255,255,255,0.02), rgba(255,255,255,0));
@@ -36,7 +34,6 @@
 .SF_STREAM_GENERIC_HOOK > *:first-child { margin-top: 0; }
 .SF_STREAM_GENERIC_HOOK > *:last-child { margin-bottom: 0; }
 
-/* Main markdown content block (used by both text + showcase) */
 .SF_STREAM_GENERIC_CONTENT.SF_POSTCONTENT {
   padding: var(--baseSizeREM);
   font-size: var(--smallSizeREM);
@@ -53,7 +50,6 @@
   font-size: var(--smallSizeREM);
 }
 
-/* Wrap every display math in its own horizontal scroll container */
 .SF_STREAM_GENERIC_CONTENT .katex-display {
   display: block;
   max-width: 100%;
@@ -63,13 +59,11 @@
   background: var(--BGColor);
 }
 
-/* Prevent the inner math from wrapping so the scroll kicks in */
 .SF_STREAM_GENERIC_CONTENT .katex-display .katex {
   display: inline-block;
   white-space: nowrap;
 }
 
-/* Showcase image block (used by artist + space) */
 .SF_SHOWCASE_FRAME {
   margin: var(--baseSizeREM) 0 var(--baseSizeREM);
   position: relative;
@@ -106,7 +100,6 @@
   opacity: 0.9;
 }
 
-
 .SF_SHOWCASE_BG_BLUR {
   position: absolute;
   top: 0; left: 0;
@@ -119,7 +112,6 @@
   z-index: 0;
 }
 
-/* Unified academic-style caption */
 .SF_SHOWCASE_CAPTION {
   text-align: center;
   font-family: var(--fontCode);
@@ -232,13 +224,11 @@
   text-decoration-color: var(--linkHoverColor);
 }
 
-/* Slideshow wrapper */
 .SF_SHOWCASE_SLIDES {
   position: relative;
   overflow: hidden;
 }
 
-/* Individual slides */
 .SF_SHOWCASE_SLIDE {
   position: absolute;
   inset: 0;
@@ -246,7 +236,6 @@
   transition: opacity 0.6s ease-in-out;
 }
 
-/* Show only the active slide */
 .SF_SHOWCASE_SLIDE.active {
   position: relative;
   opacity: 1;

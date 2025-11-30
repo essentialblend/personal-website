@@ -2,7 +2,7 @@
 
 {{ $subjects := $.Site.Taxonomies.subjects.Alphabetical }}
 {{ if gt (len $subjects) 0 }}
-<div class="LP_LEFT_SEPARATOR" data-target-list="writings-list" data-item-selector=".SF_BLOGPOST">
+<div class="SF_TAXONOMYFILTER_WRAPPER" data-target-list="writings-list" data-item-selector=".SF_BLOGPOST">
   <nav aria-label="Filter writings by subject" class="SF_TAXONOMYFILTER">
     <div class="LP_CLUSTER LP_CLUSTER_ALIGN_CENTER LP_CLUSTER_GAP_SMALLER SF_TAXONOMYFILTER_CONTROLS">
       <p class="SF_TAXONOMYFILTER_LABEL">Subjects:</p>
@@ -25,28 +25,33 @@
 </div>
 {{ end }}
 
-<div class="LP_LEFT_SEPARATOR" id="writings-list">
-  <div class="LP_STACK LP_STACK_INTER_NOMARGIN LP_STACK_EDGEMARGIN_NOMARGIN LP_STACK_EDGEMARGIN_NOTOPEDGE">
+<div class="SF_WRITINGS_LIST_WRAPPER" id="writings-list">
+  <div class="LP_STACK LP_STACK_INTER_BIG LP_STACK_EDGEMARGIN_NOMARGIN LP_STACK_EDGEMARGIN_NOTOPEDGE">
     {{ $paginator := .Paginator }}
     {{ range $paginator.Pages.GroupByDate "2006" }}
     <section aria-labelledby="year-{{ .Key }}">
-      <h3 id="year-{{ .Key }}" class="SF_YEARGROUP_HEADING">{{ .Key }} ({{ len .Pages }} Post{{ if gt (len .Pages) 1 }}s{{ end }})</h3>
-      <div class="LP_STACK">
+      <div class="SF_YEARGROUP_HEADING">
+        <span id="year-{{ .Key }}">{{ .Key }}</span>
+        <span class="SF_YEARGROUP_COUNT">{{ len .Pages }} Post{{ if gt (len .Pages) 1 }}s{{ end }}</span>
+      </div>
+      <div class="LP_STACK LP_STACK_INTER_SMALL">
           {{ range .Pages }}
-          <article class="SF_BLOGPOST" data-subjects="{{ delimit .Params.subjects "," | lower }}">
-            <div class="LP_CLUSTER LP_CLUSTER_ALIGN_BASELINE LP_CLUSTER_GAP_SMALL" style="justify-content: space-between;">
-              <h2><a href="{{ .RelPermalink }}">{{ .Title }}</a></h2>
-              <time datetime="{{ .Date }}" class="SF_BLOGPOST_DATE">{{ .Date.Format "January 2, 2006" }}</time>
+          <a href="{{ .RelPermalink }}" class="note-row note-row--writings SF_BLOGPOST" data-subjects="{{ delimit .Params.subjects "," | lower }}">
+            <div class="note-main LP_STACK LP_STACK_INTER_SMALL">
+              <span class="note-title SF_BLOGPOST_TITLE">{{ .Title }}</span>
+              <span class="note-desc SF_BLOGPOST_SUMMARY">{{ .Params.description | default .Summary }}</span>
             </div>
-            <p>{{ .Params.description | default .Summary }}</p>
-          </article>
+            <div class="note-meta LP_STACK LP_STACK_INTER_SMALL">
+              <time datetime="{{ .Date }}" class="note-date SF_BLOGPOST_DATE">{{ .Date.Format "Jan 2006" }}</time>
+            </div>
+          </a>
           {{ end }}
       </div>
       </section>
       {{ else }}
       <p>No writings found in this period.</p>
       {{ end }}
-
     {{ partial "pagination.html" . }}
   </div>
 </div>
+

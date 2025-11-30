@@ -10,6 +10,11 @@
   {{ .Content }}
 </div>
 
+{{ else if eq .Section "projects" }}
+<div class="LP_STACK LP_STACK_INTER_BASE SF_POSTCONTENT SF_POSTCONTENT--project">
+  {{ .Content }}
+</div>
+
 {{ else }}
 {{/* Fallback layout */}}
 <div class="LP_STACK LP_STACK_INTER_BIGGER">

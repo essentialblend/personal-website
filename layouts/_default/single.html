@@ -1,9 +1,8 @@
 {{ define "pageContent" }}
 {{ if in (slice "writings" "notes" "projects") .Section }}
 <!-- Removed LP_LEFT_SEPARATOR from here to remove the left border -->
-<section>
-  <!-- Use NOMARGIN to allow the metadata wrapper to control its specific spacing -->
-  <div class="LP_STACK LP_STACK_INTER_NOMARGIN">
+<section class="SF_SINGLE_HEADER">
+  <div class="LP_STACK LP_STACK_INTER_BIGGEST">
     <h1>{{ .Title }}</h1>
 
     {{ if not .IsHome }}
@@ -14,6 +13,46 @@
 
 <!-- This next partial handles TOC + Content -->
 {{ partial "partials/pages/genericPageContent.html" . }}
+{{ else if eq .RelPermalink "/about/" }}
+<section class="SF_SINGLE_HEADER">
+  <div class="LP_STACK LP_STACK_INTER_BIG">
+    <h1>{{ .Title }}</h1>
+    <div class="SF_PAGE_DESCRIPTION">
+      {{- if isset .Params "subtitle" -}}
+      {{ .Params.subtitle | markdownify }}
+      {{- else -}}
+      {{ .Params.summary | markdownify }}
+      {{- end -}}
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="LP_STACK LP_STACK_INTER_BASE SF_POSTCONTENT">
+    {{ .Content | markdownify }}
+  </div>
+</section>
+
+{{ else if eq .RelPermalink "/now/" }}
+<section class="SF_SINGLE_HEADER">
+  <div class="LP_STACK LP_STACK_INTER_BIG">
+    <h1>{{ .Title }}</h1>
+    <div class="SF_PAGE_DESCRIPTION">
+      {{- if isset .Params "subtitle" -}}
+      {{ .Params.subtitle | markdownify }}
+      {{- else -}}
+      {{ .Params.summary | markdownify }}
+      {{- end -}}
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="LP_STACK LP_STACK_INTER_BASE SF_POSTCONTENT">
+    {{ .Content | markdownify }}
+  </div>
+</section>
+
 {{ else }}
 <section class="LP_LEFT_SEPARATOR">
   <div class="LP_STACK LP_STACK_INTER_BIG">

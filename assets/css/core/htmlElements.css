@@ -16,6 +16,12 @@
   font-display: swap;
 }
 
+@font-face {
+  font-family: "LimeBlossomCaps";
+  src: url("/fonts/LimeBlossomCaps.ttf") format("truetype");
+  font-display: swap;
+}
+
 :root {
   color-scheme: light;
   --ratioPhi: 1.61803398875;
@@ -51,6 +57,7 @@
   --fontUI: 'Vollkorn', serif;
   --fontHeading: 'Vollkorn', serif;
   --fontCode: 'Roboto Mono', monospace;
+  --fontDropcapDecorative: "LimeBlossomCaps", var(--fontHeading);
   --containerWidth: 46rem;
   --lineHeight: 1.65;
   --space-2xs: 0.25rem;
@@ -84,9 +91,9 @@ html[data-user-theme="themeDark"] {
 html[data-user-theme="themeHigh"] {
   --BGColor: #ffffff;
   --textColor: #000000;
-  --mutedTextColor: #000000;
-  --accentColor: #0000EE;
-  --accentHoverColor: #0000AA;
+  --mutedTextColor: #111111;
+  --accentColor: #cc0000;
+  --accentHoverColor: #990000;
   --borderColor: #000000;
   --linkHoverColor: var(--accentColor);
 }
@@ -138,6 +145,17 @@ img {
   width: 100%;
   margin: 0 auto;
   padding: 0 var(--space-md);
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  flex: 1 0 auto;
+}
+
+main {
+  flex: 1 0 auto;
+  display: flex;
+  flex-direction: column;
+  padding-bottom: var(--textLarge);
 }
 
 header {
@@ -220,10 +238,10 @@ nav ul {
 }
 
 footer {
-  margin-top: var(--text3XL);
+  margin-top: auto;
   padding-top: var(--textLarge);
-  padding-bottom: var(--textXXL);
-  border-top: 1px solid var(--borderColor);
+  padding-bottom: calc(var(--textLarge) * 0.7);
+  border-top: 2px solid var(--borderColor);
   font-family: var(--fontUI);
   font-size: var(--textSmall);
   color: var(--mutedTextColor);
@@ -507,6 +525,7 @@ figcaption {
   text-transform: uppercase;
   letter-spacing: 0.1em;
   font-weight: 600;
+  color: var(--accentColor);
 }
 
   .status-tag.ongoing {

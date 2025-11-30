@@ -1,51 +1,65 @@
 {{/* layouts/partials/sections/projectsSection.html */}}
 
-<div class="LP_LEFT_SEPARATOR">
-  <div class="LP_STACK LP_STACK_INTER_BASE">
-    {{ range .Pages.ByWeight }}
-    <article class="SF_PROJECT" {{ with .Params.thumbnail }} style="--bg-image: url('{{ . | absURL }}');" {{ end }}>
-        <a href="{{ .RelPermalink }}" class="SF_PROJECT_LINK_WRAPPER">
+<section class="notes-list projects-list">
+  {{ range .Pages.ByDate.Reverse }}
+  <a href="{{ .RelPermalink }}" class="note-row">
+    {{ $projectTitle := .Title }}
 
-          <h3>{{ .Title }}</h3>
+    <div class="note-main LP_STACK LP_STACK_INTER_SMALL">
+      <span class="note-title">{{ .Title }}</span>
 
-          {{ with .Params.description }}
-            <p>{{ . | markdownify }}</p>
-          {{ else }}
-            {{ with .Summary }} <p>{{ . }}</p> {{ end }}
-          {{ end }}
+      {{ with .Params.description }}
+      <span class="note-desc">{{ . }}</span>
+      {{ else }}
+      {{ with .Summary }} <span class="note-desc">{{ . }}</span> {{ end }}
+      {{ end }}
 
-          {{ $hasMeta := or .Params.status .Params.stacks .Params.repo .Params.live }}
-          {{ if $hasMeta }}
-            <div class="SF_PROJECT_META LP_CLUSTER LP_CLUSTER_ALIGN_CENTER LP_CLUSTER_GAP_SMALL">
+      {{ $stacks := .Params.stacks }}
+      {{ $repo := .Params.repo }}
+      {{ $hasStacks := gt (len $stacks) 0 }}
 
-              {{ with .Params.status }}
-                <span class="SF_METADATA_TAG SF_METADATA_TAG--status SF_METADATA_TAG--{{ . | urlize }}">{{ . }}</span>
-              {{ end }}
+      {{ if or $hasStacks $repo }}
+      <div class="SF_PROJECT_STACK">
+        {{ range $index, $stack := $stacks }}
+        {{ if $index }}<span class="tag-sep">&bull;</span>{{ end }}
+        {{ $assumedUrl := printf "/%s/%s/" "stacks" (. | urlize) }}
+        <span
+          class="SF_METADATA_TAG SF_METADATA_TAG--stack"
+          role="link"
+          tabindex="0"
+          onclick="event.preventDefault(); event.stopPropagation(); window.location.href='{{ $assumedUrl | relLangURL }}';"
+          onkeydown="if(event.key==='Enter' || event.key===' '){event.preventDefault(); event.stopPropagation(); window.location.href='{{ $assumedUrl | relLangURL }}';}"
+        >{{ $stack }}</span>
+        {{ end }}
 
-              {{ with .Params.stacks }}
-                {{ range . }}
-                  {{ $termName := . }}
-                  {{ $assumedUrl := printf "/%s/%s/" "stacks" ($termName | urlize) }}
-                  <a href="{{ $assumedUrl | relLangURL }}" class="SF_METADATA_TAG SF_METADATA_TAG--stack" onclick="event.stopPropagation();">{{ $termName }}</a>
-                {{ end }}
-              {{ end }}
+        {{ with $repo }}
+        {{ if $hasStacks }}<span class="tag-sep">&bull;</span>{{ end }}
+        <span
+          class="SF_METADATA_TAG SF_METADATA_TAG--link"
+          role="link"
+          tabindex="0"
+          aria-label="Open repository for {{ $projectTitle }}"
+          onclick="event.preventDefault(); event.stopPropagation(); window.open('{{ . }}','_blank','noopener');"
+          onkeydown="if(event.key==='Enter' || event.key===' '){event.preventDefault(); event.stopPropagation(); window.open('{{ . }}','_blank','noopener');}"
+        >
+          Repo
+        </span>
+        {{ end }}
+      </div>
+      {{ end }}
+    </div>
 
-              {{ with .Params.repo }}
+    <div class="note-meta LP_STACK LP_STACK_INTER_SMALL">
+      <span class="note-date">{{ .Date.Format "Jan 2006" }}</span>
 
-                <a href="{{ . }}" class="SF_METADATA_TAG SF_METADATA_TAG--link" target="_blank" rel="noopener noreferrer" onclick="event.stopPropagation();">Repository</a>
-              {{ end }}
-              {{ with .Params.live }}
+      {{ $status := .Params.status | default "ongoing" | lower }}
+      <span class="status-tag {{ $status }}">
+        {{ if eq $status "complete" }}Completed{{ else if eq $status "archived" }}Archived{{ else }}Ongoing{{ end }}
+      </span>
+    </div>
 
-                <a href="{{ . }}" class="SF_METADATA_TAG SF_METADATA_TAG--link" target="_blank" rel="noopener noreferrer" onclick="event.stopPropagation();">Live Site</a>
-              {{ end }}
-
-            </div>
-          {{ end }}
-
-        </a>
-      </article>
-    {{ else }}
-      <p>No projects listed yet.</p>
-    {{ end }} 
-  </div> 
-</div> 
+  </a>
+  {{ else }}
+  <p>No projects listed yet.</p>
+  {{ end }}
+</section>

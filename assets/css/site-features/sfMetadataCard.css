@@ -33,7 +33,7 @@ aside.SF_POSTMETA {
   }
 
 .SF_POSTMETA > .LP_CLUSTER > * + *::before {
-  content: '■';
+  content: 'ƒ-ÿ';
   color: var(--mutedTextColor);
   margin-left: var(--smallSizeREM);
   margin-right: var(--baseSizeREM);

@@ -1,6 +1,3 @@
-/* Layout Primitives */
-
-/* Center primitive: horizontally centers content with max width */
 .LP_CENTER 
 {
   display: flex;
@@ -8,12 +5,11 @@
   flex: 1;
   
   box-sizing: content-box;
-  max-inline-size: var(--mainMeasureWidth);
+  max-inline-size: var(--containerWidth);
   margin-inline: auto;
   padding-inline: var(--baseSizeREM);
 }
 
-/* Stack primitive: vertical spacing between children */
 .LP_STACK 
 {
   display: flex;
@@ -36,7 +32,6 @@
   margin-block-start: var(--stackInterMarginBlockREM, 0);
 }
 
-/* Cluster primitive: inline-flex wrapper for navs, tags, etc. */
 .LP_CLUSTER 
 {
   display: flex;
@@ -45,7 +40,6 @@
   align-items: var(--clusterAlignItemsVar, center);
 }
 
-/* Parameterized stack implementations for varying edge margins (combining top and bottom margins) followed by the same for inter-block margins. */
 .LP_STACK_EDGEMARGIN_SMALLEST 
 {
   --stackEdgeMarginBlockStartREM: var(--smallestSizeREM);
@@ -175,7 +169,6 @@
   --stackInterMarginBlockREM: 0;
 }
 
-/* Parameterized cluster implementations for gap spacing */
 .LP_CLUSTER_GAP_SMALLEST { --clusterGapREM: var(--smallestSizeREM); }
 .LP_CLUSTER_GAP_SMALLER  { --clusterGapREM: var(--smallerSizeREM); }
 .LP_CLUSTER_GAP_SMALL    { --clusterGapREM: var(--smallSizeREM); }
@@ -191,7 +184,6 @@
 .LP_CLUSTER_ALIGN_STRETCH  { --clusterAlignItemsVar: stretch; }
 .LP_CLUSTER_ALIGN_BASELINE { --clusterAlignItemsVar: baseline; }
 
-/* Custom pseudo-primitive for left-separators */
 .LP_LEFT_SEPARATOR
 {
   border-left: 3px solid var(--accentHoverColor) !important;

@@ -10,4 +10,4 @@ ai-scale: 1
 draft: false
 ---
 
-This is a mock post content about type theory.
+<p class="lede">This is a mock post content about type theory.</p>

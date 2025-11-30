@@ -2,31 +2,56 @@
 <html lang="en" data-page="404" data-user-theme="themeLight">
 {{ partial "components/siteHead404.html" . }}
 <body>
-  <div class="LP_STACK LP_STACK_EDGEMARGIN_BIG LP_STACK_EDGEMARGIN_NOBOTTOMEDGE LP_STACK_INTER_BIGGER LP_CENTER">
+  <div class="container">
 
     {{ partial "components/header.html" . }}
 
-    <main style="margin-top: 10vh; text-align: center;">
-      <h1 style="font-size: 5rem; font-weight: bold; color: var(--accentColor, #ff5252); margin-bottom: 1rem;">
-        404 – Page Not Found
-      </h1>
-    
-      <p style="font-size: 1.25rem; max-width: 60ch; margin: 0 auto 2rem;">
-        You've wandered into uncharted territory. The page you're looking for might have moved, been deleted, or perhaps it never existed at all.
-        <br><br>
-        If you typed the address manually, double-check the spelling. If you followed a broken link, feel free to let me know. Or, just head home and start fresh.
-      </p>
-    
-      <p style="margin-top: 2rem;">
-        <a href="/" style="text-decoration: underline; font-weight: bold;">← Home</a>
-      </p>
+    <main>
+      <section class="SF_SINGLE_HEADER">
+        <div class="LP_STACK LP_STACK_INTER_BIG">
+          <h1>404: Page not found</h1>
+          <div class="SF_PAGE_DESCRIPTION">
+            A curious marmoset may have chewed through the link you followed.
+          </div>
+        </div>
+      </section>
+
+      <section>
+        <div class="LP_STACK LP_STACK_INTER_BIG SF_POSTCONTENT SF_404_CONTENT">
+          <figure class="SF_404_FIGURE">
+            <img src="https://media2.giphy.com/media/v1.Y2lkPTc5MGI3NjExc2phaG9jY2ZrY2Zjem9idTM4NHU5M2k1MjVlaHpkaDN3c3kyMGV4diZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/1pqlhWSYCSNiIWk9ay/giphy.gif" alt="A marmoset eating melon">
+            <figcaption id="marmoset-quip">She promises to put it back. Eventually.</figcaption>
+          </figure>
+
+          <a href="/" class="SF_404_ACTION">Return home</a>
+        </div>
+      </section>
     </main>
-    
-  
+
     {{ partial "components/footer.html" . }}
   </div>
 
   {{ partial "components/siteJSCombineLean.html" . }}
 
+  <script>
+    (function() {
+      var quips = [
+        "She promises to put it back. Eventually.",
+        "She swears the link tasted like banana.",
+        "She thought it was a vine. It was your URL.",
+        "She is just hiding the page behind her tail.",
+        "She replaced your page with snack time.",
+        "She misread 404 as 4 for 1 fruit sale.",
+        "She filed it under \"trees\" by mistake.",
+        "She left a crumb trail. It goes nowhere.",
+        "She is buffering. Please bring papaya.",
+        "She thinks hyperlinks are jungle gyms."
+      ];
+      var target = document.getElementById("marmoset-quip");
+      if (!target) return;
+      var pick = quips[Math.floor(Math.random() * quips.length)];
+      target.textContent = pick;
+    })();
+  </script>
 </body>
 </html>

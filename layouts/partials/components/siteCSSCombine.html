@@ -5,6 +5,7 @@
 {{ $writingsTitleCSSChunk := resources.Get "css/site-features/sfWritingsCard.css" }}
 {{ $taxonomyFilterCSSChunk := resources.Get "css/site-features/sfTaxonomyFilter.css" }}
 {{ $metadataCardCSSChunk := resources.Get "css/site-features/sfMetadataCard.css" }}
+{{ $paginationCSSChunk := resources.Get "css/site-features/sfPagination.css" }}
 {{ $projectSectionCSSChunk := resources.Get "css/site-features/sfProjectSection.css" }}
 {{ $tableContentsCSSChunk := resources.Get "css/site-features/sfTableContents.css" }}
 {{ $scrollToTopCSSChunk := resources.Get "css/site-features/sfScrollToTop.css" }}
@@ -14,7 +15,7 @@
 {{ $genericBlockCSSChunk := resources.Get "css/site-features/sfStreamGenericBlock.css" }} 
 {{ $postContentCSSChunk := resources.Get "css/site-features/sfMDPostContent.css" }}
 
-{{ $cssSlice := slice $htmlElemCSSChunk $layoutPrimitivesCSSChunk $siteFeaturesCSSChunk $postContentCSSChunk $taxonomyFilterCSSChunk $writingsTitleCSSChunk $metadataCardCSSChunk $projectSectionCSSChunk $tableContentsCSSChunk $scrollToTopCSSChunk $colophonCSSChunk $streamCSSChunk $termCSSChunk $genericBlockCSSChunk }}
+{{ $cssSlice := slice $htmlElemCSSChunk $layoutPrimitivesCSSChunk $siteFeaturesCSSChunk $postContentCSSChunk $taxonomyFilterCSSChunk $writingsTitleCSSChunk $metadataCardCSSChunk $paginationCSSChunk $projectSectionCSSChunk $tableContentsCSSChunk $scrollToTopCSSChunk $colophonCSSChunk $streamCSSChunk $termCSSChunk $genericBlockCSSChunk }}
 
 {{ $merged := $cssSlice | resources.Concat "css/baseof.css" | resources.Minify | resources.Fingerprint }}
 

@@ -16,7 +16,7 @@
 
 {{/* Specific logic for Note metadata horizontal strip */}}
 {{ if $isNote }}
-<div class="SF_NOTE_METADATA_WRAPPER">
+<div class="SF_NOTE_METADATA_WRAPPER SF_NOTE_METADATA_WRAPPER--project">
   <div class="SF_NOTE_METADATA_ROW">
 
     {{/* 1. Author (using bookAuthor param) */}}
@@ -56,8 +56,67 @@
 
   </div>
 </div>
+{{ else if $isProject }}
+{{ $hasMeta := or $showStatus (or $showDate $showLastmod) (gt (len $stackParams) 0) (or $repoLink $liveLink) }}
+{{ if $hasMeta }}
+<div class="SF_NOTE_METADATA_WRAPPER">
+  <div class="SF_NOTE_METADATA_ROW">
+    {{ $scratch := newScratch }}
+
+    {{ if $showStatus }}
+    <div class="SF_NOTE_META_ITEM">
+      <span class="SF_NOTE_META_LABEL">Status:</span>
+      <span class="SF_NOTE_META_VALUE">{{ $showStatus }}</span>
+    </div>
+    {{ $scratch.Set "hasPrev" true }}
+    {{ end }}
+
+    {{ if or $showDate $showLastmod }}
+    {{ if $scratch.Get "hasPrev" }}<span class="SF_NOTE_PIPE">|</span>{{ end }}
+    <div class="SF_NOTE_META_ITEM">
+      <span class="SF_NOTE_META_LABEL">Updated:</span>
+      <span class="SF_NOTE_META_VALUE">
+        {{ if $showLastmod }}
+        {{ $page.Lastmod.Format "January 2, 2006" }}
+        {{ else }}
+        {{ $page.Date.Format "January 2, 2006" }}
+        {{ end }}
+      </span>
+    </div>
+    {{ $scratch.Set "hasPrev" true }}
+    {{ end }}
+
+    {{ if gt (len $stackParams) 0 }}
+    {{ if $scratch.Get "hasPrev" }}<span class="SF_NOTE_PIPE">|</span>{{ end }}
+    <div class="SF_NOTE_META_ITEM">
+      <span class="SF_NOTE_META_LABEL">Stack:</span>
+      <span class="SF_NOTE_META_VALUE">
+        {{ range $index, $termName := $stackParams }}
+        {{ if gt $index 0 }}, {{ end }}
+        {{ $assumedUrl := printf "/%s/%s/" "stacks" ($termName | urlize) }}
+        <a href="{{ $assumedUrl | relLangURL }}" class="SF_NOTE_META_LINK">{{ $termName }}</a>
+        {{ end }}
+      </span>
+    </div>
+    {{ $scratch.Set "hasPrev" true }}
+    {{ end }}
+
+    {{ if or $repoLink $liveLink }}
+    {{ if $scratch.Get "hasPrev" }}<span class="SF_NOTE_PIPE">|</span>{{ end }}
+    <div class="SF_NOTE_META_ITEM">
+      <span class="SF_NOTE_META_LABEL">Links:</span>
+      <span class="SF_NOTE_META_VALUE">
+        {{ with $repoLink }}<a href="{{ . }}" class="SF_NOTE_META_LINK" target="_blank" rel="noopener noreferrer">Repo</a>{{ end }}
+        {{ if and $repoLink $liveLink }} <span class="SF_NOTE_PIPE">|</span> {{ end }}
+        {{ with $liveLink }}<a href="{{ . }}" class="SF_NOTE_META_LINK" target="_blank" rel="noopener noreferrer">Live</a>{{ end }}
+      </span>
+    </div>
+    {{ end }}
+  </div>
+</div>
+{{ end }}
 {{ else }}
-{{/* Fallback for Writings/Projects (Original Logic) */}}
+{{/* Writings / fallback */}}
 {{ $hasMeta := false }}
 {{ if $isWriting }}
 {{ $hasMeta = or $showDate $showReadingTime (gt (len $categories) 0) (gt (len $tags) 0) (gt (len $subjects) 0) }}
@@ -66,45 +125,85 @@
 {{ end }}
 
 {{ if $hasMeta }}
-<aside class="SF_POSTMETA LP_STACK LP_STACK_INTER_SMALL">
-
-  <div class="LP_CLUSTER LP_CLUSTER_GAP_BASE LP_CLUSTER_ALIGN_BASELINE">
-
-    {{ if $isWriting }}
-    {{ if $showDate }}<p class="SF_POSTMETA_DATE"><span class="SF_POSTMETA_LABEL">Published:</span> <time datetime="{{ $page.Date }}">{{ $page.Date.Format "January 2, 2006" }}</time></p>{{ end }}
-    {{ if $showReadingTime }}<p class="SF_POSTMETA_READTIME"><span class="SF_POSTMETA_LABEL">Reading time:</span> {{ $page.ReadingTime }} min</p>{{ end }}
-    {{ with $categories }}<div class="SF_POSTMETA_CATS"><span class="SF_POSTMETA_LABEL">Filed under:</span> {{ range $index, $term := . }}{{ if gt $index 0 }}, {{ end }}<a href="{{ $term.RelPermalink }}" class="SF_POSTMETA_LINK">{{ $term.LinkTitle }}</a>{{ end }}</div>{{ end }}
-
-    {{ else if $isProject }}
-    {{ with $showStatus }}<div class="SF_POSTMETA_STATUS"><span class="SF_POSTMETA_LABEL">Status:</span> <span class="SF_METADATA_TAG SF_METADATA_TAG--status SF_METADATA_TAG--{{ . | urlize }}">{{ . }}</span></div>{{ end }}
-    {{ if $showDate }}<p class="SF_POSTMETA_DATE"><span class="SF_POSTMETA_LABEL">Date:</span> <time datetime="{{ $page.Date }}">{{ $page.Date.Format "January 2, 2006" }}</time></p>{{ end }}
-    {{ if or $repoLink $liveLink }}<div class="SF_POSTMETA_PROJ_LINKS"><span class="SF_POSTMETA_LABEL">Links:</span> {{ with $repoLink }}<a href="{{ . }}" class="SF_POSTMETA_LINK" target="_blank" rel="noopener noreferrer">Repository</a>{{ end }}{{ if and $repoLink $liveLink }} <span class="SF_POSTMETA_SEPARATOR"> ·</span> {{ end }}{{ with $liveLink }}<a href="{{ . }}" class="SF_POSTMETA_LINK" target="_blank" rel="noopener noreferrer">Live Site</a>{{ end }}</div>{{ end }}
-    {{ end }}
-  </div>
-
-  {{ $termsToShow := slice }}
   {{ if $isWriting }}
-  {{ $termsToShow = $tags | append $subjects }}
-  {{ else if $isProject }}
-  {{ $termsToShow = $stackParams }}
-  {{ end }}
+  <div class="SF_NOTE_METADATA_WRAPPER SF_NOTE_METADATA_WRAPPER--project">
+    <div class="SF_NOTE_METADATA_ROW">
+      {{ $scratch := newScratch }}
 
-  {{ if gt (len $termsToShow) 0 }}
-  <div class="{{ if $isProject }}SF_PROJECT_STACK LP_CLUSTER LP_CLUSTER_ALIGN_BASELINE LP_CLUSTER_GAP_SMALL{{ else }}SF_POSTMETA_TAGS{{ end }}">
-    <span class="SF_POSTMETA_LABEL">{{ if $isProject }}Stack{{ else }}Tagged{{ end }}:</span>
-    {{ range $index, $termData := $termsToShow }}
-    {{ if $isWriting }}
-    {{ $term := $termData }}
-    <a href="{{ $term.RelPermalink }}" class="SF_POSTMETA_LINK">{{ $term.LinkTitle }}</a>{{ if ne $index (sub (len $termsToShow) 1) }}<span class="SF_POSTMETA_SEPARATOR">, </span>{{ end }}
-    {{ else }}
-    {{ $termName := $termData }}
-    {{ $assumedUrl := printf "/%s/%s/" "stacks" ($termName | urlize) }}
-    <a href="{{ $assumedUrl | relLangURL }}" class="SF_METADATA_TAG SF_METADATA_TAG--stack">{{ $termName }}</a>
-    {{ end }}
-    {{ end }}
+      {{ if $showDate }}
+      <div class="SF_NOTE_META_ITEM">
+        <span class="SF_NOTE_META_LABEL">Published:</span>
+        <span class="SF_NOTE_META_VALUE"><time datetime="{{ $page.Date }}">{{ $page.Date.Format "January 2, 2006" }}</time></span>
+      </div>
+      {{ $scratch.Set "hasPrev" true }}
+      {{ end }}
+
+      {{ if $showReadingTime }}
+      {{ if $scratch.Get "hasPrev" }}<span class="SF_NOTE_PIPE">|</span>{{ end }}
+      <div class="SF_NOTE_META_ITEM">
+        <span class="SF_NOTE_META_LABEL">Reading time:</span>
+        <span class="SF_NOTE_META_VALUE">{{ $page.ReadingTime }} min</span>
+      </div>
+      {{ $scratch.Set "hasPrev" true }}
+      {{ end }}
+
+      {{ if $subjects }}
+      {{ if $scratch.Get "hasPrev" }}<span class="SF_NOTE_PIPE">|</span>{{ end }}
+      <div class="SF_NOTE_META_ITEM">
+        <span class="SF_NOTE_META_LABEL">Subjects:</span>
+        <span class="SF_NOTE_META_VALUE">
+          {{ range $index, $term := $subjects }}
+          {{ if gt $index 0 }}, {{ end }}
+          <a href="{{ $term.RelPermalink }}" class="SF_NOTE_META_LINK">{{ $term.LinkTitle }}</a>
+          {{ end }}
+        </span>
+      </div>
+      {{ $scratch.Set "hasPrev" true }}
+      {{ end }}
+
+      {{ if $tags }}
+      {{ if $scratch.Get "hasPrev" }}<span class="SF_NOTE_PIPE">|</span>{{ end }}
+      <div class="SF_NOTE_META_ITEM">
+        <span class="SF_NOTE_META_LABEL">Tags:</span>
+        <span class="SF_NOTE_META_VALUE">
+          {{ range $index, $term := $tags }}
+          {{ if gt $index 0 }}, {{ end }}
+          <a href="{{ $term.RelPermalink }}" class="SF_NOTE_META_LINK">{{ $term.LinkTitle }}</a>
+          {{ end }}
+        </span>
+      </div>
+      {{ end }}
+    </div>
   </div>
-  {{ end }}
+  {{ else }}
+  <aside class="SF_POSTMETA LP_STACK LP_STACK_INTER_SMALL">
 
-</aside>
+    <div class="LP_CLUSTER LP_CLUSTER_GAP_BASE LP_CLUSTER_ALIGN_BASELINE">
+
+      {{ if $isProject }}
+      {{ with $showStatus }}<div class="SF_POSTMETA_STATUS"><span class="SF_POSTMETA_LABEL">Status:</span> <span class="SF_METADATA_TAG SF_METADATA_TAG--status SF_METADATA_TAG--{{ . | urlize }}">{{ . }}</span></div>{{ end }}
+      {{ if $showDate }}<p class="SF_POSTMETA_DATE"><span class="SF_POSTMETA_LABEL">Date:</span> <time datetime="{{ $page.Date }}">{{ $page.Date.Format "January 2, 2006" }}</time></p>{{ end }}
+      {{ if or $repoLink $liveLink }}<div class="SF_POSTMETA_PROJ_LINKS"><span class="SF_POSTMETA_LABEL">Links:</span> {{ with $repoLink }}<a href="{{ . }}" class="SF_POSTMETA_LINK" target="_blank" rel="noopener noreferrer">Repository</a>{{ end }}{{ if and $repoLink $liveLink }} <span class="SF_POSTMETA_SEPARATOR"> Aú</span> {{ end }}{{ with $liveLink }}<a href="{{ . }}" class="SF_POSTMETA_LINK" target="_blank" rel="noopener noreferrer">Live Site</a>{{ end }}</div>{{ end }}
+      {{ end }}
+    </div>
+
+    {{ $termsToShow := slice }}
+    {{ if $isProject }}
+    {{ $termsToShow = $stackParams }}
+    {{ end }}
+
+    {{ if gt (len $termsToShow) 0 }}
+    <div class="{{ if $isProject }}SF_PROJECT_STACK LP_CLUSTER LP_CLUSTER_ALIGN_BASELINE LP_CLUSTER_GAP_SMALL{{ else }}SF_POSTMETA_TAGS{{ end }}">
+      <span class="SF_POSTMETA_LABEL">{{ if $isProject }}Stack{{ else }}Tagged{{ end }}:</span>
+      {{ range $index, $termData := $termsToShow }}
+      {{ $termName := $termData }}
+      {{ $assumedUrl := printf "/%s/%s/" "stacks" ($termName | urlize) }}
+      <a href="{{ $assumedUrl | relLangURL }}" class="SF_METADATA_TAG SF_METADATA_TAG--stack">{{ $termName }}</a>
+      {{ end }}
+    </div>
+    {{ end }}
+
+  </aside>
+  {{ end }}
 {{ end }}
 {{ end }}

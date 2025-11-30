@@ -8,8 +8,6 @@ stacks: ["Agda"]
 repo: https://github.com/essentialblend/ms-thesis
 ---
 
-# Type-theoretic Proofs for the Ring Axioms of the Integers
-
 This research project constituted a partial conditional for my MS where I prove the existence of a certain mathematical construct called a _Ring_. I achieve this with the help of a computer-aided proof-assistant called _Agda_, a programming language based on intuitionist type theory, also called Martin-Löf type theory (MLTT).
 
 This research project was undertaken under Prof. Thorsten Altenkirch's supervision, and I’m forever grateful for his time, expertise, and empathy towards my journey into this fantastic subject. 

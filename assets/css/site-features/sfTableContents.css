@@ -1,4 +1,3 @@
-/* Outer Container (Strip Header) */
 .SF_TOC_CONTAINER {
   position: sticky;
   top: 0;
@@ -6,25 +5,29 @@
 
   border: none;
 
-  background-color: color-mix(in srgb, var(--BGColor) 95%, var(--borderColor) 5%);
-  margin-top: var(--bigSizeREM) !important;
-  margin-bottom: var(--bigSizeREM);
+  background-color: color-mix(in srgb, var(--BGColor) 92%, var(--borderColor) 8%);
+  border: 1px solid color-mix(in srgb, var(--borderColor) 85%, var(--BGColor) 15%);
+  border-radius: var(--space-2xs);
+  box-shadow: 0 0 0 1px color-mix(in srgb, var(--borderColor) 60%, transparent) inset;
+  margin-top: var(--biggestSizeREM) !important;
+  margin-bottom: var(--biggestSizeREM);
 }
 
-/* TOC Toggle Strip (Header Text Area) */
 .SF_TOC_STRIP {
-  padding: var(--smallestSizeREM) var(--baseSizeREM);
+  padding: var(--space-xs) var(--space-sm);
   cursor: pointer;
   display: flex;
   justify-content: space-between;
   align-items: center;
   user-select: none;
   border: none;
+  border-radius: var(--space-2xs);
+  background: color-mix(in srgb, var(--BGColor) 88%, var(--borderColor) 12%);
   transition: background-color 0.15s ease-out;
 }
 
 .SF_TOC_STRIP:hover {
-  background-color: color-mix(in srgb, var(--BGColor) 80%, var(--borderColor) 20%);
+  background-color: color-mix(in srgb, var(--BGColor) 82%, var(--borderColor) 18%);
 }
 
 .SF_TOC_CURRENT_SECTION {
@@ -46,7 +49,7 @@
   background-color: var(--BGColor);
   border: 1px solid var(--borderColor);
   border-top: none;
-  padding: var(--baseSizeREM) var(--baseSizeREM) var(--baseSizeREM) var(--baseSizeREM);
+  padding: var(--space-sm);
   z-index: 10;
   max-height: 60vh;
   overflow-y: auto;
@@ -91,13 +94,13 @@
 
 .SF_TOC ul ul {
   margin-left: 0;
-  margin-top: var(--smallSizeREM);
+  margin-top: var(--space-2xs);
 
-  padding-left: var(--baseSizeREM);
+  padding-left: var(--space-sm);
 }
 
 .SF_TOC > ul > li > ul > li > ul li {
-  padding-left: var(--smallSizeREM);
+  padding-left: var(--space-xs);
 }
 
 .SF_TOC a {
@@ -108,8 +111,8 @@
   font-weight: 400;
   display: block;
  
-  padding-top: var(--smallSizeREM);
-  padding-bottom: var(--smallSizeREM);
+  padding-top: var(--space-xs);
+  padding-bottom: var(--space-xs);
   padding-left: 0;
   padding-right: 0;
 }

@@ -24,7 +24,7 @@
 .SF_COLOPHON_FONTGRID 
 {
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
   gap: var(--baseSizeREM);
   margin-top: var(--baseSizeREM);
 }
@@ -41,6 +41,11 @@
 .SF_COLOPHON_FONTCARD--serif 
 {
   font-family: var(--fontBody);
+}
+
+.SF_COLOPHON_FONTCARD--heading 
+{
+  font-family: var(--fontHeading);
 }
 
 .SF_COLOPHON_FONTCARD--mono 
@@ -142,7 +147,6 @@
   border-right: 1px solid var(--borderColor);
 }
 
-
 .SF_COLOPHON_PALETTE_ROLE_CELL 
 {
   font-family: var(--fontCode);
@@ -214,6 +218,11 @@ html[data-user-theme="themeHigh"] .SF_COLOPHON_PALETTE_SWATCH__COLOR.swatch-need
   width: auto;
   max-width: 100%;
   vertical-align: middle;
+  border: none;
+  box-shadow: none;
+  background: transparent;
+  padding: 0;
+  opacity: 1;
 }
 .SF_COLOPHON_LOGOS img.logo-hugo 
 {
