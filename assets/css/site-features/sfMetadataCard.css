@@ -25,12 +25,12 @@ aside.SF_POSTMETA {
   font-family: var(--fontCode);
 }
 
-  .SF_POSTMETA .SF_POSTMETA_LINK:hover {
-    color: var(--accentColor);
-    text-decoration: underline;
-    text-decoration-color: var(--accentColor);
-    text-underline-offset: 3px;
-  }
+.SF_POSTMETA .SF_POSTMETA_LINK:hover {
+  color: var(--accentColor);
+  text-decoration: underline;
+  text-decoration-color: var(--accentColor);
+  text-underline-offset: 3px;
+}
 
 .SF_POSTMETA > .LP_CLUSTER > * + *::before {
   content: 'ƒ-ÿ';
@@ -45,3 +45,130 @@ aside.SF_POSTMETA {
   user-select: none;
   margin: 0 0.1em;
 }
+
+.SF_AI_SCALE {
+  position: relative;
+  display: inline-flex;
+  align-items: baseline;
+}
+
+.SF_AI_BADGE {
+  font-size: var(--smallSizeREM);
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  cursor: help;
+}
+
+.SF_AI_BADGE--c {
+  color: var(--textColor);
+}
+
+.SF_AI_BADGE--b {
+  color: var(--textColor);
+}
+
+.SF_AI_BADGE--a {
+  color: var(--accentHoverColor);
+}
+
+.SF_AI_TOOLTIP {
+  position: absolute;
+  left: 50%;
+  top: calc(100% + var(--space-xs));
+  transform: translateX(-50%);
+  padding: var(--space-sm) var(--space-base);
+  font-family: var(--fontUI);
+  font-size: var(--smallSizeREM);
+  line-height: 1.4;
+  color: var(--textColor);
+  background-color: var(--BGColor);
+  border: 1px solid var(--borderColor);
+  box-shadow: 0 8px 18px rgba(0, 0, 0, 0.18);
+  max-width: min(28rem, calc(100vw - 2 * var(--space-lg)));
+  width: max-content;
+  white-space: normal;
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+  z-index: 20;
+  transition: opacity 0.15s ease-out, transform 0.15s ease-out;
+}
+
+.SF_AI_SCALE:hover .SF_AI_TOOLTIP {
+  opacity: 0.96;
+  visibility: visible;
+  transform: translateX(-50%) translateY(2px);
+}
+
+.SF_AI_TOOLTIP_HEADER {
+  font-size: var(--smallSizeREM);
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  margin-bottom: var(--space-2xs);
+  color: var(--accentColor);
+}
+
+.SF_AI_TOOLTIP_INTRO {
+  margin: 0 0 var(--space-xs);
+}
+
+.SF_AI_TOOLTIP_LIST {
+  list-style: none;
+  margin: 0 0 var(--space-xs);
+  padding: 0;
+}
+
+.SF_AI_TOOLTIP_LIST li {
+  display: flex;
+  align-items: flex-start;
+  gap: var(--space-xs);
+  margin-bottom: var(--space-2xs);
+  padding-left: 0;
+}
+
+    
+.SF_AI_TOOLTIP_LIST li::marker {
+  content: "";
+}
+
+.SF_AI_TOOLTIP_LIST li::before {
+  content: none;
+}
+
+.SF_AI_ROW {
+  display: flex;
+  align-items: flex-start;
+  gap: var(--space-xs);
+  margin-bottom: var(--space-2xs);
+}
+
+.SF_AI_CODE {
+  font-weight: 700;
+  font-size: var(--smallSizeREM);
+}
+
+.SF_AI_CODE::after {
+  content: ":";
+  margin-left: 0.15rem;
+}
+
+.SF_AI_ROW--c .SF_AI_CODE,
+.SF_AI_ROW--b .SF_AI_CODE {
+  color: var(--mutedTextColor);
+}
+
+.SF_AI_ROW--a .SF_AI_CODE {
+  color: #c53030;
+}
+.SF_AI_TEXT {
+  font-size: var(--smallSizeREM);
+  text-transform: none;
+}
+
+.SF_AI_TOOLTIP_FOOTER strong {
+  color: #c53030;
+  font-weight: 700;
+}
+

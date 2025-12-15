@@ -7,7 +7,7 @@ series: []
 tags: ["math", "logic", "curry", "howard", "isomorphism", "type", "theory", "type-theory"]
 description: "Exploring the intersection of 19th century art and modern rendering."
 ai-scale: 1
-draft: false
+draft: true
 ---
 
 <p class="lede">This is a mock post content about type theory.</p>

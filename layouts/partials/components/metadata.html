@@ -13,6 +13,8 @@
 {{ $stackParams := .Params.stacks }}
 {{ $repoLink := .Params.repo }}
 {{ $liveLink := .Params.live }}
+{{ $aiScale := .Params.ai_scale }}
+{{ $showAiScale := $aiScale }}
 
 {{/* Specific logic for Note metadata horizontal strip */}}
 {{ if $isNote }}
@@ -119,91 +121,140 @@
 {{/* Writings / fallback */}}
 {{ $hasMeta := false }}
 {{ if $isWriting }}
-{{ $hasMeta = or $showDate $showReadingTime (gt (len $categories) 0) (gt (len $tags) 0) (gt (len $subjects) 0) }}
+{{ $hasMeta = or $showDate $showReadingTime (gt (len $categories) 0) (gt (len $tags) 0) (gt (len $subjects) 0) $showAiScale }}
 {{ else if $isProject }}
 {{ $hasMeta = or $showStatus (gt (len $stackParams) 0) $repoLink $liveLink $showDate }}
 {{ end }}
 
 {{ if $hasMeta }}
-  {{ if $isWriting }}
-  <div class="SF_NOTE_METADATA_WRAPPER SF_NOTE_METADATA_WRAPPER--project">
-    <div class="SF_NOTE_METADATA_ROW">
-      {{ $scratch := newScratch }}
+{{ if $isWriting }}
+<div class="SF_NOTE_METADATA_WRAPPER SF_NOTE_METADATA_WRAPPER--project">
+  <div class="SF_NOTE_METADATA_ROW">
+    {{ $scratch := newScratch }}
 
-      {{ if $showDate }}
-      <div class="SF_NOTE_META_ITEM">
-        <span class="SF_NOTE_META_LABEL">Published:</span>
-        <span class="SF_NOTE_META_VALUE"><time datetime="{{ $page.Date }}">{{ $page.Date.Format "January 2, 2006" }}</time></span>
-      </div>
-      {{ $scratch.Set "hasPrev" true }}
-      {{ end }}
-
-      {{ if $showReadingTime }}
-      {{ if $scratch.Get "hasPrev" }}<span class="SF_NOTE_PIPE">|</span>{{ end }}
-      <div class="SF_NOTE_META_ITEM">
-        <span class="SF_NOTE_META_LABEL">Reading time:</span>
-        <span class="SF_NOTE_META_VALUE">{{ $page.ReadingTime }} min</span>
-      </div>
-      {{ $scratch.Set "hasPrev" true }}
-      {{ end }}
-
-      {{ if $subjects }}
-      {{ if $scratch.Get "hasPrev" }}<span class="SF_NOTE_PIPE">|</span>{{ end }}
-      <div class="SF_NOTE_META_ITEM">
-        <span class="SF_NOTE_META_LABEL">Subjects:</span>
-        <span class="SF_NOTE_META_VALUE">
-          {{ range $index, $term := $subjects }}
-          {{ if gt $index 0 }}, {{ end }}
-          <a href="{{ $term.RelPermalink }}" class="SF_NOTE_META_LINK">{{ $term.LinkTitle }}</a>
-          {{ end }}
-        </span>
-      </div>
-      {{ $scratch.Set "hasPrev" true }}
-      {{ end }}
-
-      {{ if $tags }}
-      {{ if $scratch.Get "hasPrev" }}<span class="SF_NOTE_PIPE">|</span>{{ end }}
-      <div class="SF_NOTE_META_ITEM">
-        <span class="SF_NOTE_META_LABEL">Tags:</span>
-        <span class="SF_NOTE_META_VALUE">
-          {{ range $index, $term := $tags }}
-          {{ if gt $index 0 }}, {{ end }}
-          <a href="{{ $term.RelPermalink }}" class="SF_NOTE_META_LINK">{{ $term.LinkTitle }}</a>
-          {{ end }}
-        </span>
-      </div>
-      {{ end }}
+    {{ if $showDate }}
+    <div class="SF_NOTE_META_ITEM">
+      <span class="SF_NOTE_META_LABEL">Published:</span>
+      <span class="SF_NOTE_META_VALUE"><time datetime="{{ $page.Date }}">{{ $page.Date.Format "January 2, 2006" }}</time></span>
     </div>
+    {{ $scratch.Set "hasPrev" true }}
+    {{ end }}
+
+    {{ if $showReadingTime }}
+    {{ if $scratch.Get "hasPrev" }}<span class="SF_NOTE_PIPE">|</span>{{ end }}
+    <div class="SF_NOTE_META_ITEM">
+      <span class="SF_NOTE_META_LABEL">Reading time:</span>
+      <span class="SF_NOTE_META_VALUE">
+        {{ $page.ReadingTime }} min ({{ $page.WordCount }} words)
+      </span>
+    </div>
+    {{ $scratch.Set "hasPrev" true }}
+    {{ end }}
+
+    {{ if $subjects }}
+    {{ if $scratch.Get "hasPrev" }}<span class="SF_NOTE_PIPE">|</span>{{ end }}
+    <div class="SF_NOTE_META_ITEM">
+      <span class="SF_NOTE_META_LABEL">Subjects:</span>
+      <span class="SF_NOTE_META_VALUE">
+        {{ range $index, $term := $subjects }}
+        {{ if gt $index 0 }}, {{ end }}
+        <a href="{{ $term.RelPermalink }}" class="SF_NOTE_META_LINK">{{ $term.LinkTitle }}</a>
+        {{ end }}
+      </span>
+    </div>
+    {{ $scratch.Set "hasPrev" true }}
+    {{ end }}
+
+    {{ if $showAiScale }}
+    {{ if $scratch.Get "hasPrev" }}<span class="SF_NOTE_PIPE">|</span>{{ end }}
+    <div class="SF_NOTE_META_ITEM">
+      <span class="SF_NOTE_META_LABEL">AI scale:</span>
+      <span class="SF_NOTE_META_VALUE">
+        <div class="SF_AI_SCALE" role="group">
+          <span class="SF_AI_BADGE SF_AI_BADGE--{{ $aiScale | lower }}">
+            {{ $aiScale }}
+          </span>
+
+          <div class="SF_AI_TOOLTIP" role="note">
+            <div class="SF_AI_TOOLTIP_HEADER">AI scale</div>
+            <p class="SF_AI_TOOLTIP_INTRO">
+              For transparency, this scale indicates declared AI use:
+            </p>
+            <ul class="SF_AI_TOOLTIP_LIST">
+              <li class="SF_AI_ROW SF_AI_ROW--c">
+                <span class="SF_AI_CODE">C</span>
+                <span class="SF_AI_TEXT">
+                  Written and edited entirely by the author; no AI tools used.
+                </span>
+              </li>
+              <li class="SF_AI_ROW SF_AI_ROW--b">
+                <span class="SF_AI_CODE">B</span>
+                <span class="SF_AI_TEXT">
+                  AI tools used only for proofreading or gaining residual conceptual clarity.
+                </span>
+              </li>
+              <li class="SF_AI_ROW SF_AI_ROW--a">
+                <span class="SF_AI_CODE">A</span>
+                <span class="SF_AI_TEXT">
+                  AI-generated phrasing, paragraphs, structure or code retained in the article.
+                </span>
+              </li>
+            </ul>
+            <p class="SF_AI_TOOLTIP_FOOTER">
+              Ratings C and B indicate ordinary, human-written pieces with minimum acceptable AI use.
+              <strong>Rating A means AI was heavily involved and the article may be critically unreliable.</strong>
+            </p>
+          </div>
+        </div>
+      </span>
+    </div>
+    {{ $scratch.Set "hasPrev" true }}
+    {{ end }}
+
+    {{ if $tags }}
+    {{ if $scratch.Get "hasPrev" }}<span class="SF_NOTE_PIPE">|</span>{{ end }}
+    <div class="SF_NOTE_META_ITEM">
+      <span class="SF_NOTE_META_LABEL">Tags:</span>
+      <span class="SF_NOTE_META_VALUE SF_NOTE_META_VALUE--tags">
+        {{ range $index, $term := $tags }}
+        {{ if gt $index 0 }}, {{ end }}
+        <a href="{{ $term.RelPermalink }}" class="SF_NOTE_META_LINK">{{ $term.LinkTitle }}</a>
+        {{ end }}
+      </span>
+    </div>
+    {{ $scratch.Set "hasPrev" true }}
+    {{ end }}
   </div>
-  {{ else }}
-  <aside class="SF_POSTMETA LP_STACK LP_STACK_INTER_SMALL">
+</div>
+{{ else }}
+<aside class="SF_POSTMETA LP_STACK LP_STACK_INTER_SMALL">
 
-    <div class="LP_CLUSTER LP_CLUSTER_GAP_BASE LP_CLUSTER_ALIGN_BASELINE">
+  <div class="LP_CLUSTER LP_CLUSTER_GAP_BASE LP_CLUSTER_ALIGN_BASELINE">
 
-      {{ if $isProject }}
-      {{ with $showStatus }}<div class="SF_POSTMETA_STATUS"><span class="SF_POSTMETA_LABEL">Status:</span> <span class="SF_METADATA_TAG SF_METADATA_TAG--status SF_METADATA_TAG--{{ . | urlize }}">{{ . }}</span></div>{{ end }}
-      {{ if $showDate }}<p class="SF_POSTMETA_DATE"><span class="SF_POSTMETA_LABEL">Date:</span> <time datetime="{{ $page.Date }}">{{ $page.Date.Format "January 2, 2006" }}</time></p>{{ end }}
-      {{ if or $repoLink $liveLink }}<div class="SF_POSTMETA_PROJ_LINKS"><span class="SF_POSTMETA_LABEL">Links:</span> {{ with $repoLink }}<a href="{{ . }}" class="SF_POSTMETA_LINK" target="_blank" rel="noopener noreferrer">Repository</a>{{ end }}{{ if and $repoLink $liveLink }} <span class="SF_POSTMETA_SEPARATOR"> Aú</span> {{ end }}{{ with $liveLink }}<a href="{{ . }}" class="SF_POSTMETA_LINK" target="_blank" rel="noopener noreferrer">Live Site</a>{{ end }}</div>{{ end }}
-      {{ end }}
-    </div>
-
-    {{ $termsToShow := slice }}
     {{ if $isProject }}
-    {{ $termsToShow = $stackParams }}
+    {{ with $showStatus }}<div class="SF_POSTMETA_STATUS"><span class="SF_POSTMETA_LABEL">Status:</span> <span class="SF_METADATA_TAG SF_METADATA_TAG--status SF_METADATA_TAG--{{ . | urlize }}">{{ . }}</span></div>{{ end }}
+    {{ if $showDate }}<p class="SF_POSTMETA_DATE"><span class="SF_POSTMETA_LABEL">Date:</span> <time datetime="{{ $page.Date }}">{{ $page.Date.Format "January 2, 2006" }}</time></p>{{ end }}
+    {{ if or $repoLink $liveLink }}<div class="SF_POSTMETA_PROJ_LINKS"><span class="SF_POSTMETA_LABEL">Links:</span> {{ with $repoLink }}<a href="{{ . }}" class="SF_POSTMETA_LINK" target="_blank" rel="noopener noreferrer">Repository</a>{{ end }}{{ if and $repoLink $liveLink }} <span class="SF_POSTMETA_SEPARATOR"> Aú</span> {{ end }}{{ with $liveLink }}<a href="{{ . }}" class="SF_POSTMETA_LINK" target="_blank" rel="noopener noreferrer">Live Site</a>{{ end }}</div>{{ end }}
     {{ end }}
+  </div>
 
-    {{ if gt (len $termsToShow) 0 }}
-    <div class="{{ if $isProject }}SF_PROJECT_STACK LP_CLUSTER LP_CLUSTER_ALIGN_BASELINE LP_CLUSTER_GAP_SMALL{{ else }}SF_POSTMETA_TAGS{{ end }}">
-      <span class="SF_POSTMETA_LABEL">{{ if $isProject }}Stack{{ else }}Tagged{{ end }}:</span>
-      {{ range $index, $termData := $termsToShow }}
-      {{ $termName := $termData }}
-      {{ $assumedUrl := printf "/%s/%s/" "stacks" ($termName | urlize) }}
-      <a href="{{ $assumedUrl | relLangURL }}" class="SF_METADATA_TAG SF_METADATA_TAG--stack">{{ $termName }}</a>
-      {{ end }}
-    </div>
-    {{ end }}
-
-  </aside>
+  {{ $termsToShow := slice }}
+  {{ if $isProject }}
+  {{ $termsToShow = $stackParams }}
   {{ end }}
+
+  {{ if gt (len $termsToShow) 0 }}
+  <div class="{{ if $isProject }}SF_PROJECT_STACK LP_CLUSTER LP_CLUSTER_ALIGN_BASELINE LP_CLUSTER_GAP_SMALL{{ else }}SF_POSTMETA_TAGS{{ end }}">
+    <span class="SF_POSTMETA_LABEL">{{ if $isProject }}Stack{{ else }}Tagged{{ end }}:</span>
+    {{ range $index, $termData := $termsToShow }}
+    {{ $termName := $termData }}
+    {{ $assumedUrl := printf "/%s/%s/" "stacks" ($termName | urlize) }}
+    <a href="{{ $assumedUrl | relLangURL }}" class="SF_METADATA_TAG SF_METADATA_TAG--stack">{{ $termName }}</a>
+    {{ end }}
+  </div>
+  {{ end }}
+
+</aside>
+{{ end }}
 {{ end }}
 {{ end }}

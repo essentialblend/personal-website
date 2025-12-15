@@ -8,13 +8,4 @@ stacks: ["Go", "Javascript", "html", "css", "Hugo"]
 repo: https://github.com/essentialblend/test-site
 ---
 
-This personal website was created with the Jamstack framework Hugo. 
-
-### Features
-
-- No themes.
-- Processing with Hugo Pipes.
-- Client-side KaTeX rendering.
-
-Please visit the [colophon](/colophon) for specifics.
-
+The [colophon](/colophon) section of this website provides detailed information about the technologies and tools used to build and maintain it.

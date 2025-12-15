@@ -3,79 +3,108 @@
 {{ $paintings := .paintings }}
 {{ $slug := .slug }}
 
+{{/* Portrait convention: assets/images/artists/<slug>/portrait.jpg */}}
+{{ $portraitRel := "" }}
+{{ $portraitW := 0 }}
+{{ $portraitH := 0 }}
+
+{{ if and $paintings $slug }}
+{{ $portraitPath := printf "images/artists/%s/portrait.jpg" $slug }}
+{{ with resources.Get $portraitPath }}
+{{ $thumb := .Fill "88x88 q90" }}
+{{ $portraitRel = $thumb.RelPermalink }}
+{{ $portraitW = $thumb.Width }}
+{{ $portraitH = $thumb.Height }}
+{{ end }}
+{{ end }}
+
 {{ if $paintings }}
-  <div class="SF_SHOWCASE_SLIDES">
-    {{ range $i, $p := $paintings }}
-      <div class="SF_SHOWCASE_SLIDE{{ if eq $i 0 }} active{{ end }}">
-        <div class="SF_SHOWCASE_FRAME">
+<div class="SF_SHOWCASE_SLIDES">
+  {{ range $i, $p := $paintings }}
+  <div class="SF_SHOWCASE_SLIDE{{ if eq $i 0 }} active{{ end }}">
+    <div class="SF_SHOWCASE_FRAME">
 
-          {{ $imgPath := printf "images/artists/%s/%s" $slug $p.image }}
-          {{ with resources.Get $imgPath }}
-            {{ $resized := .Resize "1200x q95" }}
-            {{ $webp := $resized.Process "webp;quality=95" }}
+      {{ $imgPath := printf "images/artists/%s/%s" $slug $p.image }}
+      {{ with resources.Get $imgPath }}
+      {{ $resized := .Resize "1200x q95" }}
+      {{ $webp := $resized.Process "webp;quality=95" }}
 
-            <div class="SF_SHOWCASE_BG_BLUR"
-                 style="background-image: url('{{ $resized.RelPermalink }}');"></div>
-            <picture>
-              <source
-                type="image/webp"
+      <div class="SF_SHOWCASE_BG_BLUR"
+           style="background-image: url('{{ $resized.RelPermalink }}');"></div>
+      <picture>
+        <source type="image/webp"
                 srcset="{{ $webp.RelPermalink }}"
                 sizes="(max-width: 800px) 100vw, 800px">
-              <img
-                src="{{ $resized.RelPermalink }}"
-                alt="{{ $p.title }}"
-                class="SF_SHOWCASE_IMG"
-                loading="lazy"
-                width="{{ $resized.Width }}"
-                height="{{ $resized.Height }}">
-            </picture>
-          {{ end }}
-        </div>
+        <img src="{{ $resized.RelPermalink }}"
+             alt="{{ $p.title }}"
+             class="SF_SHOWCASE_IMG"
+             loading="lazy"
+             width="{{ $resized.Width }}"
+             height="{{ $resized.Height }}">
+      </picture>
 
-        <div class="SF_SHOWCASE_CAPTION">
-          {{ printf "**%s** — %s" $p.title $p.description | markdownify }}
-        </div>
-      </div>
+      {{ if $portraitRel }}
+      <img src="{{ $portraitRel }}"
+           alt="Artist portrait"
+           class="SF_ARTIST_PORTRAIT_IN_CAPTION SF_SHOWCASE_PORTRAIT"
+           width="{{ $portraitW }}"
+           height="{{ $portraitH }}"
+           loading="lazy">
+      {{ end }}
+
+      {{ end }}
+    </div>
+
+    {{ $t := strings.TrimSpace $p.title }}
+    {{ $d := strings.TrimSpace $p.description }}
+
+    {{ if $t }}
+    <div class="SF_SHOWCASE_CAPTION">
+      {{ if $d }}
+      {{ printf "**%s** — %s" $t $d | markdownify }}
+      {{ else }}
+      {{ printf "**%s**" $t | markdownify }}
+      {{ end }}
+    </div>
     {{ end }}
   </div>
+  {{ end }}
+</div>
 
-  <div class="SF_SHOWCASE_TEXT">
-    {{ .content | markdownify }}
-  </div>
+<div class="SF_SHOWCASE_TEXT">
+  {{ .content | markdownify }}
+</div>
 
 {{ else }}
-  <div class="SF_SHOWCASE_FRAME">
-    {{- if .isAPOD -}}
-      <div class="SF_SHOWCASE_ICON">
-        <img src="{{ .iconUrl }}" alt="APOD logo"/>
-      </div>
-    {{- end -}}
-    <div class="SF_SHOWCASE_BG_BLUR" style="background-image: url('{{ .image }}');"></div>
-
-    {{ if .isAPOD }}
-      <picture>
-        <source
-          type="image/webp"
-          srcset="{{ .imageWebp }}"
-          sizes="(max-width: 800px) 100vw, 800px">
-        <img
-          src="{{ .image }}"
-          class="SF_SHOWCASE_IMG"
-          loading="lazy"
-          decoding="async"
-          width="{{ .width }}"
-          height="{{ .height }}">
-      </picture>
-    {{ else }}
-      <img
-        src="{{ .image }}"
-        class="SF_SHOWCASE_IMG"
-        loading="lazy" />
-    {{ end }}
+<div class="SF_SHOWCASE_FRAME">
+  {{- if .isAPOD -}}
+  <div class="SF_SHOWCASE_ICON">
+    <img src="{{ .iconUrl }}" alt="APOD logo" />
   </div>
+  {{- end -}}
+  <div class="SF_SHOWCASE_BG_BLUR" style="background-image: url('{{ .image }}');"></div>
 
-  {{ with .caption }}
-    <div class="SF_SHOWCASE_CAPTION">{{ . | markdownify }}</div>
+  {{ if .isAPOD }}
+  <picture>
+    <source type="image/webp"
+            srcset="{{ .imageWebp }}"
+            sizes="(max-width: 800px) 100vw, 800px">
+    <img src="{{ .image }}"
+         class="SF_SHOWCASE_IMG"
+         loading="lazy"
+         decoding="async"
+         width="{{ .width }}"
+         height="{{ .height }}">
+  </picture>
+  {{ else }}
+  <img src="{{ .image }}"
+       class="SF_SHOWCASE_IMG"
+       loading="lazy" />
   {{ end }}
-  <div class="SF_SHOWCASE_TEXT"><p>{{ .content }}</p></div>
+</div>
+
+{{ with .caption }}
+<div class="SF_SHOWCASE_CAPTION">{{ . | markdownify }}</div>
+{{ end }}
+<div class="SF_SHOWCASE_TEXT"><p>{{ .content }}</p></div>
 {{ end }}

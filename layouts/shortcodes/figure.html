@@ -7,6 +7,15 @@
 
 <figure class="{{ $class }}">
   {{ if $orig }}
+
+  {{/* If it's a GIF, don't run Hugo image pipeline (it tries to decode/process). */}}
+  {{ if eq $orig.MediaType.SubType "gif" }}
+  <img src="{{ $orig.RelPermalink }}"
+       alt="{{ $alt }}"
+       loading="lazy"
+       decoding="async">
+  {{ else }}
+
   {{ $quality := 95 }}
   {{ $widths  := slice 800 1200 }}
   {{ $jpgSet  := slice }}
@@ -38,8 +47,10 @@
          height="{{ $default.Height }}">
   </picture>
 
+  {{ end }}
+
   {{ else }}
-  <img src="{{ $src }}" alt="{{ $alt }}" loading="lazy">
+  <img src="{{ $src }}" alt="{{ $alt }}" loading="lazy" decoding="async">
   {{ end }}
 
   {{ with $caption }}

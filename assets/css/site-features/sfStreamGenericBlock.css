@@ -31,8 +31,13 @@
   padding: 0;
 }
 
-.SF_STREAM_GENERIC_HOOK > *:first-child { margin-top: 0; }
-.SF_STREAM_GENERIC_HOOK > *:last-child { margin-bottom: 0; }
+  .SF_STREAM_GENERIC_HOOK > *:first-child {
+    margin-top: 0;
+  }
+
+  .SF_STREAM_GENERIC_HOOK > *:last-child {
+    margin-bottom: 0;
+  }
 
 .SF_STREAM_GENERIC_CONTENT.SF_POSTCONTENT {
   padding: var(--baseSizeREM);
@@ -41,14 +46,33 @@
   color: var(--textColor);
 }
 
-.SF_STREAM_GENERIC_CONTENT > *:first-child { margin-top: 0; }
-.SF_STREAM_GENERIC_CONTENT > *:last-child { margin-bottom: 0; }
+.SF_STREAM_GENERIC_CONTENT > *:first-child {
+  margin-top: 0;
+}
 
+.SF_STREAM_GENERIC_CONTENT > *:last-child {
+  margin-bottom: 0;
+}
+
+/* Single source of truth for content sizing */
 .SF_STREAM_GENERIC_CONTENT p,
 .SF_STREAM_GENERIC_CONTENT .katex,
 .SF_STREAM_GENERIC_CONTENT .katex-display {
   font-size: var(--smallSizeREM);
 }
+
+.SF_STREAM_GENERIC_CONTENT p {
+  line-height: var(--contentTextLineHeight);
+  color: var(--textColor);
+  font-style: italic;
+  opacity: 0.95;
+  letter-spacing: 0.015em;
+}
+
+  .SF_STREAM_GENERIC_CONTENT p:first-of-type::first-line {
+    font-weight: 500;
+    letter-spacing: 0.015em;
+  }
 
 .SF_STREAM_GENERIC_CONTENT .katex-display {
   display: block;
@@ -59,10 +83,10 @@
   background: var(--BGColor);
 }
 
-.SF_STREAM_GENERIC_CONTENT .katex-display .katex {
-  display: inline-block;
-  white-space: nowrap;
-}
+  .SF_STREAM_GENERIC_CONTENT .katex-display .katex {
+    display: inline-block;
+    white-space: nowrap;
+  }
 
 .SF_SHOWCASE_FRAME {
   margin: var(--baseSizeREM) 0 var(--baseSizeREM);
@@ -92,17 +116,18 @@
   z-index: 2;
 }
 
-.SF_SHOWCASE_ICON img {
-  width: 100%;
-  height: 100%;
-  object-fit: contain;
-  filter: brightness(0) saturate(100%) invert(1);
-  opacity: 0.9;
-}
+  .SF_SHOWCASE_ICON img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    filter: brightness(0) saturate(100%) invert(1);
+    opacity: 0.9;
+  }
 
 .SF_SHOWCASE_BG_BLUR {
   position: absolute;
-  top: 0; left: 0;
+  top: 0;
+  left: 0;
   width: 100%;
   height: 100%;
   background-size: cover;
@@ -122,49 +147,31 @@
   margin-bottom: var(--smallSizeREM);
 }
 
-.SF_STREAM_GENERIC_CONTENT p {
-  font-size: var(--smallSizeREM);
-  line-height: var(--contentTextLineHeight);
-  color: var(--textColor);
-  font-style: italic;
-  opacity: 0.95;
-  letter-spacing: 0.015em;
-}
-
-.SF_STREAM_GENERIC_CONTENT p:first-of-type::first-line {
-  font-weight: 500;
-  letter-spacing: 0.015em;
-}
-
 .SF_SHELF_LIST {
   list-style: none;
   margin: 0;
   padding: 0;
 }
 
+/* Tighter rows (~10% space saved) */
 .SF_SHELF_ENTRY {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding-block: var(--smallestSizeREM);
+  padding-block: calc(var(--smallestSizeREM) * 0.9);
   padding-inline: 0;
   border-top: 1px solid var(--borderColor);
   transition: background 0.3s ease, color 0.2s ease, text-shadow 0.2s ease;
 }
 
-.SF_SHELF_ENTRY:first-child {
-  border-top: none;
-}
+  .SF_SHELF_ENTRY:first-child {
+    border-top: none;
+  }
 
-.SF_SHELF_ENTRY:hover {
-  background: linear-gradient(
-    to right,
-    color-mix(in srgb, var(--accentColor) 0%, var(--BGColor) 100%) 0%,
-    color-mix(in srgb, var(--accentColor) 15%, var(--BGColor) 85%) 50%,
-    color-mix(in srgb, var(--accentColor) 0%, var(--BGColor) 100%) 100%
-  );
-  cursor: pointer;
-}
+  .SF_SHELF_ENTRY:hover {
+    background: linear-gradient( to right, color-mix(in srgb, var(--accentColor) 0%, var(--BGColor) 100%) 0%, color-mix(in srgb, var(--accentColor) 15%, var(--BGColor) 85%) 50%, color-mix(in srgb, var(--accentColor) 0%, var(--BGColor) 100%) 100% );
+    cursor: pointer;
+  }
 
 .SF_SHELF_TITLE {
   flex: 1;
@@ -173,6 +180,7 @@
   text-decoration: none;
   cursor: default;
   transition: color 0.2s ease;
+  line-height: 1.25;
 }
 
 .SF_SHELF_ENTRY:hover .SF_SHELF_TITLE {
@@ -182,12 +190,13 @@
 .SF_SHELF_META {
   display: flex;
   align-items: center;
-  gap: var(--smallestSizeREM);
+  gap: calc(var(--smallestSizeREM) * 0.8);
   font-family: var(--fontCode);
   font-size: var(--smallerSizeREM);
   color: var(--mutedTextColor);
   white-space: nowrap;
   transition: color 0.2s ease, text-shadow 0.2s ease;
+  line-height: 1.25;
 }
 
 .SF_SHELF_ENTRY:hover .SF_SHELF_META {
@@ -219,10 +228,10 @@
   transition: color 0.2s ease;
 }
 
-.SF_SHELF_VIEWALL:hover {
-  color: var(--linkHoverColor);
-  text-decoration-color: var(--linkHoverColor);
-}
+  .SF_SHELF_VIEWALL:hover {
+    color: var(--linkHoverColor);
+    text-decoration-color: var(--linkHoverColor);
+  }
 
 .SF_SHOWCASE_SLIDES {
   position: relative;
@@ -236,12 +245,24 @@
   transition: opacity 0.6s ease-in-out;
 }
 
-.SF_SHOWCASE_SLIDE.active {
-  position: relative;
-  opacity: 1;
+  .SF_SHOWCASE_SLIDE.active {
+    position: relative;
+    opacity: 1;
+  }
+
+.SF_SHOWCASE_TEXT p {
+  font-style: italic;
 }
 
-.SF_SHOWCASE_TEXT p 
-{
-  font-style: italic;
+.SF_STREAM_GENERIC_BLOCK .SF_SHELF_ENTRY {
+  padding-block: calc(var(--space-xs) * 0.7);
+}
+
+.SF_STREAM_GENERIC_BLOCK .SF_SHELF_TITLE,
+.SF_STREAM_GENERIC_BLOCK .SF_SHELF_META {
+  line-height: calc(var(--lineHeight) * 0.70);
+}
+
+.SF_STREAM_GENERIC_BLOCK .SF_SHELF_META {
+  gap: calc(var(--space-xs) * 0.6);
 }

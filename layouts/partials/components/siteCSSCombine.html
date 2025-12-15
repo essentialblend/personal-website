@@ -14,8 +14,9 @@
 {{ $termCSSChunk := resources.Get "css/site-features/sfTermPage.css" }}
 {{ $genericBlockCSSChunk := resources.Get "css/site-features/sfStreamGenericBlock.css" }} 
 {{ $postContentCSSChunk := resources.Get "css/site-features/sfMDPostContent.css" }}
+{{ $pseudocodeCSSChunk := resources.Get "css/site-features/sfPseudocode.css" }}
 
-{{ $cssSlice := slice $htmlElemCSSChunk $layoutPrimitivesCSSChunk $siteFeaturesCSSChunk $postContentCSSChunk $taxonomyFilterCSSChunk $writingsTitleCSSChunk $metadataCardCSSChunk $paginationCSSChunk $projectSectionCSSChunk $tableContentsCSSChunk $scrollToTopCSSChunk $colophonCSSChunk $streamCSSChunk $termCSSChunk $genericBlockCSSChunk }}
+{{ $cssSlice := slice $htmlElemCSSChunk $layoutPrimitivesCSSChunk $siteFeaturesCSSChunk $postContentCSSChunk $pseudocodeCSSChunk $taxonomyFilterCSSChunk $writingsTitleCSSChunk $metadataCardCSSChunk $paginationCSSChunk $projectSectionCSSChunk $tableContentsCSSChunk $scrollToTopCSSChunk $colophonCSSChunk $streamCSSChunk $termCSSChunk $genericBlockCSSChunk }}
 
 {{ $merged := $cssSlice | resources.Concat "css/baseof.css" | resources.Minify | resources.Fingerprint }}
 

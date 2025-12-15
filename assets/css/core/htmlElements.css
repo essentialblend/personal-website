@@ -17,8 +17,10 @@
 }
 
 @font-face {
-  font-family: "LimeBlossomCaps";
-  src: url("/fonts/LimeBlossomCaps.ttf") format("truetype");
+  font-family: "GoudyInitialen";
+  src: url("/fonts/GoudyInitialen.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
   font-display: swap;
 }
 
@@ -57,7 +59,7 @@
   --fontUI: 'Vollkorn', serif;
   --fontHeading: 'Vollkorn', serif;
   --fontCode: 'Roboto Mono', monospace;
-  --fontDropcapDecorative: "LimeBlossomCaps", var(--fontHeading);
+  --fontDropcapDecorative: "GoudyInitialen", var(--fontHeading);
   --containerWidth: 46rem;
   --lineHeight: 1.65;
   --space-2xs: 0.25rem;
@@ -76,6 +78,8 @@
   --accentHoverColor: #8e3226;
   --borderColor: #d1c7b7;
   --linkHoverColor: var(--accentColor);
+  --aiSafeColor: #2f855a;
+  --aiRiskColor: var(--accentHoverColor);
 }
 
 html[data-user-theme="themeDark"] {
@@ -130,6 +134,32 @@ a {
 
   a:hover {
     color: var(--accentColor);
+  }
+
+main :is(p, li, blockquote, figcaption, .intro-lead, .section-intro, .meta-header) a,
+.SF_POSTCONTENT a {
+  color: var(--accentColor);
+  font-weight: 600;
+  text-decoration-line: underline;
+  text-decoration-thickness: 0.12em;
+  text-underline-offset: 0.2em;
+  text-decoration-color: color-mix(in srgb, var(--accentColor) 70%, transparent);
+  text-decoration-skip-ink: auto;
+  transition: color 0.16s ease, text-decoration-color 0.16s ease;
+}
+
+  main :is(p, li, blockquote, figcaption, .intro-lead, .section-intro, .meta-header) a:hover,
+  .SF_POSTCONTENT a:hover {
+    color: var(--accentHoverColor);
+    text-decoration-color: color-mix(in srgb, var(--accentHoverColor) 85%, transparent);
+  }
+
+  main :is(p, li, blockquote, figcaption, .intro-lead, .section-intro, .meta-header) a:focus-visible,
+  .SF_POSTCONTENT a:focus-visible {
+    outline: 1px solid color-mix(in srgb, var(--accentColor) 35%, transparent);
+    outline-offset: 2px;
+    text-decoration-color: var(--accentColor);
+    box-shadow: 0 0 0 3px color-mix(in srgb, var(--accentColor) 12%, transparent);
   }
 
 img {

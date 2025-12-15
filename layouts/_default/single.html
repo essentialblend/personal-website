@@ -1,6 +1,5 @@
 {{ define "pageContent" }}
 {{ if in (slice "writings" "notes" "projects") .Section }}
-<!-- Removed LP_LEFT_SEPARATOR from here to remove the left border -->
 <section class="SF_SINGLE_HEADER">
   <div class="LP_STACK LP_STACK_INTER_BIGGEST">
     <h1>{{ .Title }}</h1>
@@ -11,8 +10,14 @@
   </div>
 </section>
 
-<!-- This next partial handles TOC + Content -->
 {{ partial "partials/pages/genericPageContent.html" . }}
+
+{{ if eq .Section "writings" }}
+<section class="SF_COMMENTS_WRAPPER">
+  {{ partial "partials/components/comments.html" . }}
+</section>
+{{ end }}
+
 {{ else if eq .RelPermalink "/about/" }}
 <section class="SF_SINGLE_HEADER">
   <div class="LP_STACK LP_STACK_INTER_BIG">

@@ -1,0 +1,23 @@
+{{ if or (not .Params.comments) (ne .Params.comments "off") }}
+<section class="SF_COMMENTS">
+  <!--<h2 class="SF_COMMENTS_HEADING">Comments</h2>-->
+
+  <script src="https://giscus.app/client.js"
+    data-repo="essentialblend/site-comments"
+    data-repo-id="R_kgDOQoUzuQ"
+    data-category="Announcements"
+    data-category-id="DIC_kwDOQoUzuc4Czwof"
+    data-mapping="pathname"
+    data-strict="0"
+    data-reactions-enabled="1"
+    data-emit-metadata="0"
+    data-input-position="top"
+    data-theme="dark_dimmed"
+    data-lang="en"
+    data-loading="lazy"
+    crossorigin="anonymous" 
+    async>
+  </script>
+
+</section>
+{{ end }}

@@ -1,6 +1,5 @@
 {{/* streamGenericBookshelfContent.html */}}
 
-{{/* 1. Gather & sort your six books */}}
 {{ $books     := (site.GetPage "section" "stream/bookshelf").Pages }}
 {{ $ongoing   := where $books "Params.status" "Ongoing" }}
 {{ $finished  := where $books "Params.status" "in" (slice "Finished" "Complete") }}

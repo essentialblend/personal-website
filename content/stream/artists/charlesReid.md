@@ -2,7 +2,6 @@
 title: "Artist Showcase: Charles Reid"
 date: 2025-04-13
 summary: Charles Clark Reid (August 12, 1937 – June 1, 2019) was an American painter, illustrator, and teacher, notable for his watercolor style.
-artistPortraitUrl: https://upload.wikimedia.org/wikipedia/commons/2/2b/Fullsizeoutput_159d1.jpg 
 paintings: 
   - image: lady-in-santa-fe.jpg
     title: "Lady in Santa Fe"

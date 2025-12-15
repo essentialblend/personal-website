@@ -3,20 +3,27 @@
   {{ $streamItems := where site.Pages "Section" "stream" }}
 
   {{ range $streamItems }}
-    {{ $page := . }}
-    {{ $parentDir := path.Base $page.File.Dir }}
-    {{ if in (slice "artists" "bookshelf") $parentDir }}
-      {{ partial "components/stream/generics/streamGenericBlock.html" $page }}
-    {{ end }}
+  {{ $page := . }}
+  {{ $parentDir := path.Base $page.File.Dir }}
+
+  {{ if eq $parentDir "artists" }}
+  {{ if $page.Params.active }}
+  {{ partial "components/stream/generics/streamGenericBlock.html" $page }}
+  {{ end }}
+  {{ else if eq $parentDir "bookshelf" }}
+  {{ partial "components/stream/generics/streamGenericBlock.html" $page }}
+  {{ end }}
   {{ end }}
 
-  {{ partial "components/stream/generics/streamGenericBlock.html" (dict
+  {{
+ partial "components/stream/generics/streamGenericBlock.html" (dict
     "Title" "Space Showcase: NASA APOD"
     "Params" (dict
       "type" "showcase"
       "summary" "Astronomy Picture of the Day"
     )
     "Content" ""
-  ) }}
+  )
+  }}
 
 </div>

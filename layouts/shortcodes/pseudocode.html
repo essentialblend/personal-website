@@ -1,0 +1,39 @@
+{{ $label := .Get "label" | default "PDL / Structured English" }}
+{{ $startAt := .Get "start" | default 1 | int }}
+
+{{/* Trim inner content to see if we are rendering placeholder rows or actual lines */}}
+{{ $raw := trim (.Inner | default "") "\n\r" }}
+{{ $hasContent := gt (len $raw) 0 }}
+
+{{ $lines := slice }}
+{{ if $hasContent }}
+  {{ $lines = split $raw "\n" }}
+{{ else }}
+  {{ $lineCount := .Get "lines" | default 3 | int }}
+  {{ $lines = seq $lineCount }}
+{{ end }}
+
+{{ $maxLine := add $startAt (sub (len $lines) 1) }}
+{{ $maxDigits := len (printf "%d" $maxLine) }}
+
+<div class="SF_PSEUDOCODE" data-line-count="{{ len $lines }}" style='--pc-ln-width: {{ printf "%dch" (add $maxDigits 1) }}'>
+  <div class="SF_PSEUDOCODE_HEADER">
+    <span class="SF_PSEUDOCODE_LABEL">{{ $label }}</span>
+  </div>
+
+  <div class="SF_PSEUDOCODE_BODY" role="presentation">
+    {{ range $idx, $line := $lines }}
+      {{ $lineNo := add $startAt $idx }}
+      <div class="SF_PSEUDOCODE_LINE">
+        <span class="SF_PSEUDOCODE_LINE_NO" aria-hidden="true">{{ printf "%d" $lineNo }}</span>
+        {{ $lineText := replace $line "\t" "  " }}
+        {{ $indentMatch := findRE "^([ ]*)" $lineText }}
+        {{ $indent := "" }}
+        {{ if gt (len $indentMatch) 0 }}{{ $indent = index $indentMatch 0 }}{{ end }}
+        {{ $content := replaceRE "^\\s+" "" $lineText }}
+        {{ $rendered := $content | markdownify | replaceRE "^<p>(.*)</p>$" "$1" }}
+        <span class="SF_PSEUDOCODE_LINE_TEXT">{{ if $hasContent }}{{ $indent }}{{ $rendered | safeHTML }}{{ else }}&nbsp;{{ end }}</span>
+      </div>
+    {{ end }}
+  </div>
+</div>

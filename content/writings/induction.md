@@ -1,40 +1,27 @@
 ---
-title: "Some Thoughts on Mathematical Induction"
+title: "Thoughts on Mathematical Induction: Part I"
 date: 2025-06-06
 subjects: ["Mathematics", "Logic"]
-categories: ["Concepts"]
+categories: ["Series"]
 series: []
-tags: ["mathematics", "logic", "induction", "recursion", "first", "order", "generating", "systems", "closure"]
-description: "An introduction to induction"
-ai-scale: 1
+tags: ["mathematics", "logic", "induction", "recursion", "first", "order", "generating", "systems", "closure", "computer", "science", "programming", "language", "c++", "c"]
+description: "A series introducing mathematical induction and discussing some of its corollaries."
+ai_scale: C
 draft: true
 ---
-<p class="lede">It starts with a single true thing and a promise you can extend it forever. Induction is the ladder we build between the finite and the unbounded, rung by rung, assumption by consequence. Prove one step, prove the handoff to the next, and the rest of the infinite follows meekly.</p>
+<p class="lede"> Induction, even setting aside its raison d&apos;&ecirc;tre as an inferential tool for mathematical proofs, is an insanely cool concept. Most people first encounter it indirectly through recursion in programming language lessons, and in my experience, barely covered any further. Arriving at a well-defined scope for the what/why/how of this series initially perplexed me. It's best we retain that anchor and slowly expand outwards to cover a wider audience. To that end, I will only assume that the reader possesses basic procedural and algorithmic reasoning skills alongside some existing desire and/or curiosity. We will begin on familiar grounds and gradually build to the mathematical formalism as we need it. Some haze is inevitable; repeated applications of these ideas will clear most of it in time.</p>
 
-### Base cases are boring -- and that is the point
+A typical C++ program that is often used to demonstrate the power of recursion&mdash;the famous Fibonacci sequence program. A sequence is simply an ordered set of values. Then, Fibonacci is a sequence where each element is a sum of the two preceding elements, like $0, 1, 1, 2, 3, 5, 8 \dots$ Such a definition where each element is a combination of the ones preceding it is called a _definition by recurrence relation_. Now let's take a look at the pseudocode:
 
-When you assert something like $1 + 2 + \dots + n = \frac{n(n+1)}{2}$, the $n = 1$ check should be almost embarrassingly easy. A base case is not a victory lap; it is a **grounding pin**. Make it simple, make it inevitable.
+{{< pseudocode start="1" >}}
+**PROCEDURE** $\mathsf{FIB}(n)$
+  **INPUT:** $n \in \mathbb{Z}$
+  **PRECONDITION:** $n \ge 0$
 
-> "Induction is like climbing a ladder: we can reach any rung by first stepping on the first rung, and then on each rung we can climb up to the next." -- **Polya**
-
-### The inductive hinge
-
-Assume the claim for $n = k$ and show it for $n = k + 1$. The algebra hides in the hinge:
-
-- Isolate the new term, e.g., add $(k+1)$ to both sides.
-- Substitute the inductive hypothesis where it fits.
-- Simplify until the target shape appears.
-
-In a structural proof, the hinge is the constructor. If every constructor preserves truth, the whole inductive family holds. This is why structural recursion in code mirrors structural induction in proofs -- the data shape dictates the proof shape.
-
-### Structural vs. numerical induction
-
-Numerical induction marches on the naturals. Structural induction walks trees, lists, or any algebraic data type. When proving properties of a recursive function `f`, the argument often echoes:
-
-1. Show it for the *empty* structure.
-2. Assume it for the *smaller* structure.
-3. Reassemble for the *larger* structure.
-
-### Closing the loop
-
-Induction is about propagation of trust. Start with the smallest statement you can believe; prove that belief flows forward. The ladder reaches as far as your base and your hinge are sound -- no further, no less. Use it to tame series, reason about algorithms, and keep your recursive definitions honest.
+  **IF** $n \le 1$ **THEN**
+    **RETURN** $n$
+  **ELSE**
+    **RETURN** $\mathsf{FIB}(n-1) + \mathsf{FIB}(n-2)$
+  **END IF**
+**END PROCEDURE**
+{{< /pseudocode >}}

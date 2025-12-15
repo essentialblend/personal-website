@@ -407,8 +407,8 @@ html[data-user-theme="themeHigh"] .SF_STREAM_ARTISTGALLERY_SUMMARY:hover .SF_STR
 
 .SF_ARTIST_PORTRAIT_IN_CAPTION {
   display: block;
-  width: 60px;
-  height: 60px;
+  width: 75px;
+  height: 75px;
   border-radius: 4px;
   object-fit: cover;
   border: 2px solid rgba(255,255,255,0.7);
@@ -436,6 +436,7 @@ html[data-user-theme="themeHigh"] .SF_STREAM_ARTISTGALLERY_SUMMARY:hover .SF_STR
 .SF_ARTISTGALLERY_NEXT {
   display: none;
 }
+
 
 .SF_STREAM_SHELF_BLOCK {
   background-image: linear-gradient(rgba(0,0,0,0.015), rgba(0,0,0,0.015)), linear-gradient(90deg, rgba(0,0,0,0.01), rgba(0,0,0,0.01));
@@ -617,3 +618,14 @@ details.SF_STREAM_SHELF_BLOCK div.SF_STREAM_SHELF_ROW_LIST div.SF_STREAM_SHELF_G
 
 .SF_POSTCONTENT .katex-display { margin: var(--baseSizeREM) 0; font-size: 1.15em; }
 .SF_POSTCONTENT .katex { font-size: 1.1em; }
+
+.SF_SHOWCASE_FRAME {
+  position: relative;
+}
+
+.SF_SHOWCASE_PORTRAIT {
+  position: absolute;
+  right: var(--space-sm);
+  bottom: var(--space-sm);
+  z-index: 10;
+}
