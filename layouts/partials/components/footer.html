@@ -1,5 +1,8 @@
 <footer>
   <span>&copy; {{ now.Year }} {{ .Site.Params.author.name }}</span>
 
-  <a href="{{ "colophon" | relURL }}">Colophon</a>
+  <div class="footer-links">
+    <a href="{{ "colophon" | relURL }}">Colophon</a>
+    <a href="{{ "index.xml" | relURL }}" type="application/rss+xml">RSS</a>
+  </div>
 </footer>

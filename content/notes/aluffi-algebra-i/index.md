@@ -1,7 +1,7 @@
 ---
 title: "Algebra: Notes from the Underground"
 description: "My notes on Aluffi's book on abstract algebra."
-date: 2025-03-17
+date: 2025-02-17
 status: ongoing
 subjects: ["Mathematics"] 
 categories: ["Academic Textbook"]

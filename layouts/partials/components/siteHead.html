@@ -24,6 +24,8 @@
   {{ if $defaultSyntax }}
   <link id="syntax-stylesheet" rel="stylesheet" href="{{ $defaultSyntax.RelPermalink }}">
   {{ end }}
+
+  <link rel="alternate" type="application/rss+xml" title="{{ .Site.Title }} RSS" href="{{ "index.xml" | relURL }}">
   
   {{ partial "components/siteCSSCombine.html" . }}
   

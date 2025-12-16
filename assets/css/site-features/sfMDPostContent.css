@@ -49,7 +49,7 @@ html[data-user-theme="themeHigh"] .SF_POSTCONTENT .chroma .w {
   text-indent: 1.25em;
 }
 
-.SF_POSTCONTENT :is(h1,h2,h3,h4,h5,h6,ul,ol,blockquote,pre,figure,span:has(> .katex-display)) + p {
+.SF_POSTCONTENT :is(h1,h2,h3,h4,h5,h6,blockquote,pre,figure,span:has(> .katex-display)) + p {
   text-indent: 0;
 }
 
@@ -255,7 +255,7 @@ html[data-user-theme="themeHigh"] .SF_POSTCONTENT .chroma .w {
 
     .SF_POSTCONTENT figure figcaption p {
       font-style: italic;
-      font-size: var(--smallSizeREM);
+      font-size: inherit;
       font-family: var(--fontCode);
     }
 
@@ -319,6 +319,10 @@ html[data-user-theme="themeHigh"] .SF_POSTCONTENT .chroma .w {
   .SF_POSTCONTENT p + p {
     text-indent: 1.25em;
   }
+
+.SF_POSTCONTENT :is(.SF_PSEUDOCODE, pre, blockquote, figure, ul, ol) + p {
+  text-indent: 1.25em;
+}
 
 @supports not (initial-letter: 3 3) {
   .SF_POSTCONTENT p.lede::first-letter {

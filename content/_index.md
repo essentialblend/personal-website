@@ -7,10 +7,10 @@ url: /now/
 ---
 
 <p class="intro-lead">
-I’m Siddharth&mdash;a computer science graduate based between the UK and India. At university I worked on typetheory and proof assistants (mainly Agda and Lean), using them to formalize and verify mathematical structures. Since graduating, I’ve been focused on building a physically based renderer, <i>Indus</i> as I love computer graphics. I also write and record music, and I’m currently composing my first album. I’m looking for roles in computer graphics, research, or formal verification.
+I’m Siddharth&mdash;a computer science graduate based between the UK and India. At university I worked on type theory and proof assistants (mainly Agda and Lean), using them to formalize and verify mathematical structures. Since graduating, I’ve been focused on building a physically based renderer, <i>Indus</i> as I love computer graphics. I also write and record music, and I’m currently composing my first album. I’m looking for roles in computer graphics, research, or formal verification.
 </p>
 
-{{< figure src="https://upload.wikimedia.org/wikipedia/commons/3/30/The_Fighting_Temeraire%2C_JMW_Turner%2C_National_Gallery.jpg" alt="The Fighting Temeraire" caption="Figure 1: Atmospheric perspective & the sublime." >}}
+{{< figure src="images/archie.jpg" alt="My landlady's elusive cat, Archie" caption="Figure 1: My landlady's cat Archie has no time for me." >}}
 
 Some features I recently implemented in my engine:
 

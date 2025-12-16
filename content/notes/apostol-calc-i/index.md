@@ -1,7 +1,7 @@
 ---
 title: "Calculus: I"
 description: "My notes on Tom Apostol's calculus book."
-date: 2023-08-01
+date: 2024-01-10
 status: ongoing
 subjects: ["Mathematics"] 
 categories: ["Academic Textbook"]

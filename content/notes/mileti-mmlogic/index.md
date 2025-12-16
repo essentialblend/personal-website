@@ -7,7 +7,7 @@ subjects: ["Mathematics", "Logic"]
 categories: ["Academic Textbook"]
 tags: ["mathematical-logic", "first-order-logic", "model-theory", "set-theory", "computability-theory", "incompleteness-theorems", "foundations-of-mathematics"]
 bookAuthor: "Joseph Mileti"
-draft: true
+draft: false
 ---
 
 ## Introduction

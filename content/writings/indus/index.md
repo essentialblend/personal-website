@@ -18,13 +18,21 @@ However, in 2022, I got the opportunity to attend graduate school which was a re
 
 To my pleasant surprise, Shirley and co had expanded to a three-book series covering plenty advanced topics in offline rendering. It took nearly three months of full-time work and I'd written my [first real path tracer (ShirleyTracer)](/projects/shirley-tracer) following this series. It may've been nascent and toy-like, but boy it worked. A couple of months studying a C++ textbook, I re-stumbled upon [PBRT](https://www.pbrt.org/), the exact resource I should have reached for organically. Unfortunately, PBRT's codebase is massive, it's theory pretty dense and for the most part out of my depth. There was no winging it. I spent nearly six months covering some minimal set of prerequisites. A couple of setbacks on multiple fronts meant that I had to abandon the project for a while, but I finally got back and went through my first big development stretch by Q2 2025 where I scrapped my old architecture and started afresh with a standard one. 
 
-In the following months, I worked full time learning the theory and implemented many core features, some juicy extras, building the engine component by component. The advent of LLMs has radically accelerated guided conceptual learning which was no doubt invaluable. By November 2025, I had a working version which spiritually resembled Shirley's original tracer but was far more advanced. I implemented the core Monte-Carlo estimator of the rendering algorithm, robust rounding error management (this was as hard as it was gratifying as I lacked any numerical error analysis prereqs), new/better materials, mainly dielectrics using Fresnel's equations, a microfacet coated diffuse.
+{{< figure 
+	src="1080p400spp.png" 
+	caption="A 1080p 400 spp render showcasing dielectrics with Fresnel and a simpler analytic coated diffuse material in Indus"
+	alt="A 1080p 400 spp render showcasing dielectrics with Fresnel and a simpler analytic coated diffuse material in Indus"
+>}}
 
-{{< figure src="1080p400spp.png" caption="A 1080p 400 spp dielectrics with Fresnel and a simpler analytic coated diffuse material in Indus" >}}
+In the following months, I worked full time learning the theory and implemented many core features, some juicy extras, building the engine component by component. The advent of LLMs has radically accelerated guided conceptual learning which was no doubt invaluable. By November 2025, I had a working version which spiritually resembled Shirley's original tracer but was far more advanced. I implemented the core Monte-Carlo estimator of the rendering algorithm, robust rounding error management (this was as hard as it was gratifying as I lacked any numerical error analysis prereqs), new/better materials, mainly dielectrics using Fresnel's equations, a microfacet coated diffuse.
 
 I also implemented multi-threaded tile-based progressive rendering, filtering kernels, a physically sensible camera which is one (big) step short of a realistic camera model, samplers, RNG algorithms (LCG and PCG32, my number theory studies bore real fruit), BVH algorithms, and on and on. Many critical features still remain but I'm at a solid first checkpoint where I can stop to breathe. Somewhere around this time I decided to settle on the name _Indus_ for obvious reasons. After all, this journey really began when I'd forgotten even basic arithmetic, which adds immense gratification to what little I managed to achieve. 
 
-{{< figure src="progrender.gif" caption="Progressive rendering and various HUDs in Indus" >}}
+{{< figure 
+	src="progrender.gif" 
+	caption="Progressive rendering and various HUDs in Indus"
+	alt="Progressive rendering and various HUDs in Indus"
+>}}
 
-Indus is a culmination of this decade-long dream I thought I'd never get to (or have the privilege to) live. It's my long-term endeavour to implement a PBRT-like physically based renderer, learn as much as I can, and implement new techniques from ongoing research. In the near future, I anticipate adding are better volpath integrators, spectral rendering, realistic camera models, robust scene creation and management facilities among others. [Here's a link to the source code](https://github.com/essentialblend/project-indus/tree/arch-refactor-27aug2025).
+In many ways, Indus represents this decade-long dream I thought I'd never get to (or have the privilege to) live. It's my long-term endeavour to implement a PBRT-like physically based renderer, learn as much as I can, and implement new techniques from ongoing research. In the near future, I anticipate adding are better volpath integrators, spectral rendering, realistic camera models, robust scene creation and management facilities among others. [Here's a link to the source code](https://github.com/essentialblend/project-indus/tree/arch-refactor-27aug2025).
 

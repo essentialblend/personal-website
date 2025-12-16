@@ -2,4 +2,4 @@
 title: Writings
 ---
 
-A collection of essays and explorations on topics from mathematical physics and theoretical computer science to music and watercolour painting.
+My thoughts on various topics. These typically include articles, essays, musings, reviews, and other similar forms of written content. 

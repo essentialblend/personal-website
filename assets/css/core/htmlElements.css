@@ -290,6 +290,12 @@ footer {
       color: var(--accentColor);
     }
 
+.footer-links {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-sm);
+}
+
 h1, h2, h3, h4, p, ul, ol, dl, figure, blockquote {
   margin-top: 0;
   margin-bottom: 0;
@@ -483,7 +489,7 @@ figure {
 
 figcaption {
   font-family: var(--fontUI);
-  font-size: var(--textSmall);
+  font-size: calc(var(--smallSizeREM) * 1.05);
   color: var(--mutedTextColor);
   margin-top: var(--space-xs);
   text-align: right;

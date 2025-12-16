@@ -105,6 +105,11 @@
   margin-bottom: var(--text3XL);
 }
 
+.SF_SINGLE_HEADER h1 {
+  font-size: calc(var(--text3XL) * var(--scaleFactor));
+  line-height: 1.1;
+}
+
 .SF_SECTION_HEADER {
   margin-top: calc(var(--text3XL) + var(--bigSizeREM));
   margin-bottom: var(--text3XL);
@@ -203,7 +208,7 @@
 
 .SF_404_FIGURE figcaption {
   font-family: var(--fontUI);
-  font-size: var(--textSmall);
+  font-size: calc(var(--smallSizeREM) * 1.05);
   color: var(--mutedTextColor);
   text-align: center;
 }

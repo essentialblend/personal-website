@@ -3,4 +3,4 @@ title: Projects
 url: /projects/
 ---
 
-Here are my projects, primarily in computer graphics, games, theoretical CS, physics, and mathematics.
+All ongoing, completed, and archived projects are listed here. These include personal projects, theses, learning projects, etc.
