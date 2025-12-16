@@ -35,9 +35,11 @@
           {{ $indentMatch := findRE "^([ ]*)" $lineText }}
           {{ $indent := "" }}
           {{ if gt (len $indentMatch) 0 }}{{ $indent = index $indentMatch 0 }}{{ end }}
+          {{ $indentHTML := "" }}
+          {{ if gt (len $indent) 0 }}{{ $indentHTML = (replace $indent " " "&nbsp;") | safeHTML }}{{ end }}
           {{ $content := replaceRE "^\\s+" "" $lineText }}
           {{ $rendered := $content | markdownify | replaceRE "^<p>(.*)</p>$" "$1" }}
-          <span class="SF_PSEUDOCODE_LINE_TEXT">{{ if $hasContent }}{{ $indent }}{{ $rendered | safeHTML }}{{ else }}&nbsp;{{ end }}</span>
+          <span class="SF_PSEUDOCODE_LINE_TEXT">{{ if $hasContent }}{{ $indentHTML }}{{ $rendered | safeHTML }}{{ else }}&nbsp;{{ end }}</span>
         </div>
       {{ end }}
     </div>
@@ -57,9 +59,11 @@
           {{ $indentMatch := findRE "^([ ]*)" $lineText }}
           {{ $indent := "" }}
           {{ if gt (len $indentMatch) 0 }}{{ $indent = index $indentMatch 0 }}{{ end }}
+          {{ $indentHTML := "" }}
+          {{ if gt (len $indent) 0 }}{{ $indentHTML = (replace $indent " " "&nbsp;") | safeHTML }}{{ end }}
           {{ $content := replaceRE "^\\s+" "" $lineText }}
           {{ $rendered := $content | markdownify | replaceRE "^<p>(.*)</p>$" "$1" }}
-          <span class="SF_PSEUDOCODE_LINE_TEXT">{{ if $hasContent }}{{ $indent }}{{ $rendered | safeHTML }}{{ else }}&nbsp;{{ end }}</span>
+          <span class="SF_PSEUDOCODE_LINE_TEXT">{{ if $hasContent }}{{ $indentHTML }}{{ $rendered | safeHTML }}{{ else }}&nbsp;{{ end }}</span>
         </div>
       {{ end }}
     </div>
