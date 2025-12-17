@@ -38,7 +38,7 @@
     </svg>
   </button>
 
-  {{ $goatCode := getenv "GOATCOUNTER_CODE" }}
+  {{ $goatCode := getenv "HUGO_GOATCOUNTER_CODE" }}
   {{ if and $goatCode (not hugo.IsServer) }}
   <script data-goatcounter="https://{{ $goatCode }}.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
   {{ end }}
