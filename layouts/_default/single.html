@@ -1,10 +1,10 @@
 {{ define "pageContent" }}
-{{ if in (slice "writings" "notes" "projects") .Section }}
+{{ if in (slice "writings" "notes" "projects" "nyx") .Section }}
 <section class="SF_SINGLE_HEADER">
   <div class="LP_STACK LP_STACK_INTER_BIGGEST">
     <h1>{{ .Title }}</h1>
 
-    {{ if not .IsHome }}
+    {{ if and (not .IsHome) (ne .Section "nyx") }}
     {{ partial "partials/components/metadata.html" . }}
     {{ end }}
   </div>
