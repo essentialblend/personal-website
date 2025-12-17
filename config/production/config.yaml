@@ -5,3 +5,12 @@ pagination:
   pagerSize: 4
 
 minify: true
+
+server:
+  headers:
+    - for: "/giscus/**"
+      values:
+        Access-Control-Allow-Origin: "https://giscus.app"
+        Access-Control-Allow-Methods: "GET, OPTIONS"
+        Access-Control-Allow-Headers: "Access-Control-Request-Private-Network"
+        Access-Control-Allow-Private-Network: "true"
