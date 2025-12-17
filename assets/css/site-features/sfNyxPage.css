@@ -1,0 +1,130 @@
+.SF_NYX_CANDLE {
+  margin-block: var(--textXL);
+  padding: var(--space-md);
+  border: 1px solid var(--borderColor);
+  background: color-mix(in srgb, var(--BGColor) 88%, white 12%);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-sm);
+}
+
+.SF_NYX_CANDLE_TOP {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  gap: var(--space-md);
+  align-items: center;
+}
+
+.SF_NYX_CANDLE_TEXT p {
+  margin: 0;
+}
+
+.SF_NYX_CANDLE_TITLE {
+  font-family: var(--fontUI);
+  font-size: var(--textMedium);
+  font-style: italic;
+  color: var(--textColor);
+}
+
+.SF_NYX_CANDLE_SUBTITLE {
+  font-family: var(--fontUI);
+  font-size: var(--textSmall);
+  color: var(--mutedTextColor);
+  margin-top: var(--space-2xs);
+}
+
+.SF_NYX_CANDLE_ACTIONS {
+  display: inline-flex;
+  gap: var(--space-xs);
+  flex-wrap: wrap;
+}
+
+.SF_NYX_CANDLE_BUTTON {
+  font-family: var(--fontUI);
+  font-size: var(--textNav);
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  border: 1px solid var(--borderColor);
+  background: transparent;
+  color: var(--mutedTextColor);
+  padding: 0.35rem 0.55rem;
+  cursor: pointer;
+}
+
+  .SF_NYX_CANDLE_BUTTON:hover {
+    color: var(--accentColor);
+    border-color: color-mix(in srgb, var(--accentColor) 55%, var(--borderColor));
+  }
+
+.SF_NYX_CANDLE_BUTTON--SECONDARY {
+  opacity: 0.75;
+}
+
+.SF_NYX_CANDLE_ICON {
+  position: relative;
+  width: 28px;
+  height: 56px;
+  display: inline-block;
+}
+
+.SF_NYX_CANDLE_WAX {
+  position: absolute;
+  left: 50%;
+  bottom: 0;
+  width: 18px;
+  height: 40px;
+  transform: translateX(-50%);
+  border: 1px solid var(--borderColor);
+  background: color-mix(in srgb, var(--BGColor) 80%, white 20%);
+}
+
+.SF_NYX_CANDLE_FLAME {
+  position: absolute;
+  left: 50%;
+  top: 2px;
+  width: 14px;
+  height: 18px;
+  transform: translateX(-50%) rotate(6deg);
+  border-radius: 999px 999px 999px 999px;
+  background: color-mix(in srgb, var(--accentColor) 62%, #ffd166 38%);
+  opacity: 0.15;
+  filter: blur(0.2px);
+}
+
+.SF_NYX_CANDLE.is-lit .SF_NYX_CANDLE_FLAME {
+  opacity: 0.95;
+  animation: nyx-flicker 1.8s ease-in-out infinite;
+  box-shadow:
+    0 0 12px color-mix(in srgb, var(--accentColor) 55%, transparent),
+    0 0 24px color-mix(in srgb, #ffd166 40%, transparent);
+}
+
+@keyframes nyx-flicker {
+  0% { transform: translateX(-50%) rotate(5deg) scale(1); }
+  35% { transform: translateX(-50%) rotate(8deg) scale(1.05); opacity: 0.92; }
+  70% { transform: translateX(-50%) rotate(3deg) scale(0.98); opacity: 0.98; }
+  100% { transform: translateX(-50%) rotate(5deg) scale(1); }
+}
+
+.SF_NYX_GALLERY {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--space-md);
+  margin-block: var(--textXL);
+}
+
+@media (min-width: 700px) {
+  .SF_NYX_GALLERY {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+
+  .SF_NYX_GALLERY figure img {
+    max-width: 100%;
+  }
+
+  .SF_NYX_GALLERY figure figcaption {
+    text-align: left;
+  }
+}
+
