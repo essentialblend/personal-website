@@ -1,7 +1,7 @@
 // Returns a cached all-time total from GoatCounter, suitable for public display.
 exports.handler = async () => {
   const token = process.env.GOATCOUNTER_TOKEN;
-  const code = process.env.GOATCOUNTER_CODE;
+  const code = process.env.GOATCOUNTER_CODE || process.env.HUGO_GOATCOUNTER_CODE;
   const apiBase = process.env.GOATCOUNTER_API_BASE;
 
   if (!token) {
@@ -73,4 +73,3 @@ exports.handler = async () => {
     };
   }
 };
-
