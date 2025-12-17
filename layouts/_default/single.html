@@ -1,5 +1,5 @@
 {{ define "pageContent" }}
-{{ if in (slice "writings" "notes" "projects" "nyx") .Section }}
+{{ if or (in (slice "writings" "notes" "projects" "nyx") .Section) (eq .RelPermalink "/nyx/") }}
 <section class="SF_SINGLE_HEADER">
   <div class="LP_STACK LP_STACK_INTER_BIGGEST">
     <h1>{{ .Title }}</h1>
