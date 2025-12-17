@@ -5,9 +5,10 @@
   {{ $tableContentsJS := resources.Get "js/site-features/tableContents.js" | resources.Minify }}
   {{ $scrollToTopButtonJS := resources.Get "js/site-features/scrollToTop.js" | resources.Minify }}
   {{ $slideshowJS := resources.Get "js/site-features/slideshowGallery.js" | resources.Minify }}
+  {{ $visitCounterJS := resources.Get "js/site-features/visitCounter.js" | resources.Minify }}
   
 
-  {{ $scripts := slice $themeJS $clockJS $subjectFilterJS $codeCopyButtonJS $tableContentsJS $scrollToTopButtonJS $slideshowJS | resources.Concat "js/bundle.js" | resources.Fingerprint }}
+  {{ $scripts := slice $themeJS $clockJS $subjectFilterJS $codeCopyButtonJS $tableContentsJS $scrollToTopButtonJS $slideshowJS $visitCounterJS | resources.Concat "js/bundle.js" | resources.Fingerprint }}
 
   <!-- integrity removed to allow subdomain JS loading -->
   <script src="{{ $scripts.RelPermalink }}"></script>
