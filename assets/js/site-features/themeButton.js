@@ -31,6 +31,50 @@ function updateSyntaxTheme(themeName)
   }
 }
 
+function updateGiscusTheme(themeName) 
+{
+  const commentsSection = document.querySelector('.SF_COMMENTS');
+  if (!commentsSection) return;
+
+  const themeMap = {
+    themeLight: commentsSection.dataset.giscusThemeLight,
+    themeDark: commentsSection.dataset.giscusThemeDark || commentsSection.dataset.giscusThemeLight,
+    themeHigh: commentsSection.dataset.giscusThemeHigh || commentsSection.dataset.giscusThemeLight
+  };
+
+  const nextTheme = themeMap[themeName] || themeMap.themeLight;
+  if (!nextTheme) return;
+
+  const applyThemeToGiscus = () => {
+    const giscusFrame = document.querySelector('iframe.giscus-frame');
+    if (giscusFrame && giscusFrame.contentWindow) {
+      giscusFrame.contentWindow.postMessage(
+        { giscus: { setConfig: { theme: nextTheme } } },
+        'https://giscus.app'
+      );
+      return true;
+    }
+    return false;
+  };
+
+  // Try immediately, then retry until the iframe is ready (caps at ~2s).
+  if (!applyThemeToGiscus()) {
+    let attempts = 0;
+    const maxAttempts = 8;
+    const intervalId = setInterval(() => {
+      attempts += 1;
+      if (applyThemeToGiscus() || attempts >= maxAttempts) {
+        clearInterval(intervalId);
+      }
+    }, 250);
+
+    const giscusFrame = document.querySelector('iframe.giscus-frame');
+    if (giscusFrame) {
+      giscusFrame.addEventListener('load', applyThemeToGiscus, { once: true });
+    }
+  }
+}
+
 function initTheme() 
 {
   const html = document.documentElement;
@@ -43,6 +87,7 @@ function initTheme()
     html.dataset.userTheme = theme;
     localStorage.setItem('user-theme', theme);
     updateSyntaxTheme(theme);
+    updateGiscusTheme(theme);
 
     let currentButtonText = theme.replace('theme', '');
     if (themeToggleButton) 
@@ -73,7 +118,4 @@ function initTheme()
 }
 
 const themeToggleButtonElement = document.querySelector('[data-theme-toggle]');
-if (themeToggleButtonElement) 
-{
-  initTheme();
-}
+initTheme();

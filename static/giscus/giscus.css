@@ -1,0 +1,12 @@
+@import url("./giscus-base.css");
+
+:root {
+  /* Light theme matches site root variables */
+  --BGColor: #f3e9d2;
+  --textColor: #2c2420;
+  --mutedTextColor: #6b5e55;
+  --accentColor: #b33f30;
+  --accentHoverColor: #8e3226;
+  --borderColor: #d1c7b7;
+  --aiSafeColor: #2f855a;
+}

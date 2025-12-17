@@ -1,0 +1,129 @@
+/*! MIT License
+ * Copyright (c) 2018 GitHub Inc.
+ * https://github.com/primer/primitives/blob/main/LICENSE
+ */
+
+main {
+  --giscus-surface: color-mix(in srgb, var(--BGColor) 94%, var(--textColor) 6%);
+  --giscus-surface-strong: color-mix(in srgb, var(--BGColor) 88%, var(--textColor) 12%);
+  --giscus-surface-muted: color-mix(in srgb, var(--BGColor) 84%, var(--mutedTextColor) 16%);
+  --giscus-border: color-mix(in srgb, var(--borderColor) 80%, transparent);
+  --giscus-border-strong: color-mix(in srgb, var(--borderColor) 60%, var(--textColor) 40%);
+  --giscus-muted: color-mix(in srgb, var(--mutedTextColor) 80%, var(--BGColor) 20%);
+  --giscus-subtle: color-mix(in srgb, var(--mutedTextColor) 65%, var(--BGColor) 35%);
+  --giscus-accent-strong: var(--accentColor);
+  --giscus-accent-stronger: var(--accentHoverColor);
+  --giscus-accent-soft: color-mix(in srgb, var(--accentColor) 20%, var(--BGColor) 80%);
+  --giscus-accent-muted: color-mix(in srgb, var(--accentColor) 35%, transparent);
+  --giscus-success: var(--aiSafeColor);
+  --giscus-danger: var(--accentHoverColor);
+  --giscus-attention: color-mix(in srgb, var(--accentHoverColor) 60%, var(--mutedTextColor) 40%);
+
+  --color-prettylights-syntax-comment: var(--giscus-muted);
+  --color-prettylights-syntax-constant: color-mix(in srgb, var(--giscus-accent-strong) 65%, var(--textColor) 35%);
+  --color-prettylights-syntax-entity: color-mix(in srgb, var(--giscus-accent-stronger) 65%, var(--textColor) 35%);
+  --color-prettylights-syntax-storage-modifier-import: var(--giscus-muted);
+  --color-prettylights-syntax-entity-tag: color-mix(in srgb, var(--giscus-success) 60%, var(--textColor) 40%);
+  --color-prettylights-syntax-keyword: color-mix(in srgb, var(--giscus-accent-stronger) 70%, var(--textColor) 30%);
+  --color-prettylights-syntax-string: color-mix(in srgb, var(--giscus-success) 65%, var(--textColor) 35%);
+  --color-prettylights-syntax-variable: color-mix(in srgb, var(--giscus-accent-stronger) 50%, var(--textColor) 50%);
+  --color-prettylights-syntax-brackethighlighter-unmatched: color-mix(in srgb, var(--giscus-danger) 75%, var(--giscus-accent-strong) 25%);
+  --color-prettylights-syntax-invalid-illegal-text: var(--BGColor);
+  --color-prettylights-syntax-invalid-illegal-bg: color-mix(in srgb, var(--giscus-danger) 75%, var(--textColor) 25%);
+  --color-prettylights-syntax-carriage-return-text: var(--BGColor);
+  --color-prettylights-syntax-carriage-return-bg: color-mix(in srgb, var(--giscus-danger) 80%, var(--textColor) 20%);
+  --color-prettylights-syntax-string-regexp: color-mix(in srgb, var(--giscus-success) 70%, var(--textColor) 30%);
+  --color-prettylights-syntax-markup-list: color-mix(in srgb, var(--giscus-accent-strong) 55%, var(--textColor) 45%);
+  --color-prettylights-syntax-markup-heading: color-mix(in srgb, var(--giscus-accent-stronger) 60%, var(--textColor) 40%);
+  --color-prettylights-syntax-markup-italic: color-mix(in srgb, var(--textColor) 90%, var(--mutedTextColor) 10%);
+  --color-prettylights-syntax-markup-bold: color-mix(in srgb, var(--textColor) 95%, var(--mutedTextColor) 5%);
+  --color-prettylights-syntax-markup-deleted-text: color-mix(in srgb, var(--giscus-danger) 45%, var(--textColor) 55%);
+  --color-prettylights-syntax-markup-deleted-bg: color-mix(in srgb, var(--giscus-danger) 20%, var(--BGColor) 80%);
+  --color-prettylights-syntax-markup-inserted-text: color-mix(in srgb, var(--giscus-success) 50%, var(--textColor) 50%);
+  --color-prettylights-syntax-markup-inserted-bg: color-mix(in srgb, var(--giscus-success) 20%, var(--BGColor) 80%);
+  --color-prettylights-syntax-markup-changed-text: color-mix(in srgb, var(--giscus-accent-stronger) 45%, var(--textColor) 55%);
+  --color-prettylights-syntax-markup-changed-bg: color-mix(in srgb, var(--giscus-accent-stronger) 20%, var(--BGColor) 80%);
+  --color-prettylights-syntax-markup-ignored-text: var(--giscus-muted);
+  --color-prettylights-syntax-markup-ignored-bg: color-mix(in srgb, var(--giscus-muted) 30%, var(--BGColor) 70%);
+  --color-prettylights-syntax-meta-diff-range: color-mix(in srgb, var(--giscus-accent-stronger) 55%, var(--textColor) 45%);
+  --color-prettylights-syntax-brackethighlighter-angle: var(--giscus-muted);
+  --color-prettylights-syntax-sublimelinter-gutter-mark: var(--giscus-subtle);
+  --color-prettylights-syntax-constant-other-reference-link: color-mix(in srgb, var(--giscus-accent-strong) 50%, var(--textColor) 50%);
+
+  --color-btn-text: var(--textColor);
+  --color-btn-bg: var(--giscus-surface);
+  --color-btn-border: var(--giscus-border);
+  --color-btn-shadow: 0 0 transparent;
+  --color-btn-inset-shadow: 0 0 transparent;
+  --color-btn-hover-bg: var(--giscus-surface-strong);
+  --color-btn-hover-border: var(--giscus-border-strong);
+  --color-btn-active-bg: color-mix(in srgb, var(--giscus-surface-strong) 90%, var(--textColor) 10%);
+  --color-btn-active-border: var(--giscus-border-strong);
+  --color-btn-selected-bg: var(--giscus-surface-muted);
+  --color-btn-primary-text: var(--BGColor);
+  --color-btn-primary-bg: var(--giscus-accent-strong);
+  --color-btn-primary-border: var(--giscus-border);
+  --color-btn-primary-shadow: 0 0 transparent;
+  --color-btn-primary-inset-shadow: 0 0 transparent;
+  --color-btn-primary-hover-bg: var(--giscus-accent-stronger);
+  --color-btn-primary-hover-border: var(--giscus-border-strong);
+  --color-btn-primary-selected-bg: color-mix(in srgb, var(--giscus-accent-strong) 85%, var(--giscus-accent-stronger) 15%);
+  --color-btn-primary-selected-shadow: 0 0 transparent;
+  --color-btn-primary-disabled-text: color-mix(in srgb, var(--BGColor) 65%, var(--mutedTextColor) 35%);
+  --color-btn-primary-disabled-bg: color-mix(in srgb, var(--giscus-accent-soft) 70%, var(--BGColor) 30%);
+  --color-btn-primary-disabled-border: var(--giscus-border);
+
+  --color-action-list-item-default-hover-bg: color-mix(in srgb, var(--giscus-surface-strong) 50%, transparent);
+  --color-segmented-control-bg: color-mix(in srgb, var(--giscus-surface) 80%, transparent);
+  --color-segmented-control-button-bg: var(--giscus-surface);
+  --color-segmented-control-button-selected-border: var(--giscus-border-strong);
+
+  --color-fg-default: var(--textColor);
+  --color-fg-muted: var(--giscus-muted);
+  --color-fg-subtle: var(--giscus-subtle);
+
+  --color-canvas-default: var(--BGColor);
+  --color-canvas-overlay: var(--giscus-surface);
+  --color-canvas-inset: var(--giscus-surface-strong);
+  --color-canvas-subtle: color-mix(in srgb, var(--BGColor) 97%, var(--textColor) 3%);
+
+  --color-border-default: var(--giscus-border);
+  --color-border-muted: var(--giscus-subtle);
+  --color-neutral-muted: color-mix(in srgb, var(--giscus-muted) 40%, transparent);
+
+  --color-accent-fg: var(--giscus-accent-strong);
+  --color-accent-emphasis: var(--giscus-accent-stronger);
+  --color-accent-muted: var(--giscus-accent-muted);
+  --color-accent-subtle: var(--giscus-accent-soft);
+
+  --color-success-fg: var(--giscus-success);
+  --color-attention-fg: var(--giscus-attention);
+  --color-attention-muted: color-mix(in srgb, var(--giscus-attention) 40%, transparent);
+  --color-attention-subtle: color-mix(in srgb, var(--giscus-attention) 20%, var(--BGColor) 80%);
+  --color-danger-fg: var(--giscus-danger);
+  --color-danger-muted: color-mix(in srgb, var(--giscus-danger) 45%, transparent);
+  --color-danger-subtle: color-mix(in srgb, var(--giscus-danger) 15%, var(--BGColor) 85%);
+  --color-primer-shadow-inset: 0 0 transparent;
+  --color-scale-gray-7: var(--giscus-surface-strong);
+  --color-scale-blue-8: var(--giscus-accent-stronger);
+  /*! Extensions from @primer/css/alerts/flash.scss */
+  --color-social-reaction-bg-hover: var(--color-scale-gray-7);
+  --color-social-reaction-bg-reacted-hover: var(--color-scale-blue-8);
+}
+
+  main .pagination-loader-container {
+    background-image: url("https://github.com/images/modules/pulls/progressive-disclosure-line-dark.svg");
+  }
+
+  main .gsc-loading-image {
+    background-image: url("https://github.githubassets.com/images/mona-loading-dimmed.gif");
+  }
+
+  /* Tighten spacing between reactions bar and comment box */
+  main .gsc-reactions {
+    margin-bottom: 0.35rem !important;
+  }
+
+  main .gsc-comment-box {
+    margin-top: 0.25rem !important;
+  }

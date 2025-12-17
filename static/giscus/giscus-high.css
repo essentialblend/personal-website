@@ -1,0 +1,12 @@
+@import url("./giscus-base.css");
+
+:root {
+  /* High contrast theme matches site high-contrast variables */
+  --BGColor: #ffffff;
+  --textColor: #000000;
+  --mutedTextColor: #111111;
+  --accentColor: #cc0000;
+  --accentHoverColor: #990000;
+  --borderColor: #000000;
+  --aiSafeColor: #2f855a;
+}

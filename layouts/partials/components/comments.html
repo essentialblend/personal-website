@@ -1,23 +1,50 @@
 {{ if or (not .Params.comments) (ne .Params.comments "off") }}
-<section class="SF_COMMENTS">
-  <!--<h2 class="SF_COMMENTS_HEADING">Comments</h2>-->
+{{ $themeLight := ("giscus/giscus.css" | absURL) }}
+{{ $themeDark := ("giscus/giscus-dark.css" | absURL) }}
+{{ $themeHigh := ("giscus/giscus-high.css" | absURL) }}
 
-  <script src="https://giscus.app/client.js"
-    data-repo="essentialblend/site-comments"
-    data-repo-id="R_kgDOQoUzuQ"
-    data-category="Announcements"
-    data-category-id="DIC_kwDOQoUzuc4Czwof"
-    data-mapping="pathname"
-    data-strict="0"
-    data-reactions-enabled="1"
-    data-emit-metadata="0"
-    data-input-position="top"
-    data-theme="dark_dimmed"
-    data-lang="en"
-    data-loading="lazy"
-    crossorigin="anonymous" 
-    async>
+<section class="SF_COMMENTS"
+         data-giscus-theme-light="{{ $themeLight }}"
+         data-giscus-theme-dark="{{ $themeDark }}"
+         data-giscus-theme-high="{{ $themeHigh }}">
+
+  <script>
+    (function () {
+      var section = document.currentScript && document.currentScript.parentElement;
+      if (!section) return;
+
+      var themeMap = {
+        themeLight: section.dataset.giscusThemeLight,
+        themeDark: section.dataset.giscusThemeDark || section.dataset.giscusThemeLight,
+        themeHigh: section.dataset.giscusThemeHigh || section.dataset.giscusThemeLight
+      };
+
+      var stored = localStorage.getItem('user-theme');
+      var initialTheme = themeMap[stored] || themeMap.themeLight;
+
+      var existing = document.getElementById('giscus-script');
+      if (existing) existing.remove();
+
+      var script = document.createElement('script');
+      script.id = 'giscus-script';
+      script.src = 'https://giscus.app/client.js';
+      script.async = true;
+      script.crossOrigin = 'anonymous';
+      script.dataset.repo = 'essentialblend/site-comments';
+      script.dataset.repoId = 'R_kgDOQoUzuQ';
+      script.dataset.category = 'Announcements';
+      script.dataset.categoryId = 'DIC_kwDOQoUzuc4Czwof';
+      script.dataset.mapping = 'pathname';
+      script.dataset.strict = '0';
+      script.dataset.reactionsEnabled = '1';
+      script.dataset.emitMetadata = '0';
+      script.dataset.inputPosition = 'top';
+      script.dataset.lang = 'en';
+      script.dataset.loading = 'lazy';
+      script.dataset.theme = initialTheme;
+
+      section.appendChild(script);
+    })();
   </script>
-
 </section>
 {{ end }}
