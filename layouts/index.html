@@ -21,7 +21,12 @@
       {{ range first 5 (where site.RegularPages "Section" "writings") }}
       <a href="{{ .RelPermalink }}" class="archive-row">
         <span class="row-date">{{ .Date.Format "Jan 2006" }}</span>
-        <span class="row-title">{{ .Title }}</span>
+        <div class="row-main">
+          <span class="row-title">{{ .Title }}</span>
+          {{ with (.Params.description | default .Summary) }}
+          <span class="row-subtitle">{{ . | plainify }}</span>
+          {{ end }}
+        </div>
         <span class="row-cat">
           {{ with .Params.categories }}{{ index . 0 }}{{ else }}Note{{ end }}
         </span>

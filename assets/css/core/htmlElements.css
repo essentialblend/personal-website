@@ -462,6 +462,21 @@ ul:not(nav ul) {
   color: var(--textColor);
 }
 
+.row-main {
+  display: flex;
+  flex-direction: column;
+  gap: 0.15rem;
+  min-width: 0;
+}
+
+.row-subtitle {
+  font-family: var(--fontUI);
+  font-style: normal;
+  font-size: var(--textSmall);
+  color: var(--mutedTextColor);
+  line-height: 1.45;
+}
+
 .archive-row:hover .row-title {
   color: var(--accentColor);
 }
@@ -470,6 +485,10 @@ ul:not(nav ul) {
   .archive-row {
     grid-template-columns: var(--width-date-col) 1fr auto;
     gap: var(--textLarge);
+  }
+
+  .row-main {
+    align-self: center;
   }
 
   .row-cat {
