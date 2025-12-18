@@ -91,6 +91,10 @@ html[data-user-theme="themeHigh"] .SF_POSTCONTENT .chroma .w {
   font-size: var(--baseSizeREM);
 }
 
+.SF_POSTCONTENT h2#references {
+  margin-block-start: calc(var(--biggestSizeREM) * 1.2);
+}
+
 .SF_POSTCONTENT h5 {
   font-size: var(--mediumSizeREM);
 }

@@ -4,6 +4,7 @@ title: "Siddharth Nair"
 relativeURLs: true
 buildDrafts: false
 canonifyURLs: false
+enableGitInfo: true
 
 pagination:
   pagerSize: 4

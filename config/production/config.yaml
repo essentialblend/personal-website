@@ -1,5 +1,6 @@
 baseURL: "https://siddharths.space/"
 buildDrafts: false
+enableGitInfo: true
 
 pagination:
   pagerSize: 4
