@@ -211,6 +211,17 @@
     {{ $scratch.Set "hasPrev" true }}
     {{ end }}
 
+    {{ if $showLastmod }}
+    {{ if $scratch.Get "hasPrev" }}<span class="SF_NOTE_PIPE">|</span>{{ end }}
+    <div class="SF_NOTE_META_ITEM">
+      <span class="SF_NOTE_META_LABEL">Last updated:</span>
+      <span class="SF_NOTE_META_VALUE">
+        <time datetime="{{ $page.Lastmod }}">{{ $page.Lastmod.Format "January 2, 2006" }}</time>
+      </span>
+    </div>
+    {{ $scratch.Set "hasPrev" true }}
+    {{ end }}
+
     {{ if $tags }}
     {{ if $scratch.Get "hasPrev" }}<span class="SF_NOTE_PIPE">|</span>{{ end }}
     <div class="SF_NOTE_META_ITEM">
