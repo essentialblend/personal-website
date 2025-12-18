@@ -10,7 +10,7 @@ draft: false
 
 {{< nyxslideshow >}}
 
-The incident that best demonstrates this is as follows. One fine evening, a cousin's friend visits my home. Nyx was his usual eager self and couldn't wait to meet this new person and spend time with them. To his dismay, this person was afraid of dogs. When has a person afraid of dogs changed their mind on the spot, just because you told them that yours was friendly? Thankfully, he took a chance. I think Nyx rewarded him in spades. He played with him, sat with him, laid down near him on the bed. He was an instant convert and I couldn't be more content. That was a moment where I felt that I'd done okay with him. 
+Why I think that is best justified by an incident. One fine evening, a cousin's friend visits my home. Nyx was his usual eager self and couldn't wait to meet this new person and spend time with them. To his dismay, this person was afraid of dogs. When has a person afraid of dogs changed their mind on the spot, just because you told them that yours was friendly? Thankfully, he took a chance. I think Nyx rewarded him in spades. He played with him, sat with him, laid down near him on the bed. He was an instant convert and I couldn't be more content. That was a moment where I felt that I'd done okay with him. 
 
 He left us in March 2025. I can't yet get myself to write down some long narration chronicling his time with us, as I'll only be reliving a lot of pain with those memories. Instead I'll list some tidbits and update this page over time.
 
