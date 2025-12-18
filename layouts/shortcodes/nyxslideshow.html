@@ -1,0 +1,34 @@
+{{/* Renders a slideshow for Nyx using page resources named nyx-*.jpg */}}
+{{ $images := .Page.Resources.Match "nyx-*.jpg" | sort }}
+{{ if gt (len $images) 0 }}
+  {{ $captions := dict
+    "nyx-1.jpg" "One of his favorite spots. He'd sit for long periods, enjoy the sun, and watch everything outside through the window."
+    "nyx-2.jpg" "He loved to lay down on my lap! I loved it more, haha."
+    "nyx-3.jpg" "He let me sleep on his paws."
+  }}
+
+<div class="SF_SHOWCASE_SLIDES SF_NYX_SLIDES">
+  {{ range $i, $img := $images }}
+    {{ $resized := $img.Resize "1200x q95" }}
+    {{ $webp := $resized.Process "webp;quality=95" }}
+    {{ $cap := index $captions $img.Name | default "" }}
+  <div class="SF_SHOWCASE_SLIDE{{ if eq $i 0 }} active{{ end }}">
+    <div class="SF_SHOWCASE_FRAME">
+      <div class="SF_SHOWCASE_BG_BLUR" style="background-image: url('{{ $resized.RelPermalink }}');"></div>
+      <picture>
+        <source type="image/webp"
+                srcset="{{ $webp.RelPermalink }}"
+                sizes="(max-width: 800px) 100vw, 800px">
+        <img src="{{ $resized.RelPermalink }}"
+             alt="{{ $cap | default $img.Name }}"
+             class="SF_SHOWCASE_IMG"
+             loading="lazy"
+             width="{{ $resized.Width }}"
+             height="{{ $resized.Height }}">
+      </picture>
+    </div>
+    {{ if $cap }}<div class="SF_SHOWCASE_CAPTION">{{ $cap }}</div>{{ end }}
+  </div>
+  {{ end }}
+</div>
+{{ end }}
