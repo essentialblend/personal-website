@@ -1,0 +1,132 @@
+{{/* layouts/partials/sections/librarySection.html */}}
+
+{{ $formats := slice }}
+{{ $scopes := slice }}
+
+{{ range .Pages }}
+  {{ with .Params.format }}
+    {{ $formatValue := lower . }}
+    {{ if not (in $formats $formatValue) }}
+      {{ $formats = $formats | append $formatValue }}
+    {{ end }}
+  {{ end }}
+  {{ with .Params.scope }}
+    {{ $scopeValue := lower . }}
+    {{ if not (in $scopes $scopeValue) }}
+      {{ $scopes = $scopes | append $scopeValue }}
+    {{ end }}
+  {{ end }}
+{{ end }}
+
+{{ $formats = sort $formats }}
+{{ $scopes = sort $scopes }}
+
+{{ if or (gt (len $formats) 0) (gt (len $scopes) 0) }}
+<div class="SF_LIBRARY_FILTER SF_TAXONOMYFILTER_WRAPPER" data-library-filter data-target-list="library-list" data-item-selector=".SF_LIBRARY_ITEM">
+  <nav aria-label="Filter library entries" class="SF_TAXONOMYFILTER">
+    <div class="LP_STACK LP_STACK_INTER_SMALL">
+      {{ if gt (len $formats) 0 }}
+      <div class="LP_CLUSTER LP_CLUSTER_ALIGN_CENTER LP_CLUSTER_GAP_SMALLER SF_LIBRARY_FILTER_ROW" data-filter-group="format">
+        <p class="SF_TAXONOMYFILTER_LABEL">Format:</p>
+        <div class="LP_CLUSTER LP_CLUSTER_ALIGN_CENTER LP_CLUSTER_GAP_SMALLER SF_TAXONOMYFILTER_BUTTONS">
+          {{ range $formats }}
+          <button type="button" class="SF_TAXONOMYFILTER_BUTTON" data-filter-value="{{ . }}">{{ replace . "-" " " | title }}</button>
+          {{ end }}
+        </div>
+      </div>
+      {{ end }}
+
+      {{ if gt (len $scopes) 0 }}
+      <div class="LP_CLUSTER LP_CLUSTER_ALIGN_CENTER LP_CLUSTER_GAP_SMALLER SF_LIBRARY_FILTER_ROW" data-filter-group="scope">
+        <p class="SF_TAXONOMYFILTER_LABEL">Scope:</p>
+        <div class="LP_CLUSTER LP_CLUSTER_ALIGN_CENTER LP_CLUSTER_GAP_SMALLER SF_TAXONOMYFILTER_BUTTONS">
+          {{ range $scopes }}
+          <button type="button" class="SF_TAXONOMYFILTER_BUTTON" data-filter-value="{{ . }}">{{ replace . "-" " " | title }}</button>
+          {{ end }}
+        </div>
+      </div>
+      {{ end }}
+
+      <div class="LP_CLUSTER LP_CLUSTER_ALIGN_CENTER LP_CLUSTER_GAP_SMALLER SF_LIBRARY_FILTER_ROW SF_LIBRARY_FILTER_ACTIONS">
+        <span class="SF_TAXONOMYFILTER_LABEL">View:</span>
+        <button type="button" class="SF_TAXONOMYFILTER_BUTTON SF_LIBRARY_VIEW_TOGGLE active" data-view="detail">Detail</button>
+        <button type="button" class="SF_TAXONOMYFILTER_BUTTON SF_LIBRARY_VIEW_TOGGLE" data-view="dense">Dense</button>
+        <button type="button" class="SF_TAXONOMYFILTER_CLEAR" title="Clear selected filters">Clear</button>
+      </div>
+    </div>
+  </nav>
+</div>
+{{ end }}
+
+<div class="notes-list SF_LIBRARY_LIST" id="library-list">
+  {{ range .Pages.ByTitle }}
+    {{ $format := .Params.format | default "book" }}
+    {{ $scope := .Params.scope | default "standalone" }}
+    {{ $status := .Params.status | default "" }}
+    {{ $statusClass := "" }}
+    {{ if eq $status "reading" }}
+      {{ $statusClass = "ongoing" }}
+    {{ else }}
+      {{ if eq $status "finished" }}
+        {{ $statusClass = "complete" }}
+      {{ end }}
+    {{ end }}
+    {{ $issueStart := .Params.issue_start }}
+    {{ $issueEnd := .Params.issue_end }}
+    {{ $issueRange := "" }}
+    {{ if and $issueStart $issueEnd }}
+      {{ $issueRange = printf "Issues %v-%v" $issueStart $issueEnd }}
+    {{ else }}
+      {{ if $issueStart }}
+        {{ $issueRange = printf "Issue %v" $issueStart }}
+      {{ end }}
+    {{ end }}
+    {{ $metaParts := slice }}
+    {{ if $format }}
+      {{ $metaParts = $metaParts | append (replace $format "-" " " | title) }}
+    {{ end }}
+    {{ if $scope }}
+      {{ $metaParts = $metaParts | append (replace $scope "-" " " | title) }}
+    {{ end }}
+    {{ with .Params.series }}
+      {{ $metaParts = $metaParts | append . }}
+    {{ end }}
+    {{ if $issueRange }}
+      {{ $metaParts = $metaParts | append $issueRange }}
+    {{ end }}
+
+  <a href="{{ .RelPermalink }}" class="note-row SF_LIBRARY_ITEM" data-format="{{ $format | lower }}" data-scope="{{ $scope | lower }}">
+    <div class="note-main LP_STACK LP_STACK_INTER_SMALL">
+      <span class="note-title">{{ .Title }}</span>
+      {{ if .Params.description }}
+      <span class="note-desc">{{ .Params.description }}</span>
+      {{ else }}
+        {{ if .Params.creator }}
+        <span class="note-desc">By {{ .Params.creator }}</span>
+        {{ else }}
+          {{ if .Params.author }}
+          <span class="note-desc">By {{ .Params.author }}</span>
+          {{ end }}
+        {{ end }}
+      {{ end }}
+      {{ if gt (len $metaParts) 0 }}
+      <span class="note-tags SF_LIBRARY_META">{{ delimit $metaParts " | " }}</span>
+      {{ end }}
+    </div>
+    <div class="note-meta LP_STACK LP_STACK_INTER_SMALL">
+      {{ if $status }}
+      <span class="status-tag {{ $statusClass }}">{{ $status }}</span>
+      {{ end }}
+      {{ if .Params.finished }}
+      <time datetime="{{ .Params.finished }}" class="note-date">{{ dateFormat "Jan 2006" .Params.finished }}</time>
+      {{ else }}
+        {{ if .Params.started }}
+        <time datetime="{{ .Params.started }}" class="note-date">{{ dateFormat "Jan 2006" .Params.started }}</time>
+        {{ end }}
+      {{ end }}
+    </div>
+  </a>
+  {{ else }}
+  <p class="SF_LIBRARY_EMPTY">No entries yet.</p>
+  {{ end }}
+</div>

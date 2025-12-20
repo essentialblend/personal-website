@@ -92,12 +92,125 @@
   padding: var(--smallerSizeREM) 0;
   margin-top: var(--mediumSizeREM);
   margin-bottom: var(--baseSizeREM);
+  user-select: none;
 }
 
 .SF_NOTE_METADATA_WRAPPER--project {
   margin-top: var(--biggerSizeREM);
   margin-bottom: var(--mediumSizeREM);
   padding-block: var(--baseSizeREM);
+}
+
+.SF_WRITING_BODY {
+  padding-top: calc(var(--bigSizeREM) * 3);
+}
+
+.SF_LIBRARY_FILTER_ROW {
+  justify-content: flex-start;
+  flex-wrap: wrap;
+  row-gap: var(--space-xs);
+}
+
+.SF_LIBRARY_FILTER_ROW .SF_TAXONOMYFILTER_LABEL {
+  min-width: 6.5ch;
+}
+
+.SF_LIBRARY_FILTER_ACTIONS {
+  justify-content: flex-end;
+}
+
+.SF_LIBRARY_META {
+  color: var(--mutedTextColor);
+  font-weight: 600;
+}
+
+.SF_LIBRARY_FILTER .LP_STACK {
+  --stackInterMarginBlockREM: var(--smallestSizeREM);
+}
+
+.SF_LIBRARY_FILTER .SF_TAXONOMYFILTER {
+  padding: var(--smallestSizeREM) var(--baseSizeREM);
+}
+
+.SF_LIBRARY_LIST.is-dense .note-row {
+  padding: var(--space-xs) 0;
+  gap: var(--space-sm);
+}
+
+.SF_LIBRARY_LIST.is-dense .note-main {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-items: baseline;
+  gap: var(--space-sm);
+}
+
+.SF_LIBRARY_LIST.is-dense .note-title {
+  font-size: var(--textSmall);
+}
+
+.SF_LIBRARY_LIST.is-dense .note-desc,
+.SF_LIBRARY_LIST.is-dense .SF_LIBRARY_META {
+  display: none;
+}
+
+.SF_LIBRARY_LIST.is-dense .note-meta {
+  display: inline-flex;
+  flex-direction: row;
+  gap: var(--space-sm);
+  align-items: baseline;
+  min-width: auto;
+  text-align: left;
+}
+
+.SF_NOTE_METADATA_DETAILS {
+  margin: 0;
+}
+
+.SF_NOTE_METADATA_SUMMARY {
+  list-style: none;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: var(--space-sm);
+}
+
+.SF_NOTE_METADATA_SUMMARY::-webkit-details-marker {
+  display: none;
+}
+
+.SF_NOTE_METADATA_SUMMARY::after {
+  content: "";
+  width: 0.6rem;
+  height: 0.6rem;
+  margin-left: var(--space-xs);
+  border-right: 2px solid var(--mutedTextColor);
+  border-bottom: 2px solid var(--mutedTextColor);
+  transform: translateY(1px) rotate(45deg);
+  opacity: 0.55;
+  transition: transform 0.15s ease, opacity 0.15s ease, border-color 0.15s ease;
+}
+
+.SF_NOTE_METADATA_DETAILS[open] .SF_NOTE_METADATA_SUMMARY::after {
+  transform: translateY(1px) rotate(-135deg);
+  opacity: 0.85;
+  border-color: var(--textColor);
+}
+
+.SF_NOTE_METADATA_SUMMARY .SF_NOTE_METADATA_ROW {
+  flex: 1;
+}
+
+.SF_NOTE_METADATA_EXPANDED {
+  margin-top: 0;
+  padding-top: 0;
+  border-top: 0;
+}
+
+.SF_NOTE_METADATA_DETAILS[open] .SF_NOTE_METADATA_EXPANDED {
+  margin-top: var(--space-xs);
+  padding-top: var(--space-xs);
+  border-top: 1px solid color-mix(in srgb, var(--borderColor) 60%, transparent);
 }
 
 .SF_SINGLE_HEADER {

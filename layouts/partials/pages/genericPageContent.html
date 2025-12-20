@@ -15,6 +15,15 @@
   {{ .Content }}
 </div>
 
+{{ else if eq .Section "writings" }}
+<div class="LP_STACK LP_STACK_INTER_BIGGER SF_WRITING_BODY">
+  <section>
+    <div class="SF_POSTCONTENT">
+      {{ .Content }}
+    </div>
+  </section>
+</div>
+
 {{ else }}
 {{/* Fallback layout */}}
 <div class="LP_STACK LP_STACK_INTER_BIGGER">

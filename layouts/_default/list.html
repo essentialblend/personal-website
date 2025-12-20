@@ -24,6 +24,8 @@
 {{ partial "sections/colophonSection.html" . }}
 {{ else if eq .Section "stream" }}
 {{ partial "sections/streamSection.html" . }}
+{{ else if eq .Section "library" }}
+{{ partial "sections/librarySection.html" . }}
 {{ end }}
 
 {{ end }}
