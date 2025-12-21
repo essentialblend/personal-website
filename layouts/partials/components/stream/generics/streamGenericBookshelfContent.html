@@ -6,7 +6,21 @@
   {{ $books = where $library.Pages "File.BaseFileName" "ne" "masterlist" }}
 {{ end }}
 {{ $active    := where $books "Params.active" true }}
-{{ $selected  := first 6 $active.ByTitle }}
+{{ $reading   := where $books "Params.status" "reading" }}
+{{ $activeOnly := where $active "Params.status" "ne" "reading" }}
+{{ $activeReading := slice }}
+{{ range $reading.ByTitle }}{{ $activeReading = $activeReading | append . }}{{ end }}
+{{ range $activeOnly.ByTitle }}{{ $activeReading = $activeReading | append . }}{{ end }}
+{{ $activeReading = first 5 $activeReading }}
+
+{{ $finished  := where $books "Params.status" "in" (slice "finished" "complete") }}
+{{ $finished  = where $finished "Params.active" "ne" true }}
+{{ $finished  = sort $finished "Params.readYear" "desc" }}
+{{ $finished  = first 5 $finished }}
+
+{{ $selected  := slice }}
+{{ range $activeReading }}{{ $selected = $selected | append . }}{{ end }}
+{{ range $finished }}{{ $selected = $selected | append . }}{{ end }}
 
 <div class="SF_SHELF_BLOCK">
   <div class="SF_SHELF_LIST">
