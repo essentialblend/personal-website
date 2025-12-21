@@ -15,8 +15,8 @@
       {{ $statusClass := "" }}
       {{ $statusLabel := "" }}
       {{ if eq $statusRaw "reading" }}
-        {{ $statusClass = "ongoing" }}
-        {{ $statusLabel = "Ongoing" }}
+        {{ $statusClass = "reading" }}
+        {{ $statusLabel = "Reading" }}
       {{ else if eq $statusRaw "finished" }}
         {{ $statusClass = "finished" }}
         {{ $statusLabel = "Finished" }}
