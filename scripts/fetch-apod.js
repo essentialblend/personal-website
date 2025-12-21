@@ -47,7 +47,7 @@ const api = `https://api.nasa.gov/planetary/apod?api_key=${key}&thumbs=true`;
         throw new Error("Received invalid data structure from NASA APOD API.");
       }
 
-      const urlCandidate = String(data.url || data.hdurl || "");
+      const urlCandidate = String(data.url || data.hdurl || data.thumbnail_url || "");
       const looksLikeImage = /\/apod\/image\//i.test(urlCandidate)
         || /\.(jpg|jpeg|png|gif|webp)(\?|$)/i.test(urlCandidate);
       const looksLikeVideo = /\.(mp4|webm)(\?|$)/i.test(urlCandidate)
@@ -67,14 +67,13 @@ const api = `https://api.nasa.gov/planetary/apod?api_key=${key}&thumbs=true`;
         } else if (looksLikeImage) {
           mediaType = "image";
         } else {
-          const inferred = looksLikeVideo ? "video" : "image";
-          console.warn(`Missing media_type, inferring '${inferred}'.`);
-          mediaType = inferred;
+          mediaType = hasVideoUrl ? "video" : "image";
+          console.warn(`Missing media_type, inferring '${mediaType}'.`);
         }
       }
 
       if (mediaType !== 'image' && mediaType !== 'video') {
-        const inferred = hasImageUrl ? 'image' : 'video';
+        const inferred = data.thumbnail_url || looksLikeVideo ? 'video' : 'image';
         console.warn(`Unknown media_type '${data.media_type}', inferring '${inferred}'.`);
         mediaType = inferred;
       }
@@ -87,14 +86,6 @@ const api = `https://api.nasa.gov/planetary/apod?api_key=${key}&thumbs=true`;
       if (mediaType === 'video' && !hasVideoUrl && hasImageUrl) {
         console.warn("APOD media_type is video but only image URLs exist; switching to image.");
         mediaType = 'image';
-      }
-
-      if (mediaType === 'image' && !hasImageUrl) {
-        throw new Error("Received invalid data structure from NASA APOD API.");
-      }
-
-      if (mediaType === 'video' && !hasVideoUrl) {
-        throw new Error("Received invalid data structure from NASA APOD API.");
       }
 
       data.media_type = mediaType;
