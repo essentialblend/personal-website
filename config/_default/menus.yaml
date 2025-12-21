@@ -16,6 +16,10 @@ main:
     name: Stream
     url: /stream/
 
+  - identifier: library
+    name: Library
+    url: /library/
+
   # - identifier: about
   #   name: About
   #   url: /about/
