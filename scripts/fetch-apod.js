@@ -29,24 +29,47 @@ const api = `https://api.nasa.gov/planetary/apod?api_key=${key}&thumbs=true`;
     const data = await res.json();
     console.log("Successfully fetched APOD data:", data.title);
 
-    if (!data || !data.media_type) {
+    if (!data || data.media_type == null) {
       throw new Error("Received invalid data structure from NASA APOD API.");
     }
 
     const hasImageUrl = Boolean(data.url || data.hdurl);
     const hasVideoUrl = Boolean(data.url || data.thumbnail_url);
 
-    if (data.media_type === 'image' && !hasImageUrl) {
+    let mediaType = String(data.media_type).trim().toLowerCase();
+    if (!mediaType) {
       throw new Error("Received invalid data structure from NASA APOD API.");
     }
 
-    if (data.media_type === 'video' && !hasVideoUrl) {
+    if (!hasImageUrl && !hasVideoUrl) {
       throw new Error("Received invalid data structure from NASA APOD API.");
     }
 
-    if (data.media_type !== 'image' && data.media_type !== 'video') {
+    if (mediaType !== 'image' && mediaType !== 'video') {
+      const inferred = hasImageUrl ? 'image' : 'video';
+      console.warn(`Unknown media_type '${data.media_type}', inferring '${inferred}'.`);
+      mediaType = inferred;
+    }
+
+    if (mediaType === 'image' && !hasImageUrl && hasVideoUrl) {
+      console.warn("APOD media_type is image but only video URLs exist; switching to video.");
+      mediaType = 'video';
+    }
+
+    if (mediaType === 'video' && !hasVideoUrl && hasImageUrl) {
+      console.warn("APOD media_type is video but only image URLs exist; switching to image.");
+      mediaType = 'image';
+    }
+
+    if (mediaType === 'image' && !hasImageUrl) {
       throw new Error("Received invalid data structure from NASA APOD API.");
     }
+
+    if (mediaType === 'video' && !hasVideoUrl) {
+      throw new Error("Received invalid data structure from NASA APOD API.");
+    }
+
+    data.media_type = mediaType;
 
     const dataDir = path.join(process.cwd(), 'data');
     fs.mkdirSync(dataDir, { recursive: true });
