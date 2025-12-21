@@ -1,4 +1,4 @@
-{{/* layouts/partials/components/stream/generics/streamGenericShowcaseContent.html */}}
+﻿{{/* layouts/partials/components/stream/generics/streamGenericShowcaseContent.html */}}
 
 {{ $paintings := .paintings }}
 {{ $slug := .slug }}
@@ -64,11 +64,13 @@
     {{ if $t }}
     <div class="SF_SHOWCASE_CAPTION">
       {{ if $d }}
-      {{ printf "**%s** — %s" $t $d | markdownify }}
+      {{ printf "**%s** â€” %s" $t $d | markdownify }}
       {{ else }}
       {{ printf "**%s**" $t | markdownify }}
       {{ end }}
     </div>
+    {{ else }}
+    <div class="SF_SHOWCASE_CAPTION SF_SHOWCASE_CAPTION--empty" aria-hidden="true">&nbsp;</div>
     {{ end }}
   </div>
   {{ end }}
@@ -127,3 +129,4 @@
 {{ end }}
 <div class="SF_SHOWCASE_TEXT"><p>{{ .content }}</p></div>
 {{ end }}
+

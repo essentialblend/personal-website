@@ -167,6 +167,10 @@
   margin-bottom: var(--smallSizeREM);
 }
 
+.SF_SHOWCASE_CAPTION--empty {
+  visibility: hidden;
+}
+
 .SF_SHELF_LIST {
   list-style: none;
   margin: 0;
