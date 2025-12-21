@@ -32,11 +32,4 @@ The three synths I've absolutely loved learning/working with recently:
 - **Korg Volca Drum**: A digital perc synth best suited towards experimental sounds. It is idiosyncratic in it's duality of simultaneously being open-ended and restrained.
 - **Roland S-1**: A compact flexible microsynth inspired by the SH-101 covering all subtractive synthesis duties.
 
-Some books that I recently read/am reading:
-
-- _Dreams of a Final Theory_&mdash;Steven Weinberg
-- _The Discovery of India_&mdash;Jawaharlal Nehru
-- _A History of Ancient and Early Medieval India: From the Stone Age to the 12th Century_&mdash;Upinder Singh
-- _Dark Knights of Steel_&mdash;Tom Taylor and Yasmine Putri; the art is **gorgeous**
-
 If you're just finding your way around my site, you might want to head over to the [stream](/stream). You may also contact me via [hi@siddharths.space](mailto:hi@siddharths.space).

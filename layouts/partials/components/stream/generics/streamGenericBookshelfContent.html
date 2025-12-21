@@ -1,25 +1,28 @@
 {{/* streamGenericBookshelfContent.html */}}
 
-{{ $books     := (site.GetPage "section" "stream/bookshelf").Pages }}
-{{ $ongoing   := where $books "Params.status" "Ongoing" }}
-{{ $finished  := where $books "Params.status" "in" (slice "Finished" "Complete") }}
-{{ $combined  := slice }}
-{{ range $ongoing   }}{{ $combined = $combined | append . }}{{ end }}
-{{ range $finished  }}{{ $combined = $combined | append . }}{{ end }}
-{{ $selected  := first 6 $combined }}
+{{ $library   := site.GetPage "section" "library" }}
+{{ $books     := slice }}
+{{ if $library }}
+  {{ $books = where $library.Pages "File.BaseFileName" "ne" "masterlist" }}
+{{ end }}
+{{ $active    := where $books "Params.active" true }}
+{{ $selected  := first 6 $active.ByTitle }}
 
 <div class="SF_SHELF_BLOCK">
   <div class="SF_SHELF_LIST">
     {{ range $selected }}
-      {{ $statusClass := lower .Params.status }}
+      {{ $status := .Params.status | default "" }}
+      {{ $statusClass := lower $status }}
+      {{ $statusDisplay := cond (ne $status "") (title $status) "" }}
+      {{ $writer := .Params.writer | default "" }}
       <div class="SF_SHELF_ENTRY {{ $statusClass }}">
-        {{ if .Params.reviewed }}
-          <a class="SF_SHELF_TITLE" href="{{ .RelPermalink }}">{{ .Title }}</a>
-        {{ else }}
-          <span class="SF_SHELF_TITLE">{{ .Title }}</span>
-        {{ end }}
+        <a class="SF_SHELF_TITLE" href="{{ .RelPermalink }}">{{ .Title }}</a>
         <span class="SF_SHELF_META">
-          {{ .Params.author }} &mdash; <em>{{ .Params.status }}</em>
+          {{- if $writer -}}
+            {{ $writer }}{{ if $statusDisplay }} &mdash; <em>{{ $statusDisplay }}</em>{{ end }}
+          {{- else if $statusDisplay -}}
+            <em>{{ $statusDisplay }}</em>
+          {{- end -}}
         </span>
       </div>
     {{ end }}
