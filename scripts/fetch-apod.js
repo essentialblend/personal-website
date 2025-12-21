@@ -13,7 +13,7 @@ if (!key) {
   process.exit(1);
 }
 
-const api = `https://api.nasa.gov/planetary/apod?api_key=${key}`;
+const api = `https://api.nasa.gov/planetary/apod?api_key=${key}&thumbs=true`;
 
 ;(async()=> {
   const fetch = (await import('node-fetch')).default;
@@ -29,8 +29,23 @@ const api = `https://api.nasa.gov/planetary/apod?api_key=${key}`;
     const data = await res.json();
     console.log("Successfully fetched APOD data:", data.title);
 
-    if (!data || !data.media_type || !data.url) {
-        throw new Error("Received invalid data structure from NASA APOD API.");
+    if (!data || !data.media_type) {
+      throw new Error("Received invalid data structure from NASA APOD API.");
+    }
+
+    const hasImageUrl = Boolean(data.url || data.hdurl);
+    const hasVideoUrl = Boolean(data.url || data.thumbnail_url);
+
+    if (data.media_type === 'image' && !hasImageUrl) {
+      throw new Error("Received invalid data structure from NASA APOD API.");
+    }
+
+    if (data.media_type === 'video' && !hasVideoUrl) {
+      throw new Error("Received invalid data structure from NASA APOD API.");
+    }
+
+    if (data.media_type !== 'image' && data.media_type !== 'video') {
+      throw new Error("Received invalid data structure from NASA APOD API.");
     }
 
     const dataDir = path.join(process.cwd(), 'data');
@@ -43,21 +58,26 @@ const api = `https://api.nasa.gov/planetary/apod?api_key=${key}`;
     console.log(`Metadata written to ${metadataPath}`);
 
     if (data.media_type === 'image') {
-      console.log(`Media type is image. Fetching image from: ${data.url}`);
+      const imageUrl = data.url || data.hdurl;
+      if (!imageUrl) {
+        throw new Error("APOD image is missing a usable URL.");
+      }
+
+      console.log(`Media type is image. Fetching image from: ${imageUrl}`);
       const imgDir = path.join(process.cwd(), 'static', 'images', 'apod');
       fs.mkdirSync(path.dirname(imgDir), { recursive: true });
       fs.rmSync(imgDir, { recursive: true, force: true });
       fs.mkdirSync(imgDir, { recursive: true });
 
-      const imgRes = await fetch(data.url);
+      const imgRes = await fetch(imageUrl);
       if (!imgRes.ok) {
         throw new Error(`Image fetch failed with status ${imgRes.status}: ${imgRes.statusText}`);
       }
 
       const buf = Buffer.from(await imgRes.arrayBuffer());
 
-      const imageUrl = new URL(data.url);
-      const originalFilename = path.basename(imageUrl.pathname);
+      const resolvedUrl = new URL(imageUrl);
+      const originalFilename = path.basename(resolvedUrl.pathname);
 
       const imgPath = path.join(imgDir, originalFilename);
 

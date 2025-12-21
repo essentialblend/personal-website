@@ -107,6 +107,26 @@
   z-index: 1;
 }
 
+.SF_SHOWCASE_VIDEO {
+  position: relative;
+  z-index: 1;
+  width: 100%;
+  height: 100%;
+  background-color: #000;
+}
+
+.SF_SHOWCASE_VIDEO iframe,
+.SF_SHOWCASE_VIDEO video {
+  width: 100%;
+  height: 100%;
+  display: block;
+  border: 0;
+}
+
+.SF_SHOWCASE_VIDEO video {
+  object-fit: contain;
+}
+
 .SF_SHOWCASE_ICON {
   position: absolute;
   top: var(--smallSizeREM);

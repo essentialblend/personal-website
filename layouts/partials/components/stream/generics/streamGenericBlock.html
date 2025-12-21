@@ -1,4 +1,4 @@
-{{- $type := .Params.type | default "text" -}}
+﻿{{- $type := .Params.type | default "text" -}}
 
 {{- $resolvedTitle := .Title -}}
 {{- $resolvedSummary := .Params.summary -}}
@@ -37,9 +37,20 @@
       {{ partial "components/stream/specifics/streamArtistContent.html" . }}
     {{- else -}}
       {{- $icon := resources.Get "icons/nasa-icon.svg" | resources.Fingerprint -}}
-      {{- $caption := printf "**Courtesy:** %s · *%s*" (or $apod.copyright "NASA") $apod.date -}}
-      {{- $imgFilename := path.Base $apod.url -}}
-      {{- $imgPath := printf "/images/apod/%s" $imgFilename -}}
+      {{- $caption := printf "**Courtesy:** %s Â· *%s*" (or $apod.copyright "NASA") $apod.date -}}
+      {{- $mediaType := $apod.media_type | default "image" -}}
+      {{- $videoUrl := "" -}}
+      {{- $imgPath := "" -}}
+      {{- if eq $mediaType "video" -}}
+        {{- $videoUrl = $apod.url -}}
+        {{- with $apod.thumbnail_url -}}
+          {{- $imgPath = . -}}
+        {{- end -}}
+      {{- else -}}
+        {{- $imgSource := or $apod.url $apod.hdurl -}}
+        {{- $imgFilename := path.Base $imgSource -}}
+        {{- $imgPath = printf "/images/apod/%s" $imgFilename -}}
+      {{- end -}}
     
       {{- $data := dict
           "paintings"  nil
@@ -51,6 +62,8 @@
           "content"    $rest
           "iconUrl"    $icon.RelPermalink
           "isAPOD"     true
+          "mediaType"  $mediaType
+          "videoUrl"   $videoUrl
       -}}
       {{ partial "components/stream/specifics/streamSpaceContent.html" $data }}
     {{- end }}
@@ -64,3 +77,4 @@
     {{- end }}
   </div>
 </div>
+
