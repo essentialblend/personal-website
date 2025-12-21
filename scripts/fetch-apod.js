@@ -51,16 +51,20 @@ const api = `https://api.nasa.gov/planetary/apod?api_key=${key}&thumbs=true`;
       const looksLikeImage = /\/apod\/image\//i.test(urlCandidate)
         || /\.(jpg|jpeg|png|gif|webp)(\?|$)/i.test(urlCandidate);
       const looksLikeVideo = /\.(mp4|webm)(\?|$)/i.test(urlCandidate)
-        || /(youtube\.com|youtu\.be|vimeo\.com)/i.test(urlCandidate);
+        || /(youtube\.com|youtu\.be|vimeo\.com|youtube-nocookie\.com)/i.test(urlCandidate);
 
       const hasImageUrl = Boolean(data.url || data.hdurl);
       const hasVideoUrl = Boolean(data.url || data.thumbnail_url);
+      const hasAnyUrl = Boolean(data.url || data.hdurl || data.thumbnail_url);
 
-      if (!hasImageUrl && !hasVideoUrl) {
+      if (!hasAnyUrl) {
         throw new Error("Received invalid data structure from NASA APOD API.");
       }
 
       let mediaType = data.media_type != null ? String(data.media_type).trim().toLowerCase() : "";
+      if (mediaType === "other") {
+        mediaType = "video";
+      }
       if (!mediaType) {
         if (data.thumbnail_url || looksLikeVideo) {
           mediaType = "video";

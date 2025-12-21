@@ -38,7 +38,10 @@
     {{- else -}}
       {{- $icon := resources.Get "icons/nasa-icon.svg" | resources.Fingerprint -}}
       {{- $caption := printf "**Courtesy:** %s Â· *%s*" (or $apod.copyright "NASA") $apod.date -}}
-      {{- $mediaType := $apod.media_type | default "image" -}}
+      {{- $mediaType := $apod.media_type | default "image" | lower -}}
+      {{- if eq $mediaType "other" -}}
+        {{- $mediaType = "video" -}}
+      {{- end -}}
       {{- $videoUrl := "" -}}
       {{- $imgPath := "" -}}
       {{- if eq $mediaType "video" -}}
