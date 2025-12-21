@@ -1,6 +1,6 @@
----
+﻿---
 title: Planetary
 author: Warren Ellis, John Cassaday
-status: Complete
+status: Finished
 reviewed: false
 ---

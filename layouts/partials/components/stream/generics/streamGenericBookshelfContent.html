@@ -17,12 +17,9 @@
       {{ if eq $statusRaw "reading" }}
         {{ $statusClass = "reading" }}
         {{ $statusLabel = "Reading" }}
-      {{ else if eq $statusRaw "finished" }}
+      {{ else if or (eq $statusRaw "finished") (eq $statusRaw "complete") }}
         {{ $statusClass = "finished" }}
         {{ $statusLabel = "Finished" }}
-      {{ else if eq $statusRaw "complete" }}
-        {{ $statusClass = "complete" }}
-        {{ $statusLabel = "Complete" }}
       {{ else if ne $statusRaw "" }}
         {{ $statusClass = $statusRaw }}
         {{ $statusLabel = title $statusRaw }}

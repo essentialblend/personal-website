@@ -1,6 +1,6 @@
----
+﻿---
 title: Relativity
 author: Albert Einstein
-status: Ongoing
+status: Reading
 reviewed: false
 ---

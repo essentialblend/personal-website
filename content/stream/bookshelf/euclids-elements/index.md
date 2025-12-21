@@ -1,6 +1,6 @@
----
+﻿---
 title: Euclids Elements
 author: Euclid
-status: Ongoing
+status: Reading
 reviewed: false
 ---
