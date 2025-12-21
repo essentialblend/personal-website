@@ -26,61 +26,88 @@ const api = `https://api.nasa.gov/planetary/apod?api_key=${key}&thumbs=true`;
       throw new Error(`API request failed with status ${res.status}: ${res.statusText}`);
     }
 
-    const data = await res.json();
+    let data = await res.json();
     console.log("Successfully fetched APOD data:", data.title);
-
-    if (!data || data.media_type == null) {
-      throw new Error("Received invalid data structure from NASA APOD API.");
-    }
-
-    const hasImageUrl = Boolean(data.url || data.hdurl);
-    const hasVideoUrl = Boolean(data.url || data.thumbnail_url);
-
-    let mediaType = String(data.media_type).trim().toLowerCase();
-    if (!mediaType) {
-      throw new Error("Received invalid data structure from NASA APOD API.");
-    }
-
-    if (!hasImageUrl && !hasVideoUrl) {
-      throw new Error("Received invalid data structure from NASA APOD API.");
-    }
-
-    if (mediaType !== 'image' && mediaType !== 'video') {
-      const inferred = hasImageUrl ? 'image' : 'video';
-      console.warn(`Unknown media_type '${data.media_type}', inferring '${inferred}'.`);
-      mediaType = inferred;
-    }
-
-    if (mediaType === 'image' && !hasImageUrl && hasVideoUrl) {
-      console.warn("APOD media_type is image but only video URLs exist; switching to video.");
-      mediaType = 'video';
-    }
-
-    if (mediaType === 'video' && !hasVideoUrl && hasImageUrl) {
-      console.warn("APOD media_type is video but only image URLs exist; switching to image.");
-      mediaType = 'image';
-    }
-
-    if (mediaType === 'image' && !hasImageUrl) {
-      throw new Error("Received invalid data structure from NASA APOD API.");
-    }
-
-    if (mediaType === 'video' && !hasVideoUrl) {
-      throw new Error("Received invalid data structure from NASA APOD API.");
-    }
-
-    data.media_type = mediaType;
 
     const dataDir = path.join(process.cwd(), 'data');
     fs.mkdirSync(dataDir, { recursive: true });
     const metadataPath = path.join(dataDir, 'apod.json');
+    let cachedData = null;
+    if (fs.existsSync(metadataPath)) {
+      try {
+        cachedData = JSON.parse(fs.readFileSync(metadataPath, 'utf8'));
+      } catch (error) {
+        console.warn("Cached APOD data could not be parsed:", error);
+      }
+    }
+
+    let validationError = null;
+    try {
+      if (!data || data.media_type == null) {
+        throw new Error("Received invalid data structure from NASA APOD API.");
+      }
+
+      const hasImageUrl = Boolean(data.url || data.hdurl);
+      const hasVideoUrl = Boolean(data.url || data.thumbnail_url);
+
+      let mediaType = String(data.media_type).trim().toLowerCase();
+      if (!mediaType) {
+        throw new Error("Received invalid data structure from NASA APOD API.");
+      }
+
+      if (!hasImageUrl && !hasVideoUrl) {
+        throw new Error("Received invalid data structure from NASA APOD API.");
+      }
+
+      if (mediaType !== 'image' && mediaType !== 'video') {
+        const inferred = hasImageUrl ? 'image' : 'video';
+        console.warn(`Unknown media_type '${data.media_type}', inferring '${inferred}'.`);
+        mediaType = inferred;
+      }
+
+      if (mediaType === 'image' && !hasImageUrl && hasVideoUrl) {
+        console.warn("APOD media_type is image but only video URLs exist; switching to video.");
+        mediaType = 'video';
+      }
+
+      if (mediaType === 'video' && !hasVideoUrl && hasImageUrl) {
+        console.warn("APOD media_type is video but only image URLs exist; switching to image.");
+        mediaType = 'image';
+      }
+
+      if (mediaType === 'image' && !hasImageUrl) {
+        throw new Error("Received invalid data structure from NASA APOD API.");
+      }
+
+      if (mediaType === 'video' && !hasVideoUrl) {
+        throw new Error("Received invalid data structure from NASA APOD API.");
+      }
+
+      data.media_type = mediaType;
+    } catch (error) {
+      validationError = error;
+    }
+
+    if (validationError) {
+      console.warn("APOD data invalid:", validationError.message);
+      console.warn("APOD payload:", JSON.stringify(data, null, 2));
+      if (cachedData) {
+        console.warn("Using cached APOD data.");
+        data = cachedData;
+      } else {
+        console.warn("No cached APOD data available; skipping update.");
+        return;
+      }
+    }
+
+    const usingCached = Boolean(validationError && cachedData);
     fs.writeFileSync(
       metadataPath,
       JSON.stringify(data, null, 2)
     );
     console.log(`Metadata written to ${metadataPath}`);
 
-    if (data.media_type === 'image') {
+    if (!usingCached && data.media_type === 'image') {
       const imageUrl = data.url || data.hdurl;
       if (!imageUrl) {
         throw new Error("APOD image is missing a usable URL.");
