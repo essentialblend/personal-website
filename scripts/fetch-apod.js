@@ -43,20 +43,34 @@ const api = `https://api.nasa.gov/planetary/apod?api_key=${key}&thumbs=true`;
 
     let validationError = null;
     try {
-      if (!data || data.media_type == null) {
+      if (!data) {
         throw new Error("Received invalid data structure from NASA APOD API.");
       }
+
+      const urlCandidate = String(data.url || data.hdurl || "");
+      const looksLikeImage = /\/apod\/image\//i.test(urlCandidate)
+        || /\.(jpg|jpeg|png|gif|webp)(\?|$)/i.test(urlCandidate);
+      const looksLikeVideo = /\.(mp4|webm)(\?|$)/i.test(urlCandidate)
+        || /(youtube\.com|youtu\.be|vimeo\.com)/i.test(urlCandidate);
 
       const hasImageUrl = Boolean(data.url || data.hdurl);
       const hasVideoUrl = Boolean(data.url || data.thumbnail_url);
 
-      let mediaType = String(data.media_type).trim().toLowerCase();
-      if (!mediaType) {
+      if (!hasImageUrl && !hasVideoUrl) {
         throw new Error("Received invalid data structure from NASA APOD API.");
       }
 
-      if (!hasImageUrl && !hasVideoUrl) {
-        throw new Error("Received invalid data structure from NASA APOD API.");
+      let mediaType = data.media_type != null ? String(data.media_type).trim().toLowerCase() : "";
+      if (!mediaType) {
+        if (data.thumbnail_url || looksLikeVideo) {
+          mediaType = "video";
+        } else if (looksLikeImage) {
+          mediaType = "image";
+        } else {
+          const inferred = looksLikeVideo ? "video" : "image";
+          console.warn(`Missing media_type, inferring '${inferred}'.`);
+          mediaType = inferred;
+        }
       }
 
       if (mediaType !== 'image' && mediaType !== 'video') {
