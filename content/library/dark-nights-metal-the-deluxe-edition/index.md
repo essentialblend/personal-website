@@ -1,13 +1,13 @@
 ﻿---
-title: "Dark Nights: Metal - The Deluxe Edition"
+title: "Dark Nights: Metal"
 format: "comic"
 scope: "run"
-status: "reading"
-writer: ""
-artist: ""
+status: "finished"
+writer: "Scott Snyder / James Tynion IV"
+artist: "Greg Capullo / Mikel Janin / Alvaro Martinez"
 readYear: ""
 publisher: "DC"
 imprint: ""
-description: ""
+description: "Collects the core Dark Nights: Metal miniseries, where Batman uncovers the Dark Multiverse and the Dark Knights invade Earth under Barbatos."
 ---
 
