@@ -5,4 +5,6 @@ scope: "standalone"
 status: "reading"
 writer: "Upinder Singh"
 readYear: ""
+description: "Developed as a comprehensive introductory work for scholars and students of ancient and early medieval Indian history, this book provides the most exhaustive overview of the subject."
 ---
+
