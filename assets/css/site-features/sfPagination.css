@@ -52,6 +52,7 @@
   border-radius: 3px;
   font-size: var(--textXS);
   color: var(--textColor);
+  background: transparent;
   text-decoration: none;
   transition: color 0.15s ease, border-color 0.15s ease, background-color 0.15s ease;
 }

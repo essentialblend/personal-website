@@ -2,8 +2,12 @@
 
 {{ $formats := slice }}
 {{ $scopes := slice }}
+{{ $years := slice }}
+{{ $writers := slice }}
+{{ $writerMap := dict }}
+{{ $libraryPages := where .Pages "File.BaseFileName" "ne" "masterlist" }}
 
-{{ range .Pages }}
+{{ range $libraryPages }}
   {{ with .Params.format }}
     {{ $formatValue := lower . }}
     {{ if not (in $formats $formatValue) }}
@@ -16,19 +20,50 @@
       {{ $scopes = $scopes | append $scopeValue }}
     {{ end }}
   {{ end }}
+  {{ $yearValue := "" }}
+  {{ with .Params.readYear }}
+    {{ $yearValue = printf "%v" . }}
+  {{ end }}
+  {{ if $yearValue }}
+    {{ if not (in $years $yearValue) }}
+      {{ $years = $years | append $yearValue }}
+    {{ end }}
+  {{ end }}
+
+  {{ $writerValues := slice }}
+  {{ with .Params.writer }}
+    {{ if reflect.IsSlice . }}
+      {{ $writerValues = . }}
+    {{ else }}
+      {{ $writerValues = slice . }}
+    {{ end }}
+  {{ end }}
+
+  {{ range $writerValues }}
+    {{ $writerValue := . }}
+    {{ if $writerValue }}
+      {{ $writerKey := lower $writerValue }}
+      {{ if not (in $writers $writerKey) }}
+        {{ $writers = $writers | append $writerKey }}
+        {{ $writerMap = merge $writerMap (dict $writerKey $writerValue) }}
+      {{ end }}
+    {{ end }}
+  {{ end }}
 {{ end }}
 
 {{ $formats = sort $formats }}
 {{ $scopes = sort $scopes }}
+{{ $years = sort $years }}
+{{ $writers = sort $writers }}
 
-{{ if or (gt (len $formats) 0) (gt (len $scopes) 0) }}
-<div class="SF_LIBRARY_FILTER SF_TAXONOMYFILTER_WRAPPER" data-library-filter data-target-list="library-list" data-item-selector=".SF_LIBRARY_ITEM">
-  <nav aria-label="Filter library entries" class="SF_TAXONOMYFILTER">
-    <div class="LP_STACK LP_STACK_INTER_SMALL">
+{{ if gt (len $libraryPages) 0 }}
+<div class="SF_LIBRARY_FILTER_BAR" data-library-filter data-target-list="library-list-wrapper" data-item-selector=".SF_LIBRARY_ITEM" data-page-size-detail="10">
+  <nav aria-label="Filter library entries" class="SF_LIBRARY_FILTER_NAV">
+    <div class="SF_LIBRARY_FILTER_LAYOUT">
       {{ if gt (len $formats) 0 }}
-      <div class="LP_CLUSTER LP_CLUSTER_ALIGN_CENTER LP_CLUSTER_GAP_SMALLER SF_LIBRARY_FILTER_ROW" data-filter-group="format">
-        <p class="SF_TAXONOMYFILTER_LABEL">Format:</p>
-        <div class="LP_CLUSTER LP_CLUSTER_ALIGN_CENTER LP_CLUSTER_GAP_SMALLER SF_TAXONOMYFILTER_BUTTONS">
+      <div class="SF_LIBRARY_FILTER_GROUP SF_LIBRARY_FILTER_GROUP--format" data-filter-group="format">
+        <span class="SF_LIBRARY_FILTER_LABEL">Format</span>
+        <div class="SF_LIBRARY_FILTER_BUTTONS">
           {{ range $formats }}
           <button type="button" class="SF_TAXONOMYFILTER_BUTTON" data-filter-value="{{ . }}">{{ replace . "-" " " | title }}</button>
           {{ end }}
@@ -36,10 +71,26 @@
       </div>
       {{ end }}
 
+      {{ if gt (len $years) 0 }}
+      <div class="SF_LIBRARY_FILTER_GROUP SF_LIBRARY_FILTER_GROUP--year">
+        <span class="SF_LIBRARY_FILTER_LABEL">Year</span>
+        <details class="SF_LIBRARY_FILTER_DROPDOWN" data-filter-group="year">
+          <summary class="SF_LIBRARY_FILTER_TRIGGER">
+            <span class="SF_LIBRARY_FILTER_TRIGGER_TEXT">All years</span>
+          </summary>
+          <div class="SF_LIBRARY_FILTER_BUTTONS">
+            {{ range $years }}
+            <button type="button" class="SF_TAXONOMYFILTER_BUTTON" data-filter-value="{{ . }}">{{ . }}</button>
+            {{ end }}
+          </div>
+        </details>
+      </div>
+      {{ end }}
+
       {{ if gt (len $scopes) 0 }}
-      <div class="LP_CLUSTER LP_CLUSTER_ALIGN_CENTER LP_CLUSTER_GAP_SMALLER SF_LIBRARY_FILTER_ROW" data-filter-group="scope">
-        <p class="SF_TAXONOMYFILTER_LABEL">Scope:</p>
-        <div class="LP_CLUSTER LP_CLUSTER_ALIGN_CENTER LP_CLUSTER_GAP_SMALLER SF_TAXONOMYFILTER_BUTTONS">
+      <div class="SF_LIBRARY_FILTER_GROUP SF_LIBRARY_FILTER_GROUP--scope" data-filter-group="scope">
+        <span class="SF_LIBRARY_FILTER_LABEL">Scope</span>
+        <div class="SF_LIBRARY_FILTER_BUTTONS">
           {{ range $scopes }}
           <button type="button" class="SF_TAXONOMYFILTER_BUTTON" data-filter-value="{{ . }}">{{ replace . "-" " " | title }}</button>
           {{ end }}
@@ -47,86 +98,65 @@
       </div>
       {{ end }}
 
-      <div class="LP_CLUSTER LP_CLUSTER_ALIGN_CENTER LP_CLUSTER_GAP_SMALLER SF_LIBRARY_FILTER_ROW SF_LIBRARY_FILTER_ACTIONS">
-        <span class="SF_TAXONOMYFILTER_LABEL">View:</span>
-        <button type="button" class="SF_TAXONOMYFILTER_BUTTON SF_LIBRARY_VIEW_TOGGLE active" data-view="detail">Detail</button>
-        <button type="button" class="SF_TAXONOMYFILTER_BUTTON SF_LIBRARY_VIEW_TOGGLE" data-view="dense">Dense</button>
-        <button type="button" class="SF_TAXONOMYFILTER_CLEAR" title="Clear selected filters">Clear</button>
+      {{ if gt (len $writers) 0 }}
+      <div class="SF_LIBRARY_FILTER_GROUP SF_LIBRARY_FILTER_GROUP--writer">
+        <span class="SF_LIBRARY_FILTER_LABEL">Writer</span>
+        <details class="SF_LIBRARY_FILTER_DROPDOWN" data-filter-group="writer">
+          <summary class="SF_LIBRARY_FILTER_TRIGGER">
+            <span class="SF_LIBRARY_FILTER_TRIGGER_TEXT">All writers</span>
+          </summary>
+          <div class="SF_LIBRARY_FILTER_BUTTONS">
+            {{ range $writers }}
+            <button type="button" class="SF_TAXONOMYFILTER_BUTTON" data-filter-value="{{ . }}">{{ index $writerMap . }}</button>
+            {{ end }}
+          </div>
+        </details>
+      </div>
+      {{ end }}
+
+      <div class="SF_LIBRARY_FILTER_GROUP SF_LIBRARY_FILTER_GROUP--sort">
+        <span class="SF_LIBRARY_FILTER_LABEL">Sort</span>
+        <div class="SF_LIBRARY_FILTER_BUTTONS">
+          <button type="button" class="SF_TAXONOMYFILTER_BUTTON SF_LIBRARY_SORT_TOGGLE active" data-sort-key="title" data-sort-direction="asc">Title A-Z</button>
+          <button type="button" class="SF_TAXONOMYFILTER_BUTTON SF_LIBRARY_SORT_TOGGLE" data-sort-key="title" data-sort-direction="desc">Title Z-A</button>
+          <button type="button" class="SF_TAXONOMYFILTER_BUTTON SF_LIBRARY_SORT_TOGGLE" data-sort-key="writer" data-sort-direction="asc">Writer A-Z</button>
+          <button type="button" class="SF_TAXONOMYFILTER_BUTTON SF_LIBRARY_SORT_TOGGLE" data-sort-key="writer" data-sort-direction="desc">Writer Z-A</button>
+        </div>
+      </div>
+
+      <div class="SF_LIBRARY_FILTER_GROUP SF_LIBRARY_FILTER_GROUP--actions">
+        <span class="SF_LIBRARY_FILTER_LABEL">View</span>
+        <div class="SF_LIBRARY_FILTER_BUTTONS">
+          <button type="button" class="SF_TAXONOMYFILTER_BUTTON SF_LIBRARY_VIEW_TOGGLE active" data-view="detail">Detail</button>
+          <button type="button" class="SF_TAXONOMYFILTER_BUTTON SF_LIBRARY_VIEW_TOGGLE" data-view="dense">Dense</button>
+          <button type="button" class="SF_TAXONOMYFILTER_CLEAR" title="Clear selected filters">Clear</button>
+        </div>
       </div>
     </div>
   </nav>
 </div>
 {{ end }}
 
-<div class="notes-list SF_LIBRARY_LIST" id="library-list">
-  {{ range .Pages.ByTitle }}
-    {{ $format := .Params.format | default "book" }}
-    {{ $scope := .Params.scope | default "standalone" }}
-    {{ $status := .Params.status | default "" }}
-    {{ $statusClass := "" }}
-    {{ if eq $status "reading" }}
-      {{ $statusClass = "ongoing" }}
-    {{ else }}
-      {{ if eq $status "finished" }}
-        {{ $statusClass = "complete" }}
-      {{ end }}
+{{ if gt (len $libraryPages) 0 }}
+<div class="SF_LIBRARY_WRAPPER" id="library-list-wrapper">
+  <div class="notes-list SF_LIBRARY_LIST SF_LIBRARY_LIST--detail">
+    {{ range $libraryPages.ByTitle }}
+      {{ partial "sections/libraryItem.html" . }}
     {{ end }}
-    {{ $issueStart := .Params.issue_start }}
-    {{ $issueEnd := .Params.issue_end }}
-    {{ $issueRange := "" }}
-    {{ if and $issueStart $issueEnd }}
-      {{ $issueRange = printf "Issues %v-%v" $issueStart $issueEnd }}
-    {{ else }}
-      {{ if $issueStart }}
-        {{ $issueRange = printf "Issue %v" $issueStart }}
-      {{ end }}
-    {{ end }}
-    {{ $metaParts := slice }}
-    {{ if $format }}
-      {{ $metaParts = $metaParts | append (replace $format "-" " " | title) }}
-    {{ end }}
-    {{ if $scope }}
-      {{ $metaParts = $metaParts | append (replace $scope "-" " " | title) }}
-    {{ end }}
-    {{ with .Params.series }}
-      {{ $metaParts = $metaParts | append . }}
-    {{ end }}
-    {{ if $issueRange }}
-      {{ $metaParts = $metaParts | append $issueRange }}
-    {{ end }}
+  </div>
 
-  <a href="{{ .RelPermalink }}" class="note-row SF_LIBRARY_ITEM" data-format="{{ $format | lower }}" data-scope="{{ $scope | lower }}">
-    <div class="note-main LP_STACK LP_STACK_INTER_SMALL">
-      <span class="note-title">{{ .Title }}</span>
-      {{ if .Params.description }}
-      <span class="note-desc">{{ .Params.description }}</span>
-      {{ else }}
-        {{ if .Params.creator }}
-        <span class="note-desc">By {{ .Params.creator }}</span>
-        {{ else }}
-          {{ if .Params.author }}
-          <span class="note-desc">By {{ .Params.author }}</span>
-          {{ end }}
-        {{ end }}
-      {{ end }}
-      {{ if gt (len $metaParts) 0 }}
-      <span class="note-tags SF_LIBRARY_META">{{ delimit $metaParts " | " }}</span>
-      {{ end }}
-    </div>
-    <div class="note-meta LP_STACK LP_STACK_INTER_SMALL">
-      {{ if $status }}
-      <span class="status-tag {{ $statusClass }}">{{ $status }}</span>
-      {{ end }}
-      {{ if .Params.finished }}
-      <time datetime="{{ .Params.finished }}" class="note-date">{{ dateFormat "Jan 2006" .Params.finished }}</time>
-      {{ else }}
-        {{ if .Params.started }}
-        <time datetime="{{ .Params.started }}" class="note-date">{{ dateFormat "Jan 2006" .Params.started }}</time>
-        {{ end }}
-      {{ end }}
-    </div>
-  </a>
-  {{ else }}
-  <p class="SF_LIBRARY_EMPTY">No entries yet.</p>
-  {{ end }}
+  <nav class="SF_PAGINATION SF_LIBRARY_PAGINATION" aria-label="Library pagination" data-library-pagination>
+    <button type="button" class="SF_PAGE_LINK SF_PAGE_LINK--nav" data-page-action="prev" aria-label="Previous page">Prev</button>
+    <div class="SF_PAGE_NUMBERS" data-page-numbers></div>
+    <button type="button" class="SF_PAGE_LINK SF_PAGE_LINK--nav" data-page-action="next" aria-label="Next page">Next</button>
+  </nav>
+
+  <div class="notes-list SF_LIBRARY_LIST SF_LIBRARY_LIST--dense">
+    {{ range $libraryPages.ByTitle }}
+      {{ partial "sections/libraryItem.html" . }}
+    {{ end }}
+  </div>
 </div>
+{{ else }}
+<p class="SF_LIBRARY_EMPTY">No entries yet.</p>
+{{ end }}

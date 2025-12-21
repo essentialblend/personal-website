@@ -105,56 +105,286 @@
   padding-top: calc(var(--bigSizeREM) * 3);
 }
 
-.SF_LIBRARY_FILTER_ROW {
-  justify-content: flex-start;
-  flex-wrap: wrap;
-  row-gap: var(--space-xs);
-}
-
-.SF_LIBRARY_FILTER_ROW .SF_TAXONOMYFILTER_LABEL {
-  min-width: 6.5ch;
-}
-
-.SF_LIBRARY_FILTER_ACTIONS {
-  justify-content: flex-end;
-}
-
 .SF_LIBRARY_META {
   color: var(--mutedTextColor);
   font-weight: 600;
 }
 
-.SF_LIBRARY_FILTER .LP_STACK {
-  --stackInterMarginBlockREM: var(--smallestSizeREM);
+.SF_LIBRARY_ITEM--disabled {
+  cursor: default;
+  opacity: 0.75;
 }
 
-.SF_LIBRARY_FILTER .SF_TAXONOMYFILTER {
-  padding: var(--smallestSizeREM) var(--baseSizeREM);
+.SF_LIBRARY_ITEM--disabled:hover .note-title {
+  color: var(--mutedTextColor);
 }
 
-.SF_LIBRARY_LIST.is-dense .note-row {
+.SF_LIBRARY_ITEM--disabled .note-desc,
+.SF_LIBRARY_ITEM--disabled .note-meta {
+  opacity: 0.9;
+}
+
+.SF_LIBRARY_ITEM--paged {
+  display: none;
+}
+
+.SF_LIBRARY_LIST--detail .note-row {
+  padding: calc(var(--space-md) * 0.72) 0;
+}
+
+.SF_LIBRARY_LIST--detail .note-main {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  align-items: baseline;
+  column-gap: var(--space-lg);
+}
+
+.SF_LIBRARY_LIST--detail .note-title,
+.SF_LIBRARY_LIST--detail .note-desc {
+  grid-column: 1;
+}
+
+.SF_LIBRARY_LIST--detail .SF_LIBRARY_META {
+  grid-column: 2;
+  justify-self: end;
+  text-align: right;
+  align-self: baseline;
+  margin-top: 0;
+}
+
+.SF_LIBRARY_REVIEW_ICON {
+  font-size: 0.85em;
+  color: currentColor;
+  opacity: 0.55;
+  vertical-align: 0.08em;
+}
+
+.SF_LIBRARY_LIST .note-author {
+  font-family: var(--fontUI);
+  font-size: 0.85em;
+  color: var(--mutedTextColor);
+  font-weight: 400;
+  margin-left: 0.35rem;
+}
+
+
+.SF_LIBRARY_FILTER_BAR {
+  margin-top: var(--space-sm);
+  margin-bottom: var(--space-sm);
+}
+
+.SF_LIBRARY_FILTER_NAV {
+  padding: var(--space-xs) var(--baseSizeREM);
+  border-top: 1px solid var(--borderColor);
+  border-bottom: 1px solid var(--borderColor);
+  background: color-mix(in srgb, var(--BGColor) 96%, var(--borderColor));
+}
+
+.SF_LIBRARY_FILTER_LAYOUT {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+  column-gap: var(--space-lg);
+  row-gap: var(--space-sm);
+  align-items: center;
+}
+
+.SF_LIBRARY_FILTER_GROUP {
+  display: grid;
+  grid-template-columns: 6.5ch 1fr;
+  gap: var(--space-2xs) var(--space-sm);
+  align-items: center;
+  min-width: 0;
+}
+
+.SF_LIBRARY_FILTER_GROUP--format {
+  grid-column: 1;
+  grid-row: 1;
+}
+
+.SF_LIBRARY_FILTER_GROUP--year {
+  grid-column: 2;
+  grid-row: 1;
+}
+
+.SF_LIBRARY_FILTER_GROUP--scope {
+  grid-column: 1;
+  grid-row: 2;
+}
+
+.SF_LIBRARY_FILTER_GROUP--writer {
+  grid-column: 2;
+  grid-row: 2;
+}
+
+.SF_LIBRARY_FILTER_GROUP--sort {
+  grid-column: 1;
+  grid-row: 3;
+}
+
+.SF_LIBRARY_FILTER_GROUP--actions {
+  grid-column: 2;
+  grid-row: 3;
+  grid-template-columns: 6.5ch 1fr;
+}
+
+.SF_LIBRARY_FILTER_LABEL {
+  font-family: var(--fontUI);
+  font-size: var(--textXS);
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--mutedTextColor);
+  line-height: 1;
+  margin: 0;
+  white-space: nowrap;
+}
+
+.SF_LIBRARY_FILTER_BUTTONS {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-2xs);
+  align-items: center;
+  min-width: 0;
+}
+
+.SF_LIBRARY_FILTER_BAR .SF_TAXONOMYFILTER_BUTTON,
+.SF_LIBRARY_FILTER_BAR .SF_TAXONOMYFILTER_CLEAR {
+  padding: calc(var(--smallestSizeREM) * 0.6) calc(var(--smallSizeREM) * 0.7);
+  line-height: 1.1;
+}
+
+.SF_LIBRARY_FILTER_TRIGGER {
+  list-style: none;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  position: relative;
+  font-family: var(--fontCode);
+  font-size: var(--textXS);
+  color: var(--textColor);
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  border: 1px solid var(--borderColor);
+  padding: calc(var(--smallestSizeREM) * 0.6) calc(var(--smallSizeREM) * 0.7);
+  border-radius: 2px;
+  white-space: nowrap;
+}
+
+.SF_LIBRARY_FILTER_TRIGGER_TEXT {
+  display: inline-flex;
+  align-items: center;
+}
+
+.SF_LIBRARY_FILTER_CARET {
+  display: none;
+}
+
+
+.SF_LIBRARY_FILTER_DROPDOWN .SF_LIBRARY_FILTER_BUTTONS {
+  position: absolute;
+  top: calc(100% + var(--space-2xs));
+  left: 0;
+  min-width: max(14rem, 100%);
+  width: max-content;
+  background: var(--BGColor);
+  border: 1px solid var(--borderColor);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+  padding: var(--space-xs);
+  border-radius: 4px;
+  display: none;
+  z-index: 5;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  align-items: stretch;
+  gap: var(--space-2xs);
+  max-height: 14rem;
+  overflow-y: auto;
+  overflow-x: visible;
+  scrollbar-width: thin;
+  scrollbar-color: color-mix(in srgb, var(--borderColor) 70%, var(--BGColor)) var(--BGColor);
+}
+
+.SF_LIBRARY_FILTER_DROPDOWN .SF_LIBRARY_FILTER_BUTTONS::-webkit-scrollbar {
+  width: 8px;
+}
+
+.SF_LIBRARY_FILTER_DROPDOWN .SF_LIBRARY_FILTER_BUTTONS::-webkit-scrollbar-track {
+  background: var(--BGColor);
+}
+
+.SF_LIBRARY_FILTER_DROPDOWN .SF_LIBRARY_FILTER_BUTTONS::-webkit-scrollbar-thumb {
+  background-color: color-mix(in srgb, var(--borderColor) 70%, var(--BGColor));
+  border-radius: 999px;
+  border: 2px solid var(--BGColor);
+}
+
+.SF_LIBRARY_FILTER_DROPDOWN .SF_LIBRARY_FILTER_BUTTONS::-webkit-scrollbar-thumb:hover {
+  background-color: color-mix(in srgb, var(--accentColor) 30%, var(--borderColor));
+}
+
+.SF_LIBRARY_FILTER_DROPDOWN[open] .SF_LIBRARY_FILTER_BUTTONS {
+  display: flex;
+}
+
+.SF_LIBRARY_FILTER_DROPDOWN {
+  position: relative;
+  justify-self: start;
+}
+
+.SF_LIBRARY_FILTER_TRIGGER::-webkit-details-marker {
+  display: none;
+}
+
+.SF_LIBRARY_FILTER_DROPDOWN .SF_TAXONOMYFILTER_BUTTON {
+  width: 100%;
+  justify-content: flex-start;
+  white-space: nowrap;
+  text-align: left;
+}
+
+.SF_LIBRARY_WRAPPER.is-dense .SF_LIBRARY_LIST--detail {
+  display: none;
+}
+
+.SF_LIBRARY_LIST--dense {
+  display: none;
+}
+
+.SF_LIBRARY_WRAPPER.is-dense .SF_LIBRARY_LIST--dense {
+  display: flex;
+}
+
+.SF_LIBRARY_WRAPPER.is-dense .SF_PAGINATION {
+  display: none;
+}
+
+.SF_LIBRARY_WRAPPER.is-dense .SF_LIBRARY_LIST--dense .note-row {
   padding: var(--space-xs) 0;
   gap: var(--space-sm);
 }
 
-.SF_LIBRARY_LIST.is-dense .note-main {
-  display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
+.SF_LIBRARY_WRAPPER.is-dense .SF_LIBRARY_LIST--dense .note-main {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
   align-items: baseline;
-  gap: var(--space-sm);
+  column-gap: var(--space-md);
 }
 
-.SF_LIBRARY_LIST.is-dense .note-title {
+.SF_LIBRARY_WRAPPER.is-dense .SF_LIBRARY_LIST--dense .note-title {
   font-size: var(--textSmall);
 }
 
-.SF_LIBRARY_LIST.is-dense .note-desc,
-.SF_LIBRARY_LIST.is-dense .SF_LIBRARY_META {
+.SF_LIBRARY_WRAPPER.is-dense .SF_LIBRARY_LIST--dense .note-desc {
   display: none;
 }
 
-.SF_LIBRARY_LIST.is-dense .note-meta {
+.SF_LIBRARY_WRAPPER.is-dense .SF_LIBRARY_LIST--dense .SF_LIBRARY_META {
+  display: inline-flex;
+  margin-top: 0;
+  justify-self: end;
+  text-align: right;
+}
+
+.SF_LIBRARY_WRAPPER.is-dense .SF_LIBRARY_LIST--dense .note-meta {
   display: inline-flex;
   flex-direction: row;
   gap: var(--space-sm);
@@ -162,6 +392,7 @@
   min-width: auto;
   text-align: left;
 }
+
 
 .SF_NOTE_METADATA_DETAILS {
   margin: 0;
@@ -188,13 +419,13 @@
   border-bottom: 2px solid var(--mutedTextColor);
   transform: translateY(1px) rotate(45deg);
   opacity: 0.55;
-  transition: transform 0.15s ease, opacity 0.15s ease, border-color 0.15s ease;
+  transition: none;
 }
 
 .SF_NOTE_METADATA_DETAILS[open] .SF_NOTE_METADATA_SUMMARY::after {
-  transform: translateY(1px) rotate(-135deg);
-  opacity: 0.85;
-  border-color: var(--textColor);
+  transform: translateY(1px) rotate(45deg);
+  opacity: 0.55;
+  border-color: var(--mutedTextColor);
 }
 
 .SF_NOTE_METADATA_SUMMARY .SF_NOTE_METADATA_ROW {

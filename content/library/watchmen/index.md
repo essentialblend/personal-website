@@ -4,8 +4,8 @@ description: "Placeholder entry for a graphic novel."
 format: "graphic-novel"
 scope: "standalone"
 status: "finished"
-finished: 2023-11-12
-creator: "Alan Moore, Dave Gibbons"
+writer: "Alan Moore, Dave Gibbons"
+readYear: "2021"
 ---
 
 Placeholder notes on the graphic novel.

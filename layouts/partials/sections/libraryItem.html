@@ -1,0 +1,84 @@
+{{/* layouts/partials/sections/libraryItem.html */}}
+
+{{ $format := .Params.format | default "book" }}
+{{ $scope := .Params.scope | default "standalone" }}
+{{ $status := .Params.status | default "" }}
+{{ $issueStart := .Params.issueStart }}
+{{ $issueEnd := .Params.issueEnd }}
+{{ $issueRange := "" }}
+{{ if and $issueStart $issueEnd }}
+  {{ $issueRange = printf "Issues %v-%v" $issueStart $issueEnd }}
+{{ else }}
+  {{ if $issueStart }}
+    {{ $issueRange = printf "Issue %v" $issueStart }}
+  {{ end }}
+{{ end }}
+{{ $metaParts := slice }}
+{{ $yearValue := "" }}
+{{ with .Params.readYear }}
+  {{ $yearValue = printf "%v" . }}
+{{ end }}
+{{ if $format }}
+  {{ $metaParts = $metaParts | append (replace $format "-" " " | title) }}
+{{ end }}
+{{ if $scope }}
+  {{ $metaParts = $metaParts | append (replace $scope "-" " " | title) }}
+{{ end }}
+{{ if $issueRange }}
+  {{ $metaParts = $metaParts | append $issueRange }}
+{{ end }}
+{{ if $status }}
+  {{ $metaParts = $metaParts | append (replace $status "-" " " | title) }}
+{{ end }}
+{{ if $yearValue }}
+  {{ $metaParts = $metaParts | append $yearValue }}
+{{ end }}
+{{ $writerValues := slice }}
+{{ with .Params.writer }}
+  {{ if reflect.IsSlice . }}
+    {{ $writerValues = . }}
+  {{ else }}
+    {{ $writerValues = slice . }}
+  {{ end }}
+{{ end }}
+{{ $writerDisplay := "" }}
+{{ if gt (len $writerValues) 0 }}
+  {{ $writerDisplay = delimit $writerValues ", " }}
+{{ end }}
+{{ $writerFilterValues := slice }}
+{{ range $writerValues }}
+  {{ $writerFilterValues = $writerFilterValues | append (lower .) }}
+{{ end }}
+{{ $writerFilter := delimit $writerFilterValues "," }}
+{{ $writerSort := "" }}
+{{ if gt (len $writerValues) 0 }}
+  {{ $writerSort = lower (index $writerValues 0) }}
+{{ end }}
+{{ $reviewLink := "" }}
+{{ if .Params.reviewRef }}
+  {{ $reviewLink = relref . .Params.reviewRef }}
+{{ else }}
+  {{ if .Params.reviewUrl }}
+    {{ $reviewLink = .Params.reviewUrl }}
+  {{ end }}
+{{ end }}
+
+{{ if $reviewLink }}
+<a href="{{ $reviewLink }}" class="note-row SF_LIBRARY_ITEM" data-title="{{ lower .Title }}" data-writer="{{ $writerFilter }}" data-writer-sort="{{ $writerSort }}" data-format="{{ $format | lower }}" data-scope="{{ $scope | lower }}" data-year="{{ $yearValue }}">
+{{ else }}
+<div class="note-row SF_LIBRARY_ITEM SF_LIBRARY_ITEM--disabled" data-title="{{ lower .Title }}" data-writer="{{ $writerFilter }}" data-writer-sort="{{ $writerSort }}" data-format="{{ $format | lower }}" data-scope="{{ $scope | lower }}" data-year="{{ $yearValue }}" aria-disabled="true">
+{{ end }}
+  <div class="note-main LP_STACK LP_STACK_INTER_SMALL">
+    <span class="note-title">{{ .Title }}{{ if $reviewLink }} <span class="SF_LIBRARY_REVIEW_ICON" title="Review available" aria-label="Review available">&#9998;</span>{{ end }}{{ if $writerDisplay }} <span class="note-author">by {{ $writerDisplay }}</span>{{ end }}</span>
+    {{ if .Params.description }}
+    <span class="note-desc">{{ .Params.description }}</span>
+    {{ end }}
+    {{ if gt (len $metaParts) 0 }}
+    <span class="note-tags SF_LIBRARY_META">{{ delimit $metaParts " | " }}</span>
+    {{ end }}
+  </div>
+{{ if $reviewLink }}
+</a>
+{{ else }}
+</div>
+{{ end }}
