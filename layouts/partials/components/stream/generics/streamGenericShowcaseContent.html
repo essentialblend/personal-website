@@ -64,7 +64,7 @@
     {{ if $t }}
     <div class="SF_SHOWCASE_CAPTION">
       {{ if $d }}
-      {{ printf "**%s** â€” %s" $t $d | markdownify }}
+      {{ printf "**%s** &mdash; %s" $t $d | markdownify }}
       {{ else }}
       {{ printf "**%s**" $t | markdownify }}
       {{ end }}
@@ -129,4 +129,5 @@
 {{ end }}
 <div class="SF_SHOWCASE_TEXT"><p>{{ .content }}</p></div>
 {{ end }}
+
 
