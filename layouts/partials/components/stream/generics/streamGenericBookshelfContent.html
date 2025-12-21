@@ -11,17 +11,58 @@
 <div class="SF_SHELF_BLOCK">
   <div class="SF_SHELF_LIST">
     {{ range $selected }}
-      {{ $status := .Params.status | default "" }}
-      {{ $statusClass := lower $status }}
-      {{ $statusDisplay := cond (ne $status "") (title $status) "" }}
-      {{ $writer := .Params.writer | default "" }}
+      {{ $statusRaw := lower (.Params.status | default "") }}
+      {{ $statusClass := "" }}
+      {{ $statusLabel := "" }}
+      {{ if eq $statusRaw "reading" }}
+        {{ $statusClass = "ongoing" }}
+        {{ $statusLabel = "Ongoing" }}
+      {{ else if eq $statusRaw "finished" }}
+        {{ $statusClass = "finished" }}
+        {{ $statusLabel = "Finished" }}
+      {{ else if eq $statusRaw "complete" }}
+        {{ $statusClass = "complete" }}
+        {{ $statusLabel = "Complete" }}
+      {{ else if ne $statusRaw "" }}
+        {{ $statusClass = $statusRaw }}
+        {{ $statusLabel = title $statusRaw }}
+      {{ end }}
+
+      {{ $authorVal := "" }}
+      {{ with .Params.writer }}
+        {{ if reflect.IsSlice . }}
+          {{ $authorVal = delimit . ", " }}
+        {{ else }}
+          {{ $authorVal = . }}
+        {{ end }}
+      {{ else }}
+        {{ with .Params.author }}
+          {{ if reflect.IsSlice . }}
+            {{ $authorVal = delimit . ", " }}
+          {{ else }}
+            {{ $authorVal = . }}
+          {{ end }}
+        {{ end }}
+      {{ end }}
+
+      {{ $reviewLink := "" }}
+      {{ if .Params.reviewRef }}
+        {{ $reviewLink = relref . .Params.reviewRef }}
+      {{ else if .Params.reviewUrl }}
+        {{ $reviewLink = .Params.reviewUrl }}
+      {{ end }}
+
       <div class="SF_SHELF_ENTRY {{ $statusClass }}">
-        <a class="SF_SHELF_TITLE" href="{{ .RelPermalink }}">{{ .Title }}</a>
+        {{ if $reviewLink }}
+          <a class="SF_SHELF_TITLE" href="{{ $reviewLink }}">{{ .Title }}</a>
+        {{ else }}
+          <span class="SF_SHELF_TITLE">{{ .Title }}</span>
+        {{ end }}
         <span class="SF_SHELF_META">
-          {{- if $writer -}}
-            {{ $writer }}{{ if $statusDisplay }} &mdash; <em>{{ $statusDisplay }}</em>{{ end }}
-          {{- else if $statusDisplay -}}
-            <em>{{ $statusDisplay }}</em>
+          {{- if $authorVal -}}
+            {{ $authorVal }}{{ if $statusLabel }} &mdash; <em>{{ $statusLabel }}</em>{{ end }}
+          {{- else if $statusLabel -}}
+            <em>{{ $statusLabel }}</em>
           {{- end -}}
         </span>
       </div>
