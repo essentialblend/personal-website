@@ -58,6 +58,18 @@ document.addEventListener('DOMContentLoaded', () => {
       clearButton.classList.toggle('enabled', hasActive);
     };
 
+    const updateFilterTriggers = () => {
+      groupElements.forEach((group) => {
+        const trigger = group.querySelector('.SF_LIBRARY_FILTER_TRIGGER');
+        if (!trigger) {
+          return;
+        }
+        const groupName = group.dataset.filterGroup;
+        const activeSet = groupName ? activeFilters.get(groupName) : null;
+        trigger.classList.toggle('active', activeSet ? activeSet.size > 0 : false);
+      });
+    };
+
     const getSortValue = (item, sortKey) => {
       if (sortKey === 'writer') {
         return item.dataset.writerSort || '';
@@ -211,6 +223,7 @@ document.addEventListener('DOMContentLoaded', () => {
       });
 
       updateClearState();
+      updateFilterTriggers();
       updatePagination({ resetPage: true });
     };
 
@@ -281,19 +294,46 @@ document.addEventListener('DOMContentLoaded', () => {
       });
     }
 
+    const updateSortButtonLabel = (button) => {
+      const ascLabel = button.dataset.sortLabelAsc || button.textContent || '';
+      const descLabel = button.dataset.sortLabelDesc || button.textContent || '';
+      button.textContent = button.dataset.sortDirection === 'desc' ? descLabel : ascLabel;
+    };
+
+    const syncSortButtons = () => {
+      sortButtons.forEach((button) => {
+        const isCurrent = button.dataset.sortKey === currentSortKey;
+        const direction = isCurrent ? currentSortDirection : 'asc';
+        button.dataset.sortDirection = direction;
+        updateSortButtonLabel(button);
+        button.classList.toggle('active', isCurrent && direction === 'desc');
+      });
+    };
+
     if (sortButtons.length > 0) {
-      const defaultSort = sortButtons.find((button) => button.classList.contains('active')) || sortButtons[0];
+      const defaultSort = sortButtons[0];
       if (defaultSort) {
         currentSortKey = defaultSort.dataset.sortKey || currentSortKey;
         currentSortDirection = defaultSort.dataset.sortDirection || currentSortDirection;
       }
+
+      syncSortButtons();
+
       sortButtons.forEach((button) => {
         button.addEventListener('click', () => {
-          sortButtons.forEach((otherButton) => {
-            otherButton.classList.toggle('active', otherButton === button);
-          });
-          currentSortKey = button.dataset.sortKey || currentSortKey;
-          currentSortDirection = button.dataset.sortDirection || currentSortDirection;
+          const sortKey = button.dataset.sortKey;
+          if (!sortKey) {
+            return;
+          }
+
+          if (sortKey === currentSortKey) {
+            currentSortDirection = currentSortDirection === 'desc' ? 'asc' : 'desc';
+          } else {
+            currentSortKey = sortKey;
+            currentSortDirection = 'asc';
+          }
+
+          syncSortButtons();
           applySort();
         });
       });
@@ -335,6 +375,7 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     updateClearState();
+    updateFilterTriggers();
     applySort();
   });
 });

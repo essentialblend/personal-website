@@ -102,7 +102,7 @@
 }
 
 .SF_WRITING_BODY {
-  padding-top: calc(var(--bigSizeREM) * 3);
+  padding-top: calc(var(--bigSizeREM) * 1.5);
 }
 
 .SF_LIBRARY_META {
@@ -201,30 +201,32 @@
   grid-row: 1;
 }
 
-.SF_LIBRARY_FILTER_GROUP--year {
+.SF_LIBRARY_FILTER_GROUP--scope {
   grid-column: 2;
   grid-row: 1;
 }
 
-.SF_LIBRARY_FILTER_GROUP--scope {
-  grid-column: 1;
+.SF_LIBRARY_FILTER_GROUP--sortfilter {
+  grid-column: 1 / -1;
   grid-row: 2;
 }
 
-.SF_LIBRARY_FILTER_GROUP--writer {
-  grid-column: 2;
-  grid-row: 2;
-}
-
-.SF_LIBRARY_FILTER_GROUP--sort {
+.SF_LIBRARY_FILTER_GROUP--view {
   grid-column: 1;
   grid-row: 3;
 }
 
-.SF_LIBRARY_FILTER_GROUP--actions {
+.SF_LIBRARY_FILTER_GROUP--clear {
   grid-column: 2;
   grid-row: 3;
-  grid-template-columns: 6.5ch 1fr;
+  grid-template-columns: auto;
+  justify-self: end;
+  justify-content: end;
+  column-gap: var(--space-sm);
+}
+
+.SF_LIBRARY_FILTER_GROUP--clear .SF_LIBRARY_FILTER_BUTTONS {
+  justify-content: flex-end;
 }
 
 .SF_LIBRARY_FILTER_LABEL {
@@ -267,6 +269,12 @@
   padding: calc(var(--smallestSizeREM) * 0.6) calc(var(--smallSizeREM) * 0.7);
   border-radius: 2px;
   white-space: nowrap;
+}
+
+.SF_LIBRARY_FILTER_TRIGGER.active {
+  border-color: var(--accentHoverColor);
+  background-color: color-mix(in srgb, var(--accentHoverColor) 20%, transparent);
+  color: var(--textColor);
 }
 
 .SF_LIBRARY_FILTER_TRIGGER_TEXT {

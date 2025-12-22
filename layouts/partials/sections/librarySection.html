@@ -71,22 +71,6 @@
       </div>
       {{ end }}
 
-      {{ if gt (len $years) 0 }}
-      <div class="SF_LIBRARY_FILTER_GROUP SF_LIBRARY_FILTER_GROUP--year">
-        <span class="SF_LIBRARY_FILTER_LABEL">Year</span>
-        <details class="SF_LIBRARY_FILTER_DROPDOWN" data-filter-group="year">
-          <summary class="SF_LIBRARY_FILTER_TRIGGER">
-            <span class="SF_LIBRARY_FILTER_TRIGGER_TEXT">All years</span>
-          </summary>
-          <div class="SF_LIBRARY_FILTER_BUTTONS">
-            {{ range $years }}
-            <button type="button" class="SF_TAXONOMYFILTER_BUTTON" data-filter-value="{{ . }}">{{ . }}</button>
-            {{ end }}
-          </div>
-        </details>
-      </div>
-      {{ end }}
-
       {{ if gt (len $scopes) 0 }}
       <div class="SF_LIBRARY_FILTER_GROUP SF_LIBRARY_FILTER_GROUP--scope" data-filter-group="scope">
         <span class="SF_LIBRARY_FILTER_LABEL">Scope</span>
@@ -98,38 +82,49 @@
       </div>
       {{ end }}
 
-      {{ if gt (len $writers) 0 }}
-      <div class="SF_LIBRARY_FILTER_GROUP SF_LIBRARY_FILTER_GROUP--writer">
-        <span class="SF_LIBRARY_FILTER_LABEL">Writer</span>
-        <details class="SF_LIBRARY_FILTER_DROPDOWN" data-filter-group="writer">
-          <summary class="SF_LIBRARY_FILTER_TRIGGER">
-            <span class="SF_LIBRARY_FILTER_TRIGGER_TEXT">All writers</span>
-          </summary>
-          <div class="SF_LIBRARY_FILTER_BUTTONS">
-            {{ range $writers }}
-            <button type="button" class="SF_TAXONOMYFILTER_BUTTON" data-filter-value="{{ . }}">{{ index $writerMap . }}</button>
-            {{ end }}
-          </div>
-        </details>
-      </div>
-      {{ end }}
-
-      <div class="SF_LIBRARY_FILTER_GROUP SF_LIBRARY_FILTER_GROUP--sort">
-        <span class="SF_LIBRARY_FILTER_LABEL">Sort</span>
+      <div class="SF_LIBRARY_FILTER_GROUP SF_LIBRARY_FILTER_GROUP--sortfilter">
+        <span class="SF_LIBRARY_FILTER_LABEL">Sort/Filter</span>
         <div class="SF_LIBRARY_FILTER_BUTTONS">
-          <button type="button" class="SF_TAXONOMYFILTER_BUTTON SF_LIBRARY_SORT_TOGGLE active" data-sort-key="title" data-sort-direction="asc">Title A-Z</button>
-          <button type="button" class="SF_TAXONOMYFILTER_BUTTON SF_LIBRARY_SORT_TOGGLE" data-sort-key="title" data-sort-direction="desc">Title Z-A</button>
-          <button type="button" class="SF_TAXONOMYFILTER_BUTTON SF_LIBRARY_SORT_TOGGLE" data-sort-key="writer" data-sort-direction="asc">Writer A-Z</button>
-          <button type="button" class="SF_TAXONOMYFILTER_BUTTON SF_LIBRARY_SORT_TOGGLE" data-sort-key="writer" data-sort-direction="desc">Writer Z-A</button>
+          <button type="button" class="SF_TAXONOMYFILTER_BUTTON SF_LIBRARY_SORT_TOGGLE" data-sort-key="title" data-sort-direction="asc" data-sort-label-asc="Title A-Z" data-sort-label-desc="Title Z-A">Title A-Z</button>
+          <button type="button" class="SF_TAXONOMYFILTER_BUTTON SF_LIBRARY_SORT_TOGGLE" data-sort-key="writer" data-sort-direction="asc" data-sort-label-asc="Writer A-Z" data-sort-label-desc="Writer Z-A">Writer A-Z</button>
+          {{ if gt (len $years) 0 }}
+          <details class="SF_LIBRARY_FILTER_DROPDOWN" data-filter-group="year">
+            <summary class="SF_LIBRARY_FILTER_TRIGGER">
+              <span class="SF_LIBRARY_FILTER_TRIGGER_TEXT">All years</span>
+            </summary>
+            <div class="SF_LIBRARY_FILTER_BUTTONS">
+              {{ range $years }}
+              <button type="button" class="SF_TAXONOMYFILTER_BUTTON" data-filter-value="{{ . }}">{{ . }}</button>
+              {{ end }}
+            </div>
+          </details>
+          {{ end }}
+          {{ if gt (len $writers) 0 }}
+          <details class="SF_LIBRARY_FILTER_DROPDOWN" data-filter-group="writer">
+            <summary class="SF_LIBRARY_FILTER_TRIGGER">
+              <span class="SF_LIBRARY_FILTER_TRIGGER_TEXT">All writers</span>
+            </summary>
+            <div class="SF_LIBRARY_FILTER_BUTTONS">
+              {{ range $writers }}
+              <button type="button" class="SF_TAXONOMYFILTER_BUTTON" data-filter-value="{{ . }}">{{ index $writerMap . }}</button>
+              {{ end }}
+            </div>
+          </details>
+          {{ end }}
         </div>
       </div>
 
-      <div class="SF_LIBRARY_FILTER_GROUP SF_LIBRARY_FILTER_GROUP--actions">
+      <div class="SF_LIBRARY_FILTER_GROUP SF_LIBRARY_FILTER_GROUP--view">
         <span class="SF_LIBRARY_FILTER_LABEL">View</span>
         <div class="SF_LIBRARY_FILTER_BUTTONS">
           <button type="button" class="SF_TAXONOMYFILTER_BUTTON SF_LIBRARY_VIEW_TOGGLE active" data-view="detail">Detail</button>
           <button type="button" class="SF_TAXONOMYFILTER_BUTTON SF_LIBRARY_VIEW_TOGGLE" data-view="dense">Dense</button>
-          <button type="button" class="SF_TAXONOMYFILTER_CLEAR" title="Clear selected filters">Clear</button>
+        </div>
+      </div>
+
+      <div class="SF_LIBRARY_FILTER_GROUP SF_LIBRARY_FILTER_GROUP--clear">
+        <div class="SF_LIBRARY_FILTER_BUTTONS">
+          <button type="button" class="SF_TAXONOMYFILTER_CLEAR" title="Clear selected filters">Clear All</button>
         </div>
       </div>
     </div>
