@@ -5,16 +5,16 @@
     <h1>{{ .Title }}</h1>
 
     {{ if and (not .IsHome) (ne .Section "nyx") }}
-    {{ partial "partials/components/metadata.html" . }}
+    {{ partial "components/metadata.html" . }}
     {{ end }}
   </div>
 </section>
 
-{{ partial "partials/pages/genericPageContent.html" . }}
+{{ partial "pages/genericPageContent.html" . }}
 
 {{ if eq .Section "writings" }}
 <section class="SF_COMMENTS_WRAPPER">
-  {{ partial "partials/components/comments.html" . }}
+  {{ partial "components/comments.html" . }}
 </section>
 {{ end }}
 
