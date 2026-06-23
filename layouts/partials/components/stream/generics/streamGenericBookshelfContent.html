@@ -3,34 +3,25 @@
 {{ $library   := site.GetPage "section" "library" }}
 {{ $books     := slice }}
 {{ if $library }}
-  {{ $books = where $library.Pages "File.BaseFileName" "ne" "masterlist" }}
+  {{ $books = $library.Pages }}
 {{ end }}
-{{ $active    := where $books "Params.active" true }}
-{{ $reading   := where $books "Params.status" "reading" }}
-{{ $activeOnly := where $active "Params.status" "ne" "reading" }}
-{{ $activeReading := slice }}
-{{ range $reading.ByTitle }}{{ $activeReading = $activeReading | append . }}{{ end }}
-{{ range $activeOnly.ByTitle }}{{ $activeReading = $activeReading | append . }}{{ end }}
-{{ $activeReading = first 5 $activeReading }}
-
-{{ $finished  := where $books "Params.status" "in" (slice "finished" "complete") }}
-{{ $finished  = where $finished "Params.active" "ne" true }}
-{{ $finished  = sort $finished "Params.readYear" "desc" }}
-{{ $finished  = first 5 $finished }}
-
-{{ $selected  := slice }}
-{{ range $activeReading }}{{ $selected = $selected | append . }}{{ end }}
-{{ range $finished }}{{ $selected = $selected | append . }}{{ end }}
+{{ $selected := where $books "Params.showDesk" true }}
+{{ $selected = first 10 $selected.ByTitle }}
 
 <div class="SF_SHELF_BLOCK">
   <div class="SF_SHELF_LIST">
     {{ range $selected }}
       {{ $statusRaw := lower (.Params.status | default "") }}
+      {{ $titleIsDevanagari := gt (len (findRE "[ऀ-ॿ]" .Title)) 0 }}
       {{ $statusClass := "" }}
       {{ $statusLabel := "" }}
       {{ if eq $statusRaw "reading" }}
         {{ $statusClass = "reading" }}
-        {{ $statusLabel = "Reading" }}
+        {{ if .Params.active }}
+          {{ $statusLabel = "Reading Now" }}
+        {{ else }}
+          {{ $statusLabel = "In Progress" }}
+        {{ end }}
       {{ else if or (eq $statusRaw "finished") (eq $statusRaw "complete") }}
         {{ $statusClass = "finished" }}
         {{ $statusLabel = "Finished" }}
@@ -38,7 +29,6 @@
         {{ $statusClass = $statusRaw }}
         {{ $statusLabel = title $statusRaw }}
       {{ end }}
-
       {{ $authorVal := "" }}
       {{ with .Params.writer }}
         {{ if reflect.IsSlice . }}
@@ -55,6 +45,7 @@
           {{ end }}
         {{ end }}
       {{ end }}
+      {{ $authorIsDevanagari := gt (len (findRE "[ऀ-ॿ]" $authorVal)) 0 }}
 
       {{ $reviewLink := "" }}
       {{ if .Params.reviewRef }}
@@ -65,13 +56,13 @@
 
       <div class="SF_SHELF_ENTRY {{ $statusClass }}">
         {{ if $reviewLink }}
-          <a class="SF_SHELF_TITLE" href="{{ $reviewLink }}">{{ .Title }}</a>
+          <a class="SF_SHELF_TITLE" href="{{ $reviewLink }}"{{ if $titleIsDevanagari }} lang="hi"{{ end }}>{{ .Title }}</a>
         {{ else }}
-          <span class="SF_SHELF_TITLE">{{ .Title }}</span>
+          <span class="SF_SHELF_TITLE"{{ if $titleIsDevanagari }} lang="hi"{{ end }}>{{ .Title }}</span>
         {{ end }}
         <span class="SF_SHELF_META">
           {{- if $authorVal -}}
-            {{ $authorVal }}{{ if $statusLabel }} &mdash; <em>{{ $statusLabel }}</em>{{ end }}
+            <span><span class="SF_SHELF_WRITER"{{ if $authorIsDevanagari }} lang="hi"{{ end }}>{{ $authorVal }}</span>{{ if $statusLabel }} &mdash; <em>{{ $statusLabel }}</em>{{ end }}</span>
           {{- else if $statusLabel -}}
             <em>{{ $statusLabel }}</em>
           {{- end -}}

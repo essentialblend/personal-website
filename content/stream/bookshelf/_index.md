@@ -1,7 +1,7 @@
 ---
-title: "Bookshelf"
+title: "On the Desk"
 type: "bookshelf"
-summary: "Currently reading & recently finished books, pulled from my personal shelf."
+summary: "Currently reading and recently finished, pulled from my personal shelf."
 ---
 
-Currently reading & recently finished books, pulled from my personal shelf.
+Currently reading and recently finished, pulled from my personal shelf.

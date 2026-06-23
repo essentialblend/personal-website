@@ -1,0 +1,54 @@
+{{- $galleryName := .Get "gallery" | default "uk" -}}
+{{- $gallery := index hugo.Data.galleries $galleryName -}}
+
+{{- with $gallery -}}
+  {{- $images := .images -}}
+  {{- if $images -}}
+  <div class="SF_STATUS_GALLERY" data-showcase-gallery>
+    <div class="SF_SHOWCASE_SLIDES" aria-label="Photograph gallery">
+      {{- range $index, $photo := $images -}}
+        {{- $src := printf "%s/%s" $gallery.basePath $photo.image -}}
+        {{- $alt := $photo.alt | default "Photograph from my time in the UK" -}}
+        <figure
+          class="SF_SHOWCASE_SLIDE{{ if eq $index 0 }} active{{ end }}"
+          id="status-gallery-{{ $galleryName }}-slide-{{ $index }}"
+          data-showcase-slide
+          {{ if ne $index 0 }}aria-hidden="true"{{ end }}>
+          <div class="SF_SHOWCASE_FRAME">
+            <div class="SF_SHOWCASE_BG_BLUR" style="background-image: url('{{ $src }}');"></div>
+            <img
+              class="SF_SHOWCASE_IMG"
+              src="{{ $src }}"
+              alt="{{ $alt }}"
+              {{ if eq $index 0 }}fetchpriority="high"{{ else }}loading="lazy"{{ end }}
+              decoding="async">
+          </div>
+          {{ with $photo.caption }}
+            <figcaption class="SF_SHOWCASE_CAPTION">{{ . | markdownify }}</figcaption>
+          {{ else }}
+            <figcaption class="SF_SHOWCASE_CAPTION SF_SHOWCASE_CAPTION--empty" aria-hidden="true">&nbsp;</figcaption>
+          {{ end }}
+        </figure>
+      {{- end -}}
+    </div>
+
+    <div class="SF_STATUS_GALLERY_THUMBNAILS" data-showcase-thumbnails role="tablist" aria-label="Choose a photograph">
+      {{- range $index, $photo := $images -}}
+        {{- $src := printf "%s/%s" $gallery.basePath $photo.image -}}
+        {{- $alt := $photo.alt | default "Photograph from my time in the UK" -}}
+        <button
+          class="SF_STATUS_GALLERY_THUMBNAIL{{ if eq $index 0 }} active{{ end }}"
+          type="button"
+          role="tab"
+          data-showcase-index="{{ $index }}"
+          aria-controls="status-gallery-{{ $galleryName }}-slide-{{ $index }}"
+          aria-selected="{{ if eq $index 0 }}true{{ else }}false{{ end }}"
+          tabindex="{{ if eq $index 0 }}0{{ else }}-1{{ end }}"
+          aria-label="Show photograph {{ add $index 1 }}: {{ $alt }}">
+          <img src="{{ $src }}" alt="" loading="lazy" decoding="async">
+        </button>
+      {{- end -}}
+    </div>
+  </div>
+  {{- end -}}
+{{- end -}}

@@ -264,7 +264,7 @@ html[data-user-theme="themeHigh"] .SF_POSTCONTENT .chroma .w {
       font-family: var(--fontCode);
     }
 
-  .SF_POSTCONTENT figure video {
+.SF_POSTCONTENT figure video {
     display: block;
     margin-inline-start: auto;
     margin-inline-end: auto;
@@ -338,6 +338,59 @@ html[data-user-theme="themeHigh"] .SF_POSTCONTENT .chroma .w {
     margin: -0.05em 0.02em 0 0;
     font-weight: 400;
     transform: translateY(0.08em);
+  }
+}
+
+.SF_PROJECT_GALLERY {
+  margin-block: var(--textXL);
+}
+
+.SF_PROJECT_GALLERY .SF_SHOWCASE_SLIDES,
+.SF_PROJECT_GALLERY_THUMBNAILS {
+  width: 85%;
+  margin-inline: auto;
+}
+
+.SF_PROJECT_GALLERY .SF_SHOWCASE_SLIDE {
+  margin: 0;
+}
+
+.SF_PROJECT_GALLERY .SF_SHOWCASE_FRAME {
+  aspect-ratio: 16 / 9;
+  margin: 0;
+  border-width: 1px;
+}
+
+.SF_PROJECT_GALLERY .SF_SHOWCASE_IMG {
+  width: 100%;
+  max-width: none;
+  height: 100%;
+  object-fit: contain;
+  margin-inline: 0;
+}
+
+.SF_PROJECT_GALLERY .SF_SHOWCASE_CAPTION {
+  min-height: 2.8em;
+  margin-block: var(--space-xs) var(--space-sm);
+  font-family: var(--fontCode);
+  font-size: var(--smallerSizeREM);
+  font-style: italic;
+  line-height: 1.4;
+  color: var(--mutedTextColor);
+  text-align: right;
+}
+
+.SF_PROJECT_GALLERY .SF_SHOWCASE_CAPTION > * {
+  margin: 0;
+}
+
+.SF_PROJECT_GALLERY + p {
+  text-indent: 1.25em;
+}
+
+@media (max-width: 30rem) {
+  .SF_PROJECT_GALLERY .SF_SHOWCASE_SLIDES {
+    width: 100%;
   }
 }
 

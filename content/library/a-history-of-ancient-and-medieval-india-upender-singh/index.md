@@ -3,9 +3,10 @@ title: "A History of Ancient and Medieval India"
 format: "book"
 scope: "standalone"
 status: "reading"
-active: true
+active: false
 writer: "Upinder Singh"
 readYear: ""
+showDesk: true
 description: "Developed as a comprehensive introductory work for scholars and students of ancient and early medieval Indian history, this book provides the most exhaustive overview of the subject."
 ---
 

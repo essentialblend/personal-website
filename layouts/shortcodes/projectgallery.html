@@ -1,0 +1,76 @@
+{{- $gallery := .Page.Params.gallery -}}
+{{- $galleryID := .Get "id" | default "project-showcase" -}}
+
+{{- with $gallery -}}
+<div class="SF_PROJECT_GALLERY" data-showcase-gallery>
+  <div class="SF_SHOWCASE_SLIDES" aria-label="Project image gallery">
+    {{- range $index, $photo := . -}}
+      {{- with $.Page.Resources.GetMatch $photo.image -}}
+        {{- $isGIF := eq .MediaType.SubType "gif" -}}
+        <figure
+          class="SF_SHOWCASE_SLIDE{{ if eq $index 0 }} active{{ end }}"
+          id="{{ $galleryID }}-slide-{{ $index }}"
+          data-showcase-slide
+          {{ if $isGIF }}data-showcase-hold{{ end }}
+          {{ if ne $index 0 }}aria-hidden="true"{{ end }}>
+          <div class="SF_SHOWCASE_FRAME">
+            {{- if $isGIF -}}
+              <img
+                class="SF_SHOWCASE_IMG"
+                src="{{ .RelPermalink }}"
+                alt="{{ $photo.alt }}"
+                data-showcase-animated
+                loading="lazy"
+                decoding="async">
+            {{- else -}}
+              {{- $fallback := .Resize "1200x" -}}
+              {{- $webp := $fallback.Process "webp;quality=90" -}}
+              <div class="SF_SHOWCASE_BG_BLUR" style="background-image: url('{{ $fallback.RelPermalink }}');"></div>
+              <picture>
+                <source type="image/webp" srcset="{{ $webp.RelPermalink }}">
+                <img
+                  class="SF_SHOWCASE_IMG"
+                  src="{{ $fallback.RelPermalink }}"
+                  alt="{{ $photo.alt }}"
+                  {{ if eq $index 0 }}fetchpriority="high"{{ else }}loading="lazy"{{ end }}
+                  decoding="async"
+                  width="{{ $fallback.Width }}"
+                  height="{{ $fallback.Height }}">
+              </picture>
+            {{- end -}}
+          </div>
+          {{- with $photo.caption -}}
+            <figcaption class="SF_SHOWCASE_CAPTION">{{ . | markdownify }}</figcaption>
+          {{- else -}}
+            <figcaption class="SF_SHOWCASE_CAPTION SF_SHOWCASE_CAPTION--empty" aria-hidden="true">&nbsp;</figcaption>
+          {{- end -}}
+        </figure>
+      {{- end -}}
+    {{- end -}}
+  </div>
+
+  <div class="SF_STATUS_GALLERY_THUMBNAILS SF_PROJECT_GALLERY_THUMBNAILS" data-showcase-thumbnails role="tablist" aria-label="Choose a project image">
+    {{- range $index, $photo := . -}}
+      {{- with $.Page.Resources.GetMatch $photo.image -}}
+        {{- $isGIF := eq .MediaType.SubType "gif" -}}
+        {{- $thumbnailSrc := .RelPermalink -}}
+        {{- if not $isGIF -}}
+          {{- $thumbnail := .Fill "180x135 Center webp q75" -}}
+          {{- $thumbnailSrc = $thumbnail.RelPermalink -}}
+        {{- end -}}
+        <button
+          class="SF_STATUS_GALLERY_THUMBNAIL{{ if eq $index 0 }} active{{ end }}"
+          type="button"
+          role="tab"
+          data-showcase-index="{{ $index }}"
+          aria-controls="{{ $galleryID }}-slide-{{ $index }}"
+          aria-selected="{{ if eq $index 0 }}true{{ else }}false{{ end }}"
+          tabindex="{{ if eq $index 0 }}0{{ else }}-1{{ end }}"
+          aria-label="Show image {{ add $index 1 }}: {{ $photo.alt }}">
+          <img src="{{ $thumbnailSrc }}" alt="" loading="lazy" decoding="async">
+        </button>
+      {{- end -}}
+    {{- end -}}
+  </div>
+</div>
+{{- end -}}

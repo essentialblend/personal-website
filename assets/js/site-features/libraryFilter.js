@@ -4,6 +4,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const itemSelector = container.dataset.itemSelector;
     const targetListElement = targetListId ? document.getElementById(targetListId) : null;
     const clearButton = container.querySelector('.SF_TAXONOMYFILTER_CLEAR');
+    const searchInput = container.querySelector('[data-library-search]');
     const viewButtons = Array.from(container.querySelectorAll('[data-view]'));
     const sortButtons = Array.from(container.querySelectorAll('[data-sort-key]'));
     const groupElements = Array.from(container.querySelectorAll('[data-filter-group]'));
@@ -18,6 +19,9 @@ document.addEventListener('DOMContentLoaded', () => {
       : null;
     const denseList = targetListElement
       ? targetListElement.querySelector('.SF_LIBRARY_LIST--dense')
+      : null;
+    const noResultsElement = targetListElement
+      ? targetListElement.querySelector('[data-library-no-results]')
       : null;
 
     if (!targetListElement || !itemSelector || !clearButton) {
@@ -36,6 +40,7 @@ document.addEventListener('DOMContentLoaded', () => {
     let currentPage = 1;
     let currentSortKey = 'title';
     let currentSortDirection = 'asc';
+    let currentSearchQuery = '';
 
     const readStoredView = () => {
       try {
@@ -54,7 +59,8 @@ document.addEventListener('DOMContentLoaded', () => {
     };
 
     const updateClearState = () => {
-      const hasActive = Array.from(activeFilters.values()).some((set) => set.size > 0);
+      const hasActiveFilters = Array.from(activeFilters.values()).some((set) => set.size > 0);
+      const hasActive = hasActiveFilters || currentSearchQuery.length > 0;
       clearButton.classList.toggle('enabled', hasActive);
     };
 
@@ -73,6 +79,9 @@ document.addEventListener('DOMContentLoaded', () => {
     const getSortValue = (item, sortKey) => {
       if (sortKey === 'writer') {
         return item.dataset.writerSort || '';
+      }
+      if (sortKey === 'status') {
+        return item.dataset.statusSort || '';
       }
       return item.dataset.title || '';
     };
@@ -124,6 +133,10 @@ document.addEventListener('DOMContentLoaded', () => {
 
       const items = Array.from(detailList.querySelectorAll(itemSelector));
       const visibleItems = items.filter((item) => !item.classList.contains('hidden'));
+
+      if (noResultsElement) {
+        noResultsElement.classList.toggle('hidden', visibleItems.length > 0);
+      }
 
       items.forEach((item) => {
         item.classList.remove('SF_LIBRARY_ITEM--paged');
@@ -219,6 +232,11 @@ document.addEventListener('DOMContentLoaded', () => {
           }
         });
 
+        if (isVisible && currentSearchQuery) {
+          const searchValue = item.dataset.search || '';
+          isVisible = searchValue.includes(currentSearchQuery);
+        }
+
         item.classList.toggle('hidden', !isVisible);
       });
 
@@ -254,12 +272,23 @@ document.addEventListener('DOMContentLoaded', () => {
       });
     });
 
+    if (searchInput) {
+      searchInput.addEventListener('input', () => {
+        currentSearchQuery = searchInput.value.toLocaleLowerCase().trim();
+        filterItems();
+      });
+    }
+
     clearButton.addEventListener('click', () => {
       if (!clearButton.classList.contains('enabled')) {
         return;
       }
 
       activeFilters.forEach((values) => values.clear());
+      currentSearchQuery = '';
+      if (searchInput) {
+        searchInput.value = '';
+      }
       container.querySelectorAll('.SF_TAXONOMYFILTER_BUTTON[data-filter-value].active').forEach((button) => {
         button.classList.remove('active');
       });

@@ -27,3 +27,8 @@ main:
   - identifier: notes
     name: Notes
     url: /notes/
+
+  - identifier: cv
+    name: CV
+    url: /cv/siddharth-nair-cv.pdf
+    weight: 100

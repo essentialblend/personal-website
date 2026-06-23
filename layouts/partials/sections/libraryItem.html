@@ -3,6 +3,25 @@
 {{ $format := .Params.format | default "book" }}
 {{ $scope := .Params.scope | default "standalone" }}
 {{ $status := .Params.status | default "" }}
+{{ $statusRaw := lower $status }}
+{{ $statusFilter := $statusRaw }}
+{{ $statusSort := "9" }}
+{{ $statusLabel := replace $statusRaw "-" " " | title }}
+{{ if eq $statusRaw "reading" }}
+  {{ if .Params.active }}
+    {{ $statusFilter = "active" }}
+    {{ $statusSort = "0" }}
+    {{ $statusLabel = "Reading Now" }}
+  {{ else }}
+    {{ $statusFilter = "reading" }}
+    {{ $statusSort = "1" }}
+    {{ $statusLabel = "In Progress" }}
+  {{ end }}
+{{ else if or (eq $statusRaw "finished") (eq $statusRaw "complete") }}
+  {{ $statusFilter = "finished" }}
+  {{ $statusSort = "2" }}
+  {{ $statusLabel = "Finished" }}
+{{ end }}
 {{ $issueStart := .Params.issueStart }}
 {{ $issueEnd := .Params.issueEnd }}
 {{ $issueRange := "" }}
@@ -28,7 +47,7 @@
   {{ $metaParts = $metaParts | append $issueRange }}
 {{ end }}
 {{ if $status }}
-  {{ $metaParts = $metaParts | append (replace $status "-" " " | title) }}
+  {{ $metaParts = $metaParts | append $statusLabel }}
 {{ end }}
 {{ if $yearValue }}
   {{ $metaParts = $metaParts | append $yearValue }}
@@ -45,6 +64,8 @@
 {{ if gt (len $writerValues) 0 }}
   {{ $writerDisplay = delimit $writerValues ", " }}
 {{ end }}
+{{ $titleIsDevanagari := gt (len (findRE "[ऀ-ॿ]" .Title)) 0 }}
+{{ $writerIsDevanagari := gt (len (findRE "[ऀ-ॿ]" $writerDisplay)) 0 }}
 {{ $writerFilterValues := slice }}
 {{ range $writerValues }}
   {{ $writerFilterValues = $writerFilterValues | append (lower .) }}
@@ -54,6 +75,7 @@
 {{ if gt (len $writerValues) 0 }}
   {{ $writerSort = lower (index $writerValues 0) }}
 {{ end }}
+{{ $searchValue := lower (printf "%s %s %s" .Title $writerDisplay (.Params.description | default "")) }}
 {{ $reviewLink := "" }}
 {{ if .Params.reviewRef }}
   {{ $reviewLink = relref . .Params.reviewRef }}
@@ -64,12 +86,12 @@
 {{ end }}
 
 {{ if $reviewLink }}
-<a href="{{ $reviewLink }}" class="note-row SF_LIBRARY_ITEM" data-title="{{ lower .Title }}" data-writer="{{ $writerFilter }}" data-writer-sort="{{ $writerSort }}" data-format="{{ $format | lower }}" data-scope="{{ $scope | lower }}" data-year="{{ $yearValue }}">
+<a href="{{ $reviewLink }}" class="note-row SF_LIBRARY_ITEM" data-title="{{ lower .Title }}" data-writer="{{ $writerFilter }}" data-writer-sort="{{ $writerSort }}" data-format="{{ $format | lower }}" data-scope="{{ $scope | lower }}" data-status="{{ $statusFilter }}" data-status-sort="{{ $statusSort }}" data-year="{{ $yearValue }}" data-search="{{ $searchValue }}">
 {{ else }}
-<div class="note-row SF_LIBRARY_ITEM SF_LIBRARY_ITEM--disabled" data-title="{{ lower .Title }}" data-writer="{{ $writerFilter }}" data-writer-sort="{{ $writerSort }}" data-format="{{ $format | lower }}" data-scope="{{ $scope | lower }}" data-year="{{ $yearValue }}" aria-disabled="true">
+<div class="note-row SF_LIBRARY_ITEM SF_LIBRARY_ITEM--disabled" data-title="{{ lower .Title }}" data-writer="{{ $writerFilter }}" data-writer-sort="{{ $writerSort }}" data-format="{{ $format | lower }}" data-scope="{{ $scope | lower }}" data-status="{{ $statusFilter }}" data-status-sort="{{ $statusSort }}" data-year="{{ $yearValue }}" data-search="{{ $searchValue }}" aria-disabled="true">
 {{ end }}
   <div class="note-main LP_STACK LP_STACK_INTER_SMALL">
-    <span class="note-title">{{ .Title }}{{ if $reviewLink }} <span class="SF_LIBRARY_REVIEW_ICON" title="Review available" aria-label="Review available">&#9998;</span>{{ end }}{{ if $writerDisplay }} <span class="note-author">by {{ $writerDisplay }}</span>{{ end }}</span>
+    <span class="note-title"><span class="SF_LIBRARY_TITLE_TEXT"{{ if $titleIsDevanagari }} lang="hi"{{ end }}>{{ .Title }}</span>{{ if $reviewLink }} <span class="SF_LIBRARY_REVIEW_ICON" title="Review available" aria-label="Review available">&#9998;</span>{{ end }}{{ if $writerDisplay }} <span class="note-author">by <span class="SF_LIBRARY_WRITER"{{ if $writerIsDevanagari }} lang="hi"{{ end }}>{{ $writerDisplay }}</span></span>{{ end }}</span>
     {{ if .Params.description }}
     <span class="note-desc">{{ .Params.description }}</span>
     {{ end }}

@@ -6,7 +6,8 @@ scope: "run"
 status: "reading"
 writer: "Dan Watters"
 artist: ""
-readYear: "2025"
+readYear: "2026"
+showDesk: true
 publisher: "DC"
 ---
 

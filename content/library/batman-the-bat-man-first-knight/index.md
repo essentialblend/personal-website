@@ -8,6 +8,7 @@ writer: "Dan Jurgens"
 artist: ""
 readYear: "2025"
 publisher: "DC"
+showDesk: true
 imprint: "Black Label"
 ---
 

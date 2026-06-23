@@ -167,6 +167,13 @@
   margin-left: 0.35rem;
 }
 
+.SF_LIBRARY_TITLE_TEXT:lang(hi),
+.SF_LIBRARY_WRITER:lang(hi) {
+  font-size: 1.08em;
+  font-weight: 500;
+  line-height: 1.35;
+}
+
 
 .SF_LIBRARY_FILTER_BAR {
   margin-top: var(--space-sm);
@@ -206,19 +213,29 @@
   grid-row: 1;
 }
 
+.SF_LIBRARY_FILTER_GROUP--status {
+  grid-column: 1;
+  grid-row: 2;
+}
+
+.SF_LIBRARY_FILTER_GROUP--search {
+  grid-column: 2;
+  grid-row: 2;
+}
+
 .SF_LIBRARY_FILTER_GROUP--sortfilter {
   grid-column: 1 / -1;
-  grid-row: 2;
+  grid-row: 3;
 }
 
 .SF_LIBRARY_FILTER_GROUP--view {
   grid-column: 1;
-  grid-row: 3;
+  grid-row: 4;
 }
 
 .SF_LIBRARY_FILTER_GROUP--clear {
   grid-column: 2;
-  grid-row: 3;
+  grid-row: 4;
   grid-template-columns: auto;
   justify-self: end;
   justify-content: end;
@@ -246,6 +263,36 @@
   gap: var(--space-2xs);
   align-items: center;
   min-width: 0;
+}
+
+.SF_LIBRARY_SEARCH_INPUT {
+  width: 100%;
+  min-width: 0;
+  border: 1px solid var(--borderColor);
+  border-radius: 2px;
+  padding: calc(var(--smallestSizeREM) * 0.6) calc(var(--smallSizeREM) * 0.7);
+  background: var(--BGColor);
+  color: var(--textColor);
+  font-family: var(--fontCode);
+  font-size: var(--textXS);
+  line-height: 1.1;
+}
+
+.SF_LIBRARY_SEARCH_INPUT::placeholder {
+  color: var(--mutedTextColor);
+  opacity: 0.8;
+}
+
+.SF_LIBRARY_SEARCH_INPUT:focus {
+  outline: 1px solid var(--accentHoverColor);
+  outline-offset: 1px;
+  border-color: var(--accentHoverColor);
+}
+
+.SF_LIBRARY_NO_RESULTS {
+  margin: var(--space-md) 0;
+  color: var(--mutedTextColor);
+  font-style: italic;
 }
 
 .SF_LIBRARY_FILTER_BAR .SF_TAXONOMYFILTER_BUTTON,
@@ -347,6 +394,32 @@
   justify-content: flex-start;
   white-space: nowrap;
   text-align: left;
+}
+
+@media (max-width: 700px) {
+  .SF_LIBRARY_FILTER_LAYOUT {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .SF_LIBRARY_FILTER_GROUP--format,
+  .SF_LIBRARY_FILTER_GROUP--scope,
+  .SF_LIBRARY_FILTER_GROUP--status,
+  .SF_LIBRARY_FILTER_GROUP--search,
+  .SF_LIBRARY_FILTER_GROUP--sortfilter,
+  .SF_LIBRARY_FILTER_GROUP--view,
+  .SF_LIBRARY_FILTER_GROUP--clear {
+    grid-column: 1;
+    grid-row: auto;
+  }
+
+  .SF_LIBRARY_FILTER_GROUP--clear {
+    justify-self: stretch;
+    justify-content: stretch;
+  }
+
+  .SF_LIBRARY_FILTER_GROUP--clear .SF_LIBRARY_FILTER_BUTTONS {
+    justify-content: flex-start;
+  }
 }
 
 .SF_LIBRARY_WRAPPER.is-dense .SF_LIBRARY_LIST--detail {

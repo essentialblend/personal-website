@@ -1,17 +1,68 @@
 {{ define "homeContent" }}
 
+{{ $statusUpdates := where site.RegularPages.ByDate.Reverse "Section" "status" }}
+{{ $currentStatus := index $statusUpdates 0 }}
+{{ $latestStatusYear := $currentStatus.Date.Year }}
+
 <div class="LP_STACK LP_STACK_INTER_BIG SF_SECTION_HEADER">
 
-  {{ with .Params.metaInfo }}
-  <span class="meta-header">{{ . | markdownify }}</span>
-  {{ end }}
+  <div class="LP_STACK LP_STACK_INTER_BIG SF_NOW_PAGE">
 
-  <h1 class="page-title">
-    {{ default .Title .Params.displayTitle }}
-  </h1>
+    <span class="meta-header">
+      Updated <strong data-status-date>{{ $currentStatus.Date.Format "January 2006" }}</strong><span data-status-location>{{ with $currentStatus.Params.location }} in {{ . }}{{ end }}</span>.
+    </span>
 
-  <div class="LP_STACK LP_STACK_INTER_BASE">
-    {{ .Content }}
+    <div class="SF_NOW_TITLE_ROW">
+      <h1 class="page-title" data-status-title>
+        {{ default .Title .Params.displayTitle }}
+      </h1>
+
+      <nav class="SF_NOW_PAGER" aria-label="Status update navigation">
+        <button class="SF_NOW_PAGER_BUTTON" type="button" data-status-action="older" aria-label="Older update" title="Older update" {{ if le (len $statusUpdates) 1 }}disabled{{ end }}>
+          <svg viewBox="0 0 16 16" aria-hidden="true">
+            <path d="M10.5 3.5 6 8l4.5 4.5" />
+          </svg>
+        </button>
+
+        <button class="SF_NOW_PAGER_BUTTON SF_NOW_PAGER_BUTTON--present" type="button" data-status-action="present" aria-label="Jump to present" title="Jump to present" disabled>
+          <svg viewBox="0 0 16 16" aria-hidden="true">
+            <circle cx="8" cy="8" r="4.5" />
+            <circle class="SF_NOW_PAGER_TARGET" cx="8" cy="8" r="1.25" />
+          </svg>
+        </button>
+
+        <button class="SF_NOW_PAGER_BUTTON" type="button" data-status-action="newer" aria-label="Newer update" title="Newer update" disabled>
+          <svg viewBox="0 0 16 16" aria-hidden="true">
+            <path d="M5.5 3.5 10 8l-4.5 4.5" />
+          </svg>
+        </button>
+      </nav>
+    </div>
+
+    <div class="LP_STACK LP_STACK_INTER_BASE">
+      {{ .Content }}
+
+      <div class="SF_NOW_STATUS_UPDATES" aria-live="polite">
+        {{ range $index, $status := $statusUpdates }}
+        {{ $statusTitle := "The Past" }}
+        {{ if eq $index 0 }}
+          {{ $statusTitle = "The Present" }}
+        {{ else if ge $status.Date.Year (sub $latestStatusYear 1) }}
+          {{ $statusTitle = "The Recent Past" }}
+        {{ end }}
+        <div
+          class="SF_NOW_STATUS_UPDATE"
+          data-status-index="{{ $index }}"
+          data-status-date="{{ $status.Date.Format "January 2006" }}"
+          data-status-location="{{ $status.Params.location }}"
+          data-status-title="{{ $statusTitle }}"
+          {{ if ne $index 0 }}hidden{{ end }}>
+          {{ $status.Content }}
+        </div>
+        {{ end }}
+      </div>
+    </div>
+
   </div>
 
   <section class="archives-section">

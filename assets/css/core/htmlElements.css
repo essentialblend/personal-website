@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Vollkorn:ital,wght@0,400;0,600;1,400;1,600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Noto+Serif+Devanagari:wght@400;500;600&family=Vollkorn:ital,wght@0,400;0,600;1,400;1,600&display=swap');
 
 @font-face {
   font-family: 'Arbutus Slab';
@@ -55,9 +55,10 @@
   --biggerSizeREM: var(--textXL);
   --biggestSizeREM: var(--textXXL);
   --specialSizeREM: var(--textBase);
-  --fontBody: 'Arbutus Slab', serif;
-  --fontUI: 'Vollkorn', serif;
-  --fontHeading: 'Vollkorn', serif;
+  --fontDevanagari: 'Noto Serif Devanagari', serif;
+  --fontBody: 'Arbutus Slab', 'Noto Serif Devanagari', serif;
+  --fontUI: 'Vollkorn', 'Noto Serif Devanagari', serif;
+  --fontHeading: 'Vollkorn', 'Noto Serif Devanagari', serif;
   --fontCode: 'Roboto Mono', monospace;
   --fontDropcapDecorative: "GoudyInitialen", var(--fontHeading);
   --containerWidth: 46rem;
@@ -106,6 +107,11 @@ html[data-user-theme="themeHigh"] {
   box-sizing: border-box;
   margin: 0;
   padding: 0;
+}
+
+:lang(hi) {
+  font-family: var(--fontDevanagari);
+  font-synthesis: none;
 }
 
 html {

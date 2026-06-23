@@ -7,9 +7,10 @@
   {{ $slideshowJS := resources.Get "js/site-features/slideshowGallery.js" | resources.Minify }}
   {{ $visitCounterJS := resources.Get "js/site-features/visitCounter.js" | resources.Minify }}
   {{ $libraryFilterJS := resources.Get "js/site-features/libraryFilter.js" | resources.Minify }}
+  {{ $statusScrollerJS := resources.Get "js/site-features/statusScroller.js" | resources.Minify }}
   
 
-  {{ $scripts := slice $themeJS $clockJS $subjectFilterJS $codeCopyButtonJS $tableContentsJS $scrollToTopButtonJS $slideshowJS $visitCounterJS $libraryFilterJS | resources.Concat "js/bundle.js" | resources.Fingerprint }}
+  {{ $scripts := slice $themeJS $clockJS $subjectFilterJS $codeCopyButtonJS $tableContentsJS $scrollToTopButtonJS $slideshowJS $visitCounterJS $libraryFilterJS $statusScrollerJS | resources.Concat "js/bundle.js" | resources.Fingerprint }}
 
   <!-- integrity removed to allow subdomain JS loading -->
   <script src="{{ $scripts.RelPermalink }}"></script>

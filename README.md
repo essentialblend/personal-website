@@ -33,4 +33,12 @@ See [`data/apod.json`](./data/apod.json) and [`netlify/functions/fetch-apod.js`]
 - Tasks and ideas are tracked in [`issues.md`](./issues.md).  
 - Technical dependencies and design rationale are in the [colophon](https://siddharths.space/colophon/).
 
+### Updating the CV
+
+Run `node scripts/update-cv.js` to find the newest general CV matching
+`snair_cv_YYYY-MM-DD.pdf` in the local `cv-generator/releases` directory and
+copy it to `static/cv/siddharth-nair-cv.pdf`.
+
+An alternative releases directory can be passed as the first argument.
+
 ---

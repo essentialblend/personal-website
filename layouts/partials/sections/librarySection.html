@@ -5,7 +5,7 @@
 {{ $years := slice }}
 {{ $writers := slice }}
 {{ $writerMap := dict }}
-{{ $libraryPages := where .Pages "File.BaseFileName" "ne" "masterlist" }}
+{{ $libraryPages := .Pages }}
 
 {{ range $libraryPages }}
   {{ with .Params.format }}
@@ -56,6 +56,13 @@
 {{ $years = sort $years }}
 {{ $writers = sort $writers }}
 
+<div class="LP_STACK LP_STACK_INTER_BIGGER">
+  {{ with site.GetPage "/stream/bookshelf" }}
+    {{ partial "components/stream/generics/streamGenericBlock.html" . }}
+  {{ end }}
+
+  <div>
+
 {{ if gt (len $libraryPages) 0 }}
 <div class="SF_LIBRARY_FILTER_BAR" data-library-filter data-target-list="library-list-wrapper" data-item-selector=".SF_LIBRARY_ITEM" data-page-size-detail="10">
   <nav aria-label="Filter library entries" class="SF_LIBRARY_FILTER_NAV">
@@ -82,11 +89,26 @@
       </div>
       {{ end }}
 
+      <div class="SF_LIBRARY_FILTER_GROUP SF_LIBRARY_FILTER_GROUP--status" data-filter-group="status">
+        <span class="SF_LIBRARY_FILTER_LABEL">Status</span>
+        <div class="SF_LIBRARY_FILTER_BUTTONS">
+          <button type="button" class="SF_TAXONOMYFILTER_BUTTON" data-filter-value="active">Reading Now</button>
+          <button type="button" class="SF_TAXONOMYFILTER_BUTTON" data-filter-value="reading">In Progress</button>
+          <button type="button" class="SF_TAXONOMYFILTER_BUTTON" data-filter-value="finished">Finished</button>
+        </div>
+      </div>
+
+      <div class="SF_LIBRARY_FILTER_GROUP SF_LIBRARY_FILTER_GROUP--search">
+        <label class="SF_LIBRARY_FILTER_LABEL" for="library-search">Search</label>
+        <input class="SF_LIBRARY_SEARCH_INPUT" id="library-search" type="search" data-library-search placeholder="Title, writer, or description" autocomplete="off">
+      </div>
+
       <div class="SF_LIBRARY_FILTER_GROUP SF_LIBRARY_FILTER_GROUP--sortfilter">
         <span class="SF_LIBRARY_FILTER_LABEL">Sort/Filter</span>
         <div class="SF_LIBRARY_FILTER_BUTTONS">
           <button type="button" class="SF_TAXONOMYFILTER_BUTTON SF_LIBRARY_SORT_TOGGLE" data-sort-key="title" data-sort-direction="asc" data-sort-label-asc="Title A-Z" data-sort-label-desc="Title Z-A">Title A-Z</button>
           <button type="button" class="SF_TAXONOMYFILTER_BUTTON SF_LIBRARY_SORT_TOGGLE" data-sort-key="writer" data-sort-direction="asc" data-sort-label-asc="Writer A-Z" data-sort-label-desc="Writer Z-A">Writer A-Z</button>
+          <button type="button" class="SF_TAXONOMYFILTER_BUTTON SF_LIBRARY_SORT_TOGGLE" data-sort-key="status" data-sort-direction="asc" data-sort-label-asc="Active First" data-sort-label-desc="Finished First">Active First</button>
           {{ if gt (len $years) 0 }}
           <details class="SF_LIBRARY_FILTER_DROPDOWN" data-filter-group="year">
             <summary class="SF_LIBRARY_FILTER_TRIGGER">
@@ -124,7 +146,7 @@
 
       <div class="SF_LIBRARY_FILTER_GROUP SF_LIBRARY_FILTER_GROUP--clear">
         <div class="SF_LIBRARY_FILTER_BUTTONS">
-          <button type="button" class="SF_TAXONOMYFILTER_CLEAR" title="Clear selected filters">Clear All</button>
+          <button type="button" class="SF_TAXONOMYFILTER_CLEAR" title="Clear filters and search">Clear All</button>
         </div>
       </div>
     </div>
@@ -151,7 +173,11 @@
       {{ partial "sections/libraryItem.html" . }}
     {{ end }}
   </div>
+
+  <p class="SF_LIBRARY_NO_RESULTS hidden" data-library-no-results>No matching books in the library.</p>
 </div>
 {{ else }}
 <p class="SF_LIBRARY_EMPTY">No entries yet.</p>
 {{ end }}
+  </div>
+</div>

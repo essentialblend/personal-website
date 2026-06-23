@@ -16,8 +16,9 @@
 {{ $nyxPageCSSChunk := resources.Get "css/site-features/sfNyxPage.css" }}
 {{ $postContentCSSChunk := resources.Get "css/site-features/sfMDPostContent.css" }}
 {{ $pseudocodeCSSChunk := resources.Get "css/site-features/sfPseudocode.css" }}
+{{ $nowPageCSSChunk := resources.Get "css/site-features/sfNowPage.css" }}
 
-{{ $cssSlice := slice $htmlElemCSSChunk $layoutPrimitivesCSSChunk $siteFeaturesCSSChunk $postContentCSSChunk $pseudocodeCSSChunk $taxonomyFilterCSSChunk $writingsTitleCSSChunk $metadataCardCSSChunk $paginationCSSChunk $projectSectionCSSChunk $tableContentsCSSChunk $scrollToTopCSSChunk $colophonCSSChunk $streamCSSChunk $termCSSChunk $genericBlockCSSChunk $nyxPageCSSChunk }}
+{{ $cssSlice := slice $htmlElemCSSChunk $layoutPrimitivesCSSChunk $siteFeaturesCSSChunk $postContentCSSChunk $pseudocodeCSSChunk $taxonomyFilterCSSChunk $writingsTitleCSSChunk $metadataCardCSSChunk $paginationCSSChunk $projectSectionCSSChunk $tableContentsCSSChunk $scrollToTopCSSChunk $colophonCSSChunk $streamCSSChunk $termCSSChunk $genericBlockCSSChunk $nyxPageCSSChunk $nowPageCSSChunk }}
 
 {{ $merged := $cssSlice | resources.Concat "css/baseof.css" | resources.Minify | resources.Fingerprint }}
 
