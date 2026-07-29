@@ -1,5 +1,5 @@
 {{- $galleryName := .Get "gallery" | default "uk" -}}
-{{- $gallery := index hugo.Data.galleries $galleryName -}}
+{{- $gallery := index .Site.Data.galleries $galleryName -}}
 {{- with $gallery -}}
 {{- $images := .images -}}
 {{- if $images -}}
