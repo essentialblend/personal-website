@@ -15,6 +15,7 @@
           {{ if ne $index 0 }}aria-hidden="true"{{ end }}>
           <div class="SF_SHOWCASE_FRAME">
             {{- if $isGIF -}}
+              <div class="SF_SHOWCASE_BG_BLUR" style="background-image: url('{{ .RelPermalink }}');"></div>
               <img
                 class="SF_SHOWCASE_IMG"
                 src="{{ .RelPermalink }}"

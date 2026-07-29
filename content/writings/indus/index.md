@@ -34,5 +34,5 @@ I also implemented multi-threaded tile-based progressive rendering, filtering ke
 	alt="Progressive rendering and various HUDs in Indus"
 >}}
 
-In many ways, Indus represents this decade-long dream I thought I'd never get to (or have the privilege to) live. It's my long-term endeavour to implement a PBRT-like physically based renderer, learn as much as I can, and implement new techniques from ongoing research. In the near future, I anticipate adding are better volpath integrators, spectral rendering, realistic camera models, robust scene creation and management facilities among others. [Here's a link to the source code](https://github.com/essentialblend/project-indus/tree/arch-refactor-27aug2025).
+In many ways, Indus represents this decade-long dream I thought I'd never get to (or have the privilege to) live. It's my long-term endeavour to implement a PBRT-like physically based renderer, learn as much as I can, and implement new techniques from ongoing research. In the near future, I anticipate adding are better volpath integrators, spectral rendering, realistic camera models, robust scene creation and management facilities among others. [Here's a link to the source code](https://github.com/essentialblend/project-indus/tree/main).
 

@@ -1,4 +1,4 @@
-﻿.SF_POSTCONTENT {
+.SF_POSTCONTENT {
   max-width: 100%;
   padding-right: var(--baseSizeREM);
 }
@@ -369,6 +369,17 @@ html[data-user-theme="themeHigh"] .SF_POSTCONTENT .chroma .w {
   margin-inline: 0;
 }
 
+.SF_PROJECT_GALLERY .SF_SHOWCASE_IMG[data-showcase-animated] {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: auto;
+  max-width: 100%;
+  height: auto;
+  max-height: 100%;
+  transform: translate(-50%, -50%);
+}
+
 .SF_PROJECT_GALLERY .SF_SHOWCASE_CAPTION {
   min-height: 2.8em;
   margin-block: var(--space-xs) var(--space-sm);
@@ -396,3 +407,72 @@ html[data-user-theme="themeHigh"] .SF_POSTCONTENT .chroma .w {
 
 
 
+
+/* Project pages use README-style technical writing rather than essay-style prose. */
+.SF_POSTCONTENT--project p + p,
+.SF_POSTCONTENT--project :is(.SF_PSEUDOCODE, pre, blockquote, figure, ul, ol, .SF_PROJECT_GALLERY, .SF_PROJECT_GLANCE) + p {
+  text-indent: 0;
+}
+
+.SF_POSTCONTENT--project > p {
+  line-height: 1.55;
+  margin-block-end: var(--space-md);
+}
+
+.SF_POSTCONTENT--project blockquote {
+  margin-block: var(--space-md) var(--bigSizeREM);
+  margin-inline: 0;
+  padding: var(--space-sm) var(--space-md);
+  border-left: 2px solid var(--accentColor);
+  background: color-mix(in srgb, var(--accentColor) 8%, transparent);
+  color: var(--textColor);
+}
+
+.SF_POSTCONTENT--project blockquote p {
+  margin: 0;
+  text-indent: 0;
+}
+
+.SF_PROJECT_GLANCE {
+  width: 85%;
+  margin: var(--baseSizeREM) auto var(--biggerSizeREM);
+  border-top: 1px solid var(--borderColor);
+  border-bottom: 1px solid var(--borderColor);
+}
+
+.SF_PROJECT_GLANCE_ROW {
+  display: grid;
+  grid-template-columns: minmax(8rem, 0.34fr) 1fr;
+  gap: var(--space-md);
+  padding: var(--space-xs) 0;
+  border-top: 1px solid color-mix(in srgb, var(--borderColor) 70%, transparent);
+}
+
+.SF_PROJECT_GLANCE_ROW:first-child {
+  border-top: 0;
+}
+
+.SF_PROJECT_GLANCE_AREA {
+  font-family: var(--fontUI);
+  font-size: var(--smallerSizeREM);
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--mutedTextColor);
+}
+
+.SF_PROJECT_GLANCE_IMPL {
+  font-size: var(--baseSizeREM);
+  line-height: 1.45;
+}
+
+@media (max-width: 42rem) {
+  .SF_PROJECT_GLANCE {
+    width: 100%;
+  }
+
+  .SF_PROJECT_GLANCE_ROW {
+    grid-template-columns: 1fr;
+    gap: var(--space-3xs);
+  }
+}
