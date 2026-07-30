@@ -5,7 +5,7 @@ weight: 2
 status: archived
 description: "My implementation of the Monte Carlo pathtracer created following Peter Shirley's three part series Ray Tracing in One Weekend."
 stacks: ["C++"]
-repo: https://github.com/essentialblend/weekend-raytracing
+repo: https://github.com/essentialblend/shirleytracer/tree/main
 ---
 
 ### Project Details 
